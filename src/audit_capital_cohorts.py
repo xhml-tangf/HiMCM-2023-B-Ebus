@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 from collections import defaultdict
 from pathlib import Path
 
@@ -16,6 +17,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = (
     "https://www.translink.ca/-/media/translink/documents/about-translink/"
     "corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf"
+)
+DEPOT_SOURCE = (
+    "https://www.translink.ca/-/media/translink/documents/about-translink/"
+    "policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf"
 )
 
 
@@ -65,6 +70,37 @@ def calculate() -> dict:
         item["identified_retirements"] += row["retired_count"]
         item["planned_replacements"] += row["planned_replacement_count"]
 
+    articulated_2026 = next(
+        row for row in electric
+        if row["useful_life_year"] == 2026
+        and row["planned_replacement_class"] == "articulated_60ft"
+    )
+    with (ROOT / "data/processed/translink_2020_depot_ratios.csv").open(
+        newline="", encoding="utf-8"
+    ) as handle:
+        depots = list(csv.DictReader(handle))
+    assert len(depots) == 7
+    # TransLink 2020 Appendix C Table C-2 uses 660-kWh articulated BEBs with
+    # supplemental fuel heat. It says electric-only heat needs about 10% more
+    # buses on cold winter days. This is a historical stress test, not a
+    # current 2026 procurement requirement or a certified service solution.
+    articulated_depot_stress = [
+        {
+            "depot": row["depot"],
+            "diesel_heater_depot_replacement_ratio_2020": float(row["articulated_60ft"]),
+            "illustrative_electric_heat_ratio": 1.10 * float(row["articulated_60ft"]),
+            "illustrative_electric_heat_buses_for_39_retirements": math.ceil(
+                articulated_2026["retired_count"] * 1.10 * float(row["articulated_60ft"])
+            ),
+        }
+        for row in depots
+    ]
+    for item in articulated_depot_stress:
+        item["difference_from_2025_plan_45_bebs"] = (
+            item["illustrative_electric_heat_buses_for_39_retirements"]
+            - articulated_2026["planned_replacement_count"]
+        )
+
     return {
         "status": "RETROSPECTIVE_PARTIAL_CAPITAL_COHORT_AUDIT",
         "source": SOURCE,
@@ -82,6 +118,13 @@ def calculate() -> dict:
             }
             for row in electric
         ],
+        "illustrative_2026_articulated_depot_electric_heat_stress": {
+            "source": DEPOT_SOURCE,
+            "assumptions": "2020 Appendix C-2 depot ratios for 660-kWh BEBs with fuel heat, multiplied by the source's approximate 1.10 electric-only-winter-heat fleet factor; all 39 retirement buses hypothetically allocated to one depot",
+            "planned_2025_budget_bebs": articulated_2026["planned_replacement_count"],
+            "cases_by_depot": articulated_depot_stress,
+            "warning": "Only an old-technology sensitivity. Depot allocation, 2026 bus specifications, charging and individual trip blocks are unknown; this does not prove a real shortage.",
+        },
         "limits": [
             "Named projects are not a complete fixed-route fleet age or depot register.",
             "A useful-life year is not proof that buses were retired or replacements delivered that year.",

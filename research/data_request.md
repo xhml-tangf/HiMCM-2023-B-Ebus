@@ -1,5 +1,14 @@
 # Minimum data request to close the numerical model
 
+Public work has narrowed this request: 2023 reporting fixes 280 trolley/BEB
+vehicles together and 299 CNG vehicles; the 2025 capital plan identifies
+selected retirement cohorts and project budgets; the 2020 fleet study supplies
+historical depot/class replacement ratios; and the 2024 transition review
+supplies facility target dates and a six-to-eight-year delivery range. These
+are recorded with year and status in `parameter_ledger.md`. None provides a
+complete 2023 duty roster, installed-site electrical capacity or matched
+life-cycle inventory.
+
 Ask TransLink/CMBC for a 2023 frozen extract, with schema and units, covering:
 
 1. **Fleet on 31 December 2023:** vehicle ID, fixed-route status, class (40-ft, 60-ft, coach, double-deck, shuttle, trolley), propulsion, depot, in-service year, seating/standing/accessibility capacity, expected retirement, operational availability, electric battery and heater type. De-identify vehicle IDs consistently if necessary.

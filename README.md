@@ -24,9 +24,11 @@ as a verified vehicle-level schedule.
   scores, 2024 O&M cross-checks, and sensitivity cases;
   see `research/cpu_reference_score_note.md` for scope and limits.
 - `data/processed/translink_2025_plan_cohorts.csv`,
+  `data/processed/translink_2020_depot_ratios.csv`,
   `src/audit_capital_cohorts.py`, and `results/capital_cohort_audit.json`:
   auditable *retrospective planned* retirement and replacement cohorts, project
-  budgets, and replacement ratios; no claim of delivered buses or trip adequacy.
+  budgets, and a historical depot/winter-heat stress test; no claim of delivered
+  buses, current technical specifications or trip adequacy.
 - `paper/ebus_transition.tex`: canonical 12-point HiMCM-style LaTeX research
   draft. Set the official team control number at the top before submission.
 - `paper/archive/legacy_reportlab_preview.pdf`: old, non-compliant 9-point
