@@ -24,6 +24,7 @@ SOURCES = {
     "translink_tspr_2023_hourly.csv": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearlinedaytypeseasontimerange.csv",
     "translink_tspr_2023_peakload.csv": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_peakload_yearlinedaytypeseasontimerangedirection.csv",
     "translink_2023_tspr.pdf": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/2023_transit_service_performance_review.pdf",
+    "translink_2018_service_guidelines.pdf": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/transit-oriented-communities/transit-services-guidelines-public-summary.pdf",
     "translink_2023_statutory.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/statutory_annual_report/2023_statutory_annual_report.pdf",
     "translink_2023_accountability.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/accountability_reports/2023/accountability_report_2023.pdf",
     "translink_2020_fleet_plan.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf",

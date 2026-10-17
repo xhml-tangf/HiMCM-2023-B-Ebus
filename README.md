@@ -38,6 +38,10 @@ as a verified vehicle-level schedule.
   with the accounting-boundary uncertainty made explicit.
 - `src/plot_service_floor.py` regenerates the corresponding manuscript figure
   from the processed source table and audited 2023 actual service total.
+- `src/audit_capacity_proxy.py`, `data/processed/vancouver_load_capacity_proxy_2023.csv`
+  and `results/capacity_proxy_audit.json`: class-capacity diagnostic from
+  official 2023 load-factor cells and 2018 capacity definitions; aggregate
+  matches do not identify individual vehicle assignments.
 - `tests/`: small but discriminating schedule and cost-transfer tests.
 - `results/model_readiness.json`: observed quantities and unresolved gates.
 - `src/compute_reference_scores.py` and `results/cpu_reference_scores.json`:
@@ -65,6 +69,7 @@ with network access to obtain the official raw sources, then
 `python src/audit_2020_program.py`,
 `python src/audit_non_electric_lockin.py`,
 `python src/audit_service_floor.py`,
+`python src/audit_capacity_proxy.py`,
 `python src/plot_service_floor.py`,
 `python src/compute_reference_scores.py`, `python src/audit_capital_cohorts.py`,
 and `python -m pytest tests -q`. Source URLs and SHA-256 hashes are in

@@ -1,0 +1,29 @@
+{
+  "status": "AGGREGATE_CLASS_DIAGNOSTIC_NOT_VEHICLE_ROSTER",
+  "source": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/transit-oriented-communities/transit-services-guidelines-public-summary.pdf",
+  "source_pages": "printed pp. 21 and 49 (PDF pp. 22 and 50)",
+  "input_2023_tspr_positive_cells": 9371,
+  "routes_with_positive_cells": 180,
+  "reference_capacity_matches": 9049,
+  "reference_capacity_match_pct": 96.56386725002668,
+  "cells_by_reference_class": {
+    "articulated_bus_reference": 747,
+    "articulated_trolley_reference": 286,
+    "double_deck_like_inferred_not_2018_table": 344,
+    "mini_bus_reference": 2199,
+    "standard_bus_or_highway_coach_reference": 5069,
+    "standard_trolley_reference": 404,
+    "unmatched_aggregate": 322
+  },
+  "unmatched_aggregate_cells": 322,
+  "routes_with_multiple_labels": 34,
+  "routes_with_85_proxy": [
+    "301",
+    "311",
+    "340",
+    "351",
+    "555",
+    "620"
+  ],
+  "warning": "2018 capacity references are averages and the 2023 TSPR cells aggregate trips. 85 is not in the 2018 table; it is only consistent with TransLink's 80-86-seat double-deck pilot. Unmatched ratios can reflect mixed vehicle types, actual layouts or differences in averaging. No individual trip or replacement vehicle capacity is identified."
+}
