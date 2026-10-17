@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from audit_service_actual import calculate as audit_actual_service
 from model import check_schedule
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +19,7 @@ def main() -> None:
     # Published average route speed times published revenue hours is a scale
     # estimator, not an odometer or a vehicle-block distance table.
     km_scale = float((routes.revenue_hours_2023 * routes.average_speed_kmh_2023).sum())
+    actual_service = audit_actual_service()
     site_check = check_schedule(None, None, None, None, None, year=2033)
     # 2019-CAD per 40-ft vehicle demonstration. The published depot BEB
     # still burns fuel for cabin heat and is NOT eligible for the strict
@@ -56,16 +58,24 @@ def main() -> None:
             "published_route_service_hours": audit["csv_annual_service_hours"],
             "statutory_bus_service_hours": audit["statutory_annual_service_hours"],
             "service_hour_coverage_ratio": audit["csv_to_statutory_service_hours_ratio"],
+            "actual_2023_bus_service_hours_excluding_seabus": actual_service["bus_totals"]["service_hours"],
+            "actual_2023_bus_service_km_excluding_seabus": actual_service["bus_totals"]["service_km"],
+            "actual_2023_bus_capacity_km_excluding_seabus": actual_service["bus_totals"]["capacity_km"],
+            "route_hour_coverage_of_exact_actual_bus_hours": actual_service["route_hours_share_of_exact_bus_hours"],
+            "actual_service_source": actual_service["source"],
             "route_speed_times_revenue_hours_km_scale": round(km_scale),
-            "distance_status": "ESTIMATE_NOT_ODOMETER",
+            "distance_status": "OFFICIAL_SERVICE_KM_NOW_AVAILABLE; route speed×revenue hours remains a separate estimator",
             "dec_2023_trolley_plus_battery_electric_buses": 280,
             "feb_2023_trolley_buses": 262,
-            "dec_2023_battery_electric_buses_conditional_if_trolley_count_unchanged": 18,
+            "dec_2023_battery_electric_buses_official_blog_approx": 5,
+            "dec_2023_trolley_buses_official_blog_approx": 275,
+            "dec_2023_battery_electric_buses_conditional_if_feb_trolley_count_unchanged": 18,
             "cng_buses_2023": 299,
-            "fleet_count_note": "Electric combined count is Dec 2023; trolley-only count is Feb 2023, so the BEB difference is conditional, not an audited December stock.",
+            "fleet_count_note": "December official release says 280 trolley+BEB; same-day official blog says about 275 trolley and five BEB; February notice says 262 trolley. These cannot establish an exact December class split. The 18-bus subtraction assumes unchanged trolley stock and conflicts with the same-day blog.",
             "fleet_count_sources": [
                 "https://www.translink.ca/news/2023/december/metro%20vancouver%20diesel%20buses%20transitioning%20to%20cleaner%20renewable%20fuel",
                 "https://www.translink.ca/news/2023/february/translink%20begins%20battery-electric%20bus%20fleet%20expansion",
+                "https://buzzer.translink.ca/2023/12/translink-shifts-buses-from-fossil-fuels-to-100-per-cent-renewable-diesel/",
                 "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/accountability_reports/2023/accountability_report_2023.pdf",
             ],
         },

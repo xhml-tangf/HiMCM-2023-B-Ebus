@@ -1,0 +1,52 @@
+{
+  "status": "OBSERVED_2023_ACTUAL_PUBLISHED_IN_2025",
+  "source": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf",
+  "source_page": 23,
+  "scope": "CMBC conventional and shuttle, West Vancouver bus, and contracted community shuttle; SeaBus excluded",
+  "bus_totals": {
+    "service_hours": 5575772,
+    "service_km": 106868324,
+    "capacity_km": 5715791401,
+    "average_capacity_km_per_service_km": 53.4844300636735
+  },
+  "groups": [
+    {
+      "service_group": "cmbc_conventional",
+      "service_hours": 4751957,
+      "service_km": 90941699,
+      "capacity_km": 5274956916,
+      "reported_capacity_km_per_service_km": 58.00372077939736
+    },
+    {
+      "service_group": "cmbc_community_shuttle",
+      "service_hours": 576937,
+      "service_km": 10920849,
+      "capacity_km": 262100376,
+      "reported_capacity_km_per_service_km": 24.0
+    },
+    {
+      "service_group": "west_vancouver_bus",
+      "service_hours": 118194,
+      "service_km": 2273106,
+      "capacity_km": 113076825,
+      "reported_capacity_km_per_service_km": 49.74551340764575
+    },
+    {
+      "service_group": "contract_community_shuttle",
+      "service_hours": 128684,
+      "service_km": 2732670,
+      "capacity_km": 65657284,
+      "reported_capacity_km_per_service_km": 24.026788452319526
+    }
+  ],
+  "all_groups_including_seabus_for_source_reconciliation": {
+    "service_hours": 5589485,
+    "service_km": 107053694,
+    "capacity_km": 5787158724
+  },
+  "route_file_hours": 5466190.5,
+  "route_hours_share_of_exact_bus_hours": 0.9803468470375044,
+  "route_speed_times_revenue_hours_km_scale": 93740872,
+  "route_km_scale_share_of_actual_bus_service_km": 0.8771623666522551,
+  "boundary_warning": "The route speed\u00d7revenue-hours value is an estimator, not total service km; its gap to actual km must not be attributed wholly to deadhead without block data."
+}

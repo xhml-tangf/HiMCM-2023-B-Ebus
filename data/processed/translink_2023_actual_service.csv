@@ -1,0 +1,6 @@
+service_group,fixed_route_bus,service_hours,service_km,capacity_km,source_document_year,source_page
+cmbc_conventional,yes,4751957,90941699,5274956916,2025,23
+cmbc_community_shuttle,yes,576937,10920849,262100376,2025,23
+seabus,no,13713,185370,71367323,2025,23
+west_vancouver_bus,yes,118194,2273106,113076825,2025,23
+contract_community_shuttle,yes,128684,2732670,65657284,2025,23

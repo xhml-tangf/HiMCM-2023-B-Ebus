@@ -116,11 +116,16 @@ def check_schedule(
                 errors.append(f"non-electric 2033 fleet vehicle {bus.vehicle_id}")
     by_trip: dict[str, list[str]] = {k: [] for k in t}
     by_vehicle: dict[str, list[Trip]] = {k: [] for k in v}
+    seen_assignments: set[tuple[str, str]] = set()
     for a in assignments:
         if a.trip_id not in t or a.vehicle_id not in v:
             errors.append(f"unknown assignment {a.trip_id}/{a.vehicle_id}")
             continue
         trip, bus = t[a.trip_id], v[a.vehicle_id]
+        if (a.trip_id, a.vehicle_id) in seen_assignments:
+            errors.append(f"duplicate assignment {a.trip_id}/{a.vehicle_id}")
+            continue
+        seen_assignments.add((a.trip_id, a.vehicle_id))
         by_trip[a.trip_id].append(a.vehicle_id)
         by_vehicle[a.vehicle_id].append(trip)
         if bus.vehicle_class not in trip.allowed_vehicle_classes:
@@ -221,9 +226,28 @@ def check_schedule(
         fleet_here = sum(bus.depot == depot.name for bus in vehicles)
         if fleet_here > depot.physical_bus_spaces:
             errors.append(f"bus parking spaces exceeded at {depot.name}")
-        active_here = sum(bool(by_vehicle[bus.vehicle_id]) for bus in vehicles if bus.depot == depot.name)
-        if fleet_here - active_here < spare_by_depot.get(depot.name, 0):
-            errors.append(f"spare requirement not met at {depot.name}")
+        # A spare must be physically at its depot and free of a trip or charge.
+        # Counting only vehicles with no trips anywhere in the day undercounts
+        # buses that return to the garage between peaks.
+        boundaries = sorted({0} | {minute for bus in vehicles if bus.depot == depot.name
+                                  for start, end, _, _ in events[bus.vehicle_id]
+                                  for minute in (start, end)})
+        for moment in boundaries:
+            available = 0
+            for bus in vehicles:
+                if bus.depot != depot.name:
+                    continue
+                activity = events[bus.vehicle_id]
+                if any(start <= moment < end for start, end, _, _ in activity):
+                    continue
+                prior = [event for event in activity if event[1] <= moment]
+                last_location = (prior[-1][3].end_location if prior[-1][2] == "trip"
+                                 else prior[-1][3].depot) if prior else bus.depot
+                if last_location == depot.name:
+                    available += 1
+            if available < spare_by_depot.get(depot.name, 0):
+                errors.append(f"spare requirement not met at {depot.name} minute {moment}")
+                break
     return Check("FAIL" if errors else "UNVERIFIED" if missing else "PASS",
                  errors, missing,
                  {"trips": len(trips), "vehicles": len(vehicles), "charges": len(charges)})

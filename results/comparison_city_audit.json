@@ -1,0 +1,38 @@
+{
+  "status": "OBSERVED_SCALE_ONLY",
+  "warning": "CTA annual service/VAMS and TfL March fleet stock have different boundaries; neither gives a feasible 2033 electric schedule or score.",
+  "chicago_cta": {
+    "source": "https://www.transit.dot.gov/sites/fta.dot.gov/files/transit_agency_profile_doc/2023/50066.pdf",
+    "source_period": "2023 annual, published later",
+    "buses_available_for_maximum_service": 1895,
+    "buses_operated_in_maximum_service": 1307,
+    "system_spare_count": 588,
+    "system_spare_ratio_vs_operated_pct": 44.988523335883706,
+    "average_bus_fleet_age_years": 11.2,
+    "bus_revenue_miles": 45411226,
+    "bus_revenue_km": 73082284.095744,
+    "bus_revenue_hours": 4970515,
+    "bus_operating_expense_2023_usd": 971019017,
+    "missing": [
+      "2023 electric propulsion split",
+      "vehicle blocks",
+      "garage capacities"
+    ]
+  },
+  "london_tfl": {
+    "source": "https://content.tfl.gov.uk/fleet-annual-audit-report-31-march-2023.pdf",
+    "source_period": "31 March 2023 stock, not calendar-year bus service",
+    "contracted_bus_fleet": 8643,
+    "electric_buses": 950,
+    "hydrogen_buses_noneligible_for_strict_electric_endpoint": 20,
+    "non_electric_buses_at_audit": 7693,
+    "double_deck_buses": 6198,
+    "single_deck_buses": 2445,
+    "electric_share_pct": 10.991553858613907,
+    "missing": [
+      "2023 route blocks",
+      "depot power",
+      "eligible electric replacement specifications"
+    ]
+  }
+}

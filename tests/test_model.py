@@ -70,6 +70,31 @@ def test_two_small_buses_can_preserve_one_departure_capacity():
     assert check_schedule(**args).status == "PASS"
 
 
+def test_spare_can_rotate_after_return_to_depot():
+    args = fixture()
+    args["trips"].append(Trip("late", "R", "N", 320, 380, 10, 40,
+                              "D", "D", True, ("standard",)))
+    args["assignments"].append(Assignment("late", "spare"))
+    assert check_schedule(**args).status == "PASS"
+
+
+def test_spare_must_be_at_depot_and_free_during_service():
+    args = fixture()
+    args["charges"].append(Charge("spare", "D", 70, 110, 50, 0.9))
+    args["depots"][0] = replace(args["depots"][0], charger_slots=2,
+                                grid_limit_kw=100)
+    assert any("spare requirement" in e for e in check_schedule(**args).errors)
+
+
+def test_duplicate_assignment_cannot_double_count_capacity():
+    args = fixture()
+    args["vehicles"][0] = replace(args["vehicles"][0], capacity=25)
+    args["assignments"].append(Assignment("out", "electric"))
+    result = check_schedule(**args)
+    assert any("duplicate assignment" in e for e in result.errors)
+    assert any("capacity shortfall" in e for e in result.errors)
+
+
 def test_empty_manifest_is_unverified():
     args = fixture()
     args["trips"] = []
