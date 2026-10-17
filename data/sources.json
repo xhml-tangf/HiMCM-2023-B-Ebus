@@ -1,0 +1,110 @@
+{
+  "retrieved_utc": "2026-10-16T13:58:21.475617+00:00",
+  "sources": [
+    {
+      "file": "translink_tspr_2023_annual.csv",
+      "url": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearline.csv",
+      "status": "downloaded",
+      "bytes": 103762,
+      "sha256": "c620007f71a52e0c4a5d3114ea336960b06e0e3a11c1e670ca1b8d35f50821a9"
+    },
+    {
+      "file": "translink_tspr_2023_hourly.csv",
+      "url": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearlinedaytypeseasontimerange.csv",
+      "status": "downloaded",
+      "bytes": 830145,
+      "sha256": "272ee20641d489d9db4d19df024c51d13c518ab5d095cf79793055009d30ff37"
+    },
+    {
+      "file": "translink_tspr_2023_peakload.csv",
+      "url": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_peakload_yearlinedaytypeseasontimerangedirection.csv",
+      "status": "downloaded",
+      "bytes": 1124474,
+      "sha256": "f567853d884906294a25c7198fbae10974e8304164a2b96482382652fa996b3c"
+    },
+    {
+      "file": "translink_2023_tspr.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/2023_transit_service_performance_review.pdf",
+      "status": "downloaded",
+      "bytes": 2047663,
+      "sha256": "10b8018ee3858005df2029836caeca0e1190b72bbe888f91a58c5ceea7a03c50"
+    },
+    {
+      "file": "translink_2023_statutory.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/statutory_annual_report/2023_statutory_annual_report.pdf",
+      "status": "downloaded",
+      "bytes": 1115236,
+      "sha256": "c4fcd06d2f53849821fc56e16f67aa08a07d3aa700ee5a799870cf83c615fc50"
+    },
+    {
+      "file": "translink_2023_accountability.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/accountability_reports/2023/accountability_report_2023.pdf",
+      "status": "downloaded",
+      "bytes": 6254910,
+      "sha256": "249a0124a0320acb2cb74b8b72fa61a1ccdce9727b99c591a87d01693cc29bb3"
+    },
+    {
+      "file": "translink_2020_fleet_plan.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf",
+      "status": "downloaded",
+      "bytes": 3921518,
+      "sha256": "1042fbcf5bc4ba830d6b057514401af7d7956b8e0a1028474f908442d3b5ec15"
+    },
+    {
+      "file": "translink_2021_fleet_update.pdf",
+      "url": "https://www.translink.ca/-/media/translink/media-releases/2021/january/translink_low_carbon_fleet_transition_plan_update_2021_01_18.pdf",
+      "status": "downloaded",
+      "bytes": 317743,
+      "sha256": "70b4c5c87fe4f0acd50882844392667edf382dffdc07a5049c1ba13b87871e4b"
+    },
+    {
+      "file": "translink_2023_june_board.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2023/june/23-06-22-public-board-meeting-package---for-posting.pdf",
+      "status": "downloaded",
+      "bytes": 5175639,
+      "sha256": "6921d8cc018450304f9dac4bc3882f67613eb1c2846c39701b8082ff0226623d"
+    },
+    {
+      "file": "translink_2024_playbook_summary.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf",
+      "status": "downloaded",
+      "bytes": 2965970,
+      "sha256": "00c6d6621b7c3b8804a6d7d9886a64989409379d64a446a266a5e0634bf96098"
+    },
+    {
+      "file": "translink_2024_business_plan.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2024-business-plan-operating-and-capital-budget-summary.pdf",
+      "status": "downloaded",
+      "bytes": 934587,
+      "sha256": "63db3c36f69f2e26ef6cc1846e86df742aed6db8501923c0413199d65bf0980a"
+    },
+    {
+      "file": "translink_2025_business_plan.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf",
+      "status": "downloaded",
+      "bytes": 1416712,
+      "sha256": "a27eb023fa82c156e8ee8c73d2928ec268ad89354a503c5a9c7ecd8bc791dd01"
+    },
+    {
+      "file": "icct_2024_ebus_lca_method.pdf",
+      "url": "https://theicct.org/wp-content/uploads/2024/08/ID-118-%E2%80%93-E-bus-radar_final2.pdf",
+      "status": "downloaded",
+      "bytes": 533791,
+      "sha256": "cd5b4d0260cb0e4b29bc31392c0a80a9b31f4d5dbff31a87d789f32f2d875163"
+    },
+    {
+      "file": "cta_2022_charging_forward.pdf",
+      "url": "https://www.transitchicago.com/assets/1/6/Charging_Forward_Report_2-10-22_%28FINAL%29.pdf",
+      "status": "downloaded",
+      "bytes": 17262685,
+      "sha256": "de9c8d164eedea44d2610169e7ed138690f2ee165a0ab182a9feaccaf673b15a"
+    },
+    {
+      "file": "tfl_2023_bus_fleet_audit.pdf",
+      "url": "https://content.tfl.gov.uk/fleet-annual-audit-report-31-march-2023.pdf",
+      "status": "downloaded",
+      "bytes": 267046,
+      "sha256": "b1afc9a15d769a7d6fba5baa1f9198ccb1218b247bee85a7f3aa5ed1a72f00d6"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+useful_life_year,retired_class,retired_propulsion,retired_count,planned_replacement_class,planned_replacement_propulsion,planned_replacement_count,project_gross_budget_2025_report_mcad,external_funding_2025_report_mcad,source_page,status
+2023,standard_40ft,diesel_hybrid,57,standard_40ft,battery_electric,57,106.846,102.498,50,planned_project_not_deliveries
+2023,standard_40ft,cng,50,standard_40ft,cng,50,46.143,44.440,50,planned_project_not_deliveries
+2024,standard_40ft,diesel_hybrid,126,standard_40ft,cng,84,78.002,75.264,50,planned_project_not_deliveries
+2025,standard_40ft,diesel_hybrid,30,standard_40ft,cng,30,28.915,0,51,planned_project_not_deliveries
+2025,standard_40ft,diesel_hybrid,6,standard_40ft,battery_electric,7,13.068,6.513,51,planned_project_not_deliveries
+2025,highway_coach,orion_v,9,double_decker,unspecified,6,10.020,0,51,planned_project_not_deliveries
+2026,articulated_60ft,diesel,39,articulated_60ft,battery_electric,45,136.665,130.131,51,planned_project_not_deliveries

@@ -1,0 +1,75 @@
+{
+  "status": "RETROSPECTIVE_PARTIAL_CAPITAL_COHORT_AUDIT",
+  "source": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf",
+  "source_table_pages": [
+    50,
+    51
+  ],
+  "price_basis": "gross program budgets as printed in the 2025 Business Plan; CAD million",
+  "all_identified_projects_by_useful_life_year": {
+    "2023": {
+      "identified_retirements": 107,
+      "planned_replacements": 107
+    },
+    "2024": {
+      "identified_retirements": 126,
+      "planned_replacements": 84
+    },
+    "2025": {
+      "identified_retirements": 45,
+      "planned_replacements": 43
+    },
+    "2026": {
+      "identified_retirements": 39,
+      "planned_replacements": 45
+    }
+  },
+  "beb_replacement_projects_by_class": {
+    "articulated_60ft": {
+      "retiring_vehicles_in_identified_projects": 39,
+      "planned_bebs_in_identified_projects": 45,
+      "project_gross_budget_mcad": 136.665,
+      "project_external_funding_mcad": 130.131,
+      "project_gross_budget_mcad_per_planned_beb": 3.037,
+      "project_planned_replacement_ratio": 1.1538461538461537
+    },
+    "standard_40ft": {
+      "retiring_vehicles_in_identified_projects": 63,
+      "planned_bebs_in_identified_projects": 64,
+      "project_gross_budget_mcad": 119.914,
+      "project_external_funding_mcad": 109.01100000000001,
+      "project_gross_budget_mcad_per_planned_beb": 1.87365625,
+      "project_planned_replacement_ratio": 1.0158730158730158
+    }
+  },
+  "individual_beb_projects": [
+    {
+      "useful_life_year": 2023,
+      "retired_count": 57,
+      "planned_beb_count": 57,
+      "planned_replacement_ratio": 1.0,
+      "project_gross_budget_mcad_per_planned_beb": 1.8744912280701755
+    },
+    {
+      "useful_life_year": 2025,
+      "retired_count": 6,
+      "planned_beb_count": 7,
+      "planned_replacement_ratio": 1.1666666666666667,
+      "project_gross_budget_mcad_per_planned_beb": 1.8668571428571428
+    },
+    {
+      "useful_life_year": 2026,
+      "retired_count": 39,
+      "planned_beb_count": 45,
+      "planned_replacement_ratio": 1.1538461538461537,
+      "project_gross_budget_mcad_per_planned_beb": 3.037
+    }
+  ],
+  "limits": [
+    "Named projects are not a complete fixed-route fleet age or depot register.",
+    "A useful-life year is not proof that buses were retired or replacements delivered that year.",
+    "A project budget divided by bus count is not a bus hardware bid or delivered unit price.",
+    "Replacement ratios in capital plans do not certify matched service capacity or exact trip feasibility.",
+    "The 2025 plan is retrospective evidence and must not be treated as information known at the 2023 decision date."
+  ]
+}

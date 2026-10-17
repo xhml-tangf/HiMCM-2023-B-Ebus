@@ -1,0 +1,173 @@
+{
+  "status": "CALCULATED_REFERENCE_CASE_ONLY",
+  "cpu_method": "deterministic arithmetic and analytic break-even calculation; no solver or GPU needed for these identified inputs",
+  "scope": "one equivalent 40-ft standard-bus service cohort; same vehicle-km, historical TransLink lifetime cost model",
+  "not_whole_city_or_2024_2033_score": true,
+  "sources": {
+    "fleet_plan": "https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf",
+    "bc_grid": "https://www2.gov.bc.ca/gov/content/environment/climate-change/data/electricity",
+    "federal_ghg_module": "https://housing-infrastructure.canada.ca/zero-emissions-trans-zero-emissions/ghg-modules-ges-eng.html",
+    "accountability": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/accountability_reports/2023/accountability_report_2023.pdf",
+    "fleet_update_2020": "https://www.translink.ca/-/media/translink/media-releases/2021/january/translink_low_carbon_fleet_transition_plan_update_2021_01_18.pdf",
+    "zeftp_2024": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf"
+  },
+  "historical_renewal_comparators": {
+    "diesel": {
+      "historical_lifetime_cost_2019_cad_per_km": 4.62,
+      "economic_score_vs_in_route_beb_pct": -5.194805194805199,
+      "incremental_beb_cost_2019_cad_per_km": 0.2400000000000002
+    },
+    "hybrid": {
+      "historical_lifetime_cost_2019_cad_per_km": 4.77,
+      "economic_score_vs_in_route_beb_pct": -1.8867924528302045,
+      "incremental_beb_cost_2019_cad_per_km": 0.09000000000000075
+    },
+    "cng": {
+      "historical_lifetime_cost_2019_cad_per_km": 4.15,
+      "economic_score_vs_in_route_beb_pct": -17.10843373493976,
+      "incremental_beb_cost_2019_cad_per_km": 0.71
+    }
+  },
+  "retrospective_2024_om_only_comparators": {
+    "diesel": {
+      "conventional_om_2024_cad_per_vehicle_km": 3.3,
+      "beb_om_2024_cad_per_vehicle_km": 2.28,
+      "om_only_score_pct": 30.90909090909091
+    },
+    "hybrid": {
+      "conventional_om_2024_cad_per_vehicle_km": 1.97,
+      "beb_om_2024_cad_per_vehicle_km": 2.28,
+      "om_only_score_pct": -15.736040609137047
+    },
+    "cng": {
+      "conventional_om_2024_cad_per_vehicle_km": 2.77,
+      "beb_om_2024_cad_per_vehicle_km": 2.28,
+      "om_only_score_pct": 17.689530685920584
+    }
+  },
+  "retrospective_2024_operational_ghg_intensity_g_per_vehicle_km": {
+    "fossil_diesel": 1580,
+    "renewable_diesel": 530,
+    "fossil_hybrid": 1420,
+    "renewable_hybrid": 480,
+    "fossil_cng": 1350,
+    "renewable_cng": 250,
+    "beb_electric_heater": 19
+  },
+  "retrospective_2024_operational_ghg_scores_pct": {
+    "fossil_diesel": 98.79746835443038,
+    "renewable_diesel": 96.41509433962264,
+    "fossil_hybrid": 98.66197183098592,
+    "renewable_hybrid": 96.04166666666667,
+    "fossil_cng": 98.5925925925926,
+    "renewable_cng": 92.4
+  },
+  "inputs": {
+    "diesel_lifecycle_cost_2019_cad_per_km": 4.62,
+    "hybrid_lifecycle_cost_2019_cad_per_km": 4.77,
+    "cng_lifecycle_cost_2019_cad_per_km": 4.15,
+    "in_route_all_electric_lifecycle_cost_2019_cad_per_km": 4.86,
+    "depot_beb_lifecycle_cost_2019_cad_per_km_ineligible_diesel_heat": 5.14,
+    "annual_km_assumed_by_source": 68000,
+    "diesel_l_per_km": 0.6,
+    "in_route_electric_kwh_per_km": 1.6,
+    "diesel_price_2019_cad_per_l": 1.04,
+    "electricity_price_2019_cad_per_kwh": 0.1,
+    "heavy_duty_diesel_combustion_kg_co2e_per_l": 2.63,
+    "bc_2023_integrated_grid_kg_co2e_per_kwh": 0.0113
+  },
+  "reference_scores": {
+    "economic_lifecycle_cost_score_pct": -5.194805194805199,
+    "environment_operational_ghg_score_pct": 98.85424588086184,
+    "environment_lifecycle_ghg_score_pct": null,
+    "diesel_lifetime_model_cost_2019_cad_per_km": 4.62,
+    "electric_lifetime_model_cost_2019_cad_per_km": 4.86,
+    "incremental_lifetime_model_cost_2019_cad_per_km": 0.2400000000000002,
+    "diesel_operational_kg_co2e_per_km": 1.5779999999999998,
+    "electric_operational_kg_co2e_per_km": 0.01808,
+    "annual_diesel_operational_t_co2e": 107.30399999999999,
+    "annual_electric_operational_t_co2e": 1.2294399999999999,
+    "annual_operational_ghg_saving_t_co2e": 106.07455999999998,
+    "historical_cost_per_operational_t_co2e_avoided_2019_cad": 153.85404379711798
+  },
+  "thresholds_holding_other_costs_fixed": {
+    "diesel_price_for_cost_parity_2019_cad_per_l_at_0_10_cad_per_kwh": 1.4400000000000004,
+    "electricity_price_for_cost_parity_2019_cad_per_kwh_at_1_04_cad_per_l": -0.05000000000000013,
+    "grid_intensity_for_operational_ghg_parity_kg_co2e_per_kwh": 0.9862499999999998,
+    "max_grid_intensity_for_95pct_operational_ghg_reduction_kg_co2e_per_kwh": 0.049312499999999995,
+    "ten_year_operational_ghg_saving_t_per_equivalent_bus_at_68000_km_per_year": 1060.7456
+  },
+  "historical_grid_and_source_energy_sensitivity": [
+    {
+      "grid_factor_year": 2020,
+      "grid_kg_co2e_per_kwh": 0.0401,
+      "bus_energy_kwh_per_km": 1.37,
+      "operational_ghg_score_pct": 96.51856780735108
+    },
+    {
+      "grid_factor_year": 2020,
+      "grid_kg_co2e_per_kwh": 0.0401,
+      "bus_energy_kwh_per_km": 1.6,
+      "operational_ghg_score_pct": 95.9340937896071
+    },
+    {
+      "grid_factor_year": 2020,
+      "grid_kg_co2e_per_kwh": 0.0401,
+      "bus_energy_kwh_per_km": 2.0,
+      "operational_ghg_score_pct": 94.91761723700887
+    },
+    {
+      "grid_factor_year": 2023,
+      "grid_kg_co2e_per_kwh": 0.0113,
+      "bus_energy_kwh_per_km": 1.37,
+      "operational_ghg_score_pct": 99.01894803548795
+    },
+    {
+      "grid_factor_year": 2023,
+      "grid_kg_co2e_per_kwh": 0.0113,
+      "bus_energy_kwh_per_km": 1.6,
+      "operational_ghg_score_pct": 98.85424588086184
+    },
+    {
+      "grid_factor_year": 2023,
+      "grid_kg_co2e_per_kwh": 0.0113,
+      "bus_energy_kwh_per_km": 2.0,
+      "operational_ghg_score_pct": 98.56780735107732
+    },
+    {
+      "grid_factor_year": 2024,
+      "grid_kg_co2e_per_kwh": 0.0099,
+      "bus_energy_kwh_per_km": 1.37,
+      "operational_ghg_score_pct": 99.14049429657794
+    },
+    {
+      "grid_factor_year": 2024,
+      "grid_kg_co2e_per_kwh": 0.0099,
+      "bus_energy_kwh_per_km": 1.6,
+      "operational_ghg_score_pct": 98.99619771863118
+    },
+    {
+      "grid_factor_year": 2024,
+      "grid_kg_co2e_per_kwh": 0.0099,
+      "bus_energy_kwh_per_km": 2.0,
+      "operational_ghg_score_pct": 98.74524714828898
+    }
+  ],
+  "2023_reported_emissions_by_mode_g_co2e_per_passenger_km": {
+    "diesel_bus": 100,
+    "natural_gas_bus": 23,
+    "battery_electric_bus": 2,
+    "diesel_to_battery_electric_intensity_reduction_pct": 98.0,
+    "natural_gas_to_battery_electric_intensity_reduction_pct": 91.30434782608695,
+    "source_note": "TransLink 2023 Accountability Report; observed fleet mix, occupancy and renewable gas accounting differ from the 40-ft model"
+  },
+  "limitations": [
+    "TransLink's lifetime cost values are historical 2019-CAD model outputs, not discounted 2024-2033 project costs.",
+    "The in-route all-electric configuration has no auxiliary fuel in the source table; its required 450-kW charger availability and actual timetable feasibility are unverified for 2023 routes.",
+    "Operational GHG omits diesel upstream fuel production, vehicle and battery manufacture, infrastructure, maintenance, and end of life.",
+    "The 2023 BC grid factor is an annual accounting average; marginal generation and future grid intensity can differ.",
+    "Existing trolleybuses and natural-gas buses mean these diesel-versus-BEB results cannot be multiplied across the full fleet.",
+    "The 2023 class-by-service normal-renewal mix is unknown; the diesel reference economic score is not the fleet economic score. Hybrid and CNG comparator scores are reported separately.",
+    "2024 ZEFTP operating/maintenance costs and GHG intensities are retrospective checks, with different boundaries and price year from the 2020 lifetime-cost model."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "baseline_year": 2023,
+  "annual_route_count": 191,
+  "route_time_service_records": 6261,
+  "route_time_service_records_with_frequency": 6041,
+  "route_time_direction_load_records": 11659,
+  "route_time_direction_load_records_with_load": 9371,
+  "time_range_codes": [
+    4,
+    6,
+    9,
+    15,
+    18,
+    21,
+    24
+  ],
+  "csv_annual_service_hours": 5466190.5,
+  "statutory_annual_service_hours": 5577000,
+  "csv_to_statutory_service_hours_ratio": 0.98013,
+  "source_limitations": [
+    "The public CSV excludes discontinued bus routes.",
+    "Time-range mean frequency is not an exact departure timetable.",
+    "Peak load is an average of peak loads, not the maximum observed load.",
+    "No vehicle assignment, block, depot, state of charge, or 2023 fleet-age registry is in the CSV.",
+    "The report's total conventional transit includes other modes; the audit denominator uses only three bus categories."
+  ]
+}
