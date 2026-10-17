@@ -18,8 +18,9 @@ as a verified vehicle-level schedule.
   `src/audit_service_actual.py`, and `results/actual_service_audit.json`:
   official 2023 actual bus hours, service-km, capacity-km and operating-group
   reconciliation from the 2025 Business Plan, with SeaBus excluded.
-- `src/model.py`: trip, passenger capacity, winter SOC, charger/site and
-  2033 fleet validation; discounted cost, grant and Pareto primitives.
+- `src/model.py`: trip, passenger capacity, winter traction plus electric
+  accessory SOC, home-depot and in-route charger/site, and 2033 fleet
+  validation; discounted cost, grant and Pareto primitives.
 - `src/run_analysis.py`: observed scale and model-readiness output.
 - `src/audit_comparators.py` and `results/comparison_city_audit.json`:
   primary-source Chicago CTA and London TfL 2023 scale checks, kept on their

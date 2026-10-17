@@ -123,16 +123,16 @@ Each vehicle's assigned trips and charging intervals cannot overlap. Location-to
 \begin{align}
  e_{v,t+1}
  &=e_{vt}+\eta_q c_{vt}
-   -\epsilon_{vk}^{\rm winter}(\ell_{it}+\ell^{\rm deadhead}_{vt})
+   -\epsilon_{vk}^{\rm traction,winter}(\ell_{it}+\ell^{\rm deadhead}_{vt})
    -E^{\rm accessories}_{vt},\\
  \underline{s}_vB_v&\le e_{vt}\le \bar{s}_vB_v.
 \end{align}
-Battery capacity and passenger capacity are linked when battery weight reduces available seats or payload. Charger occupancy, power and opening year impose
+Here $E^{\rm accessories}_{vt}$ includes all-electric cabin heating and other onboard equipment during trips, deadhead, charging and active layovers; the traction coefficient excludes that energy to prevent double counting. An unmeasured winter accessory load makes an electric schedule \texttt{UNVERIFIED}, not zero-energy. Battery capacity and passenger capacity are linked when battery weight reduces available seats or payload. Charger occupancy, power and opening year impose
 \begin{equation}
  \sum_v u_{vdt}\le H_{dt},\quad \sum_v P_{vdt}\le P^{\rm grid}_{dt},\quad
  H_{dt}=0\ \mathrm{until\ commissioned}.
 \end{equation}
-Depot bus parking capacity, charger footprint, charging efficiency, construction lead time and route-specific winter testing must also pass. The exact validator in the accompanying code returns \texttt{UNVERIFIED} when trip, vehicle, location or site inputs are absent; it cannot return a city-wide pass from time-bin averages.
+Depot bus parking capacity, charger footprint, charging efficiency, construction lead time and route-specific winter testing must also pass. A charger site may be the home depot or a route terminal, provided the location and travel-time checks pass. The exact validator in the accompanying code returns \texttt{UNVERIFIED} when trip, vehicle, location, accessory load or site inputs are absent; it cannot return a city-wide pass from time-bin averages.
 
 \subsection{Optimization order}
 For each scenario, first solve or test service feasibility. Second find the minimum gross-cost normal-renewal baseline. Third enumerate feasible electric strategies: depot charging, terminal fast charging, battery sizing, depot sequencing and additional buses. Fourth solve an $\epsilon$-constraint family $\min C$ subject to $G\le\epsilon$ to reveal the Pareto frontier. A displayed ``balanced'' option would be chosen only after that frontier and stakeholder weights are available. We do not present a fictional optimum from incomplete inputs. This joint approach follows the scheduling/fleet-size logic of Rogge et al., the multi-year replacement logic of Pelletier et al., and the multi-depot timing logic of Gkiotsalitis et al.\cite{rogge,pelletier,gkiotsalitis}

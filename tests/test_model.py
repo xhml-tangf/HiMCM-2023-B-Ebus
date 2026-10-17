@@ -7,8 +7,8 @@ from src.model import (Assignment, Charge, Depot, Trip, Vehicle, check_schedule,
 def fixture():
     trips = [Trip("out", "R", "N", 60, 120, 20, 40, "D", "X", True, ("standard",)),
              Trip("back", "R", "S", 150, 210, 20, 40, "X", "D", True, ("standard",))]
-    vehicles = [Vehicle("electric", "D", "standard", 45, 100, 0.9, 80, 1.0, True, True, True, 0.15),
-                Vehicle("spare", "D", "standard", 45, 100, 0.9, 80, 1.0, True, True, True, 0.15)]
+    vehicles = [Vehicle("electric", "D", "standard", 45, 100, 0.9, 80, 1.0, True, True, True, 0.15, 0.0),
+                Vehicle("spare", "D", "standard", 45, 100, 0.9, 80, 1.0, True, True, True, 0.15, 0.0)]
     assignments = [Assignment("out", "electric"), Assignment("back", "electric")]
     chargers = [Charge("electric", "D", 240, 300, 50, 0.9)]
     depots = [Depot("D", 1, 50, 50, 2032, 2)]
@@ -50,6 +50,24 @@ def test_site_and_range_failures():
     args = fixture()
     args["vehicles"][0] = replace(args["vehicles"][0], kwh_per_km_winter=2.0)
     assert any("minimum SOC" in e for e in check_schedule(**args).errors)
+
+
+def test_winter_accessory_demand_is_required_and_consumes_energy():
+    args = fixture()
+    args["vehicles"][0] = replace(args["vehicles"][0], accessory_kwh_per_hour_winter=None)
+    result = check_schedule(**args)
+    assert result.status == "UNVERIFIED"
+    assert "winter_electric_accessory_demand:electric" in result.missing
+    args = fixture()
+    args["vehicles"][0] = replace(args["vehicles"][0], accessory_kwh_per_hour_winter=12)
+    assert any("minimum SOC" in e for e in check_schedule(**args).errors)
+
+
+def test_in_route_charger_can_be_away_from_home_depot():
+    args = fixture()
+    args["depots"].append(Depot("X", 1, 50, 50, 2032, 0))
+    args["charges"].append(Charge("electric", "X", 125, 145, 30, 0.9))
+    assert check_schedule(**args).status == "PASS"
 
 
 def test_route_vehicle_class_and_capacity_are_hard_constraints():
