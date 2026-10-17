@@ -26,6 +26,10 @@ def main() -> None:
              for key in group.split(",")}
     if cited - defined:
         errors.append(f"undefined citations: {sorted(cited-defined)}")
+    for graphic in re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", text):
+        target = SOURCE.parent / graphic
+        if not target.is_file():
+            errors.append(f"missing figure: {graphic}")
     stack = []
     for action, environment in re.findall(r"\\(begin|end)\{([^}]+)\}", text):
         if action == "begin":

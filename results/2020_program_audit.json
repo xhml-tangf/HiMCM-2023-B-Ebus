@@ -1,0 +1,135 @@
+{
+  "status": "RECONCILED_HISTORICAL_2020_PLAN_NOT_2023_OBSERVED",
+  "source": "https://www.translink.ca/-/media/translink/media-releases/2021/january/translink_low_carbon_fleet_transition_plan_update_2021_01_18.pdf",
+  "source_tables": {
+    "awards_and_vehicle_capital": "Table 1, PDF p. 2",
+    "infrastructure": "Table 3, PDF p. 3",
+    "operating": "Table 5, PDF pp. 4--5"
+  },
+  "award_years_not_delivery_years": true,
+  "planned_awards": {
+    "standard_depot_awards": 449,
+    "standard_inroute_awards": 136,
+    "articulated_depot_awards": 92,
+    "planned_beb_awards": 677
+  },
+  "annual": [
+    {
+      "year": 2020,
+      "standard_depot_awards": 0,
+      "standard_inroute_awards": 15,
+      "articulated_depot_awards": 0,
+      "incremental_vehicle_capital_nominal_mcad": null,
+      "incremental_operating_nominal_mcad": 0.0,
+      "planned_beb_awards": 15
+    },
+    {
+      "year": 2021,
+      "standard_depot_awards": 0,
+      "standard_inroute_awards": 57,
+      "articulated_depot_awards": 0,
+      "incremental_vehicle_capital_nominal_mcad": 12.8,
+      "incremental_operating_nominal_mcad": 0.0,
+      "planned_beb_awards": 57
+    },
+    {
+      "year": 2022,
+      "standard_depot_awards": 145,
+      "standard_inroute_awards": 0,
+      "articulated_depot_awards": 18,
+      "incremental_vehicle_capital_nominal_mcad": 61.9,
+      "incremental_operating_nominal_mcad": 0.0,
+      "planned_beb_awards": 163
+    },
+    {
+      "year": 2023,
+      "standard_depot_awards": 79,
+      "standard_inroute_awards": 0,
+      "articulated_depot_awards": 0,
+      "incremental_vehicle_capital_nominal_mcad": 28.9,
+      "incremental_operating_nominal_mcad": 0.0,
+      "planned_beb_awards": 79
+    },
+    {
+      "year": 2024,
+      "standard_depot_awards": 153,
+      "standard_inroute_awards": 64,
+      "articulated_depot_awards": 45,
+      "incremental_vehicle_capital_nominal_mcad": 92.6,
+      "incremental_operating_nominal_mcad": -1.2,
+      "planned_beb_awards": 262
+    },
+    {
+      "year": 2025,
+      "standard_depot_awards": 0,
+      "standard_inroute_awards": 0,
+      "articulated_depot_awards": 0,
+      "incremental_vehicle_capital_nominal_mcad": 0.0,
+      "incremental_operating_nominal_mcad": -4.9,
+      "planned_beb_awards": 0
+    },
+    {
+      "year": 2026,
+      "standard_depot_awards": 0,
+      "standard_inroute_awards": 0,
+      "articulated_depot_awards": 0,
+      "incremental_vehicle_capital_nominal_mcad": 0.0,
+      "incremental_operating_nominal_mcad": -9.9,
+      "planned_beb_awards": 0
+    },
+    {
+      "year": 2027,
+      "standard_depot_awards": 20,
+      "standard_inroute_awards": 0,
+      "articulated_depot_awards": 29,
+      "incremental_vehicle_capital_nominal_mcad": 21.7,
+      "incremental_operating_nominal_mcad": -18.9,
+      "planned_beb_awards": 49
+    },
+    {
+      "year": 2028,
+      "standard_depot_awards": 0,
+      "standard_inroute_awards": 0,
+      "articulated_depot_awards": 0,
+      "incremental_vehicle_capital_nominal_mcad": 0.0,
+      "incremental_operating_nominal_mcad": -19.5,
+      "planned_beb_awards": 0
+    },
+    {
+      "year": 2029,
+      "standard_depot_awards": 52,
+      "standard_inroute_awards": 0,
+      "articulated_depot_awards": 0,
+      "incremental_vehicle_capital_nominal_mcad": 19.0,
+      "incremental_operating_nominal_mcad": -19.6,
+      "planned_beb_awards": 52
+    },
+    {
+      "year": 2030,
+      "standard_depot_awards": 0,
+      "standard_inroute_awards": 0,
+      "articulated_depot_awards": 0,
+      "incremental_vehicle_capital_nominal_mcad": 0.0,
+      "incremental_operating_nominal_mcad": -22.1,
+      "planned_beb_awards": 0
+    }
+  ],
+  "nominal_incremental_cost_mcad": {
+    "vehicle_purchase_premium": 236.9,
+    "depot_and_charging": 246.4,
+    "published_operating_change": -96.3,
+    "reconstructed_net_from_published_component_totals": 387.0
+  },
+  "rounding_audit": {
+    "digitized_annual_operating_sum_mcad": -96.1,
+    "source_published_operating_total_mcad": -96.3,
+    "difference_mcad": 0.2,
+    "explanation": "Annual Table 5 cells are printed to CAD 0.1m; their sum differs from the printed total by CAD 0.2m, consistent with rounding or underlying source precision. The printed total is retained for the overall nominal calculation."
+  },
+  "exclusions": [
+    "2020 award of 15 buses was funded under an earlier capital program and has no incremental cost in Table 1",
+    "no facility spending years, so no justified discounted NPV",
+    "not an actual 2023 fleet, a 2024--2033 plan, or proof of all-electric winter feasibility",
+    "not a complete ordinary-renewal or full-fleet cost score"
+  ]
+}

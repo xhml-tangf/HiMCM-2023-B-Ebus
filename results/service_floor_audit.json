@@ -1,0 +1,82 @@
+{
+  "status": "CONDITIONAL_SCOPE_COMPARISON_NOT_SCHEDULE_FEASIBILITY",
+  "source": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/ten-year-investment-plan/public-consultation/2025-investment-plan.pdf",
+  "source_table": "A9, printed p. 63; bus conventional-transit service hours, thousands",
+  "baseline_2023_actual_fixed_route_bus_hours": 5575772,
+  "later_plan_2025_2034_bus_hours": {
+    "2025": 6060000,
+    "2026": 6421000,
+    "2027": 6621000,
+    "2028": 4414000,
+    "2029": 4422000,
+    "2030": 4413000,
+    "2031": 4416000,
+    "2032": 4432000,
+    "2033": 4424000,
+    "2034": 4426000
+  },
+  "comparison": {
+    "2025": {
+      "later_plan_bus_hours": 6060000,
+      "conditional_difference_from_2023_actual_hours": 484228,
+      "conditional_change_from_2023_actual_pct": 8.684501446615833,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": true
+    },
+    "2026": {
+      "later_plan_bus_hours": 6421000,
+      "conditional_difference_from_2023_actual_hours": 845228,
+      "conditional_change_from_2023_actual_pct": 15.158941219260758,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": true
+    },
+    "2027": {
+      "later_plan_bus_hours": 6621000,
+      "conditional_difference_from_2023_actual_hours": 1045228,
+      "conditional_change_from_2023_actual_pct": 18.745888461723336,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": true
+    },
+    "2028": {
+      "later_plan_bus_hours": 4414000,
+      "conditional_difference_from_2023_actual_hours": -1161772,
+      "conditional_change_from_2023_actual_pct": -20.83607435885112,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": false
+    },
+    "2029": {
+      "later_plan_bus_hours": 4422000,
+      "conditional_difference_from_2023_actual_hours": -1153772,
+      "conditional_change_from_2023_actual_pct": -20.692596469152612,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": false
+    },
+    "2030": {
+      "later_plan_bus_hours": 4413000,
+      "conditional_difference_from_2023_actual_hours": -1162772,
+      "conditional_change_from_2023_actual_pct": -20.854009095063432,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": false
+    },
+    "2031": {
+      "later_plan_bus_hours": 4416000,
+      "conditional_difference_from_2023_actual_hours": -1159772,
+      "conditional_change_from_2023_actual_pct": -20.80020488642649,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": false
+    },
+    "2032": {
+      "later_plan_bus_hours": 4432000,
+      "conditional_difference_from_2023_actual_hours": -1143772,
+      "conditional_change_from_2023_actual_pct": -20.513249107029484,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": false
+    },
+    "2033": {
+      "later_plan_bus_hours": 4424000,
+      "conditional_difference_from_2023_actual_hours": -1151772,
+      "conditional_change_from_2023_actual_pct": -20.656726996727993,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": false
+    },
+    "2034": {
+      "later_plan_bus_hours": 4426000,
+      "conditional_difference_from_2023_actual_hours": -1149772,
+      "conditional_change_from_2023_actual_pct": -20.62085752430336,
+      "would_meet_fixed_2023_hour_floor_if_boundaries_match": false
+    }
+  },
+  "2033_conditional_hour_gap": -1151772,
+  "boundary_warning": "The 2025 plan's 'Bus' projection and the 2023 actual bus-only total appear comparable but are not proven identical in service accounting. The later plan is not the constant-2023-service comparator; no direct policy score follows from this comparison."
+}

@@ -1,0 +1,40 @@
+{
+  "status": "RETROSPECTIVE_NAMED_PROJECT_SCREEN_NOT_DELIVERIES",
+  "sources": {
+    "2025_plan": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf",
+    "2026_plan": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2026-business-plan-operating-and-capital-budget.pdf"
+  },
+  "2025_plan_named_cng_replacement_by_retirement_cohort": {
+    "2023": 50,
+    "2024": 84,
+    "2025": 30
+  },
+  "2025_plan_named_cng_replacements_total": 164,
+  "2026_plan_236_diesel_replacement_project": {
+    "retiring_diesel": 236,
+    "planned_60ft_diesel": 39,
+    "planned_40ft_inroute_beb": 64,
+    "planned_40ft_depot_beb": 153,
+    "planned_total_replacements": 256,
+    "planned_vehicle_count_ratio": 1.0847457627118644,
+    "gross_program_budget_mcad": 524.709,
+    "warning": "Project budget includes all 256 planned vehicles; it cannot price the 39 diesel buses separately."
+  },
+  "2026_plan_2028_hybrid_replacement_project": {
+    "retiring_hybrids": 27,
+    "planned_40ft_bebs": 31,
+    "planned_vehicle_count_ratio": 1.1481481481481481,
+    "gross_program_budget_mcad": 59.32
+  },
+  "identified_non_electric_planned_replacements_across_2023_2026_retirement_cohorts": 203,
+  "illustrative_39_diesel_early_retirement": {
+    "status": "HISTORICAL_2019_CAD_STRAIGHT_LINE_PROXY_ONLY",
+    "source_life_and_price": "https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf",
+    "assumption": "All 39 planned 60-ft diesel buses enter service at start-2026 and leave at start-2033 after seven years; 17-year useful life; 2019-CAD unit price approximately 1.0m; no resale value included.",
+    "remaining_useful_life_years_at_2033": 10,
+    "unused_capital_proxy_2019_mcad_before_sale": 22.941176470588236,
+    "warning": "Book-style straight-line exposure is not the actual incremental resource cost or a delivered-bus price. Selling/redeploying buses and a true 2023-dollar price change the result."
+  },
+  "interpretation": "The 203 named CNG/diesel vehicles in these plans would need to leave strict all-electric service by 2033 if procured and still operating; they are not verified deliveries and other non-electric programs may exist.",
+  "double_count_warning": "The 2025 plan's 45 articulated BEBs for 39 retiring diesels is an earlier project description. The 2026 plan's 39 articulated diesels within a larger 236-bus project may overlap it. They are not added together."
+}

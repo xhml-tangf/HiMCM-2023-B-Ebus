@@ -24,6 +24,20 @@ as a verified vehicle-level schedule.
 - `src/audit_comparators.py` and `results/comparison_city_audit.json`:
   primary-source Chicago CTA and London TfL 2023 scale checks, kept on their
   own accounting boundaries.
+- `data/processed/translink_2020_update_annual.csv`,
+  `src/audit_2020_program.py` and `results/2020_program_audit.json`:
+  historical 2020 TransLink program awards and nominal cost reconciliation;
+  these planned awards are not 2023 deliveries or the target-year solution.
+- `data/processed/translink_2026_plan_cohorts.csv`,
+  `src/audit_non_electric_lockin.py` and `results/non_electric_lockin_audit.json`:
+  later budget revision and named CNG/diesel replacement exposure before 2033;
+  overlapping project versions are not added together.
+- `data/processed/translink_2025_investment_bus_hours.csv`,
+  `src/audit_service_floor.py` and `results/service_floor_audit.json`:
+  later planned bus hours screened against the preserved 2023 service floor,
+  with the accounting-boundary uncertainty made explicit.
+- `src/plot_service_floor.py` regenerates the corresponding manuscript figure
+  from the processed source table and audited 2023 actual service total.
 - `tests/`: small but discriminating schedule and cost-transfer tests.
 - `results/model_readiness.json`: observed quantities and unresolved gates.
 - `src/compute_reference_scores.py` and `results/cpu_reference_scores.json`:
@@ -48,6 +62,10 @@ To reproduce the current evidence audit, run `python scripts/fetch_sources.py`
 with network access to obtain the official raw sources, then
 `python src/audit_data.py`, `python src/audit_service_actual.py`,
 `python src/run_analysis.py`, `python src/audit_comparators.py`,
+`python src/audit_2020_program.py`,
+`python src/audit_non_electric_lockin.py`,
+`python src/audit_service_floor.py`,
+`python src/plot_service_floor.py`,
 `python src/compute_reference_scores.py`, `python src/audit_capital_cohorts.py`,
 and `python -m pytest tests -q`. Source URLs and SHA-256 hashes are in
 `data/sources.json`. Raw source PDFs/CSVs are kept out of the Git repository;
