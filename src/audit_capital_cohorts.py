@@ -75,6 +75,21 @@ def calculate() -> dict:
         if row["useful_life_year"] == 2026
         and row["planned_replacement_class"] == "articulated_60ft"
     )
+    standard_2023 = next(
+        row for row in electric
+        if row["useful_life_year"] == 2023
+        and row["planned_replacement_count"] == 57
+    )
+    budget = standard_2023["project_gross_budget_2025_report_mcad"]
+    grant_cases = [
+        {
+            "hypothetical_grant_share_pct": int(100 * fraction),
+            "gross_project_budget_mcad": budget,
+            "grant_transfer_mcad_if_entire_budget_eligible": budget * fraction,
+            "agency_payment_mcad_if_entire_budget_eligible": budget * (1 - fraction),
+        }
+        for fraction in (0, 0.25, 0.5)
+    ]
     with (ROOT / "data/processed/translink_2020_depot_ratios.csv").open(
         newline="", encoding="utf-8"
     ) as handle:
@@ -118,6 +133,13 @@ def calculate() -> dict:
             }
             for row in electric
         ],
+        "illustrative_57_beb_project_grant_cases": {
+            "status": "HYPOTHETICAL_FUNDING_ARITHMETIC_NOT_INCREMENTAL_COST_SCORE",
+            "assumption": "The entire CAD 106.846m gross program budget is grant-eligible; actual eligibility and timing are not verified.",
+            "reported_external_funding_mcad": standard_2023["external_funding_2025_report_mcad"],
+            "cases": grant_cases,
+            "warning": "The source-reported external funding is a later budget item, not the problem's maximum-50% counterfactual; a normal-renewal comparator is still needed for an economic score.",
+        },
         "illustrative_2026_articulated_depot_electric_heat_stress": {
             "source": DEPOT_SOURCE,
             "assumptions": "2020 Appendix C-2 depot ratios for 660-kWh BEBs with fuel heat, multiplied by the source's approximate 1.10 electric-only-winter-heat fleet factor; all 39 retirement buses hypothetically allocated to one depot",

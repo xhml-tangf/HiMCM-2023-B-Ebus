@@ -65,6 +65,32 @@
       "project_gross_budget_mcad_per_planned_beb": 3.037
     }
   ],
+  "illustrative_57_beb_project_grant_cases": {
+    "status": "HYPOTHETICAL_FUNDING_ARITHMETIC_NOT_INCREMENTAL_COST_SCORE",
+    "assumption": "The entire CAD 106.846m gross program budget is grant-eligible; actual eligibility and timing are not verified.",
+    "reported_external_funding_mcad": 102.498,
+    "cases": [
+      {
+        "hypothetical_grant_share_pct": 0,
+        "gross_project_budget_mcad": 106.846,
+        "grant_transfer_mcad_if_entire_budget_eligible": 0.0,
+        "agency_payment_mcad_if_entire_budget_eligible": 106.846
+      },
+      {
+        "hypothetical_grant_share_pct": 25,
+        "gross_project_budget_mcad": 106.846,
+        "grant_transfer_mcad_if_entire_budget_eligible": 26.7115,
+        "agency_payment_mcad_if_entire_budget_eligible": 80.1345
+      },
+      {
+        "hypothetical_grant_share_pct": 50,
+        "gross_project_budget_mcad": 106.846,
+        "grant_transfer_mcad_if_entire_budget_eligible": 53.423,
+        "agency_payment_mcad_if_entire_budget_eligible": 53.423
+      }
+    ],
+    "warning": "The source-reported external funding is a later budget item, not the problem's maximum-50% counterfactual; a normal-renewal comparator is still needed for an economic score."
+  },
   "illustrative_2026_articulated_depot_electric_heat_stress": {
     "source": "https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf",
     "assumptions": "2020 Appendix C-2 depot ratios for 660-kWh BEBs with fuel heat, multiplied by the source's approximate 1.10 electric-only-winter-heat fleet factor; all 39 retirement buses hypothetically allocated to one depot",
