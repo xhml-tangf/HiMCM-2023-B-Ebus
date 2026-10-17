@@ -92,6 +92,13 @@ counterfactual target; TransLink's own target is 2040.
 2023 public route data account for 98.035% of independently reported actual
 fixed-route bus service hours. The official 2023 actual bus totals are
 5,575,772 hours, 106,868,324 service-km and 5,715,791,401 capacity-km.
+The ratio of capacity-km to service-km is 53.48 passenger spaces per bus-km.
+Official historical vehicle-capacity definitions explain 96.56% of positive
+2023 aggregate load cells through six clear capacity clusters, but not
+individual trip vehicle assignments. The official 2023 revenue-fleet
+operating-GHG total is 112,591 tonnes CO2e across all modes; it is not a
+bus-only or life-cycle value. June 2023 agency slides add BEB, charger and
+depot screening prices, with planning rather than awarded-project status.
 Official reports give 280 trolley/BEB buses combined in December 2023 and
 299 CNG buses, while a same-day official article describes the electric split
 as about 275 trolleys and five BEBs. A February notice says 262 trolleys,

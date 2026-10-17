@@ -30,6 +30,7 @@ SOURCES = {
     "translink_2020_fleet_plan.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf",
     "translink_2021_fleet_update.pdf": "https://www.translink.ca/-/media/translink/media-releases/2021/january/translink_low_carbon_fleet_transition_plan_update_2021_01_18.pdf",
     "translink_2023_june_board.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2023/june/23-06-22-public-board-meeting-package---for-posting.pdf",
+    "translink_2023_june_technology_update.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf",
     "translink_2024_playbook_summary.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf",
     "translink_2024_business_plan.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2024-business-plan-operating-and-capital-budget-summary.pdf",
     "translink_2025_business_plan.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf",

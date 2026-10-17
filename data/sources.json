@@ -1,5 +1,5 @@
 {
-  "retrieved_utc": "2026-10-17T10:59:09.751102+00:00",
+  "retrieved_utc": "2026-10-17T11:01:54.790382+00:00",
   "sources": [
     {
       "file": "translink_tspr_2023_annual.csv",
@@ -70,6 +70,13 @@
       "status": "cached",
       "bytes": 5175639,
       "sha256": "6921d8cc018450304f9dac4bc3882f67613eb1c2846c39701b8082ff0226623d"
+    },
+    {
+      "file": "translink_2023_june_technology_update.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf",
+      "status": "unavailable: ConnectionError: HTTPSConnectionPool(host='www.translink.ca', port=443): Max retries exceeded with url: /-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.translink.ca', port=443): Failed to resolve 'www.translink.ca' ([Errno 11001] getaddrinfo failed)\"))",
+      "bytes": null,
+      "sha256": null
     },
     {
       "file": "translink_2024_playbook_summary.pdf",
