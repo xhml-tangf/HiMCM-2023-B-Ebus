@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{fancyhdr}
+\usepackage[section]{placeins}
 \newcommand{\teamnumber}{00000} % Replace only after receiving the official control number.
 \pagestyle{fancy}
 \fancyhf{}
@@ -40,6 +41,8 @@ Problem Chosen\\
 
 \textbf{Critical technology and planning finding.} A historical TransLink battery-bus scenario uses 0.02 L/km of fuel for cabin heat and fails the problem's strict fully electric definition. At 68,000 km/year, that is 1,360 L of heater fuel. Later named budgets also plan 203 CNG/diesel replacement vehicles across distinct cohorts; if delivered, those vehicles require accelerated withdrawal for a strict 2033 endpoint.\cite{fleet2020,budget2025,budget2026}
 
+\textbf{Solved planning result.} London's registration cohorts yield a numerical ten-year benchmark: retaining the original available fleet by body type, a 17-year chassis-life scenario needs annual renewal capacity of at least 776 original vehicle positions; a 14-year scenario needs 977. Both integer-program optima equal an independently derived deadline bound. Route and charging checks determine the additional electric vehicles required.
+
 \textbf{Recommendation.} Treat 2033 as an accelerated target to test against TransLink's published 2040 goal. Obtain the missing block and depot data, retain trolley service, convert proven standard-bus blocks first, and require all-electric winter trials before committing double-deck and shuttle blocks.\cite{fleet2020,playbook2024}
 
 \textbf{Keywords:} electric bus; fleet replacement; service preservation; charging; life-cycle cost.
@@ -49,7 +52,7 @@ Problem Chosen\\
 \newpage
 
 \section{Problem definition and study boundary}
-The competition asks for environmental and financial consequences, a ten-year transition in three metropolitan areas, and a decision-maker letter.\cite{problem} We take 31 December 2023 as the decision baseline and plan purchases and construction in 2024--2033. Documents published in 2024--2026 inform later sensitivity checks, but their realized purchases are not backdated into 2023 decisions. Metro Vancouver is the primary case; Chicago and London test transferability.
+The competition asks for environmental and financial consequences, a ten-year transition in three metropolitan areas, and a decision-maker letter.\cite{problem} We take 31 December 2023 as Vancouver's decision baseline and plan purchases and construction in 2024--2033. Documents published in 2024--2026 inform later sensitivity checks, but their realized purchases are not backdated into 2023 decisions. Metro Vancouver is the primary case; its census metropolitan area had 2,642,825 residents in 2021, exceeding the problem's 500,000-person threshold.\cite{vancouvercensus} Chicago and London test transferability using their separately dated 2023 fleet snapshots; London's March audit is not treated as December stock.
 
 The problem's definition requires propulsion \emph{and accessories} to use a zero-emission electric source. Thus a battery bus with a diesel auxiliary heater is not fully electric in this study. TransLink's historical depot-BEB cost table assumes precisely such a heater at 0.02 L/km; its 1.4 kWh/km electricity figure cannot be carried over unaltered to an all-electric winter bus. Renewable diesel, renewable natural gas, hybrid and hydrogen fuel-cell buses may reduce emissions, but do not satisfy this strict endpoint. Already electric trolleybuses do, provided their operations remain feasible. TransLink itself has a 2040 zero-emission target, making the requested 2033 date an accelerated counterfactual.\cite{fleet2020,playbook2024}
 
@@ -63,16 +66,16 @@ The decision unit is year $y$, bus class $k$, depot $d$, trip $i$, vehicle $v$ a
 2023 observation & Value & Source/status\\\midrule
 Published route identifiers & 191 & official CSV\cite{annualcsv}\\
 Route service hours & 5,466,190.5 & official CSV\cite{annualcsv}\\
-Actual fixed-route bus hours, excluding SeaBus & 5,575,772 & 2025 plan, 2023 actual\cite{budget2025}\\
+Actual fixed-route bus hours, excluding SeaBus & 5,575,772 & 2023 actual\cite{budget2025}\\
 Actual fixed-route bus service km & 106,868,324 & same source\cite{budget2025}\\
 Actual fixed-route bus capacity km & 5,715,791,401 & same source\cite{budget2025}\\
 Route-file share of exact bus hours & 98.035\% & calculated\\
 Route/time-bin frequency rows; nonmissing & 6,261; 6,041 & official CSV\cite{servicecsv}\\
 Route/direction/time-bin load rows; nonmissing & 11,659; 9,371 & official CSV\cite{loadcsv}\\
 Revenue-fleet operating GHG, all modes & 112,591 t CO$_2$e & 2023 report\cite{accountability}\\
-CNG fleet count & 299 & 2023 accountability report\cite{accountability}\\
+CNG fleet count & 299 & 2023 report\cite{accountability}\\
 Trolley plus battery-electric buses & 280 & Dec 2023 notice\cite{noticeDec}\\
-Battery-electric buses & about 5 & Dec 2023 official article\cite{buzzerDec}\\
+Battery-electric buses & about 5 & Dec 2023\cite{buzzerDec}\\
 Trolley buses & 262 & Feb 2023 notice\cite{notice}\\
 \bottomrule
 \end{tabular}
@@ -204,10 +207,44 @@ The later approved 2025 Investment Plan's A9 table projects 4.424 million bus se
 \caption{Conditional service-floor screen. The later plan is a retrospective comparison, not a valid fixed-2023-service electrification scenario.}
 \end{figure}
 
-Chicago's federal 2023 agency profile supplies a firmer second-city baseline: 1,895 buses available for maximum service, 1,307 operated at maximum service, mean bus-fleet age 11.2 years, 45,411,226 bus revenue miles (73.082 million km), and 4,970,515 bus revenue hours. Its reported 45.0\% spare percentage uses the operated maximum as denominator; this is an agency-wide accounting measure, not a depot-specific spare constraint. The same profile reports USD 971.019 million of bus operating expenses across all bus service, not an electric-conversion cost. A June 2023 CTA notice announced 22 additional BEBs, but announced purchases are not a year-end electric fleet inventory.\cite{ctaprofile,ctanotice} The model transfers, but Chicago still requires local winter energy, electrical tariffs, demand charges, garages and block-level data. London's 31 March 2023 audit is stronger on fleet ages: 8,643 contracted buses, including 950 electric and 20 hydrogen; 6,198 are double-deck.\cite{tflaudit} Thus 7,693 were not battery electric at the audit date, although that is a count to \emph{remove from non-electric service}, not a one-for-one electric purchase obligation. London also needs exact blocks and depot power. Hydrogen is excluded by the problem definition.
+Chicago's federal 2023 agency profile supplies 1,895 buses available for maximum service, 1,307 operated at maximum service, mean fleet age 11.2 years, 45,411,226 bus revenue miles (73.082 million km), and 4,970,515 bus revenue hours. The reported 45.0\% spare percentage uses the operated maximum as denominator. USD 971.019 million of operating expenses covers all bus service.\cite{ctaprofile} Separately, the DOT's 2023 year-end age inventory contains 1,576 standard and 299 articulated buses, totaling 1,875; the weighted reported ages give 11.208 years. Of these, 1,056 are at least 13 years old and 539 at least 16. Under an assumed 17-year chassis-life cap and fixed availability, at least 539 original slots already require renewal in 2024; under a 14-year cap this rises to 1,056. These are scenario deadlines, not asserted CTA retirement rules. They expose the need for substantial initial capacity even before a ten-year uniform conversion is considered. Year-end inventory and maximum-service availability are distinct measures and are not silently interchanged.\cite{ctaage}
+
+CTA's matched fuel table reports 13,573,058 US gallons of diesel and 479,980 kWh for battery buses. Dividing each by its own reported propulsion mileage gives 0.825 L/km and 1.733 charging kWh/km, respectively. These are annual matched-table diagnostics; its combined mileage is only 85.55\% of the profile's bus revenue mileage, requiring reconciliation before extrapolation. It cannot establish winter peak energy or accessory demand.\cite{ctaenergy} The June 2023 notice's expansion from an implied 25 electric buses to 47 involves a 22-bus option valued at USD 26.2 million; receipt of the original 23-bus base order is explicit. This supplies dated stock and contract evidence, while year-end electric stock, garages, tariffs and exact duties remain unresolved.\cite{ctanotice}
+
+London's 31 March 2023 audit contains 8,643 contracted buses: 2,445 single-deck and 6,198 double-deck, including 950 electric and 20 hydrogen. Thus 7,693 original positions require conversion under a fixed fleet-availability policy. The source's detailed Tables 7--8 reconcile by registration year, body and propulsion. Its Table 2's printed single-deck total of 2,447 and 2017 subtotal of 341 conflict with those detailed tables; we use the reconciled 2,445 and 339, preserving the published total 8,643. Hydrogen remains outside the strict electric endpoint.\cite{tflaudit}
+
+\subsection{A solved age-cohort planning benchmark}
+For London, an original \emph{fleet slot} denotes one available vehicle position of the same body type. Renewing a slot requires suitable electric capacity; the operational model may require additional vehicles. Let $n_c$ be the observed size and $b_c$ the registration year of cohort $c$, and choose a maximum chassis-life scenario $L$. These caps are assumptions for sensitivity, not asserted TfL rules. A non-electric cohort must renew by $d_c=\min(2033,\max(2024,b_c+L))$. An existing electric cohort enters the renewal model only when $b_c+L\le2033$; the 2013 Routemaster retains its chassis vintage despite its 2022 electric retrofit.\cite{tflaudit}
+
+Let integer $a_{cy}$ allocate original slots to renewal years $2024\le y\le d_c$. We first minimize the required peak annual renewal capacity $M$:
+\begin{equation}
+ \min M:\qquad \sum_{y\le d_c}a_{cy}=n_c,\quad
+ \sum_c a_{cy}\le M,\quad a_{cy}\in\mathbb Z_+.
+\end{equation}
+With $M$ fixed, a second solve minimizes $\sum_{c,y}(d_c-y)a_{cy}$, avoiding avoidable early renewal. Among ties, a third solve prioritizes earlier non-electric conversion without changing either optimum. This is an executed integer program using the public cohort counts, not an assumed uniform purchase schedule.
+
+An independent certificate follows from $D_t=\sum_{c:d_c\le t}n_c$:
+\begin{equation}
+ M^\star=\max_{t=2024,\ldots,2033}
+ \left\lceil\frac{D_t}{t-2023}\right\rceil.
+\end{equation}
+Necessity follows because all $D_t$ slots must fit into $t-2023$ annual capacities. Sufficiency follows by allocating the earliest-deadline cohorts first when every cohort may renew from 2024. Later technical release dates, class-specific production limits and charging construction can increase the requirement; the certificate concerns this cohort submodel.
+
+\input{tables/london_cohort_sensitivity.tex}
+All three scenarios were solved on CPU using SciPy's HiGHS mixed-integer solver; every optimization phase reaches zero gap and the peak optima match the analytic bound. With a 17-year cap, 7,693 non-electric slots convert and 66 existing electric slots renew, requiring peak capacity 776 per year. The 14-year scenario requires 977 in its busiest year and renews 247 existing electric slots. The 12-year cap creates a 2,568-slot catch-up obligation in 2024 because much of the observed fleet is already near or above that cap. It is a stress case, not a recommended lifetime.
+
+\input{tables/london_cohort_annual.tex}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/london_cohort_roadmap.png}
+\caption{Executed London age-cohort roadmaps under fixed availability. The displayed numbers require compatible electric capacity, all-electric accessories, adequate chargers and trip checks before they become actual bus-purchase quantities.}
+\end{figure}
+The 17-year scenario advances 21,908 slot-years relative to the assumed chassis-life deadlines, compared with 334 under the 14-year scenario. These are remaining-service exposures, not monetary losses: resale and ordinary-renewal cash flows are needed to value them. The benchmark provides a numerical ten-year procurement-capacity test while retaining the operational feasibility gate.
 
 \section{Sensitivity, limitations and completion gate}
-Once baseline data arrive, solve a scenario grid over grant shares 0/25/50\%, delivered bus price, energy price and demand charges, grid intensity, electric winter kWh/km, battery degradation and replacement, payload loss, charger failures, depot construction delays, natural retirement and discount rate. Vary stakeholder trade-off weights only after computing the feasible cost--GHG frontier. Report intervals and threshold values: the lowest grid capacity, highest winter energy use or longest commissioning delay at which the 2033 target fails. State the exact block, depot, lost capacity and extra vehicle/charger need for every failure.
+The executed London life-cap experiments show why retirement policy matters: reducing the cap from 17 to 14 years raises required peak annual renewal capacity by 25.9\%, while reducing the remaining-service exposure attributed to accelerated 2033 retirement. Chicago's older age profile produces a large first-year renewal condition. These age-only results do not value lost service life or certify winter operation.
+
+For the unresolved operational baseline, solve a scenario grid over grant shares 0/25/50\%, delivered bus price, energy price and demand charges, grid intensity, electric winter kWh/km, battery degradation and replacement, payload loss, charger failures, depot construction delays, natural retirement and discount rate. Vary stakeholder trade-off weights only after computing the feasible cost--GHG frontier. Report intervals and threshold values: the lowest grid capacity, highest winter energy use or longest commissioning delay at which the 2033 target fails. State the exact block, depot, lost capacity and extra vehicle/charger need for every failure.
 
 The strongest current limitation is structural, not a lack of algebra: public TransLink time-bin service means cannot reconstruct exact timetabled trips, vehicle blocks, deadhead, energy state or charger concurrency. The 2020 fleet table cannot prove the 2023 age stock. Historical 2019-CAD cost items are not comparable with an unrebased 2023 budget. The environmental inventory requires matched production, infrastructure and electricity boundaries. Filling any of these with unsourced single numbers would turn a result into a guess.
 
@@ -215,35 +252,42 @@ Before a decision-ready submission, three gates must pass: (i) reconstructed ser
 
 \addcontentsline{toc}{section}{References}
 \begin{thebibliography}{99}
+\raggedright
+\setlength{\itemsep}{0.2em}
+\setlength{\parskip}{0pt}
 \bibitem{problem} 2023 HiMCM Problem B, user-provided problem statement.
-\bibitem{notice} TransLink, 2023 public notice, \url{https://www.translink.ca/news/2023/february/translink%20begins%20battery-electric%20bus%20fleet%20expansion}.
-\bibitem{noticeDec} TransLink, renewable diesel and electric fleet notice, 14 December 2023, \url{https://www.translink.ca/news/2023/december/metro%20vancouver%20diesel%20buses%20transitioning%20to%20cleaner%20renewable%20fuel}.
-\bibitem{buzzerDec} TransLink, \emph{TransLink shifts buses from fossil fuels to 100 per cent renewable diesel}, 14 December 2023, \url{https://buzzer.translink.ca/2023/12/translink-shifts-buses-from-fossil-fuels-to-100-per-cent-renewable-diesel/}.
-\bibitem{fleet2020} TransLink, \emph{Low Carbon Fleet Transition Plan}, 2020, \url{https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf}.
-\bibitem{fleetupdate2020} TransLink, \emph{Low Carbon Fleet Transition Plan Update}, December 2020, \url{https://www.translink.ca/-/media/translink/media-releases/2021/january/translink_low_carbon_fleet_transition_plan_update_2021_01_18.pdf}.
-\bibitem{board2023} TransLink, Board meeting package, June 2023, fleet procurement table p.~11, \url{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2023/june/23-06-22-public-board-meeting-package---for-posting.pdf}.
-\bibitem{june2023tech} TransLink, \emph{Zero Emissions Bus Fleet Technology Update}, Mayors' Council public agenda, June 2023, PDF pp.~28--29, \url{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf}.
-\bibitem{budget2025} TransLink, \emph{2025 Business Plan, Operating and Capital Budget Summary}, 2023 actual bus service p.~23 and capital-program details pp.~50--51, \url{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf}.
-\bibitem{budget2026} TransLink, \emph{2026 Business Plan, Operating and Capital Budget}, active capital-program table p.~51, \url{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2026-business-plan-operating-and-capital-budget.pdf}.
-\bibitem{investment2025} TransLink, \emph{Approved 2025 Investment Plan}, Table A9 p.~63, \url{https://www.translink.ca/-/media/translink/documents/plans-and-projects/ten-year-investment-plan/public-consultation/2025-investment-plan.pdf}.
-\bibitem{playbook2024} TransLink, \emph{Zero Emissions Fleet Transition Plan} summary, Mayors' Council agenda, November 2024, \url{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf}.
-\bibitem{icct2024} A.~B. Rebou\c{c}as and A.~Cieplinski, \emph{Quantifying avoided greenhouse gas emissions by e-buses in Latin America: A simplified life-cycle assessment methodology}, ICCT Working Paper, 2024, \url{https://theicct.org/wp-content/uploads/2024/08/ID-118-%E2%80%93-E-bus-radar_final2.pdf}.
-\bibitem{annualcsv} TransLink, 2023 TSPR annual route CSV, \url{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearline.csv}.
-\bibitem{guidelines2018} TransLink, \emph{Transit Service Guidelines}, June 2018, pp.~21, 49, \url{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/transit-oriented-communities/transit-services-guidelines-public-summary.pdf}.
-\bibitem{doubledeck2017} TransLink, \emph{TransLink launches double-decker bus pilot project}, November 2017, \url{https://www.translink.ca/news/2017/november/translink%20launches%20double%20decker%20bus%20pilot%20project}.
-\bibitem{statutory} TransLink, \emph{2023 Statutory Annual Report}, \url{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/statutory_annual_report/2023_statutory_annual_report.pdf}.
-\bibitem{servicecsv} TransLink, 2023 TSPR route/day/season/time-range CSV, \url{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearlinedaytypeseasontimerange.csv}.
-\bibitem{loadcsv} TransLink, 2023 TSPR direction peak-load CSV, \url{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_peakload_yearlinedaytypeseasontimerangedirection.csv}.
-\bibitem{accountability} TransLink, \emph{Accountability Report 2023}, \url{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/accountability_reports/2023/accountability_report_2023.pdf}.
+\bibitem{vancouvercensus} Statistics Canada, \emph{Population and population growth rate of census metropolitan areas}, 2021 Census, released February 2022, \href{https://www150.statcan.gc.ca/n1/daily-quotidien/220209/t002a-eng.htm}{Online source}.
+\bibitem{notice} TransLink, 2023 public notice, \href{https://www.translink.ca/news/2023/february/translink%20begins%20battery-electric%20bus%20fleet%20expansion}{Online source}.
+\bibitem{noticeDec} TransLink, renewable diesel and electric fleet notice, 14 December 2023, \href{https://www.translink.ca/news/2023/december/metro%20vancouver%20diesel%20buses%20transitioning%20to%20cleaner%20renewable%20fuel}{Online source}.
+\bibitem{buzzerDec} TransLink, \emph{TransLink shifts buses from fossil fuels to 100 per cent renewable diesel}, 14 December 2023, \href{https://buzzer.translink.ca/2023/12/translink-shifts-buses-from-fossil-fuels-to-100-per-cent-renewable-diesel/}{Online source}.
+\bibitem{fleet2020} TransLink, \emph{Low Carbon Fleet Transition Plan}, 2020, \href{https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf}{Online source}.
+\bibitem{fleetupdate2020} TransLink, \emph{Low Carbon Fleet Transition Plan Update}, December 2020, \href{https://www.translink.ca/-/media/translink/media-releases/2021/january/translink_low_carbon_fleet_transition_plan_update_2021_01_18.pdf}{Online source}.
+\bibitem{board2023} TransLink, Board meeting package, June 2023, fleet procurement table p.~11, \href{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2023/june/23-06-22-public-board-meeting-package---for-posting.pdf}{Online source}.
+\bibitem{june2023tech} TransLink, \emph{Zero Emissions Bus Fleet Technology Update}, Mayors' Council public agenda, June 2023, PDF pp.~28--29, \href{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf}{Online source}.
+\bibitem{budget2025} TransLink, \emph{2025 Business Plan, Operating and Capital Budget Summary}, 2023 actual bus service p.~23 and capital-program details pp.~50--51, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf}{Online source}.
+\bibitem{budget2026} TransLink, \emph{2026 Business Plan, Operating and Capital Budget}, active capital-program table p.~51, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2026-business-plan-operating-and-capital-budget.pdf}{Online source}.
+\bibitem{investment2025} TransLink, \emph{Approved 2025 Investment Plan}, Table A9 p.~63, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/ten-year-investment-plan/public-consultation/2025-investment-plan.pdf}{Online source}.
+\bibitem{playbook2024} TransLink, \emph{Zero Emissions Fleet Transition Plan} summary, Mayors' Council agenda, November 2024, \href{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf}{Online source}.
+\bibitem{icct2024} A.~B. Rebou\c{c}as and A.~Cieplinski, \emph{Quantifying avoided greenhouse gas emissions by e-buses in Latin America: A simplified life-cycle assessment methodology}, ICCT Working Paper, 2024, \href{https://theicct.org/wp-content/uploads/2024/08/ID-118-%E2%80%93-E-bus-radar_final2.pdf}{Online source}.
+\bibitem{annualcsv} TransLink, 2023 TSPR annual route CSV, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearline.csv}{Online source}.
+\bibitem{guidelines2018} TransLink, \emph{Transit Service Guidelines}, June 2018, pp.~21, 49, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/transit-oriented-communities/transit-services-guidelines-public-summary.pdf}{Online source}.
+\bibitem{doubledeck2017} TransLink, \emph{TransLink launches double-decker bus pilot project}, November 2017, \href{https://www.translink.ca/news/2017/november/translink%20launches%20double%20decker%20bus%20pilot%20project}{Online source}.
+\bibitem{statutory} TransLink, \emph{2023 Statutory Annual Report}, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/statutory_annual_report/2023_statutory_annual_report.pdf}{Online source}.
+\bibitem{servicecsv} TransLink, 2023 TSPR route/day/season/time-range CSV, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearlinedaytypeseasontimerange.csv}{Online source}.
+\bibitem{loadcsv} TransLink, 2023 TSPR direction peak-load CSV, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_peakload_yearlinedaytypeseasontimerangedirection.csv}{Online source}.
+\bibitem{accountability} TransLink, \emph{Accountability Report 2023}, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/accountability_reports/2023/accountability_report_2023.pdf}{Online source}.
 \bibitem{rogge} M. Rogge et al., \emph{Applied Energy} 211 (2018), 282--295, doi:10.1016/j.apenergy.2017.11.051.
 \bibitem{pelletier} S. Pelletier et al., \emph{Transportation Research C} 109 (2019), 174--193, doi:10.1016/j.trc.2019.10.012.
-\bibitem{gkiotsalitis} K. Gkiotsalitis et al., \emph{European Journal of Operational Research} 306 (2023), 189--206, \url{https://research.utwente.nl/files/352082622/1-s2.0-S0377221722005707-main.pdf}.
-\bibitem{usdot} U.S. Department of Transportation, \emph{What Is a Benefit-Cost Analysis?}, \url{https://www.transportation.gov/grants/dot-navigator/what-is-a-benefit-cost-analysis}.
-\bibitem{bcgrid} Government of British Columbia, \emph{Electricity emission factors}, \url{https://www2.gov.bc.ca/gov/content/environment/climate-change/data/electricity}.
-\bibitem{ghgmodule} Housing, Infrastructure and Communities Canada, \emph{Zero Emission Transit Fund: GHG+ Guidance Module}, Annex D, \url{https://housing-infrastructure.canada.ca/zero-emissions-trans-zero-emissions/ghg-modules-ges-eng.html}.
-\bibitem{ctaprofile} Federal Transit Administration, \emph{2023 Annual Agency Profile: Chicago Transit Authority}, NTD ID 50066, pp.~1--2, \url{https://www.transit.dot.gov/sites/fta.dot.gov/files/transit_agency_profile_doc/2023/50066.pdf}.
-\bibitem{ctanotice} CTA, \emph{CTA to Nearly Double Electric Bus Fleet}, June 2023, \url{https://www.transitchicago.com/cta-to-nearly-double-electric-bus-fleet/}.
-\bibitem{tflaudit} TfL, \emph{Bus Fleet Audit, 31 March 2023}, \url{https://content.tfl.gov.uk/fleet-annual-audit-report-31-march-2023.pdf}.
+\bibitem{gkiotsalitis} K. Gkiotsalitis et al., \emph{European Journal of Operational Research} 306 (2023), 189--206, \href{https://research.utwente.nl/files/352082622/1-s2.0-S0377221722005707-main.pdf}{Online source}.
+\bibitem{usdot} U.S. Department of Transportation, \emph{What Is a Benefit-Cost Analysis?}, \href{https://www.transportation.gov/grants/dot-navigator/what-is-a-benefit-cost-analysis}{Online source}.
+\bibitem{bcgrid} Government of British Columbia, \emph{Electricity emission factors}, \href{https://www2.gov.bc.ca/gov/content/environment/climate-change/data/electricity}{Online source}.
+\bibitem{ghgmodule} Housing, Infrastructure and Communities Canada, \emph{Zero Emission Transit Fund: GHG+ Guidance Module}, Annex D, \href{https://housing-infrastructure.canada.ca/zero-emissions-trans-zero-emissions/ghg-modules-ges-eng.html}{Online source}.
+\bibitem{ctaprofile} Federal Transit Administration, \emph{2023 Annual Agency Profile: Chicago Transit Authority}, NTD ID 50066, pp.~1--2, \href{https://www.transit.dot.gov/sites/fta.dot.gov/files/transit_agency_profile_doc/2023/50066.pdf}{Online source}.
+\bibitem{ctaage} U.S. Department of Transportation, \emph{NTD Vehicles: Age Distribution}, 2023 CTA records, NTD ID 50066, retrieved October 2026, \href{https://data.transportation.gov/d/6abt-uhgq}{Online source}.
+\bibitem{ctaenergy} U.S. Department of Transportation, \emph{NTD Fuel and Energy}, 2023 CTA directly operated bus records, retrieved October 2026, \href{https://data.transportation.gov/d/8ehq-7his}{Online source}.
+\bibitem{ctanotice} CTA, \emph{CTA to Nearly Double Electric Bus Fleet}, June 2023, \href{https://www.transitchicago.com/cta-to-nearly-double-electric-bus-fleet/}{Online source}.
+\bibitem{tflaudit} TfL, \emph{Bus Fleet Audit, 31 March 2023}, \href{https://content.tfl.gov.uk/fleet-annual-audit-report-31-march-2023.pdf}{Online source}.
+\bibitem{aicodex} OpenAI, \emph{Codex} (GPT-6), research, calculation and drafting assistance, October 2026. See the appended AI Use Report.
 \end{thebibliography}
 
 \newpage
@@ -269,6 +313,6 @@ Fleet Transition Study Team
 
 \newpage
 \section*{AI Use Report}
-OpenAI Codex (GPT-6) was used to locate independently published research and primary agency data, extract and audit the supplied PDFs and official CSVs, check source years and units, design the mathematical framework, implement and test the accompanying calculation code, and draft and format this report. The assistant did not use or search for original 2023 HiMCM solution submissions. Source values, years and limitations are recorded in the parameter ledger and source-hash manifest. The team must verify every numerical claim against the original cited material before any competition submission. No city-wide optimization result was generated where underlying vehicle and trip data were unavailable.
+OpenAI Codex (GPT-6) was used to locate independently published research and primary agency data, extract and audit the supplied PDFs and official CSVs, check source years and units, design the mathematical framework, implement and test the accompanying calculation code, solve the cohort scenarios, and draft and format this report.\cite{aicodex} The assistant did not use or search for original 2023 HiMCM solution submissions. Source values, years and limitations are recorded in the parameter ledger and source-hash manifest. The team must verify every numerical claim against the original cited material before any competition submission. No operational city-wide optimization result was generated where underlying vehicle and trip data were unavailable.
 
 \end{document}

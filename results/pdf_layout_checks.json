@@ -1,0 +1,17 @@
+{
+  "pdf_sha256": "e6590848f053bfb64f9a245662e07a2744a3df1494091e75dd6c43ab31022b9e",
+  "total_pages": 18,
+  "solution_pages": 17,
+  "ai_report_pages": [
+    18
+  ],
+  "external_source_hyperlinks_verified": 29,
+  "summary_pages": [
+    1
+  ],
+  "letter_pages": [
+    17
+  ],
+  "issues": [],
+  "note": "Geometry/pagination checks and rendered pages do not certify research completeness; visual inspection is recorded separately."
+}

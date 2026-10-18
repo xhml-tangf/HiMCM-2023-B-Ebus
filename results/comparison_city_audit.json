@@ -13,8 +13,11 @@
     "bus_revenue_km": 73082284.095744,
     "bus_revenue_hours": 4970515,
     "bus_operating_expense_2023_usd": 971019017,
+    "year_end_inventory_from_age_table": 1875,
+    "june_2023_electric_stock_implied_by_47_minus_22_notice": 25,
+    "detail_audit_file": "results/cta_2023_detail_audit.json",
     "missing": [
-      "2023 electric propulsion split",
+      "31 December 2023 electric propulsion split",
       "vehicle blocks",
       "garage capacities"
     ]
@@ -29,6 +32,7 @@
     "double_deck_buses": 6198,
     "single_deck_buses": 2445,
     "electric_share_pct": 10.991553858613907,
+    "cohort_benchmark_file": "results/london_cohort_roadmap.json",
     "missing": [
       "2023 route blocks",
       "depot power",

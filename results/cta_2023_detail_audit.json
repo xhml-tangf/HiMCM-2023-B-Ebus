@@ -1,0 +1,39 @@
+{
+  "status": "OBSERVED_AGE_STOCK_AND_MATCHED_ENERGY_ROWS_SCOPE_CHECK_REQUIRED",
+  "age_source": "https://data.transportation.gov/d/6abt-uhgq",
+  "energy_source": "https://data.transportation.gov/d/8ehq-7his",
+  "filter": "NTD ID 50066; Report Year 2023; Bus and Articulated Bus only",
+  "year_end_bus_inventory": 1875,
+  "standard_bus_inventory": 1576,
+  "articulated_bus_inventory": 299,
+  "weighted_average_age_years": 11.207637333333333,
+  "age_13_or_older_buses": 1056,
+  "age_16_or_older_buses": 539,
+  "conditional_2024_renewal_bounds_by_chassis_life_cap": {
+    "12": {
+      "definitely_age_due_slots": 1086,
+      "possibly_age_due_slots": 1086
+    },
+    "14": {
+      "definitely_age_due_slots": 1056,
+      "possibly_age_due_slots": 1056
+    },
+    "17": {
+      "definitely_age_due_slots": 539,
+      "possibly_age_due_slots": 539
+    }
+  },
+  "profile_vehicles_available_for_maximum_service": 1895,
+  "profile_available_minus_year_end_inventory": 20,
+  "diesel_gallons_2023": 13573058.0,
+  "diesel_litres_2023": 51379613.69811547,
+  "battery_charging_electricity_kwh_2023": 479980.0,
+  "matched_diesel_miles": 38675964.0,
+  "matched_battery_bus_miles": 172049.0,
+  "diesel_litres_per_matched_km": 0.8254690644631808,
+  "charging_kwh_per_matched_battery_bus_km": 1.733493044714445,
+  "sum_fuel_table_bus_miles": 38848013.0,
+  "profile_revenue_miles": 45411226,
+  "fuel_table_miles_share_of_profile_revenue_miles": 0.8554715743635726,
+  "warning": "The year-end inventory (1875) and VAMS (1895) are distinct reported measures; do not add or silently reconcile them. Fuel-table mileage is smaller than the agency profile's revenue mileage, so its energy intensities are matched-table diagnostics only until scopes are resolved. These are annual fleet averages, not winter-peak guarantees or full life-cycle factors."
+}

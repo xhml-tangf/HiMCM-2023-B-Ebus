@@ -1,6 +1,13 @@
 {
-  "retrieved_utc": "2026-10-17T11:01:54.790382+00:00",
+  "retrieved_utc": "2026-10-18T07:55:28.881196+00:00",
   "sources": [
+    {
+      "file": "statistics_canada_2021_cma_population.html",
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/220209/t002a-eng.htm",
+      "status": "downloaded",
+      "bytes": 35737,
+      "sha256": "38ebb50616c33d1fa9965cb0c1986fa28abf5792889037e725dba3f812b5ae45"
+    },
     {
       "file": "translink_tspr_2023_annual.csv",
       "url": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearline.csv",
@@ -32,9 +39,9 @@
     {
       "file": "translink_2018_service_guidelines.pdf",
       "url": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/transit-oriented-communities/transit-services-guidelines-public-summary.pdf",
-      "status": "unavailable: ConnectionError: HTTPSConnectionPool(host='www.translink.ca', port=443): Max retries exceeded with url: /-/media/translink/documents/plans-and-projects/managing-the-transit-network/transit-oriented-communities/transit-services-guidelines-public-summary.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.translink.ca', port=443): Failed to resolve 'www.translink.ca' ([Errno 11001] getaddrinfo failed)\"))",
-      "bytes": null,
-      "sha256": null
+      "status": "cached",
+      "bytes": 2382793,
+      "sha256": "af5398eb618cf90b1e07f70fdc03b00973900e7a282af897677d2bd72cc8c9e6"
     },
     {
       "file": "translink_2023_statutory.pdf",
@@ -74,9 +81,9 @@
     {
       "file": "translink_2023_june_technology_update.pdf",
       "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf",
-      "status": "unavailable: ConnectionError: HTTPSConnectionPool(host='www.translink.ca', port=443): Max retries exceeded with url: /-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='www.translink.ca', port=443): Failed to resolve 'www.translink.ca' ([Errno 11001] getaddrinfo failed)\"))",
-      "bytes": null,
-      "sha256": null
+      "status": "cached",
+      "bytes": 5383515,
+      "sha256": "9e188c6db36d9383a2a2bb5ddf3b0d78159e66e3cc091cca36df48427d01085a"
     },
     {
       "file": "translink_2024_playbook_summary.pdf",
@@ -100,6 +107,20 @@
       "sha256": "a27eb023fa82c156e8ee8c73d2928ec268ad89354a503c5a9c7ecd8bc791dd01"
     },
     {
+      "file": "translink_2026_business_plan.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2026-business-plan-operating-and-capital-budget.pdf",
+      "status": "cached",
+      "bytes": 919482,
+      "sha256": "69f2c99474d0e167049f9928bfdc78d36ad364e0db40e7e64eb03c0f83501b4b"
+    },
+    {
+      "file": "translink_2025_investment_plan.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/ten-year-investment-plan/public-consultation/2025-investment-plan.pdf",
+      "status": "cached",
+      "bytes": 3089822,
+      "sha256": "157772c385716c5a786a1e08a19714838bcfe6f0e99b29c39987d440dc1fa857"
+    },
+    {
       "file": "icct_2024_ebus_lca_method.pdf",
       "url": "https://theicct.org/wp-content/uploads/2024/08/ID-118-%E2%80%93-E-bus-radar_final2.pdf",
       "status": "cached",
@@ -112,6 +133,27 @@
       "status": "cached",
       "bytes": 17262685,
       "sha256": "de9c8d164eedea44d2610169e7ed138690f2ee165a0ab182a9feaccaf673b15a"
+    },
+    {
+      "file": "cta_2024_budget.pdf",
+      "url": "https://www.transitchicago.com/assets/1/6/FY24_Budget_Book_ADA_Accessible_Text.pdf",
+      "status": "cached",
+      "bytes": 3775876,
+      "sha256": "7e3b058b41e009a2f837014544fe241afd9261655e358b5333c14d9aa2103654"
+    },
+    {
+      "file": "cta_2023_age_distribution.json",
+      "url": "https://data.transportation.gov/resource/6abt-uhgq.json?%24where=ntd_id%3D%2750066%27%20AND%20report_year%3D%272023%27",
+      "status": "cached",
+      "bytes": 5226,
+      "sha256": "17e4f2c5899e86f7d02180abc3d48bac992137f957f3271c874d52d40ddcb1de"
+    },
+    {
+      "file": "cta_2023_fuel_energy.json",
+      "url": "https://data.transportation.gov/resource/8ehq-7his.json?%24where=ntd_id%3D%2750066%27%20AND%20report_year%3D%272023%27",
+      "status": "cached",
+      "bytes": 1707,
+      "sha256": "7ba4dae40c67b7b23a31bae7434fd9e2d3aa313f6cfdacf8ffb905aead6ecbb5"
     },
     {
       "file": "tfl_2023_bus_fleet_audit.pdf",

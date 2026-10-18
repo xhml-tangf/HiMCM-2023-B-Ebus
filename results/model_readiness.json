@@ -9,12 +9,20 @@
     "actual_2023_bus_service_hours_excluding_seabus": 5575772,
     "actual_2023_bus_service_km_excluding_seabus": 106868324,
     "actual_2023_bus_capacity_km_excluding_seabus": 5715791401,
+    "weighted_capacity_spaces_per_bus_service_km": 53.4844300636735,
+    "positive_route_time_load_cells_matching_historical_capacity_clusters": 9049,
+    "positive_route_time_load_cells_total": 9371,
+    "capacity_class_note": "Aggregate 2018 capacity references explain most 2023 route-time cells, but not individual 2023 bus assignments or candidate electric payload.",
+    "revenue_fleet_2023_operating_ghg_all_modes_t": 112591,
+    "revenue_fleet_2023_scope1_t": 110402,
+    "revenue_fleet_2023_scope2_t": 2189,
     "route_hour_coverage_of_exact_actual_bus_hours": 0.9803468470375044,
     "actual_service_source": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf",
     "route_speed_times_revenue_hours_km_scale": 93740872,
     "distance_status": "OFFICIAL_SERVICE_KM_NOW_AVAILABLE; route speed\u00d7revenue hours remains a separate estimator",
     "dec_2023_trolley_plus_battery_electric_buses": 280,
     "feb_2023_trolley_buses": 262,
+    "jun_2023_battery_electric_buses_technology_presentation": 4,
     "dec_2023_battery_electric_buses_official_blog_approx": 5,
     "dec_2023_trolley_buses_official_blog_approx": 275,
     "dec_2023_battery_electric_buses_conditional_if_feb_trolley_count_unchanged": 18,
@@ -23,6 +31,7 @@
     "fleet_count_sources": [
       "https://www.translink.ca/news/2023/december/metro%20vancouver%20diesel%20buses%20transitioning%20to%20cleaner%20renewable%20fuel",
       "https://www.translink.ca/news/2023/february/translink%20begins%20battery-electric%20bus%20fleet%20expansion",
+      "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf",
       "https://buzzer.translink.ca/2023/12/translink-shifts-buses-from-fossil-fuels-to-100-per-cent-renewable-diesel/",
       "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/accountability_reports/2023/accountability_report_2023.pdf"
     ]
@@ -54,7 +63,8 @@
       "2023 class/age/energy fleet register",
       "2023 exact timetable and block assignments",
       "depot space/grid/commissioning inventory",
-      "class-specific passenger capacities"
+      "per-trip 2023 class/capacity assignments",
+      "candidate electric bus payload and winter accessory energy"
     ]
   },
   "full_city_2033_feasibility": "UNVERIFIED",
@@ -63,6 +73,10 @@
   "full_city_pareto_frontier": null,
   "full_city_yearly_purchase_table": null,
   "separate_reference_case_file": "results/cpu_reference_scores.json",
+  "transfer_case_result_files": {
+    "chicago_2023_age_energy_and_renewal_bound": "results/cta_2023_detail_audit.json",
+    "london_solved_cohort_roadmap": "results/london_cohort_roadmap.json"
+  },
   "per_bus_calculation": {
     "status": "ILLUSTRATIVE_ONLY",
     "price_basis": "2019 CAD; parameters published in the 2020 TransLink plan",

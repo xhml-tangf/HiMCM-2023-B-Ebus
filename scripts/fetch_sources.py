@@ -20,6 +20,7 @@ RAW = ROOT / "data" / "raw"
 MANIFEST = ROOT / "data" / "sources.json"
 
 SOURCES = {
+    "statistics_canada_2021_cma_population.html": "https://www150.statcan.gc.ca/n1/daily-quotidien/220209/t002a-eng.htm",
     "translink_tspr_2023_annual.csv": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearline.csv",
     "translink_tspr_2023_hourly.csv": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearlinedaytypeseasontimerange.csv",
     "translink_tspr_2023_peakload.csv": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_peakload_yearlinedaytypeseasontimerangedirection.csv",
@@ -34,8 +35,13 @@ SOURCES = {
     "translink_2024_playbook_summary.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf",
     "translink_2024_business_plan.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2024-business-plan-operating-and-capital-budget-summary.pdf",
     "translink_2025_business_plan.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf",
+    "translink_2026_business_plan.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2026-business-plan-operating-and-capital-budget.pdf",
+    "translink_2025_investment_plan.pdf": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/ten-year-investment-plan/public-consultation/2025-investment-plan.pdf",
     "icct_2024_ebus_lca_method.pdf": "https://theicct.org/wp-content/uploads/2024/08/ID-118-%E2%80%93-E-bus-radar_final2.pdf",
     "cta_2022_charging_forward.pdf": "https://www.transitchicago.com/assets/1/6/Charging_Forward_Report_2-10-22_%28FINAL%29.pdf",
+    "cta_2024_budget.pdf": "https://www.transitchicago.com/assets/1/6/FY24_Budget_Book_ADA_Accessible_Text.pdf",
+    "cta_2023_age_distribution.json": "https://data.transportation.gov/resource/6abt-uhgq.json?%24where=ntd_id%3D%2750066%27%20AND%20report_year%3D%272023%27",
+    "cta_2023_fuel_energy.json": "https://data.transportation.gov/resource/8ehq-7his.json?%24where=ntd_id%3D%2750066%27%20AND%20report_year%3D%272023%27",
     "tfl_2023_bus_fleet_audit.pdf": "https://content.tfl.gov.uk/fleet-annual-audit-report-31-march-2023.pdf",
 }
 
@@ -60,6 +66,8 @@ def main() -> None:
                     raise ValueError("response is not a PDF")
                 if name.endswith(".csv") and b"," not in data[:200]:
                     raise ValueError("response is not a CSV")
+                if name.endswith(".json"):
+                    response.json()
                 target.write_bytes(data)
                 status = "downloaded"
             except Exception as exc:

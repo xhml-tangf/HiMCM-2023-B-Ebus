@@ -30,6 +30,9 @@ def main() -> None:
         target = SOURCE.parent / graphic
         if not target.is_file():
             errors.append(f"missing figure: {graphic}")
+    for included in re.findall(r"\\input\{([^}]+)\}", text):
+        if not (SOURCE.parent / included).is_file():
+            errors.append(f"missing included source: {included}")
     stack = []
     for action, environment in re.findall(r"\\(begin|end)\{([^}]+)\}", text):
         if action == "begin":

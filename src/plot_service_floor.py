@@ -25,26 +25,22 @@ def main() -> None:
     actual = json.loads((ROOT / "results/actual_service_audit.json").read_text(
         encoding="utf-8"
     ))["bus_totals"]["service_hours"] / 1_000_000
-    fig, ax = plt.subplots(figsize=(7.0, 3.15))
+    plt.rcParams.update({"font.size": 12})
+    fig, ax = plt.subplots(figsize=(6.5, 3.4), constrained_layout=True)
     ax.plot(years, hours_m, color="#146C94", lw=2.2, marker="o", ms=4.7,
-            label="2025 Investment Plan bus hours")
+            label="Later bus-hour plan (2025)")
     ax.axhline(actual, color="#B3541E", lw=1.8, ls="--",
-               label="2023 actual fixed-route bus hours")
+               label="2023 actual bus-service floor")
     idx = years.index(2033)
     ax.annotate("1.152 million hours below\n2023 actual (conditional)",
-                xy=(2033, hours_m[idx]), xytext=(2028.7, 5.05),
+                xy=(2033, hours_m[idx]), xytext=(2029.8, 5.05),
                 arrowprops={"arrowstyle": "->", "color": "#333333", "lw": 1},
-                fontsize=8, ha="center")
+                fontsize=12, ha="center")
     ax.set(xlim=(2024.6, 2034.4), ylim=(3.9, 7.0),
-           xticks=years, ylabel="Annual bus service hours (million)")
-    ax.tick_params(axis="x", labelrotation=45)
+           xticks=[2025, 2027, 2029, 2031, 2033], ylabel="Annual service (million bus hours)")
     ax.grid(axis="y", color="#dddddd", lw=0.6)
     ax.spines[["top", "right"]].set_visible(False)
-    ax.legend(loc="upper right", frameon=False, fontsize=8)
-    fig.text(0.08, 0.015,
-             "Source periods and accounting definitions differ; this is a screening comparison, not a route-feasibility result.",
-             fontsize=7, color="#555555")
-    fig.subplots_adjust(left=0.11, right=0.985, top=0.96, bottom=0.23)
+    ax.legend(loc="upper right", frameon=False, fontsize=12)
     output = ROOT / "paper/figures/service_floor.png"
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output, dpi=220)

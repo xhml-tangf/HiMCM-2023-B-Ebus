@@ -30,7 +30,10 @@ def calculate() -> dict:
         "bus_revenue_km": cta_revenue_miles * 1.609344,
         "bus_revenue_hours": 4_970_515,
         "bus_operating_expense_2023_usd": 971_019_017,
-        "missing": ["2023 electric propulsion split", "vehicle blocks", "garage capacities"],
+        "year_end_inventory_from_age_table": 1875,
+        "june_2023_electric_stock_implied_by_47_minus_22_notice": 25,
+        "detail_audit_file": "results/cta_2023_detail_audit.json",
+        "missing": ["31 December 2023 electric propulsion split", "vehicle blocks", "garage capacities"],
     }
     assert round(cta["system_spare_ratio_vs_operated_pct"], 1) == 45.0
 
@@ -51,6 +54,7 @@ def calculate() -> dict:
         "double_deck_buses": london_double,
         "single_deck_buses": london_single,
         "electric_share_pct": 100 * london_electric / london_total,
+        "cohort_benchmark_file": "results/london_cohort_roadmap.json",
         "missing": ["2023 route blocks", "depot power", "eligible electric replacement specifications"],
     }
     return {

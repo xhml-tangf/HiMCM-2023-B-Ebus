@@ -1,0 +1,10 @@
+# Versions used for the CPU-only results on Python 3.12.
+numpy==2.4.4
+pandas==3.0.2
+scipy==1.18.0
+matplotlib==3.11.0
+requests==2.34.2
+pypdf==6.16.1
+PyMuPDF==1.27.2.3
+Pillow==12.2.0
+pytest==9.1.1

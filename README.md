@@ -25,6 +25,16 @@ as a verified vehicle-level schedule.
 - `src/audit_comparators.py` and `results/comparison_city_audit.json`:
   primary-source Chicago CTA and London TfL 2023 scale checks, kept on their
   own accounting boundaries.
+- `src/audit_cta_2023.py`, `data/processed/cta_2023_age_cohorts.csv`, and
+  `results/cta_2023_detail_audit.json`: CTA's 2023 year-end inventory, age bins
+  and matched fuel/energy diagnostics from the official DOT public API.
+- `data/processed/london_2023_registration_cohorts.csv`,
+  `src/optimize_london_cohorts.py`, and `results/london_cohort_roadmap.json`:
+  executed integer optimization of London's annual age-cohort renewal
+  capacity. Fixed body-type availability is retained; trip and charger
+  feasibility still determine actual electric bus quantities.
+- `src/plot_london_cohorts.py` regenerates the London figure and included TeX
+  result tables directly from the solved roadmap.
 - `data/processed/translink_2020_update_annual.csv`,
   `src/audit_2020_program.py` and `results/2020_program_audit.json`:
   historical 2020 TransLink program awards and nominal cost reconciliation;
@@ -57,29 +67,46 @@ as a verified vehicle-level schedule.
   buses, current technical specifications or trip adequacy.
 - `paper/ebus_transition.tex`: canonical 12-point HiMCM-style LaTeX research
   draft. Set the official team control number at the top before submission.
+- `paper/ebus_transition.pdf`: current research draft captured from that
+  document's built-in editor compilation. It currently has 17 solution pages
+  plus the AI Use Report; the research completion gates below remain open.
+- `scripts/capture_editor_pdf.py` saves that same editor-generated output,
+  without invoking another compiler. `scripts/qa_editor_pdf.py` checks page
+  count, summary/letter length, headers, references and text boundaries, then
+  renders every page for inspection. Build/source hashes are retained in
+  `results/editor_pdf_build.json` and `results/pdf_layout_checks.json`.
 - `paper/archive/legacy_reportlab_preview.pdf`: old, non-compliant 9-point
   preview retained only for provenance; **do not submit or use for format QA**.
 - `research/format_basis.md`: official format rules, exemplar availability,
   fixed style choices and compiler status.
 - `research/`: parameter/source ledger and independent literature notes.
 
+On Python 3.12, install the pinned numerical packages with
+`python -m pip install -r requirements.txt`.
 To reproduce the current evidence audit, run `python scripts/fetch_sources.py`
 with network access to obtain the official raw sources, then
 `python src/audit_data.py`, `python src/audit_service_actual.py`,
-`python src/run_analysis.py`, `python src/audit_comparators.py`,
+`python src/audit_capacity_proxy.py`, `python src/run_analysis.py`,
+`python src/audit_comparators.py`,
+`python src/audit_cta_2023.py`, `python src/optimize_london_cohorts.py`,
+`python src/plot_london_cohorts.py`,
 `python src/audit_2020_program.py`,
 `python src/audit_non_electric_lockin.py`,
 `python src/audit_service_floor.py`,
-`python src/audit_capacity_proxy.py`,
 `python src/plot_service_floor.py`,
 `python src/compute_reference_scores.py`, `python src/audit_capital_cohorts.py`,
 and `python -m pytest tests -q`. Source URLs and SHA-256 hashes are in
 `data/sources.json`. Raw source PDFs/CSVs are kept out of the Git repository;
 the retrieval script reconstructs them, subject to source availability. Run
 `python scripts/check_tex_format.py` for static manuscript checks. The
-current built-in LaTeX compiler cannot download its uncached Tectonic bundle,
-so no newly compiled PDF is claimed. Compile `paper/ebus_transition.tex` with a working
-LaTeX engine and inspect every page before submission.
+built-in LaTeX compiler successfully compiled the canonical manuscript on
+18 October 2026 after its app-specific cache was populated with the official
+Tectonic resources. `scripts/prepare_latex_cache.py` can prefetch missing
+resources into a specified existing v33 compiler cache without producing a
+separate PDF. The current draft PDF has been saved and its page overviews,
+summary, baseline table, London result table and letter have been inspected.
+This is an intermediate research draft; final research completion and an
+updated complete-manuscript review remain required before submission.
 
 ## Boundary
 
@@ -106,9 +133,15 @@ as about 275 trolleys and five BEBs. A February notice says 262 trolleys,
 so the exact December electric split is unresolved. Later budgets reveal
 partial retirement cohorts. Exact
 vehicle blocks, depot electrical limits and a complete 2023 class/age/depot
-register remain unresolved. The city-wide schedule, scores, Pareto frontier
+register remain unresolved. The Vancouver city-wide schedule, scores, Pareto frontier
 and numeric purchase table are therefore `UNVERIFIED`/null in
 `results/model_readiness.json`. The 2019-CAD 40-ft comparisons and 2025
 capital-program audit are explicitly conditional/retrospective. Entering
 real trip and site data into `check_schedule` is required before any full-city
 solution can be called service-feasible.
+
+London now has a solved age-cohort planning benchmark. For assumed chassis
+life caps of 12, 14 and 17 years, the minimum peak annual renewal capacities
+are 2,568, 977 and 776 original fleet slots, respectively; all match an
+independent mathematical lower bound. These are conditional fleet-availability
+results and do not replace winter, route or charging certification.
