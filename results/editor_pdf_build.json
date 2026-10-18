@@ -1,9 +1,9 @@
 {
   "producer": "OpenAI Codex app-owned Tectonic 0.17.0 using the editor cache; the built-in editor compiler returned success for the same source",
-  "pdf_sha256": "4d14dd32157a9729b2d0918ec5fb5dce6cefc48ab3b53bbfdee97e6ac80e1d81",
-  "main_tex_sha256": "94549095070e8aeaaab0e66a016b70e4b641371a83b20bf531c98ab64b09e0a5",
+  "pdf_sha256": "e5115eb4d9314c0a3d0e6b4f1c5466497ffe7f5b75c8a8b587cbae08f7ec55a1",
+  "main_tex_sha256": "f71071b28e6c1bfb2fc03f89a0c1cab6e058348b70a01ca0f5eb21c4c97561b6",
   "project_source_files_sha256": {
-    "ebus_transition.tex": "94549095070e8aeaaab0e66a016b70e4b641371a83b20bf531c98ab64b09e0a5",
+    "ebus_transition.tex": "f71071b28e6c1bfb2fc03f89a0c1cab6e058348b70a01ca0f5eb21c4c97561b6",
     "figures/block_range_stress.png": "23c0873f48caa3b3f1876b8557e04fa458f1385c65cf7417110a142841f4b904",
     "figures/charging_tariff_bounds.png": "9e75100acd2a152f6e0d119048b9d2748502143ca8c4861fd1d9d437f2b8d235",
     "figures/london_cohort_roadmap.png": "a70d684a099fdafe36b186981b29b1d97e65126ccaa1336d4daf79869523ada8",
@@ -14,7 +14,7 @@
     "tables/depot_scale.tex": "3b458a367a3589183b4b22b8653f9d6a7dfe2e25be641bd9179b147248114496",
     "tables/london_cohort_annual.tex": "abc6c2a52c149f946f1aa68c2ed31f729c34e39382e7438584bda64713ec001c",
     "tables/london_cohort_sensitivity.tex": "0cd8b5fa3d389689b9b29544a41bedd80a8714256a8f6dfd24f0f78c563eee16",
-    "tables/three_city_roadmap.tex": "d270ee619def2ee622db67506ddf8fb9160b78464ffe4db1280c920d21a4e0a0",
+    "tables/three_city_roadmap.tex": "9292abeacb422216280fc42df660af61c8b339684fb868232422349a430b94d4",
     "tables/vancouver_environment_scenarios.tex": "fc12e1e0c73855a19bdcd63c1234b7fba40ba7604e70f53f04329f300848ba48",
     "tables/vancouver_transition_scenarios.tex": "b0447d2198c6c11726f08abbbccd0ab3ebb9a68045989c038806e499bf0a7fb4",
     "tables/vancouver_uncertainty.tex": "ddd69f7e9dda1677db3da57fdbe858f6b2ffcaf1e48269ce10d8f1944ebc4c38"

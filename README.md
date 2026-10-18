@@ -223,7 +223,9 @@ The class-specific full-fleet core bound is CAD 4.712 billion against CAD
 2.692 billion, or -75.0%; the high class envelope is CAD 5.260 billion and
 -95.5%. This includes 1,647 route BEBs, 262 one-for-one trolley renewals,
 57 double-decks and 189 community shuttles; it retains the shared depot once
-and gives 35.3--84.0% environmental reduction. The
-project still lacks a 2023 physical age/depot register, firm site power and
+and gives 35.3--84.0% environmental reduction. The reported grant cases cover
+incremental conversion capital; if the common trolley renewal is also
+grant-eligible, the 50% class case becomes -0.5%. The project still lacks a
+2023 physical age/depot register, firm site power and
 as-operated duties, so the certified citywide solution and complete
 life-cycle score remain `UNVERIFIED`.

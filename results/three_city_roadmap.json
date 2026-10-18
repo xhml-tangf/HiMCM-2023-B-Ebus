@@ -67,7 +67,7 @@
     {
       "year": 2026,
       "vancouver_beb_purchases": 165,
-      "vancouver_electric_vehicle_purchases": 203,
+      "vancouver_electric_vehicle_purchases": 204,
       "vancouver_electric_stock_end": 776,
       "vancouver_conventional_stock_end": 1010,
       "chicago_ev_replacements": 185,
@@ -106,7 +106,7 @@
     {
       "year": 2029,
       "vancouver_beb_purchases": 165,
-      "vancouver_electric_vehicle_purchases": 202,
+      "vancouver_electric_vehicle_purchases": 201,
       "vancouver_electric_stock_end": 1271,
       "vancouver_conventional_stock_end": 575,
       "chicago_ev_replacements": 185,

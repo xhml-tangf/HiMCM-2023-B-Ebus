@@ -163,7 +163,13 @@ one-for-one trolley renewals, retires 1,445 conventional buses, and ends at
 1,927 electric/zero conventional assets. The
 1,419
 positions are a transparent scaling of 1,630 generic non-deck positions after
-removing the 107-request shuttle allowance; they are not a garage roster. See
+removing the 107-request shuttle allowance; they are not a garage roster. Grant
+cases apply to incremental route-conversion capital only. The common trolley
+renewal is excluded because it is required on both paths. If the same common
+renewal is also grant-eligible, the 50% class agency score improves to -0.5%.
+The trolley cash-flow uses 188 standard vehicles over 2024--28, one 2026 pilot,
+and 73 articulated vehicles over 2028--29. Price envelopes span 2021--2026
+nominal CAD and are not rebased. See
 `results/vancouver_full_fleet_bound.json`.
 
 The 432,768-cell Cartesian assumption grid includes the 1,711--1,733 fleet

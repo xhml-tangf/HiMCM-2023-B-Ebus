@@ -43,6 +43,10 @@ def test_full_fleet_bound_reconciles_and_covers_named_classes():
     ) < 1e-9
     assert [x["grant_fraction"] for x in central["grant_cases"]] == [0.0, 0.25, 0.5]
     assert central["grant_cases"][2]["agency_pv_cad"] < central["grant_cases"][0]["agency_pv_cad"]
+    assert "Common trolley replacement is excluded" in central["grant_scope"]
+    common_grants = central["grant_cases_with_common_trolley_capital"]
+    assert common_grants[2]["agency_pv_cad"] < central["grant_cases"][2]["agency_pv_cad"]
+    assert -1.0 < common_grants[2]["agency_economic_score_vs_baseline_pct"] < 0.0
 
 
 def test_full_fleet_environment_boundary_is_ordered():

@@ -34,7 +34,7 @@ def main() -> None:
     heavy_positions = int((1406 - 189) * 1634 / 1401)
     existing_beb = 18
     heavy_purchases = heavy_positions - existing_beb
-    heavy_standard_share = (1446 - 101) / ((1446 - 101) + 295)
+    heavy_standard_share = (1446 - 107) / ((1446 - 107) + 295)
     project_heavy_unit = (
         heavy_standard_share * (106_846_000 / 57)
         + (1 - heavy_standard_share) * 3_037_000
@@ -57,9 +57,11 @@ def main() -> None:
     # Existing trolleys must be renewed even though their propulsion is already
     # electric. These costs occur in both the renewal and electric scenarios.
     trolley_standard_schedule = allocate(188, list(range(2024, 2029)))
-    trolley_articulated_schedule = allocate(74, [2028, 2029])
+    trolley_pilot_schedule = {2026: 1}
+    trolley_articulated_schedule = allocate(73, [2028, 2029])
     trolley_standard_unit = 414_600_000.0 / 188
-    trolley_articulated_unit = (182_900_000.0 + 3_550_000.0) / 74
+    trolley_pilot_unit = 3_550_000.0
+    trolley_articulated_unit = 182_900_000.0 / 73
 
     cases = []
     for name, heavy_unit in (("low", 1_200_000.0), ("central", 1_200_000.0),
@@ -105,6 +107,7 @@ def main() -> None:
             )
         trolley_capex = {
             y: trolley_standard_schedule.get(y, 0) * trolley_standard_unit
+            + trolley_pilot_schedule.get(y, 0) * trolley_pilot_unit
             + trolley_articulated_schedule.get(y, 0) * trolley_articulated_unit
             for y in years
         }
@@ -138,6 +141,9 @@ def main() -> None:
         trolley_articulated_residual_pv, trolley_articulated_residual = vehicle_residual_pv(
             trolley_articulated_schedule, trolley_articulated_unit
         )
+        trolley_pilot_residual_pv, trolley_pilot_residual = vehicle_residual_pv(
+            trolley_pilot_schedule, trolley_pilot_unit
+        )
         base_cash = {
             y: baseline_heavy_capex[y] + baseline_shuttle_capex[y]
             + baseline_om[y] + trolley_capex[y]
@@ -147,6 +153,7 @@ def main() -> None:
             base_residual.get(2033, 0.0)
             + trolley_standard_residual.get(2033, 0.0)
             + trolley_articulated_residual.get(2033, 0.0)
+            + trolley_pilot_residual.get(2033, 0.0)
         )
         plan_cash = {
             y: heavy_vehicle[y] + deck_vehicle[y] + shuttle_vehicle[y]
@@ -159,6 +166,7 @@ def main() -> None:
             + shuttle_residual.get(2033, 0.0)
             + trolley_standard_residual.get(2033, 0.0)
             + trolley_articulated_residual.get(2033, 0.0)
+            + trolley_pilot_residual.get(2033, 0.0)
         )
         base_pv = pv(base_cash)
         plan_pv = pv(plan_cash)
@@ -188,12 +196,14 @@ def main() -> None:
                 + sum(shuttle_vehicle.values()) + infrastructure
             ),
             "common_trolley_capital_nominal_cad": (
-                trolley_standard_unit * 188 + trolley_articulated_unit * 74
+                trolley_standard_unit * 188
+                + trolley_articulated_unit * 73 + trolley_pilot_unit
             ),
             "total_modeled_capital_nominal_cad": (
                 sum(heavy_vehicle.values()) + sum(deck_vehicle.values())
                 + sum(shuttle_vehicle.values()) + infrastructure
-                + trolley_standard_unit * 188 + trolley_articulated_unit * 74
+                + trolley_standard_unit * 188
+                + trolley_articulated_unit * 73 + trolley_pilot_unit
             ),
             "baseline_gross_pv_cad": base_pv,
             "plan_gross_pv_cad": plan_pv,
@@ -214,6 +224,7 @@ def main() -> None:
                 "plan_residual": heavy_residual_pv + deck_residual_pv + shuttle_residual_pv,
                 "common_trolley_replacement_residual": (
                     trolley_standard_residual_pv + trolley_articulated_residual_pv
+                    + trolley_pilot_residual_pv
                 ),
             },
             "grant_cases": [
@@ -222,6 +233,22 @@ def main() -> None:
                     "agency_pv_cad": plan_pv - fraction * capital_pv,
                     "agency_economic_score_vs_baseline_pct": 100 * (
                         base_pv - (plan_pv - fraction * capital_pv)
+                    ) / base_pv,
+                }
+                for fraction in (0.0, 0.25, 0.50)
+            ],
+            "grant_eligible_capital_pv_cad": capital_pv,
+            "grant_scope": "Incremental route-conversion capital only. Common trolley replacement is excluded because the same electric renewal is required in the ordinary-renewal comparator.",
+            "grant_cases_with_common_trolley_capital": [
+                {
+                    "grant_fraction": fraction,
+                    "agency_pv_cad": (
+                        plan_pv - fraction * (capital_pv + pv(trolley_capex))
+                    ),
+                    "agency_economic_score_vs_baseline_pct": 100 * (
+                        base_pv - (
+                            plan_pv - fraction * (capital_pv + pv(trolley_capex))
+                        )
                     ) / base_pv,
                 }
                 for fraction in (0.0, 0.25, 0.50)
@@ -248,6 +275,7 @@ def main() -> None:
         trolley_bought = (
             trolley_standard_schedule.get(year, 0)
             + trolley_articulated_schedule.get(year, 0)
+            + trolley_pilot_schedule.get(year, 0)
         )
         ev_bought = beb_bought + trolley_bought
         conventional_retired = (
@@ -296,7 +324,7 @@ def main() -> None:
 
     output = {
         "status": "EXECUTED_CLASS_SPECIFIC_CORE_BOUND_NOT_AWARDED_BID",
-        "pv_basis": "price-mixed screening PV: vehicle/site envelopes span 2021--2025 nominal CAD and are not rebased; the 3% rate is scenario arithmetic",
+        "pv_basis": "price-mixed screening PV: vehicle/site envelopes span 2021--2026 nominal CAD and are not rebased; the 3% rate is scenario arithmetic",
         "method": f"The 1,630 generic non-deck positions are reduced by the 107-request community-shuttle allowance and scaled to {heavy_positions} heavy positions; 18 delivered BEB positions are retained while the approximately five in-service buses are treated as utilisation, not a second asset count.",
         "classes": {
             "heavy_non_deck": heavy_positions,
@@ -347,7 +375,7 @@ def main() -> None:
         },
         "baseline_om_rate_sensitivity": [],
         "boundaries": [
-            "Vehicle prices come from public planning or external procurement envelopes and mix 2021, 2023 and 2024 nominal currencies; they are not rebased to a single bid year.",
+            "Vehicle prices come from public planning or external procurement envelopes and mix 2021--2026 nominal currencies; they are not rebased to a single bid year.",
             f"Shared heavy-bus depot investment is sized from {heavy_positions} heavy positions and retained once. Class-specific charger/site items are added separately, but site power and civil works may still overlap.",
             "The double-deck annual distance is a weekday-share proxy; the shuttle distance is an independently published 2023 actual total.",
             "Shuttle and double-deck manufacturing inventories include battery factors; the shuttle glider mass is not invented.",

@@ -29,6 +29,9 @@ the remaining external-data boundaries; it does not replace the paper.
   versus CAD 2.692 billion (-75.0%);
   25/50% grant scores are -42.8/-10.5%; partial-production emissions
   reduction is 35.3--84.0%.
+- Grant cases cover incremental route-conversion capital. Including the
+  common trolley renewal as grant-eligible would make the 50% class case
+  -0.5%; that alternative is stored in the result JSON.
 - The 1,419-position shared depot is CAD 2.087 billion, not the generic
   1,612-position CAD 2.371-billion depot allocation.
 - Assumption grid: 432,768 distinct cells; the named cell reproduces gross PV,

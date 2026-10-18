@@ -41,6 +41,9 @@ used.
 - Added a 1,419-heavy / 57-deck / 189-shuttle class-specific core envelope
   (CAD 4.712 billion, -75.0%), sizing shared depot capacity from 1,419
   positions and retaining it once.
+- Added common 262-trolley renewal with the 2026 pilot timing and two
+  grant-eligibility scopes: incremental conversion capital (default) or all
+  electric capital (50% class case improves to -0.5%).
 - Added a 432,768-cell joint assumption audit that exactly reproduces the
   named CAD 4.575-billion / -96.4% cell.
 - Quantified fixed-route tailpipe pollution as 126--408 t NOx, 1.11--8.34 t
