@@ -38,6 +38,11 @@ as a verified vehicle-level schedule.
   feasibility still determine actual electric bus quantities.
 - `src/plot_london_cohorts.py` regenerates the London figure and included TeX
   result tables directly from the solved roadmap.
+- `src/analyze_charging_tariffs.py`, `src/plot_charging_tariffs.py`, and
+  `results/charging_tariff_bounds.json`: 243 CPU LP cases and an independently
+  verified site-power crossover under the official April-2023 BC Hydro
+  tariff. These are aggregate charging bounds, with explicit availability
+  and energy assumptions; they do not certify a city-wide fleet schedule.
 - `data/processed/translink_2020_update_annual.csv`,
   `src/audit_2020_program.py` and `results/2020_program_audit.json`:
   historical 2020 TransLink program awards and nominal cost reconciliation;
@@ -71,7 +76,7 @@ as a verified vehicle-level schedule.
 - `paper/ebus_transition.tex`: canonical 12-point HiMCM-style LaTeX research
   draft. Set the official team control number at the top before submission.
 - `paper/ebus_transition.pdf`: current research draft captured from that
-  document's built-in editor compilation. It currently has 17 solution pages
+  document's built-in editor compilation. It currently has 18 solution pages
   plus the AI Use Report; the research completion gates below remain open.
 - `scripts/capture_editor_pdf.py` saves that same editor-generated output,
   without invoking another compiler. `scripts/qa_editor_pdf.py` checks page
@@ -93,6 +98,7 @@ with network access to obtain the official raw sources, then
 `python src/audit_comparators.py`,
 `python src/audit_cta_2023.py`, `python src/optimize_london_cohorts.py`,
 `python src/plot_london_cohorts.py`,
+`python src/analyze_charging_tariffs.py`, `python src/plot_charging_tariffs.py`,
 `python src/audit_2020_program.py`,
 `python src/audit_non_electric_lockin.py`,
 `python src/audit_service_floor.py`,

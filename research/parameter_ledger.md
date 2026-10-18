@@ -79,12 +79,29 @@
 | London optimized annual renewal capacity | life cap 12/14/17 years gives minimum peak 2,568/977/776 original fleet slots per year; total renewals 8,428/7,940/7,759 | 2024--2033, assumed chassis-life scenarios | EXECUTED CONDITIONAL MODEL | `src/optimize_london_cohorts.py`; all non-electric slots converted by 2033, same-body availability retained, existing EVs renewed when age-due. Zero integer-program gap; matches independent cumulative-deadline bound. These are fleet-slot planning counts, not route-feasible purchase quantities or asserted TfL life rules |
 | Exact 2023 TransLink trips, vehicle blocks and depots | route/time-bin records available; 2023 GTFS archived by [Transitland](https://www.transit.land/feeds/f-c28-nstranslinkca), but historic ZIP download requires professional/enterprise API access | 2023 | PARTIAL / MISSING | GTFS could recover exact scheduled trips; GTFS generally lacks vehicle blocks, garage assignment and charging. Ask operator for duty extract |
 | 2023 fleet by class, age, propulsion, depot | 280 electric combined, 299 CNG and 2023 procurement status confirmed; full class-age-depot register absent | 2023 | PARTIAL / MISSING | Needed to model retirement, remaining asset value and 2033 target; do not copy 2021 snapshot forward |
-| Real 2023 delivered purchase prices, energy tariffs and charger site costs | not resolved consistently | 2023 CAD | MISSING | Need tender/contract records and BC Hydro tariff/site bills; never blend 2019 nominal CAD with 2023 nominal CAD |
+| Real 2023 delivered purchase prices, energy tariffs and charger site costs | April-2023 BC Hydro tariff and CAD 1.66/L budget diesel assumption now sourced; actual vehicle/site bids and invoices remain missing | 2023 CAD | PARTIAL | Historical tariff JSON and original 2023 budget retained; need site contracts and tender records; never blend 2019 nominal CAD with 2023 nominal CAD |
 | Candidate double-decker and shuttle EV capacity/range in winter | not validated | 2023 technology | MISSING | 2024 TransLink playbook warns that shuttle blocks and double-decker deployment are late/technically difficult |
 | Construction lead times, depot land/space and interconnection capacities | portfolio lead-time range and 2024 site targets known; 2023 site-by-site capacities missing | 2023--24 | PARTIAL / MISSING | Critical to proving a 2033 deadline; 2024 targets are retrospective checks |
 | Battery production, vehicle manufacture, station construction/recycling GHG | ICCT transferable vehicle/battery/maintenance factors now identified; Vancouver bus mass/chemistry, actual replacements and station construction/recycling inventory missing | t CO2e | PARTIAL / MISSING | ICCT paper explicitly **excludes charging infrastructure and bus recycling**; cannot label its narrower result full life-cycle or silently transfer Latin America bus specifications |
 
 ## Treatment rules
+
+### Newly resolved energy-price inputs
+
+| Parameter | Value | Status and scope | Source |
+|---|---|---|---|
+| 2023 diesel purchase-price planning assumption | CAD 1.66/L | Original 2023 budget, not actual delivered price | TransLink 2023 Business Plan p. 17, `translink_2023_energy_budget.csv` |
+| 2023 operational diesel planning volume | 32.17 million L | Broader system revenue/nonrevenue bus and WCE boundary; **not actual fixed-route bus-only use** | Same source |
+| April-2023 RS1600 energy/demand/basic | CAD 0.0614/kWh, 12.50/kW/month, 0.2708/day | Secondary voltage, utility transformation; calendar-month benchmark | BC Hydro approved tariff printed pp. 2-35--2-38 |
+| April-2023 RS1640 energy/demand | CAD 0.0756/kWh, 12.50/kW/month | Demand maximum during 06:00--22:00 only; physical grid power still required overnight; separately metered eligible fleet | Same tariff pp. 2-39--2-42 |
+| April-2023 RS1650 energy/demand | CAD 0.0930/kWh, zero demand fee until 31 March 2026 | Dated transitional schedule, not constant through 2033 | Same tariff pp. 2-43--2-48 |
+| April-2023 RS1901 rider | 1% refund | Applied before taxes/levies; parenthesized negative value verified by official 2023/24 statements | Same tariff p. 6-13 and BC Hydro financial statements note C |
+| Historical all-electric heat/energy projections | 40-ft annual 1.37--2.00 kWh/km, mean 1.60; coldest-day mean 1.79; 60-ft annual/cold means 2.15/2.42 | 2020 modeled onboard propulsion plus cabin heat, not a current vehicle test; do not add heating again to these all-in intensities | TransLink 2020 Appendix C-1, PDF pp. 72--73 |
+| Historical auxiliary demand examples | cooling about 2.5 kW at 27 C; resistance heat up to 14 kW at -18 C | Context-dependent engineering priors, not Vancouver measured fleet accessory profiles | Same source PDF p. 72 |
+
+The tariff parameter JSON records the exact source URL/page numbers and direct
+download limitation. `research/charging_tariff_note.md` explains the solved
+charging relaxation, price-window crossover and remaining fleet-level limits.
 
 1. The old vehicle's historical purchase price is sunk. Book only future operation, potential salvage or lost remaining service value, and new resource costs.
 2. Grant percentages are transfer payments: project gross cost remains fixed; operator net payment falls by eligible grants.

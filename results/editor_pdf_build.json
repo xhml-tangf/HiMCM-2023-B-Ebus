@@ -1,19 +1,21 @@
 {
   "producer": "built-in editor compiler; no separate compilation",
-  "pdf_sha256": "fb18a4e60ff854743f48c642592ed2e1ac9a52ce4062313669005b0df14979d9",
-  "main_tex_sha256": "39d5c87f543fd04b94672f3e53111974c4d25f801682b703ca16d43fcc12bd94",
+  "pdf_sha256": "cde8ea93cd14e1a0f88852d9f38dbcd7066dbae525eb3ebb1979ad48daf7cab0",
+  "main_tex_sha256": "bf8e1a35b583eed641af28a3e64188f10c3ebc341ce437a92fc6198e5a34e0ef",
   "project_source_files_sha256": {
-    "ebus_transition.tex": "39d5c87f543fd04b94672f3e53111974c4d25f801682b703ca16d43fcc12bd94",
+    "ebus_transition.tex": "bf8e1a35b583eed641af28a3e64188f10c3ebc341ce437a92fc6198e5a34e0ef",
+    "figures/charging_tariff_bounds.png": "9e75100acd2a152f6e0d119048b9d2748502143ca8c4861fd1d9d437f2b8d235",
     "figures/london_cohort_roadmap.png": "a70d684a099fdafe36b186981b29b1d97e65126ccaa1336d4daf79869523ada8",
     "figures/service_floor.png": "073aafa80ae1f512da39b3afab577e4e12097ce4d7ad48eeccb0ba90eb0bbaf2",
+    "tables/charging_tariff_bounds.tex": "3cde914d72e2611472f8e6a04b9ca21cfff874679e45f5d35d6dc76b96011a00",
     "tables/london_cohort_annual.tex": "abc6c2a52c149f946f1aa68c2ed31f729c34e39382e7438584bda64713ec001c",
     "tables/london_cohort_sensitivity.tex": "0cd8b5fa3d389689b9b29544a41bedd80a8714256a8f6dfd24f0f78c563eee16"
   },
-  "pages_including_ai_report": 18,
+  "pages_including_ai_report": 19,
   "ai_report_pages": [
-    18
+    19
   ],
   "letter_heading_pages": [
-    17
+    18
   ]
 }

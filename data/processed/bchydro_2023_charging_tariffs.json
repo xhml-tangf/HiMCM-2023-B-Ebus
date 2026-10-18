@@ -1,0 +1,41 @@
+{
+  "source_url": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-scheduling/bulletins/2023/2023_08_03_BCUC_EXEC_TRFF_PGS.pdf",
+  "effective_date": "2023-04-01",
+  "verification": "Read official PDF via web text extraction on 2026-10-18; direct local download returned HTTP 403; no local PDF hash is asserted.",
+  "currency": "CAD at 2023 tariff snapshot",
+  "meter_configuration": "Secondary voltage, utility-supplied transformation; separately metered charging, no other site loads",
+  "basic_cad_per_day": 0.2708,
+  "rate_rider_fraction": -0.01,
+  "rate_rider_source": "RS 1901 revision 10, printed p. 6-13, PDF p. 223; corroborated as a 1% refund by BC Hydro 2023/24 annual financial statements note C",
+  "monthly_minimum_fraction_of_prior_winter_demand_charge": 0.5,
+  "prior_winter_period": "Highest demand charge billed wholly within November-March during previous 11 billing periods",
+  "rates": {
+    "1600": {
+      "energy_cad_per_kwh": 0.0614,
+      "demand_cad_per_kw_month": 12.5,
+      "demand_clock_hours": [0, 24],
+      "printed_pages": "2-35 to 2-38",
+      "pdf_pages_one_based": [162, 163, 164, 165],
+      "eligibility": "Billing demand at least 150 kW, or annual energy above 550000 kWh; General Service in Rate Zone I"
+    },
+    "1640": {
+      "energy_cad_per_kwh": 0.0756,
+      "demand_cad_per_kw_month": 12.5,
+      "demand_clock_hours": [6, 22],
+      "printed_pages": "2-39 to 2-42",
+      "pdf_pages_one_based": [166, 167, 168, 169],
+      "eligibility": "Separately metered fleet vehicles/vessels operated by customer, maximum demand at least 150 kW, Rate Zone I"
+    },
+    "1650_pre_2026_04": {
+      "energy_cad_per_kwh": 0.093,
+      "demand_cad_per_kw_month": 0,
+      "demand_clock_hours": [0, 24],
+      "printed_pages": "2-43 to 2-48",
+      "pdf_pages_one_based": [170, 171, 172, 173, 174, 175],
+      "eligibility": "Separately metered fleet vehicles/vessels operated by customer, maximum demand at least 150 kW, Rate Zone I",
+      "warning": "Zero demand rate ends 2026-03-31 under this historical schedule. Subsequent transition and 2032 termination require dated tariffs; do not extend 0% demand to 2033."
+    }
+  },
+  "benchmark_exclusions": ["taxes and levies", "primary-voltage/transformation discounts", "grid connection capital", "charger capital and maintenance", "future tariff changes", "actual vehicle blocks", "winter seasonal variation"],
+  "source_crosscheck_url": "https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/government-finances/public-accounts/2023-24/sup-e/bc-hydro-fs-2023-24.pdf"
+}

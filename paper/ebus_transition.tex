@@ -37,11 +37,11 @@ Problem Chosen\\
 
 \textbf{Model.} A multi-year fleet replacement model links purchases and retirements to exact trip and charging feasibility. Each candidate must satisfy vehicle-class compatibility, departure times, combined passenger capacity, winter battery reserve, deadhead travel, spare buses and depot electrical limits. Gross discounted cost is kept separate from agency payment after 0\%, 25\% or 50\% grants. Environmental scoring uses matched life-cycle greenhouse-gas boundaries. Only feasible candidates belong on the cost--emissions Pareto frontier.
 
-\textbf{Observed result.} Official 2023 route data contain 191 route identifiers and 5,466,190.5 service hours. An independent report of 2023 actual operations gives 5,575,772 fixed-route bus hours, 106,868,324 service km and 5,715,791,401 capacity km after SeaBus is excluded; route hours cover 98.035\% of the exact bus total. December reporting identifies 280 trolley and battery-electric buses together, but an official article describes that split as approximately 275 and five; the 2023 accountability report identifies 299 CNG buses. The time-bin data are not exact trips or vehicle blocks. A complete 2023 vehicle age/depot register and site power record remain unavailable. City-wide 2033 feasibility and Pareto scores remain \emph{unverified}.\cite{budget2025,noticeDec,buzzerDec,accountability}
+\textbf{Observed result.} Official route data contain 191 routes and 5,466,190.5 hours, covering 98.035\% of independently reported 2023 fixed-route bus hours. Actual service totals are 106,868,324 km and 5,715,791,401 capacity km after SeaBus is excluded. December reporting identifies 280 trolley/BEB buses combined; exact vehicle ages, blocks and site power remain unresolved. City-wide 2033 feasibility and Pareto scores remain \emph{unverified}.\cite{budget2025,noticeDec}
 
 \textbf{Critical technology and planning finding.} A historical TransLink battery-bus scenario uses 0.02 L/km of fuel for cabin heat and fails the problem's strict fully electric definition. At 68,000 km/year, that is 1,360 L of heater fuel. Later named budgets also plan 203 CNG/diesel replacement vehicles across distinct cohorts; if delivered, those vehicles require accelerated withdrawal for a strict 2033 endpoint.\cite{fleet2020,budget2025,budget2026}
 
-\textbf{Solved planning result.} London's registration cohorts yield a numerical ten-year benchmark: retaining the original available fleet by body type, a 17-year chassis-life scenario needs annual renewal capacity of at least 776 original vehicle positions; a 14-year scenario needs 977. Both integer-program optima equal an independently derived deadline bound. Route and charging checks determine the additional electric vehicles required.
+\textbf{Solved planning result.} London's registration cohorts yield a numerical ten-year benchmark: retaining the original available fleet by body type, a 17-year chassis-life scenario needs annual renewal capacity of at least 776 original vehicle positions; a 14-year scenario needs 977. Both integer-program optima equal an independently derived deadline bound. Route and charging checks determine additional vehicles. Separately, 243 charging LP cases show how grid capacity changes tariff choice: a conditional 100-distance-equivalent case needs at least 4.140 MW for an eight-hour window; its overnight electricity bill is 32.96\% below general service, before capital.
 
 \textbf{Recommendation.} Treat 2033 as an accelerated target to test against TransLink's published 2040 goal. Obtain the missing block and depot data, retain trolley service, convert proven standard-bus blocks first, and require all-electric winter trials before committing double-deck and shuttle blocks.\cite{fleet2020,playbook2024}
 
@@ -193,6 +193,27 @@ The 2020 update provides a useful \emph{published-program arithmetic check}. Its
 
 The historical depot analysis supplies a direct \emph{winter feasibility stress test}. With 660-kWh articulated batteries and fuel heaters, it projected depot-dependent replacement ratios of 1.13--1.55 and warned that electric-only heat could require roughly 10\% more buses. Applied mechanically to the later capital project's 39 retiring articulated diesels, $\lceil39(1.10)r_d\rceil$ gives 49--67 BEBs across hypothetical depot allocations, compared with its 45 planned depot-charged BEBs. The 4--22 difference is a \emph{historical-technology sensitivity}, not a measured shortage: the 39 actual depot assignments, 2026 energy specifications and block schedules are unknown. It identifies a concrete winter trial and procurement question before certifying the strict 2033 endpoint.\cite{fleet2020,budget2025}
 
+\subsection{Charging tariffs and the value of firm power}
+The original 2023 budget assumes diesel at CAD 1.66/L; this is a planning price, not an actual invoice. Its 32.17-million-L operational volume includes a broader system boundary and is not treated as fixed-route bus consumption.\cite{budget2023} BC Hydro's April-2023 tariff supplies energy, monthly demand and daily basic charges. RS1640 bills peak demand only during 06:00--22:00; RS1650's zero demand fee ends in March 2026 under that historical schedule. We therefore distinguish billed peak from physical grid power and do not extrapolate the temporary concession through 2033.\cite{bctariff2023}
+
+For daily grid energy $E$, available charging hours $T$, site limit $P$, and rate-specific billed hours $T_j$, solve
+\begin{equation}
+ \min M_j:\quad \sum_{t\in T}p_t\Delta t=E,\quad
+ 0\le p_t\le P,\quad p_t\le M_j\ (t\in T_j).
+\end{equation}
+Power is zero outside $T$. If $h_0$ available hours are outside the billing window and $h_1>0$ are inside, the sharp lower bound is $M_j\ge\max\{0,(E-h_0P)/h_1\}$. Physical feasibility also requires $E\le(h_0+h_1)P$; a wholly nonbilled feasible window gives $M_j=0$. The executed CPU LP matches this independent bound in every feasible case. A second stage minimizes physical peak at the optimal billed peak. Monthly bills include energy, basic and demand charges, the prior-winter eleven-period minimum-bill floor, and the 1\% rider refund; taxes and capital are excluded.
+
+We normalize to 100 \emph{distance-equivalent units}, each at the historical 68,000 km/year reference. These are not an observed fleet or a one-for-one replacement count. Historical onboard energy of 1.37--2.0 kWh/km, assumed charging efficiencies of 85/90/95\%, three common return windows and 2.5/3.5/5-MW site limits give 243 scenarios. Annual energy is spread evenly across 365 days; this relaxation does not certify winter energy, battery capacity, charger-port occupancy or actual bus availability. A meter-measured intensity would not be divided by efficiency again.\cite{fleet2020}
+
+\input{tables/charging_tariff_bounds.tex}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/charging_tariff_bounds.png}
+\caption{Physical charging-power bounds and conditional tariff bills. The left panel uses 90\% charging efficiency; the right uses the central eight-hour case. A zero billed peak still requires 4.140 MW of physical power.}
+\end{figure}
+
+In the central case, an eight-hour window needs at least 4.140 MW, and RS1640 saves 32.96\% of the RS1600 electricity bill. At 3.5 MW, eight-hour-only charging is impossible under the declared energy requirement. Extending availability to 20:00--06:00 restores aggregate feasibility, but RS1640 then costs CAD 1.285 million/year versus CAD 1.227 million under RS1600. The bills cross at 3.598 MW; two separate LP solutions confirm this threshold. Between 3.312 and 4.140 MW, each extra firm kW saves CAD 594/year under RS1640 in this fixed-price, fixed-window case, before paying for the upgrade. This quantifies an infrastructure contribution through feasible service and avoided bills, without crediting construction expenditure as a second benefit. Individual vehicle certification and dated future tariffs remain necessary before using these bounds in a purchasing decision.
+
 \section{Conditional 2024--2033 roadmap and transfer}
 \begin{longtable}{@{}p{0.09\linewidth}p{0.62\linewidth}p{0.22\linewidth}@{}}
 \toprule Year & Decision gate and work package & Release condition\\\midrule\endhead
@@ -264,9 +285,11 @@ Before a decision-ready submission, three gates must pass: (i) reconstructed ser
 \addcontentsline{toc}{section}{References}
 \begin{thebibliography}{99}
 \raggedright
-\setlength{\itemsep}{0.2em}
+\setlength{\itemsep}{0.1em}
 \setlength{\parskip}{0pt}
 \bibitem{problem} 2023 HiMCM Problem B, user-provided problem statement.
+\bibitem{budget2023} TransLink, \emph{2023 Business Plan, Operating and Capital Budget}, pp.~16--17, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2023_business_plan_operating_and_capital_budget.pdf}{Online source}.
+\bibitem{bctariff2023} BC Hydro, \emph{Executed tariff pages, effective 1 April 2023}, RS1600/1640/1650 and RS1901, pp.~2-35--2-48 and 6-13, \href{https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-scheduling/bulletins/2023/2023_08_03_BCUC_EXEC_TRFF_PGS.pdf}{Online source}.
 \bibitem{vancouvercensus} Statistics Canada, \emph{Population and population growth rate of census metropolitan areas}, 2021 Census, released February 2022, \href{https://www150.statcan.gc.ca/n1/daily-quotidien/220209/t002a-eng.htm}{Online source}.
 \bibitem{notice} TransLink, 2023 public notice, \href{https://www.translink.ca/news/2023/february/translink%20begins%20battery-electric%20bus%20fleet%20expansion}{Online source}.
 \bibitem{noticeDec} TransLink, renewable diesel and electric fleet notice, 14 December 2023, \href{https://www.translink.ca/news/2023/december/metro%20vancouver%20diesel%20buses%20transitioning%20to%20cleaner%20renewable%20fuel}{Online source}.
@@ -317,13 +340,13 @@ We recommend an audited 2023 vehicle and trip-block register, followed by all-el
 
 Evaluate each proposed purchase against ordinary fleet renewal with identical service. Report total project resource cost separately from TransLink's payments after 0\%, 25\% and 50\% grants. Present both lifetime greenhouse-gas emissions and local tailpipe pollution; report battery and infrastructure manufacturing separately. Retain negative economic scores if the cleaner option costs more. A grant can improve affordability without erasing its resource cost.
 
-The decisive next step is to make the operating data available to the planning team. If winter range, vehicle payload or depot interconnection prevents any 2033 duty from being fully electric, disclose the precise gap and the additional vehicle, charger or construction condition needed. This gives the region a credible decision, even if the deadline itself proves infeasible.
+Appraise electrical capacity and tariffs jointly: a zero billed nighttime peak still requires physical grid capacity. Our charging bounds show that a constrained site can reverse the preferred tariff. The decisive next step is to make the operating data available to the planning team. If winter range, vehicle payload or depot interconnection prevents any 2033 duty from being fully electric, disclose the precise gap and the additional vehicle, charger or construction condition needed. This gives the region a credible decision, even if the deadline itself proves infeasible.
 
 Sincerely,\\
 Fleet Transition Study Team
 
 \newpage
 \section*{AI Use Report}
-OpenAI Codex (GPT-6) was used to locate independently published research and primary agency data, extract and audit the supplied PDFs and official CSVs, check source years and units, design the mathematical framework, implement and test the accompanying calculation code, solve the cohort scenarios, and draft and format this report.\cite{aicodex} The assistant did not use or search for original 2023 HiMCM solution submissions. Source values, years and limitations are recorded in the parameter ledger and source-hash manifest. The team must verify every numerical claim against the original cited material before any competition submission. No operational city-wide optimization result was generated where underlying vehicle and trip data were unavailable.
+OpenAI Codex (GPT-6) was used to locate independently published research and primary agency data, extract and audit the supplied PDFs and official CSVs, check source years and units, design the mathematical framework, implement and test the accompanying calculation code, solve the cohort scenarios and charging-power LPs, and draft and format this report.\cite{aicodex} The assistant did not use or search for original 2023 HiMCM solution submissions. Source values, years and limitations are recorded in the parameter ledger and source-hash manifest. The team must verify every numerical claim against the original cited material before any competition submission. No operational city-wide optimization result was generated where underlying vehicle and trip data were unavailable.
 
 \end{document}

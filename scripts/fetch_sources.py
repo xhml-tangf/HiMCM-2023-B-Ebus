@@ -20,6 +20,9 @@ RAW = ROOT / "data" / "raw"
 MANIFEST = ROOT / "data" / "sources.json"
 
 SOURCES = {
+    "bchydro_2023_24_financial_statements.pdf": "https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/government-finances/public-accounts/2023-24/sup-e/bc-hydro-fs-2023-24.pdf",
+    "bchydro_2023_approved_tariff.pdf": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-scheduling/bulletins/2023/2023_08_03_BCUC_EXEC_TRFF_PGS.pdf",
+    "translink_2023_business_plan.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2023_business_plan_operating_and_capital_budget.pdf",
     "statistics_canada_2021_cma_population.html": "https://www150.statcan.gc.ca/n1/daily-quotidien/220209/t002a-eng.htm",
     "translink_tspr_2023_annual.csv": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearline.csv",
     "translink_tspr_2023_hourly.csv": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearlinedaytypeseasontimerange.csv",

@@ -1,10 +1,31 @@
 {
-  "retrieved_utc": "2026-10-18T07:55:28.881196+00:00",
+  "retrieved_utc": "2026-10-18T08:33:23.024335+00:00",
   "sources": [
+    {
+      "file": "bchydro_2023_24_financial_statements.pdf",
+      "url": "https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/government-finances/public-accounts/2023-24/sup-e/bc-hydro-fs-2023-24.pdf",
+      "status": "downloaded",
+      "bytes": 871660,
+      "sha256": "f92f6231ef73779ece242e1e281e1a2796d4c52f5f5e01323136575ed3005816"
+    },
+    {
+      "file": "bchydro_2023_approved_tariff.pdf",
+      "url": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-scheduling/bulletins/2023/2023_08_03_BCUC_EXEC_TRFF_PGS.pdf",
+      "status": "unavailable: HTTPError: 403 Client Error: Forbidden for url: https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-scheduling/bulletins/2023/2023_08_03_BCUC_EXEC_TRFF_PGS.pdf",
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "file": "translink_2023_business_plan.pdf",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2023_business_plan_operating_and_capital_budget.pdf",
+      "status": "cached",
+      "bytes": 714458,
+      "sha256": "01a660348ba32aad5074265dc401af61a30aefb404a49d5ee7f065bfa2e46745"
+    },
     {
       "file": "statistics_canada_2021_cma_population.html",
       "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/220209/t002a-eng.htm",
-      "status": "downloaded",
+      "status": "cached",
       "bytes": 35737,
       "sha256": "38ebb50616c33d1fa9965cb0c1986fa28abf5792889037e725dba3f812b5ae45"
     },

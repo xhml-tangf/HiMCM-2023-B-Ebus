@@ -115,6 +115,7 @@ def main() -> None:
         "full_city_pareto_frontier": None,
         "full_city_yearly_purchase_table": None,
         "separate_reference_case_file": "results/cpu_reference_scores.json",
+        "separate_charging_power_tariff_bounds": "results/charging_tariff_bounds.json",
         "transfer_case_result_files": {
             "chicago_2023_age_energy_and_renewal_bound": "results/cta_2023_detail_audit.json",
             "london_solved_cohort_roadmap": "results/london_cohort_roadmap.json",
