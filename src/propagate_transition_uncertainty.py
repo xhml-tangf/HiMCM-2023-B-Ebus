@@ -65,7 +65,7 @@ def main() -> None:
     renewal_numerators = np.arange(9, 12)  # 9/17, 10/17, 11/17
     discount_rates = np.arange(0.015, 0.0501, 0.005)
     cost_bases = np.array([0, 1])  # 0: hardware screen; 1: project envelopes
-    fuel_intensities = np.array([0.302, 0.960, 1.233, 1.580])
+    fuel_intensities_kg_per_km = np.array([0.302, 0.960, 1.233, 1.580])
 
     grid = np.meshgrid(
         fleet_total,
@@ -74,11 +74,11 @@ def main() -> None:
         renewal_numerators,
         discount_rates,
         cost_bases,
-        fuel_intensities,
+        fuel_intensities_kg_per_km,
         indexing="ij",
     )
     (fleet, range_idx, beb_existing, renew_n, rate,
-     cost_basis, fuel_g_per_km) = [x.ravel() for x in grid]
+     cost_basis, fuel_kg_per_km) = [x.ravel() for x in grid]
 
     non_trolley = fleet - 262.0
     nondeck_fleet = non_trolley - 57.0  # 57 inferred 2023 double-deck buses
@@ -140,7 +140,7 @@ def main() -> None:
     beb_production_t = (6.6 * 14_880 + 58 * 335) / 1000.0
     baseline_production = baseline_purchases * diesel_production_t
     plan_production = net_new * beb_production_t
-    baseline_operating = annual_fossil_km * 10 * fuel_g_per_km / 1000.0
+    baseline_operating = annual_fossil_km * 10 * fuel_kg_per_km / 1000.0
     plan_operating = annual_fossil_km * 10 * 0.019 / 1000.0
     baseline_maintenance = annual_fossil_km * 10 * 0.0524 / 1000.0
     plan_maintenance = annual_fossil_km * 10 * 0.0675 / 1000.0
@@ -155,9 +155,9 @@ def main() -> None:
         "paired_range_midpoint_km": range_midpoints[range_idx.astype(int)],
         "existing_beb_retained": beb_existing,
         "natural_renewal_fraction": renew_n / 17.0,
-        "real_discount_rate": rate,
+        "discount_rate": rate,
         "project_envelope_cost_basis": cost_basis,
-        "baseline_fuel_intensity_g_co2e_km": fuel_g_per_km,
+        "baseline_fuel_intensity_kg_co2e_km": fuel_kg_per_km,
         "net_new_battery_positions": net_new,
     }
 
@@ -173,13 +173,13 @@ def main() -> None:
         "status": "EXECUTED_CARTESIAN_ASSUMPTION_SPACE_NOT_A_CONFIDENCE_INTERVAL",
         "cells": int(economic_score.size),
         "grid": {
-            "fleet_2023_total": [1711, 1733, 271, 21000],
+            "fleet_2023_total": {"min": 1711, "max": 1733, "step": 1, "count": 23},
             "paired_range_midpoints_km": range_midpoints.tolist(),
             "existing_beb_retained": [5, 18, 1],
             "natural_renewal_fraction_numerators_over_17": renewal_numerators.tolist(),
-            "real_discount_rates": discount_rates.tolist(),
+            "discount_rates": discount_rates.tolist(),
             "vehicle_cost_bases": {"0": "CAD 1.2m hardware screen", "1": "CAD 1.874m/3.037m project envelopes"},
-            "baseline_fuel_intensity_g_co2e_km": fuel_intensities.tolist(),
+            "baseline_fuel_intensity_kg_co2e_km": fuel_intensities_kg_per_km.tolist(),
         },
         "named_base_case": {
             "gross_pv_cad": base_case["plan_gross_pv_cad"],
@@ -195,13 +195,13 @@ def main() -> None:
         "boundaries": [
             "Infrastructure uses the named CAD 500m/340 Marpole screening ratio; the separate CAD 6.52bn expansion envelope is not mixed into this grid.",
             "Active block requests are not a garage roster; standby buses and unverified site power are outside this propagation.",
-            "The emissions boundary is production, operation and maintenance and excludes depot construction and end-of-life.",
+            "The emissions boundary is a partial production/operation/maintenance inventory and excludes depot construction and end-of-life.",
         ],
     }
     named_mask = (
         (fleet == 1725) & (range_midpoints[range_idx.astype(int)] == 300)
         & (beb_existing == 18) & (renew_n == 10) & np.isclose(rate, 0.03)
-        & (cost_basis == 0) & np.isclose(fuel_g_per_km, 1.233)
+        & (cost_basis == 0) & np.isclose(fuel_kg_per_km, 1.233)
     )
     summary["named_case_grid_reproduction"] = {
         "cases_matched": int(named_mask.sum()),
@@ -219,9 +219,9 @@ def main() -> None:
         "range_midpoint_km": range_midpoints[range_idx.astype(int)],
         "existing_beb_retained": beb_existing,
         "natural_renewal_fraction": renew_n / 17.0,
-        "real_discount_rate": rate,
+        "discount_rate": rate,
         "project_envelope_cost_basis": cost_basis,
-        "baseline_fuel_g_per_km": fuel_g_per_km,
+        "baseline_fuel_kg_per_km": fuel_kg_per_km,
         "net_new_battery_positions": net_new,
         "plan_gross_pv_cad": plan_gross,
         "economic_score_pct": economic_score,

@@ -65,7 +65,7 @@ def main() -> None:
     rows += [r"\midrule", r"\multicolumn{3}{@{}l@{}}{Agency PV and score, grants 0/25/50\% (base plan)}\\",
              f"& {base['grant_cases'][0]['agency_pv_cad']/1e9:.3f} / {base['grant_cases'][1]['agency_pv_cad']/1e9:.3f} / {base['grant_cases'][2]['agency_pv_cad']/1e9:.3f} & "
              f"{base['grant_cases'][0]['agency_economic_score_vs_baseline_pct']:.1f} / {base['grant_cases'][1]['agency_economic_score_vs_baseline_pct']:.1f} / {base['grant_cases'][2]['agency_economic_score_vs_baseline_pct']:.1f}\\\\",
-             r"\bottomrule", r"\end{tabular}", r"\caption{Conditional 2024--2033 policy case. The 1,741 sequential duty requests are scaled to a derived 1,463-bus non-trolley fleet under a 300-km range, giving 1,630 battery positions and 1,612 net purchases after the 18 existing BEBs. The 57 double-deck blocks and 262 trolleys are outside this scored boundary. The baseline renews 10/17 of fossil positions; vehicle residual follows a 17-year life. The high infrastructure envelope includes expansion.}", r"\end{table}"]
+             r"\bottomrule", r"\end{tabular}", r"\caption{Conditional generic non-deck case. The 1,741 sequential duty requests are scaled to a derived 1,406-bus non-double-deck, non-trolley fleet under a 300-km range, giving 1,630 battery positions and 1,612 net purchases after 18 delivered BEBs. This is price-mixed screening arithmetic, not a constant-dollar bid appraisal. The 57 double-deck buses and 262 trolleys are outside this sub-boundary; the class-specific result adds them separately. The baseline renews 10/17 of unknown-age fossil positions, and vehicle residual follows a 17-year life.}", r"\end{table}"]
     (ROOT / "paper/tables/vancouver_transition_scenarios.tex").write_text("\n".join(rows) + "\n", encoding="utf-8")
     env_rows = [r"\begin{table}[htbp]", r"\centering", r"\begin{tabular}{@{}lrrrr@{}}",
                 r"\toprule", r"Baseline operating mix & g CO$_2$e/km & Renewal (kt) & Electric (kt) & Score (\%)\\",
@@ -76,7 +76,7 @@ def main() -> None:
                         f"{case['plan_lifecycle_boundary_t']/1000:.1f} & "
                         f"{case['environment_score_boundary_pct']:.1f}\\\\")
     env_rows += [r"\bottomrule", r"\end{tabular}",
-                 r"\caption{Conditional ten-year emissions over the named boundary: vehicle and battery production, operating energy, and maintenance. Depot/charging construction and end-of-life credits are excluded. The renewable mix assumes 80\% renewable-diesel reduction plus 96\% RNG for CNG; RNG-heavy uses RNG but fossil diesel; weighted mix uses the 2020 propulsion mix.}", r"\end{table}"]
+             r"\caption{Conditional generic non-deck ten-year emissions over the named boundary: vehicle and battery production, operating energy, and maintenance. Depot/charging construction and end-of-life credits are excluded. The renewable mix assumes 80\% renewable-diesel reduction plus 96\% RNG for CNG; RNG-heavy uses RNG but fossil diesel; weighted mix uses the 2020 propulsion mix. This is a separate boundary from the class-specific result.}", r"\end{table}"]
     (ROOT / "paper/tables/vancouver_environment_scenarios.tex").write_text("\n".join(env_rows) + "\n", encoding="utf-8")
 
 

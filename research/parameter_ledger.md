@@ -54,7 +54,7 @@
 | 2024 operating GHG | fossil diesel 1580; renewable diesel 530; fossil hybrid 1420; renewable hybrid 480; fossil CNG 1350; RNG 250; BEB electric heater 19; BEB hybrid diesel heater 28 | g CO2e/vehicle-km | RETROSPECTIVE CHECK | Same ZEFTP Attachment 3, pp. 18--19; operating boundary, not manufacture/lifecycle; renewable fuels excluded from all-electric endpoint |
 | 2024 infrastructure envelope | new depots CAD 3.02bn; existing-depot expansion/electrification CAD 3.50bn; expanded bus infrastructure CAD 220m; up to 175 expansion BEBs CAD 370m | 2024 CAD, screening estimates | RETROSPECTIVE CHECK | Same ZEFTP, p. 13; −50%/+100% screening accuracy, **includes service expansion and multi-site works**, so not assignable directly to the 2023-service conversion cost |
 | Identified retirement cohorts | 57 40-ft diesel-hybrids due 2023; 50 CNG due 2023; 126 40-ft diesel-hybrids due 2024; 30+6 40-ft diesel-hybrids and 9 Orion V coaches due 2025; 39 articulated diesels due 2026 | vehicle counts / expected useful-life year | RETROSPECTIVE CHECK | [TransLink 2025 Business Plan, pp. 50--51](https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf); only identified capital projects, **not** a complete age register or proof of actual withdrawal |
-| Trolley age/renewal cohorts | 188 standard trolleys entered service 2006--07; 73 articulated trolleys expected retirement 2028--29 | vehicle counts / years | RETROSPECTIVE CHECK | Same 2025 Business Plan, pp. 50--51; 188 replacement program and one pilot before 73 articulated replacements; 188+73=261, close to the Feb 2023 262 count but **not** proof of the remaining unit's age or current stock |
+| Trolley age/renewal cohorts | 188 standard trolleys entered service 2006--07; 73 articulated trolleys plus one pilot expected for 2028--29 | vehicle counts / years | RETROSPECTIVE CHECK | TransLink 2025 Business Plan pp.~50--51 and 2026 Business Plan p.~38; the 188 standard plus 74 articulated (73 production + pilot) repair the 2023 count to 262. The common renewal is included in both financial paths. |
 | Identified BEB replacement project quantities | 57 standard BEBs for 57 hybrid retirements (2023 program); 7 standard BEBs for 6 hybrid retirements (2025); 45 articulated BEBs for 39 diesel retirements (2026) | vehicles / named program | RETROSPECTIVE CHECK | Same 2025 Business Plan; planned ratios 1.00, 1.17 and 1.15 show why fleet size is not fixed one-for-one; **not** demonstrated trip-level adequacy or actual delivery dates |
 | Later 2026 plan's 236-diesel replacement project | 39 60-ft diesel + 64 40-ft in-route BEBs + 153 40-ft depot BEBs = 256 planned replacements for 236 retiring diesels; gross project budget CAD 524.709m | 2026 named project, published later; vehicles and CAD millions | RETROSPECTIVE REVISION | [TransLink 2026 Business Plan, p. 51](https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2026-business-plan-operating-and-capital-budget.pdf); 256/236 = 1.085 vehicles per retirement. The older 2025 plan's 45 articulated BEBs for 39 diesels may overlap this revised cohort and **must not** be added to it; neither is an audited delivery |
 | Later 2026 plan's 2028 hybrid cohort | 27 retiring 40-ft hybrids → 31 planned 40-ft BEBs; gross project budget CAD 59.320m | 2028 cohort in 2026 plan | RETROSPECTIVE PLAN | Same 2026 Business Plan p. 51; 31/27 = 1.148, not trip adequacy proof |
@@ -151,24 +151,35 @@ early-retirement exposure.
 
 ## Full-class and uncertainty update (18 October 2026)
 
-The class-specific core bound uses 1,424 heavy non-deck planning positions,
+The class-specific core bound uses 1,419 heavy non-deck planning positions,
 57 double-decks and 189 community shuttles. It retains the shared heavy-bus
 depot investment once and adds only class-specific vehicle and charger
-envelopes. Central gross present value is CAD 4.709 billion against CAD 2.458
-billion for renewal plus operations (-91.6%); 25/50% grant cases are -53.6% and
--15.7%. The high class envelope is CAD 5.259 billion (-113.9%). The 1,424
+envelopes. Shared depot capacity is sized from the 1,419 heavy positions and
+retained once. Central price-mixed present value is CAD 4.712 billion against
+CAD 2.692 billion for renewal plus operations (-75.0%); 25/50% grant cases are
+-42.8% and -10.5%. The high class envelope is CAD 5.260 billion (-95.5%).
+The plan buys 1,647 route BEBs (1,401 heavy, 57 deck, 189 shuttle) and 262
+one-for-one trolley renewals, retires 1,445 conventional buses, and ends at
+1,927 electric/zero conventional assets. The
+1,419
 positions are a transparent scaling of 1,630 generic non-deck positions after
-removing the shuttle duty allowance; they are not a garage roster. See
+removing the 107-request shuttle allowance; they are not a garage roster. See
 `results/vancouver_full_fleet_bound.json`.
 
 The 432,768-cell Cartesian assumption grid includes the 1,711--1,733 fleet
 interval, seven paired range points, 5--18 retained BEBs, 9/17--11/17 renewal,
-1.5--5.0% real discount, hardware/project vehicle costs and four fuel
+1.5--5.0% discount, hardware/project vehicle costs and four fuel
 intensities. It reproduces the named CAD 4.575-billion / -96.4% case exactly.
 Equal-weight fifth/median/ninety-fifth economically scored cases are
 -166.9/-127.2/-89.8%; environment scores are 13.3/72.6/82.4%. These are
 assumption-space quantiles, never confidence intervals. See
 `results/vancouver_transition_uncertainty.json`.
+
+The central O&M convention uses the 2.77 CAD/vehicle-km CNG rate as a middle
+comparator. Substituting the 1.97 hybrid or 3.30 diesel rate changes the
+class-specific economic score to -115.1% or -57.6%. The class calculation
+excludes post-2023 battery replacement and infrastructure terminal value; it
+is a core envelope, not a complete total cost of ownership.
 
 At a 700-kWh double-deck central case, 17 of 57 weekday duties have a
 certain single-charge shortfall; the 827-kWh optimistic case still has eight.

@@ -10,6 +10,12 @@ def test_uncertainty_grid_reproduces_named_case_and_orders_quantiles():
         (ROOT / "results/vancouver_transition_uncertainty.json").read_text()
     )
     assert result["cells"] == 432_768
+    assert result["grid"]["fleet_2023_total"] == {
+        "min": 1711, "max": 1733, "step": 1, "count": 23
+    }
+    assert result["grid"]["baseline_fuel_intensity_kg_co2e_km"] == [
+        0.302, 0.96, 1.233, 1.58
+    ]
     reproduction = result["named_case_grid_reproduction"]
     assert reproduction["cases_matched"] == 1
     assert reproduction["net_new_battery_positions"] == 1612

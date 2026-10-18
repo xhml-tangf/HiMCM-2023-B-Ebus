@@ -10,9 +10,11 @@ data/processed/vancouver_gtfs_2023_provenance.json. The feed covers
 
 GTFS defines a block as an intended same-vehicle trip chain. The recovered
 weekday has 1,752 blocks and 1,087 simultaneous trips; 879 blocks interline.
-There are 4,850 consecutive block transitions; none has nonpositive slack
+There are 20,679 consecutive block transitions and 4,850 route-changing
+transfers; none has nonpositive slack
 across more than 0.5 km straight-line distance. Only three weekday transfers
-offer at least 60 minutes. These checks support the block as a duty hypothesis,
+offer at least 60 minutes overall, while two route-changing transfers do.
+These checks support the block as a duty hypothesis,
 not a vehicle identity, depot or charger record.
 
 All 54,497 trips lack first-stop shape distance. The audit preserves a
@@ -39,13 +41,15 @@ The detailed 2022 category snapshot totals 1,711. The 2025 active fleet totals
 1,733 and provides exact class and model-year sums, including 1,450 non-electric
 or non-trolley vehicles. A derived 2023 total of 1,725 has interval 1,711--1,733.
 The current policy case scales the 1,741 duty-request ratio to the derived
-1,406 non-double-deck, non-trolley fleet, giving 1,630 battery positions and
-1,612 net purchases after 18 existing BEBs.
+1,401 non-double-deck, non-trolley fleet, giving 1,630 battery positions and
+1,612 net purchases after 18 delivered BEBs; about five were reported in
+service, so the grid also retains a 5--18 sensitivity.
 
 The ordinary-renewal comparison renews a steady-state 10/17 of 1,388 fossil
 positions, or 816 purchases. Vehicle capital, quoted 2023/2025 envelopes,
 depot screening infrastructure, O&M and a 17-year straight-line vehicle
-residual are discounted at 3%. The base gross project value is CAD 4.575
+residual are discounted at 3% as price-mixed screening arithmetic, because the
+public envelopes span 2021--2025 nominal years. The base gross project value is CAD 4.575
 billion against CAD 2.329 billion, an economic score of -96.4%. A 50% grant
 changes agency payment and score to CAD 2.710 billion and -16.4%; it does not
 change resource cost.
@@ -55,10 +59,11 @@ excluding depot/charger construction and end-of-life. It gives 29.2--82.4% reduc
 
 The class-specific follow-up brings 57 double-decks and 189 midpoint
 community shuttles into one envelope while retaining shared heavy-bus depot
-investment once. Its central gross PV is CAD 4.709 billion against CAD 2.458
-billion for renewal plus operations (-91.6%); the high class envelope is CAD
-5.259 billion (-113.9%), and the class-specific environmental score is
-35.1--84.0%. At 700 kWh for double-decks and 150 kWh for shuttles, 17/57 and
+investment once, with 262 common trolley renewals included on both paths. Its
+central price-mixed PV is CAD 4.712 billion against CAD 2.692 billion for
+renewal plus operations (-75.0%); the high class envelope is CAD 5.260 billion
+(-95.5%), and the class-specific partial-production score is 35.3--84.0%.
+At 700 kWh for double-decks and 150 kWh for shuttles, 17/57 and
 49/101 weekday duties respectively have a certain overnight-charge shortfall.
 These are technical screens, not charger-site certificates.
 

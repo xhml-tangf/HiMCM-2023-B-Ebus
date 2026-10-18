@@ -47,14 +47,18 @@ as a verified vehicle-level schedule.
   `results/vancouver_transition_scenarios.json`, and
   `src/make_three_city_roadmap.py`: executed conditional 2024--2033
   cost/environment scenario and a common annual planning table for Vancouver,
-  Chicago and London. The named environmental boundary excludes depot
-  construction and end-of-life; the financial case excludes double-deck cost.
+  Chicago and London. The generic environmental boundary excludes depot
+  construction and end-of-life; the generic financial case excludes
+  double-deck cost. The full-fleet bound below adds the omitted vehicle classes.
 - `src/build_full_fleet_bound.py` and
   `results/vancouver_full_fleet_bound.json`: class-specific core envelope for
-  1,424 heavy non-deck positions, 57 double-decks and 189 community shuttles.
-  Shared depot investment is retained once. Central gross PV is CAD 4.709
-  billion versus CAD 2.458 billion for renewal plus operations (-91.6%);
-  the class envelope gives 35.1--84.0% environmental reduction.
+  1,419 heavy non-deck positions, 57 double-decks and 189 community shuttles.
+  Shared heavy-bus depot investment is sized from 1,419 positions and retained
+  once. The 1,647 route-BEB conversion plus 262 common trolley renewals reaches
+  zero conventional stock and 1,927 electric assets in 2033. Central price-mixed
+  gross PV is CAD 4.712 billion versus CAD 2.692 billion for renewal plus
+  operations (-75.0%); the high class envelope is CAD 5.260 billion (-95.5%).
+  The partial-production environmental reduction is 35.3--84.0%.
 - `src/propagate_transition_uncertainty.py` and
   `results/vancouver_transition_uncertainty.json`: 432,768-cell CPU
   assumption grid over fleet stock, range, retained BEBs, renewal, discount,
@@ -128,6 +132,14 @@ as a verified vehicle-level schedule.
   preview retained only for provenance; **do not submit or use for format QA**.
 - `research/format_basis.md`: official format rules, exemplar availability,
   fixed style choices and compiler status.
+- `research/outstanding_format_findings.md`: verified links to COMAP's
+  official 2024 page-level examples and the 2025 results pages. No public
+  complete 2025 Outstanding manuscript was found; the file records that
+  evidence boundary and the applicable structural recommendations.
+- `research/final_completion_audit.md`: current requirement matrix, numerical
+  checks, verified commands and remaining external-data boundaries.
+- `research/ai_query_log.md`: original-language AI request log and artifact
+  mapping for the competition disclosure.
 - `research/`: parameter/source ledger and independent literature notes.
 
 On Python 3.12, install the pinned numerical packages with
@@ -154,7 +166,8 @@ with network access to obtain the official raw sources, then
 `python src/audit_service_floor.py`,
 `python src/plot_service_floor.py`,
 `python src/compute_reference_scores.py`, `python src/audit_capital_cohorts.py`,
-and `python -m pytest tests -q`. Source URLs and SHA-256 hashes are in
+`python scripts/check_manuscript_numbers.py`, and `python -m pytest tests -q`.
+Source URLs and SHA-256 hashes are in
 `data/sources.json`. Raw source PDFs/CSVs are kept out of the Git repository;
 the retrieval script reconstructs them, subject to source availability. Run
 `python scripts/check_tex_format.py` for static manuscript checks. The
@@ -200,16 +213,17 @@ are 2,568, 977 and 776 original fleet slots, respectively; all match an
 independent mathematical lower bound. These are conditional fleet-availability
 results and do not replace winter, route or charging certification.
 
-The conditional Vancouver 300-km policy case gives a gross present value of
+The conditional Vancouver 300-km policy case gives a price-mixed screening PV of
 CAD 4.575 billion versus CAD 2.329 billion for steady-state renewal, an
 economic score of -96.4%. At 50% eligible grant funding, agency payment is
 CAD 2.710 billion and the score is -16.4%; gross resource cost is unchanged.
 Its partial life-cycle boundary gives 29.2--82.4% emissions reduction. These
 are named scenarios, not a certified city optimum or full life-cycle result.
-The class-specific full-fleet core bound is CAD 4.709 billion against CAD
-2.458 billion, or -91.6%; the high class envelope is CAD 5.259 billion and
--113.9%. This includes 57 double-decks and 189 community shuttles, retains
-the shared depot once, and gives 35.1--84.0% environmental reduction. The
+The class-specific full-fleet core bound is CAD 4.712 billion against CAD
+2.692 billion, or -75.0%; the high class envelope is CAD 5.260 billion and
+-95.5%. This includes 1,647 route BEBs, 262 one-for-one trolley renewals,
+57 double-decks and 189 community shuttles; it retains the shared depot once
+and gives 35.3--84.0% environmental reduction. The
 project still lacks a 2023 physical age/depot register, firm site power and
 as-operated duties, so the certified citywide solution and complete
 life-cycle score remain `UNVERIFIED`.

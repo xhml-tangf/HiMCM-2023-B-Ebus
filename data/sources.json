@@ -4,7 +4,7 @@
     {
       "file": "apta_2023_vehicle_database.zip",
       "url": "https://www.apta.com/wp-content/uploads/2026/03/APTA-2023-Vehicle-Database.zip",
-      "status": "not_downloaded_due_network",
+      "status": "unavailable: HTTP 403 Cloudflare challenge; official ZIP not downloaded",
       "bytes": null,
       "sha256": null
     },

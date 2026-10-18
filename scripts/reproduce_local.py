@@ -38,6 +38,7 @@ STEPS = [
     "src/make_depot_table.py",
     "src/make_three_city_roadmap.py",
     "src/run_analysis.py",
+    "scripts/check_manuscript_numbers.py",
 ]
 
 

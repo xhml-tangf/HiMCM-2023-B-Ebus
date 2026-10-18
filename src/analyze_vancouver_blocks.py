@@ -126,7 +126,15 @@ def main() -> None:
                        "distance_lower_km": float(blocks.distance_lower_km.sum()),
                        "distance_upper_km": float(blocks.distance_upper_km.sum()), "classes": {}}
         day_summary["interline_blocks"] = int(blocks.n_routes.gt(1).sum())
-        day_summary["interline_transitions"] = int(transitions.route_id.ne(transitions.prior_route).sum())
+        day_summary["all_consecutive_transitions"] = int(len(transitions))
+        interline_mask = transitions.route_id.ne(transitions.prior_route)
+        day_summary["interline_transitions"] = int(interline_mask.sum())
+        day_summary["interline_gaps_minutes"] = {
+            "ge30": int(transitions.loc[interline_mask, "gap_minutes"].ge(30).sum()),
+            "ge40": int(transitions.loc[interline_mask, "gap_minutes"].ge(40).sum()),
+            "ge60": int(transitions.loc[interline_mask, "gap_minutes"].ge(60).sum()),
+            "ge90": int(transitions.loc[interline_mask, "gap_minutes"].ge(90).sum()),
+        }
         day_summary["transitions_over_3km_straight_line"] = int(transitions.straight_km.gt(3).sum())
         day_summary["zero_gap_long_transfer"] = int(((transitions.gap_minutes <= 0) &
                                                     (transitions.straight_km > .5)).sum())
@@ -164,10 +172,10 @@ def main() -> None:
                     # 2020 source: mean 1.60, cold mean 1.79 kWh/km for 40-ft.
                     energy_upper += row.distance_upper_km * (1.79 if scenario == "40ft" else 2.42)
                 scenario_rows.append({"scenario": scenario, "range_km": km, "battery_candidate_blocks": total_blocks,
-                                      "additional_bus_block_requests_fractional": extra,
+                                      "additional_bus_block_requests": extra,
                                       "fleet_blocks_after_ceiling": total_blocks + extra,
                                       "replacement_ratio_ceiling": (total_blocks + extra) / total_blocks if total_blocks else None,
-                                      "battery_kwh_upper_at_source_cold_intensity": energy_upper})
+                                      "candidate_block_daily_traction_energy_upper_kwh": energy_upper})
         day_summary["range_scenarios"] = scenario_rows
         days.append(day_summary)
         results[kind] = blocks

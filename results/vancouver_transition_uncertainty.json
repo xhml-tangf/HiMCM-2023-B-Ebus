@@ -2,12 +2,12 @@
   "status": "EXECUTED_CARTESIAN_ASSUMPTION_SPACE_NOT_A_CONFIDENCE_INTERVAL",
   "cells": 432768,
   "grid": {
-    "fleet_2023_total": [
-      1711,
-      1733,
-      271,
-      21000
-    ],
+    "fleet_2023_total": {
+      "min": 1711,
+      "max": 1733,
+      "step": 1,
+      "count": 23
+    },
     "paired_range_midpoints_km": [
       149.5,
       170.5,
@@ -27,7 +27,7 @@
       10,
       11
     ],
-    "real_discount_rates": [
+    "discount_rates": [
       0.015,
       0.02,
       0.025,
@@ -41,7 +41,7 @@
       "0": "CAD 1.2m hardware screen",
       "1": "CAD 1.874m/3.037m project envelopes"
     },
-    "baseline_fuel_intensity_g_co2e_km": [
+    "baseline_fuel_intensity_kg_co2e_km": [
       0.302,
       0.96,
       1.233,
@@ -78,9 +78,9 @@
     "paired_range_midpoint_km": -0.8208946983765345,
     "existing_beb_retained": -0.0213167489104955,
     "natural_renewal_fraction": 0.0,
-    "real_discount_rate": -0.3214576924877304,
+    "discount_rate": -0.3214576924877304,
     "project_envelope_cost_basis": 0.43795513198638886,
-    "baseline_fuel_intensity_g_co2e_km": 0.0,
+    "baseline_fuel_intensity_kg_co2e_km": 0.0,
     "net_new_battery_positions": 0.8191840966250661
   },
   "economic_score_rank_correlations": {
@@ -88,9 +88,9 @@
     "paired_range_midpoint_km": 0.8615016831927238,
     "existing_beb_retained": -0.006214595945557693,
     "natural_renewal_fraction": 0.08115406708576582,
-    "real_discount_rate": -0.12169734982573133,
+    "discount_rate": -0.12169734982573133,
     "project_envelope_cost_basis": -0.461139766105035,
-    "baseline_fuel_intensity_g_co2e_km": 0.0,
+    "baseline_fuel_intensity_kg_co2e_km": 0.0,
     "net_new_battery_positions": -0.8523621503917206
   },
   "environment_rank_correlations": {
@@ -98,16 +98,16 @@
     "paired_range_midpoint_km": 0.32175805135807845,
     "existing_beb_retained": -0.01138376049245142,
     "natural_renewal_fraction": 0.03970088934090056,
-    "real_discount_rate": 0.0,
+    "discount_rate": 0.0,
     "project_envelope_cost_basis": 0.0,
-    "baseline_fuel_intensity_g_co2e_km": 0.9427004786921126,
+    "baseline_fuel_intensity_kg_co2e_km": 0.9427004786921126,
     "net_new_battery_positions": -0.31788067492260313
   },
   "quantile_weighting": "Equal weight across the Cartesian assumption grid; quantiles are not sampling confidence intervals.",
   "boundaries": [
     "Infrastructure uses the named CAD 500m/340 Marpole screening ratio; the separate CAD 6.52bn expansion envelope is not mixed into this grid.",
     "Active block requests are not a garage roster; standby buses and unverified site power are outside this propagation.",
-    "The emissions boundary is production, operation and maintenance and excludes depot construction and end-of-life."
+    "The emissions boundary is a partial production/operation/maintenance inventory and excludes depot construction and end-of-life."
   ],
   "named_case_grid_reproduction": {
     "cases_matched": 1,
