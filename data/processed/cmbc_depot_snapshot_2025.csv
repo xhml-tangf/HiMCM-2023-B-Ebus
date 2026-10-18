@@ -1,0 +1,8 @@
+depot,active_buses,trolley,non_trolley,hybrid,cng,diesel,gasoline_shuttle,battery
+VTC,430,261,169,168,0,1,0,0
+HTC,289,0,289,117,62,0,88,22
+BTCN,107,0,107,107,0,0,0,0
+BTCS,161,0,161,0,0,161,0,0
+STC,266,0,266,42,166,58,0,0
+PTC,235,0,235,12,137,3,83,0
+RTC,245,0,245,89,0,156,0,0

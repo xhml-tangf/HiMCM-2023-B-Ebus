@@ -1,0 +1,144 @@
+{
+  "status": "TRANSFER_PLANNING_POSITIONS_NOT_DELIVERIES",
+  "vancouver": {
+    "basis": "active non-trolley duty blocks; 300-km overnight-charge screening",
+    "source_day": "2023-11-14",
+    "derived_2023_fleet_total": 1725,
+    "derived_2023_non_trolley_fleet": 1463,
+    "active_non_trolley_blocks": 1502,
+    "capacity_proxy_blocks_not_purchased": 193,
+    "selected_range_km": 300,
+    "battery_depot_block_requests": 1741,
+    "double_deck_in_route_blocks": 57,
+    "scaled_battery_fleet_positions": 1630,
+    "net_new_battery_purchases": 1612,
+    "additional_active_block_requests": 224,
+    "additional_active_block_requests_pct": 15.93172119487909,
+    "annual_2023_bus_km": 106868324.0,
+    "fossil_service_share": 0.8957886690558847,
+    "annual_nondeck_fossil_km_estimate": 88786898.98172182
+  },
+  "chicago": {
+    "basis": "2023 year-end inventory, 25 inferred June electric stock, linear replacement",
+    "fleet": 1875,
+    "initial_electric": 25,
+    "non_electric": 1850,
+    "annual": 185
+  },
+  "london": {
+    "basis": "31 March 2023 audit; 17-year chassis-life cohort scenario",
+    "fleet": 8643,
+    "initial_electric": 950,
+    "non_electric": 7693,
+    "total_renewals": 7759,
+    "peak_annual_renewals": 776
+  },
+  "annual_plan": [
+    {
+      "year": 2024,
+      "vancouver_ev_active_block_requests": 162,
+      "vancouver_renewal_baseline": 82,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 775,
+      "vancouver_active_blocks_remaining": 1340,
+      "chicago_non_electric_remaining": 1665,
+      "london_non_electric_remaining": 6918
+    },
+    {
+      "year": 2025,
+      "vancouver_ev_active_block_requests": 162,
+      "vancouver_renewal_baseline": 82,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 776,
+      "vancouver_active_blocks_remaining": 1178,
+      "chicago_non_electric_remaining": 1480,
+      "london_non_electric_remaining": 6142
+    },
+    {
+      "year": 2026,
+      "vancouver_ev_active_block_requests": 161,
+      "vancouver_renewal_baseline": 82,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 776,
+      "vancouver_active_blocks_remaining": 1017,
+      "chicago_non_electric_remaining": 1295,
+      "london_non_electric_remaining": 5366
+    },
+    {
+      "year": 2027,
+      "vancouver_ev_active_block_requests": 161,
+      "vancouver_renewal_baseline": 82,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 776,
+      "vancouver_active_blocks_remaining": 856,
+      "chicago_non_electric_remaining": 1110,
+      "london_non_electric_remaining": 4590
+    },
+    {
+      "year": 2028,
+      "vancouver_ev_active_block_requests": 161,
+      "vancouver_renewal_baseline": 82,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 776,
+      "vancouver_active_blocks_remaining": 695,
+      "chicago_non_electric_remaining": 925,
+      "london_non_electric_remaining": 3814
+    },
+    {
+      "year": 2029,
+      "vancouver_ev_active_block_requests": 161,
+      "vancouver_renewal_baseline": 82,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 776,
+      "vancouver_active_blocks_remaining": 534,
+      "chicago_non_electric_remaining": 740,
+      "london_non_electric_remaining": 3038
+    },
+    {
+      "year": 2030,
+      "vancouver_ev_active_block_requests": 161,
+      "vancouver_renewal_baseline": 81,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 776,
+      "vancouver_active_blocks_remaining": 373,
+      "chicago_non_electric_remaining": 555,
+      "london_non_electric_remaining": 2263
+    },
+    {
+      "year": 2031,
+      "vancouver_ev_active_block_requests": 161,
+      "vancouver_renewal_baseline": 81,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 776,
+      "vancouver_active_blocks_remaining": 212,
+      "chicago_non_electric_remaining": 370,
+      "london_non_electric_remaining": 1493
+    },
+    {
+      "year": 2032,
+      "vancouver_ev_active_block_requests": 161,
+      "vancouver_renewal_baseline": 81,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 776,
+      "vancouver_active_blocks_remaining": 51,
+      "chicago_non_electric_remaining": 185,
+      "london_non_electric_remaining": 724
+    },
+    {
+      "year": 2033,
+      "vancouver_ev_active_block_requests": 161,
+      "vancouver_renewal_baseline": 81,
+      "chicago_ev_replacements": 185,
+      "london_17y_total_slots_renewed": 776,
+      "vancouver_active_blocks_remaining": 0,
+      "chicago_non_electric_remaining": 0,
+      "london_non_electric_remaining": 0
+    }
+  ],
+  "limits": [
+    "Vancouver active block requests include extra sequential duties but not standby/spare buses.",
+    "Chicago electric stock is inferred from a June announcement and the linear conversion is a planning scenario, not an optimal driver schedule.",
+    "London renewals retain body-type availability by cohort; this is not a route forecast.",
+    "Local vehicle prices, tariffs and station constraints remain necessary before financial comparison across cities."
+  ]
+}

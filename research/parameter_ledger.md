@@ -124,3 +124,27 @@ These are required data definitions, not newly observed Vancouver values.
 Unknown fuel, path or feeder data remain missing. Depot spare checks now also
 exclude buses driving to or returning from service. The arrival energy reserve
 is tested before subsequent charging can restore energy.
+
+## Fleet and fall-2023 timetable update
+
+The source-declared TransLink GTFS version 23SEP_20231020 covers 4 September
+through 31 December 2023. It contains 54,497 fixed-route bus trips, 1,684,516
+bus stop-time rows and 25 calendar service patterns. Every trip has a source
+block id, but the feed has no vehicle id, garage, propulsion, age, battery or
+as-operated state. The first-stop shape distance is missing on all trips;
+monotonic lower and upper distances are retained, with a median interval width
+of 0.432 km.
+
+The 2018 capacity clusters are treated only as 24/47/50/70/75/85 passenger
+space proxies. They are never called delivered vehicle specifications. The
+47/70 signatures are retained as a route-level trolley proxy because 262
+trolleys are independently reported; this remains a proxy until an operator
+route/vehicle roster is available.
+
+The 18 November 2025 CMBC active fleet has 1,733 buses: 261 trolley, 22 battery,
+535 hybrid, 365 CNG, 379 diesel and 171 gasoline shuttle. Its manufacture-year
+counts total a further 63 in storage and reconcile exactly. A 2023 bridge is a
+derived 1,725 with interval 1,711--1,733, not an observed 2023 roster. The 2025
+age bands imply 392 active vehicles aged 0--4 and 543 aged 5--9; 285 were built
+in 2023--2025, so accelerating all fossils to electric by 2033 creates material
+early-retirement exposure.

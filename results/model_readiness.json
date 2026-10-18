@@ -13,6 +13,18 @@
     "positive_route_time_load_cells_matching_historical_capacity_clusters": 9049,
     "positive_route_time_load_cells_total": 9371,
     "capacity_class_note": "Aggregate 2018 capacity references explain most 2023 route-time cells, but not individual 2023 bus assignments or candidate electric payload.",
+    "fall_2023_gtfs_bus_trips": 54497,
+    "fall_2023_gtfs_service_patterns": 25,
+    "maximum_service_day_trips": 22492,
+    "maximum_service_day_blocks": 1756,
+    "representative_weekday_trips": 22431,
+    "representative_weekday_blocks": 1752,
+    "representative_weekday_peak_concurrent_trips": 1087,
+    "derived_2023_fleet_total": 1725,
+    "derived_2023_fleet_interval": [
+      1711,
+      1733
+    ],
     "revenue_fleet_2023_operating_ghg_all_modes_t": 112591,
     "revenue_fleet_2023_scope1_t": 110402,
     "revenue_fleet_2023_scope2_t": 2189,
@@ -51,7 +63,6 @@
   "full_city_schedule_check": {
     "status": "UNVERIFIED",
     "missing": [
-      "trip_manifest",
       "vehicle_register",
       "assignments",
       "charges",
@@ -60,10 +71,10 @@
       "spare_policy",
       "deadhead_time_matrix",
       "deadhead_distance_matrix",
-      "2023 class/age/energy fleet register",
-      "2023 exact timetable and block assignments",
+      "observed 2023 class/age/energy fleet register",
       "depot space/grid/commissioning inventory",
-      "per-trip 2023 class/capacity assignments",
+      "block-to-vehicle and block-to-garage links",
+      "pull-out, pull-in, driver and charger dwell records",
       "candidate electric bus payload and winter accessory energy"
     ],
     "additional_supply_checks": [
@@ -76,9 +87,41 @@
   "full_city_environment_score": null,
   "full_city_pareto_frontier": null,
   "full_city_yearly_purchase_table": null,
+  "conditional_2033_policy_scenario": {
+    "status": "CONDITIONAL_EXECUTED_SCENARIO_NOT_CERTIFIED_CITY_OPTIMUM",
+    "service_baseline": {
+      "source_day": "2023-11-14",
+      "derived_2023_fleet_total": 1725,
+      "derived_2023_non_trolley_fleet": 1463,
+      "active_non_trolley_blocks": 1502,
+      "capacity_proxy_blocks_not_purchased": 193,
+      "selected_range_km": 300,
+      "battery_depot_block_requests": 1741,
+      "double_deck_in_route_blocks": 57,
+      "scaled_battery_fleet_positions": 1630,
+      "net_new_battery_purchases": 1612,
+      "additional_active_block_requests": 224,
+      "additional_active_block_requests_pct": 15.93172119487909,
+      "annual_2023_bus_km": 106868324.0,
+      "fossil_service_share": 0.8957886690558847,
+      "annual_nondeck_fossil_km_estimate": 88786898.98172182
+    },
+    "base_gross_pv_cad": 2329029764.2852106,
+    "base_plan_gross_pv_cad": 4575328316.504243,
+    "base_economic_score_pct": -96.44782504136143,
+    "environment_score_boundary_range_pct": [
+      29.180206253559117,
+      82.3660419062955
+    ],
+    "boundary": "partial life cycle: vehicle/battery production, operation and maintenance; infrastructure construction and end-of-life excluded",
+    "warning": "Not a certified full-city optimum because vehicle, depot, charger and winter records are missing."
+  },
   "separate_reference_case_file": "results/cpu_reference_scores.json",
   "separate_charging_power_tariff_bounds": "results/charging_tariff_bounds.json",
+  "separate_block_range_audit": "results/vancouver_block_range_audit.json",
+  "separate_fleet_scale_audit": "results/fleet_scale_audit.json",
   "transfer_case_result_files": {
+    "three_city_annual_plan": "results/three_city_roadmap.json",
     "chicago_2023_age_energy_and_renewal_bound": "results/cta_2023_detail_audit.json",
     "london_solved_cohort_roadmap": "results/london_cohort_roadmap.json"
   },

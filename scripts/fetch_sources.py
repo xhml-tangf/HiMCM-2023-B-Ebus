@@ -23,6 +23,8 @@ SOURCES = {
     "bchydro_2023_24_financial_statements.pdf": "https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/government-finances/public-accounts/2023-24/sup-e/bc-hydro-fs-2023-24.pdf",
     "bchydro_2023_approved_tariff.pdf": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-scheduling/bulletins/2023/2023_08_03_BCUC_EXEC_TRFF_PGS.pdf",
     "translink_2023_business_plan.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2023_business_plan_operating_and_capital_budget.pdf",
+    "cmbc_fleet_2025_active_instorage.pdf": "https://www.translink.ca/-/media/translink/documents/about-translink/freedom-of-information/cmbc-fleet--active--instorage.pdf",
+    "apta_2023_vehicle_database.zip": "https://www.apta.com/wp-content/uploads/2026/03/APTA-2023-Vehicle-Database.zip",
     "statistics_canada_2021_cma_population.html": "https://www150.statcan.gc.ca/n1/daily-quotidien/220209/t002a-eng.htm",
     "translink_tspr_2023_annual.csv": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearline.csv",
     "translink_tspr_2023_hourly.csv": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearlinedaytypeseasontimerange.csv",
@@ -48,6 +50,20 @@ SOURCES = {
     "tfl_2023_bus_fleet_audit.pdf": "https://content.tfl.gov.uk/fleet-annual-audit-report-31-march-2023.pdf",
 }
 
+# Original TransLink 23SEP_20231020 GTFS retained by an independent public
+# mirror. The immutable Git commit is intentional: never replace with master.
+GTFS_2023_MIRROR = (
+    "https://raw.githubusercontent.com/JaydenCWong/JAAM-project/"
+    "eb584b1108b0d582ae31c7db8e0d7e7b5ba1702b/backend/engine/translink_data/"
+)
+SOURCES.update({
+    f"vancouver_gtfs_2023/{name}": GTFS_2023_MIRROR + name
+    for name in ("agency.txt", "feed_info.txt", "calendar.txt", "calendar_dates.txt",
+                 "routes.txt", "trips.txt", "stop_times.txt", "stops.txt", "shapes.txt",
+                 "directions.txt", "direction_names_exceptions.txt", "pattern_id.txt",
+                 "signup_periods.txt", "stop_order_exceptions.txt", "notes.txt")
+})
+
 
 def main() -> None:
     parser = argparse.ArgumentParser()
@@ -59,6 +75,7 @@ def main() -> None:
     session.headers["User-Agent"] = "Academic research reproducibility check/1.0"
     for name, url in SOURCES.items():
         target = RAW / name
+        target.parent.mkdir(parents=True, exist_ok=True)
         status = "cached"
         if not target.exists() or args.refresh:
             try:

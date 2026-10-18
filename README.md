@@ -38,6 +38,17 @@ as a verified vehicle-level schedule.
   feasibility still determine actual electric bus quantities.
 - `src/plot_london_cohorts.py` regenerates the London figure and included TeX
   result tables directly from the solved roadmap.
+- `src/audit_gtfs_baseline.py`, `src/analyze_vancouver_blocks.py`, and
+  `results/vancouver_gtfs_baseline_audit.json`: immutable fall-2023 GTFS
+  provenance, 54,497 bus trips, 25 calendar service patterns, source-declared
+  blocks, interval trip distances and block-level range screening. These are
+  planned duties, not an as-operated vehicle roster.
+- `src/build_transition_scenarios.py`, `src/plot_transition_scenarios.py`,
+  `results/vancouver_transition_scenarios.json`, and
+  `src/make_three_city_roadmap.py`: executed conditional 2024--2033
+  cost/environment scenario and a common annual planning table for Vancouver,
+  Chicago and London. The named environmental boundary excludes depot
+  construction and end-of-life; the financial case excludes double-deck cost.
 - `src/analyze_charging_tariffs.py`, `src/plot_charging_tariffs.py`, and
   `results/charging_tariff_bounds.json`: 243 CPU LP cases and an independently
   verified site-power crossover under the official April-2023 BC Hydro
@@ -75,11 +86,12 @@ as a verified vehicle-level schedule.
   buses, current technical specifications or trip adequacy.
 - `paper/ebus_transition.tex`: canonical 12-point HiMCM-style LaTeX research
   draft. Set the official team control number at the top before submission.
-- `paper/ebus_transition.pdf`: current research draft captured from that
-  document's built-in editor compilation. It currently has 18 solution pages
+- `paper/ebus_transition.pdf`: current research draft compiled with the Codex app-owned
+  Tectonic 0.17 executable after the built-in editor compiler passed the same
+  source. It currently has 25 solution pages
   plus the AI Use Report; the research completion gates below remain open.
-- `scripts/capture_editor_pdf.py` saves that same editor-generated output,
-  without invoking another compiler. `scripts/qa_editor_pdf.py` checks page
+- `scripts/capture_editor_pdf.py` remains a diagnostic fallback for editor-cache
+  exports. `scripts/qa_editor_pdf.py` checks page
   count, summary/letter length, headers, references and text boundaries, then
   renders every page for inspection. Build/source hashes are retained in
   `results/editor_pdf_build.json` and `results/pdf_layout_checks.json`.
@@ -94,11 +106,15 @@ On Python 3.12, install the pinned numerical packages with
 To reproduce the current evidence audit, run `python scripts/fetch_sources.py`
 with network access to obtain the official raw sources, then
 `python src/audit_data.py`, `python src/audit_service_actual.py`,
+`python src/audit_gtfs_baseline.py`, `python src/analyze_vancouver_blocks.py`,
 `python src/audit_capacity_proxy.py`, `python src/run_analysis.py`,
 `python src/audit_comparators.py`,
 `python src/audit_cta_2023.py`, `python src/optimize_london_cohorts.py`,
 `python src/plot_london_cohorts.py`,
 `python src/analyze_charging_tariffs.py`, `python src/plot_charging_tariffs.py`,
+`python src/build_transition_scenarios.py`, `python src/plot_transition_scenarios.py`,
+`python src/make_block_table.py`, `python src/make_three_city_roadmap.py`,
+`python src/audit_fleet_snapshot.py`, `python src/make_depot_table.py`,
 `python src/audit_2020_program.py`,
 `python src/audit_non_electric_lockin.py`,
 `python src/audit_service_floor.py`,
@@ -140,17 +156,19 @@ Official reports give 280 trolley/BEB buses combined in December 2023 and
 299 CNG buses, while a same-day official article describes the electric split
 as about 275 trolleys and five BEBs. A February notice says 262 trolleys,
 so the exact December electric split is unresolved. Later budgets reveal
-partial retirement cohorts. Exact
-vehicle blocks, depot electrical limits and a complete 2023 class/age/depot
-register remain unresolved. The Vancouver city-wide schedule, scores, Pareto frontier
-and numeric purchase table are therefore `UNVERIFIED`/null in
-`results/model_readiness.json`. The 2019-CAD 40-ft comparisons and 2025
-capital-program audit are explicitly conditional/retrospective. Entering
-real trip and site data into `check_schedule` is required before any full-city
-solution can be called service-feasible.
+partial retirement cohorts. The source-declared fall-2023 timetable and block hypotheses are now recovered; vehicle identity, depot electrical limits and a complete 2023 class/age/depot register remain unresolved. A conditional policy case and annual planning table are reported, but the certified Vancouver city-wide schedule, Pareto frontier and physical purchase list remain UNVERIFIED in results/model_readiness.json. The 2019-CAD 40-ft comparisons and 2025 cell comparisons are explicitly conditional/retrospective. Entering real trip and site data into check_schedule is required before any full-city solution can be called service-feasible.
+
+The fall GTFS is used under TransLink permission terms and carries the required legend in the manuscript: route and arrival data are provided by permission of TransLink, which assumes no responsibility for their accuracy or currency. Blocks are a duty hypothesis, not a vehicle register.
 
 London now has a solved age-cohort planning benchmark. For assumed chassis
 life caps of 12, 14 and 17 years, the minimum peak annual renewal capacities
 are 2,568, 977 and 776 original fleet slots, respectively; all match an
 independent mathematical lower bound. These are conditional fleet-availability
 results and do not replace winter, route or charging certification.
+
+The conditional Vancouver 300-km policy case gives a gross present value of
+CAD 4.575 billion versus CAD 2.329 billion for steady-state renewal, an
+economic score of -96.4%. At 50% eligible grant funding, agency payment is
+CAD 2.710 billion and the score is -16.4%; gross resource cost is unchanged.
+Its partial life-cycle boundary gives 29.2--82.4% emissions reduction. These
+are named scenarios, not a certified city optimum or full life-cycle result.

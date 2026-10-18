@@ -22,6 +22,10 @@ def main() -> None:
     actual_service = audit_actual_service()
     capacity_audit = json.loads((ROOT / "results/capacity_proxy_audit.json").read_text(
         encoding="utf-8"))
+    gtfs_audit = json.loads((ROOT / "results/vancouver_gtfs_baseline_audit.json").read_text())
+    block_audit = json.loads((ROOT / "results/vancouver_block_range_audit.json").read_text())
+    policy_case = json.loads((ROOT / "results/vancouver_transition_scenarios.json").read_text())
+    fleet_audit = json.loads((ROOT / "results/fleet_scale_audit.json").read_text())
     site_check = check_schedule(None, None, None, None, None, year=2033)
     # 2019-CAD per 40-ft vehicle demonstration. The published depot BEB
     # still burns fuel for cabin heat and is NOT eligible for the strict
@@ -67,6 +71,15 @@ def main() -> None:
             "positive_route_time_load_cells_matching_historical_capacity_clusters": capacity_audit["reference_capacity_matches"],
             "positive_route_time_load_cells_total": capacity_audit["input_2023_tspr_positive_cells"],
             "capacity_class_note": "Aggregate 2018 capacity references explain most 2023 route-time cells, but not individual 2023 bus assignments or candidate electric payload.",
+            "fall_2023_gtfs_bus_trips": gtfs_audit["bus_trip_records"],
+            "fall_2023_gtfs_service_patterns": len(gtfs_audit["unique_service_patterns"]),
+            "maximum_service_day_trips": gtfs_audit["maximum_published_block_day"]["bus_trips"],
+            "maximum_service_day_blocks": gtfs_audit["maximum_published_block_day"]["published_vehicle_blocks"],
+            "representative_weekday_trips": block_audit["days"][0]["trips"],
+            "representative_weekday_blocks": block_audit["days"][0]["published_blocks"],
+            "representative_weekday_peak_concurrent_trips": block_audit["days"][0]["peak_concurrent_trips"],
+            "derived_2023_fleet_total": fleet_audit["fleet_2023_total_estimate"],
+            "derived_2023_fleet_interval": fleet_audit["fleet_2023_interval"],
             "revenue_fleet_2023_operating_ghg_all_modes_t": 112_591,
             "revenue_fleet_2023_scope1_t": 110_402,
             "revenue_fleet_2023_scope2_t": 2_189,
@@ -101,10 +114,10 @@ def main() -> None:
         },
         "full_city_schedule_check": {
             "status": site_check.status,
-            "missing": site_check.missing + ["2023 class/age/energy fleet register",
-                                              "2023 exact timetable and block assignments",
+            "missing": [m for m in site_check.missing if m != "trip_manifest"] + ["observed 2023 class/age/energy fleet register",
                                               "depot space/grid/commissioning inventory",
-                                              "per-trip 2023 class/capacity assignments",
+                                              "block-to-vehicle and block-to-garage links",
+                                              "pull-out, pull-in, driver and charger dwell records",
                                               "candidate electric bus payload and winter accessory energy"],
             "additional_supply_checks": ["normal-renewal duty fuel budgets",
                                          "trolley wired trip/deadhead/layover paths and firm feeder capacity"],
@@ -114,9 +127,24 @@ def main() -> None:
         "full_city_environment_score": None,
         "full_city_pareto_frontier": None,
         "full_city_yearly_purchase_table": None,
+        "conditional_2033_policy_scenario": {
+            "status": policy_case["status"],
+            "service_baseline": policy_case["service_baseline"],
+            "base_gross_pv_cad": policy_case["economics"][1]["baseline_gross_pv_cad"],
+            "base_plan_gross_pv_cad": policy_case["economics"][1]["plan_gross_pv_cad"],
+            "base_economic_score_pct": policy_case["economics"][1]["economic_score_gross_pct"],
+            "environment_score_boundary_range_pct": [
+                min(x["environment_score_boundary_pct"] for x in policy_case["environment"]),
+                max(x["environment_score_boundary_pct"] for x in policy_case["environment"])],
+            "boundary": "partial life cycle: vehicle/battery production, operation and maintenance; infrastructure construction and end-of-life excluded",
+            "warning": "Not a certified full-city optimum because vehicle, depot, charger and winter records are missing.",
+        },
         "separate_reference_case_file": "results/cpu_reference_scores.json",
         "separate_charging_power_tariff_bounds": "results/charging_tariff_bounds.json",
+        "separate_block_range_audit": "results/vancouver_block_range_audit.json",
+        "separate_fleet_scale_audit": "results/fleet_scale_audit.json",
         "transfer_case_result_files": {
+            "three_city_annual_plan": "results/three_city_roadmap.json",
             "chicago_2023_age_energy_and_renewal_bound": "results/cta_2023_detail_audit.json",
             "london_solved_cohort_roadmap": "results/london_cohort_roadmap.json",
         },

@@ -1,0 +1,308 @@
+{
+  "status": "CONDITIONAL_EXECUTED_SCENARIO_NOT_CERTIFIED_CITY_OPTIMUM",
+  "service_baseline": {
+    "source_day": "2023-11-14",
+    "derived_2023_fleet_total": 1725,
+    "derived_2023_non_trolley_fleet": 1463,
+    "active_non_trolley_blocks": 1502,
+    "capacity_proxy_blocks_not_purchased": 193,
+    "selected_range_km": 300,
+    "battery_depot_block_requests": 1741,
+    "double_deck_in_route_blocks": 57,
+    "scaled_battery_fleet_positions": 1630,
+    "net_new_battery_purchases": 1612,
+    "additional_active_block_requests": 224,
+    "additional_active_block_requests_pct": 15.93172119487909,
+    "annual_2023_bus_km": 106868324.0,
+    "fossil_service_share": 0.8957886690558847,
+    "annual_nondeck_fossil_km_estimate": 88786898.98172182
+  },
+  "economics": [
+    {
+      "case": "low",
+      "beb_unit_cost_cad": 1200000,
+      "beb_cost_basis": "all-class hardware lower bound",
+      "infrastructure_gross_cad": 2370588235.2941175,
+      "baseline_gross_pv_cad": 2329029764.2852106,
+      "baseline_bus_capex_cad": 753053760.0,
+      "plan_gross_pv_cad": 4575328316.504243,
+      "plan_bus_capex_cad": 1934400000,
+      "components_pv_cad": {
+        "baseline_bus_capex": 642646131.4815997,
+        "baseline_om": 2097915613.4478824,
+        "baseline_vehicle_residual": -411531980.64427143,
+        "plan_bus_capex": 1650331351.69974,
+        "plan_infrastructure": 2080099964.9873507,
+        "plan_om": 1902840973.971258,
+        "plan_vehicle_residual": -1057943974.1541058
+      },
+      "incremental_gross_pv_cad": 2246298552.2190323,
+      "economic_score_gross_pct": -96.44782504136143,
+      "vehicle_residual_credit_pv_cad": 646411993.5098343,
+      "grant_cases": [
+        {
+          "grant_fraction": 0,
+          "agency_pv_cad": 4575328316.504243,
+          "grant_transfer_pv_cad": 0.0,
+          "agency_economic_score_vs_baseline_pct": -96.44782504136143
+        },
+        {
+          "grant_fraction": 0.25,
+          "agency_pv_cad": 3642720487.33247,
+          "grant_transfer_pv_cad": 932607829.1717727,
+          "agency_economic_score_vs_baseline_pct": -56.40506373908179
+        },
+        {
+          "grant_fraction": 0.5,
+          "agency_pv_cad": 2710112658.1606975,
+          "grant_transfer_pv_cad": 1865215658.3435454,
+          "agency_economic_score_vs_baseline_pct": -16.362302436802167
+        }
+      ]
+    },
+    {
+      "case": "central",
+      "beb_unit_cost_cad": 1200000,
+      "beb_cost_basis": "all-class hardware lower bound",
+      "infrastructure_gross_cad": 2370588235.2941175,
+      "baseline_gross_pv_cad": 2329029764.2852106,
+      "baseline_bus_capex_cad": 753053760.0,
+      "plan_gross_pv_cad": 4575328316.504243,
+      "plan_bus_capex_cad": 1934400000,
+      "components_pv_cad": {
+        "baseline_bus_capex": 642646131.4815997,
+        "baseline_om": 2097915613.4478824,
+        "baseline_vehicle_residual": -411531980.64427143,
+        "plan_bus_capex": 1650331351.69974,
+        "plan_infrastructure": 2080099964.9873507,
+        "plan_om": 1902840973.971258,
+        "plan_vehicle_residual": -1057943974.1541058
+      },
+      "incremental_gross_pv_cad": 2246298552.2190323,
+      "economic_score_gross_pct": -96.44782504136143,
+      "vehicle_residual_credit_pv_cad": 646411993.5098343,
+      "grant_cases": [
+        {
+          "grant_fraction": 0,
+          "agency_pv_cad": 4575328316.504243,
+          "grant_transfer_pv_cad": 0.0,
+          "agency_economic_score_vs_baseline_pct": -96.44782504136143
+        },
+        {
+          "grant_fraction": 0.25,
+          "agency_pv_cad": 3642720487.33247,
+          "grant_transfer_pv_cad": 932607829.1717727,
+          "agency_economic_score_vs_baseline_pct": -56.40506373908179
+        },
+        {
+          "grant_fraction": 0.5,
+          "agency_pv_cad": 2710112658.1606975,
+          "grant_transfer_pv_cad": 1865215658.3435454,
+          "agency_economic_score_vs_baseline_pct": -16.362302436802167
+        }
+      ]
+    },
+    {
+      "case": "high",
+      "beb_unit_cost_cad": 2070959.677419355,
+      "beb_cost_basis": "identified standard/articulated project-envelope weighted mean",
+      "infrastructure_gross_cad": 6520000000,
+      "baseline_gross_pv_cad": 2329029764.2852106,
+      "baseline_bus_capex_cad": 753053760.0,
+      "plan_gross_pv_cad": 8646232085.367008,
+      "plan_bus_capex_cad": 3338387000.0,
+      "components_pv_cad": {
+        "baseline_bus_capex": 642646131.4815997,
+        "baseline_om": 2097915613.4478824,
+        "baseline_vehicle_residual": -411531980.64427143,
+        "plan_bus_capex": 2848141403.125951,
+        "plan_infrastructure": 5721049134.471414,
+        "plan_om": 1902840973.971258,
+        "plan_vehicle_residual": -1825799426.2016146
+      },
+      "incremental_gross_pv_cad": 6317202321.081798,
+      "economic_score_gross_pct": -271.2375091960482,
+      "vehicle_residual_credit_pv_cad": 1414267445.5573432,
+      "grant_cases": [
+        {
+          "grant_fraction": 0,
+          "agency_pv_cad": 8646232085.367008,
+          "grant_transfer_pv_cad": 0.0,
+          "agency_economic_score_vs_baseline_pct": -271.2375091960482
+        },
+        {
+          "grant_fraction": 0.25,
+          "agency_pv_cad": 6503934450.967667,
+          "grant_transfer_pv_cad": 2142297634.399341,
+          "agency_economic_score_vs_baseline_pct": -179.2551023049614
+        },
+        {
+          "grant_fraction": 0.5,
+          "agency_pv_cad": 4361636816.568326,
+          "grant_transfer_pv_cad": 4284595268.798682,
+          "agency_economic_score_vs_baseline_pct": -87.27269541387467
+        }
+      ]
+    }
+  ],
+  "environment": [
+    {
+      "case": "renewable_fuel_mix",
+      "baseline_operating_g_per_km": 302.0,
+      "baseline_lifecycle_boundary_t": 376212.79239122214,
+      "plan_lifecycle_boundary_t": 266433.12361918937,
+      "environment_score_boundary_pct": 29.180206253559117,
+      "baseline_production_t": 61552.022399999994,
+      "plan_production_t": 189632.456,
+      "baseline_operating_t": 268136.4349247999,
+      "plan_operating_t": 16869.510806527145,
+      "baseline_maintenance_t": 46524.33506642223,
+      "plan_maintenance_t": 59931.15681266223
+    },
+    {
+      "case": "rng_heavy",
+      "baseline_operating_g_per_km": 960.0,
+      "baseline_lifecycle_boundary_t": 960430.5876909517,
+      "plan_lifecycle_boundary_t": 266433.12361918937,
+      "environment_score_boundary_pct": 72.25899226515237,
+      "baseline_production_t": 61552.022399999994,
+      "plan_production_t": 189632.456,
+      "baseline_operating_t": 852354.2302245294,
+      "plan_operating_t": 16869.510806527145,
+      "baseline_maintenance_t": 46524.33506642223,
+      "plan_maintenance_t": 59931.15681266223
+    },
+    {
+      "case": "weighted_mix",
+      "baseline_operating_g_per_km": 1233.0,
+      "baseline_lifecycle_boundary_t": 1202818.821911052,
+      "plan_lifecycle_boundary_t": 266433.12361918937,
+      "environment_score_boundary_pct": 77.84927216254586,
+      "baseline_production_t": 61552.022399999994,
+      "plan_production_t": 189632.456,
+      "baseline_operating_t": 1094742.46444463,
+      "plan_operating_t": 16869.510806527145,
+      "baseline_maintenance_t": 46524.33506642223,
+      "plan_maintenance_t": 59931.15681266223
+    },
+    {
+      "case": "fossil_diesel",
+      "baseline_operating_g_per_km": 1580.0,
+      "baseline_lifecycle_boundary_t": 1510909.361377627,
+      "plan_lifecycle_boundary_t": 266433.12361918937,
+      "environment_score_boundary_pct": 82.3660419062955,
+      "baseline_production_t": 61552.022399999994,
+      "plan_production_t": 189632.456,
+      "baseline_operating_t": 1402833.0039112049,
+      "plan_operating_t": 16869.510806527145,
+      "baseline_maintenance_t": 46524.33506642223,
+      "plan_maintenance_t": 59931.15681266223
+    }
+  ],
+  "roadmap": [
+    {
+      "year": 2024,
+      "baseline_bus_purchases": 82,
+      "plan_bus_purchases": 162,
+      "plan_electric_share_pct": 10,
+      "infrastructure_phase": true
+    },
+    {
+      "year": 2025,
+      "baseline_bus_purchases": 82,
+      "plan_bus_purchases": 162,
+      "plan_electric_share_pct": 20,
+      "infrastructure_phase": true
+    },
+    {
+      "year": 2026,
+      "baseline_bus_purchases": 82,
+      "plan_bus_purchases": 161,
+      "plan_electric_share_pct": 30,
+      "infrastructure_phase": true
+    },
+    {
+      "year": 2027,
+      "baseline_bus_purchases": 82,
+      "plan_bus_purchases": 161,
+      "plan_electric_share_pct": 40,
+      "infrastructure_phase": true
+    },
+    {
+      "year": 2028,
+      "baseline_bus_purchases": 82,
+      "plan_bus_purchases": 161,
+      "plan_electric_share_pct": 50,
+      "infrastructure_phase": true
+    },
+    {
+      "year": 2029,
+      "baseline_bus_purchases": 82,
+      "plan_bus_purchases": 161,
+      "plan_electric_share_pct": 60,
+      "infrastructure_phase": true
+    },
+    {
+      "year": 2030,
+      "baseline_bus_purchases": 81,
+      "plan_bus_purchases": 161,
+      "plan_electric_share_pct": 70,
+      "infrastructure_phase": true
+    },
+    {
+      "year": 2031,
+      "baseline_bus_purchases": 81,
+      "plan_bus_purchases": 161,
+      "plan_electric_share_pct": 80,
+      "infrastructure_phase": true
+    },
+    {
+      "year": 2032,
+      "baseline_bus_purchases": 81,
+      "plan_bus_purchases": 161,
+      "plan_electric_share_pct": 90,
+      "infrastructure_phase": false
+    },
+    {
+      "year": 2033,
+      "baseline_bus_purchases": 81,
+      "plan_bus_purchases": 161,
+      "plan_electric_share_pct": 100,
+      "infrastructure_phase": false
+    }
+  ],
+  "assumptions": {
+    "fleet_2023_total": 1725,
+    "fleet_2023_interval": [
+      1711,
+      1733
+    ],
+    "existing_trolleys": 262,
+    "existing_beb": 18,
+    "double_deck_blocks_excluded": 57,
+    "baseline_natural_renewal_fraction": 0.5882352941176471,
+    "conventional_bus_envelope_cad": 922860.0,
+    "baseline_cng_project_source": "2024 Business Plan, 50-bus project CAD 46.143m",
+    "beb_hardware_source": "June-2023 screening price CAD 1.2m",
+    "beb_project_envelope_source": "2025 Business Plan, CAD 1.874m per planned bus; retrospective",
+    "depot_per_bus_source": "June-2023 Marpole CAD 500m / 340 BEBs",
+    "onroute_charger_source": "June-2023 CAD 0.46--0.61m each",
+    "high_infrastructure_source": "2024 screening: CAD 6.52bn; includes expansion/multi-site scope",
+    "om_source": "2024 ZEFTP per vehicle-km; applied only to fossil-share service for both cases",
+    "production_source": "ICCT 2024 transfer factors; 6.6 kg/kg; 58 kgCO2e/kWh LFP; 335kWh/14,880kg BEB; 11,429kg diesel",
+    "discount_rate": 0.03,
+    "vehicle_life_years": 17,
+    "capital_schedule": "baseline 10/17 steady-state renewals and electric plan spread 2024-2033; infrastructure 2024-2031",
+    "residual": "vehicle straight-line by 17-year life; infrastructure residual excluded"
+  },
+  "limits": [
+    "Active block requests are not a garage vehicle register and exclude standby buses.",
+    "The 300-km point is a historical planning sensitivity, not a certified 2033 procurement specification.",
+    "Double-deck blocks are outside the scored battery-depot envelope; their in-route charging and cost remain unverified.",
+    "The high infrastructure envelope includes service expansion and must not be presented as fixed-service cost.",
+    "Environmental numbers exclude charging/depot construction and end-of-life credits; that boundary is named explicitly.",
+    "Capacity-specific trolley-route blocks are retained as proxies for already electric service; the feed does not certify propulsion.",
+    "The 2023 fleet total is a derived 1,711--1,733 bridge from a detailed 2022 snapshot and a later 2025 register, not an observed 31 December roster.",
+    "The 10/17 natural-renewal fraction assumes a uniform age distribution; the missing 2023 age roster remains a real uncertainty."
+  ]
+}

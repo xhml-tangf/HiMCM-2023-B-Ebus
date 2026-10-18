@@ -1,0 +1,100 @@
+{
+  "publisher_declared_in_feed": "TransLink",
+  "feed_version": "23SEP_20231020",
+  "repository": "JaydenCWong/JAAM-project",
+  "commit": "eb584b1108b0d582ae31c7db8e0d7e7b5ba1702b",
+  "path": "backend/engine/translink_data/",
+  "provenance_boundary": "Public immutable mirror, not an operator-certified retrospective export. Source headers and source Git objects are preserved. No repository code is executed or redistributed.",
+  "files": [
+    {
+      "file": "agency.txt",
+      "bytes": 262,
+      "git_blob_sha1": "7dcfdbea24c96acb3802f7027cb37edc52eb6a05",
+      "sha256": "3faaac4d61a4a979a535a8c0d1c2bba92a67104292900dfd4ff99314652a7771"
+    },
+    {
+      "file": "calendar.txt",
+      "bytes": 1401,
+      "git_blob_sha1": "5d35edae9b3634a905f4fe77d5dcc2f93b8ef338",
+      "sha256": "f9b3c07ee8bc7f923bf2b550d9a628e7dadc7ee7f069d92c348f129d61e5d9da"
+    },
+    {
+      "file": "calendar_dates.txt",
+      "bytes": 17447,
+      "git_blob_sha1": "0c4387a60e755b69a6fa7af0352b0e486119dc91",
+      "sha256": "7ec38e47e8c94c3e345b0fea7c2e98ce562a56edc649780a39d7ed2635925858"
+    },
+    {
+      "file": "direction_names_exceptions.txt",
+      "bytes": 11907,
+      "git_blob_sha1": "9a157a14b2ff4de414f58a32cccc0265278ecf43",
+      "sha256": "13343a74798c5dddfcec6ad750dbd3a3341cf380a89fa7c551d8469e13ce0d1c"
+    },
+    {
+      "file": "directions.txt",
+      "bytes": 8461,
+      "git_blob_sha1": "b51ce56ee1636ba0f610d66812e276afd56ca9c6",
+      "sha256": "5ec6eb829161166c0f6d0ca9d7a9646d695251a8e8906dac601bceee62f242bb"
+    },
+    {
+      "file": "feed_info.txt",
+      "bytes": 162,
+      "git_blob_sha1": "241b8678445fb56eda99a532f4f4fae38b436432",
+      "sha256": "b9c316d4ed4e131404e119e328bb713c6430ce8c7597fa5f4e40e99726947dec"
+    },
+    {
+      "file": "notes.txt",
+      "bytes": 1141,
+      "git_blob_sha1": "661f41130f9761f408178ca49409b4f6b346b014",
+      "sha256": "04546394d08a19a2ddc27788ba89abf0337b72a23479ed464451abf23ab7b273"
+    },
+    {
+      "file": "pattern_id.txt",
+      "bytes": 2430333,
+      "git_blob_sha1": "5f1119deba69c82f0134cb848ce9952675d394b0",
+      "sha256": "6845fc66504e59fa1f3f7fa4a40a7a99e49f672db2aa976c9a8672ca0c184703"
+    },
+    {
+      "file": "routes.txt",
+      "bytes": 11819,
+      "git_blob_sha1": "b8ee9f3aa072a3ea3734f65d9d77b91458c2ad9b",
+      "sha256": "91e52840353e5894caaa7350f9dc63e20692ea1bd9b360698f98034fbb0810ee"
+    },
+    {
+      "file": "shapes.txt",
+      "bytes": 6237874,
+      "git_blob_sha1": "6672cb99bf68dccf1c73d202512418095163535a",
+      "sha256": "87d6126f8d62b467f8d0942214fd7eb26eb3e723d0b89e28a72d75f90bbc3602"
+    },
+    {
+      "file": "signup_periods.txt",
+      "bytes": 73,
+      "git_blob_sha1": "89c5a06442593f65a1370bb1ac4f64e3eb17c709",
+      "sha256": "34445976e8f4bcadb9d11f99da91a1c8895e203ffc626bd31fb69a22a93adae9"
+    },
+    {
+      "file": "stop_order_exceptions.txt",
+      "bytes": 4865,
+      "git_blob_sha1": "6c313d1521ad487e31f89cf3416ed998bcf9c3c5",
+      "sha256": "e34c0d8f82874d16bbae8557176a70786e8f86a5da7fe1ed913b7cf52bd0bce2"
+    },
+    {
+      "file": "stop_times.txt",
+      "bytes": 82885241,
+      "git_blob_sha1": "8685be504e9159ae287c5d4c422517f159337cc9",
+      "sha256": "f16a13f891c9ad7a710c7fd3b1db5dbae8e147dbc928f8de37144b2d96af2c95"
+    },
+    {
+      "file": "stops.txt",
+      "bytes": 691280,
+      "git_blob_sha1": "86a5b08fd345d49960a23ddb23376f583bc264ec",
+      "sha256": "6aad688d4c9111a537d57ee38e54f944dea1984e2b770828702ca745cd68617b"
+    },
+    {
+      "file": "trips.txt",
+      "bytes": 3624725,
+      "git_blob_sha1": "47c4da25c4945a495368fd50047102b098d36fdf",
+      "sha256": "b85e7570cafefaf7fe9030db51d2d7a4d5ae428b69b05f491d41c018ef38dc42"
+    }
+  ]
+}

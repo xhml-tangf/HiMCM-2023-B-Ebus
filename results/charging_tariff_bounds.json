@@ -14045,7 +14045,7 @@
     "scipy_version": "1.18.0",
     "case_count": 243,
     "additional_crossover_lp_checks": 2,
-    "elapsed_seconds": 0.4057067999965511,
+    "elapsed_seconds": 0.2434981999977026,
     "checks": "Every feasible optimum matches independent closed-form cumulative-energy bound and has no power/window/energy residual violation"
   }
 }

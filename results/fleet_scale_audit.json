@@ -1,0 +1,41 @@
+{
+  "status": "DERIVED_INTERVAL_CROSS_YEAR_VALIDATION_NOT_2023_REGISTER",
+  "snapshot_2025_date": "2025-11-18",
+  "classes_2025": {
+    "trolley": 261,
+    "battery": 22,
+    "hybrid": 535,
+    "cng": 365,
+    "diesel": 379,
+    "gasoline_shuttle": 171
+  },
+  "age_bands_2025": {
+    "20+": 2,
+    "15-19": 705,
+    "10-14": 91,
+    "5-9": 543,
+    "0-4": 392
+  },
+  "young_0_to_4": 392,
+  "remaining_non_electric_or_non_trolley_2025": 1450,
+  "built_2023_2025": 285,
+  "fleet_2023_categories": {
+    "hybrid": 446,
+    "low_emission_diesel": 448,
+    "cng": 299,
+    "trolley": 262,
+    "battery": 4,
+    "contracted_diesel_hybrid": 46,
+    "gasoline_shuttle": 206
+  },
+  "fleet_2023_total_estimate": 1725,
+  "fleet_2023_interval": [
+    1711,
+    1733
+  ],
+  "warnings": [
+    "2023 total is derived, not an operator roster.",
+    "2025 snapshot includes active vehicles only; 63 in-storage vehicles are separate.",
+    "Vehicle specific status, training/heritage colors and exact 2033 model specifications need review."
+  ]
+}

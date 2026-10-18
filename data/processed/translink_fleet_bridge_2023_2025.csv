@@ -1,0 +1,42 @@
+snapshot,metric,value,unit,status,source
+2022,hybrid,446,vehicles,DETAILED_2022_SNAPSHOT,TransLink fleet-profile snapshot reported in research ledger
+2022,low_emission_diesel,448,vehicles,DETAILED_2022_SNAPSHOT,TransLink fleet-profile snapshot reported in research ledger
+2022,cng,299,vehicles,DETAILED_2022_SNAPSHOT,TransLink fleet-profile snapshot reported in research ledger
+2022,trolley,262,vehicles,DETAILED_2022_SNAPSHOT,TransLink fleet-profile snapshot reported in research ledger
+2022,battery,4,vehicles,DETAILED_2022_SNAPSHOT,TransLink fleet-profile snapshot reported in research ledger
+2022,contracted_diesel_hybrid,46,vehicles,DETAILED_2022_SNAPSHOT,TransLink fleet-profile snapshot reported in research ledger
+2022,gasoline_shuttle,206,vehicles,DETAILED_2022_SNAPSHOT,TransLink fleet-profile snapshot reported in research ledger
+2022,total,1711,vehicles,DETAILED_2022_SNAPSHOT,sum of detailed categories
+2023,trolley,262,vehicles,OBSERVED,TransLink February and August 2023 notices
+2023,zero_emission_total,280,vehicles,OBSERVED,TransLink December 2023 notice
+2023,battery_delivered,18,vehicles,DERIVED,Bridge 280-262
+2023,battery_in_service_approx,5,vehicles,OBSERVED_APPROX,TransLink Buzzer December 2023
+2023,total,1725,vehicles,DERIVED_ESTIMATE,2022 total plus 14 zero-emission bridge
+2023,total_low,1711,vehicles,DERIVED_RANGE,"Detailed 2022 total"
+2023,total_high,1733,vehicles,DERIVED_RANGE,"2025 active fleet upper bound"
+2025,active_total,1733,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,trolley,261,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,battery,22,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,hybrid,535,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,cng,365,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,diesel,379,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,gasoline_shuttle,171,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,in_storage,63,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_1996,1,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2005,1,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2006,209,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2007,168,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2008,92,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2009,236,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2012,25,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2014,45,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2015,21,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2016,108,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2018,296,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2019,130,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2020,9,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2021,103,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2022,4,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2023,125,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2024,91,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18
+2025,built_2025,69,vehicles,OBSERVED,CMBC active and in-storage fleet 2025-11-18

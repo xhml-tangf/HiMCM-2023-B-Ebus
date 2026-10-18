@@ -1,0 +1,67 @@
+# Manuscript review and completion audit
+
+Review date: 18 October 2026. Scope: the complete 25-page PDF, source, code,
+figures, data ledger and repository. No original 2023 HiMCM solution paper was
+used.
+
+## Requirement check
+
+| Problem task | Evidence in the paper | State |
+|---|---|---|
+| Q1 ecological model and application | Fall-2023 schedules, battery-range screen, production/operation/maintenance emissions, fuel-mix sensitivity | Conditional result implemented. Depot construction and end-of-life are explicitly excluded. |
+| Q2 financial model with grants up to 50% | Ten-year discounted resource cost, vehicle/infrastructure/O&M/residual components, 0/25/50% agency cases | Conditional result implemented. Physical garage bids remain absent. |
+| Q3 ten-year roadmap in three metropolitan areas | Vancouver, Chicago and London annual positions; London integer cohort model | Implemented as planning counts. Route-specific Chicago/London purchases remain unverified. |
+| Q4 one-page decision letter | Page 25 contains recommendations, counts, scores and gates | Present and constrained to one page. |
+| Format | 12-point, summary page, contents, 25 solution pages and one AI-report page | Verified by compile and automated layout checks. |
+
+## Substantive corrections completed
+
+- Replaced fictional battery constraints for diesel and trolley vehicles with
+  explicit fuel, battery and overhead-supply checks.
+- Corrected charging loss attribution by separating battery-delivered energy,
+  meter energy and charging efficiency.
+- Added source-declared fall-2023 GTFS blocks and calendar exceptions.
+- Retained unknown trip distances as monotonic intervals instead of filling
+  them with an observed zero.
+- Replaced capacity labels with capacity signatures and kept propulsion/trolley
+  attribution explicitly provisional.
+- Added the distinction between a block request, a physical vehicle and an
+  as-operated duty.
+- Added fleet-scale interval (1,711--1,733; derived point 1,725) and the
+  2025 age/model-year check.
+- Replaced the ten-year full-fleet baseline with a 10/17 steady-state renewal
+  assumption, with the unknown age roster disclosed.
+- Excluded double-deck and trolley costs from the scored depot sub-case so
+  those assets are not silently priced as ordinary battery buses.
+- Corrected the environmental boundary to exclude trolley service in both
+  cases and to include renewable-diesel/RNG scenarios.
+- Added the 80.6-MW aggregate charging-scale check and the 6--8-year
+  infrastructure lead time.
+- Removed the misleading service-plan trend figure and added a conditional
+  annual three-city table.
+- Reduced the manuscript from 26 to 25 solution pages while adding the new
+  results.
+
+## Remaining evidence gaps
+
+- 2023 full-year GTFS and an as-operated trip record.
+- Block-to-vehicle, depot, pull-out/pull-in and terminal dwell data.
+- Exact 2023 vehicle age/propulsion/payload register.
+- Site transformer, feeder, charger and available-power limits.
+- Winter measurements for the selected 2033 buses.
+- Comparable delivered vehicle/site prices for Chicago and London.
+- Matched infrastructure, battery-replacement and end-of-life emissions.
+
+These gaps prevent a certified city-wide optimum and full life-cycle score.
+They do not prevent the reported fixed-service screening, conditional
+cost/emissions scenario or transparent ten-year transfer plan.
+
+## Automated checks
+
+- Python test suite: 35 passed.
+- Static LaTeX check: 12-point, 41 references all cited, balanced environments.
+- Built-in editor compile: success.
+- Same app-owned Tectonic executable exported the PDF.
+- PDF QA: 26 total pages, 25 solution pages, page-1 summary, page-25 letter,
+  page-26 AI report, 37 external source hyperlinks verified, no text-boundary
+  or page-limit issues.
