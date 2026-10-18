@@ -17,10 +17,20 @@ def main() -> None:
         errors.append("contest header or contents missing")
     if text.find("Summary Sheet") > text.find(r"\tableofcontents"):
         errors.append("summary must be first")
-    if text.find(r"\section*{AI Use Report}") < text.find(r"\end{thebibliography}"):
+    if text.find(r"\section*{Report on Use of AI}") < text.find(r"\end{thebibliography}"):
         errors.append("AI report must follow solution/references")
     if r"\src{" in text:
         errors.append("legacy manual citations remain")
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        for match in re.finditer(r"(?<!\\)%", line):
+            # An unescaped percent after whitespace starts a legitimate source
+            # comment. A percent attached to prose or a URL silently truncates
+            # the compiled sentence and citation list.
+            if match.start() > 0 and not line[match.start() - 1].isspace():
+                errors.append(
+                    f"raw percent sign must be escaped at line {line_number}"
+                )
+            break
     defined = set(re.findall(r"\\bibitem\{([^}]+)\}", text))
     cited = {key for group in re.findall(r"\\cite\{([^}]+)\}", text)
              for key in group.split(",")}
@@ -41,8 +51,6 @@ def main() -> None:
             errors.append(f"unbalanced environment at {environment}")
     if stack:
         errors.append(f"unclosed environments: {stack}")
-    # All escaped percent signs and literal percent signs are left to TeX; this
-    # guard merely catches a common accidental raw source URL percentage.
     if r"\newcommand{\teamnumber}{00000}" in text:
         print("NOTE: replace placeholder control number 00000 before submission")
     if errors:

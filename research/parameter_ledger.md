@@ -148,3 +148,53 @@ derived 1,725 with interval 1,711--1,733, not an observed 2023 roster. The 2025
 age bands imply 392 active vehicles aged 0--4 and 543 aged 5--9; 285 were built
 in 2023--2025, so accelerating all fossils to electric by 2033 creates material
 early-retirement exposure.
+
+## Full-class and uncertainty update (18 October 2026)
+
+The class-specific core bound uses 1,424 heavy non-deck planning positions,
+57 double-decks and 189 community shuttles. It retains the shared heavy-bus
+depot investment once and adds only class-specific vehicle and charger
+envelopes. Central gross present value is CAD 4.709 billion against CAD 2.458
+billion for renewal plus operations (-91.6%); 25/50% grant cases are -53.6% and
+-15.7%. The high class envelope is CAD 5.259 billion (-113.9%). The 1,424
+positions are a transparent scaling of 1,630 generic non-deck positions after
+removing the shuttle duty allowance; they are not a garage roster. See
+`results/vancouver_full_fleet_bound.json`.
+
+The 432,768-cell Cartesian assumption grid includes the 1,711--1,733 fleet
+interval, seven paired range points, 5--18 retained BEBs, 9/17--11/17 renewal,
+1.5--5.0% real discount, hardware/project vehicle costs and four fuel
+intensities. It reproduces the named CAD 4.575-billion / -96.4% case exactly.
+Equal-weight fifth/median/ninety-fifth economically scored cases are
+-166.9/-127.2/-89.8%; environment scores are 13.3/72.6/82.4%. These are
+assumption-space quantiles, never confidence intervals. See
+`results/vancouver_transition_uncertainty.json`.
+
+At a 700-kWh double-deck central case, 17 of 57 weekday duties have a
+certain single-charge shortfall; the 827-kWh optimistic case still has eight.
+A 150-kWh community shuttle has 49 of 101 certain shortfalls. These establish
+the requirement for terminal or en-route charging; they do not certify a
+specific stop or vehicle. See `results/deck_shuttle_electrification_audit.json`.
+
+The regional economic layer uses the published 2023 Bus Operations umbrella:
+CAD 945.537 million total expenditure, CAD 619.195 million wages and benefits,
+and 72.5% BC supplier retention. Statistics Canada BS48A000 sector proxies give
+an annual gross-value-added proxy of CAD 0.62--0.97 billion, labour income of
+CAD 0.62--0.79 billion and 6.0--8.8 thousand FTE. Infrastructure is a separate
+one-time gross activity memo (CAD 0.62--3.86 billion over 2024--31); it is not
+added to annual operations. Vehicle manufacturing is excluded because BC
+final assembly is unverified. See
+`results/regional_and_air_quality_audit.json`.
+
+The fixed-route tailpipe proxy allocates 106.868 million bus-km by fossil share
+and fuel/stock proxies. It gives 126--408 t NOx, 1.11--8.34 t PM2.5 and
+2.34--14.18 t PM10 per year. These are exhaust-only values; SeaBus, HandyDART,
+rail, non-revenue vehicles, tire/brake wear and upstream fuel are excluded.
+The underlying 2023 fuel-by-km split and emissions-control roster remain
+unavailable.
+
+APTA's public page lists `APTA-2023-Vehicle-Database`, but the ZIP returned a
+Cloudflare challenge (HTTP 403); the report hash and TransLink rows remain
+missing. The 2023 FOI log was obtained, but it contains no direct attachments
+for the fleet-age/retirement requests. No APTA-derived counts were substituted
+for the derived 1,711--1,733 bridge. See `research/apta_2023_fleet_note.md`.

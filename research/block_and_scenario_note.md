@@ -53,6 +53,15 @@ change resource cost.
 The environmental boundary is production plus operation plus maintenance,
 excluding depot/charger construction and end-of-life. It gives 29.2--82.4% reduction; the low end assumes renewable diesel and RNG across the conventional comparator. This is deliberately not called a complete life-cycle score.
 
+The class-specific follow-up brings 57 double-decks and 189 midpoint
+community shuttles into one envelope while retaining shared heavy-bus depot
+investment once. Its central gross PV is CAD 4.709 billion against CAD 2.458
+billion for renewal plus operations (-91.6%); the high class envelope is CAD
+5.259 billion (-113.9%), and the class-specific environmental score is
+35.1--84.0%. At 700 kWh for double-decks and 150 kWh for shuttles, 17/57 and
+49/101 weekday duties respectively have a certain overnight-charge shortfall.
+These are technical screens, not charger-site certificates.
+
 ## Direct limitations
 
 - 2023 full-year timetable and actual operations are absent.

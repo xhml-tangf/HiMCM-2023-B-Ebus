@@ -134,7 +134,7 @@ def main() -> None:
                 ("7. Sensitivity, limitations and completion gate", 5),
                 ("8. References", 6),
                 ("Decision-maker letter", 7),
-                ("AI Use Report", 8),
+                ("Report on Use of AI", 8),
             ]:
                 story.append(Paragraph(f"{label} ........................................ {page}", styles["BodyCustom"]))
             i += 1; continue

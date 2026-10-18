@@ -1,6 +1,6 @@
 # AI use record
 
-This record maps user requests to retained artifacts. It does not reproduce private chat logs. The final PDF's AI Use Report summarizes the same uses.
+This record maps user requests to retained artifacts. It does not reproduce private chat logs. The final PDF's Report on Use of AI summarizes the same uses.
 
 ## Tools
 
@@ -18,6 +18,8 @@ Neither tool was asked to locate or use an original 2023 HiMCM solution submissi
 5. "Run CPU algorithms and obtain concrete scores." Outputs: results/charging_tariff_bounds.json, results/london_cohort_roadmap.json, results/cta_2023_detail_audit.json, and results/vancouver_transition_scenarios.json.
 6. "Fill missing data rather than leave uncertain gaps." Output: recovered fall-2023 GTFS provenance and audits in data/processed/vancouver_gtfs_2023_provenance.json, results/vancouver_gtfs_baseline_audit.json, and results/vancouver_block_range_audit.json.
 7. "Create and upload the private GitHub repository." Output: https://github.com/xhml-tangf/HiMCM-2023-B-Ebus.
+8. "Fill the missing official fleet, double-deck/shuttle, regional economic and NOx/PM evidence rather than leaving unexplained gaps." Outputs: `results/apta_2023_fleet_audit.json`, `results/deck_shuttle_electrification_audit.json`, and `results/regional_and_air_quality_audit.json`.
+9. "Use the available CPU and run the model, with solution quality first." Outputs: `results/vancouver_transition_uncertainty.json` (432,768 cases), `results/vancouver_full_fleet_bound.json`, the existing HiGHS/LP runs, and the 39-test suite.
 
 ## Human-verification boundary
 

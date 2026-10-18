@@ -17,7 +17,8 @@ def main() -> None:
     pdf = ROOT / "paper/ebus_transition.pdf"
     document = fitz.open(pdf)
     texts = [page.get_text() for page in document]
-    ai = [i + 1 for i, text in enumerate(texts) if "AI Use Report" in text.splitlines()]
+    ai = [i + 1 for i, text in enumerate(texts)
+          if "Report on Use of AI" in text.splitlines()]
     summary = [i + 1 for i, text in enumerate(texts) if "Keywords:" in text]
     letter_start = [i + 1 for i, text in enumerate(texts) if "Dear decision-makers," in text]
     letter_end = [i + 1 for i, text in enumerate(texts) if "Sincerely," in text]
@@ -30,7 +31,10 @@ def main() -> None:
     if len(letter_start) != 1 or letter_start != letter_end:
         issues.append("letter is not contained on one page")
     source = (ROOT / "paper/ebus_transition.tex").read_text(encoding="utf-8")
-    source_urls = set(re.findall(r"\\href\{([^}]+)\}", source))
+    source_urls = {
+        url.replace(r"\%", "%")
+        for url in re.findall(r"\\href\{([^}]+)\}", source)
+    }
     pdf_urls = {link["uri"] for page in document for link in page.get_links() if link.get("uri")}
     if source_urls - pdf_urls:
         issues.append("external source hyperlinks missing from PDF")

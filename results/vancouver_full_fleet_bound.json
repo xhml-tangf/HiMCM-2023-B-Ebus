@@ -1,0 +1,235 @@
+{
+  "status": "EXECUTED_CLASS_SPECIFIC_CORE_BOUND_NOT_AWARDED_BID",
+  "method": "The 1,630 generic non-deck positions are reduced by the 207-position community-shuttle allowance, then scaled to 1,424 heavy positions; 18 existing BEB positions are retained.",
+  "classes": {
+    "heavy_non_deck": 1424,
+    "double_deck": 57,
+    "community_shuttle_midpoint": 189,
+    "existing_beb": 18
+  },
+  "service_km": {
+    "current_non_deck_fossil_proxy": 88786898.98172182,
+    "double_deck_proxy": 5450000.0,
+    "full_scored_proxy": 94236898.98172182,
+    "community_shuttle_official_2023": 13653519
+  },
+  "economics": [
+    {
+      "case": "low",
+      "heavy_positions_after_service_scale": 1424,
+      "heavy_purchases_after_existing_beb": 1406,
+      "shuttle_fleet": 171,
+      "double_deck_fleet": 57,
+      "heavy_unit_cost_cad": 1200000.0,
+      "shared_depot_cad": 2370588235.2941175,
+      "deck_core_capital_cad": 100206750.0,
+      "shuttle_core_capital_cad": 64025250.0,
+      "additional_class_capital_cad": 13410000.0,
+      "capital_gross_nominal_cad": 4222020235.2941175,
+      "baseline_gross_pv_cad": 2457805971.410597,
+      "plan_gross_pv_cad": 4675978804.120551,
+      "economic_score_gross_pct": -90.25011976176822,
+      "incremental_gross_pv_cad": 2218172832.7099543,
+      "components_pv_cad": {
+        "baseline_vehicle_capex": 642646131.4815997,
+        "baseline_om": 2226691820.573269,
+        "baseline_residual": -411531980.64427143,
+        "plan_heavy_vehicle_capex": 1439574706.310993,
+        "plan_deck_vehicle_capex": 76878060.0755206,
+        "plan_shuttle_vehicle_capex": 52225891.199648775,
+        "plan_shared_and_class_infrastructure": 2091866724.0200596,
+        "plan_om": 2019642928.1681073,
+        "plan_residual": -1004209505.6537783
+      },
+      "grant_cases": [
+        {
+          "grant_fraction": 0.0,
+          "agency_pv_cad": 4675978804.120551,
+          "agency_economic_score_vs_baseline_pct": -90.25011976176822
+        },
+        {
+          "grant_fraction": 0.25,
+          "agency_pv_cad": 3760842458.7189956,
+          "agency_economic_score_vs_baseline_pct": -53.01624711085527
+        },
+        {
+          "grant_fraction": 0.5,
+          "agency_pv_cad": 2845706113.31744,
+          "agency_economic_score_vs_baseline_pct": -15.782374459942316
+        }
+      ]
+    },
+    {
+      "case": "central",
+      "heavy_positions_after_service_scale": 1424,
+      "heavy_purchases_after_existing_beb": 1406,
+      "shuttle_fleet": 189,
+      "double_deck_fleet": 57,
+      "heavy_unit_cost_cad": 1200000.0,
+      "shared_depot_cad": 2370588235.2941175,
+      "deck_core_capital_cad": 154052220.0,
+      "shuttle_core_capital_cad": 90500000.0,
+      "additional_class_capital_cad": 26270000.0,
+      "capital_gross_nominal_cad": 4302340455.294117,
+      "baseline_gross_pv_cad": 2457805971.410597,
+      "plan_gross_pv_cad": 4708517646.813723,
+      "economic_score_gross_pct": -91.57401770455401,
+      "incremental_gross_pv_cad": 2250711675.403126,
+      "components_pv_cad": {
+        "baseline_vehicle_capex": 642646131.4815997,
+        "baseline_om": 2226691820.573269,
+        "baseline_residual": -411531980.64427143,
+        "plan_heavy_vehicle_capex": 1439574706.310993,
+        "plan_deck_vehicle_capex": 117728648.90763843,
+        "plan_shuttle_vehicle_capex": 69141325.70736173,
+        "plan_shared_and_class_infrastructure": 2103150879.214738,
+        "plan_om": 2019642928.1681073,
+        "plan_residual": -1040720841.4951158
+      },
+      "grant_cases": [
+        {
+          "grant_fraction": 0.0,
+          "agency_pv_cad": 4708517646.813723,
+          "agency_economic_score_vs_baseline_pct": -91.57401770455401
+        },
+        {
+          "grant_fraction": 0.25,
+          "agency_pv_cad": 3776118756.7785397,
+          "agency_economic_score_vs_baseline_pct": -53.637789178749934
+        },
+        {
+          "grant_fraction": 0.5,
+          "agency_pv_cad": 2843719866.743357,
+          "agency_economic_score_vs_baseline_pct": -15.70156065294587
+        }
+      ]
+    },
+    {
+      "case": "high",
+      "heavy_positions_after_service_scale": 1424,
+      "heavy_purchases_after_existing_beb": 1406,
+      "shuttle_fleet": 206,
+      "double_deck_fleet": 57,
+      "heavy_unit_cost_cad": 2083601.0376551135,
+      "shared_depot_cad": 2370588235.2941175,
+      "deck_core_capital_cad": 296826304.4117647,
+      "shuttle_core_capital_cad": 195700000.0,
+      "additional_class_capital_cad": 187023529.41176468,
+      "capital_gross_nominal_cad": 5792657598.648972,
+      "baseline_gross_pv_cad": 2457805971.410597,
+      "plan_gross_pv_cad": 5257841922.153653,
+      "economic_score_gross_pct": -113.92420652050271,
+      "incremental_gross_pv_cad": 2800035950.7430563,
+      "components_pv_cad": {
+        "baseline_vehicle_capex": 642646131.4815997,
+        "baseline_om": 2226691820.573269,
+        "baseline_residual": -411531980.64427143,
+        "plan_heavy_vehicle_capex": 2499582793.2097,
+        "plan_deck_vehicle_capex": 147160811.13454804,
+        "plan_shuttle_vehicle_capex": 114413811.3166066,
+        "plan_shared_and_class_infrastructure": 2244205916.071241,
+        "plan_om": 2019642928.1681073,
+        "plan_residual": -1767164337.74655
+      },
+      "grant_cases": [
+        {
+          "grant_fraction": 0.0,
+          "agency_pv_cad": 5257841922.153653,
+          "agency_economic_score_vs_baseline_pct": -113.92420652050271
+        },
+        {
+          "grant_fraction": 0.25,
+          "agency_pv_cad": 4006501089.220629,
+          "agency_economic_score_vs_baseline_pct": -63.011284691492435
+        },
+        {
+          "grant_fraction": 0.5,
+          "agency_pv_cad": 2755160256.2876053,
+          "agency_economic_score_vs_baseline_pct": -12.098362862482155
+        }
+      ]
+    }
+  ],
+  "environment_central": [
+    {
+      "case": "renewable_fuel_mix",
+      "baseline_operating_g_per_km": 302.0,
+      "baseline_boundary_t": 395527.5923912221,
+      "plan_boundary_t": 256470.30161918938,
+      "environment_score_pct": 35.15741845754445
+    },
+    {
+      "case": "rng_heavy",
+      "baseline_operating_g_per_km": 960.0,
+      "baseline_boundary_t": 1015606.3876909517,
+      "plan_boundary_t": 256470.30161918938,
+      "environment_score_pct": 74.74707674867115
+    },
+    {
+      "case": "weighted_mix",
+      "baseline_operating_g_per_km": 1233.0,
+      "baseline_boundary_t": 1272873.1219110521,
+      "plan_boundary_t": 256470.30161918938,
+      "environment_score_pct": 79.85107099801645
+    },
+    {
+      "case": "fossil_diesel",
+      "baseline_operating_g_per_km": 1580.0,
+      "baseline_boundary_t": 1599875.161377627,
+      "plan_boundary_t": 256470.30161918938,
+      "environment_score_pct": 83.96935537155619
+    }
+  ],
+  "central_result": {
+    "case": "central",
+    "heavy_positions_after_service_scale": 1424,
+    "heavy_purchases_after_existing_beb": 1406,
+    "shuttle_fleet": 189,
+    "double_deck_fleet": 57,
+    "heavy_unit_cost_cad": 1200000.0,
+    "shared_depot_cad": 2370588235.2941175,
+    "deck_core_capital_cad": 154052220.0,
+    "shuttle_core_capital_cad": 90500000.0,
+    "additional_class_capital_cad": 26270000.0,
+    "capital_gross_nominal_cad": 4302340455.294117,
+    "baseline_gross_pv_cad": 2457805971.410597,
+    "plan_gross_pv_cad": 4708517646.813723,
+    "economic_score_gross_pct": -91.57401770455401,
+    "incremental_gross_pv_cad": 2250711675.403126,
+    "components_pv_cad": {
+      "baseline_vehicle_capex": 642646131.4815997,
+      "baseline_om": 2226691820.573269,
+      "baseline_residual": -411531980.64427143,
+      "plan_heavy_vehicle_capex": 1439574706.310993,
+      "plan_deck_vehicle_capex": 117728648.90763843,
+      "plan_shuttle_vehicle_capex": 69141325.70736173,
+      "plan_shared_and_class_infrastructure": 2103150879.214738,
+      "plan_om": 2019642928.1681073,
+      "plan_residual": -1040720841.4951158
+    },
+    "grant_cases": [
+      {
+        "grant_fraction": 0.0,
+        "agency_pv_cad": 4708517646.813723,
+        "agency_economic_score_vs_baseline_pct": -91.57401770455401
+      },
+      {
+        "grant_fraction": 0.25,
+        "agency_pv_cad": 3776118756.7785397,
+        "agency_economic_score_vs_baseline_pct": -53.637789178749934
+      },
+      {
+        "grant_fraction": 0.5,
+        "agency_pv_cad": 2843719866.743357,
+        "agency_economic_score_vs_baseline_pct": -15.70156065294587
+      }
+    ]
+  },
+  "boundaries": [
+    "Vehicle prices come from public planning or external procurement envelopes and mix 2021, 2023 and 2024 nominal currencies; they are not rebased to a single bid year.",
+    "Shared heavy-bus depot investment is retained once. Class-specific charger/site items are added separately, but site power and civil works may still overlap.",
+    "The double-deck annual distance is a weekday-share proxy; the shuttle distance is an independently published 2023 actual total.",
+    "Shuttle and double-deck manufacturing inventories include battery factors; the shuttle glider mass is not invented.",
+    "Depot construction and end-of-life are excluded from the environmental boundary."
+  ]
+}

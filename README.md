@@ -49,6 +49,35 @@ as a verified vehicle-level schedule.
   cost/environment scenario and a common annual planning table for Vancouver,
   Chicago and London. The named environmental boundary excludes depot
   construction and end-of-life; the financial case excludes double-deck cost.
+- `src/build_full_fleet_bound.py` and
+  `results/vancouver_full_fleet_bound.json`: class-specific core envelope for
+  1,424 heavy non-deck positions, 57 double-decks and 189 community shuttles.
+  Shared depot investment is retained once. Central gross PV is CAD 4.709
+  billion versus CAD 2.458 billion for renewal plus operations (-91.6%);
+  the class envelope gives 35.1--84.0% environmental reduction.
+- `src/propagate_transition_uncertainty.py` and
+  `results/vancouver_transition_uncertainty.json`: 432,768-cell CPU
+  assumption grid over fleet stock, range, retained BEBs, renewal, discount,
+  vehicle basis and fuel intensity. Its named-case cell reproduces the
+  CAD 4.575-billion / -96.4% result exactly. Quantiles are assumption-space
+  descriptions, not sampling confidence intervals.
+- `src/audit_deck_shuttle_electrification.py`,
+  `data/processed/deck_shuttle_scenarios.csv` and
+  `results/deck_shuttle_electrification_audit.json`: public vehicle, winter,
+  charge and cost evidence for 57 double-decks and 171--206 community
+  shuttles. A 700-kWh double-deck still has 17 of 57 weekday duties requiring
+  a supplement; a 150-kWh shuttle has 49 of 101.
+- `src/audit_regional_and_air_quality.py` and
+  `results/regional_and_air_quality_audit.json`: separate 2023 regional
+  value-added/employment and fixed-route tailpipe inventories. The
+  Bus Operations umbrella gives a CAD 0.62--0.97 billion annual value-added
+  proxy and 6.0--8.8 thousand FTE; bus tailpipe proxies are 126--408 t NOx,
+  1.11--8.34 t PM2.5 and 2.34--14.18 t PM10 per year. Infrastructure and
+  vehicle manufacturing remain separate non-additive memos.
+- `src/audit_apta_2023.py` and `results/apta_2023_fleet_audit.json`: negative
+  evidence and synthetic parser test for the APTA 2023 vehicle workbook. The
+  official ZIP was Cloudflare-blocked, so no TransLink model-year rows were
+  invented. The release makes the remaining 2023 roster gap auditable.
 - `src/analyze_charging_tariffs.py`, `src/plot_charging_tariffs.py`, and
   `results/charging_tariff_bounds.json`: 243 CPU LP cases and an independently
   verified site-power crossover under the official April-2023 BC Hydro
@@ -89,7 +118,7 @@ as a verified vehicle-level schedule.
 - `paper/ebus_transition.pdf`: current research draft compiled with the Codex app-owned
   Tectonic 0.17 executable after the built-in editor compiler passed the same
   source. It currently has 25 solution pages
-  plus the AI Use Report; the research completion gates below remain open.
+  plus the Report on Use of AI; the research completion gates below remain open.
 - `scripts/capture_editor_pdf.py` remains a diagnostic fallback for editor-cache
   exports. `scripts/qa_editor_pdf.py` checks page
   count, summary/letter length, headers, references and text boundaries, then
@@ -113,6 +142,11 @@ with network access to obtain the official raw sources, then
 `python src/plot_london_cohorts.py`,
 `python src/analyze_charging_tariffs.py`, `python src/plot_charging_tariffs.py`,
 `python src/build_transition_scenarios.py`, `python src/plot_transition_scenarios.py`,
+`python src/build_full_fleet_bound.py`,
+`python src/propagate_transition_uncertainty.py`,
+`python src/audit_deck_shuttle_electrification.py`,
+`python src/audit_regional_and_air_quality.py`,
+`python src/audit_apta_2023.py`,
 `python src/make_block_table.py`, `python src/make_three_city_roadmap.py`,
 `python src/audit_fleet_snapshot.py`, `python src/make_depot_table.py`,
 `python src/audit_2020_program.py`,
@@ -172,3 +206,10 @@ economic score of -96.4%. At 50% eligible grant funding, agency payment is
 CAD 2.710 billion and the score is -16.4%; gross resource cost is unchanged.
 Its partial life-cycle boundary gives 29.2--82.4% emissions reduction. These
 are named scenarios, not a certified city optimum or full life-cycle result.
+The class-specific full-fleet core bound is CAD 4.709 billion against CAD
+2.458 billion, or -91.6%; the high class envelope is CAD 5.259 billion and
+-113.9%. This includes 57 double-decks and 189 community shuttles, retains
+the shared depot once, and gives 35.1--84.0% environmental reduction. The
+project still lacks a 2023 physical age/depot register, firm site power and
+as-operated duties, so the certified citywide solution and complete
+life-cycle score remain `UNVERIFIED`.

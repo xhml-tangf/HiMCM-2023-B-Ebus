@@ -1,0 +1,293 @@
+{
+  "checked_utc": "2026-10-18T14:29:43+00:00",
+  "project_scope": "TransLink/CMBC fixed-route buses; SeaBus, HandyDART and rail excluded from the bridge comparison",
+  "overall_status": "APTA_2023_RECORD_DATA_MISSING; TRANSLINK_2023_FOI_RELEASES_NOT_PUBLICLY_LINKED; CURRENT_2025_FOI_SCAN_VERIFIED",
+  "apta_2023": {
+    "url": "https://www.apta.com/wp-content/uploads/2026/03/APTA-2023-Vehicle-Database.zip",
+    "official_page": "https://www.apta.com/news-research/public-transit-statistics/vehicle-database/",
+    "download_status": "MISSING_LOCAL_ARCHIVE",
+    "access_observation": "Direct curl returned HTTP 403 Cloudflare 'Just a moment' challenge; headless Edge also reached the challenge page. The search crawler confirmed the URL serves application/zip, but it cannot return ZIP bytes.",
+    "download_probe_observations": [
+      {
+        "method": "curl (WSL, browser user agent)",
+        "http_status": 403,
+        "content_type": "text/html; charset=UTF-8",
+        "body_bytes": 6004,
+        "challenge_header": "cf-mitigated: challenge"
+      },
+      {
+        "method": "Edge headless",
+        "result": "Cloudflare browser-check page"
+      },
+      {
+        "method": "search-result fetcher",
+        "result": "origin file exists but application/zip cannot be returned by text fetcher"
+      }
+    ],
+    "prior_project_ledger_status": "not_downloaded_due_network",
+    "bytes": null,
+    "sha256": null,
+    "members": [],
+    "catalog_status": "Official page lists APTA-2023-Vehicle-Database as a previous edition.",
+    "documented_fields": [
+      "date/manufacture year",
+      "manufacturer",
+      "model",
+      "length",
+      "fuel/power type",
+      "number of vehicles"
+    ],
+    "documented_geography": "U.S. and Canadian transit agencies",
+    "data_cutoff": {
+      "status": "UNVERIFIED_FOR_2023",
+      "expected_by_series_convention": "2023-01-01",
+      "basis": "The consecutive APTA 2024 and 2025 report overviews state January 1 of their respective reporting years; this is not direct evidence for 2023."
+    },
+    "status": "BLOCKED_OFFICIAL_ARCHIVE_NOT_PARSED",
+    "workbook_name": null,
+    "parse_diagnostics": {},
+    "pdf_findings": [],
+    "translink_record_count": 0,
+    "model_summary": []
+  },
+  "apta_2024_screen": {
+    "status": "SEARCH_INDEXED_PDF_SCREEN_ONLY",
+    "url": "https://www.apta.com/wp-content/uploads/APTA-2024-Vehicle-Database.pdf",
+    "as_of": "2024-01-01",
+    "catalog_claim": "Approximately 158 U.S. and six Canadian agencies.",
+    "toronto_record_present": true,
+    "toronto_record_observed": "Agency Name: Toronto Transit Commission; APTA ID: 280; vehicle rows include year built, model, length, type of power and active counts.",
+    "translink_cmbc_or_greater_vancouver_record_found": false,
+    "search_terms": [
+      "TransLink",
+      "Coast Mountain Bus Company",
+      "Greater Vancouver"
+    ],
+    "interpretation": "This is a targeted text-search screen of the 2024 report, not a full workbook enumeration and not evidence about the unavailable 2023 archive. It shows that Canadian coverage and Toronto presence do not by themselves prove TransLink inclusion."
+  },
+  "foi_2023": {
+    "status": "OFFICIAL_LOG_READ",
+    "source_url": "https://www.translink.ca/-/media/translink/documents/about-translink/freedom-of-information/past-non-personal-access-requests/foi-requests-received-in-2023.pdf",
+    "sha256": "60c61527821fae42e456636777b4f9299a89cc72fabf74ce73fa0097d5fc1fba",
+    "bytes": 123449,
+    "pages": 15,
+    "metadata": {
+      "/Author": "Anderson, Maureen",
+      "/Company": "",
+      "/CreationDate": "D:20260204102526-08'00'",
+      "/Creator": "Acrobat PDFMaker 25 for Excel",
+      "/ModDate": "D:20260204102528-08'00'",
+      "/Producer": "Adobe PDF Library 25.1.5"
+    },
+    "annotation_count": 0,
+    "release_attachment_links_in_log": 0,
+    "interpretation": "The official log records dispositions, not release documents. No attachment or URL annotations are embedded in the log PDF.",
+    "requests": {
+      "2023-249": {
+        "received": "2023-05-03",
+        "closed": "2023-06-13",
+        "disposition": "Released in full",
+        "scope": "List of every bus retired and/or decommissioned in the previous two years.",
+        "fleet_relevance": "retirements only; no surviving-fleet age or depot roster",
+        "present_in_official_log": true,
+        "log_excerpt": "2023-249 May 03-23 Request by individual for a list of every bus that has been retired and/or decomissioned in the past 2 years. Jun 13-23 Released in full 2023-253 May 04-23 Request by individual for information regarding any \"near misses\" for the West Coast Express near the 272nd at grade crossing in Maple Ridge.",
+        "public_attachment_linked_from_log": false
+      },
+      "2023-327": {
+        "received": "2023-06-07",
+        "closed": "2023-07-20",
+        "disposition": "Released in full",
+        "scope": "Number of spare buses, 2019--2023.",
+        "fleet_relevance": "spare-count evidence if the attachment were public",
+        "present_in_official_log": true,
+        "log_excerpt": "2023-327 Jun 07-23 Request by individual for number of spare buses from 2019-2023. Jul 20-23 Released in full 2023-350 Jun 13-23 Request by individual for records on current status of vehicles 2156 and 3317. Jun 22-23 No records 2023-357 Jun 15-23 Request by individual for Richmond Transit Center sign up sheets for Apr",
+        "public_attachment_linked_from_log": false
+      },
+      "2023-375": {
+        "received": "2023-06-22",
+        "closed": "2023-07-26",
+        "disposition": "Released in full",
+        "scope": "Number of buses on road during peak service by category.",
+        "fleet_relevance": "peak deployment count; not total fleet or reserve ratio",
+        "present_in_official_log": true,
+        "log_excerpt": "2023-375 Jun 22-23 Request by individual for number of buses on road during peak service by category. Jul 26-23 Released in full 2023-380 Jun 28-23 Request by individual for Vancouver Transit Center spring and summer operator sign-up sheets. Jul 27-23 Released in full 2023-386 Jun 29-23 Request by individual for infor",
+        "public_attachment_linked_from_log": false
+      },
+      "2023-409": {
+        "received": "2023-07-11",
+        "closed": "2023-07-27",
+        "disposition": "Released in full",
+        "scope": "Operator sign-up sheets for four transit centres.",
+        "fleet_relevance": "work assignment records; no vehicle age or propulsion count",
+        "present_in_official_log": true,
+        "log_excerpt": "2023-409 Jul 11-23 Request by individual for Vancouver Transit Center, Burnaby Transit Center, Hamilton Transit Center, and Surrey Transit Center operator sign-up sheets. Jul 27-23 Released in full 2023-410 Jul 10-23 Request by individual for letters or e-mails received from the provincial government informing TransL",
+        "public_attachment_linked_from_log": false
+      },
+      "2023-411": {
+        "received": "2023-07-10",
+        "closed": "2023-07-27",
+        "disposition": "Released in full",
+        "scope": "Richmond Transit Centre operator sign-up sheet.",
+        "fleet_relevance": "work assignment record; no vehicle age or propulsion count",
+        "present_in_official_log": true,
+        "log_excerpt": "2023-411 Jul 10-23 Request by individual for Richmond Transit Center Operator sign-up sheet. Jul 27-23 Released in full 2023-415 Jul 10-23 Request by individual for meeting minutes from June 21, 2023 and July 5, 2023. Aug 16-23 Released in part 13(1),17(1) 2023-416 Jul 11-23 Request by individual for a blank copy of th",
+        "public_attachment_linked_from_log": false
+      },
+      "2023-416": {
+        "received": "2023-07-11",
+        "closed": "2023-07-27",
+        "disposition": "Released in full",
+        "scope": "Blank September sign-up sheet for all depots.",
+        "fleet_relevance": "blank form; no fleet data",
+        "present_in_official_log": true,
+        "log_excerpt": "2023-416 Jul 11-23 Request by individual for a blank copy of the sign-up sheets for the September sheet for all depots. Jul 27-23 Released in full 2023-417 Jul 11-23 Request by individual for statistical reports to CUTA for 2011/13/15/17/19/21. Jul 28-23 Released in full 2023-418 Sep 19-23 Request by individual for re",
+        "public_attachment_linked_from_log": false
+      }
+    }
+  },
+  "current_cmbc_2025": {
+    "status": "VISUALLY_READ_SCANNED_RECORD",
+    "source_url": "https://www.translink.ca/-/media/translink/documents/about-translink/freedom-of-information/cmbc-fleet--active--instorage.pdf",
+    "sha256": "be0d3cd5f00b8217872705c5a46e290923debacfa6002c849041123630f839b2",
+    "bytes": 373331,
+    "pages": 5,
+    "embedded_text_characters": 0,
+    "metadata": {
+      "/Creator": "GdPicture Managed PDF Plugin",
+      "/Producer": "GdPicture Managed PDF Plugin Ver. 2.20011",
+      "/CreationDate": "D:20251120143434-08'00'",
+      "/ModDate": "D:20251120143434-08'00'"
+    },
+    "evidence_method": "Rendered pages inspected; published aggregate and storage totals matched the processed CSV exactly.",
+    "observed": {
+      "request": "2025/469",
+      "memo_date": "2025-11-20",
+      "effective_timestamp": "2025-11-18 15:11:58",
+      "active_total": 1733,
+      "in_storage": 63,
+      "active_by_power": {
+        "electric_trolley": 261,
+        "quick_charge_battery": 22,
+        "hybrid": 535,
+        "natural_gas": 365,
+        "diesel": 379,
+        "community_shuttle_gas": 171
+      }
+    },
+    "matches_processed_2025_snapshot": true,
+    "limitation": "This November 2025 release is not a 2023 register and cannot establish 2023 age, spare or depot counts."
+  },
+  "bridge_comparison": {
+    "bridge_file": "data/processed/translink_fleet_bridge_2023_2025.csv",
+    "bridge_file_sha256": "af59e9f486ca9afa7f3a35351534ce509f75cdb2e73bc58d9fe8d9c330352c11",
+    "snapshot_file": "data/processed/cmbc_depot_snapshot_2025.csv",
+    "snapshot_file_sha256": "183e09e919d34debed7b9ef4c300a85b395d327719ea52f98ca30b8db055d1c6",
+    "derived_2023_point": 1725,
+    "derived_2023_interval": [
+      1711,
+      1733
+    ],
+    "cmbc_2025_active": 1733,
+    "cmbc_2025_in_storage": 63,
+    "apta_2023_parsed_total": null,
+    "difference_from_2023_point": null,
+    "difference_from_2023_interval": null,
+    "interpretation": "No APTA-derived total is available, so neither the 1,725 derived point nor the 1,711--1,733 interval can be tightened or rejected. The 2025 active fleet remains 1,733."
+  },
+  "existing_snapshot": {
+    "bridge": {
+      "classes_2022_total": 1711,
+      "classes_2022": {
+        "hybrid": 446,
+        "low_emission_diesel": 448,
+        "cng": 299,
+        "trolley": 262,
+        "battery": 4,
+        "contracted_diesel_hybrid": 46,
+        "gasoline_shuttle": 206
+      },
+      "fleet_2023_interval": [
+        1711,
+        1733
+      ],
+      "fleet_2023_width": 22,
+      "fleet_2023_derived_point": 1725,
+      "fleet_2023_point_offset_from_low": 14,
+      "classes_2025_total": 1733,
+      "classes_2025": {
+        "trolley": 261,
+        "battery": 22,
+        "hybrid": 535,
+        "cng": 365,
+        "diesel": 379,
+        "gasoline_shuttle": 171
+      },
+      "in_storage_2025": 63,
+      "built_2025": {
+        "1996": 1,
+        "2005": 1,
+        "2006": 209,
+        "2007": 168,
+        "2008": 92,
+        "2009": 236,
+        "2012": 25,
+        "2014": 45,
+        "2015": 21,
+        "2016": 108,
+        "2018": 296,
+        "2019": 130,
+        "2020": 9,
+        "2021": 103,
+        "2022": 4,
+        "2023": 125,
+        "2024": 91,
+        "2025": 69
+      },
+      "age_bands_2025": {
+        "0-4": 392,
+        "5-9": 543,
+        "10-14": 91,
+        "15-19": 705,
+        "20+": 2
+      },
+      "age_band_definition": "2025 minus year built; current active stock, not 2023 ages"
+    },
+    "depot_snapshot": {
+      "depots": [
+        "VTC",
+        "HTC",
+        "BTCN",
+        "BTCS",
+        "STC",
+        "PTC",
+        "RTC"
+      ],
+      "active_total": 1733,
+      "propulsion_totals": {
+        "trolley": 261,
+        "battery": 22,
+        "hybrid": 535,
+        "cng": 365,
+        "diesel": 379,
+        "gasoline_shuttle": 171
+      },
+      "non_trolley": 1472
+    }
+  },
+  "missing": [
+    "APTA 2023 ZIP bytes/hash and workbook inspection",
+    "direct APTA 2023 data cutoff statement",
+    "whether APTA 2023 contains TransLink, CMBC or Greater Vancouver records",
+    "2023 APTA vehicle rows with model, manufacture year, length, power and count",
+    "public attachments for TransLink FOI 2023-249, 2023-327 and 2023-375",
+    "31 December 2023 physical fleet register by vehicle, status, age and depot",
+    "2023 spare policy and published spare-bus count",
+    "2023 depot allocations and charging/garage capacity"
+  ],
+  "warnings": [
+    "FOI 'Released in full' describes a disposition to the requester; it does not make the attachment public or prove that the release is online.",
+    "A 2024 APTA text search cannot fill a missing 2023 snapshot or be relabelled as 2023 evidence.",
+    "The 2025 CMBC scan is a later active/in-storage snapshot and cannot establish 2023 age or spare counts.",
+    "No 2023 HiMCM solution paper or answer was consulted or used."
+  ]
+}

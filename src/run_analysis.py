@@ -25,6 +25,9 @@ def main() -> None:
     gtfs_audit = json.loads((ROOT / "results/vancouver_gtfs_baseline_audit.json").read_text())
     block_audit = json.loads((ROOT / "results/vancouver_block_range_audit.json").read_text())
     policy_case = json.loads((ROOT / "results/vancouver_transition_scenarios.json").read_text())
+    uncertainty = json.loads((ROOT / "results/vancouver_transition_uncertainty.json").read_text())
+    full_fleet = json.loads((ROOT / "results/vancouver_full_fleet_bound.json").read_text())
+    regional = json.loads((ROOT / "results/regional_and_air_quality_audit.json").read_text())
     fleet_audit = json.loads((ROOT / "results/fleet_scale_audit.json").read_text())
     site_check = check_schedule(None, None, None, None, None, year=2033)
     # 2019-CAD per 40-ft vehicle demonstration. The published depot BEB
@@ -138,11 +141,39 @@ def main() -> None:
                 max(x["environment_score_boundary_pct"] for x in policy_case["environment"])],
             "boundary": "partial life cycle: vehicle/battery production, operation and maintenance; infrastructure construction and end-of-life excluded",
             "warning": "Not a certified full-city optimum because vehicle, depot, charger and winter records are missing.",
+            "joint_uncertainty_grid": {
+                "status": uncertainty["status"],
+                "cells": uncertainty["cells"],
+                "economic_score_percentiles": uncertainty["economic_score_pct"],
+                "environment_score_percentiles": uncertainty["environment_score_pct"],
+                "named_case_reproduction": uncertainty["named_case_grid_reproduction"],
+            },
+            "class_specific_full_fleet_core_bound": {
+                "status": full_fleet["status"],
+                "classes": full_fleet["classes"],
+                "central": full_fleet["central_result"],
+                "environment_central": full_fleet["environment_central"],
+            },
         },
         "separate_reference_case_file": "results/cpu_reference_scores.json",
         "separate_charging_power_tariff_bounds": "results/charging_tariff_bounds.json",
         "separate_block_range_audit": "results/vancouver_block_range_audit.json",
         "separate_fleet_scale_audit": "results/fleet_scale_audit.json",
+        "separate_full_fleet_bound": "results/vancouver_full_fleet_bound.json",
+        "separate_joint_uncertainty_grid": "results/vancouver_transition_uncertainty.json",
+        "separate_regional_and_air_quality_audit": "results/regional_and_air_quality_audit.json",
+        "regional_economic_scope": {
+            "status": regional["status"],
+            "annual_operations": [
+                row for row in regional["economic"]["rows"]
+                if row["recurrence"] == "annual_2023"
+            ],
+            "capital_memos_not_additive_to_operations": [
+                row for row in regional["economic"]["rows"]
+                if row["recurrence"] != "annual_2023"
+            ],
+        },
+        "fixed_route_bus_air_quality_scope": regional["air_quality"],
         "transfer_case_result_files": {
             "three_city_annual_plan": "results/three_city_roadmap.json",
             "chicago_2023_age_energy_and_renewal_bound": "results/cta_2023_detail_audit.json",

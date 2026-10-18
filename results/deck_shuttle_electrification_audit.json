@@ -1,0 +1,496 @@
+{
+  "status": "CONDITIONAL_TECHNICAL_AND_COST_AUDIT; 2033_FULL_CLASS_FEASIBILITY_UNVERIFIED",
+  "scope": "2023 fall weekday cap85 and cap24 duty proxies; TransLink fixed-route service; double-deck and community shuttles only",
+  "base_date": "2023-11-14",
+  "research_access_date": "2026-10-18",
+  "evidence_cutoff_policy": "Every parameter is labelled as known by 2023, derived from 2023, or later. Later product and procurement evidence is never backdated.",
+  "parameter_count": 43,
+  "scenario_method": "Planned range = nominal battery x usable fraction / winter kWh-per-km. Duty certainty requires the distance upper bound to be at or below range; a lower bound above range is a certain shortfall. Charging minutes use vehicle charge power x 0.90 efficiency.",
+  "source_registry": {
+    "translink_tech_2023": {
+      "title": "TransLink Mayors' Council technology update, June 2023",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf"
+    },
+    "translink_board_2023": {
+      "title": "TransLink public Board meeting package, 22 June 2023",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2023/june/23-06-22-public-board-meeting-package---for-posting.pdf"
+    },
+    "translink_fleet_2020": {
+      "title": "TransLink Low Carbon Fleet Transition Plan, February 2020",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf"
+    },
+    "translink_playbook_2024": {
+      "title": "TransLink Zero-Emission Fleet Transition Plan summary, November 2024",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf"
+    },
+    "translink_budget_2025": {
+      "title": "TransLink 2025 Business Plan",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf"
+    },
+    "translink_cmbc_fleet": {
+      "title": "Coast Mountain Bus Company fleet page",
+      "url": "https://www.translink.ca/about%20us/about%20translink/operating%20companies/coast%20mountain%20bus%20company"
+    },
+    "translink_cmbc_2025_snapshot": {
+      "title": "CMBC active and in-storage fleet snapshot, 18 November 2025",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/freedom-of-information/cmbc-fleet--active--instorage.pdf"
+    },
+    "translink_deck_2017": {
+      "title": "TransLink launches double-decker bus pilot project",
+      "url": "https://www.translink.ca/news/2017/november/translink%20launches%20double%20decker%20bus%20pilot%20project"
+    },
+    "translink_deck_2019": {
+      "title": "Double-decker buses rolling into service this October",
+      "url": "https://www.translink.ca/news/2019/august/double-decker%20buses%20rolling%20into%20service%20this%20october"
+    },
+    "translink_buzzer_2019": {
+      "title": "PNE Fair: Double the delight with our double-decker bus onsite",
+      "url": "https://buzzer.translink.ca/2019/08/pne-fair-double-the-delight-with-our-double-decker-bus-onsite/"
+    },
+    "translink_30ft_2025": {
+      "title": "TransLink tests a 30-foot battery-electric bus",
+      "url": "https://buzzer.translink.ca/2025/03/were-testing-a-30-foot-battery-electric-bus/"
+    },
+    "translink_events": {
+      "title": "TransLink planned special events: vehicle capacities",
+      "url": "https://www.translink.ca/about-us/doing-business-with-translink/planned-special-events"
+    },
+    "gtfs_2023": {
+      "title": "TransLink fall-2023 GTFS, immutable public mirror commit eb584b1",
+      "url": "https://github.com/JaydenCWong/JAAM-project/tree/eb584b1108b0d582ae31c7db8e0d7e7b5ba1702b/backend/engine/translink_data"
+    },
+    "adl_hk_spec_2023": {
+      "title": "Alexander Dennis Enviro500EV Hong Kong specification, 2023",
+      "url": "https://www.alexander-dennis.com/site-content/uploads/2023/10/Enviro500EV-Hong-Kong-2023-11.pdf"
+    },
+    "adl_kmb_launch_2024": {
+      "title": "KMB launches Enviro500EV passenger service, May 2024",
+      "url": "https://www.alexander-dennis.com/kmb-launches-alexander-dennis-enviro500ev-into-hong-kong-service-following-completion-of-testing-and-certification/"
+    },
+    "adl_na_2021": {
+      "title": "Alexander Dennis unveils the Enviro500EV CHARGE for North America",
+      "url": "https://www.alexander-dennis.com/alexander-dennis-unveils-its-first-zero-emission-three-axle-double-deck-bus-the-enviro500ev-charge-for-north-america/"
+    },
+    "adl_na_current": {
+      "title": "Alexander Dennis North America Enviro500EV product page",
+      "url": "https://www.alexander-dennis.com/buses/enviro500ev-north-america/"
+    },
+    "foothill_2024": {
+      "title": "Foothill Transit Executive Board agenda, 26 January 2024",
+      "url": "https://www.foothilltransit.org/sites/default/files/2024-01/01-26-24_eb_agenda_packet.pdf"
+    },
+    "sound_2024": {
+      "title": "InductEV: Sound Transit wireless charging for 48 electric buses",
+      "url": "https://www.prnewswire.com/news-releases/sound-transit-to-go-wireless-in-seattle-with-48-electric-buses-including-33-double-deckers-302066915.html"
+    },
+    "endera_2023": {
+      "title": "Endera 2023 all-electric shuttle announcement",
+      "url": "https://www.enderamotors.com/press-releases/endera-unveils-the-2023-all-electric-shuttle-model-with-extended-range-and-fast-charging-speeds"
+    },
+    "endera_calact_2023": {
+      "title": "Endera CALACT contract announcement",
+      "url": "https://www.enderamotors.com/blog/press-releases/endera-selected-for-largest-state-ev-bus-contract-in-us-history/"
+    },
+    "greenpower_evstar": {
+      "title": "GreenPower EV Star Passenger Van product page",
+      "url": "https://greenpowermotor.com/gp-products/ev-star/"
+    },
+    "greenpower_ev250": {
+      "title": "GreenPower EV250 Bus product page",
+      "url": "https://greenpowermotor.com/gp-products/ev250-bus/"
+    },
+    "greenpower_sacrt": {
+      "title": "GreenPower delivery of EV Stars to Sacramento Regional Transit",
+      "url": "https://greenpowermotor.com/greenpower-delivery-ev-stars-sacrt/"
+    },
+    "greenpower_grant": {
+      "title": "Grant Transit Authority orders four wirelessly charged EV Stars",
+      "url": "https://greenpowermotor.com/wireless-buy-america-compliant-ev-stars-grant-transit-authority/"
+    },
+    "lion_2023": {
+      "title": "Lion Electric fourth-quarter and fiscal 2023 results",
+      "url": "https://www.prnewswire.com/news-releases/lion-electric-announces-fourth-quarter-and-fiscal-2023-results-302075488.html"
+    },
+    "avta_2020": {
+      "title": "Antelope Valley Transit Authority Board agenda, 25 February 2020",
+      "url": "https://www.avta.com/downloads/meetings/bod/2020/022520-agenda.pdf"
+    },
+    "vicinity_2021": {
+      "title": "Vicinity Motor Corp. C$6 million initial order from Calgary Transit",
+      "url": "https://www.sec.gov/Archives/edgar/data/1834975/000173112222000597/e3635_ex99-1.htm"
+    },
+    "calgary_current": {
+      "title": "Calgary Transit electric shuttle bus pilot project update",
+      "url": "https://www.calgarytransit.com/plans---projects/electric-bus-pilot-project.html"
+    },
+    "redwood_2023": {
+      "title": "Redwood Coast Transit Authority Board packet, April 2023",
+      "url": "https://redwoodcoasttransit.org/wp-content/uploads/2023/04/RCTA-Agenda-Packet-4-24-2023.pdf"
+    },
+    "newflyer_2023_brochure": {
+      "title": "New Flyer Xcelsior CHARGE NG brochure, January 2023",
+      "url": "https://www.newflyer.com/site-content/uploads/2023/01/Xcelsior-CHARGE_NG_Brochure.pdf"
+    },
+    "bc_suvi_2021": {
+      "title": "BC Specialty-Use Vehicle Incentive Program eligible-vehicle list, 2 September 2021",
+      "url": "https://pluginbc.ca/wp/wp-content/uploads/2020/12/SUVI_MHD_03_09_2021.pdf"
+    }
+  },
+  "fleet_mapping": [
+    {
+      "asset_class": "double_deck",
+      "observed_or_derived_units": 57,
+      "population_low": 57,
+      "population_high": 57,
+      "weekday_duty_proxy_blocks": 57,
+      "mapping_status": "DERIVED_FLEET_EQUALS_PROXY_COUNT; NOT_VEHICLE_TO_BLOCK_CERTIFIED",
+      "mapping_note": "32 ordered in 2019 plus 25 exercised option; 57 cap85 duties in the 2023 fall weekday. Equality is a consistency check, not an ID join.",
+      "annual_2023_service_km_low": 5109371.779499514,
+      "annual_2023_service_km_high": 5793119.621993594,
+      "annual_km_per_physical_vehicle_low": 89638.10139472832,
+      "annual_km_per_physical_vehicle_high": 101633.67757883498
+    },
+    {
+      "asset_class": "community_shuttle",
+      "observed_or_derived_units": 171,
+      "population_low": 171,
+      "population_high": 206,
+      "weekday_duty_proxy_blocks": 101,
+      "mapping_status": "CROSS_YEAR_FLEET_INTERVAL; 2023_REGISTER_MISSING",
+      "mapping_note": "171 active gasoline shuttles in Nov 2025; 206 detailed stock in the older Nov-2021/2022 bridge (163 CMBC + 43 contracted). The 101 cap24 duties do not equal fleet stock because the GTFS lacks vehicle IDs, garages, propulsion and a complete route-class map.",
+      "annual_2023_service_km_low": 13653519.0,
+      "annual_2023_service_km_high": 13653519.0,
+      "annual_km_per_physical_vehicle_low": 66279.21844660194,
+      "annual_km_per_physical_vehicle_high": 79845.14035087719
+    }
+  ],
+  "service_mapping": {
+    "total_2023_fixed_route_bus_km": 106868324.0,
+    "deck_weekday_distance_share_low": 0.04780997388430564,
+    "deck_weekday_distance_share_high": 0.05420801417259612,
+    "deck_estimated_annual_km_low": 5109371.779499514,
+    "deck_estimated_annual_km_high": 5793119.621993594,
+    "shuttle_2023_service_km": 13653519.0,
+    "shuttle_2023_service_hours": 705621.0,
+    "shuttle_annual_km_per_fleet_vehicle_low": 66279.21844660194,
+    "shuttle_annual_km_per_fleet_vehicle_high": 79845.14035087719,
+    "shuttle_mean_speed_kmh": 19.349649457711717
+  },
+  "scenarios": [
+    {
+      "asset_class": "double_deck",
+      "scenario": "low",
+      "label": "2023-known / lower-capability envelope",
+      "duty_blocks_screened": 57,
+      "battery_kwh": 472.0,
+      "usable_fraction": 0.8,
+      "winter_kwh_per_km": 1.79,
+      "charge_power_kw": 150.0,
+      "planned_range_km": 210.94972067039106,
+      "overnight_feasible_certain_blocks": 33,
+      "overnight_range_interval_blocks": 2,
+      "overnight_certain_shortfall_blocks": 22,
+      "overnight_feasible_possible_blocks": 35,
+      "total_duty_energy_lower_kwh": 23304.391628,
+      "total_duty_energy_upper_kwh": 28085.363666999998,
+      "total_shortfall_energy_lower_kwh": 8904.071187000001,
+      "total_shortfall_energy_upper_kwh": 12682.39112,
+      "total_shortfall_charge_minutes_lower": 3957.3649720000003,
+      "total_shortfall_charge_minutes_upper": 5636.6182755555565,
+      "mean_charge_minutes_per_certain_shortfall_upper": 244.9557085454546,
+      "annual_class_km_low": 5109371.779499514,
+      "annual_class_km_high": 5793119.621993594,
+      "annual_energy_low_kwh": 9145775.48530413,
+      "annual_energy_high_kwh": 10369684.123368533,
+      "fleet_low": 57,
+      "fleet_high": 57,
+      "vehicle_unit_cost_cad_low": 1572750.0,
+      "vehicle_unit_cost_cad_high": 1572750.0,
+      "vehicle_cost_cad_low": 89646750.0,
+      "vehicle_cost_cad_high": 89646750.0,
+      "charger_count_low": 9,
+      "charger_count_high": 9,
+      "charger_cost_cad_each": 610000.0,
+      "infrastructure_cost_cad_low": 10560000.0,
+      "infrastructure_cost_cad_high": 10560000.0,
+      "capital_cost_cad_low": 100206750.0,
+      "capital_cost_cad_high": 100206750.0,
+      "unit_cost_basis": "2021 BC incentive list: BYD DD10 double-deck coach MSRP US$1.165m at assumed CAD/USD 1.35; no TransLink bid",
+      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+    },
+    {
+      "asset_class": "community_shuttle",
+      "scenario": "low",
+      "label": "2023-known / lower-capability envelope",
+      "duty_blocks_screened": 101,
+      "battery_kwh": 118.0,
+      "usable_fraction": 0.8,
+      "winter_kwh_per_km": 0.8,
+      "charge_power_kw": 60.0,
+      "planned_range_km": 118.0,
+      "overnight_feasible_certain_blocks": 46,
+      "overnight_range_interval_blocks": 2,
+      "overnight_certain_shortfall_blocks": 53,
+      "overnight_feasible_possible_blocks": 48,
+      "total_duty_energy_lower_kwh": 11927.761600000002,
+      "total_duty_energy_upper_kwh": 12883.60344,
+      "total_shortfall_energy_lower_kwh": 4635.16912,
+      "total_shortfall_energy_upper_kwh": 5409.3661600000005,
+      "total_shortfall_charge_minutes_lower": 5150.187911111111,
+      "total_shortfall_charge_minutes_upper": 6010.406844444445,
+      "mean_charge_minutes_per_certain_shortfall_upper": 113.33133417190774,
+      "annual_class_km_low": 13653519.0,
+      "annual_class_km_high": 13653519.0,
+      "annual_energy_low_kwh": 10922815.200000001,
+      "annual_energy_high_kwh": 10922815.200000001,
+      "fleet_low": 171,
+      "fleet_high": 171,
+      "vehicle_unit_cost_cad_low": 357750.0,
+      "vehicle_unit_cost_cad_high": 357750.0,
+      "vehicle_cost_cad_low": 61175250.0,
+      "vehicle_cost_cad_high": 61175250.0,
+      "charger_count_low": 57,
+      "charger_count_high": 57,
+      "charger_cost_cad_each": 50000.0,
+      "infrastructure_cost_cad_low": 2850000.0,
+      "infrastructure_cost_cad_high": 2850000.0,
+      "capital_cost_cad_low": 64025250.0,
+      "capital_cost_cad_high": 64025250.0,
+      "unit_cost_basis": "2021 BC incentive list: EV Star Transit Plus with ADA MSRP US$265k at assumed CAD/USD 1.35",
+      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+    },
+    {
+      "asset_class": "double_deck",
+      "scenario": "central",
+      "label": "observed production / operational central envelope",
+      "duty_blocks_screened": 57,
+      "battery_kwh": 700.0,
+      "usable_fraction": 0.85,
+      "winter_kwh_per_km": 1.8,
+      "charge_power_kw": 300.0,
+      "planned_range_km": 330.55555555555554,
+      "overnight_feasible_certain_blocks": 35,
+      "overnight_range_interval_blocks": 5,
+      "overnight_certain_shortfall_blocks": 17,
+      "overnight_feasible_possible_blocks": 40,
+      "total_duty_energy_lower_kwh": 23434.58376,
+      "total_duty_energy_upper_kwh": 28242.265140000003,
+      "total_shortfall_energy_lower_kwh": 4616.200720000002,
+      "total_shortfall_energy_upper_kwh": 7798.1405,
+      "total_shortfall_charge_minutes_lower": 1025.8223822222224,
+      "total_shortfall_charge_minutes_upper": 1732.9201111111113,
+      "mean_charge_minutes_per_certain_shortfall_upper": 89.94901307189544,
+      "annual_class_km_low": 5109371.779499514,
+      "annual_class_km_high": 5793119.621993594,
+      "annual_energy_low_kwh": 9196869.203099126,
+      "annual_energy_high_kwh": 10427615.31958847,
+      "fleet_low": 57,
+      "fleet_high": 57,
+      "vehicle_unit_cost_cad_low": 2408460.0,
+      "vehicle_unit_cost_cad_high": 2408460.0,
+      "vehicle_cost_cad_low": 137282220.0,
+      "vehicle_cost_cad_high": 137282220.0,
+      "charger_count_low": 9,
+      "charger_count_high": 9,
+      "charger_cost_cad_each": 1300000.0,
+      "infrastructure_cost_cad_low": 16770000.0,
+      "infrastructure_cost_cad_high": 16770000.0,
+      "capital_cost_cad_low": 154052220.0,
+      "capital_cost_cad_high": 154052220.0,
+      "unit_cost_basis": "Foothill 2024 contract: US$1.758m/bus at assumed CAD/USD 1.37",
+      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+    },
+    {
+      "asset_class": "community_shuttle",
+      "scenario": "central",
+      "label": "observed production / operational central envelope",
+      "duty_blocks_screened": 101,
+      "battery_kwh": 150.0,
+      "usable_fraction": 0.85,
+      "winter_kwh_per_km": 0.9,
+      "charge_power_kw": 70.0,
+      "planned_range_km": 141.66666666666666,
+      "overnight_feasible_certain_blocks": 51,
+      "overnight_range_interval_blocks": 1,
+      "overnight_certain_shortfall_blocks": 49,
+      "overnight_feasible_possible_blocks": 52,
+      "total_duty_energy_lower_kwh": 13418.7318,
+      "total_duty_energy_upper_kwh": 14494.053870000002,
+      "total_shortfall_energy_lower_kwh": 4133.995500000001,
+      "total_shortfall_energy_upper_kwh": 4964.75583,
+      "total_shortfall_charge_minutes_lower": 3937.1385714285725,
+      "total_shortfall_charge_minutes_upper": 4728.338885714287,
+      "mean_charge_minutes_per_certain_shortfall_upper": 96.38261865889216,
+      "annual_class_km_low": 13653519.0,
+      "annual_class_km_high": 13653519.0,
+      "annual_energy_low_kwh": 12288167.1,
+      "annual_energy_high_kwh": 12288167.1,
+      "fleet_low": 189,
+      "fleet_high": 189,
+      "vehicle_unit_cost_cad_low": 428571.4285714286,
+      "vehicle_unit_cost_cad_high": 428571.4285714286,
+      "vehicle_cost_cad_low": 81000000.0,
+      "vehicle_cost_cad_high": 81000000.0,
+      "charger_count_low": 95,
+      "charger_count_high": 95,
+      "charger_cost_cad_each": 100000.0,
+      "infrastructure_cost_cad_low": 9500000.0,
+      "infrastructure_cost_cad_high": 9500000.0,
+      "capital_cost_cad_low": 90500000.0,
+      "capital_cost_cad_high": 90500000.0,
+      "unit_cost_basis": "Calgary June-2021 order: over C$6m for 14 vehicles; midpoint fleet 189 of 171-206",
+      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+    },
+    {
+      "asset_class": "double_deck",
+      "scenario": "high",
+      "label": "2033 forward / high-capability and high-cost envelope",
+      "duty_blocks_screened": 57,
+      "battery_kwh": 827.0,
+      "usable_fraction": 0.9,
+      "winter_kwh_per_km": 1.6,
+      "charge_power_kw": 300.0,
+      "planned_range_km": 465.1875,
+      "overnight_feasible_certain_blocks": 43,
+      "overnight_range_interval_blocks": 6,
+      "overnight_certain_shortfall_blocks": 8,
+      "overnight_feasible_possible_blocks": 49,
+      "total_duty_energy_lower_kwh": 20830.741120000002,
+      "total_duty_energy_upper_kwh": 25104.23568,
+      "total_shortfall_energy_lower_kwh": 1396.4788800000003,
+      "total_shortfall_energy_upper_kwh": 3054.4425600000004,
+      "total_shortfall_charge_minutes_lower": 310.32864000000006,
+      "total_shortfall_charge_minutes_upper": 678.7650133333334,
+      "mean_charge_minutes_per_certain_shortfall_upper": 62.75478222222222,
+      "annual_class_km_low": 5109371.779499514,
+      "annual_class_km_high": 5793119.621993594,
+      "annual_energy_low_kwh": 8174994.847199223,
+      "annual_energy_high_kwh": 9268991.395189751,
+      "fleet_low": 57,
+      "fleet_high": 57,
+      "vehicle_unit_cost_cad_low": 3010575.0,
+      "vehicle_unit_cost_cad_high": 3010575.0,
+      "vehicle_cost_cad_low": 171602775.0,
+      "vehicle_cost_cad_high": 171602775.0,
+      "charger_count_low": 9,
+      "charger_count_high": 9,
+      "charger_cost_cad_each": 4600000.0,
+      "infrastructure_cost_cad_low": 125223529.4117647,
+      "infrastructure_cost_cad_high": 125223529.4117647,
+      "capital_cost_cad_low": 296826304.4117647,
+      "capital_cost_cad_high": 296826304.4117647,
+      "unit_cost_basis": "2024 Foothill actual converted to CAD plus a 25% uncertainty/supply premium",
+      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+    },
+    {
+      "asset_class": "community_shuttle",
+      "scenario": "high",
+      "label": "2033 forward / high-capability and high-cost envelope",
+      "duty_blocks_screened": 101,
+      "battery_kwh": 260.0,
+      "usable_fraction": 0.85,
+      "winter_kwh_per_km": 0.9,
+      "charge_power_kw": 120.0,
+      "planned_range_km": 245.55555555555554,
+      "overnight_feasible_certain_blocks": 74,
+      "overnight_range_interval_blocks": 7,
+      "overnight_certain_shortfall_blocks": 20,
+      "overnight_feasible_possible_blocks": 81,
+      "total_duty_energy_lower_kwh": 13418.7318,
+      "total_duty_energy_upper_kwh": 14494.053870000002,
+      "total_shortfall_energy_lower_kwh": 748.6592300000002,
+      "total_shortfall_energy_upper_kwh": 1173.1566600000006,
+      "total_shortfall_charge_minutes_lower": 415.9217944444446,
+      "total_shortfall_charge_minutes_upper": 651.7537000000002,
+      "mean_charge_minutes_per_certain_shortfall_upper": 29.562317222222237,
+      "annual_class_km_low": 13653519.0,
+      "annual_class_km_high": 13653519.0,
+      "annual_energy_low_kwh": 12288167.1,
+      "annual_energy_high_kwh": 12288167.1,
+      "fleet_low": 206,
+      "fleet_high": 206,
+      "vehicle_unit_cost_cad_low": 650000.0,
+      "vehicle_unit_cost_cad_high": 650000.0,
+      "vehicle_cost_cad_low": 133900000.0,
+      "vehicle_cost_cad_high": 133900000.0,
+      "charger_count_low": 206,
+      "charger_count_high": 206,
+      "charger_cost_cad_each": 300000.0,
+      "infrastructure_cost_cad_low": 61800000.0,
+      "infrastructure_cost_cad_high": 61800000.0,
+      "capital_cost_cad_low": 195700000.0,
+      "capital_cost_cad_high": 195700000.0,
+      "unit_cost_basis": "Forward 30-ft/20+ capacity vehicle and site-integration planning assumption; Calgary charging spend is the upper anchor",
+      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+    }
+  ],
+  "feasibility_judgment": {
+    "double_deck_2033": {
+      "verdict": "CONDITIONAL_PHYSICAL_FEASIBILITY_WITH_ENDPOINT_CHARGING; ALL_57_BY_2033_NOT_SUPPORTED_AS_AN_OPERATOR_COMMITMENT",
+      "overnight_only": "Fails for the whole 57-block population in every screened scenario. Certain feasible / interval / certain shortfall counts are 33/2/22 at 472 kWh, 35/5/17 at 700 kWh and 43/6/8 at 827 kWh.",
+      "charge_requirement": "The fitted range must be complemented by 150-300 kW DC charging or equivalent opportunity charging at terminals. A 2023 150-kW vehicle cannot replicate the 450-kW/5-15-minute strategy published for older 40/60-ft planning without longer dwell or more energy stops.",
+      "decision_time_view": "As of 2023, the 472-kWh Enviro500EV specification and a North American prototype existed, but no Vancouver electric deck fleet or winter/payload certification was public. TransLink's later 2024 plan explicitly says to begin deck transition after 2030."
+    },
+    "community_shuttle_2033": {
+      "verdict": "NOT_ONE_FOR_ONE_WITH_2023_SMALL SHUTTLES; CONDITIONALLY_FEASIBLE_BY_2033_WITH_LARGER_CAPACITY_VEHICLES_AND_CHARGE_STOPS",
+      "overnight_only": "Certain feasible / interval / certain shortfall counts are 46/2/53 at 118 kWh, 51/1/49 at 150 kWh and 74/7/20 at 260 kWh. These are all stricter than a claim that most 2023 small-shuttle products cover the day.",
+      "capacity": "The 2023 Endera 16+2 layout is short of the 20-space operating limit and can require about 11% more departures/vehicles. The 2025 30-ft Letenda trial has 44-person maximum capacity; it can restore capacity but still needs narrow-street and turning-radius verification.",
+      "decision_time_view": "In 2023, small electric shuttle products existed, but the Calgary order for 14 vehicles later failed to deliver and was cancelled. TransLink's 2024 operator plan says community shuttles are not currently feasible for most blocks and should begin in the mid-2030s."
+    }
+  },
+  "cost_judgment": {
+    "double_deck_class_envelope_cad": {
+      "low": {
+        "capital_low": 100206750.0,
+        "capital_high": 100206750.0,
+        "vehicle_unit_basis": "2021 BC incentive list: BYD DD10 double-deck coach MSRP US$1.165m at assumed CAD/USD 1.35; no TransLink bid"
+      },
+      "central": {
+        "capital_low": 154052220.0,
+        "capital_high": 154052220.0,
+        "vehicle_unit_basis": "Foothill 2024 contract: US$1.758m/bus at assumed CAD/USD 1.37"
+      },
+      "high": {
+        "capital_low": 296826304.4117647,
+        "capital_high": 296826304.4117647,
+        "vehicle_unit_basis": "2024 Foothill actual converted to CAD plus a 25% uncertainty/supply premium"
+      }
+    },
+    "community_shuttle_class_envelope_cad": {
+      "low": {
+        "capital_low": 64025250.0,
+        "capital_high": 64025250.0,
+        "vehicle_unit_basis": "2021 BC incentive list: EV Star Transit Plus with ADA MSRP US$265k at assumed CAD/USD 1.35"
+      },
+      "central": {
+        "capital_low": 90500000.0,
+        "capital_high": 90500000.0,
+        "vehicle_unit_basis": "Calgary June-2021 order: over C$6m for 14 vehicles; midpoint fleet 189 of 171-206"
+      },
+      "high": {
+        "capital_low": 195700000.0,
+        "capital_high": 195700000.0,
+        "vehicle_unit_basis": "Forward 30-ft/20+ capacity vehicle and site-integration planning assumption; Calgary charging spend is the upper anchor"
+      }
+    },
+    "additivity_warning": "These class envelopes are not additive to results/vancouver_transition_scenarios.json. Removing shared depot/charger allocations from the non-deck baseline is required before combining them.",
+    "price_basis_warning": "The scenarios mix nominal 2020/2021/2023/2024 evidence and explicit FX/uncertainty assumptions. They are budgets, not bids, invoices or present values."
+  },
+  "unverifiable": [
+    "Exact 31 December 2023 class/age/depot vehicle register",
+    "Vehicle ID or garage assignment for each 2023 GTFS block",
+    "Vancouver winter energy and state-of-charge for an Enviro500EV and each 20-passenger shuttle candidate",
+    "Payload after batteries, accessibility equipment and winter heating; axle-weight approval for the deck",
+    "Terminal layover duration and curb/site geometry for opportunity charging",
+    "Firm site power, transformer capacity, utility interconnection cost and commissioning lead time",
+    "Awarded, tax-inclusive North American deck contract specifically for TransLink and a delivered 16-20 passenger electric shuttle comparable to its current fleet",
+    "Whether 57 deck duties and 171-206 shuttles can all be preserved without block splitting, additional vehicles or service constraints"
+  ],
+  "outputs": {
+    "parameter_table": "data/processed/deck_shuttle_parameter_table.csv",
+    "fleet_mapping": "data/processed/deck_shuttle_fleet_mapping.csv",
+    "duty_screen": "data/processed/deck_shuttle_duty_screen_2023.csv",
+    "scenarios": "data/processed/deck_shuttle_scenarios.csv",
+    "research_note": "research/deck_shuttle_electrification_note.md"
+  }
+}

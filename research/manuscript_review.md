@@ -8,8 +8,8 @@ used.
 
 | Problem task | Evidence in the paper | State |
 |---|---|---|
-| Q1 ecological model and application | Fall-2023 schedules, battery-range screen, production/operation/maintenance emissions, fuel-mix sensitivity | Conditional result implemented. Depot construction and end-of-life are explicitly excluded. |
-| Q2 financial model with grants up to 50% | Ten-year discounted resource cost, vehicle/infrastructure/O&M/residual components, 0/25/50% agency cases | Conditional result implemented. Physical garage bids remain absent. |
+| Q1 ecological model and application | Fall-2023 schedules, battery-range screen, production/operation/maintenance emissions, fuel-mix sensitivity and fixed-route NOx/PM inventory | Class-specific result is 35.1--84.0%; depot construction and end-of-life are explicitly excluded. |
+| Q2 financial model with grants up to 50% | Ten-year discounted resource cost, vehicle/infrastructure/O&M/residual components, 0/25/50% agency cases | Class-specific central score is -91.6%; physical garage bids remain absent. |
 | Q3 ten-year roadmap in three metropolitan areas | Vancouver, Chicago and London annual positions; London integer cohort model | Implemented as planning counts. Route-specific Chicago/London purchases remain unverified. |
 | Q4 one-page decision letter | Page 25 contains recommendations, counts, scores and gates | Present and constrained to one page. |
 | Format | 12-point, summary page, contents, 25 solution pages and one AI-report page | Verified by compile and automated layout checks. |
@@ -37,6 +37,14 @@ used.
   cases and to include renewable-diesel/RNG scenarios.
 - Added the 80.6-MW aggregate charging-scale check and the 6--8-year
   infrastructure lead time.
+- Added a 1,424-heavy / 57-deck / 189-shuttle class-specific core envelope
+  (CAD 4.709 billion, -91.6%), retaining shared depot investment once.
+- Added a 432,768-cell joint assumption audit that exactly reproduces the
+  named CAD 4.575-billion / -96.4% cell.
+- Quantified fixed-route tailpipe pollution as 126--408 t NOx, 1.11--8.34 t
+  PM2.5 and 2.34--14.18 t PM10 per year.
+- Added a separate regional value-added/employment layer and kept capital
+  activity non-additive to recurring operations.
 - Removed the misleading service-plan trend figure and added a conditional
   annual three-city table.
 - Reduced the manuscript from 26 to 25 solution pages while adding the new
@@ -58,10 +66,10 @@ cost/emissions scenario or transparent ten-year transfer plan.
 
 ## Automated checks
 
-- Python test suite: 35 passed.
-- Static LaTeX check: 12-point, 41 references all cited, balanced environments.
+- Python test suite: 39 passed.
+- Static LaTeX check: 12-point, 50 references all cited, balanced environments.
 - Built-in editor compile: success.
 - Same app-owned Tectonic executable exported the PDF.
 - PDF QA: 26 total pages, 25 solution pages, page-1 summary, page-25 letter,
-  page-26 AI report, 37 external source hyperlinks verified, no text-boundary
+  page-26 Report on Use of AI, 45 external source hyperlinks verified, no text-boundary
   or page-limit issues.

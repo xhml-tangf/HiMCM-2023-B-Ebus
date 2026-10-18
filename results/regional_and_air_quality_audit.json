@@ -1,0 +1,856 @@
+{
+  "status": "EXECUTED_SOURCE_AUDIT_WITH_UNRESOLVED_FLEET_FUEL_ALLOCATION",
+  "economic": {
+    "rows": [
+      {
+        "scenario": "low",
+        "component": "bus_operations_recurring",
+        "recurrence": "annual_2023",
+        "reported_spend_m_cad": 945.537,
+        "regional_spend_envelope_m_cad": 855.79295,
+        "bc_supplier_retained_spend_m_cad": 236.59794999999997,
+        "regional_value_added_proxy_m_cad": 619.195,
+        "wage_income_m_cad": 619.195,
+        "direct_fte": 6019.081965938253,
+        "total_fte": 6019.081965938253,
+        "accounting_rule": "measured direct payroll floor; not total GDP",
+        "source_basis": "TransLink 2025 Business Plan p.21; Transport Canada RO13 2023P",
+        "additive_to_capital": false,
+        "status": "LOW_DIRECT_FLOOR",
+        "region": "Metro Vancouver / British Columbia",
+        "scope": "TransLink published Bus Operations umbrella; includes SeaBus and Access Transit"
+      },
+      {
+        "scenario": "central",
+        "component": "bus_operations_recurring",
+        "recurrence": "annual_2023",
+        "reported_spend_m_cad": 945.537,
+        "regional_spend_envelope_m_cad": 855.79295,
+        "bc_supplier_retained_spend_m_cad": 236.59794999999997,
+        "regional_value_added_proxy_m_cad": 754.8127094103394,
+        "wage_income_m_cad": 702.9090093240094,
+        "direct_fte": 6019.081965938253,
+        "total_fte": 7163.796659797712,
+        "accounting_rule": "direct+indirect; 72.5% BC supplier retention on spillovers",
+        "source_basis": "TransLink 2025 Business Plan p.21; TransLink 2023 Accountability p.63; StatCan 36-10-0595-01 BS48A000; RO13",
+        "additive_to_capital": false,
+        "status": "CENTRAL_SECTOR_PROXY",
+        "region": "Metro Vancouver / British Columbia",
+        "scope": "TransLink published Bus Operations umbrella; includes SeaBus and Access Transit"
+      },
+      {
+        "scenario": "high",
+        "component": "bus_operations_recurring",
+        "recurrence": "annual_2023",
+        "reported_spend_m_cad": 945.537,
+        "regional_spend_envelope_m_cad": 855.79295,
+        "bc_supplier_retained_spend_m_cad": 236.59794999999997,
+        "regional_value_added_proxy_m_cad": 965.854171647819,
+        "wage_income_m_cad": 792.9015693473194,
+        "direct_fte": 6019.081965938253,
+        "total_fte": 8817.075169323492,
+        "accounting_rule": "direct+indirect+induced; 72.5% BC supplier retention on spillovers",
+        "source_basis": "TransLink 2025 Business Plan p.21; TransLink 2023 Accountability p.63; StatCan 36-10-0595-01 BS48A000; RO13",
+        "additive_to_capital": false,
+        "status": "HIGH_SECTOR_PROXY_NOT_NET_BENEFIT",
+        "region": "Metro Vancouver / British Columbia",
+        "scope": "TransLink published Bus Operations umbrella; includes SeaBus and Access Transit"
+      },
+      {
+        "scenario": "low",
+        "component": "zeb_infrastructure_transitional",
+        "recurrence": "one_time_2024_2031",
+        "reported_spend_m_cad": 2370.5882352941176,
+        "regional_spend_envelope_m_cad": 1718.6764705882351,
+        "bc_supplier_retained_spend_m_cad": 1718.6764705882351,
+        "regional_value_added_proxy_m_cad": 623.8795588235294,
+        "wage_income_m_cad": 397.01426470588234,
+        "direct_fte": null,
+        "total_fte": null,
+        "job_years": 4198.726617647058,
+        "annual_average_gva_m_cad": 77.98494485294117,
+        "annual_average_fte": 524.8408272058823,
+        "accounting_rule": "gross transitional value-added, not a net benefit; no revenue or benefit recognition of capex",
+        "source_basis": "StatCan 36-10-0595-01 BS23C500; project infrastructure envelope (direct); assumed 2024--2031 phase",
+        "additive_to_capital": false,
+        "status": "SEPARATE_ONE_TIME_MEMO",
+        "region": "Metro Vancouver / British Columbia",
+        "scope": "conditional 2024--2031 zero-emission bus infrastructure envelope"
+      },
+      {
+        "scenario": "central",
+        "component": "zeb_infrastructure_transitional",
+        "recurrence": "one_time_2024_2031",
+        "reported_spend_m_cad": 2370.5882352941176,
+        "regional_spend_envelope_m_cad": 1718.6764705882351,
+        "bc_supplier_retained_spend_m_cad": 1718.6764705882351,
+        "regional_value_added_proxy_m_cad": 1055.2673529411763,
+        "wage_income_m_cad": 665.127794117647,
+        "direct_fte": null,
+        "total_fte": null,
+        "job_years": 7223.597205882353,
+        "annual_average_gva_m_cad": 131.90841911764704,
+        "annual_average_fte": 902.9496507352941,
+        "accounting_rule": "gross transitional value-added, not a net benefit; no revenue or benefit recognition of capex",
+        "source_basis": "StatCan 36-10-0595-01 BS23C500; project infrastructure envelope (simple); assumed 2024--2031 phase",
+        "additive_to_capital": false,
+        "status": "SEPARATE_ONE_TIME_MEMO",
+        "region": "Metro Vancouver / British Columbia",
+        "scope": "conditional 2024--2031 zero-emission bus infrastructure envelope"
+      },
+      {
+        "scenario": "high",
+        "component": "zeb_infrastructure_transitional",
+        "recurrence": "one_time_2024_2031",
+        "reported_spend_m_cad": 6520.0,
+        "regional_spend_envelope_m_cad": 4727.0,
+        "bc_supplier_retained_spend_m_cad": 4727.0,
+        "regional_value_added_proxy_m_cad": 3861.959,
+        "wage_income_m_cad": 2160.239,
+        "direct_fte": null,
+        "total_fte": null,
+        "job_years": 25970.138,
+        "annual_average_gva_m_cad": 482.744875,
+        "annual_average_fte": 3246.26725,
+        "accounting_rule": "gross transitional value-added, not a net benefit; no revenue or benefit recognition of capex",
+        "source_basis": "StatCan 36-10-0595-01 BS23C500; project infrastructure envelope (total); assumed 2024--2031 phase",
+        "additive_to_capital": false,
+        "status": "SEPARATE_ONE_TIME_MEMO",
+        "region": "Metro Vancouver / British Columbia",
+        "scope": "conditional 2024--2031 zero-emission bus infrastructure envelope"
+      },
+      {
+        "scenario": "low",
+        "component": "bus_manufacturing_ceiling_not_included",
+        "recurrence": "one_time_2024_2033",
+        "reported_spend_m_cad": 1934.4,
+        "regional_spend_envelope_m_cad": 1402.44,
+        "bc_supplier_retained_spend_m_cad": 1402.44,
+        "regional_value_added_proxy_m_cad": 493.65888,
+        "wage_income_m_cad": null,
+        "direct_fte": null,
+        "total_fte": null,
+        "job_years": 4985.6742,
+        "accounting_rule": "NON-ADDITIVE ceiling assuming 72.5% BC manufacturing content; final-assembly location unverified",
+        "source_basis": "StatCan 36-10-0595-01 BS336200; project bus-purchase envelope (direct)",
+        "additive_to_capital": false,
+        "status": "EXCLUDED_FROM_CORE",
+        "region": "Metro Vancouver / British Columbia",
+        "scope": "conditional bus-purchase envelope; BC manufacturing content unverified"
+      },
+      {
+        "scenario": "central",
+        "component": "bus_manufacturing_ceiling_not_included",
+        "recurrence": "one_time_2024_2033",
+        "reported_spend_m_cad": 1934.4,
+        "regional_spend_envelope_m_cad": 1402.44,
+        "bc_supplier_retained_spend_m_cad": 1402.44,
+        "regional_value_added_proxy_m_cad": 640.9150800000001,
+        "wage_income_m_cad": null,
+        "direct_fte": null,
+        "total_fte": null,
+        "job_years": 6062.748120000001,
+        "accounting_rule": "NON-ADDITIVE ceiling assuming 72.5% BC manufacturing content; final-assembly location unverified",
+        "source_basis": "StatCan 36-10-0595-01 BS336200; project bus-purchase envelope (simple)",
+        "additive_to_capital": false,
+        "status": "EXCLUDED_FROM_CORE",
+        "region": "Metro Vancouver / British Columbia",
+        "scope": "conditional bus-purchase envelope; BC manufacturing content unverified"
+      },
+      {
+        "scenario": "high",
+        "component": "bus_manufacturing_ceiling_not_included",
+        "recurrence": "one_time_2024_2033",
+        "reported_spend_m_cad": 3338.387,
+        "regional_spend_envelope_m_cad": 2420.330575,
+        "bc_supplier_retained_spend_m_cad": 2420.330575,
+        "regional_value_added_proxy_m_cad": 1478.821981325,
+        "wage_income_m_cad": null,
+        "direct_fte": null,
+        "total_fte": null,
+        "job_years": 12827.7520475,
+        "accounting_rule": "NON-ADDITIVE ceiling assuming 72.5% BC manufacturing content; final-assembly location unverified",
+        "source_basis": "StatCan 36-10-0595-01 BS336200; project bus-purchase envelope (total)",
+        "additive_to_capital": false,
+        "status": "EXCLUDED_FROM_CORE",
+        "region": "Metro Vancouver / British Columbia",
+        "scope": "conditional bus-purchase envelope; BC manufacturing content unverified"
+      }
+    ],
+    "detail": {
+      "local_operating_envelope_m_cad": 855.79295,
+      "bc_supplier_retained_operating_spend_m_cad": 236.59794999999997,
+      "direct_fte_from_payroll": 6019.081965938253,
+      "multiplier_ratios": {
+        "gdp_simple": 1.3021001615508887,
+        "gdp_total": 1.7722132471728593,
+        "jobs_simple": 1.2623185442649765,
+        "jobs_total": 1.6411776732774481,
+        "wage_simple": 1.1864801864801866,
+        "wage_total": 1.386946386946387
+      },
+      "reported_bus_operations_m_cad": 945.537,
+      "reported_wages_m_cad": 619.195,
+      "bc_supplier_spend_share": 0.725,
+      "infrastructure_spend_m_cad": {
+        "low": 2370.5882352941176,
+        "central": 2370.5882352941176,
+        "high": 6520.0
+      },
+      "bus_purchase_spend_m_cad": {
+        "low": 1934.4,
+        "central": 1934.4,
+        "high": 3338.387
+      },
+      "operations_formula": "D=W/C; G_L=W; G_s=W*(1+q*(bG_s-1)); G_t=W*(1+q*(bG_t-1)); J_s=D*(1+q*(bJ_s-1)); J_t=D*(1+q*(bJ_t-1))",
+      "capital_formula": "G_c,i=q*I_i*m_GDP,i; JobYears_c,i=q*I_i,million*m_jobs,i; annual average assumes eight-year infrastructure phase",
+      "do_not_add": "Operations are recurring. Infrastructure and vehicle rows are one-time gross activity envelopes and are never added to annual operations as returns or benefits.",
+      "capex_is_not_revenue": true,
+      "vehicle_manufacturing_in_core": false
+    },
+    "score_use": "Do not add capital to recurring operations; capital is gross transitional activity, not net benefit."
+  },
+  "air_quality": {
+    "scenarios": [
+      {
+        "scenario": "low",
+        "speed_kmh": 19.166552003919815,
+        "fossil_service_share": 0.8942337737632978,
+        "total_fossil_km": 95565264.66627881,
+        "fuel_km": {
+          "diesel": 24299141.563521814,
+          "hybrid": 26685664.395653415,
+          "cng": 30926939.707103577,
+          "gasoline_shuttle": 13653519.0
+        },
+        "pollutant_tonnes": {
+          "NOx": 125.57276363962573,
+          "PM2.5": 1.1149887661115252,
+          "PM10": 2.343805476111525
+        },
+        "fleet_average_g_per_km": {
+          "NOx": 1.175023233634933,
+          "PM2.5": 0.010433295146572387,
+          "PM10": 0.0219317136115237
+        },
+        "scope": "fixed-route bus tailpipe exhaust; SeaBus, HandyDART, rail and non-revenue vehicles excluded",
+        "status": "BUS_ONLY_PROXY_WITH_ACTIVITY_ALLOCATION"
+      },
+      {
+        "scenario": "central",
+        "speed_kmh": 19.166552003919815,
+        "fossil_service_share": 0.8957886690558847,
+        "total_fossil_km": 95731433.72019306,
+        "fuel_km": {
+          "diesel": 24378337.027514987,
+          "hybrid": 26772637.98557449,
+          "cng": 30926939.707103577,
+          "gasoline_shuttle": 13653519.0
+        },
+        "pollutant_tonnes": {
+          "NOx": 145.4820176790964,
+          "PM2.5": 4.71396291262191,
+          "PM10": 8.244573498210936
+        },
+        "fleet_average_g_per_km": {
+          "NOx": 1.3613202886862565,
+          "PM2.5": 0.04411001067652104,
+          "PM10": 0.07714702719779656
+        },
+        "scope": "fixed-route bus tailpipe exhaust; SeaBus, HandyDART, rail and non-revenue vehicles excluded",
+        "status": "BUS_ONLY_PROXY_WITH_ACTIVITY_ALLOCATION"
+      },
+      {
+        "scenario": "high",
+        "speed_kmh": 19.166552003919815,
+        "fossil_service_share": 0.8973435643484716,
+        "total_fossil_km": 95897602.7741073,
+        "fuel_km": {
+          "diesel": 24457532.49150816,
+          "hybrid": 26859611.575495567,
+          "cng": 30926939.707103577,
+          "gasoline_shuttle": 13653519.0
+        },
+        "pollutant_tonnes": {
+          "NOx": 407.6870586592175,
+          "PM2.5": 8.336310228582818,
+          "PM10": 14.183669904613152
+        },
+        "fleet_average_g_per_km": {
+          "NOx": 3.8148540502910615,
+          "PM2.5": 0.07800543619064165,
+          "PM10": 0.1327209913445742
+        },
+        "scope": "fixed-route bus tailpipe exhaust; SeaBus, HandyDART, rail and non-revenue vehicles excluded",
+        "status": "BUS_ONLY_PROXY_WITH_ACTIVITY_ALLOCATION"
+      }
+    ],
+    "detail": {
+      "factor_sets": {
+        "low": {
+          "diesel": {
+            "NOx": 1.32915739233906,
+            "PM2.5": 0.00934102108696091,
+            "PM10": 0.00934102108696091
+          },
+          "hybrid": {
+            "NOx": 1.32915739233906,
+            "PM2.5": 0.00934102108696091,
+            "PM10": 0.00934102108696091
+          },
+          "cng": {
+            "NOx": 0.5535124213432439,
+            "PM2.5": 0.0074088497181513824,
+            "PM10": 0.0074088497181513824
+          },
+          "gasoline_shuttle": {
+            "NOx": 2.98,
+            "PM2.5": 0.03,
+            "PM10": 0.12
+          }
+        },
+        "central": {
+          "diesel": {
+            "NOx": 2.0,
+            "PM2.5": 0.07967051054348046,
+            "PM10": 0.12467051054348045
+          },
+          "hybrid": {
+            "NOx": 1.4,
+            "PM2.5": 0.07967051054348046,
+            "PM10": 0.12467051054348045
+          },
+          "cng": {
+            "NOx": 0.6,
+            "PM2.5": 0.0074088497181513824,
+            "PM10": 0.0074088497181513824
+          },
+          "gasoline_shuttle": {
+            "NOx": 2.98,
+            "PM2.5": 0.03,
+            "PM10": 0.12
+          }
+        },
+        "high": {
+          "diesel": {
+            "NOx": 6.79,
+            "PM2.5": 0.15,
+            "PM10": 0.24
+          },
+          "hybrid": {
+            "NOx": 6.79,
+            "PM2.5": 0.15,
+            "PM10": 0.24
+          },
+          "cng": {
+            "NOx": 0.6,
+            "PM2.5": 0.0074088497181513824,
+            "PM10": 0.0074088497181513824
+          },
+          "gasoline_shuttle": {
+            "NOx": 2.98,
+            "PM2.5": 0.03,
+            "PM10": 0.12
+          }
+        }
+      },
+      "activity": {
+        "speed_kmh": 19.166552003919815,
+        "total_bus_service_km": 106868324.0,
+        "community_and_contract_shuttle_km": 13653519.0,
+        "total_purchased_natural_gas_gj": 599473.9583333334,
+        "cng_energy_mj_per_km": 19.383552463021125,
+        "cng_km_inferred": 30926939.707103577,
+        "fossil_share_low": 0.8942337737632978,
+        "fossil_share_central": 0.8957886690558847,
+        "fossil_share_high": 0.8973435643484716,
+        "diesel_stock": 448,
+        "hybrid_stock": 492,
+        "diesel_share_of_remaining_fossil_vkt_proxy": 0.4765957446808511,
+        "existing_scenario_fossil_km_crosscheck": 88786898.98172182,
+        "quality": "PROXY_FIXED_SERVICE_FUEL_ALLOCATION",
+        "warning": "The 2022 stock split is not a 2023 vehicle-km register. Community shuttles are assigned to gasoline and the remaining diesel/hybrid activity is stock-weighted."
+      },
+      "factor_rows": [
+        {
+          "scenario": "low",
+          "fuel": "diesel",
+          "pollutant": "NOx",
+          "g_per_km": 1.32915739233906,
+          "activity_km": 24299141.563521814,
+          "mass_tonnes": 32.29738363664833,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; Euro VI D/E; 50% load; 0% slope",
+          "derivation": "COPERT equation at 19.1666 km/h"
+        },
+        {
+          "scenario": "low",
+          "fuel": "diesel",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.00934102108696091,
+          "activity_km": 24299141.563521814,
+          "mass_tonnes": 0.2269787937399056,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; Euro VI D/E; 50% load; 0% slope",
+          "derivation": "COPERT equation at 19.1666 km/h"
+        },
+        {
+          "scenario": "low",
+          "fuel": "diesel",
+          "pollutant": "PM10",
+          "g_per_km": 0.00934102108696091,
+          "activity_km": 24299141.563521814,
+          "mass_tonnes": 0.2269787937399056,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; Euro VI D/E; 50% load; 0% slope",
+          "derivation": "COPERT equation at 19.1666 km/h"
+        },
+        {
+          "scenario": "low",
+          "fuel": "hybrid",
+          "pollutant": "NOx",
+          "g_per_km": 1.32915739233906,
+          "activity_km": 26685664.395653415,
+          "mass_tonnes": 35.46944810096199,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; Euro VI D/E; 50% load; 0% slope",
+          "derivation": "COPERT equation at 19.1666 km/h"
+        },
+        {
+          "scenario": "low",
+          "fuel": "hybrid",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.00934102108696091,
+          "activity_km": 26685664.395653415,
+          "mass_tonnes": 0.24927135383936053,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; Euro VI D/E; 50% load; 0% slope",
+          "derivation": "COPERT equation at 19.1666 km/h"
+        },
+        {
+          "scenario": "low",
+          "fuel": "hybrid",
+          "pollutant": "PM10",
+          "g_per_km": 0.00934102108696091,
+          "activity_km": 26685664.395653415,
+          "mass_tonnes": 0.24927135383936053,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; Euro VI D/E; 50% load; 0% slope",
+          "derivation": "COPERT equation at 19.1666 km/h"
+        },
+        {
+          "scenario": "low",
+          "fuel": "cng",
+          "pollutant": "NOx",
+          "g_per_km": 0.5535124213432439,
+          "activity_km": 30926939.707103577,
+          "mass_tonnes": 17.11844528201541,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; Euro VI D/E; 50% load; 0% slope",
+          "derivation": "COPERT equation at 19.1666 km/h"
+        },
+        {
+          "scenario": "low",
+          "fuel": "cng",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.0074088497181513824,
+          "activity_km": 30926939.707103577,
+          "mass_tonnes": 0.22913304853225913,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; Euro VI D/E; 50% load; 0% slope",
+          "derivation": "COPERT equation at 19.1666 km/h"
+        },
+        {
+          "scenario": "low",
+          "fuel": "cng",
+          "pollutant": "PM10",
+          "g_per_km": 0.0074088497181513824,
+          "activity_km": 30926939.707103577,
+          "mass_tonnes": 0.22913304853225913,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; Euro VI D/E; 50% load; 0% slope",
+          "derivation": "COPERT equation at 19.1666 km/h"
+        },
+        {
+          "scenario": "low",
+          "fuel": "gasoline_shuttle",
+          "pollutant": "NOx",
+          "g_per_km": 2.98,
+          "activity_km": 13653519.0,
+          "mass_tonnes": 40.687486619999994,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Gasoline Bus",
+          "derivation": "legacy on-road bus factor, g/VKT"
+        },
+        {
+          "scenario": "low",
+          "fuel": "gasoline_shuttle",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.03,
+          "activity_km": 13653519.0,
+          "mass_tonnes": 0.40960557000000003,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Gasoline Bus",
+          "derivation": "legacy on-road bus factor, g/VKT"
+        },
+        {
+          "scenario": "low",
+          "fuel": "gasoline_shuttle",
+          "pollutant": "PM10",
+          "g_per_km": 0.12,
+          "activity_km": 13653519.0,
+          "mass_tonnes": 1.6384222800000001,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Gasoline Bus",
+          "derivation": "legacy on-road bus factor, g/VKT"
+        },
+        {
+          "scenario": "central",
+          "fuel": "diesel",
+          "pollutant": "NOx",
+          "g_per_km": 2.0,
+          "activity_km": 24378337.027514987,
+          "mass_tonnes": 48.756674055029976,
+          "source": "Prati et al., Atmosphere 16(3), 293 (2025)",
+          "source_locator": "abstract/results, low-speed real-world NOx",
+          "derivation": "reported approximate low-speed value"
+        },
+        {
+          "scenario": "central",
+          "fuel": "diesel",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.07967051054348046,
+          "activity_km": 24378337.027514987,
+          "mass_tonnes": 1.9422345571831527,
+          "source": "Derived from EEA Appendix 4 and BC Vanderhoof Table 4",
+          "source_locator": "arithmetic midpoint",
+          "derivation": "central PM sensitivity, not a measured value"
+        },
+        {
+          "scenario": "central",
+          "fuel": "diesel",
+          "pollutant": "PM10",
+          "g_per_km": 0.12467051054348045,
+          "activity_km": 24378337.027514987,
+          "mass_tonnes": 3.039259723421327,
+          "source": "Derived from EEA Appendix 4 and BC Vanderhoof Table 4",
+          "source_locator": "arithmetic midpoint",
+          "derivation": "central PM sensitivity, not a measured value"
+        },
+        {
+          "scenario": "central",
+          "fuel": "hybrid",
+          "pollutant": "NOx",
+          "g_per_km": 1.4,
+          "activity_km": 26772637.98557449,
+          "mass_tonnes": 37.48169317980429,
+          "source": "Prati et al., Atmosphere 16(3), 293 (2025)",
+          "source_locator": "abstract/results, low-speed real-world NOx",
+          "derivation": "reported approximate low-speed value"
+        },
+        {
+          "scenario": "central",
+          "fuel": "hybrid",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.07967051054348046,
+          "activity_km": 26772637.98557449,
+          "mass_tonnes": 2.132989736906498,
+          "source": "Derived from EEA Appendix 4 and BC Vanderhoof Table 4",
+          "source_locator": "arithmetic midpoint",
+          "derivation": "central PM sensitivity, not a measured value"
+        },
+        {
+          "scenario": "central",
+          "fuel": "hybrid",
+          "pollutant": "PM10",
+          "g_per_km": 0.12467051054348045,
+          "activity_km": 26772637.98557449,
+          "mass_tonnes": 3.33775844625735,
+          "source": "Derived from EEA Appendix 4 and BC Vanderhoof Table 4",
+          "source_locator": "arithmetic midpoint",
+          "derivation": "central PM sensitivity, not a measured value"
+        },
+        {
+          "scenario": "central",
+          "fuel": "cng",
+          "pollutant": "NOx",
+          "g_per_km": 0.6,
+          "activity_km": 30926939.707103577,
+          "mass_tonnes": 18.556163824262146,
+          "source": "Prati et al., Atmosphere 16(3), 293 (2025)",
+          "source_locator": "abstract/results, low-speed real-world NOx",
+          "derivation": "reported approximate low-speed value"
+        },
+        {
+          "scenario": "central",
+          "fuel": "cng",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.0074088497181513824,
+          "activity_km": 30926939.707103577,
+          "mass_tonnes": 0.22913304853225913,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; CNG Euro VI D/E; urban PM",
+          "derivation": "COPERT exhaust PM; PM2.5=PM10=TSP in source"
+        },
+        {
+          "scenario": "central",
+          "fuel": "cng",
+          "pollutant": "PM10",
+          "g_per_km": 0.0074088497181513824,
+          "activity_km": 30926939.707103577,
+          "mass_tonnes": 0.22913304853225913,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; CNG Euro VI D/E; urban PM",
+          "derivation": "COPERT exhaust PM; PM2.5=PM10=TSP in source"
+        },
+        {
+          "scenario": "central",
+          "fuel": "gasoline_shuttle",
+          "pollutant": "NOx",
+          "g_per_km": 2.98,
+          "activity_km": 13653519.0,
+          "mass_tonnes": 40.687486619999994,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Gasoline Bus",
+          "derivation": "legacy on-road bus factor, g/VKT"
+        },
+        {
+          "scenario": "central",
+          "fuel": "gasoline_shuttle",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.03,
+          "activity_km": 13653519.0,
+          "mass_tonnes": 0.40960557000000003,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Gasoline Bus",
+          "derivation": "legacy on-road bus factor, g/VKT"
+        },
+        {
+          "scenario": "central",
+          "fuel": "gasoline_shuttle",
+          "pollutant": "PM10",
+          "g_per_km": 0.12,
+          "activity_km": 13653519.0,
+          "mass_tonnes": 1.6384222800000001,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Gasoline Bus",
+          "derivation": "legacy on-road bus factor, g/VKT"
+        },
+        {
+          "scenario": "high",
+          "fuel": "diesel",
+          "pollutant": "NOx",
+          "g_per_km": 6.79,
+          "activity_km": 24457532.49150816,
+          "mass_tonnes": 166.0666456173404,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Diesel Bus",
+          "derivation": "legacy on-road bus factor, g/VKT; conservative upper end"
+        },
+        {
+          "scenario": "high",
+          "fuel": "diesel",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.15,
+          "activity_km": 24457532.49150816,
+          "mass_tonnes": 3.668629873726224,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Diesel Bus",
+          "derivation": "legacy on-road bus factor, g/VKT; conservative upper end"
+        },
+        {
+          "scenario": "high",
+          "fuel": "diesel",
+          "pollutant": "PM10",
+          "g_per_km": 0.24,
+          "activity_km": 24457532.49150816,
+          "mass_tonnes": 5.869807797961958,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Diesel Bus",
+          "derivation": "legacy on-road bus factor, g/VKT; conservative upper end"
+        },
+        {
+          "scenario": "high",
+          "fuel": "hybrid",
+          "pollutant": "NOx",
+          "g_per_km": 6.79,
+          "activity_km": 26859611.575495567,
+          "mass_tonnes": 182.3767625976149,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Diesel Bus",
+          "derivation": "legacy on-road bus factor, g/VKT; conservative upper end"
+        },
+        {
+          "scenario": "high",
+          "fuel": "hybrid",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.15,
+          "activity_km": 26859611.575495567,
+          "mass_tonnes": 4.028941736324335,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Diesel Bus",
+          "derivation": "legacy on-road bus factor, g/VKT; conservative upper end"
+        },
+        {
+          "scenario": "high",
+          "fuel": "hybrid",
+          "pollutant": "PM10",
+          "g_per_km": 0.24,
+          "activity_km": 26859611.575495567,
+          "mass_tonnes": 6.446306778118936,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Diesel Bus",
+          "derivation": "legacy on-road bus factor, g/VKT; conservative upper end"
+        },
+        {
+          "scenario": "high",
+          "fuel": "cng",
+          "pollutant": "NOx",
+          "g_per_km": 0.6,
+          "activity_km": 30926939.707103577,
+          "mass_tonnes": 18.556163824262146,
+          "source": "Prati et al., Atmosphere 16(3), 293 (2025)",
+          "source_locator": "abstract/results, low-speed real-world NOx",
+          "derivation": "no BC-specific CNG factor located"
+        },
+        {
+          "scenario": "high",
+          "fuel": "cng",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.0074088497181513824,
+          "activity_km": 30926939.707103577,
+          "mass_tonnes": 0.22913304853225913,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; CNG Euro VI D/E; urban PM",
+          "derivation": "no BC-specific CNG PM factor located"
+        },
+        {
+          "scenario": "high",
+          "fuel": "cng",
+          "pollutant": "PM10",
+          "g_per_km": 0.0074088497181513824,
+          "activity_km": 30926939.707103577,
+          "mass_tonnes": 0.22913304853225913,
+          "source": "EEA/EMEP Guidebook 2023, Road Transport Appendix 4",
+          "source_locator": "HOT_EMISSIONS_PARAMETERS; CNG Euro VI D/E; urban PM",
+          "derivation": "no BC-specific CNG PM factor located"
+        },
+        {
+          "scenario": "high",
+          "fuel": "gasoline_shuttle",
+          "pollutant": "NOx",
+          "g_per_km": 2.98,
+          "activity_km": 13653519.0,
+          "mass_tonnes": 40.687486619999994,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Gasoline Bus",
+          "derivation": "legacy on-road bus factor, g/VKT"
+        },
+        {
+          "scenario": "high",
+          "fuel": "gasoline_shuttle",
+          "pollutant": "PM2.5",
+          "g_per_km": 0.03,
+          "activity_km": 13653519.0,
+          "mass_tonnes": 0.40960557000000003,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Gasoline Bus",
+          "derivation": "legacy on-road bus factor, g/VKT"
+        },
+        {
+          "scenario": "high",
+          "fuel": "gasoline_shuttle",
+          "pollutant": "PM10",
+          "g_per_km": 0.12,
+          "activity_km": 13653519.0,
+          "mass_tonnes": 1.6384222800000001,
+          "source": "BC Ministry of Environment and Climate Change Strategy, Vanderhoof inventory",
+          "source_locator": "Table 4, Gasoline Bus",
+          "derivation": "legacy on-road bus factor, g/VKT"
+        }
+      ],
+      "boundary": {
+        "bus_only": true,
+        "tailpipe_exhaust_only": true,
+        "brake_and_tire_wear_included": false,
+        "fuel_upstream_included": false,
+        "electricity_upstream_included": false,
+        "all_revenue_fleet_cac_series_used": false
+      },
+      "warnings": [
+        "Emission factors are not a 2023 Vancouver chassis/PEMS certification.",
+        "CNG service km is inferred from purchased-gas energy and an EEA energy-consumption factor.",
+        "The gasoline-shuttle factor is the BC legacy inventory bus factor; no newer BC bus factor was located.",
+        "The high PM and NOx diesel/hybrid values are a conservative legacy-fleet envelope from the BC inventory, not a claim about every 2023 bus.",
+        "PM exhaust is treated as having PM2.5 = PM10 = TSP in the EEA workbook; the BC legacy rows retain separate PM2.5 and PM10 columns.",
+        "The existing transition scenario's 88.79 million non-deck fossil-km estimate excludes double-deck blocks and is a cross-check, not this audit's total activity denominator.",
+        "The five or so 2023 in-service battery-electric buses are not separately observable in the service-km feed; treating all non-trolley activity as fossil is a small conservative bias."
+      ]
+    },
+    "bus_service_km": 106868324.0,
+    "service_hours": 5575772.0,
+    "average_operating_speed_kmh": 19.166552003919815
+  },
+  "excluded": {
+    "all_revenue_fleet_cac_series": "Excluded because it cannot be split into fixed-route bus modes or pollutants.",
+    "handydart_seabus_rail": "Excluded from all air-quality totals.",
+    "depot_and_vehicle_manufacturing": "Excluded from bus tailpipe totals; treated separately in economic memo only."
+  },
+  "sources": [
+    {
+      "name": "TransLink 2025 Business Plan",
+      "locator": "p. 21 (2023 Bus Operations actual), p. 23 (2023 service kilometres)",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf"
+    },
+    {
+      "name": "TransLink 2023 Accountability Report",
+      "locator": "PDF p. 38 (RNG and CNG count), PDF p. 63 (72.5% BC supplier spend)",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/accountability_reports/2023/accountability_report_2023.pdf"
+    },
+    {
+      "name": "Statistics Canada input-output multipliers",
+      "locator": "Table 36-10-0595-01, 2022, British Columbia, within province, rows BS48A000/BS23C500/BS336200",
+      "url": "https://doi.org/10.25318/3610059501-eng"
+    },
+    {
+      "name": "Transport Canada Table RO13",
+      "locator": "2014--2023, urban transit systems, 2023P",
+      "url": "https://tdih-cdit.tc.canada.ca/en/addendum-tables/2024/table-ro13-average-annual-compensation-bus-industry-2014-2023-0"
+    },
+    {
+      "name": "EEA/EMEP Guidebook 2023",
+      "locator": "Road Transport Appendix 4, July 2026 workbook, urban Euro VI D/E bus rows",
+      "url": "https://www.eea.europa.eu/en/analysis/publications/emep-eea-guidebook-2023/part-b-sectoral-guidance-chapters/1-energy/1-a-combustion/1-a-3-b-i-1"
+    },
+    {
+      "name": "Prati et al. (2025)",
+      "locator": "Atmosphere 16(3), 293, real-world low-speed NOx",
+      "url": "https://doi.org/10.3390/atmos16030293"
+    },
+    {
+      "name": "BC Vanderhoof emissions inventory",
+      "locator": "Table 4, Diesel Bus and Gasoline Bus on-road factors",
+      "url": "https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/reports/emission-inventory-vanderhoof"
+    }
+  ],
+  "checks": {
+    "fixed_route_service_km_reconciles": true,
+    "fleet_counts_match_processed_snapshot": true,
+    "air_quality_activity_reconciles_to_fossil_proxy": true,
+    "gross_capex_not_added_to_benefits": true
+  },
+  "limitations": [
+    "No observed 2023 vehicle-km split by powertrain/fuel was available.",
+    "The economic operation envelope is TransLink's published Bus Operations umbrella and includes SeaBus and Access Transit.",
+    "The economic results are BC-level sector proxies rather than a Metro Vancouver GDP account.",
+    "The Statistics Canada IO result is a sector proxy, not a TransLink-specific multiplier.",
+    "The construction envelope is from a conditional transition scenario and must not be called committed spending.",
+    "The BC legacy emission factors are not a direct 2023 bus certification."
+  ],
+  "outputs": [
+    "data\\processed\\regional_economic_bounds_2023.csv",
+    "data\\processed\\regional_economic_bounds_2023.json",
+    "data\\processed\\transit_air_quality_factors_2023.csv",
+    "data\\processed\\transit_air_quality_factors_2023.json"
+  ]
+}

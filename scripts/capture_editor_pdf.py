@@ -54,7 +54,7 @@ def main() -> None:
                     "project_source_files_sha256": source_files,
                     "pages_including_ai_report": pages,
                     "ai_report_pages": [i + 1 for i, t in enumerate(texts)
-                                        if "AI Use Report" in t.splitlines()],
+                                        if "Report on Use of AI" in t.splitlines()],
                     "letter_heading_pages": [i + 1 for i, t in enumerate(texts)
                                              if "Subject:" in t and "decision" in t.lower()],
                 }
