@@ -1,9 +1,9 @@
 {
   "producer": "built-in editor compiler; no separate compilation",
-  "pdf_sha256": "e6590848f053bfb64f9a245662e07a2744a3df1494091e75dd6c43ab31022b9e",
-  "main_tex_sha256": "28828a24215599ac18e9851816da427c576148ec2b61a8379a555f2f192c26ff",
+  "pdf_sha256": "fb18a4e60ff854743f48c642592ed2e1ac9a52ce4062313669005b0df14979d9",
+  "main_tex_sha256": "39d5c87f543fd04b94672f3e53111974c4d25f801682b703ca16d43fcc12bd94",
   "project_source_files_sha256": {
-    "ebus_transition.tex": "28828a24215599ac18e9851816da427c576148ec2b61a8379a555f2f192c26ff",
+    "ebus_transition.tex": "39d5c87f543fd04b94672f3e53111974c4d25f801682b703ca16d43fcc12bd94",
     "figures/london_cohort_roadmap.png": "a70d684a099fdafe36b186981b29b1d97e65126ccaa1336d4daf79869523ada8",
     "figures/service_floor.png": "073aafa80ae1f512da39b3afab577e4e12097ce4d7ad48eeccb0ba90eb0bbaf2",
     "tables/london_cohort_annual.tex": "abc6c2a52c149f946f1aa68c2ed31f729c34e39382e7438584bda64713ec001c",

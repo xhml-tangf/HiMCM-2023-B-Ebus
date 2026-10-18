@@ -106,6 +106,8 @@ def main() -> None:
                                               "depot space/grid/commissioning inventory",
                                               "per-trip 2023 class/capacity assignments",
                                               "candidate electric bus payload and winter accessory energy"],
+            "additional_supply_checks": ["normal-renewal duty fuel budgets",
+                                         "trolley wired trip/deadhead/layover paths and firm feeder capacity"],
         },
         "full_city_2033_feasibility": "UNVERIFIED",
         "full_city_cost_score": None,

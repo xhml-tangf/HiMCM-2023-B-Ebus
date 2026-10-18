@@ -92,3 +92,18 @@
 4. A BEB using a diesel auxiliary heater does not satisfy the strict 2033 endpoint even if its main propulsion is electric. The 2024 TransLink technical recommendations discuss such heaters, creating an important feasibility tension.
 5. Peak loads in the CSV are averages of peaks. They may guide prioritization, but exact peak-capacity preservation requires actual individual trips and a baseline vehicle-capacity roster.
 
+
+## Energy-supply validation boundary (18 October 2026)
+
+The executable validator now distinguishes battery, fuel and overhead supply.
+The fuel comparator needs initial usable fuel, tank/reserve, consistent L or kg
+and jointly calibrated winter distance/time consumption rates. No within-duty
+refuelling is assumed. Existing trolley service requires certified wired paths
+for trips and deadhead, powered stationary layovers, measured all-in peak draw
+and commissioned firm feeder power after other loads/reserve. Reserving peak
+power on every traversed feeder for a full moving segment is conservative; a
+failed certificate is not proof of physical infeasibility under finer timing.
+These are required data definitions, not newly observed Vancouver values.
+Unknown fuel, path or feeder data remain missing. Depot spare checks now also
+exclude buses driving to or returning from service. The arrival energy reserve
+is tested before subsequent charging can restore energy.

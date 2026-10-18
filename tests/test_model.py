@@ -1,6 +1,6 @@
 from dataclasses import replace
 
-from src.model import (Assignment, Charge, Depot, Trip, Vehicle, check_schedule,
+from src.model import (Assignment, Charge, Depot, FuelSystem, OverheadFeeder, Trip, Vehicle, check_schedule,
                        cost_result, environmental_result, pareto, score)
 
 
@@ -21,6 +21,115 @@ def fixture():
 
 def test_valid_schedule():
     assert check_schedule(**fixture()).status == "PASS"
+
+
+def fuel_fixture():
+    args = fixture()
+    args["year"] = 2023
+    args["charges"] = []
+    args["vehicles"] = [replace(bus, battery_kwh=0, initial_kwh=0,
+                                electric_propulsion=False, electric_accessories=False,
+                                accessory_kwh_per_hour_winter=None, energy_source="fuel",
+                                fuel=FuelSystem("L", 200, 100, 20, 0.6, 2))
+                        for bus in args["vehicles"]]
+    return args
+
+
+def test_conventional_baseline_uses_fuel_instead_of_fictitious_battery():
+    args = fuel_fixture()
+    assert check_schedule(**args).status == "PASS"
+    args["vehicles"][0] = replace(args["vehicles"][0], fuel=FuelSystem("L", 200, 45, 20, 0.6, 2))
+    # 40 km uses 24 L and the 2.5-hour duty uses another 5 L.
+    assert any("fuel reserve" in e for e in check_schedule(**args).errors)
+    args["vehicles"][0] = replace(args["vehicles"][0], fuel=None)
+    assert "winter_fuel_budget:electric" in check_schedule(**args).missing
+
+
+def test_fuel_vehicle_cannot_satisfy_strict_2033_fleet():
+    args = fuel_fixture()
+    args["year"] = 2033
+    assert any("non-electric 2033" in e for e in check_schedule(**args).errors)
+
+
+def trolley_fixture():
+    args = fixture()
+    args["charges"] = []
+    args["vehicles"] = [replace(bus, battery_kwh=0, initial_kwh=0,
+                                energy_source="overhead", overhead_peak_kw=200)
+                        for bus in args["vehicles"]]
+    args["overhead_paths"] = {("trip", "out"): ("F",), ("trip", "back"): ("F",)}
+    args["overhead_feeders"] = [OverheadFeeder("F", 300, 2023)]
+    return args
+
+
+def test_trolley_requires_wired_path_and_feeder_not_a_battery():
+    args = trolley_fixture()
+    assert check_schedule(**args).status == "PASS"
+    args["overhead_paths"].pop(("trip", "back"))
+    result = check_schedule(**args)
+    assert result.status == "UNVERIFIED"
+    assert "wired_path:trip:back" in result.missing
+    args = trolley_fixture()
+    args["overhead_feeders"] = []
+    assert "overhead_feeder:F" in check_schedule(**args).missing
+
+
+def test_trolley_concurrent_feeder_power_and_stationary_heating():
+    args = trolley_fixture()
+    args["assignments"] += [Assignment("out", "spare"), Assignment("back", "spare")]
+    args["spare_by_depot"] = {"D": 0}
+    assert any("overhead feeder power exceeded" in e for e in check_schedule(**args).errors)
+    args = trolley_fixture()
+    args["vehicles"][0] = replace(args["vehicles"][0], accessory_kwh_per_hour_winter=10)
+    assert "wired_path:location:X" in check_schedule(**args).missing
+    args["overhead_paths"][("location", "X")] = ("F",)
+    assert check_schedule(**args).status == "PASS"
+
+
+def test_arrival_below_reserve_cannot_be_hidden_by_subsequent_charge():
+    args = fixture()
+    args["vehicles"][0] = replace(args["vehicles"][0], initial_kwh=65)
+    args["charges"][0] = replace(args["charges"][0], depot="X")
+    args["depots"].append(Depot("X", 1, 50, 50, 2032, 0))
+    args["deadhead_minutes"].update({("D", "X"): 10, ("X", "D"): 10})
+    args["deadhead_km"] = {("D", "D"): 0, ("X", "X"): 0,
+                           ("D", "X"): 11, ("X", "D"): 11}
+    result = check_schedule(**args)
+    assert any("minimum SOC" in e and "240" in e for e in result.errors)
+
+
+def test_deadheading_vehicle_does_not_count_as_a_depot_spare():
+    args = fixture()
+    args["trips"] = [Trip("out", "R", "N", 60, 120, 20, 40, "X", "D", True, ("standard",)),
+                     Trip("other", "R", "S", 40, 55, 5, 40, "D", "D", True, ("standard",))]
+    args["assignments"] = [Assignment("out", "electric"), Assignment("other", "spare")]
+    args["charges"] = []
+    args["deadhead_minutes"] = {("D", "X"): 10, ("D", "D"): 0}
+    args["deadhead_km"] = {("D", "X"): 2, ("D", "D"): 0}
+    # At 50--55 one bus is driving to X and the other is still in service.
+    assert any("spare requirement" in e and "50" in e for e in check_schedule(**args).errors)
+
+
+def test_returned_vehicle_counts_as_spare_only_after_driving_back():
+    args = fixture()
+    args["trips"] = [args["trips"][0],
+                     Trip("other", "R", "S", 135, 150, 5, 40, "D", "D", True, ("standard",))]
+    args["assignments"] = [Assignment("out", "electric"), Assignment("other", "spare")]
+    args["charges"] = []
+    args["deadhead_minutes"] = {("D", "D"): 0, ("X", "D"): 10}
+    args["deadhead_km"] = {("D", "D"): 0, ("X", "D"): 2}
+    assert check_schedule(**args).status == "PASS"
+    args["trips"][1] = replace(args["trips"][1], start_min=125)
+    assert any("spare requirement" in e and "125" in e for e in check_schedule(**args).errors)
+
+
+def test_invalid_energy_and_trip_inputs_cannot_pass():
+    args = fixture()
+    args["vehicles"][0] = replace(args["vehicles"][0], usable_fraction=1.1)
+    assert any("invalid battery" in e for e in check_schedule(**args).errors)
+    args = fixture()
+    args["trips"][0] = replace(args["trips"][0], distance_km=-20)
+    assert any("invalid trip" in e for e in check_schedule(**args).errors)
 
 
 def test_missing_city_schedule_is_not_a_pass():

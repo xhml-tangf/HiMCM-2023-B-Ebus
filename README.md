@@ -4,6 +4,8 @@ This is a reproducible research workspace and evidence-locked paper draft for
 2023 HiMCM Problem B. The original problem PDF is supplied by the user and
 remains at its original path. No original HiMCM solution paper was used.
 
+Private project repository: <https://github.com/xhml-tangf/HiMCM-2023-B-Ebus>.
+
 The project separates **verified observations**, **sourced planning
 assumptions**, and **illustrative scenarios**. It must never present a 2020
 fleet inventory as the actual 2023 fleet or describe hourly service summaries
@@ -19,7 +21,8 @@ as a verified vehicle-level schedule.
   official 2023 actual bus hours, service-km, capacity-km and operating-group
   reconciliation from the 2025 Business Plan, with SeaBus excluded.
 - `src/model.py`: trip, passenger capacity, winter traction plus electric
-  accessory SOC, home-depot and in-route charger/site, and 2033 fleet
+  accessory SOC, conventional fuel budgets, wired trolley paths and concurrent
+  feeder power, home-depot and in-route charger/site, and 2033 fleet
   validation; discounted cost, grant and Pareto primitives.
 - `src/run_analysis.py`: observed scale and model-readiness output.
 - `src/audit_comparators.py` and `results/comparison_city_audit.json`:

@@ -39,6 +39,34 @@ class Vehicle:
     # during trips, charging, deadhead and active layovers in the duty span.
     # None means the winter accessory demand has not been measured.
     accessory_kwh_per_hour_winter: float | None = None
+    # Explicit supply type avoids imposing a fictitious battery on diesel or
+    # grid-fed trolley vehicles. Defaults preserve the battery-bus interface.
+    energy_source: str = "battery"
+    fuel: FuelSystem | None = None
+    overhead_peak_kw: float | None = None
+
+
+@dataclass(frozen=True)
+class FuelSystem:
+    """All-in fuel use = distance term + time term; no en-route refuelling.
+
+    Rates must be jointly calibrated, not two alternative all-in averages.
+    The unit can be L or kg, but every quantity must use that same unit.
+    """
+    unit: str
+    tank_capacity: float
+    initial: float
+    reserve: float
+    units_per_km_winter: float
+    units_per_hour_winter: float
+
+
+@dataclass(frozen=True)
+class OverheadFeeder:
+    """Firm power available to the modeled fleet, after other loads/reserve."""
+    name: str
+    firm_power_kw: float
+    commissioned_year: int
 
 
 @dataclass(frozen=True)
@@ -88,6 +116,8 @@ def check_schedule(
     spare_by_depot: dict[str, int] | None = None,
     deadhead_minutes: dict[tuple[str, str], int] | None = None,
     deadhead_km: dict[tuple[str, str], float] | None = None,
+    overhead_paths: dict[tuple[str, ...], tuple[str, ...]] | None = None,
+    overhead_feeders: Iterable[OverheadFeeder] | None = None,
 ) -> Check:
     """Exact trip/SOC/site checks. Missing essential inputs yield UNVERIFIED.
 
@@ -95,7 +125,14 @@ def check_schedule(
     A zero value is permitted only when colocation is established. Charging
     sites may be terminals away from the home depot. Winter traction energy
     and all-electric accessory power are separate; accessory power is assumed
-    on continuously from the first to last scheduled event. Split duties or
+    on continuously from the first to last scheduled event. Fuel vehicles
+    require a measured fuel budget. Trolleys require certified wired paths
+    and concurrent feeder power; missing inputs never imply battery supply.
+    Path keys are ('trip', trip_id), ('link', origin, destination), and
+    ('location', name) for stationary accessories. A path lists every feeder
+    traversed; reserving peak draw on each for the full segment is conservative.
+    Deadheads depart as late as possible and return immediately after duty.
+    Split duties or
     provide measured duty profiles if a bus shuts its accessories off.
     """
     required = {"trip_manifest": trips, "vehicle_register": vehicles,
@@ -115,6 +152,9 @@ def check_schedule(
     v = {x.vehicle_id: x for x in vehicles}
     d = {x.name: x for x in depots}
     errors: list[str] = []
+    feeders = {x.name: x for x in (overhead_feeders or [])}
+    overhead_loads: list[tuple[str, int, int, float]] = []
+    busy: dict[str, list[tuple[int, int]]] = {key: [] for key in v}
     if not trips or not vehicles or not depots:
         return Check("UNVERIFIED", missing=["nonempty_trip_vehicle_depot_data"])
     if len(t) != len(trips) or len(v) != len(vehicles) or len(d) != len(depots):
@@ -123,11 +163,41 @@ def check_schedule(
         for bus in vehicles:
             if not (bus.electric_propulsion and bus.electric_accessories):
                 errors.append(f"non-electric 2033 fleet vehicle {bus.vehicle_id}")
+    for bus in vehicles:
+        if bus.depot not in d:
+            missing.append(f"home_depot:{bus.vehicle_id}:{bus.depot}")
+        if bus.energy_source not in {"battery", "fuel", "overhead"}:
+            errors.append(f"unknown energy source on {bus.vehicle_id}")
+        elif (bus.energy_source == "fuel") == bus.electric_propulsion:
+            errors.append(f"inconsistent propulsion/supply on {bus.vehicle_id}")
+        if bus.energy_source in {"battery", "overhead"}:
             if bus.accessory_kwh_per_hour_winter is None:
                 missing.append(f"winter_electric_accessory_demand:{bus.vehicle_id}")
             elif bus.accessory_kwh_per_hour_winter < 0:
                 errors.append(f"negative winter accessory demand on {bus.vehicle_id}")
+        if bus.energy_source == "battery" and not (
+                bus.battery_kwh > 0 and 0 <= bus.minimum_soc_fraction < bus.usable_fraction <= 1
+                and bus.battery_kwh * bus.minimum_soc_fraction <= bus.initial_kwh
+                <= bus.battery_kwh * bus.usable_fraction
+                and bus.kwh_per_km_winter >= 0):
+            errors.append(f"invalid battery energy parameters on {bus.vehicle_id}")
+        if bus.energy_source == "fuel":
+            fuel = bus.fuel
+            if fuel is None:
+                missing.append(f"winter_fuel_budget:{bus.vehicle_id}")
+            elif not (fuel.unit in {"L", "kg"} and fuel.tank_capacity > 0
+                      and 0 <= fuel.reserve <= fuel.initial <= fuel.tank_capacity
+                      and fuel.units_per_km_winter >= 0 and fuel.units_per_hour_winter >= 0):
+                errors.append(f"invalid fuel parameters on {bus.vehicle_id}")
+        if bus.energy_source == "overhead":
+            if bus.overhead_peak_kw is None:
+                missing.append(f"overhead_peak_demand:{bus.vehicle_id}")
+            elif bus.overhead_peak_kw <= 0 or bus.overhead_peak_kw < (bus.accessory_kwh_per_hour_winter or 0):
+                errors.append(f"invalid overhead peak demand on {bus.vehicle_id}")
     by_trip: dict[str, list[str]] = {k: [] for k in t}
+    for trip in trips:
+        if trip.distance_km < 0 or trip.end_min <= trip.start_min or trip.baseline_capacity <= 0:
+            errors.append(f"invalid trip parameters on {trip.trip_id}")
     by_vehicle: dict[str, list[Trip]] = {k: [] for k in v}
     seen_assignments: set[tuple[str, str]] = set()
     for a in assignments:
@@ -183,59 +253,113 @@ def check_schedule(
                 c.end_min <= c.start_min or not 0 < c.efficiency <= 1):
             errors.append(f"invalid charge power/time for {c.vehicle_id}")
         events[c.vehicle_id].append((c.start_min, c.end_min, "charge", c))
+    def overhead_segment(bus: Vehicle, key: tuple[str, ...], start: int,
+                         end: int, power: float) -> None:
+        if end <= start or power <= 0:
+            return
+        path = (overhead_paths or {}).get(key)
+        if not path:
+            missing.append(f"wired_path:{':'.join(key)}")
+            return
+        for name in set(path):
+            feeder = feeders.get(name)
+            if feeder is None:
+                missing.append(f"overhead_feeder:{name}")
+            elif feeder.commissioned_year > year:
+                errors.append(f"overhead feeder {name} not commissioned in {year}")
+            else:
+                overhead_loads.append((name, start, end, power))
+
     for vid, schedule in events.items():
         bus = v[vid]
         schedule.sort(key=lambda e: e[0])
         energy = bus.initial_kwh
+        fuel_left = bus.fuel.initial if bus.fuel else 0.0
+        auxiliary_kw = bus.accessory_kwh_per_hour_winter or 0.0
+
+        def consume(start: int, end: int, distance: float,
+                    path_key: tuple[str, ...], *, charge: Charge | None = None) -> None:
+            nonlocal energy, fuel_left
+            duration = max(0, end - start) / 60
+            if bus.energy_source == "battery":
+                energy -= distance * bus.kwh_per_km_winter
+                if charge is not None:
+                    energy = min(bus.battery_kwh * bus.usable_fraction,
+                                 energy + (charge.power_kw * charge.efficiency
+                                           - auxiliary_kw) * duration)
+                else:
+                    energy -= auxiliary_kw * duration
+                if energy < bus.battery_kwh * bus.minimum_soc_fraction - 1e-9:
+                    errors.append(f"minimum SOC violated on {vid} at minute {end}")
+            elif bus.energy_source == "fuel" and bus.fuel is not None:
+                fuel_left -= (distance * bus.fuel.units_per_km_winter
+                              + duration * bus.fuel.units_per_hour_winter)
+                if fuel_left < bus.fuel.reserve - 1e-9:
+                    errors.append(f"fuel reserve violated on {vid} at minute {end}")
+            elif bus.energy_source == "overhead":
+                power = auxiliary_kw if path_key[0] == "location" else (bus.overhead_peak_kw or 0)
+                overhead_segment(bus, path_key, start, end, power)
+
+        prior_location = bus.depot
+        prior_end = 0
         for i, (start, end, kind, obj) in enumerate(schedule):
-            if i and start < schedule[i - 1][1]:
+            if end <= start:
+                errors.append(f"invalid vehicle activity interval on {vid}")
+            if i and start < prior_end:
                 errors.append(f"overlapping vehicle activity on {vid}")
             current_location = obj.start_location if kind == "trip" else obj.depot
-            prior_location = (schedule[i - 1][3].end_location
-                              if schedule[i - 1][2] == "trip" else schedule[i - 1][3].depot) if i else bus.depot
-            prior_end = schedule[i - 1][1] if i else 0
-            auxiliary_kw = bus.accessory_kwh_per_hour_winter or 0.0
-            if i and start >= prior_end:
-                energy -= auxiliary_kw * (start - prior_end) / 60
-                if energy < bus.battery_kwh * bus.minimum_soc_fraction - 1e-9:
-                    errors.append(f"minimum SOC violated during layover on {vid}")
-            required_deadhead = deadhead_minutes.get((prior_location, current_location))
-            if required_deadhead is None:
+            link = (prior_location, current_location)
+            movement_minutes = deadhead_minutes.get(link)
+            movement_km = deadhead_km.get(link)
+            if movement_minutes is None:
                 missing.append(f"deadhead:{prior_location}->{current_location}")
-            elif start - prior_end < required_deadhead:
+            elif movement_minutes < 0 or start - prior_end < movement_minutes:
                 errors.append(f"insufficient travel/turn time on {vid} at minute {start}")
-            if not i and required_deadhead is not None:
-                energy -= auxiliary_kw * required_deadhead / 60
-            movement_km = deadhead_km.get((prior_location, current_location))
             if movement_km is None:
                 missing.append(f"deadhead_km:{prior_location}->{current_location}")
-            else:
-                energy -= movement_km * bus.kwh_per_km_winter
-            if kind == "trip":
-                energy -= (obj.distance_km * bus.kwh_per_km_winter
-                           + auxiliary_kw * (end - start) / 60)
-            else:
-                energy = min(bus.battery_kwh * bus.usable_fraction,
-                             energy + (obj.power_kw * obj.efficiency - auxiliary_kw)
-                             * (end - start) / 60)
-            if energy < bus.battery_kwh * bus.minimum_soc_fraction - 1e-9:
-                errors.append(f"minimum SOC violated on {vid} at minute {end}")
-        if bus.initial_kwh > bus.battery_kwh * bus.usable_fraction + 1e-9:
-            errors.append(f"initial SOC exceeds usable energy on {vid}")
+            elif movement_km < 0 or (movement_km > 0 and movement_minutes == 0):
+                errors.append(f"invalid deadhead distance/time on {vid}")
+            if movement_minutes is not None and movement_km is not None:
+                departure = start - movement_minutes
+                if i:
+                    consume(prior_end, departure, 0, ("location", prior_location))
+                if movement_minutes > 0:
+                    busy[vid].append((departure, start))
+                consume(departure, start, movement_km, ("link", *link))
+            if kind == "charge" and bus.energy_source != "battery":
+                errors.append(f"plug-in charge assigned to {bus.energy_source} vehicle {vid}")
+            consume(start, end, obj.distance_km if kind == "trip" else 0,
+                    ("trip", obj.trip_id) if kind == "trip" else ("location", obj.depot),
+                    charge=obj if kind == "charge" else None)
+            busy[vid].append((start, end))
+            prior_location = obj.end_location if kind == "trip" else obj.depot
+            prior_end = end
         if schedule:
-            last_kind, last_obj = schedule[-1][2], schedule[-1][3]
-            last_location = last_obj.end_location if last_kind == "trip" else last_obj.depot
-            return_minutes = deadhead_minutes.get((last_location, bus.depot))
-            if return_minutes is None:
-                missing.append(f"deadhead:{last_location}->{bus.depot}")
-            if (last_location, bus.depot) not in deadhead_km:
-                missing.append(f"deadhead_km:{last_location}->{bus.depot}")
-            else:
-                energy -= deadhead_km[last_location, bus.depot] * bus.kwh_per_km_winter
-                if return_minutes is not None:
-                    energy -= (bus.accessory_kwh_per_hour_winter or 0.0) * return_minutes / 60
-                if energy < bus.battery_kwh * bus.minimum_soc_fraction - 1e-9:
-                    errors.append(f"minimum SOC violated on return to depot by {vid}")
+            link = (prior_location, bus.depot)
+            minutes, km = deadhead_minutes.get(link), deadhead_km.get(link)
+            if minutes is None:
+                missing.append(f"deadhead:{prior_location}->{bus.depot}")
+            elif minutes < 0:
+                errors.append(f"negative return travel time on {vid}")
+            if km is None:
+                missing.append(f"deadhead_km:{prior_location}->{bus.depot}")
+            elif km < 0 or (km > 0 and minutes == 0):
+                errors.append(f"invalid return distance/time on {vid}")
+            if minutes is not None and km is not None:
+                consume(prior_end, prior_end + minutes, km, ("link", *link))
+                if minutes > 0:
+                    busy[vid].append((prior_end, prior_end + minutes))
+
+    for name, feeder in feeders.items():
+        if feeder.firm_power_kw < 0:
+            errors.append(f"negative overhead feeder power at {name}")
+        boundaries = sorted({m for f, a, b, _ in overhead_loads if f == name for m in (a, b)})
+        for a, b in zip(boundaries, boundaries[1:]):
+            load = sum(power for f, start, end, power in overhead_loads
+                       if f == name and start < b and end > a)
+            if load > feeder.firm_power_kw + 1e-9:
+                errors.append(f"overhead feeder power exceeded at {name}")
+                break
     for depot in depots:
         times = sorted({z for c in charges if c.depot == depot.name for z in (c.start_min, c.end_min)})
         for a, b in zip(times, times[1:]):
@@ -253,7 +377,7 @@ def check_schedule(
         # Counting only vehicles with no trips anywhere in the day undercounts
         # buses that return to the garage between peaks.
         boundaries = sorted({0} | {minute for bus in vehicles if bus.depot == depot.name
-                                  for start, end, _, _ in events[bus.vehicle_id]
+                                  for start, end in busy[bus.vehicle_id]
                                   for minute in (start, end)})
         for moment in boundaries:
             available = 0
@@ -261,11 +385,15 @@ def check_schedule(
                 if bus.depot != depot.name:
                     continue
                 activity = events[bus.vehicle_id]
-                if any(start <= moment < end for start, end, _, _ in activity):
+                if any(start <= moment < end for start, end in busy[bus.vehicle_id]):
                     continue
                 prior = [event for event in activity if event[1] <= moment]
                 last_location = (prior[-1][3].end_location if prior[-1][2] == "trip"
                                  else prior[-1][3].depot) if prior else bus.depot
+                if prior and not any(e[0] >= prior[-1][1] for e in activity):
+                    return_time = deadhead_minutes.get((last_location, depot.name))
+                    if return_time is not None and moment >= prior[-1][1] + return_time:
+                        last_location = depot.name
                 if last_location == depot.name:
                     available += 1
             if available < spare_by_depot.get(depot.name, 0):
