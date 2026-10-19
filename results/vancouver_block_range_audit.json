@@ -901,6 +901,6 @@
     "Range values assume midlife batteries and 10% duty variability as modeled in 2020; current 2033 vehicles may differ."
   ],
   "computation": {
-    "elapsed_seconds": 0.8019172000058461
+    "elapsed_seconds": 0.8208871000097133
   }
 }

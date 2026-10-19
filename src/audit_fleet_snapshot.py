@@ -25,9 +25,9 @@ def main() -> None:
     classes_2022 = {k: get(2022, k) for k in ("hybrid", "low_emission_diesel", "cng", "trolley", "battery",
                                                  "contracted_diesel_hybrid", "gasoline_shuttle")}
     assert sum(classes_2022.values()) == get(2022, "total") == 1711
-    assert get(2023, "battery_delivered") == get(2023, "zero_emission_total") - get(2023, "trolley")
+    assert get(2023, "battery_scenario") == get(2023, "zero_emission_total") - get(2023, "trolley")
     output = {
-        "status": "DERIVED_INTERVAL_CROSS_YEAR_VALIDATION_NOT_2023_REGISTER",
+        "status": "CROSS_YEAR_SCENARIO_NOT_VERIFIED_2023_BOUNDS",
         "snapshot_2025_date": "2025-11-18",
         "classes_2025": classes_2025,
         "age_bands_2025": ages,
@@ -38,7 +38,7 @@ def main() -> None:
         "fleet_2023_categories": classes_2022,
         "fleet_2023_total_estimate": get(2023, "total"),
         "fleet_2023_interval": [get(2023, "total_low"), get(2023, "total_high")],
-        "warnings": ["2023 total is derived, not an operator roster.",
+        "warnings": ["2023 total and retained BEBs are scenario parameters; cross-date subtraction is not evidence of deliveries or stock bounds.",
                      "2025 snapshot includes active vehicles only; 63 in-storage vehicles are separate.",
                      "Vehicle specific status, training/heritage colors and exact 2033 model specifications need review."]}
     (ROOT / "results/fleet_scale_audit.json").write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")

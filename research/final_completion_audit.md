@@ -1,3 +1,8 @@
+> SUPERSEDED numerical sign-off: the independent 19 October review found a
+> transition-emissions error and unsupported service/stock interpretations.
+> The historical audit below is retained for traceability, not current approval.
+> See `priority_revision_2026_10_19.md` for corrections and open defects.
+
 # Final completion audit
 
 Audit date: 18 October 2026. This file is the requirement-by-requirement

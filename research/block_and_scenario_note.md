@@ -1,3 +1,10 @@
+> **Priority revision (19 October 2026).** The emissions values below have
+> been recomputed from the same annual service ramp as O&M and now read
+> 0.7--41.5% (generic) and 4.6--42.7% (class subset). The purchase quantities
+> are proportional inventory scenarios, not dispatch-certified requirements;
+> 1725 and 18 are unverified stock parameters. See
+> `priority_revision_2026_10_19.md`.
+
 # Fall-2023 blocks and conditional 2024--2033 scenario
 
 ## Source and semantics
@@ -39,11 +46,12 @@ not a physical fleet count.
 
 The detailed 2022 category snapshot totals 1,711. The 2025 active fleet totals
 1,733 and provides exact class and model-year sums, including 1,450 non-electric
-or non-trolley vehicles. A derived 2023 total of 1,725 has interval 1,711--1,733.
-The current policy case scales the 1,741 duty-request ratio to the derived
-1,401 non-double-deck, non-trolley fleet, giving 1,630 battery positions and
-1,612 net purchases after 18 delivered BEBs; about five were reported in
-service, so the grid also retains a 5--18 sensitivity.
+or non-trolley vehicles. The 2023 stock scenario selects 1,725 and varies 1,711--1,733; these are not observed stock or proven bounds.
+The current policy case proportionally projects the 1,741 duty-request ratio
+onto an assumed 1,401 non-double-deck, non-trolley stock, selecting 1,630
+battery positions and 1,612 net purchases after 18 assumed existing BEBs.
+This ratio is neither a lower nor upper vehicle bound; about five BEBs were
+reported in service, so the grid also retains a 5--18 sensitivity.
 
 The ordinary-renewal comparison renews a steady-state 10/17 of 1,388 fossil
 positions, or 816 purchases. Vehicle capital, quoted 2023/2025 envelopes,
@@ -55,14 +63,14 @@ changes agency payment and score to CAD 2.710 billion and -16.4%; it does not
 change resource cost.
 
 The environmental boundary is production plus operation plus maintenance,
-excluding depot/charger construction and end-of-life. It gives 29.2--82.4% reduction; the low end assumes renewable diesel and RNG across the conventional comparator. This is deliberately not called a complete life-cycle score.
+excluding depot/charger construction and end-of-life. It gives 0.7--41.5% reduction; the low end assumes renewable diesel and RNG across the conventional comparator. This is deliberately not called a complete life-cycle score.
 
 The class-specific follow-up brings 57 double-decks and 189 midpoint
 community shuttles into one envelope while retaining shared heavy-bus depot
 investment once, with 262 common trolley renewals included on both paths. Its
-central price-mixed PV is CAD 4.712 billion against CAD 2.692 billion for
-renewal plus operations (-75.0%); the high class envelope is CAD 5.260 billion
-(-95.5%), and the class-specific partial-production score is 35.3--84.0%.
+central price-mixed PV is CAD 4.713 billion against CAD 2.693 billion for
+renewal plus operations (-75.0%); the high class envelope is CAD 5.261 billion
+(-95.5%), and the class-specific partial-production score is 4.6--42.7%.
 At 700 kWh for double-decks and 150 kWh for shuttles, 17/57 and
 49/101 weekday duties respectively have a certain overnight-charge shortfall.
 These are technical screens, not charger-site certificates.

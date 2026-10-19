@@ -1,23 +1,23 @@
 {
   "producer": "OpenAI Codex app-owned Tectonic 0.17.0 using the editor cache; the built-in editor compiler returned success for the same source",
-  "pdf_sha256": "e5115eb4d9314c0a3d0e6b4f1c5466497ffe7f5b75c8a8b587cbae08f7ec55a1",
-  "main_tex_sha256": "f71071b28e6c1bfb2fc03f89a0c1cab6e058348b70a01ca0f5eb21c4c97561b6",
+  "pdf_sha256": "28b6b80832e90a7829fdc5d84c8dc4b336cfeab70bb89143a4a3771f32c5395b",
+  "main_tex_sha256": "a92f2e598ebc979321494061825414a6c44f171f0da2281b4f5832a5b75bd895",
   "project_source_files_sha256": {
-    "ebus_transition.tex": "f71071b28e6c1bfb2fc03f89a0c1cab6e058348b70a01ca0f5eb21c4c97561b6",
+    "ebus_transition.tex": "a92f2e598ebc979321494061825414a6c44f171f0da2281b4f5832a5b75bd895",
     "figures/block_range_stress.png": "23c0873f48caa3b3f1876b8557e04fa458f1385c65cf7417110a142841f4b904",
     "figures/charging_tariff_bounds.png": "9e75100acd2a152f6e0d119048b9d2748502143ca8c4861fd1d9d437f2b8d235",
     "figures/london_cohort_roadmap.png": "a70d684a099fdafe36b186981b29b1d97e65126ccaa1336d4daf79869523ada8",
     "figures/service_floor.png": "073aafa80ae1f512da39b3afab577e4e12097ce4d7ad48eeccb0ba90eb0bbaf2",
-    "figures/vancouver_transition_scenarios.png": "b499f40e7260e2056535a4830115f526d288663db774d96a8390b4315a356af4",
+    "figures/vancouver_transition_scenarios.png": "5cd2a5e73b0db7c7a5a730971d7130bdf4280f57ec782a0402e559ca642881b4",
     "tables/block_range_stress.tex": "4e4d9bddfe49ba1ef8890e4b1d7ca75d197f68b0215a64f5794e36f0cf22a1ad",
     "tables/charging_tariff_bounds.tex": "3cde914d72e2611472f8e6a04b9ca21cfff874679e45f5d35d6dc76b96011a00",
     "tables/depot_scale.tex": "3b458a367a3589183b4b22b8653f9d6a7dfe2e25be641bd9179b147248114496",
     "tables/london_cohort_annual.tex": "abc6c2a52c149f946f1aa68c2ed31f729c34e39382e7438584bda64713ec001c",
     "tables/london_cohort_sensitivity.tex": "0cd8b5fa3d389689b9b29544a41bedd80a8714256a8f6dfd24f0f78c563eee16",
     "tables/three_city_roadmap.tex": "9292abeacb422216280fc42df660af61c8b339684fb868232422349a430b94d4",
-    "tables/vancouver_environment_scenarios.tex": "fc12e1e0c73855a19bdcd63c1234b7fba40ba7604e70f53f04329f300848ba48",
-    "tables/vancouver_transition_scenarios.tex": "b0447d2198c6c11726f08abbbccd0ab3ebb9a68045989c038806e499bf0a7fb4",
-    "tables/vancouver_uncertainty.tex": "ddd69f7e9dda1677db3da57fdbe858f6b2ffcaf1e48269ce10d8f1944ebc4c38"
+    "tables/vancouver_environment_scenarios.tex": "b7bf73f6d59dfb4aeb27bac2794fcd7b3525a653907ccbff354044bfda68621a",
+    "tables/vancouver_transition_scenarios.tex": "2a0b0d425c4b405fd33b89c18f3c556426d0c5352849d54c730a9f05bac49321",
+    "tables/vancouver_uncertainty.tex": "f231fdec3f3e36d5c97a653bfc0a68e615dd6f0f6c97b62dc6fe5b5b93d352d7"
   },
   "pages_including_ai_report": 26,
   "ai_report_pages": [

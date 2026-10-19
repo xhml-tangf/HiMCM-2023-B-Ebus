@@ -110,8 +110,8 @@
     "base_plan_gross_pv_cad": 4575328316.504243,
     "base_economic_score_pct": -96.44782504136143,
     "environment_score_boundary_range_pct": [
-      29.180206253559117,
-      82.3660419062955
+      0.7290083591219264,
+      41.48665377753761
     ],
     "boundary": "partial life cycle: vehicle/battery production, operation and maintenance; infrastructure construction and end-of-life excluded",
     "warning": "Not a certified full-city optimum because vehicle, depot, charger and winter records are missing.",
@@ -119,18 +119,18 @@
       "status": "EXECUTED_CARTESIAN_ASSUMPTION_SPACE_NOT_A_CONFIDENCE_INTERVAL",
       "cells": 432768,
       "economic_score_percentiles": {
-        "p05": -166.90491269181595,
+        "p05": -166.90491269181592,
         "median": -127.2223144793612,
         "p95": -89.81665015552856,
-        "minimum": -180.3763317618921,
+        "minimum": -180.37633176189215,
         "maximum": -84.86372236131585
       },
       "environment_score_percentiles": {
-        "p05": 13.30884523454874,
-        "median": 72.5989380925177,
-        "p95": 82.38171486578685,
-        "minimum": 7.082290931307915,
-        "maximum": 83.30832587068576
+        "p05": -15.139668432792371,
+        "median": 33.36865402529807,
+        "p95": 41.503287130072124,
+        "minimum": -21.842063779267978,
+        "maximum": 42.596133798057494
       },
       "named_case_reproduction": {
         "cases_matched": 1,
@@ -141,7 +141,7 @@
       }
     },
     "class_specific_full_fleet_core_bound": {
-      "status": "EXECUTED_CLASS_SPECIFIC_CORE_BOUND_NOT_AWARDED_BID",
+      "status": "CONDITIONAL_CLASS_INVENTORY_COST_SCENARIO_NOT_DISPATCH_CERTIFIED",
       "classes": {
         "heavy_non_deck": 1419,
         "double_deck": 57,
@@ -380,30 +380,58 @@
         {
           "case": "renewable_fuel_mix",
           "baseline_operating_g_per_km": 302.0,
-          "baseline_boundary_t": 395527.5923912221,
-          "plan_boundary_t": 255882.11161918938,
-          "environment_score_pct": 35.306128689476445
+          "baseline_operating_t": 284595.4349247999,
+          "plan_operating_t": 137915.70165974987,
+          "baseline_maintenance_t": 49380.135066422234,
+          "plan_maintenance_t": 57206.509526854235,
+          "baseline_production_t": 53179.136999999995,
+          "plan_production_t": 174367.19400000002,
+          "avoided_emissions_t": 17665.30180461798,
+          "baseline_boundary_t": 387154.7069912221,
+          "plan_boundary_t": 369489.4051866041,
+          "environment_score_pct": 4.562853424127038
         },
         {
           "case": "rng_heavy",
           "baseline_operating_g_per_km": 960.0,
-          "baseline_boundary_t": 1015606.3876909517,
-          "plan_boundary_t": 255882.11161918938,
-          "environment_score_pct": 74.80499190232996
+          "baseline_operating_t": 904674.2302245293,
+          "plan_operating_t": 416951.1595446282,
+          "baseline_maintenance_t": 49380.135066422234,
+          "plan_maintenance_t": 57206.509526854235,
+          "baseline_production_t": 53179.136999999995,
+          "plan_production_t": 174367.19400000002,
+          "avoided_emissions_t": 358708.63921946904,
+          "baseline_boundary_t": 1007233.5022909516,
+          "plan_boundary_t": 648524.8630714825,
+          "environment_score_pct": 35.613255357728534
         },
         {
           "case": "weighted_mix",
           "baseline_operating_g_per_km": 1233.0,
-          "baseline_boundary_t": 1272873.1219110521,
-          "plan_boundary_t": 255882.11161918938,
-          "environment_score_pct": 79.8972806311586
+          "baseline_operating_t": 1161940.96444463,
+          "plan_operating_t": 532721.1899436734,
+          "baseline_maintenance_t": 49380.135066422234,
+          "plan_maintenance_t": 57206.509526854235,
+          "baseline_production_t": 53179.136999999995,
+          "plan_production_t": 174367.19400000002,
+          "avoided_emissions_t": 500205.34304052463,
+          "baseline_boundary_t": 1264500.2365110524,
+          "plan_boundary_t": 764294.8934705277,
+          "environment_score_pct": 39.5575523513279
         },
         {
           "case": "fossil_diesel",
           "baseline_operating_g_per_km": 1580.0,
-          "baseline_boundary_t": 1599875.161377627,
-          "plan_boundary_t": 255882.11161918938,
-          "environment_score_pct": 84.00612011509365
+          "baseline_operating_t": 1488943.0039112049,
+          "plan_operating_t": 679872.1077036321,
+          "baseline_maintenance_t": 49380.135066422234,
+          "plan_maintenance_t": 57206.509526854235,
+          "baseline_production_t": 53179.136999999995,
+          "plan_production_t": 174367.19400000002,
+          "avoided_emissions_t": 680056.4647471408,
+          "baseline_boundary_t": 1591502.2759776271,
+          "plan_boundary_t": 911445.8112304864,
+          "environment_score_pct": 42.73047390581933
         }
       ],
       "production_components_t_central": {
@@ -425,7 +453,7 @@
         "The double-deck annual distance is a weekday-share proxy; the shuttle distance is an independently published 2023 actual total.",
         "Shuttle and double-deck manufacturing inventories include battery factors; the shuttle glider mass is not invented.",
         "Depot construction and end-of-life are excluded from the environmental boundary.",
-        "The financial envelope excludes post-2023 battery replacement and infrastructure terminal value; it is not a complete total cost of ownership."
+        "The financial envelope excludes post-2023 battery replacement, retained pre-2024 asset terminal values, disposal proceeds and infrastructure terminal value; opposing omissions mean this is not a conservative bound or complete TCO."
       ]
     }
   },

@@ -17,6 +17,85 @@
     "fossil_service_share": 0.8957886690558847,
     "annual_nondeck_fossil_km_estimate": 88786898.98172182
   },
+  "annual_service_ledger": [
+    {
+      "year": 2024,
+      "electric_share": 0.1,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 79908209.08354963,
+      "electric_km": 8878689.898172183
+    },
+    {
+      "year": 2025,
+      "electric_share": 0.2,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 71029519.18537746,
+      "electric_km": 17757379.796344366
+    },
+    {
+      "year": 2026,
+      "electric_share": 0.3,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 62150829.28720527,
+      "electric_km": 26636069.694516543
+    },
+    {
+      "year": 2027,
+      "electric_share": 0.4,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 53272139.38903309,
+      "electric_km": 35514759.59268873
+    },
+    {
+      "year": 2028,
+      "electric_share": 0.5,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 44393449.49086091,
+      "electric_km": 44393449.49086091
+    },
+    {
+      "year": 2029,
+      "electric_share": 0.6,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 35514759.59268873,
+      "electric_km": 53272139.38903309
+    },
+    {
+      "year": 2030,
+      "electric_share": 0.7,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 26636069.69451655,
+      "electric_km": 62150829.28720527
+    },
+    {
+      "year": 2031,
+      "electric_share": 0.8,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 17757379.79634436,
+      "electric_km": 71029519.18537746
+    },
+    {
+      "year": 2032,
+      "electric_share": 0.9,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 8878689.89817218,
+      "electric_km": 79908209.08354963
+    },
+    {
+      "year": 2033,
+      "electric_share": 1.0,
+      "baseline_km": 88786898.98172182,
+      "conventional_km": 0.0,
+      "electric_km": 88786898.98172182
+    }
+  ],
+  "battery_replacement_stress": {
+    "status": "ILLUSTRATIVE_NOT_A_PREDICTED_REPLACEMENT",
+    "batteries": 162,
+    "capacity_kwh": 335,
+    "added_production_t": 3147.66,
+    "renewable_mix_score_pct": -0.10766175514860613
+  },
   "economics": [
     {
       "case": "low",
@@ -150,53 +229,53 @@
       "case": "renewable_fuel_mix",
       "baseline_operating_g_per_km": 302.0,
       "baseline_lifecycle_boundary_t": 376212.79239122214,
-      "plan_lifecycle_boundary_t": 266433.12361918937,
-      "environment_score_boundary_pct": 29.180206253559117,
+      "plan_lifecycle_boundary_t": 373470.1696866041,
+      "environment_score_boundary_pct": 0.7290083591219264,
       "baseline_production_t": 61552.022399999994,
       "plan_production_t": 189632.456,
       "baseline_operating_t": 268136.4349247999,
-      "plan_operating_t": 16869.510806527145,
-      "baseline_maintenance_t": 46524.33506642223,
-      "plan_maintenance_t": 59931.15681266223
+      "plan_operating_t": 129939.62665974988,
+      "baseline_maintenance_t": 46524.33506642224,
+      "plan_maintenance_t": 53898.087026854235
     },
     {
       "case": "rng_heavy",
       "baseline_operating_g_per_km": 960.0,
-      "baseline_lifecycle_boundary_t": 960430.5876909517,
-      "plan_lifecycle_boundary_t": 266433.12361918937,
-      "environment_score_boundary_pct": 72.25899226515237,
+      "baseline_lifecycle_boundary_t": 960430.5876909515,
+      "plan_lifecycle_boundary_t": 636368.1775714825,
+      "environment_score_boundary_pct": 33.741367077716006,
       "baseline_production_t": 61552.022399999994,
       "plan_production_t": 189632.456,
-      "baseline_operating_t": 852354.2302245294,
-      "plan_operating_t": 16869.510806527145,
-      "baseline_maintenance_t": 46524.33506642223,
-      "plan_maintenance_t": 59931.15681266223
+      "baseline_operating_t": 852354.2302245293,
+      "plan_operating_t": 392837.63454462815,
+      "baseline_maintenance_t": 46524.33506642224,
+      "plan_maintenance_t": 53898.087026854235
     },
     {
       "case": "weighted_mix",
       "baseline_operating_g_per_km": 1233.0,
-      "baseline_lifecycle_boundary_t": 1202818.821911052,
-      "plan_lifecycle_boundary_t": 266433.12361918937,
-      "environment_score_boundary_pct": 77.84927216254586,
+      "baseline_lifecycle_boundary_t": 1202818.8219110523,
+      "plan_lifecycle_boundary_t": 745442.8829705277,
+      "environment_score_boundary_pct": 38.02533936190327,
       "baseline_production_t": 61552.022399999994,
       "plan_production_t": 189632.456,
       "baseline_operating_t": 1094742.46444463,
-      "plan_operating_t": 16869.510806527145,
-      "baseline_maintenance_t": 46524.33506642223,
-      "plan_maintenance_t": 59931.15681266223
+      "plan_operating_t": 501912.33994367346,
+      "baseline_maintenance_t": 46524.33506642224,
+      "plan_maintenance_t": 53898.087026854235
     },
     {
       "case": "fossil_diesel",
       "baseline_operating_g_per_km": 1580.0,
-      "baseline_lifecycle_boundary_t": 1510909.361377627,
-      "plan_lifecycle_boundary_t": 266433.12361918937,
-      "environment_score_boundary_pct": 82.3660419062955,
+      "baseline_lifecycle_boundary_t": 1510909.3613776271,
+      "plan_lifecycle_boundary_t": 884083.6257304864,
+      "environment_score_boundary_pct": 41.48665377753761,
       "baseline_production_t": 61552.022399999994,
       "plan_production_t": 189632.456,
       "baseline_operating_t": 1402833.0039112049,
-      "plan_operating_t": 16869.510806527145,
-      "baseline_maintenance_t": 46524.33506642223,
-      "plan_maintenance_t": 59931.15681266223
+      "plan_operating_t": 640553.0827036321,
+      "baseline_maintenance_t": 46524.33506642224,
+      "plan_maintenance_t": 53898.087026854235
     }
   ],
   "roadmap": [
@@ -278,9 +357,9 @@
       1733
     ],
     "existing_trolleys": 262,
-    "existing_beb_delivered_asset_count": 18,
+    "existing_beb_scenario_asset_count": 18,
     "existing_beb_in_service_approx": 5,
-    "existing_beb_note": "18 is the delivered-asset bridge; about five were reported in service. The latter governs utilisation, not a second purchase count.",
+    "existing_beb_note": "18 is an unverified cross-date subtraction scenario, not a delivery record. About five were reported in service; 1725 and 1711--1733 are scenario choices, not verified stock or bounds.",
     "double_deck_blocks_excluded": 57,
     "baseline_natural_renewal_fraction": 0.5882352941176471,
     "conventional_bus_envelope_cad": 922860.0,
@@ -299,13 +378,13 @@
     "residual": "vehicle straight-line by 17-year life; infrastructure residual excluded"
   },
   "limits": [
-    "Active block requests are not a garage vehicle register and exclude standby buses.",
+    "Task-ratio scaling is an inventory assumption, neither a lower nor upper bound on required vehicles; it does not certify service or standby buses.",
     "The 300-km point is a historical planning sensitivity, not a certified 2033 procurement specification.",
     "Double-deck blocks are outside the scored battery-depot envelope; their in-route charging and cost remain unverified.",
     "The high infrastructure envelope includes service expansion and must not be presented as fixed-service cost.",
     "Environmental numbers exclude charging/depot construction and end-of-life credits; that boundary is named explicitly.",
     "Capacity-specific trolley-route blocks are retained as proxies for already electric service; the feed does not certify propulsion.",
-    "The 2023 fleet total is a derived 1,711--1,733 bridge from a detailed 2022 snapshot and a later 2025 register, not an observed 31 December roster.",
+    "The 2023 fleet total 1725 and grid 1711--1733 are scenario parameters; the dated snapshots do not prove bounds on 2023 stock.",
     "The 10/17 natural-renewal fraction assumes a uniform age distribution; the missing 2023 age roster remains a real uncertainty."
   ]
 }

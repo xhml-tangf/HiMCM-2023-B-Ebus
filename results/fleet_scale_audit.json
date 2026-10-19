@@ -1,5 +1,5 @@
 {
-  "status": "DERIVED_INTERVAL_CROSS_YEAR_VALIDATION_NOT_2023_REGISTER",
+  "status": "CROSS_YEAR_SCENARIO_NOT_VERIFIED_2023_BOUNDS",
   "snapshot_2025_date": "2025-11-18",
   "classes_2025": {
     "trolley": 261,
@@ -34,7 +34,7 @@
     1733
   ],
   "warnings": [
-    "2023 total is derived, not an operator roster.",
+    "2023 total and retained BEBs are scenario parameters; cross-date subtraction is not evidence of deliveries or stock bounds.",
     "2025 snapshot includes active vehicles only; 63 in-storage vehicles are separate.",
     "Vehicle specific status, training/heritage colors and exact 2033 model specifications need review."
   ]

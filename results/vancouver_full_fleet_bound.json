@@ -1,7 +1,85 @@
 {
-  "status": "EXECUTED_CLASS_SPECIFIC_CORE_BOUND_NOT_AWARDED_BID",
+  "status": "CONDITIONAL_CLASS_INVENTORY_COST_SCENARIO_NOT_DISPATCH_CERTIFIED",
   "pv_basis": "price-mixed screening PV: vehicle/site envelopes span 2021--2026 nominal CAD and are not rebased; the 3% rate is scenario arithmetic",
-  "method": "The 1,630 generic non-deck positions are reduced by the 107-request community-shuttle allowance and scaled to 1419 heavy positions; 18 delivered BEB positions are retained while the approximately five in-service buses are treated as utilisation, not a second asset count.",
+  "method": "1419 heavy positions is a retained proportional inventory scenario, not a vehicle requirement bound. The 18 existing BEBs and initial 1725 assets are unverified stock assumptions, not delivery records.",
+  "annual_service_ledger": [
+    {
+      "year": 2024,
+      "electric_share": 0.1,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 84813209.08354963,
+      "electric_km": 9423689.898172183
+    },
+    {
+      "year": 2025,
+      "electric_share": 0.2,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 75389519.18537746,
+      "electric_km": 18847379.796344366
+    },
+    {
+      "year": 2026,
+      "electric_share": 0.3,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 65965829.28720527,
+      "electric_km": 28271069.694516543
+    },
+    {
+      "year": 2027,
+      "electric_share": 0.4,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 56542139.38903309,
+      "electric_km": 37694759.59268873
+    },
+    {
+      "year": 2028,
+      "electric_share": 0.5,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 47118449.49086091,
+      "electric_km": 47118449.49086091
+    },
+    {
+      "year": 2029,
+      "electric_share": 0.6,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 37694759.59268873,
+      "electric_km": 56542139.38903309
+    },
+    {
+      "year": 2030,
+      "electric_share": 0.7,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 28271069.69451655,
+      "electric_km": 65965829.28720527
+    },
+    {
+      "year": 2031,
+      "electric_share": 0.8,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 18847379.79634436,
+      "electric_km": 75389519.18537746
+    },
+    {
+      "year": 2032,
+      "electric_share": 0.9,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 9423689.89817218,
+      "electric_km": 84813209.08354963
+    },
+    {
+      "year": 2033,
+      "electric_share": 1.0,
+      "baseline_km": 94236898.98172182,
+      "conventional_km": 0.0,
+      "electric_km": 94236898.98172182
+    }
+  ],
+  "environment_denominator_scope": "Scored conversion-service subset; common trolley and retained BEB activity excluded. Not a whole-fleet percentage.",
+  "manufacturing_boundary": {
+    "baseline_heavy_proxy_count": 705,
+    "shuttle_body_both_paths": "OMITTED_UNKNOWN",
+    "common_trolley_both_paths": "OMITTED_COMMON"
+  },
   "classes": {
     "heavy_non_deck": 1419,
     "double_deck": 57,
@@ -245,30 +323,58 @@
     {
       "case": "renewable_fuel_mix",
       "baseline_operating_g_per_km": 302.0,
-      "baseline_boundary_t": 395527.5923912221,
-      "plan_boundary_t": 255882.11161918938,
-      "environment_score_pct": 35.306128689476445
+      "baseline_operating_t": 284595.4349247999,
+      "plan_operating_t": 137915.70165974987,
+      "baseline_maintenance_t": 49380.135066422234,
+      "plan_maintenance_t": 57206.509526854235,
+      "baseline_production_t": 53179.136999999995,
+      "plan_production_t": 174367.19400000002,
+      "avoided_emissions_t": 17665.30180461798,
+      "baseline_boundary_t": 387154.7069912221,
+      "plan_boundary_t": 369489.4051866041,
+      "environment_score_pct": 4.562853424127038
     },
     {
       "case": "rng_heavy",
       "baseline_operating_g_per_km": 960.0,
-      "baseline_boundary_t": 1015606.3876909517,
-      "plan_boundary_t": 255882.11161918938,
-      "environment_score_pct": 74.80499190232996
+      "baseline_operating_t": 904674.2302245293,
+      "plan_operating_t": 416951.1595446282,
+      "baseline_maintenance_t": 49380.135066422234,
+      "plan_maintenance_t": 57206.509526854235,
+      "baseline_production_t": 53179.136999999995,
+      "plan_production_t": 174367.19400000002,
+      "avoided_emissions_t": 358708.63921946904,
+      "baseline_boundary_t": 1007233.5022909516,
+      "plan_boundary_t": 648524.8630714825,
+      "environment_score_pct": 35.613255357728534
     },
     {
       "case": "weighted_mix",
       "baseline_operating_g_per_km": 1233.0,
-      "baseline_boundary_t": 1272873.1219110521,
-      "plan_boundary_t": 255882.11161918938,
-      "environment_score_pct": 79.8972806311586
+      "baseline_operating_t": 1161940.96444463,
+      "plan_operating_t": 532721.1899436734,
+      "baseline_maintenance_t": 49380.135066422234,
+      "plan_maintenance_t": 57206.509526854235,
+      "baseline_production_t": 53179.136999999995,
+      "plan_production_t": 174367.19400000002,
+      "avoided_emissions_t": 500205.34304052463,
+      "baseline_boundary_t": 1264500.2365110524,
+      "plan_boundary_t": 764294.8934705277,
+      "environment_score_pct": 39.5575523513279
     },
     {
       "case": "fossil_diesel",
       "baseline_operating_g_per_km": 1580.0,
-      "baseline_boundary_t": 1599875.161377627,
-      "plan_boundary_t": 255882.11161918938,
-      "environment_score_pct": 84.00612011509365
+      "baseline_operating_t": 1488943.0039112049,
+      "plan_operating_t": 679872.1077036321,
+      "baseline_maintenance_t": 49380.135066422234,
+      "plan_maintenance_t": 57206.509526854235,
+      "baseline_production_t": 53179.136999999995,
+      "plan_production_t": 174367.19400000002,
+      "avoided_emissions_t": 680056.4647471408,
+      "baseline_boundary_t": 1591502.2759776271,
+      "plan_boundary_t": 911445.8112304864,
+      "environment_score_pct": 42.73047390581933
     }
   ],
   "production_components_t_central": {
@@ -518,6 +624,6 @@
     "The double-deck annual distance is a weekday-share proxy; the shuttle distance is an independently published 2023 actual total.",
     "Shuttle and double-deck manufacturing inventories include battery factors; the shuttle glider mass is not invented.",
     "Depot construction and end-of-life are excluded from the environmental boundary.",
-    "The financial envelope excludes post-2023 battery replacement and infrastructure terminal value; it is not a complete total cost of ownership."
+    "The financial envelope excludes post-2023 battery replacement, retained pre-2024 asset terminal values, disposal proceeds and infrastructure terminal value; opposing omissions mean this is not a conservative bound or complete TCO."
   ]
 }

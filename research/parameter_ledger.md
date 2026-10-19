@@ -177,7 +177,7 @@ interval, seven paired range points, 5--18 retained BEBs, 9/17--11/17 renewal,
 1.5--5.0% discount, hardware/project vehicle costs and four fuel
 intensities. It reproduces the named CAD 4.575-billion / -96.4% case exactly.
 Equal-weight fifth/median/ninety-fifth economically scored cases are
--166.9/-127.2/-89.8%; environment scores are 13.3/72.6/82.4%. These are
+-166.9/-127.2/-89.8%; environment scores are -15.1/33.4/41.5% after the annual-ramp correction. These are
 assumption-space quantiles, never confidence intervals. See
 `results/vancouver_transition_uncertainty.json`.
 

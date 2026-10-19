@@ -16,6 +16,7 @@ from pathlib import Path
 import pandas as pd
 
 from build_transition_scenarios import allocate, pv, vehicle_residual_pv
+from transition_ledger import service_ledger, operating_costs, use_emissions
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -31,7 +32,8 @@ def main() -> None:
     # At 300 km, cap24 contributes 107 requests; the remaining heavy
     # (cap50 + unclassified + cap75) contributes 1,074 + 265 + 295 = 1,634
     # requests against 1,401 base blocks.
-    heavy_positions = int((1406 - 189) * 1634 / 1401)
+    # Retained integer scenario, NOT a rounded lower bound or dispatch result.
+    heavy_positions = 1419
     existing_beb = 18
     heavy_purchases = heavy_positions - existing_beb
     heavy_standard_share = (1446 - 107) / ((1446 - 107) + 295)
@@ -49,6 +51,7 @@ def main() -> None:
     )
     deck_km = 5_450_000.0
     annual_full_km = annual_standard_km + deck_km
+    annual_service = service_ledger(annual_full_km)
     om = {"conventional": 2.77, "beb": 2.28}
     rate = 0.03
     baseline_heavy_unit = 922_860.0
@@ -95,16 +98,7 @@ def main() -> None:
         shared_schedule = {y: shared_depot_nominal / 8.0 for y in range(2024, 2032)}
         class_infra_schedule = {y: extra_infrastructure / 8.0 for y in range(2024, 2032)}
 
-        baseline_om = {
-            y: annual_full_km * om["conventional"] for y in years
-        }
-        plan_om = {}
-        for i, y in enumerate(years, start=1):
-            electric_share = i / 10
-            plan_om[y] = annual_full_km * (
-                (1 - electric_share) * om["conventional"]
-                + electric_share * om["beb"]
-            )
+        baseline_om, plan_om = operating_costs(annual_service, om["conventional"], om["beb"])
         trolley_capex = {
             y: trolley_standard_schedule.get(y, 0) * trolley_standard_unit
             + trolley_pilot_schedule.get(y, 0) * trolley_pilot_unit
@@ -304,28 +298,38 @@ def main() -> None:
         + 189 * (58 * 150 / 1000)
         + 57 * ((6.6 * 14_880 + 58 * 700) / 1000)
     )
-    baseline_production_t = baseline_purchase_count * (6.6 * 11_429 / 1000)
+    # Symmetric partial boundary: omit unknown shuttle bodies on BOTH sides.
+    baseline_heavy_count = round((1725 - 262 - 57 - 189 - existing_beb) * 10 / 17)
+    baseline_production_t = baseline_heavy_count * (6.6 * 11_429 / 1000)
     environment = []
     for name, intensity in (("renewable_fuel_mix", .302), ("rng_heavy", .96),
                             ("weighted_mix", 1.233), ("fossil_diesel", 1.58)):
-        base_operating = annual_full_km * 10 * intensity / 1000
-        plan_operating = annual_full_km * 10 * .019 / 1000
-        base_maintenance = annual_full_km * 10 * .0524 / 1000
-        plan_maintenance = annual_full_km * 10 * .0675 / 1000
+        use = use_emissions(annual_service, intensity)
+        base_operating, plan_operating = use["baseline_operating_t"], use["plan_operating_t"]
+        base_maintenance, plan_maintenance = use["baseline_maintenance_t"], use["plan_maintenance_t"]
         base_total = baseline_production_t + base_operating + base_maintenance
         plan_total = plan_production_t + plan_operating + plan_maintenance
         environment.append({
             "case": name,
             "baseline_operating_g_per_km": 1000 * intensity,
+            **use,
+            "baseline_production_t": baseline_production_t,
+            "plan_production_t": plan_production_t,
+            "avoided_emissions_t": base_total - plan_total,
             "baseline_boundary_t": base_total,
             "plan_boundary_t": plan_total,
             "environment_score_pct": 100 * (base_total - plan_total) / base_total,
         })
 
     output = {
-        "status": "EXECUTED_CLASS_SPECIFIC_CORE_BOUND_NOT_AWARDED_BID",
+        "status": "CONDITIONAL_CLASS_INVENTORY_COST_SCENARIO_NOT_DISPATCH_CERTIFIED",
         "pv_basis": "price-mixed screening PV: vehicle/site envelopes span 2021--2026 nominal CAD and are not rebased; the 3% rate is scenario arithmetic",
-        "method": f"The 1,630 generic non-deck positions are reduced by the 107-request community-shuttle allowance and scaled to {heavy_positions} heavy positions; 18 delivered BEB positions are retained while the approximately five in-service buses are treated as utilisation, not a second asset count.",
+        "method": "1419 heavy positions is a retained proportional inventory scenario, not a vehicle requirement bound. The 18 existing BEBs and initial 1725 assets are unverified stock assumptions, not delivery records.",
+        "annual_service_ledger": annual_service,
+        "environment_denominator_scope": "Scored conversion-service subset; common trolley and retained BEB activity excluded. Not a whole-fleet percentage.",
+        "manufacturing_boundary": {"baseline_heavy_proxy_count": baseline_heavy_count,
+                                   "shuttle_body_both_paths": "OMITTED_UNKNOWN",
+                                   "common_trolley_both_paths": "OMITTED_COMMON"},
         "classes": {
             "heavy_non_deck": heavy_positions,
             "double_deck": 57,
@@ -380,7 +384,7 @@ def main() -> None:
             "The double-deck annual distance is a weekday-share proxy; the shuttle distance is an independently published 2023 actual total.",
             "Shuttle and double-deck manufacturing inventories include battery factors; the shuttle glider mass is not invented.",
             "Depot construction and end-of-life are excluded from the environmental boundary.",
-            "The financial envelope excludes post-2023 battery replacement and infrastructure terminal value; it is not a complete total cost of ownership.",
+            "The financial envelope excludes post-2023 battery replacement, retained pre-2024 asset terminal values, disposal proceeds and infrastructure terminal value; opposing omissions mean this is not a conservative bound or complete TCO.",
         ],
     }
     central_plan_om_pv = pv({

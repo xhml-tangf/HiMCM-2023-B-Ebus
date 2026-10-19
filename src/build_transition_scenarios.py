@@ -15,6 +15,11 @@ from pathlib import Path
 
 import pandas as pd
 
+try:
+    from .transition_ledger import service_ledger, operating_costs, use_emissions
+except ImportError:
+    from transition_ledger import service_ledger, operating_costs, use_emissions
+
 ROOT = Path(__file__).resolve().parents[1]
 PROC = ROOT / "data/processed"
 
@@ -91,6 +96,7 @@ def main() -> None:
     natural_renewal_fraction = 10 / 17
     baseline_purchases = allocate(round(fossil_fleet_for_renewal * natural_renewal_fraction), years)
     plan_purchases = allocate(net_new_batteries, years)
+    annual_service = service_ledger(annual_fossil_km)
     econ_cases = []
     for name, infrastructure in [
         ("low", net_new_batteries * depot_per_bus_cad),
@@ -108,11 +114,7 @@ def main() -> None:
         plan_capex = {y: plan_purchases[y] * plan_unit_price for y in years}
         infra_years = list(range(2024, 2032))
         infra_capex = {y: infrastructure / len(infra_years) for y in infra_years}
-        baseline_om = {y: annual_fossil_km * om["cng"] for y in years}
-        plan_om = {}
-        for i, y in enumerate(years, start=1):
-            e_share = i / 10
-            plan_om[y] = annual_fossil_km * (om["cng"] * (1 - e_share) + om["beb"] * e_share)
+        baseline_om, plan_om = operating_costs(annual_service, om["cng"], om["beb"])
         baseline_residual_pv, baseline_residual = vehicle_residual_pv(baseline_purchases, conventional_bus_cad)
         plan_residual_pv, plan_residual = vehicle_residual_pv(plan_purchases, plan_unit_price)
         base_cash = {y: base_capex[y] + baseline_om[y] for y in years}
@@ -147,13 +149,12 @@ def main() -> None:
     diesel_production_t = 6.6 * 11_429 / 1000
     base_prod = round(fossil_fleet_for_renewal * natural_renewal_fraction) * diesel_production_t
     plan_prod = net_new_batteries * beb_production_t
-    base_maintenance = annual_fossil_km * 10 * .0524 / 1000
-    plan_maintenance = annual_fossil_km * 10 * .0675 / 1000
-    plan_operating = annual_fossil_km * 10 * .019 / 1000
     env_cases = []
     for name, intensity_kg_km in [("renewable_fuel_mix", .302), ("rng_heavy", .96),
                                    ("weighted_mix", 1.233), ("fossil_diesel", 1.58)]:
-        base_operating = annual_fossil_km * 10 * intensity_kg_km / 1000
+        use = use_emissions(annual_service, intensity_kg_km)
+        base_operating, plan_operating = use["baseline_operating_t"], use["plan_operating_t"]
+        base_maintenance, plan_maintenance = use["baseline_maintenance_t"], use["plan_maintenance_t"]
         base_total = base_prod + base_operating + base_maintenance
         plan_total = plan_prod + plan_operating + plan_maintenance
         env_cases.append({"case": name, "baseline_operating_g_per_km": 1000 * intensity_kg_km,
@@ -176,15 +177,23 @@ def main() -> None:
                                    "additional_active_block_requests_pct": 100 * extra / nondeck_non_trolley_fleet,
                                    "annual_2023_bus_km": annual_bus_km, "fossil_service_share": fossil_share,
                                    "annual_nondeck_fossil_km_estimate": annual_fossil_km},
+              "annual_service_ledger": annual_service,
+              "battery_replacement_stress": {
+                  "status": "ILLUSTRATIVE_NOT_A_PREDICTED_REPLACEMENT",
+                  "batteries": plan_purchases[2024], "capacity_kwh": 335,
+                  "added_production_t": plan_purchases[2024] * 335 * 58 / 1000,
+                  "renewable_mix_score_pct": 100 * (env_cases[0]["baseline_lifecycle_boundary_t"]
+                      - env_cases[0]["plan_lifecycle_boundary_t"] - plan_purchases[2024] * 335 * 58 / 1000)
+                      / env_cases[0]["baseline_lifecycle_boundary_t"]},
               "economics": econ_cases, "environment": env_cases,
               "roadmap": [{"year": y, "baseline_bus_purchases": baseline_purchases[y],
                            "plan_bus_purchases": plan_purchases[y], "plan_electric_share_pct": 10 * (y - 2023),
                            "infrastructure_phase": y <= 2031} for y in years],
               "assumptions": {"fleet_2023_total": fleet2023_total, "fleet_2023_interval": [1711, 1733],
                               "existing_trolleys": existing_trolleys,
-                              "existing_beb_delivered_asset_count": existing_beb,
+                              "existing_beb_scenario_asset_count": existing_beb,
                               "existing_beb_in_service_approx": 5,
-                              "existing_beb_note": "18 is the delivered-asset bridge; about five were reported in service. The latter governs utilisation, not a second purchase count.",
+                              "existing_beb_note": "18 is an unverified cross-date subtraction scenario, not a delivery record. About five were reported in service; 1725 and 1711--1733 are scenario choices, not verified stock or bounds.",
                               "double_deck_blocks_excluded": double_deck,
                               "baseline_natural_renewal_fraction": natural_renewal_fraction,
                               "conventional_bus_envelope_cad": conventional_bus_cad,
@@ -200,13 +209,13 @@ def main() -> None:
                               "pv_basis": "price-mixed screening PV: public envelopes span 2021--2025 nominal CAD and are not rebased; the 3% rate is applied for scenario arithmetic, not presented as a constant-dollar bid appraisal",
                               "capital_schedule": "baseline 10/17 steady-state renewals and electric plan spread 2024-2033; infrastructure 2024-2031",
                               "residual": "vehicle straight-line by 17-year life; infrastructure residual excluded"},
-              "limits": ["Active block requests are not a garage vehicle register and exclude standby buses.",
+              "limits": ["Task-ratio scaling is an inventory assumption, neither a lower nor upper bound on required vehicles; it does not certify service or standby buses.",
                          "The 300-km point is a historical planning sensitivity, not a certified 2033 procurement specification.",
                          "Double-deck blocks are outside the scored battery-depot envelope; their in-route charging and cost remain unverified.",
                          "The high infrastructure envelope includes service expansion and must not be presented as fixed-service cost.",
                          "Environmental numbers exclude charging/depot construction and end-of-life credits; that boundary is named explicitly.",
                          "Capacity-specific trolley-route blocks are retained as proxies for already electric service; the feed does not certify propulsion.",
-                         "The 2023 fleet total is a derived 1,711--1,733 bridge from a detailed 2022 snapshot and a later 2025 register, not an observed 31 December roster.",
+                         "The 2023 fleet total 1725 and grid 1711--1733 are scenario parameters; the dated snapshots do not prove bounds on 2023 stock.",
                          "The 10/17 natural-renewal fraction assumes a uniform age distribution; the missing 2023 age roster remains a real uncertainty."]}
     (ROOT / "results/vancouver_transition_scenarios.json").write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"service_baseline": output["service_baseline"], "economics": econ_cases, "environment": env_cases}, indent=2))

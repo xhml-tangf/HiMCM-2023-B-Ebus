@@ -14,6 +14,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import rankdata
+from transition_ledger import service_ledger, operating_costs, use_emissions
 
 ROOT = Path(__file__).resolve().parents[1]
 PROC = ROOT / "data/processed"
@@ -126,12 +127,10 @@ def main() -> None:
     infra_disc = sum(1.0 / (1.0 + rate) ** i for i in range(1, 9)) / 8.0
     plan_infrastructure_pv = infrastructure * infra_disc
 
-    om_weight = np.zeros_like(rate, dtype=float)
-    for i, year in enumerate(years, start=1):
-        om_weight += ((1 - i / 10) * 2.77 + (i / 10) * 2.28) / (1.0 + rate) ** (year - 2023)
-    annuity = sum(1.0 / (1.0 + rate) ** (year - 2023) for year in years)
-    baseline_om = annual_fossil_km * 2.77 * annuity
-    plan_om = annual_fossil_km * om_weight
+    annual_service = service_ledger(annual_fossil_km)
+    base_om_ledger, plan_om_ledger = operating_costs(annual_service, 2.77, 2.28)
+    baseline_om = sum(value / (1 + rate) ** (year - 2023) for year, value in base_om_ledger.items())
+    plan_om = sum(value / (1 + rate) ** (year - 2023) for year, value in plan_om_ledger.items())
     baseline_gross = base_capex + baseline_om - base_residual
     plan_gross = plan_capex + plan_infrastructure_pv + plan_om - plan_residual
     economic_score = 100.0 * (baseline_gross - plan_gross) / baseline_gross
@@ -140,10 +139,9 @@ def main() -> None:
     beb_production_t = (6.6 * 14_880 + 58 * 335) / 1000.0
     baseline_production = baseline_purchases * diesel_production_t
     plan_production = net_new * beb_production_t
-    baseline_operating = annual_fossil_km * 10 * fuel_kg_per_km / 1000.0
-    plan_operating = annual_fossil_km * 10 * 0.019 / 1000.0
-    baseline_maintenance = annual_fossil_km * 10 * 0.0524 / 1000.0
-    plan_maintenance = annual_fossil_km * 10 * 0.0675 / 1000.0
+    use = use_emissions(annual_service, fuel_kg_per_km)
+    baseline_operating, plan_operating = use["baseline_operating_t"], use["plan_operating_t"]
+    baseline_maintenance, plan_maintenance = use["baseline_maintenance_t"], use["plan_maintenance_t"]
     baseline_emissions = baseline_production + baseline_operating + baseline_maintenance
     plan_emissions = plan_production + plan_operating + plan_maintenance
     environment_score = 100.0 * (baseline_emissions - plan_emissions) / baseline_emissions
@@ -244,7 +242,7 @@ def main() -> None:
         f"Environment score (\\%) & {named_env_case['environment_score_boundary_pct']:.1f} & {env['p05']:.1f} & {env['median']:.1f} & {env['p95']:.1f} \\\\",
         r"\bottomrule",
         r"\end{tabular}",
-        f"\\caption{{Executed uncertainty propagation over {economic_score.size:,} source-bounded cases. Quantiles weight every grid cell equally; they are not statistical confidence intervals. The vehicle basis, retained stock, range, renewal rate, discount rate and baseline fuel mix vary. The named CAD 6.52-billion expansion envelope is excluded.}}",
+        f"\\caption{{Executed uncertainty propagation over {economic_score.size:,} assumption-grid cases. Quantiles weight every grid cell equally; they are not statistical confidence intervals. The vehicle basis, retained stock, range, renewal rate, discount rate and baseline fuel mix vary. The named CAD 6.52-billion expansion envelope is excluded.}}",
         r"\end{table}",
     ]
     TABLES.joinpath("vancouver_uncertainty.tex").write_text("\n".join(rows) + "\n", encoding="utf-8")

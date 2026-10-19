@@ -11,6 +11,17 @@ assumptions**, and **illustrative scenarios**. It must never present a 2020
 fleet inventory as the actual 2023 fleet or describe hourly service summaries
 as a verified vehicle-level schedule.
 
+## Priority corrections (19 October 2026)
+
+The emissions ramp error is corrected: O&M and GHG now share annual service
+kilometres. Generic reduction is 0.7--41.5%; the class subset is 4.6--42.7%
+after omitting unknown shuttle bodies symmetrically. These are conditional,
+partial-boundary results, not whole-fleet life-cycle scores. Fleet purchases
+are proportional inventory assumptions, not dispatch-certified requirements.
+The 18 existing BEBs and initial stock 1725 are unverified scenario parameters.
+The low-carbon reduction can reverse under battery replacement. See
+`research/priority_revision_2026_10_19.md` for scope and remaining defects.
+
 ## Layout
 
 - `data/raw/`: downloaded public primary-source files, with SHA-256 hashes in
@@ -56,9 +67,9 @@ as a verified vehicle-level schedule.
   Shared heavy-bus depot investment is sized from 1,419 positions and retained
   once. The 1,647 route-BEB conversion plus 262 common trolley renewals reaches
   zero conventional stock and 1,927 electric assets in 2033. Central price-mixed
-  gross PV is CAD 4.712 billion versus CAD 2.692 billion for renewal plus
-  operations (-75.0%); the high class envelope is CAD 5.260 billion (-95.5%).
-  The partial-production environmental reduction is 35.3--84.0%.
+  gross PV is CAD 4.713 billion versus CAD 2.693 billion for renewal plus
+  operations (-75.0%); the high class envelope is CAD 5.261 billion (-95.5%).
+  The partial-production environmental reduction is 4.6--42.7%.
 - `src/propagate_transition_uncertainty.py` and
   `results/vancouver_transition_uncertainty.json`: 432,768-cell CPU
   assumption grid over fleet stock, range, retained BEBs, renewal, discount,
@@ -217,15 +228,16 @@ The conditional Vancouver 300-km policy case gives a price-mixed screening PV of
 CAD 4.575 billion versus CAD 2.329 billion for steady-state renewal, an
 economic score of -96.4%. At 50% eligible grant funding, agency payment is
 CAD 2.710 billion and the score is -16.4%; gross resource cost is unchanged.
-Its partial life-cycle boundary gives 29.2--82.4% emissions reduction. These
+Its partial life-cycle boundary gives 0.7--41.5% emissions reduction. These
 are named scenarios, not a certified city optimum or full life-cycle result.
-The class-specific full-fleet core bound is CAD 4.712 billion against CAD
-2.692 billion, or -75.0%; the high class envelope is CAD 5.260 billion and
+The class-specific inventory scenario is CAD 4.713 billion against CAD
+2.693 billion, or -75.0%; the high class envelope is CAD 5.261 billion and
 -95.5%. This includes 1,647 route BEBs, 262 one-for-one trolley renewals,
 57 double-decks and 189 community shuttles; it retains the shared depot once
-and gives 35.3--84.0% environmental reduction. The reported grant cases cover
-incremental conversion capital; if the common trolley renewal is also
-grant-eligible, the 50% class case becomes -0.5%. The project still lacks a
+and gives 4.6--42.7% environmental reduction. The reported grant cases cover
+incremental conversion capital. The earlier -0.5% common-trolley extension
+held the comparator unsubsidized, so it cannot establish parity under symmetric
+eligibility. The project still lacks a
 2023 physical age/depot register, firm site power and
 as-operated duties, so the certified citywide solution and complete
 life-cycle score remain `UNVERIFIED`.

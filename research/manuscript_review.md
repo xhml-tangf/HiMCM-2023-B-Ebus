@@ -1,3 +1,7 @@
+> **Superseded by the 19 October 2026 priority revision.** The environmental
+> scores, purchase interpretations and manufacturing boundary below are
+> historical. See `priority_revision_2026_10_19.md`.
+
 # Manuscript review and completion audit
 
 Review date: 18 October 2026. Scope: the complete 25-page PDF, source, code,
@@ -8,7 +12,7 @@ used.
 
 | Problem task | Evidence in the paper | State |
 |---|---|---|
-| Q1 ecological model and application | Fall-2023 schedules, battery-range screen, partial-production/operation/maintenance emissions, fuel-mix sensitivity and fixed-route NOx/PM inventory | Class-specific result is 35.3--84.0%; depot construction and end-of-life are explicitly excluded. |
+| Q1 ecological model and application | Fall-2023 schedules, battery-range screen, partial-production/operation/maintenance emissions, fuel-mix sensitivity and fixed-route NOx/PM inventory | Historical class-specific result was 35.3--84.0%; corrected result is 4.6--42.7%; depot construction and end-of-life are explicitly excluded. |
 | Q2 financial model with grants up to 50% | Ten-year discounted resource cost, vehicle/infrastructure/O&M/residual components, 0/25/50% agency cases | Class-specific central score is -75.0%; physical garage bids remain absent. |
 | Q3 ten-year roadmap in three metropolitan areas | Vancouver, Chicago and London annual purchase/retirement/inventory paths; London integer cohort model | All three end at zero conventional stock in 2033. Route- and garage-specific Chicago/London purchases remain unverified. |
 | Q4 one-page decision letter | Page 25 contains recommendations, counts, scores and gates | Present and constrained to one page. |
@@ -71,7 +75,7 @@ cost/emissions scenario or transparent ten-year transfer plan.
 
 ## Automated checks
 
-- Python test suite: 41 passed.
+- Python test suite after correction: 46 passed.
 - Static LaTeX check: 12-point, 50 references all cited, balanced environments.
 - Built-in editor compile: success.
 - Same app-owned Tectonic executable exported the PDF.

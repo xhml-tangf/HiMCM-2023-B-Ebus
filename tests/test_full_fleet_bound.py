@@ -55,8 +55,18 @@ def test_full_fleet_environment_boundary_is_ordered():
     )
     scores = [x["environment_score_pct"] for x in result["environment_central"]]
     assert scores == sorted(scores)
-    assert 35.0 < scores[0] < 36.0
-    assert 83.0 < scores[-1] < 85.0
+    assert 4.5 < scores[0] < 4.7
+    assert 42.6 < scores[-1] < 42.8
     assert "community-shuttle body and powertrain production" in result[
         "production_components_t_central"
     ]["omitted_or_proxy_components"]
+
+
+def test_shuttle_body_boundary_is_symmetric_and_ramp_is_used():
+    result = json.loads((ROOT / "results/vancouver_full_fleet_bound.json").read_text())
+    assert result["manufacturing_boundary"]["shuttle_body_both_paths"] == "OMITTED_UNKNOWN"
+    for case in result["environment_central"]:
+        assert abs(case["baseline_production_t"] - 705 * 11429 * 6.6 / 1000) < 1e-6
+        km = result["service_km"]["full_scored_proxy"]
+        g = case["baseline_operating_g_per_km"] / 1000
+        assert abs(case["plan_operating_t"] - km * (4.5 * g + 5.5 * .019) / 1000) < 1e-6

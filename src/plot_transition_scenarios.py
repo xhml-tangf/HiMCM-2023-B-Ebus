@@ -42,12 +42,12 @@ def main() -> None:
                 [g["agency_economic_score_vs_baseline_pct"] for g in grants],
                 marker="o", color=color, label=label)
     env = result["environment"]
-    ax.text(3, 70,
-            f"environment score\n{min(x['environment_score_boundary_pct'] for x in env):.0f}-{max(x['environment_score_boundary_pct'] for x in env):.0f}%",
+    ax.text(3, 25,
+            f"transition GHG score\n{min(x['environment_score_boundary_pct'] for x in env):.0f}-{max(x['environment_score_boundary_pct'] for x in env):.0f}%",
             va="center", fontsize=10,
             bbox={"boxstyle": "round,pad=0.25", "facecolor": "white", "edgecolor": "#7aa6a0"})
     ax.axhline(0, color="black", linewidth=.7)
-    ax.set(xlabel="External grant share (%)", ylabel="Economic score (%)",
+    ax.set(xlabel="External grant share (%)", ylabel="Agency economic score (%)",
            title="Scores and grants")
     ax.set_ylim(min(g["agency_economic_score_vs_baseline_pct"] for c in result["economics"] for g in c["grant_cases"]) - 10,
                 max(x["environment_score_boundary_pct"] for x in env) + 8)
@@ -65,7 +65,7 @@ def main() -> None:
     rows += [r"\midrule", r"\multicolumn{3}{@{}l@{}}{Agency PV and score, grants 0/25/50\% (base plan)}\\",
              f"& {base['grant_cases'][0]['agency_pv_cad']/1e9:.3f} / {base['grant_cases'][1]['agency_pv_cad']/1e9:.3f} / {base['grant_cases'][2]['agency_pv_cad']/1e9:.3f} & "
              f"{base['grant_cases'][0]['agency_economic_score_vs_baseline_pct']:.1f} / {base['grant_cases'][1]['agency_economic_score_vs_baseline_pct']:.1f} / {base['grant_cases'][2]['agency_economic_score_vs_baseline_pct']:.1f}\\\\",
-             r"\bottomrule", r"\end{tabular}", r"\caption{Conditional generic non-deck case. The 1,741 sequential duty requests are scaled to a derived 1,406-bus non-double-deck, non-trolley fleet under a 300-km range, giving 1,630 battery positions and 1,612 net purchases after 18 delivered BEBs. This is price-mixed screening arithmetic, not a constant-dollar bid appraisal. The 57 double-deck buses and 262 trolleys are outside this sub-boundary; the class-specific result adds them separately. The baseline renews 10/17 of unknown-age fossil positions, and vehicle residual follows a 17-year life.}", r"\end{table}"]
+             r"\bottomrule", r"\end{tabular}", r"\caption{Conditional generic non-deck case. The 1,741 sequential duty requests are scaled to a derived 1,406-bus non-double-deck, non-trolley fleet under a 300-km range, giving 1,630 battery positions and 1,612 net purchases after 18 assumed existing BEBs. This is price-mixed screening arithmetic, not a constant-dollar bid appraisal. The 57 double-deck buses and 262 trolleys are outside this sub-boundary; the class-specific result adds them separately. The baseline renews 10/17 of unknown-age fossil positions, and vehicle residual follows a 17-year life.}", r"\end{table}"]
     (ROOT / "paper/tables/vancouver_transition_scenarios.tex").write_text("\n".join(rows) + "\n", encoding="utf-8")
     env_rows = [r"\begin{table}[htbp]", r"\centering", r"\begin{tabular}{@{}lrrrr@{}}",
                 r"\toprule", r"Baseline operating mix & g CO$_2$e/km & Renewal (kt) & Electric (kt) & Score (\%)\\",
@@ -76,7 +76,7 @@ def main() -> None:
                         f"{case['plan_lifecycle_boundary_t']/1000:.1f} & "
                         f"{case['environment_score_boundary_pct']:.1f}\\\\")
     env_rows += [r"\bottomrule", r"\end{tabular}",
-             r"\caption{Conditional generic non-deck ten-year emissions over the named boundary: vehicle and battery production, operating energy, and maintenance. Depot/charging construction and end-of-life credits are excluded. The renewable mix assumes 80\% renewable-diesel reduction plus 96\% RNG for CNG; RNG-heavy uses RNG but fossil diesel; weighted mix uses the 2020 propulsion mix. This is a separate boundary from the class-specific result.}", r"\end{table}"]
+             r"\caption{Conditional generic non-deck ten-year emissions over the named boundary: vehicle and battery production, operating energy, and maintenance. Electric service rises from 10 to 100 percent over 2024--2033; remaining kilometres retain conventional operation and maintenance. Depot/charging construction and end-of-life credits are excluded. The renewable mix assumes 80\% renewable-diesel reduction plus 96\% RNG for CNG; RNG-heavy uses RNG but fossil diesel; weighted mix uses the 2020 propulsion mix. This is a separate boundary from the class-specific result.}", r"\end{table}"]
     (ROOT / "paper/tables/vancouver_environment_scenarios.tex").write_text("\n".join(env_rows) + "\n", encoding="utf-8")
 
 

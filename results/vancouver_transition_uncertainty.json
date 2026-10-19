@@ -54,24 +54,24 @@
   },
   "gross_pv_cad": {
     "p05": 4358740409.89019,
-    "median": 5258071926.770753,
+    "median": 5258071926.770752,
     "p95": 6196547631.164101,
-    "minimum": 4048901078.0652285,
-    "maximum": 6616639267.426751
+    "minimum": 4048901078.0652275,
+    "maximum": 6616639267.426753
   },
   "economic_score_pct": {
-    "p05": -166.90491269181595,
+    "p05": -166.90491269181592,
     "median": -127.2223144793612,
     "p95": -89.81665015552856,
-    "minimum": -180.3763317618921,
+    "minimum": -180.37633176189215,
     "maximum": -84.86372236131585
   },
   "environment_score_pct": {
-    "p05": 13.30884523454874,
-    "median": 72.5989380925177,
-    "p95": 82.38171486578685,
-    "minimum": 7.082290931307915,
-    "maximum": 83.30832587068576
+    "p05": -15.139668432792371,
+    "median": 33.36865402529807,
+    "p95": 41.503287130072124,
+    "minimum": -21.842063779267978,
+    "maximum": 42.596133798057494
   },
   "gross_pv_rank_correlations": {
     "derived_2023_fleet_total": 0.042117794572905924,
@@ -94,14 +94,14 @@
     "net_new_battery_positions": -0.8523621503917206
   },
   "environment_rank_correlations": {
-    "derived_2023_fleet_total": -0.0003156771571530262,
-    "paired_range_midpoint_km": 0.32175805135807845,
-    "existing_beb_retained": -0.01138376049245142,
-    "natural_renewal_fraction": 0.03970088934090056,
+    "derived_2023_fleet_total": -0.00031673862035367604,
+    "paired_range_midpoint_km": 0.37801168140977487,
+    "existing_beb_retained": -0.011473170617785142,
+    "natural_renewal_fraction": 0.051385256961899176,
     "discount_rate": 0.0,
     "project_envelope_cost_basis": 0.0,
-    "baseline_fuel_intensity_kg_co2e_km": 0.9427004786921126,
-    "net_new_battery_positions": -0.31788067492260313
+    "baseline_fuel_intensity_kg_co2e_km": 0.9152727158110789,
+    "net_new_battery_positions": -0.37355254385357073
   },
   "quantile_weighting": "Equal weight across the Cartesian assumption grid; quantiles are not sampling confidence intervals.",
   "boundaries": [
