@@ -19,11 +19,22 @@ def main() -> None:
     central_full = full["central_result"]
     env_full_min = min(x["environment_score_pct"] for x in full["environment_central"])
     env_full_max = max(x["environment_score_pct"] for x in full["environment_central"])
+    blocks = json.loads((ROOT / "results/vancouver_block_range_audit.json").read_text())
+    weekday = next(x for x in blocks["days"] if x["kind"] == "weekday")
+    req = next(x for x in weekday["range_scenarios"]
+               if x["scenario"] == "40ft" and x["range_km"] == 300)
+    req60 = next(x for x in weekday["range_scenarios"]
+                 if x["scenario"] == "60ft" and x["range_km"] == 300)
+    lower = req["fleet_blocks_after_ceiling_lower_distance"] + req60["fleet_blocks_after_ceiling_lower_distance"]
+    upper = req["fleet_blocks_after_ceiling_upper_distance"] + req60["fleet_blocks_after_ceiling_upper_distance"]
+    cta = json.loads((ROOT / "results/three_city_roadmap.json").read_text())
+    cta_shortfalls = cta["chicago"]["age_constrained_replacement_model"]["2024_shortfall_by_life_cap"]
     expected = [
         f"{central_generic['plan_gross_pv_cad'] / 1e9:.2f}",
         f"{central_generic['baseline_gross_pv_cad'] / 1e9:.2f}",
         f"{central_generic['economic_score_gross_pct']:.1f}",
-        f"{env_min:.1f}--{env_max:.1f}",
+        f"{env_min:.1f}",
+        f"{env_max:.1f}",
         "1,419",
         "1,401",
         "1,647",
@@ -32,13 +43,23 @@ def main() -> None:
         f"{central_full['plan_gross_pv_cad'] / 1e9:.2f}",
         f"{central_full['baseline_gross_pv_cad'] / 1e9:.2f}",
         f"{central_full['economic_score_gross_pct']:.1f}",
-        f"{env_full_min:.1f}--{env_full_max:.1f}",
+        f"{-env_full_min:.1f}",
+        f"{env_full_max:.1f}",
+        f"{lower:,}--{upper:,}",
+        "22,494",
+        str(cta_shortfalls["17"]),
+        str(cta_shortfalls["14"]),
+        "-41.1",
+        "-106.4",
+        "constant 2023 CAD",
     ]
     missing = [value for value in expected if value not in text]
     stale = [
         value for value in (
             "4.709", "5.259", "-91.6", "35.1--84.0",
             "1,652", "1,932", "-81.7", "-104.1",
+            "29.2--82.4", "35.3--84.0", "4.575", "-96.4",
+            "price-mixed", "18 delivered",
         ) if value in text
     ]
     if missing or stale:

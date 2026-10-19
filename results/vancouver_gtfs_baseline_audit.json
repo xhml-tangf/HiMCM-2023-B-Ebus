@@ -876,6 +876,25 @@
       "median_block_trip_km_upper": 130.1694
     }
   ],
+  "maximum_trip_day": {
+    "date": "2023-10-13",
+    "day_of_week": "Friday",
+    "pattern_id": 13,
+    "bus_trips": 22494,
+    "bus_routes": 232,
+    "published_vehicle_blocks": 1756,
+    "peak_concurrent_trips_lower_bound": 1089,
+    "scheduled_revenue_hours": 13052.932499999999,
+    "scheduled_trip_km": null,
+    "scheduled_trip_km_lower": 273271.51139999996,
+    "scheduled_trip_km_upper": 290598.83770000003,
+    "missing_distance_trips": 22494,
+    "overlapping_published_block_trip_count": 0,
+    "max_block_span_hours": 24.698611111111113,
+    "block_span_over_24_hours_count": 1,
+    "max_block_trip_km_upper": 745.3279,
+    "median_block_trip_km_upper": 128.1678
+  },
   "maximum_published_block_day": {
     "date": "2023-09-08",
     "day_of_week": "Friday",
@@ -910,6 +929,6 @@
   ],
   "computation": {
     "device": "CPU",
-    "elapsed_seconds": 6.541684600000735
+    "elapsed_seconds": 5.801604500040412
   }
 }

@@ -1,9 +1,9 @@
 > **Priority revision (19 October 2026).** The emissions values below have
 > been recomputed from the same annual service ramp as O&M and now read
-> 0.7--41.5% (generic) and 4.6--42.7% (class subset). The purchase quantities
-> are proportional inventory scenarios, not dispatch-certified requirements;
-> 1725 and 18 are unverified stock parameters. See
-> `priority_revision_2026_10_19.md`.
+> -17.6--15.1% (generic) and -14.3--16.2% (class subset) on the partial boundary.
+> The purchase quantities are proportional inventory scenarios, not dispatch
+> requirements; 1725 and 18 are unverified stock parameters. See
+> `adversarial_review_resolution.md`.
 
 # Fall-2023 blocks and conditional 2024--2033 scenario
 
@@ -47,7 +47,7 @@ not a physical fleet count.
 The detailed 2022 category snapshot totals 1,711. The 2025 active fleet totals
 1,733 and provides exact class and model-year sums, including 1,450 non-electric
 or non-trolley vehicles. The 2023 stock scenario selects 1,725 and varies 1,711--1,733; these are not observed stock or proven bounds.
-The current policy case proportionally projects the 1,741 duty-request ratio
+The current policy case proportionally projects the upper-distance 1,741-of-1,698--1,741 request band
 onto an assumed 1,401 non-double-deck, non-trolley stock, selecting 1,630
 battery positions and 1,612 net purchases after 18 assumed existing BEBs.
 This ratio is neither a lower nor upper vehicle bound; about five BEBs were
@@ -56,21 +56,20 @@ reported in service, so the grid also retains a 5--18 sensitivity.
 The ordinary-renewal comparison renews a steady-state 10/17 of 1,388 fossil
 positions, or 816 purchases. Vehicle capital, quoted 2023/2025 envelopes,
 depot screening infrastructure, O&M and a 17-year straight-line vehicle
-residual are discounted at 3% as price-mixed screening arithmetic, because the
-public envelopes span 2021--2025 nominal years. The base gross project value is CAD 4.575
-billion against CAD 2.329 billion, an economic score of -96.4%. A 50% grant
-changes agency payment and score to CAD 2.710 billion and -16.4%; it does not
-change resource cost.
+residual are discounted at 3% as constant-2023 CPI-rebased arithmetic with a real 3% rate, because the
+public envelopes span 2021--2025 nominal years. The constant-2023 base gross value is CAD 4.303
+billion against CAD 2.275 billion (-89.2%). Symmetric 25/50% grants give
+-49.5/-9.8%; they do not change resource cost.
 
 The environmental boundary is production plus operation plus maintenance,
-excluding depot/charger construction and end-of-life. It gives 0.7--41.5% reduction; the low end assumes renewable diesel and RNG across the conventional comparator. This is deliberately not called a complete life-cycle score.
+excluding depot/charger construction and end-of-life. It gives -17.6--15.1% in the generic case; renewable fuel is negative because manufacturing exceeds the saving when conversion begins in 2030. This is deliberately not called a complete life-cycle score.
 
 The class-specific follow-up brings 57 double-decks and 189 midpoint
 community shuttles into one envelope while retaining shared heavy-bus depot
 investment once, with 262 common trolley renewals included on both paths. Its
-central price-mixed PV is CAD 4.713 billion against CAD 2.693 billion for
-renewal plus operations (-75.0%); the high class envelope is CAD 5.261 billion
-(-95.5%), and the class-specific partial-production score is 4.6--42.7%.
+central constant-2023 PV is CAD 4.430 billion against CAD 2.625 billion for
+renewal plus operations (-68.8%); the high vehicle case is CAD 4.726 billion
+(-80.2%), and the partial-production score is -14.3--16.2%.
 At 700 kWh for double-decks and 150 kWh for shuttles, 17/57 and
 49/101 weekday duties respectively have a certain overnight-charge shortfall.
 These are technical screens, not charger-site certificates.

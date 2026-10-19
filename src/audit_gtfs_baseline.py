@@ -202,7 +202,8 @@ def main() -> None:
         current += timedelta(days=1)
     daily = pd.DataFrame(daily_rows)
     daily.to_csv(OUT / "vancouver_gtfs_daily_service_2023.csv", index=False)
-    maximum_day = daily.loc[daily.published_vehicle_blocks.idxmax()].to_dict()
+    maximum_trip_day = daily.loc[daily.bus_trips.idxmax()].to_dict()
+    maximum_block_day = daily.loc[daily.published_vehicle_blocks.idxmax()].to_dict()
     hashes = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(RAW.iterdir()) if p.is_file()}
     report = {"status": "HISTORICAL_PUBLISHED_TIMETABLE_RECOVERED_NOT_FULL_FLEET_CERTIFICATION",
               "publisher_as_declared_in_feed": feed.feed_publisher_name, "feed_version": feed.feed_version,
@@ -222,7 +223,9 @@ def main() -> None:
                             "shape_distance_unit": units, "median_raw_to_geodesic_km_ratio": ratio,
                             "raw_missing_first_stop_distance": int(manifest.first_shape_distance_raw.isna().sum()),
                             "maximum_trip_distance_interval_width_km": float((manifest.distance_km_upper - manifest.distance_km_lower).max())},
-              "unique_service_patterns": list(service_patterns.values()), "maximum_published_block_day": maximum_day,
+              "unique_service_patterns": list(service_patterns.values()),
+              "maximum_trip_day": maximum_trip_day,
+              "maximum_published_block_day": maximum_block_day,
               "calendar_window_totals": {"service_days": len(daily), "scheduled_bus_trips": int(daily.bus_trips.sum()),
                                          "scheduled_bus_revenue_hours": float(daily.scheduled_revenue_hours.sum())},
               "limits": ["A scheduled trip is not proof that the trip actually operated.",
@@ -233,7 +236,7 @@ def main() -> None:
                          "Original source data are downloaded for analysis; the mirror does not confer a new license on TransLink data."],
               "computation": {"device": "CPU", "elapsed_seconds": time.perf_counter() - started}}
     (ROOT / "results/vancouver_gtfs_baseline_audit.json").write_text(json.dumps(report, indent=2, default=lambda x: int(x) if isinstance(x, np.integer) else float(x)) + "\n", encoding="utf-8")
-    print(json.dumps({k:report[k] for k in ("feed_version", "bus_trip_records", "bus_stop_time_rows", "integrity", "maximum_published_block_day", "computation")}, indent=2))
+    print(json.dumps({k:report[k] for k in ("feed_version", "bus_trip_records", "bus_stop_time_rows", "integrity", "maximum_trip_day", "maximum_published_block_day", "computation")}, indent=2))
 
 
 if __name__ == "__main__":

@@ -36,6 +36,22 @@ def norm_route(value: str) -> str:
     return str(int(text)) if text.isdigit() else text
 
 
+def split_terminal_duty(group: pd.DataFrame, range_km: float = 300.0) -> list[dict]:
+    """Split one terminal-linked block at trip boundaries before range exhaustion."""
+    fragments, current = [], []
+    current_km = 0.0
+    for row in group.sort_values("start_seconds").itertuples(index=False):
+        distance = float(row.distance_km_upper)
+        if current and current_km + distance > range_km:
+            fragments.append(current)
+            current, current_km = [], 0.0
+        current.append(row)
+        current_km += distance
+    if current:
+        fragments.append(current)
+    return fragments
+
+
 def route_classes(proxy: pd.DataFrame, annual: pd.DataFrame) -> dict[str, str]:
     proxy = proxy.loc[proxy.reference_capacity_match.notna()].copy()
     proxy["normalized"] = proxy.route.map(norm_route)
@@ -110,6 +126,19 @@ def main() -> None:
         transitions["gap_minutes"] = (transitions.start_seconds - transitions.prior_end) / 60
         transitions["straight_km"] = haversine_km(transitions.prior_lat, transitions.prior_lon,
                                                    transitions.first_lat, transitions.first_lon)
+        # Necessary infeasibility test only: straight-line distance at a generous
+        # 50 km/h after a five-minute minimum turn cannot be completed in the
+        # remaining scheduled gap. Road distance is greater than or equal to the
+        # straight-line distance, so these transitions cannot be certified.
+        transitions["direct_implied_speed_kmh"] = np.where(
+            transitions.gap_minutes > 0,
+            transitions.straight_km / (transitions.gap_minutes / 60),
+            np.inf,
+        )
+        transitions["cannot_meet_direct_transfer_at_50kmh_5min"] = (
+            transitions.straight_km >
+            np.maximum(0, transitions.gap_minutes - 5) / 60 * 50
+        )
         dominant = data.sort_values(["block_id", "rank"]).drop_duplicates("block_id", keep="last")
         dominant = dominant[["block_id", "proxy_class", "route_short_name"]].rename(columns={"proxy_class": "block_proxy_class", "route_short_name": "highest_class_route"})
         blocks = data.groupby("block_id").agg(
@@ -138,6 +167,9 @@ def main() -> None:
         day_summary["transitions_over_3km_straight_line"] = int(transitions.straight_km.gt(3).sum())
         day_summary["zero_gap_long_transfer"] = int(((transitions.gap_minutes <= 0) &
                                                     (transitions.straight_km > .5)).sum())
+        day_summary["direct_transfer_failures_at_50kmh_5min"] = int(
+            transitions.cannot_meet_direct_transfer_at_50kmh_5min.sum()
+        )
         day_summary["gaps_minutes"] = {"ge30": int(transitions.gap_minutes.ge(30).sum()),
                                        "ge40": int(transitions.gap_minutes.ge(40).sum()),
                                        "ge60": int(transitions.gap_minutes.ge(60).sum()),
@@ -155,7 +187,7 @@ def main() -> None:
         scenario_rows = []
         for scenario, ranges in [("40ft", range_std), ("60ft", range_artic)]:
             for km in ranges:
-                total_blocks = extra = 0
+                total_blocks = extra_low = extra_high = 0
                 energy_upper = 0.0
                 for row in blocks.itertuples(index=False):
                     if row.block_proxy_class in {"cap47", "cap70"}:
@@ -166,19 +198,102 @@ def main() -> None:
                         continue
                     if scenario == "40ft" and row.block_proxy_class == "cap75":
                         continue
-                    need = math.ceil(row.distance_upper_km / km - 1e-12)
+                    need_low = math.ceil(row.distance_lower_km / km - 1e-12)
+                    need_high = math.ceil(row.distance_upper_km / km - 1e-12)
                     total_blocks += 1
-                    extra += need - 1
+                    extra_low += need_low - 1
+                    extra_high += need_high - 1
                     # 2020 source: mean 1.60, cold mean 1.79 kWh/km for 40-ft.
                     energy_upper += row.distance_upper_km * (1.79 if scenario == "40ft" else 2.42)
                 scenario_rows.append({"scenario": scenario, "range_km": km, "battery_candidate_blocks": total_blocks,
-                                      "additional_bus_block_requests": extra,
-                                      "fleet_blocks_after_ceiling": total_blocks + extra,
-                                      "replacement_ratio_ceiling": (total_blocks + extra) / total_blocks if total_blocks else None,
+                                      "additional_bus_block_requests_lower_distance": extra_low,
+                                      "additional_bus_block_requests_upper_distance": extra_high,
+                                      "fleet_blocks_after_ceiling_lower_distance": total_blocks + extra_low,
+                                      "fleet_blocks_after_ceiling_upper_distance": total_blocks + extra_high,
+                                      # Compatibility aliases: the upper-distance case is still
+                                      # the historical conservative planning request count.
+                                      "additional_bus_block_requests": extra_high,
+                                      "fleet_blocks_after_ceiling": total_blocks + extra_high,
+                                      "replacement_ratio_ceiling": (total_blocks + extra_high) / total_blocks if total_blocks else None,
                                       "candidate_block_daily_traction_energy_upper_kwh": energy_upper})
         day_summary["range_scenarios"] = scenario_rows
+        route100_data = data.loc[data.route_key.astype(str).eq("100")]
+        route100 = transitions.loc[transitions.route_key.astype(str).eq("100")]
+        route100_blocks = blocks.loc[blocks.block_id.isin(route100_data.block_id.unique())]
+        route100_requests = int(sum(
+            math.ceil(value / 300.0 - 1e-12)
+            for value in route100_blocks.distance_upper_km
+        ))
+        route100_fragments = []
+        duty_rows = []
+        for block_id, group in route100_data.groupby("block_id"):
+            for fragment_index, fragment in enumerate(split_terminal_duty(group), start=1):
+                fragment_id = f"route100-{block_id}-{fragment_index}"
+                distance = sum(float(row.distance_km_upper) for row in fragment)
+                if distance > 300.0 + 1e-9:
+                    raise AssertionError("terminal fragment exceeds daily range")
+                route100_fragments.append(fragment)
+                duty_rows.append({
+                    "duty_id": fragment_id, "source_block_id": block_id,
+                    "trips": len(fragment),
+                    "start_seconds": min(row.start_seconds for row in fragment),
+                    "end_seconds": max(row.end_seconds for row in fragment),
+                    "distance_upper_km": distance,
+                })
+        if kind == "weekday":
+            pd.DataFrame(duty_rows).to_csv(
+                PROC / "route100_terminal_duty_plan_2023.csv", index=False)
+        day_summary["route_100_transfer_screen"] = {
+            "trips": int(len(route100_data)),
+            "source_blocks": int(route100_blocks.block_id.nunique()),
+            "source_block_transitions": int(len(route100)),
+            "direct_transfer_failures_at_50kmh_5min": int(
+                route100.cannot_meet_direct_transfer_at_50kmh_5min.sum()
+            ),
+            "peak_concurrent_trips": max_count_pairs(route100_data.start_seconds,
+                                                       route100_data.end_seconds),
+            "one_vehicle_per_block_positions": int(route100_blocks.block_id.nunique()),
+            "upper_distance_requests_at_300km": route100_requests,
+            "terminal_duty_fragments_at_300km": len(route100_fragments),
+            "max_block_distance_upper_km": float(route100_blocks.distance_upper_km.max()),
+            "status": "TERMINAL_LINKED_SOURCE_BLOCK_SAMPLE_NOT_DEPOT_OR_CHARGER_CERTIFIED",
+        }
         days.append(day_summary)
         results[kind] = blocks
+    # The representative weekday is a declared planning case, not the most
+    # stressful recovered service pattern. Screen every materialized GTFS
+    # pattern at the same 300-km point and report the envelope separately.
+    all_pattern_screen = []
+    gtfs_audit = json.loads((ROOT / "results/vancouver_gtfs_baseline_audit.json").read_text())
+    order = {"cap24": 1, "cap85": 2, "cap50": 3, "unclassified": 3,
+             "cap47": 4, "cap75": 5, "cap70": 6}
+    for gtfs_pattern in gtfs_audit["unique_service_patterns"]:
+        day_data = manifest.loc[manifest.service_id.isin(gtfs_pattern["active_service_ids"])].copy()
+        day_data["rank"] = day_data.proxy_class.map(order)
+        dominant = day_data.sort_values(["block_id", "rank"]).drop_duplicates(
+            "block_id", keep="last")
+        dominant = dominant.set_index("block_id").proxy_class
+        frame = day_data.groupby("block_id").agg(
+            distance_lower=("distance_km_lower", "sum"),
+            distance_upper=("distance_km_upper", "sum"),
+        ).reset_index()
+        frame["proxy_class"] = frame.block_id.map(dominant)
+        lower_total = upper_total = candidates = 0
+        for row in frame.itertuples(index=False):
+            if row.proxy_class in {"cap47", "cap70", "cap85"}:
+                continue
+            km = 300.0
+            candidates += 1
+            lower_total += math.ceil(row.distance_lower / km - 1e-12)
+            upper_total += math.ceil(row.distance_upper / km - 1e-12)
+        all_pattern_screen.append({
+            "pattern_id": gtfs_pattern["pattern_id"],
+            "example_date": gtfs_pattern["example_date"],
+            "battery_candidate_blocks": candidates,
+            "requests_lower_distance": lower_total,
+            "requests_upper_distance": upper_total,
+        })
+    max_pattern = max(all_pattern_screen, key=lambda x: x["requests_upper_distance"])
     # Plot winter-range response for the weekday. Replacement counts are block
     # requests under an intentionally conservative upper-distance convention.
     wd = pd.DataFrame(days[0]["range_scenarios"])
@@ -187,7 +302,11 @@ def main() -> None:
     fig, ax = plt.subplots(figsize=(6.7, 4.0), constrained_layout=True)
     for scenario, color in [("40ft", "#167a8b"), ("60ft", "#bd5c27")]:
         g = wd[wd.scenario.eq(scenario)]
-        ax.plot(g.range_km, 100 * (g.replacement_ratio_ceiling - 1), marker="o", color=color, label=scenario)
+        low_pct = 100 * (g.fleet_blocks_after_ceiling_lower_distance / g.battery_candidate_blocks - 1)
+        high_pct = 100 * (g.fleet_blocks_after_ceiling_upper_distance / g.battery_candidate_blocks - 1)
+        ax.fill_between(g.range_km, low_pct, high_pct, color=color, alpha=.16)
+        ax.plot(g.range_km, high_pct, marker="o", color=color, label=f"{scenario} upper distance")
+        ax.plot(g.range_km, low_pct, marker=".", linestyle="--", color=color, label=f"{scenario} lower distance")
     ax.set(xlabel="Reliable range per charge (km)",
            ylabel="Additional block requests (%)",
            title="Fall 2023 weekday service: range stress")
@@ -198,15 +317,24 @@ def main() -> None:
     report = {"status": "ACTUAL_PUBLISHED_BLOCKS_RANGE_SCREEN_NOT_CITY_FLEET_CERTIFICATION",
               "source_feed": "TransLink 23SEP_20231020 via pinned public mirror",
               "class_assignment": "route-level proxy from 2023 TSPR capacity clusters; not a 2023 vehicle roster",
-              "distance_convention": "upper shape-distance envelope; first stop distance absent in source",
+              "distance_convention": "bounded shape-distance interval; first-stop origin distance absent in source. Lower and upper ceiling requests are both reported; neither is a physical vehicle bound.",
               "bus_range_sources": {"40ft_electric_heat_midlife_km": range_std, "60ft_electric_heat_midlife_km": range_artic,
                                    "source": "TransLink 2020 Appendix C Table C-1; historical vehicle technology, not a 2023 delivered-model specification"},
               "cold_energy_kwh_per_km": {"40ft": 1.79, "60ft": 2.42},
               "unassessed_double_deck_blocks": {kind: int(results[kind].block_proxy_class.eq("cap85").sum())
                                                   for kind in results},
+              "all_service_patterns_300km": {
+                  "patterns": len(all_pattern_screen),
+                  "lower_request_min": min(x["requests_lower_distance"] for x in all_pattern_screen),
+                  "lower_request_max": max(x["requests_lower_distance"] for x in all_pattern_screen),
+                  "upper_request_min": min(x["requests_upper_distance"] for x in all_pattern_screen),
+                  "upper_request_max": max(x["requests_upper_distance"] for x in all_pattern_screen),
+                  "maximum_upper_pattern": max_pattern,
+                  "screen": all_pattern_screen,
+              },
               "days": days,
               "limitations": ["Route-level capacity proxies cannot identify the actual vehicle assigned to a block.",
-                              "Battery-bus counts are sequential block requests; depot schedule and reuse can reduce the physical fleet.",
+                              "Battery-bus counts are sequential block requests under a fixed range and no mid-duty recharge. The lower- and upper-distance ceiling counts do not bound the true vehicle count because task timing, depot reuse, terminal charging and deadhead can move it in either direction.",
                               "Existing trolley blocks are retained as overhead-electric and not bought again.",
                               "No depot parking, charger, feeder or all-electric candidate payload data are inferred.",
                               "A pass at one representative day does not certify every 2023 service pattern or observed operation.",

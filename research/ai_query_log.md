@@ -63,3 +63,15 @@ All numerical claims in the paper identify a source, method or result file.
 Missing data are returned as `UNVERIFIED`, not estimated into zero. The human
 team remains responsible for checking citations, the official team number and
 the competition submission.
+
+
+## Request 5: independent review closure
+
+Working request (Chinese original):
+
+> 解决审稿报告中提到的所有问题。
+
+Outputs: `research/adversarial_review_resolution.md`, facility-gated
+service/emissions ledger, periodic SOC API, Route 100 duty sample, asset
+terminal-value scenarios, Chicago age deadlines, fixed-service grid, CPI
+rebasing and regenerated manuscript/PDF.

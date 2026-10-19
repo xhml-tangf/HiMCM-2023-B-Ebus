@@ -15,6 +15,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import rankdata
 from transition_ledger import service_ledger, operating_costs, use_emissions
+from price_index import to_2023
 
 ROOT = Path(__file__).resolve().parents[1]
 PROC = ROOT / "data/processed"
@@ -91,21 +92,23 @@ def main() -> None:
 
     annual_bus_km = float(named["service_baseline"]["annual_2023_bus_km"])
     base_fossil_km = float(named["service_baseline"]["annual_nondeck_fossil_km_estimate"])
-    base_fossil_fleet = 1406.0 - 18.0
-    annual_fossil_km = base_fossil_km * fossil_fleet / base_fossil_fleet
+    # Fixed-service control: changing the inferred 2023 stock must not alter the
+    # observed annual service denominator. Fleet variation changes capital and
+    # purchase counts only; availability/utilization is reported separately.
+    annual_fossil_km = base_fossil_km
 
-    conventional_unit = 46_143_000.0 / 50.0
-    hardware_unit = 1_200_000.0
-    project_standard = 106_846_000.0 / 57.0
-    project_articulated = 3_037_000.0
+    conventional_unit = to_2023(46_143_000.0 / 50.0, 2024)
+    hardware_unit = to_2023(1_200_000.0, 2023)
+    project_standard = to_2023(106_846_000.0 / 57.0, 2025)
+    project_articulated = to_2023(3_037_000.0, 2025)
     standard40 = np.array([ranges40[a] for a, _ in paired_ranges], dtype=float)[range_idx.astype(int)]
     standard_share = standard40 / plan_requests
     project_unit = standard_share * project_standard + (1 - standard_share) * project_articulated
     plan_unit = np.where(cost_basis == 1, project_unit, hardware_unit)
-    infrastructure = net_new * (500_000_000.0 / 340.0)
+    infrastructure = net_new * to_2023(500_000_000.0 / 340.0, 2023)
 
     years = np.arange(2024, 2034)
-    q, rem = np.divmod(net_new.astype(int), 10)
+    plan_q, plan_rem = np.divmod(net_new.astype(int), 5)
     base_q, base_rem = np.divmod(baseline_purchases.astype(int), 10)
     plan_capex = np.zeros_like(net_new, dtype=float)
     base_capex = np.zeros_like(net_new, dtype=float)
@@ -113,7 +116,7 @@ def main() -> None:
     base_residual_factor = np.zeros_like(net_new, dtype=float)
     for i, year in enumerate(years):
         disc = 1.0 / (1.0 + rate) ** (year - 2023)
-        plan_count = q + (i < rem)
+        plan_count = np.where(i >= 5, plan_q + ((i - 5) < plan_rem), 0)
         base_count = base_q + (i < base_rem)
         plan_capex += plan_unit * plan_count * disc
         base_capex += conventional_unit * base_count * disc
@@ -128,7 +131,8 @@ def main() -> None:
     plan_infrastructure_pv = infrastructure * infra_disc
 
     annual_service = service_ledger(annual_fossil_km)
-    base_om_ledger, plan_om_ledger = operating_costs(annual_service, 2.77, 2.28)
+    base_om_ledger, plan_om_ledger = operating_costs(
+        annual_service, to_2023(2.77, 2024), to_2023(2.28, 2024))
     baseline_om = sum(value / (1 + rate) ** (year - 2023) for year, value in base_om_ledger.items())
     plan_om = sum(value / (1 + rate) ** (year - 2023) for year, value in plan_om_ledger.items())
     baseline_gross = base_capex + baseline_om - base_residual
@@ -190,6 +194,11 @@ def main() -> None:
         "economic_score_rank_correlations": impacts(economic_score),
         "environment_rank_correlations": impacts(environment_score),
         "quantile_weighting": "Equal weight across the Cartesian assumption grid; quantiles are not sampling confidence intervals.",
+        "service_km_control": {
+            "annual_scored_km": annual_fossil_km,
+            "independent_of_fleet_scenario": True,
+            "note": "The named 2023 fixed-route service quantity is held constant; fleet-grid variation does not manufacture or remove service kilometres.",
+        },
         "boundaries": [
             "Infrastructure uses the named CAD 500m/340 Marpole screening ratio; the separate CAD 6.52bn expansion envelope is not mixed into this grid.",
             "Active block requests are not a garage roster; standby buses and unverified site power are outside this propagation.",

@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 STEPS = [
     "src/audit_data.py",
+    "src/audit_cpi.py",
     "src/audit_service_actual.py",
     "src/audit_capacity_proxy.py",
     "src/audit_gtfs_baseline.py",
@@ -33,7 +34,9 @@ STEPS = [
     "src/build_transition_scenarios.py",
     "src/plot_transition_scenarios.py",
     "src/build_full_fleet_bound.py",
+    "src/build_asset_boundary.py",
     "src/propagate_transition_uncertainty.py",
+    "src/make_review_tables.py",
     "src/make_block_table.py",
     "src/make_depot_table.py",
     "src/make_three_city_roadmap.py",

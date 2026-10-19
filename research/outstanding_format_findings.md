@@ -1,3 +1,6 @@
+> Historical formatting note from the pre-review draft. Numerical claims
+> below are superseded by `adversarial_review_resolution.md`.
+
 # HiMCM 其他年份 Outstanding 论文与官方示例：格式研究
 
 调查日期：2026-10-18。范围：只查找其他年份的 HiMCM Outstanding 论文、节选或官方评语；**没有检索、打开或下载任何 2023 年 HiMCM B 题外部论文**。本文只读审查了本项目的 current manuscript（paper/ebus_transition.tex 和 paper/ebus_transition.pdf），没有修改论文。

@@ -1,7 +1,10 @@
 from dataclasses import replace
 
-from src.model import (Assignment, Charge, Depot, FuelSystem, OverheadFeeder, Trip, Vehicle, check_schedule,
-                       cost_result, environmental_result, pareto, score)
+import pytest
+
+from src.model import (Assignment, Charge, DailySchedule, Depot, FuelSystem, OverheadFeeder, Trip, Vehicle,
+                       check_periodic_schedule, check_schedule, cost_result, environmental_result,
+                       pareto, score)
 
 
 def fixture():
@@ -21,6 +24,97 @@ def fixture():
 
 def test_valid_schedule():
     assert check_schedule(**fixture()).status == "PASS"
+
+
+def periodic_counterexample(charges=None):
+    trip = Trip("daily", "R", "N", 60, 180, 60, 40, "D", "D",
+                True, ("standard",))
+    bus = Vehicle("electric", "D", "standard", 45, 100, 1.0, 100, 1.0,
+                  True, True, True, 0.1, 0.0)
+    depot = Depot("D", 0 if not charges else 1, 0 if not charges else 100,
+                  0 if not charges else 100, 2032, 1)
+    day = DailySchedule([trip], [Assignment("daily", "electric")], charges or [],
+                        {("R", "N"): 40}, {"D": 0})
+    matrix = {("D", "D"): 0}
+    return ([day, day], [bus], [depot],
+            {"year": 2033, "deadhead_minutes": matrix, "deadhead_km": matrix})
+
+
+def test_single_day_pass_cannot_reset_soc_for_a_repeating_service():
+    days, vehicles, depots, options = periodic_counterexample()
+    single = check_schedule(
+        days[0].trips, vehicles, days[0].assignments, days[0].charges, depots,
+        peak_capacity_by_route_direction=days[0].peak_capacity_by_route_direction,
+        spare_by_depot=days[0].spare_by_depot, **options)
+    assert single.status == "PASS"
+    assert single.metrics["final_energy_kwh:electric"] == pytest.approx(40)
+
+    periodic = check_periodic_schedule(days, vehicles, depots, **options)
+    assert periodic.status == "FAIL"
+    assert any("day 2: minimum SOC violated" in error for error in periodic.errors)
+    assert any("periodic SOC closure violated" in error for error in periodic.errors)
+
+
+def test_periodic_service_accepts_post_service_depot_charge():
+    charge = Charge("electric", "D", 180, 220, 100, 0.9)
+    days, vehicles, depots, options = periodic_counterexample([charge])
+    result = check_periodic_schedule(days, vehicles, depots, **options)
+    assert result.status == "PASS"
+    assert result.metrics["final_energy_kwh:electric:1"] == pytest.approx(100)
+    assert result.metrics["initial_energy_kwh:electric:2"] == pytest.approx(100)
+    assert result.metrics["cycle_end_energy_kwh:electric"] == pytest.approx(100)
+
+
+def test_charge_energy_power_and_station_relation_is_explicit():
+    trip = Trip("dummy", "R", "N", 60, 120, 0, 40, "D", "D",
+                True, ("standard",))
+    bus = Vehicle("electric", "D", "standard", 45, 100, 0.9, 20, 0.0,
+                  True, True, True, 0.1, 0.0)
+    depot = Depot("D", 1, 10, 10, 2032, 1)
+    args = dict(trips=[trip], vehicles=[bus],
+                assignments=[Assignment("dummy", "electric")],
+                charges=[Charge("electric", "D", 120, 180, 10, 0.9)],
+                depots=[depot], year=2033,
+                peak_capacity_by_route_direction={("R", "N"): 40},
+                spare_by_depot={"D": 0},
+                deadhead_minutes={("D", "D"): 0},
+                deadhead_km={("D", "D"): 0})
+    result = check_schedule(**args)
+    assert result.status == "PASS"
+    assert result.metrics["charge_grid_kwh:electric"] == pytest.approx(10)
+    assert result.metrics["charge_accepted_kwh:electric"] == pytest.approx(9)
+    assert result.metrics["final_energy_kwh:electric"] == pytest.approx(29)
+    assert result.metrics["final_energy_kwh:electric"] == pytest.approx(
+        bus.initial_kwh - result.metrics["traction_kwh:electric"]
+        - result.metrics["auxiliary_kwh:electric"]
+        + result.metrics["charge_accepted_kwh:electric"])
+
+
+def test_charge_power_cannot_exceed_charger_or_bypass_station_slot():
+    args = fixture()
+    args["charges"][0] = replace(args["charges"][0], power_kw=60)
+    result = check_schedule(**args)
+    assert any("Pmax*u" in error for error in result.errors)
+
+    args = fixture()
+    args["depots"][0] = replace(args["depots"][0], charger_slots=0)
+    result = check_schedule(**args)
+    assert any("without an available station slot" in error for error in result.errors)
+
+
+def test_station_occupancy_and_one_site_per_vehicle_are_checked():
+    args = fixture()
+    args["spare_by_depot"] = {"D": 0}
+    args["charges"].append(Charge("spare", "D", 250, 260, 20, 0.9))
+    args["depots"][0] = replace(args["depots"][0], grid_limit_kw=100)
+    result = check_schedule(**args)
+    assert any("charger slots exceeded" in error for error in result.errors)
+
+    args = fixture()
+    args["depots"].append(Depot("X", 1, 50, 50, 2032, 0))
+    args["charges"].append(Charge("electric", "X", 250, 300, 20, 0.9))
+    result = check_schedule(**args)
+    assert any("simultaneous charging sessions" in error for error in result.errors)
 
 
 def fuel_fixture():

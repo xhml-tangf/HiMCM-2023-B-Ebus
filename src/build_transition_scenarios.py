@@ -16,9 +16,11 @@ from pathlib import Path
 import pandas as pd
 
 try:
-    from .transition_ledger import service_ledger, operating_costs, use_emissions
+    from .transition_ledger import READINESS_2024_33, service_ledger, operating_costs, use_emissions
+    from .price_index import to_2023
 except ImportError:
-    from transition_ledger import service_ledger, operating_costs, use_emissions
+    from transition_ledger import READINESS_2024_33, service_ledger, operating_costs, use_emissions
+    from price_index import to_2023
 
 ROOT = Path(__file__).resolve().parents[1]
 PROC = ROOT / "data/processed"
@@ -46,6 +48,9 @@ def vehicle_residual_pv(purchases: dict[int, int], unit_cost: float,
 
 def main() -> None:
     range_audit = json.loads((ROOT / "results/vancouver_block_range_audit.json").read_text())
+    gtfs_audit = json.loads((ROOT / "results/vancouver_gtfs_baseline_audit.json").read_text())
+    pattern_peaks = [x["peak_concurrent_trips_lower_bound"]
+                     for x in gtfs_audit["unique_service_patterns"]]
     weekday = next(d for d in range_audit["days"] if d["kind"] == "weekday")
     class_counts = {name: value["blocks"] for name, value in weekday["classes"].items()}
     non_trolley_blocks = sum(v for k, v in class_counts.items() if k not in {"cap47", "cap70"})
@@ -67,7 +72,8 @@ def main() -> None:
     fossil_fleet_for_renewal = nondeck_non_trolley_fleet - existing_beb
     extra = scaled_battery_plan - nondeck_non_trolley_fleet
     # TransLink 2024 O&M per vehicle-km and 2024 fuel/energy intensity tables.
-    om = {"diesel": 3.30, "hybrid": 1.97, "cng": 2.77, "beb": 2.28}
+    om = {"diesel": to_2023(3.30, 2024), "hybrid": to_2023(1.97, 2024),
+          "cng": to_2023(2.77, 2024), "beb": to_2023(2.28, 2024)}
     operating_intensity = {"diesel": 1580, "hybrid": 1420, "cng": 1350, "rng": 250, "beb": 19}
     # For this fixed-service comparison, trolley-owned distances cancel. Build
     # fossil-share from the actual block distance interval to avoid allocating
@@ -85,17 +91,21 @@ def main() -> None:
     # Source-labelled capital parameters. The high infrastructure value is the
     # 2024 screening envelope including service expansion and multi-site work;
     # it is a sensitivity, never an additive line item with Marpole alone.
-    conventional_bus_cad = 46_143_000 / 50
-    beb_hardware_cad = 1_200_000
-    beb_project_envelope_cad = 1_874_000
-    depot_per_bus_cad = 500_000_000 / 340
-    onroute_charger_cad = 610_000
-    high_infrastructure_cad = 6_520_000_000
+    # Rebase public envelopes to 2023 CAD with CPI before applying a real rate.
+    conventional_bus_cad = to_2023(46_143_000 / 50, 2024)
+    beb_hardware_cad = to_2023(1_200_000, 2023)
+    beb_project_envelope_cad = to_2023(1_874_000, 2025)
+    depot_per_bus_cad = to_2023(500_000_000 / 340, 2023)
+    onroute_charger_cad = to_2023(610_000, 2023)
+    high_infrastructure_cad = to_2023(6_520_000_000, 2024)
     onroute_count = int(-(-double_deck // 8))
     years = range(2024, 2034)
     natural_renewal_fraction = 10 / 17
     baseline_purchases = allocate(round(fossil_fleet_for_renewal * natural_renewal_fraction), years)
-    plan_purchases = allocate(net_new_batteries, years)
+    # Deliveries begin one year before the first site-capacity wave. This is a
+    # readiness alignment, not a verified factory capacity or garage ramp.
+    delivery_years = range(2029, 2034)
+    plan_purchases = allocate(net_new_batteries, delivery_years)
     annual_service = service_ledger(annual_fossil_km)
     econ_cases = []
     for name, infrastructure in [
@@ -111,7 +121,7 @@ def main() -> None:
                                 + target60_scaled * 3_037_000) / net_new_batteries)
         else:
             plan_unit_price = beb_hardware_cad
-        plan_capex = {y: plan_purchases[y] * plan_unit_price for y in years}
+        plan_capex = {y: plan_purchases.get(y, 0) * plan_unit_price for y in years}
         infra_years = list(range(2024, 2032))
         infra_capex = {y: infrastructure / len(infra_years) for y in infra_years}
         baseline_om, plan_om = operating_costs(annual_service, om["cng"], om["beb"])
@@ -177,18 +187,26 @@ def main() -> None:
                                    "additional_active_block_requests_pct": 100 * extra / nondeck_non_trolley_fleet,
                                    "annual_2023_bus_km": annual_bus_km, "fossil_service_share": fossil_share,
                                    "annual_nondeck_fossil_km_estimate": annual_fossil_km},
+              "fleet_count_identification": {
+                  "necessary_concurrent_trip_lower_bound_min_across_patterns": min(pattern_peaks),
+                  "necessary_concurrent_trip_lower_bound_max_across_patterns": max(pattern_peaks),
+                  "representative_block_count": weekday["published_blocks"],
+                  "status": "VEHICLE_COUNT_NOT_IDENTIFIED_BY_BLOCKS_OR_REQUEST_RATIO",
+                  "note": "Concurrent trips are a necessary lower-bound screen. Source blocks require transfer, exchange, depot and recharge records before they form vehicle duties.",
+              },
               "annual_service_ledger": annual_service,
               "battery_replacement_stress": {
                   "status": "ILLUSTRATIVE_NOT_A_PREDICTED_REPLACEMENT",
-                  "batteries": plan_purchases[2024], "capacity_kwh": 335,
-                  "added_production_t": plan_purchases[2024] * 335 * 58 / 1000,
+                  "batteries": plan_purchases[2029], "capacity_kwh": 335,
+                  "added_production_t": plan_purchases[2029] * 335 * 58 / 1000,
                   "renewable_mix_score_pct": 100 * (env_cases[0]["baseline_lifecycle_boundary_t"]
-                      - env_cases[0]["plan_lifecycle_boundary_t"] - plan_purchases[2024] * 335 * 58 / 1000)
+                      - env_cases[0]["plan_lifecycle_boundary_t"] - plan_purchases[2029] * 335 * 58 / 1000)
                       / env_cases[0]["baseline_lifecycle_boundary_t"]},
               "economics": econ_cases, "environment": env_cases,
               "roadmap": [{"year": y, "baseline_bus_purchases": baseline_purchases[y],
-                           "plan_bus_purchases": plan_purchases[y], "plan_electric_share_pct": 10 * (y - 2023),
-                           "infrastructure_phase": y <= 2031} for y in years],
+                           "plan_bus_purchases": plan_purchases.get(y, 0),
+                           "plan_electric_share_pct": 100 * annual_service[i]["electric_share"],
+                           "infrastructure_phase": y <= 2031} for i, y in enumerate(years)],
               "assumptions": {"fleet_2023_total": fleet2023_total, "fleet_2023_interval": [1711, 1733],
                               "existing_trolleys": existing_trolleys,
                               "existing_beb_scenario_asset_count": existing_beb,
@@ -206,8 +224,11 @@ def main() -> None:
                               "om_source": "2024 ZEFTP per vehicle-km; applied only to fossil-share service for both cases",
                               "production_source": "ICCT 2024 transfer factors; 6.6 kg/kg; 58 kgCO2e/kWh LFP; 335kWh/14,880kg BEB; 11,429kg diesel",
                               "discount_rate": .03, "vehicle_life_years": 17,
-                              "pv_basis": "price-mixed screening PV: public envelopes span 2021--2025 nominal CAD and are not rebased; the 3% rate is applied for scenario arithmetic, not presented as a constant-dollar bid appraisal",
+                              "pv_basis": "constant 2023 CAD via Bank of Canada CPI; 3% real discount. CPI is an economy-wide deflator, not a construction-cost index",
                               "capital_schedule": "baseline 10/17 steady-state renewals and electric plan spread 2024-2033; infrastructure 2024-2031",
+                              "readiness_shares": list(READINESS_2024_33),
+                              "readiness_note": "2024-29 conversion share is zero pending a six-to-eight-year site delivery window; 2030-33 is a staged scenario, not a site commissioning record.",
+                              "purchase_schedule": "route BEB deliveries 2029-2033, aligned one year before the first staged conversion wave",
                               "residual": "vehicle straight-line by 17-year life; infrastructure residual excluded"},
               "limits": ["Task-ratio scaling is an inventory assumption, neither a lower nor upper bound on required vehicles; it does not certify service or standby buses.",
                          "The 300-km point is a historical planning sensitivity, not a certified 2033 procurement specification.",

@@ -11,16 +11,19 @@ assumptions**, and **illustrative scenarios**. It must never present a 2020
 fleet inventory as the actual 2023 fleet or describe hourly service summaries
 as a verified vehicle-level schedule.
 
-## Priority corrections (19 October 2026)
+## Adversarial-review resolution
 
-The emissions ramp error is corrected: O&M and GHG now share annual service
-kilometres. Generic reduction is 0.7--41.5%; the class subset is 4.6--42.7%
-after omitting unknown shuttle bodies symmetrically. These are conditional,
-partial-boundary results, not whole-fleet life-cycle scores. Fleet purchases
-are proportional inventory assumptions, not dispatch-certified requirements.
-The 18 existing BEBs and initial stock 1725 are unverified scenario parameters.
-The low-carbon reduction can reverse under battery replacement. See
-`research/priority_revision_2026_10_19.md` for scope and remaining defects.
+The 19 October revision addresses F01--F13 in the independent review. O&M and
+GHG share a facility-gated annual service ledger; no conversion is credited
+before 2030. Cross-day SOC, procurement/age linkage, distance bands, symmetric
+grants, full vehicle terminal values and Chicago age deadlines are executable
+outputs. Prices are rebased to constant 2023 CAD with Bank of Canada CPI.
+
+The environmental partial boundary now includes negative cases: generic
+$-17.6$ to $15.1\%$ and class $-14.3$ to $16.2\%$. Fleet counts remain
+conditional inventory scenarios, not dispatch certificates. See
+`research/adversarial_review_resolution.md` and
+`research/priority_revision_2026_10_19.md`.
 
 ## Layout
 
@@ -62,19 +65,31 @@ The low-carbon reduction can reverse under battery replacement. See
   construction and end-of-life; the generic financial case excludes
   double-deck cost. The full-fleet bound below adds the omitted vehicle classes.
 - `src/build_full_fleet_bound.py` and
-  `results/vancouver_full_fleet_bound.json`: class-specific core envelope for
+  `results/vancouver_full_fleet_bound.json`: class-specific inventory scenario for
   1,419 heavy non-deck positions, 57 double-decks and 189 community shuttles.
   Shared heavy-bus depot investment is sized from 1,419 positions and retained
   once. The 1,647 route-BEB conversion plus 262 common trolley renewals reaches
-  zero conventional stock and 1,927 electric assets in 2033. Central price-mixed
-  gross PV is CAD 4.713 billion versus CAD 2.693 billion for renewal plus
-  operations (-75.0%); the high class envelope is CAD 5.261 billion (-95.5%).
-  The partial-production environmental reduction is 4.6--42.7%.
+  zero conventional stock and 1,927 electric assets in 2033. Central constant-2023
+  gross PV is CAD 4.430 billion versus CAD 2.625 billion (-68.8%); symmetric
+  0/25/50% grants give -68.8/-38.8/-5.5%. The high vehicle case is CAD 4.726
+  billion (-80.2%); the partial environmental range is -14.3 to 16.2%.
+- `src/transition_ledger.py`: shared facility-gated service, O&M and emissions
+  ledger; no conversion is credited before 2030.
+- `src/build_asset_boundary.py` and
+  `results/vancouver_asset_boundary.json`: symmetric retained-asset and
+  infrastructure terminal-value scenarios.
+- `data/processed/route100_terminal_duty_plan_2023.csv` and
+  `tests/test_small_duty_plan.py`: 25 auditable Route 100 fragments covering 223
+  trips; not a depot certificate.
+- `src/audit_cpi.py` and `data/processed/canada_cpi_annual_2021_2025.csv`:
+  Bank of Canada CPI rebasing to constant 2023 CAD.
+- `research/adversarial_review_resolution.md`: F01--F13 and equation-level
+  resolution evidence.
 - `src/propagate_transition_uncertainty.py` and
   `results/vancouver_transition_uncertainty.json`: 432,768-cell CPU
   assumption grid over fleet stock, range, retained BEBs, renewal, discount,
   vehicle basis and fuel intensity. Its named-case cell reproduces the
-  CAD 4.575-billion / -96.4% result exactly. Quantiles are assumption-space
+  CAD 4.303-billion / -89.2% result exactly. Quantiles are assumption-space
   descriptions, not sampling confidence intervals.
 - `src/audit_deck_shuttle_electrification.py`,
   `data/processed/deck_shuttle_scenarios.csv` and
@@ -224,20 +239,8 @@ are 2,568, 977 and 776 original fleet slots, respectively; all match an
 independent mathematical lower bound. These are conditional fleet-availability
 results and do not replace winter, route or charging certification.
 
-The conditional Vancouver 300-km policy case gives a price-mixed screening PV of
-CAD 4.575 billion versus CAD 2.329 billion for steady-state renewal, an
-economic score of -96.4%. At 50% eligible grant funding, agency payment is
-CAD 2.710 billion and the score is -16.4%; gross resource cost is unchanged.
-Its partial life-cycle boundary gives 0.7--41.5% emissions reduction. These
-are named scenarios, not a certified city optimum or full life-cycle result.
-The class-specific inventory scenario is CAD 4.713 billion against CAD
-2.693 billion, or -75.0%; the high class envelope is CAD 5.261 billion and
--95.5%. This includes 1,647 route BEBs, 262 one-for-one trolley renewals,
-57 double-decks and 189 community shuttles; it retains the shared depot once
-and gives 4.6--42.7% environmental reduction. The reported grant cases cover
-incremental conversion capital. The earlier -0.5% common-trolley extension
-held the comparator unsubsidized, so it cannot establish parity under symmetric
-eligibility. The project still lacks a
-2023 physical age/depot register, firm site power and
-as-operated duties, so the certified citywide solution and complete
-life-cycle score remain `UNVERIFIED`.
+The conditional Vancouver 300-km inventory case has 1,612 generic route-purchase parameters after an assumed 18 existing BEBs. Constant-2023 present value is CAD 4.303 billion versus CAD 2.275 billion for steady-state renewal (-89.2%). Symmetric 25/50% grants give -49.5/-9.8%; gross resource cost is unchanged. The partial environmental boundary spans -17.6 to 15.1%, and the fixed-service grid gives -140.2 to -83.4% economically and -33.7 to 15.2% environmentally at the 5th--95th positions. These are equal-weight assumptions, not confidence intervals.
+
+The class inventory contains 1,647 route vehicles plus 262 common trolley renewals (1,909 electric purchases), 57 double-decks and 189 shuttles. Constant-2023 central PV is CAD 4.430 billion against CAD 2.625 billion (-68.8%); symmetric 0/25/50% grants give -68.8/-38.8/-5.5%. The high vehicle case is CAD 4.726 billion (-80.2%). The partial-production/operation/maintenance score is -14.3 to 16.2%. A symmetric asset memo with uniform initial ages brackets retained stock and infrastructure terminal value from -41.1 to -106.4%; 30-year infrastructure and 0--25% resale recovery give -44.4 to -45.7%.
+
+Conversion service is zero through 2029 and follows 25/50/85/100% readiness in 2030--33. Chicago's 185/year linear stock path fails the 17-year hard age deadline in 2024 by 354 slots; the 14- and 12-year shortfalls are 871 and 901. London's 776-slot peak remains conditional on its cohort assumptions. Source URLs, the 432,768-cell grid and the complete vehicle/purchase schedules are in `results/`; city-wide dispatch, depot power, payload and January--August service remain unavailable, so a certified city solution and complete life-cycle score remain `UNVERIFIED`.

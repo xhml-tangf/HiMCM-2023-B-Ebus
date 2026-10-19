@@ -49,61 +49,66 @@
     ]
   },
   "named_base_case": {
-    "gross_pv_cad": 4575328316.504243,
-    "economic_score_pct": -96.44782504136143
+    "gross_pv_cad": 4303074983.166855,
+    "economic_score_pct": -89.15843794000672
   },
   "gross_pv_cad": {
-    "p05": 4358740409.89019,
-    "median": 5258071926.770752,
-    "p95": 6196547631.164101,
-    "minimum": 4048901078.0652275,
-    "maximum": 6616639267.426753
+    "p05": 4044280406.1422067,
+    "median": 4781688592.269171,
+    "p95": 5500545825.553917,
+    "minimum": 3793151537.851874,
+    "maximum": 5858961553.685654
   },
   "economic_score_pct": {
-    "p05": -166.90491269181592,
-    "median": -127.2223144793612,
-    "p95": -89.81665015552856,
-    "minimum": -180.37633176189215,
-    "maximum": -84.86372236131585
+    "p05": -140.22908786381976,
+    "median": -113.96773824153982,
+    "p95": -83.39989213781163,
+    "minimum": -147.84630201052772,
+    "maximum": -79.46326161566014
   },
   "environment_score_pct": {
-    "p05": -15.139668432792371,
-    "median": 33.36865402529807,
-    "p95": 41.503287130072124,
-    "minimum": -21.842063779267978,
-    "maximum": 42.596133798057494
+    "p05": -33.7364735554781,
+    "median": 7.786273244990558,
+    "p95": 15.176853987955457,
+    "minimum": -40.97278030600268,
+    "maximum": 16.427761590956038
   },
   "gross_pv_rank_correlations": {
-    "derived_2023_fleet_total": 0.042117794572905924,
-    "paired_range_midpoint_km": -0.8208946983765345,
-    "existing_beb_retained": -0.0213167489104955,
+    "derived_2023_fleet_total": 0.031545816065529246,
+    "paired_range_midpoint_km": -0.8504983786092688,
+    "existing_beb_retained": -0.01393196207513983,
     "natural_renewal_fraction": 0.0,
-    "discount_rate": -0.3214576924877304,
-    "project_envelope_cost_basis": 0.43795513198638886,
+    "discount_rate": -0.45668749244841667,
+    "project_envelope_cost_basis": 0.2058994550019609,
     "baseline_fuel_intensity_kg_co2e_km": 0.0,
-    "net_new_battery_positions": 0.8191840966250661
+    "net_new_battery_positions": 0.8467046822334586
   },
   "economic_score_rank_correlations": {
-    "derived_2023_fleet_total": -0.0001094964952757194,
-    "paired_range_midpoint_km": 0.8615016831927238,
-    "existing_beb_retained": -0.006214595945557693,
-    "natural_renewal_fraction": 0.08115406708576582,
-    "discount_rate": -0.12169734982573133,
-    "project_envelope_cost_basis": -0.461139766105035,
+    "derived_2023_fleet_total": -0.0326118892585117,
+    "paired_range_midpoint_km": 0.9541396157215221,
+    "existing_beb_retained": 0.01327964009231174,
+    "natural_renewal_fraction": 0.11352529434101352,
+    "discount_rate": -0.044141226936250305,
+    "project_envelope_cost_basis": -0.24838287686171298,
     "baseline_fuel_intensity_kg_co2e_km": 0.0,
-    "net_new_battery_positions": -0.8523621503917206
+    "net_new_battery_positions": -0.9493916560228237
   },
   "environment_rank_correlations": {
-    "derived_2023_fleet_total": -0.00031673862035367604,
-    "paired_range_midpoint_km": 0.37801168140977487,
-    "existing_beb_retained": -0.011473170617785142,
-    "natural_renewal_fraction": 0.051385256961899176,
+    "derived_2023_fleet_total": -0.016265003509901794,
+    "paired_range_midpoint_km": 0.4116454789054716,
+    "existing_beb_retained": 0.006247271658560577,
+    "natural_renewal_fraction": 0.06358350717591732,
     "discount_rate": 0.0,
     "project_envelope_cost_basis": 0.0,
-    "baseline_fuel_intensity_kg_co2e_km": 0.9152727158110789,
-    "net_new_battery_positions": -0.37355254385357073
+    "baseline_fuel_intensity_kg_co2e_km": 0.8936693091199617,
+    "net_new_battery_positions": -0.40991950972320707
   },
   "quantile_weighting": "Equal weight across the Cartesian assumption grid; quantiles are not sampling confidence intervals.",
+  "service_km_control": {
+    "annual_scored_km": 88786898.98172182,
+    "independent_of_fleet_scenario": true,
+    "note": "The named 2023 fixed-route service quantity is held constant; fleet-grid variation does not manufacture or remove service kilometres."
+  },
   "boundaries": [
     "Infrastructure uses the named CAD 500m/340 Marpole screening ratio; the separate CAD 6.52bn expansion envelope is not mixed into this grid.",
     "Active block requests are not a garage roster; standby buses and unverified site power are outside this propagation.",

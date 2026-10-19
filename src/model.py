@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass, field
 from typing import Iterable
 
@@ -77,6 +78,7 @@ class Assignment:
 
 @dataclass(frozen=True)
 class Charge:
+    """A materialized charger assignment: ``u=1`` on [start_min, end_min)."""
     vehicle_id: str
     depot: str  # Site name; may be home depot or an in-route terminal.
     start_min: int
@@ -94,6 +96,21 @@ class Depot:
     grid_limit_kw: float
     commissioned_year: int
     physical_bus_spaces: int
+
+
+@dataclass(frozen=True)
+class DailySchedule:
+    """One day's service and charging plan for a fixed fleet and site set.
+
+    ``check_periodic_schedule`` links these days by carrying each battery's
+    ending kWh into the next day. A day may include post-service depot
+    charging; the ending state is still the state available to the next day.
+    """
+    trips: Iterable[Trip]
+    assignments: Iterable[Assignment]
+    charges: Iterable[Charge]
+    peak_capacity_by_route_direction: dict[tuple[str, str], int]
+    spare_by_depot: dict[str, int]
 
 
 @dataclass
@@ -118,6 +135,8 @@ def check_schedule(
     deadhead_km: dict[tuple[str, str], float] | None = None,
     overhead_paths: dict[tuple[str, ...], tuple[str, ...]] | None = None,
     overhead_feeders: Iterable[OverheadFeeder] | None = None,
+    initial_energy_kwh: dict[str, float] | None = None,
+    initial_fuel: dict[str, float] | None = None,
 ) -> Check:
     """Exact trip/SOC/site checks. Missing essential inputs yield UNVERIFIED.
 
@@ -134,6 +153,11 @@ def check_schedule(
     Deadheads depart as late as possible and return immediately after duty.
     Split duties or
     provide measured duty profiles if a bus shuts its accessories off.
+
+    ``initial_energy_kwh`` and ``initial_fuel`` are optional state overrides
+    used by :func:`check_periodic_schedule`; omitted values use the vehicle's
+    registered initial state. The returned metrics expose final battery and
+    fuel states so callers can audit the day-to-day handoff.
     """
     required = {"trip_manifest": trips, "vehicle_register": vehicles,
                 "assignments": assignments, "charges": charges, "depots": depots,
@@ -155,10 +179,40 @@ def check_schedule(
     feeders = {x.name: x for x in (overhead_feeders or [])}
     overhead_loads: list[tuple[str, int, int, float]] = []
     busy: dict[str, list[tuple[int, int]]] = {key: [] for key in v}
+    energy_start: dict[str, float] = {}
+    energy_final: dict[str, float] = {}
+    traction_kwh: dict[str, float] = {key: 0.0 for key in v}
+    auxiliary_kwh: dict[str, float] = {key: 0.0 for key in v}
+    charge_grid_kwh: dict[str, float] = {key: 0.0 for key in v}
+    charge_accepted_kwh: dict[str, float] = {key: 0.0 for key in v}
+    fuel_start: dict[str, float] = {}
+    fuel_final: dict[str, float] = {}
     if not trips or not vehicles or not depots:
         return Check("UNVERIFIED", missing=["nonempty_trip_vehicle_depot_data"])
     if len(t) != len(trips) or len(v) != len(vehicles) or len(d) != len(depots):
         errors.append("duplicate trip, vehicle, or depot identifier")
+    for depot in depots:
+        if depot.charger_slots < 0:
+            errors.append(f"negative charger slot count at {depot.name}")
+        if (not math.isfinite(depot.charger_power_kw) or depot.charger_power_kw < 0
+                or not math.isfinite(depot.grid_limit_kw) or depot.grid_limit_kw < 0):
+            errors.append(f"invalid charging site parameters at {depot.name}")
+    for vehicle_id, value in (initial_energy_kwh or {}).items():
+        bus = v.get(vehicle_id)
+        if bus is None:
+            errors.append(f"initial energy supplied for unknown vehicle {vehicle_id}")
+        elif bus.energy_source != "battery":
+            errors.append(f"initial battery energy supplied for non-battery {vehicle_id}")
+        elif not math.isfinite(value):
+            errors.append(f"non-finite initial energy on {vehicle_id}")
+    for vehicle_id, value in (initial_fuel or {}).items():
+        bus = v.get(vehicle_id)
+        if bus is None:
+            errors.append(f"initial fuel supplied for unknown vehicle {vehicle_id}")
+        elif bus.energy_source != "fuel" or bus.fuel is None:
+            errors.append(f"initial fuel supplied for non-fuel {vehicle_id}")
+        elif not math.isfinite(value):
+            errors.append(f"non-finite initial fuel on {vehicle_id}")
     if year >= 2033:
         for bus in vehicles:
             if not (bus.electric_propulsion and bus.electric_accessories):
@@ -247,12 +301,34 @@ def check_schedule(
             errors.append(f"unknown charging vehicle/site {c.vehicle_id}/{c.depot}")
             continue
         site = d[c.depot]
+        # A materialized Charge row is an active plug-in assignment, so its
+        # station-use variable u is 1 for the row's full [start, end) interval.
+        station_use = 1
         if site.commissioned_year > year:
             errors.append(f"charger at {c.depot} not commissioned in {year}")
-        if (c.power_kw > site.charger_power_kw or c.power_kw <= 0 or
-                c.end_min <= c.start_min or not 0 < c.efficiency <= 1):
+        if (not math.isfinite(c.power_kw) or c.power_kw <= 0
+                or c.power_kw > site.charger_power_kw * station_use):
+            errors.append(
+                f"charge power exceeds Pmax*u for {c.vehicle_id} at {c.depot}")
+        if (c.end_min <= c.start_min or not math.isfinite(c.efficiency)
+                or not 0 < c.efficiency <= 1):
             errors.append(f"invalid charge power/time for {c.vehicle_id}")
+        if site.charger_slots < station_use:
+            errors.append(
+                f"charge assigned without an available station slot at {c.depot}")
         events[c.vehicle_id].append((c.start_min, c.end_min, "charge", c))
+    charge_by_vehicle: dict[str, list[Charge]] = {key: [] for key in v}
+    for c in charges:
+        if c.vehicle_id in charge_by_vehicle:
+            charge_by_vehicle[c.vehicle_id].append(c)
+    for vid, sessions in charge_by_vehicle.items():
+        sessions.sort(key=lambda c: (c.start_min, c.end_min, c.depot))
+        latest_end = float("-inf")
+        for current in sessions:
+            if current.start_min < latest_end:
+                errors.append(
+                    f"simultaneous charging sessions on {vid} at minute {current.start_min}")
+            latest_end = max(latest_end, current.end_min)
     def overhead_segment(bus: Vehicle, key: tuple[str, ...], start: int,
                          end: int, power: float) -> None:
         if end <= start or power <= 0:
@@ -273,22 +349,40 @@ def check_schedule(
     for vid, schedule in events.items():
         bus = v[vid]
         schedule.sort(key=lambda e: e[0])
-        energy = bus.initial_kwh
-        fuel_left = bus.fuel.initial if bus.fuel else 0.0
+        energy = ((initial_energy_kwh or {}).get(vid, bus.initial_kwh)
+                  if bus.energy_source == "battery" else 0.0)
+        fuel_left = ((initial_fuel or {}).get(vid, bus.fuel.initial)
+                     if bus.energy_source == "fuel" and bus.fuel else 0.0)
         auxiliary_kw = bus.accessory_kwh_per_hour_winter or 0.0
+        if bus.energy_source == "battery":
+            energy_start[vid] = energy
+            if not (bus.battery_kwh * bus.minimum_soc_fraction - 1e-9 <= energy
+                    <= bus.battery_kwh * bus.usable_fraction + 1e-9):
+                errors.append(f"initial battery state outside usable SOC on {vid}")
+        elif bus.energy_source == "fuel" and bus.fuel is not None:
+            fuel_start[vid] = fuel_left
+            if not (bus.fuel.reserve - 1e-9 <= fuel_left <= bus.fuel.tank_capacity + 1e-9):
+                errors.append(f"initial fuel state outside tank/reserve on {vid}")
 
         def consume(start: int, end: int, distance: float,
                     path_key: tuple[str, ...], *, charge: Charge | None = None) -> None:
             nonlocal energy, fuel_left
             duration = max(0, end - start) / 60
             if bus.energy_source == "battery":
-                energy -= distance * bus.kwh_per_km_winter
+                traction = distance * bus.kwh_per_km_winter
+                energy -= traction
+                traction_kwh[vid] += traction
                 if charge is not None:
-                    energy = min(bus.battery_kwh * bus.usable_fraction,
-                                 energy + (charge.power_kw * charge.efficiency
-                                           - auxiliary_kw) * duration)
-                else:
-                    energy -= auxiliary_kw * duration
+                    grid_energy = charge.power_kw * duration
+                    battery_energy = grid_energy * charge.efficiency
+                    headroom = max(0.0, bus.battery_kwh * bus.usable_fraction - energy)
+                    accepted = min(headroom, battery_energy)
+                    energy += accepted
+                    charge_grid_kwh[vid] += grid_energy
+                    charge_accepted_kwh[vid] += accepted
+                accessory = auxiliary_kw * duration
+                energy -= accessory
+                auxiliary_kwh[vid] += accessory
                 if energy < bus.battery_kwh * bus.minimum_soc_fraction - 1e-9:
                     errors.append(f"minimum SOC violated on {vid} at minute {end}")
             elif bus.energy_source == "fuel" and bus.fuel is not None:
@@ -349,6 +443,10 @@ def check_schedule(
                 consume(prior_end, prior_end + minutes, km, ("link", *link))
                 if minutes > 0:
                     busy[vid].append((prior_end, prior_end + minutes))
+        if bus.energy_source == "battery":
+            energy_final[vid] = energy
+        elif bus.energy_source == "fuel":
+            fuel_final[vid] = fuel_left
 
     for name, feeder in feeders.items():
         if feeder.firm_power_kw < 0:
@@ -399,9 +497,119 @@ def check_schedule(
             if available < spare_by_depot.get(depot.name, 0):
                 errors.append(f"spare requirement not met at {depot.name} minute {moment}")
                 break
+    metrics = {"trips": len(trips), "vehicles": len(vehicles), "charges": len(charges)}
+    for vid, value in energy_start.items():
+        metrics[f"initial_energy_kwh:{vid}"] = value
+        metrics[f"final_energy_kwh:{vid}"] = energy_final[vid]
+        metrics[f"traction_kwh:{vid}"] = traction_kwh[vid]
+        metrics[f"auxiliary_kwh:{vid}"] = auxiliary_kwh[vid]
+        metrics[f"charge_grid_kwh:{vid}"] = charge_grid_kwh[vid]
+        metrics[f"charge_accepted_kwh:{vid}"] = charge_accepted_kwh[vid]
+    for vid, value in fuel_start.items():
+        metrics[f"initial_fuel:{vid}"] = value
+        metrics[f"final_fuel:{vid}"] = fuel_final[vid]
     return Check("FAIL" if errors else "UNVERIFIED" if missing else "PASS",
-                 errors, missing,
-                 {"trips": len(trips), "vehicles": len(vehicles), "charges": len(charges)})
+                 errors, missing, metrics)
+
+
+def check_periodic_schedule(
+    days: Iterable[DailySchedule] | None,
+    vehicles: Iterable[Vehicle] | None,
+    depots: Iterable[Depot] | None,
+    *,
+    year: int,
+    deadhead_minutes: dict[tuple[str, str], int] | None = None,
+    deadhead_km: dict[tuple[str, str], float] | None = None,
+    overhead_paths: dict[tuple[str, ...], tuple[str, ...]] | None = None,
+    overhead_feeders: Iterable[OverheadFeeder] | None = None,
+    require_cycle_closure: bool = True,
+) -> Check:
+    """Validate repeated service with ``e[d+1,0] = e[d,T]`` per vehicle.
+
+    The single-day :func:`check_schedule` remains a local feasibility check.
+    This wrapper carries the ending battery state (and fuel state) into the
+    next day instead of resetting either state to the registered initial value.
+    It is therefore the API that may certify a repeating service pattern.
+
+    When ``require_cycle_closure`` is true, the final state after the last day
+    must be at least the first day's starting state. This permits an ordinary
+    post-service depot charge to restore the cycle; it rejects an apparent
+    daily PASS whose energy is silently replenished by the next day.
+    """
+    if days is None or vehicles is None or depots is None:
+        return Check("UNVERIFIED", missing=[
+            key for key, value in (("daily_schedules", days),
+                                   ("vehicle_register", vehicles),
+                                   ("depots", depots)) if value is None])
+    days = list(days)
+    vehicles = list(vehicles)
+    depots = list(depots)
+    if not days:
+        return Check("UNVERIFIED", missing=["nonempty_daily_schedules"])
+    if not vehicles or not depots:
+        return Check("UNVERIFIED", missing=["nonempty_vehicle_depot_data"])
+
+    energy_state = {bus.vehicle_id: bus.initial_kwh for bus in vehicles
+                    if bus.energy_source == "battery"}
+    fuel_state = {bus.vehicle_id: bus.fuel.initial for bus in vehicles
+                  if bus.energy_source == "fuel" and bus.fuel is not None}
+    first_energy = dict(energy_state)
+    first_fuel = dict(fuel_state)
+    errors: list[str] = []
+    missing: list[str] = []
+    metrics: dict[str, float] = {"days": float(len(days))}
+
+    for day_index, day in enumerate(days, start=1):
+        result = check_schedule(
+            day.trips, vehicles, day.assignments, day.charges, depots,
+            year=year,
+            peak_capacity_by_route_direction=day.peak_capacity_by_route_direction,
+            spare_by_depot=day.spare_by_depot,
+            deadhead_minutes=deadhead_minutes,
+            deadhead_km=deadhead_km,
+            overhead_paths=overhead_paths,
+            overhead_feeders=overhead_feeders,
+            initial_energy_kwh=energy_state,
+            initial_fuel=fuel_state,
+        )
+        errors.extend(f"day {day_index}: {error}" for error in result.errors)
+        missing.extend(f"day {day_index}: {item}" for item in result.missing)
+        for vid, value in energy_state.items():
+            key = f"final_energy_kwh:{vid}"
+            if key not in result.metrics:
+                missing.append(f"day {day_index}: missing ending SOC on {vid}")
+                continue
+            ending = result.metrics[key]
+            metrics[f"initial_energy_kwh:{vid}:{day_index}"] = value
+            metrics[f"final_energy_kwh:{vid}:{day_index}"] = ending
+            energy_state[vid] = ending
+        for vid, value in fuel_state.items():
+            key = f"final_fuel:{vid}"
+            if key not in result.metrics:
+                missing.append(f"day {day_index}: missing ending fuel on {vid}")
+                continue
+            ending = result.metrics[key]
+            metrics[f"initial_fuel:{vid}:{day_index}"] = value
+            metrics[f"final_fuel:{vid}:{day_index}"] = ending
+            fuel_state[vid] = ending
+
+    if require_cycle_closure:
+        for vid, start in first_energy.items():
+            end = energy_state[vid]
+            metrics[f"cycle_start_energy_kwh:{vid}"] = start
+            metrics[f"cycle_end_energy_kwh:{vid}"] = end
+            if end < start - 1e-9:
+                errors.append(
+                    f"periodic SOC closure violated on {vid}: final {end:.6g} < initial {start:.6g} kWh")
+        for vid, start in first_fuel.items():
+            end = fuel_state[vid]
+            if end < start - 1e-9:
+                errors.append(
+                    f"periodic fuel closure violated on {vid}: final {end:.6g} < initial {start:.6g}")
+
+    missing = list(dict.fromkeys(missing))
+    return Check("FAIL" if errors else "UNVERIFIED" if missing else "PASS",
+                 errors, missing, metrics)
 
 
 def discounted_cost(cashflows: dict[int, float], base_year: int, real_rate: float) -> float:

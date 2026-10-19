@@ -2,12 +2,12 @@
 \centering
 \begin{tabular}{@{}lrrrrrr@{}}
 \toprule
-Proxy & Baseline & \multicolumn{5}{c}{Additional sequential block requests by range}\\
-class & blocks & 150 & 185 & 250 & 300 & 350 km\\
+Proxy & Baseline & \multicolumn{5}{c}{Additional sequential requests, lower--upper distance}\\
+class & blocks & 149/150 & 184/185 & 250/251 & 300/300 & 350/350 km\\
 \midrule
-40-ft battery proxy & 1244 & 788 & 577 & 333 & 202 & 96\\
-60-ft battery proxy & 258 & 154 & 119 & 66 & 37 & 25\\
+40-ft battery proxy & 1244 & 727--788 & 525--577 & 295--333 & 167--202 & 73--96\\
+60-ft battery proxy & 258 & 135--154 & 110--119 & 54--66 & 29--37 & 18--25\\
 \bottomrule
 \end{tabular}
-\caption{2023-11-14 service with 1,752 published duty blocks and 1,087 simultaneous trips. Capacity signatures are route-level proxies, not observed bus assignments. The 40-ft battery proxy contains minimum/standard capacity classes and 216 unclassified blocks; 47/70-seat signature blocks are retained only as a trolley-route proxy, and 85-person double-deck blocks are unassessed. Counts are daily sequential block requests, not a garage fleet or one-for-one bus count.}
+\caption{2023-11-14 service with 1,752 published duty blocks and 1,087 simultaneous trips. Each cell is the lower--upper count from the trip-distance interval under a fixed no-mid-duty-recharge range. Capacity signatures are route-level proxies, not observed bus assignments. The 40-ft battery proxy contains minimum/standard capacity classes and unclassified blocks; 47/70-seat signature blocks are retained only as a trolley-route proxy, and 85-person double-deck blocks are unassessed. The interval is neither a physical vehicle bound nor a procurement quantity.}
 \end{table}

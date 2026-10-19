@@ -301,6 +301,13 @@
       "status": "cached",
       "bytes": 3624725,
       "sha256": "b85e7570cafefaf7fe9030db51d2d7a4d5ae428b69b05f491d41c018ef38dc42"
+    },
+    {
+      "file": "bank_of_canada_cpi_2021_2025.json",
+      "url": "https://www.bankofcanada.ca/valet/observations/V41690973/json?start_date=2021-01-01&end_date=2025-12-31",
+      "status": "downloaded",
+      "bytes": 8067,
+      "sha256": "9cc42efa0f5fd52cba8c2af34c3c3d16e67d73f9b2e420b7e94f8f0c6bd1ba5c"
     }
   ]
 }

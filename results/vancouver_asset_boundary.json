@@ -1,0 +1,175 @@
+{
+  "status": "UNIFORM_INITIAL_AGE_AND_MARKET_RECOVERY_SCENARIOS_NOT_BOOK_VALUE",
+  "initial_age_scenario": "Uniform ages 0--16 for heavy non-deck and community shuttles; 32 double-decks age 4 and 25 age 0 at end-2023; existing 18 BEBs age 10 at horizon.",
+  "life_years": 17,
+  "initial_terminal_value": {
+    "baseline_by_class_nominal_cad": {
+      "heavy": 571854057.398197,
+      "shuttle": 28873284.30183813,
+      "double_deck": 37500578.17531861
+    },
+    "plan_by_class_nominal_cad": {
+      "heavy": 1483270588.235294,
+      "shuttle": 73815126.05042017,
+      "double_deck": 122049852.21635063
+    },
+    "baseline_pv_cad": 474901511.4964453,
+    "plan_pv_cad": 1249434557.3208516,
+    "existing_beb_common_pv_cad": 6618058.819552047
+  },
+  "asset_adjusted_cases": [
+    {
+      "market_recovery_fraction_for_remaining_book_proxy": 0.0,
+      "period_disposal_receipts_pv_cad": 0.0,
+      "asset_adjusted_baseline_pv_cad": 2143320372.153089,
+      "asset_adjusted_plan_pv_cad": 4423458744.027174,
+      "asset_adjusted_economic_score_pct": -106.3834600509841
+    },
+    {
+      "market_recovery_fraction_for_remaining_book_proxy": 0.1,
+      "period_disposal_receipts_pv_cad": 17529393.760336373,
+      "asset_adjusted_baseline_pv_cad": 2143320372.153089,
+      "asset_adjusted_plan_pv_cad": 4405929350.266838,
+      "asset_adjusted_economic_score_pct": -105.56559847564122
+    },
+    {
+      "market_recovery_fraction_for_remaining_book_proxy": 0.25,
+      "period_disposal_receipts_pv_cad": 43823484.40084093,
+      "asset_adjusted_baseline_pv_cad": 2143320372.153089,
+      "asset_adjusted_plan_pv_cad": 4379635259.626333,
+      "asset_adjusted_economic_score_pct": -104.33880611262687
+    }
+  ],
+  "infrastructure_terminal_sensitivity": [
+    {
+      "straight_line_life_years": 20,
+      "terminal_value_2033_nominal_cad": 1531667338.5210004,
+      "terminal_value_pv_cad": 1139704346.2395384
+    },
+    {
+      "straight_line_life_years": 30,
+      "terminal_value_2033_nominal_cad": 1725326427.2995179,
+      "terminal_value_pv_cad": 1283804895.764078
+    },
+    {
+      "straight_line_life_years": 40,
+      "terminal_value_2033_nominal_cad": 1822155971.6887765,
+      "terminal_value_pv_cad": 1355855170.5263476
+    }
+  ],
+  "combined_asset_and_infrastructure_cases": [
+    {
+      "market_recovery_fraction": 0.0,
+      "infrastructure_life_years": null,
+      "planned_infrastructure_terminal_pv_cad": 0.0,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 4423458744.027174,
+      "economic_score_pct": -106.3834600509841
+    },
+    {
+      "market_recovery_fraction": 0.0,
+      "infrastructure_life_years": 20,
+      "planned_infrastructure_terminal_pv_cad": 1139704346.2395384,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 3283754397.787636,
+      "economic_score_pct": -53.20875219829666
+    },
+    {
+      "market_recovery_fraction": 0.0,
+      "infrastructure_life_years": 30,
+      "planned_infrastructure_terminal_pv_cad": 1283804895.764078,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 3139653848.263096,
+      "economic_score_pct": -46.48551327439362
+    },
+    {
+      "market_recovery_fraction": 0.0,
+      "infrastructure_life_years": 40,
+      "planned_infrastructure_terminal_pv_cad": 1355855170.5263476,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 3067603573.5008264,
+      "economic_score_pct": -43.12389381244211
+    },
+    {
+      "market_recovery_fraction": 0.1,
+      "infrastructure_life_years": null,
+      "planned_infrastructure_terminal_pv_cad": 0.0,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 4405929350.266838,
+      "economic_score_pct": -105.56559847564122
+    },
+    {
+      "market_recovery_fraction": 0.1,
+      "infrastructure_life_years": 20,
+      "planned_infrastructure_terminal_pv_cad": 1139704346.2395384,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 3266225004.0273,
+      "economic_score_pct": -52.39089062295378
+    },
+    {
+      "market_recovery_fraction": 0.1,
+      "infrastructure_life_years": 30,
+      "planned_infrastructure_terminal_pv_cad": 1283804895.764078,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 3122124454.50276,
+      "economic_score_pct": -45.667651699050744
+    },
+    {
+      "market_recovery_fraction": 0.1,
+      "infrastructure_life_years": 40,
+      "planned_infrastructure_terminal_pv_cad": 1355855170.5263476,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 3050074179.7404904,
+      "economic_score_pct": -42.306032237099245
+    },
+    {
+      "market_recovery_fraction": 0.25,
+      "infrastructure_life_years": null,
+      "planned_infrastructure_terminal_pv_cad": 0.0,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 4379635259.626333,
+      "economic_score_pct": -104.33880611262687
+    },
+    {
+      "market_recovery_fraction": 0.25,
+      "infrastructure_life_years": 20,
+      "planned_infrastructure_terminal_pv_cad": 1139704346.2395384,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 3239930913.386795,
+      "economic_score_pct": -51.164098259939436
+    },
+    {
+      "market_recovery_fraction": 0.25,
+      "infrastructure_life_years": 30,
+      "planned_infrastructure_terminal_pv_cad": 1283804895.764078,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 3095830363.862255,
+      "economic_score_pct": -44.4408593360364
+    },
+    {
+      "market_recovery_fraction": 0.25,
+      "infrastructure_life_years": 40,
+      "planned_infrastructure_terminal_pv_cad": 1355855170.5263476,
+      "baseline_asset_adjusted_pv_cad": 2143320372.153089,
+      "plan_asset_infrastructure_adjusted_pv_cad": 3023780089.0999856,
+      "economic_score_pct": -41.0792398740849
+    }
+  ],
+  "battery_replacement_boundary": {
+    "new_beb_battery_replacement_within_2024_2033": 0,
+    "reason": "The readiness-aligned 2029--2033 purchase schedule does not reach an assumed eight-year battery interval before 2033.",
+    "future_obligation": "Batteries commissioned in 2029--2033 fall due after the decision horizon and must be carried as a future replacement reserve."
+  },
+  "excluded": [
+    "site-specific disposal costs",
+    "actual used-bus market bids",
+    "incremental driver and deadhead cash flows",
+    "future out-of-horizon battery replacements",
+    "infrastructure ownership or removal liabilities"
+  ],
+  "boundaries": [
+    "Replacement-cost proxies are applied to unknown-age initial assets; they are not accounting book values.",
+    "Both paths use the same initial age scenario and straight-line life. The baseline keeps the younger double-deck cohort at the 2033 endpoint.",
+    "Market recovery percentages are disclosed policy cases, not observed bids."
+  ]
+}

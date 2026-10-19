@@ -149,69 +149,32 @@ age bands imply 392 active vehicles aged 0--4 and 543 aged 5--9; 285 were built
 in 2023--2025, so accelerating all fossils to electric by 2033 creates material
 early-retirement exposure.
 
-## Full-class and uncertainty update (18 October 2026)
+## Full-class, asset and uncertainty update (19 October 2026)
 
-The class-specific core bound uses 1,419 heavy non-deck planning positions,
-57 double-decks and 189 community shuttles. It retains the shared heavy-bus
-depot investment once and adds only class-specific vehicle and charger
-envelopes. Shared depot capacity is sized from the 1,419 heavy positions and
-retained once. Central price-mixed present value is CAD 4.712 billion against
-CAD 2.692 billion for renewal plus operations (-75.0%); 25/50% grant cases are
--42.8% and -10.5%. The high class envelope is CAD 5.260 billion (-95.5%).
-The plan buys 1,647 route BEBs (1,401 heavy, 57 deck, 189 shuttle) and 262
-one-for-one trolley renewals, retires 1,445 conventional buses, and ends at
-1,927 electric/zero conventional assets. The
-1,419
-positions are a transparent scaling of 1,630 generic non-deck positions after
-removing the 107-request shuttle allowance; they are not a garage roster. Grant
-cases apply to incremental route-conversion capital only. The common trolley
-renewal is excluded because it is required on both paths. If the same common
-renewal is also grant-eligible, the 50% class agency score improves to -0.5%.
-The trolley cash-flow uses 188 standard vehicles over 2024--28, one 2026 pilot,
-and 73 articulated vehicles over 2028--29. Price envelopes span 2021--2026
-nominal CAD and are not rebased. See
-`results/vancouver_full_fleet_bound.json`.
+The class inventory uses 1,419 heavy planning positions, 57 double-decks and
+189 community shuttles. It retains shared depot investment once and adds
+class-specific vehicles/chargers. Central constant-2023 PV is CAD 4.430 billion
+against CAD 2.625 billion (-68.8%); symmetric 0/25/50% grants give
+-68.8/-38.8/-5.5%. The high vehicle case is CAD 4.726 billion (-80.2%). The plan
+has 1,647 route vehicles plus 262 common trolley renewals, 1,445 conventional
+retirements and 1,927 electric/zero-conventional asset arithmetic.
 
-The 432,768-cell Cartesian assumption grid includes the 1,711--1,733 fleet
-interval, seven paired range points, 5--18 retained BEBs, 9/17--11/17 renewal,
-1.5--5.0% discount, hardware/project vehicle costs and four fuel
-intensities. It reproduces the named CAD 4.575-billion / -96.4% case exactly.
-Equal-weight fifth/median/ninety-fifth economically scored cases are
--166.9/-127.2/-89.8%; environment scores are -15.1/33.4/41.5% after the annual-ramp correction. These are
+Retained assets and terminal values use the same 17-year straight-line proxy in
+both paths. With no infrastructure terminal value the score is -104 to -106%;
+with 30-year infrastructure value -44 to -46%; across 20--40 years and 0--25%
+resale recovery -41 to -53%. These are scenarios, not book values.
+
+Prices are rebased to 2023 CAD using Bank of Canada total CPI; the 3% rate is a
+real-rate scenario. CPI is not a construction index. Facility readiness is zero
+through 2029, then 25/50/85/100% in 2030--33, so no service conversion is
+credited before a site can supply energy.
+
+Chicago's 185/year linear path fails a hard age deadline in 2024 by 354 slots
+under 17 years, and by 871/901 under 14/12 years. The 432,768-cell grid holds
+annual service kilometres fixed. Economic 5th/median/95th scores are
+-140.2/-114.0/-83.4%; environment scores are -33.7/7.8/15.2%. These are
 assumption-space quantiles, never confidence intervals. See
+`results/vancouver_full_fleet_bound.json`,
+`results/vancouver_asset_boundary.json`,
+`results/three_city_roadmap.json`, and
 `results/vancouver_transition_uncertainty.json`.
-
-The central O&M convention uses the 2.77 CAD/vehicle-km CNG rate as a middle
-comparator. Substituting the 1.97 hybrid or 3.30 diesel rate changes the
-class-specific economic score to -115.1% or -57.6%. The class calculation
-excludes post-2023 battery replacement and infrastructure terminal value; it
-is a core envelope, not a complete total cost of ownership.
-
-At a 700-kWh double-deck central case, 17 of 57 weekday duties have a
-certain single-charge shortfall; the 827-kWh optimistic case still has eight.
-A 150-kWh community shuttle has 49 of 101 certain shortfalls. These establish
-the requirement for terminal or en-route charging; they do not certify a
-specific stop or vehicle. See `results/deck_shuttle_electrification_audit.json`.
-
-The regional economic layer uses the published 2023 Bus Operations umbrella:
-CAD 945.537 million total expenditure, CAD 619.195 million wages and benefits,
-and 72.5% BC supplier retention. Statistics Canada BS48A000 sector proxies give
-an annual gross-value-added proxy of CAD 0.62--0.97 billion, labour income of
-CAD 0.62--0.79 billion and 6.0--8.8 thousand FTE. Infrastructure is a separate
-one-time gross activity memo (CAD 0.62--3.86 billion over 2024--31); it is not
-added to annual operations. Vehicle manufacturing is excluded because BC
-final assembly is unverified. See
-`results/regional_and_air_quality_audit.json`.
-
-The fixed-route tailpipe proxy allocates 106.868 million bus-km by fossil share
-and fuel/stock proxies. It gives 126--408 t NOx, 1.11--8.34 t PM2.5 and
-2.34--14.18 t PM10 per year. These are exhaust-only values; SeaBus, HandyDART,
-rail, non-revenue vehicles, tire/brake wear and upstream fuel are excluded.
-The underlying 2023 fuel-by-km split and emissions-control roster remain
-unavailable.
-
-APTA's public page lists `APTA-2023-Vehicle-Database`, but the ZIP returned a
-Cloudflare challenge (HTTP 403); the report hash and TransLink rows remain
-missing. The 2023 FOI log was obtained, but it contains no direct attachments
-for the fleet-age/retirement requests. No APTA-derived counts were substituted
-for the derived 1,711--1,733 bridge. See `research/apta_2023_fleet_note.md`.

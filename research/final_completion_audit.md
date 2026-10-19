@@ -1,71 +1,44 @@
-> SUPERSEDED numerical sign-off: the independent 19 October review found a
-> transition-emissions error and unsupported service/stock interpretations.
-> The historical audit below is retained for traceability, not current approval.
-> See `priority_revision_2026_10_19.md` for corrections and open defects.
-
 # Final completion audit
 
-Audit date: 18 October 2026. This file is the requirement-by-requirement
-delivery check for the 2023 HiMCM B project. It records current evidence and
-the remaining external-data boundaries; it does not replace the paper.
+Audit date: 19 October 2026. Current sign-off after the adversarial review.
 
 | Requirement | Current evidence | Status |
 |---|---|---|
-| Q1: environmental model and application | Fall-2023 GTFS audit; class/duty range screens; 432,768-case assumption grid; partial-production/operation/maintenance GHG inventory; separate NOx/PM inventory | Answered with named boundaries |
-| Q2: financial model and matching grants | Ten-year inventory, capital/O&M/residual envelope, 0/25/50% agency cases, price-mixed label, O&M-rate sensitivity | Answered as a screening appraisal; no awarded garage bids |
-| Q3: ten-year roadmaps in three metros | Annual purchase/retirement/EV-stock/conventional-stock table; Vancouver class model, Chicago linear stock path, London solved 17-year cohort model; all end at zero conventional stock | Answered as stock-flow plans |
-| Q4: one-page decision letter | PDF page 25; fits on one page; carries class-specific counts, cost/environment results and gates | Complete |
-| Complete PDF and source | `paper/ebus_transition.pdf`, `paper/ebus_transition.tex`; 25 solution pages plus one Report on Use of AI | Compiles and passes layout checks |
-| Reproducibility | `scripts/reproduce_local.py` builds source audits, models, figures, tables and tests | Passes; 41 tests |
-| Documentation | `README.md`, parameter ledger, model notes, source/provenance JSON, AI query log | Present |
-| High-level review | `research/manuscript_review.md`, `research/outstanding_format_findings.md`, independent final paper/model audits | Corrections applied |
+| Environmental model | One service ledger; readiness, production, operation, maintenance; negative cases retained | Implemented |
+| Financial model and grants | Constant 2023 CAD; gross and symmetric grant cases; asset/infrastructure range | Implemented |
+| Three metropolitan roadmaps | Vancouver facility-gated inventory, Chicago age-deadline stress, London solved cohort schedule | Implemented with stated boundaries |
+| Decision letter | One page in the 25-page solution | Verified |
+| Full PDF | 25 solution pages plus one AI report | Verified |
+| Reproduction | `python scripts/reproduce_local.py`; all tests and manuscript checks | Verified |
+| Review closure | F01--F13 and equation checks mapped in `adversarial_review_resolution.md` | Complete for public evidence |
 
 ## Numerical checks
 
-- 2023 fixed-route bus total: 5,575,772 hours, 106,868,324 km and
-  5,715,791,401 capacity-km after SeaBus exclusion.
-- Fall GTFS: 54,497 trips, 25 service patterns, 1,752 representative weekday
-  blocks and 20,679 consecutive transfers.
-- Generic non-deck case: 1,612 net BEB positions; CAD 4.575 billion versus
-  CAD 2.329 billion; -96.4%; 29.2--82.4% partial emissions reduction.
-- Class-specific case: 1,647 route BEB purchases plus 262 common trolley
-  renewals, 1,445 conventional retirements, 1,927 electric assets and zero
-  conventional assets in 2033. Central price-mixed PV is CAD 4.712 billion
-  versus CAD 2.692 billion (-75.0%);
-  25/50% grant scores are -42.8/-10.5%; partial-production emissions
-  reduction is 35.3--84.0%.
-- Grant cases cover incremental route-conversion capital. Including the
-  common trolley renewal as grant-eligible would make the 50% class case
-  -0.5%; that alternative is stored in the result JSON.
-- The 1,419-position shared depot is CAD 2.087 billion, not the generic
-  1,612-position CAD 2.371-billion depot allocation.
-- Assumption grid: 432,768 distinct cells; the named cell reproduces gross PV,
-  economic score and environment score with zero difference.
+- Generic central PV: CAD 4.303 billion vs 2.275 billion; -89.2%; ranks
+  -49.5/-9.8% under symmetric 25/50% grants.
+- Class central PV: CAD 4.430 billion vs 2.625 billion; -68.8%; symmetric
+  25/50% grant scores -38.8/-5.5%; high vehicle case CAD 4.726 billion.
+- Asset/infrastructure score range: -41.1 to -106.4%.
+- Generic environmental range: -17.6 to 15.1%; class: -14.3 to 16.2%.
+- Representative 300-km requests: 1,698--1,741; all-pattern upper maximum 1,745.
+- Route 100: 223 trips, 23 blocks, 25 daily fragments, lower bound 14.
+- Sensitivity grid: 432,768 cells with fixed annual service-km; economic
+  5th/median/95th -140.2/-114.0/-83.4%, environment -33.7/7.8/15.2%.
+- Chicago 2024 hard-deadline shortfalls: 354/871/901 for 17/14/12-year caps.
+- London 17/14/12-year peaks: 776/977/2,568 original slots per year.
 
 ## Verification commands
 
-```powershell
-python scripts/reproduce_local.py
-python scripts/check_tex_format.py
-python scripts/qa_editor_pdf.py
-python scripts/record_pdf_build.py
-python -m pytest -q
-git diff --check
-```
+- `python -m pytest -q`
+- `python scripts/check_tex_format.py`
+- `python scripts/check_manuscript_numbers.py`
+- `python scripts/qa_editor_pdf.py`
+- `python scripts/reproduce_local.py`
 
-Expected current state: 41 tests pass; static format passes; PDF QA has 26
-pages total, 25 solution pages, summary page 1, letter page 25 and AI report
-page 26; all 45 external links are present.
+## Limits
 
-## Remaining external boundaries
-
-- The formal team control number has not been supplied; `00000` remains a
-  deliberate placeholder. It must be replaced before contest submission.
-- A 2023 full-year/as-operated timetable, block-to-vehicle/garage mapping,
-  firm site power and an audited 2023 class-age-depot roster are not public.
-- APTA's 2023 vehicle ZIP is blocked by a Cloudflare challenge; no row was
-  invented. See `research/apta_2023_fleet_note.md`.
-- Class-specific shuttle and double-deck glider-production inventories remain
-  partial; the paper labels the environmental result accordingly.
-- A remote Git upload is complete only when a remote ref is verified. Local
-  history is the fallback specified by the project brief.
+No full-year 2023 GTFS, as-operated fleet/depot record, per-site firm power,
+road-time matrix, winter payload test or complete end-of-life inventory was
+available. The manuscript labels the city inventory conditional and the strict
+zero-emission electricity source `UNVERIFIED`; it does not claim citywide
+service certification or a complete total cost of ownership.

@@ -1,5 +1,5 @@
 {
   "producer": "app-owned Tectonic 0.17.0 using the editor cache",
-  "pdf_sha256": "28b6b80832e90a7829fdc5d84c8dc4b336cfeab70bb89143a4a3771f32c5395b",
-  "main_tex_sha256": "a92f2e598ebc979321494061825414a6c44f171f0da2281b4f5832a5b75bd895"
+  "pdf_sha256": "a77cc5b6a97ebfbe2bb0c88e026a866397ec81f438fe29655d23148286a953a2",
+  "main_tex_sha256": "7c658c97eb3605de518bad48cdd72969898cfa8ff77b71d3fa04139fe304b719"
 }

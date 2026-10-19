@@ -21,6 +21,9 @@ def test_block_audit_counts_and_energy_contract():
         if x["scenario"] == "40ft" and x["range_km"] == 149
     )
     assert "additional_bus_block_requests" in row
+    assert row["additional_bus_block_requests_lower_distance"] <= row["additional_bus_block_requests_upper_distance"]
+    assert row["fleet_blocks_after_ceiling_lower_distance"] == 1971
+    assert row["fleet_blocks_after_ceiling_upper_distance"] == 2032
     assert "candidate_block_daily_traction_energy_upper_kwh" in row
     assert "additional_bus_block_requests_fractional" not in row
     assert "battery_kwh_upper_at_source_cold_intensity" not in row

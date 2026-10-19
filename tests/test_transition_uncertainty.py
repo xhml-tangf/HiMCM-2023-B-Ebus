@@ -22,6 +22,7 @@ def test_uncertainty_grid_reproduces_named_case_and_orders_quantiles():
     assert abs(reproduction["gross_pv_difference_cad"]) < 1.0
     assert abs(reproduction["economic_score_difference_pct_points"]) < 1e-8
     assert abs(reproduction["environment_score_difference_pct_points"]) < 1e-8
+    assert result["service_km_control"]["independent_of_fleet_scenario"] is True
 
     for key in ("gross_pv_cad", "economic_score_pct", "environment_score_pct"):
         values = result[key]

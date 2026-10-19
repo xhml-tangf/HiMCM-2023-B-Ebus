@@ -44,9 +44,9 @@ def test_full_fleet_bound_reconciles_and_covers_named_classes():
     assert [x["grant_fraction"] for x in central["grant_cases"]] == [0.0, 0.25, 0.5]
     assert central["grant_cases"][2]["agency_pv_cad"] < central["grant_cases"][0]["agency_pv_cad"]
     assert "Common trolley replacement is excluded" in central["grant_scope"]
-    common_grants = central["grant_cases_with_common_trolley_capital"]
-    assert common_grants[2]["agency_pv_cad"] < central["grant_cases"][2]["agency_pv_cad"]
-    assert -1.0 < common_grants[2]["agency_economic_score_vs_baseline_pct"] < 0.0
+    common_grants = central["grant_cases_symmetric_common_trolley"]
+    assert common_grants[2]["baseline_agency_pv_cad"] < common_grants[0]["baseline_agency_pv_cad"]
+    assert -20.0 < common_grants[2]["agency_economic_score_vs_baseline_pct"] < 20.0
 
 
 def test_full_fleet_environment_boundary_is_ordered():
@@ -55,8 +55,7 @@ def test_full_fleet_environment_boundary_is_ordered():
     )
     scores = [x["environment_score_pct"] for x in result["environment_central"]]
     assert scores == sorted(scores)
-    assert 4.5 < scores[0] < 4.7
-    assert 42.6 < scores[-1] < 42.8
+    assert scores[0] < 0 < scores[-1]
     assert "community-shuttle body and powertrain production" in result[
         "production_components_t_central"
     ]["omitted_or_proxy_components"]
@@ -69,4 +68,22 @@ def test_shuttle_body_boundary_is_symmetric_and_ramp_is_used():
         assert abs(case["baseline_production_t"] - 705 * 11429 * 6.6 / 1000) < 1e-6
         km = result["service_km"]["full_scored_proxy"]
         g = case["baseline_operating_g_per_km"] / 1000
-        assert abs(case["plan_operating_t"] - km * (4.5 * g + 5.5 * .019) / 1000) < 1e-6
+        assert abs(case["plan_operating_t"] - km * (7.4 * g + 2.6 * .019) / 1000) < 1e-6
+
+
+def test_route_purchases_follow_facility_readiness():
+    result = json.loads((ROOT / "results/vancouver_full_fleet_bound.json").read_text())
+    purchases = [x["total_beb_purchases"] for x in result["central_annual_inventory"]]
+    assert sum(purchases[:5]) == 0
+    assert sum(purchases[5:]) == 1647
+    assert result["central_annual_inventory"][-1]["conventional_stock_end"] == 0
+
+
+def test_annual_class_ledger_conserves_service_km_and_tracks_energy():
+    result = json.loads((ROOT / "results/vancouver_full_fleet_bound.json").read_text())
+    total_km = result["service_km"]["full_scored_proxy"]
+    for row in result["annual_class_ledger"]:
+        assert abs(sum(x["annual_scored_km"] for x in row["classes"].values()) - total_km) < 1e-6
+        for cls in row["classes"].values():
+            assert abs(cls["conventional_km"] + cls["electric_km"] - cls["annual_scored_km"]) < 1e-6
+            assert cls["electric_grid_mwh_at_90pct_efficiency"] >= 0

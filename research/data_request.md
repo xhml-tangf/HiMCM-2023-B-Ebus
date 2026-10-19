@@ -2,12 +2,13 @@
 
 Public work has narrowed this request: 2023 reporting fixes 280 trolley/BEB
 vehicles together and 299 CNG vehicles. A same-day official article reports
-approximately five BEBs; the 18 delivered vehicles are compatible with the
-aggregate 280, but exact year-end in-service status remains unobserved. A
+approximately five BEBs; 18 is a scenario stock parameter and is not a verified
+delivery record. One cross-date subtraction of aggregate 280 conflicts with
+the same-day approximately 275+5 split, so exact year-end status remains unobserved. A
 2025-11-18 CMBC table provides 1,733 active vehicles by propulsion, site and
 manufacture year, while a detailed 2022 category snapshot gives 1,711. These
-support a derived 2023 total of 1,725 with interval 1,711--1,733, never a
-claimed observed roster. The 2025 capital plan identifies
+support a selected 2023 stock scenario of 1,725 with sensitivity 1,711--1,733,
+never an observed roster or proven bounds. The 2025 capital plan identifies
 selected retirement cohorts and project budgets; the 2020 fleet study supplies
 historical depot/class replacement ratios; and the 2024 transition review
 supplies facility target dates and a six-to-eight-year delivery range. These

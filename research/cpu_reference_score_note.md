@@ -35,19 +35,17 @@ The official April-2023 BC Hydro tariff and original 2023 diesel budget price ar
 
 ## Fall-2023 timetable and policy-case update
 
-The pinned fall-2023 GTFS supplies 54,497 scheduled bus trips and source blocks, replacing the earlier assertion that no duty manifest could be recovered. It remains a plan rather than an as-operated record. A 300-km overnight-charge sensitivity creates 1,741 sequential block requests for the 1,502 participating non-double-deck blocks. After proportional extrapolation from the unverified 1,711--1,733 stock scenarios and 18 assumed existing BEBs, the policy case has 1,612 net new batteries. Its gross present value is CAD 4.575 billion versus CAD 2.329 billion for steady-state renewal (-96.4%). A 50% grant gives a CAD 2.710 billion agency payment and -16.4% score. With the annual service ramp, the named partial boundary gives 0.7--41.5% emissions reduction. These values are conditional and do not replace the reference case above. See results/vancouver_transition_scenarios.json and research/block_and_scenario_note.md.
+The pinned fall-2023 GTFS supplies 54,497 scheduled bus trips and source blocks, replacing the earlier assertion that no duty manifest could be recovered. It remains a plan rather than an as-operated record. The 300-km screen creates 1,698--1,741 sequential requests for the 1,502 representative-weekday blocks; all 25 patterns reach at most 1,745. After proportional extrapolation from the unverified 1,711--1,733 stock scenarios and 18 assumed existing BEBs, the policy case has 1,612 net new batteries. Its constant-2023 present value is CAD 4.303 billion versus CAD 2.275 billion for steady-state renewal (-89.2%). Symmetric 25/50% grants give -49.5/-9.8%. With facility-gated service, the named partial boundary gives -17.6--15.1%. These values are conditional and do not replace the reference case above. See results/vancouver_transition_scenarios.json and research/block_and_scenario_note.md.
 
 `src/build_full_fleet_bound.py` adds a class-specific core envelope for 1,419
 heavy non-deck positions, 57 double-decks and 189 community shuttles, keeping
-the shared heavy-bus depot once, sized from 1,419 heavy positions. Its central
-price-mixed PV is CAD 4.713 billion against CAD 2.693 billion (-75.0%); the
-25/50% grant scores are -42.8/-10.5%. The high class envelope is CAD 5.260
-billion (-95.5%). Its 262 trolley renewals are common to both comparison
+the shared heavy-bus depot once, sized from 1,419 heavy positions. Its central constant-2023 PV is CAD 4.430 billion against CAD 2.625 billion
+(-68.8%); symmetric 25/50% grant scores are -38.8/-5.5%. The high vehicle
+case is CAD 4.726 billion (-80.2%). Its 262 trolley renewals are common to both comparison
 paths. Its partial-production, operation and maintenance boundary gives
-4.6--42.7% emissions reduction.
+-14.3--16.2% partial environmental score.
 
 `src/propagate_transition_uncertainty.py` executes a 432,768-cell Cartesian
-assumption grid on CPU. It reproduces the named CAD 4.575-billion / -96.4%
-case exactly. Equal-weight economic-score quantiles are -166.9/-127.2/-89.8%
-at the 5th/50th/95th positions; environment-score quantiles are
--15.1/33.4/41.5%. These are not confidence intervals.
+assumption grid on CPU. It reproduces the named CAD 4.303-billion / -89.2%
+case exactly. Equal-weight economic quantiles are -140.2/-114.0/-83.4%;
+environment quantiles are -33.7/7.8/15.2%. These are not confidence intervals.
