@@ -142,11 +142,34 @@ def main() -> None:
             "reason": "The readiness-aligned 2029--2033 purchase schedule does not reach an assumed eight-year battery interval before 2033.",
             "future_obligation": "Batteries commissioned in 2029--2033 fall due after the decision horizon and must be carried as a future replacement reserve.",
         },
+        "operating_omission_sensitivity": {
+            "extra_service_positions": full["endpoint_2033"]["additional_service_positions"],
+            "driver_cost_per_fte_cad": [70_500.0, 132_000.0],
+            "driver_pv_range_cad": [
+                202 * 70_500.0 * sum(share / (1.03) ** (year - 2023)
+                                      for year, share in zip(range(2030, 2034), (.25, .5, .85, 1.0))),
+                202 * 132_000.0 * sum(share / (1.03) ** (year - 2023)
+                                      for year, share in zip(range(2030, 2034), (.25, .5, .85, 1.0))),
+            ],
+            "deadhead_share_of_plan_om": [.05, .15],
+            "deadhead_pv_range_cad": [
+                abs(central["components_pv_cad"]["plan_om"]) * .05,
+                abs(central["components_pv_cad"]["plan_om"]) * .15,
+            ],
+            "future_battery_capacity_kwh": (
+                1401 * 335 + 57 * 700 + 189 * 150 + existing_beb * 335
+            ),
+            "future_battery_reserve_nominal_cad_at_100_200_per_kwh": [
+                (1401 * 335 + 57 * 700 + 189 * 150 + existing_beb * 335) * 100,
+                (1401 * 335 + 57 * 700 + 189 * 150 + existing_beb * 335) * 200,
+            ],
+            "status": "SCREENING_RANGES_NOT_LOCAL_QUOTES_OR_FORECASTS",
+        },
         "excluded": [
             "site-specific disposal costs",
             "actual used-bus market bids",
-            "incremental driver and deadhead cash flows",
-            "future out-of-horizon battery replacements",
+            "incremental driver and deadhead cash flows from the central adjusted cases; separate screening ranges are reported",
+            "future out-of-horizon battery replacements from the central adjusted cases; capacity and reserve scenarios are reported",
             "infrastructure ownership or removal liabilities",
         ],
         "boundaries": [

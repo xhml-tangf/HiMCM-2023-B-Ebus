@@ -1,9 +1,9 @@
 {
   "producer": "OpenAI Codex app-owned Tectonic 0.17.0 using the editor cache; the built-in editor compiler returned success for the same source",
-  "pdf_sha256": "a77cc5b6a97ebfbe2bb0c88e026a866397ec81f438fe29655d23148286a953a2",
-  "main_tex_sha256": "7c658c97eb3605de518bad48cdd72969898cfa8ff77b71d3fa04139fe304b719",
+  "pdf_sha256": "798b179be363d0b7da5d2c739cce9229f2d8acb3c38470cb7a028f1909fc2268",
+  "main_tex_sha256": "278509ab300c59d0219e0f4305d282ec4df95048a74cb76a6144db7080079c82",
   "project_source_files_sha256": {
-    "ebus_transition.tex": "7c658c97eb3605de518bad48cdd72969898cfa8ff77b71d3fa04139fe304b719",
+    "ebus_transition.tex": "278509ab300c59d0219e0f4305d282ec4df95048a74cb76a6144db7080079c82",
     "figures/block_range_stress.png": "026c7329f09f7ae059ecaf24484cac6f0205641634dc433b90c83171bb3ab530",
     "figures/charging_tariff_bounds.png": "9e75100acd2a152f6e0d119048b9d2748502143ca8c4861fd1d9d437f2b8d235",
     "figures/london_cohort_roadmap.png": "a70d684a099fdafe36b186981b29b1d97e65126ccaa1336d4daf79869523ada8",

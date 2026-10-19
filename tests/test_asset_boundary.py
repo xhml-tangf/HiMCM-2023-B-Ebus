@@ -1,4 +1,6 @@
 from math import isclose
+import json
+from pathlib import Path
 
 from src.asset_boundary import (early_retirement_value, residual_fraction,
                                 retire_oldest, simulate_class, terminal_value,
@@ -24,3 +26,12 @@ def test_purchase_and_retirement_ledger_balances():
         {0: 2}, {}, {2024: 1, 2025: 1})
     assert sum(ages.values()) == 0
     assert sum(sum(x.values()) for x in retired.values()) == 2
+
+
+def test_asset_json_reports_omitted_operating_and_battery_sensitivities():
+    result = json.loads((Path(__file__).resolve().parents[1]
+                         / "results/vancouver_asset_boundary.json").read_text())
+    omitted = result["operating_omission_sensitivity"]
+    assert omitted["extra_service_positions"] == 202
+    assert omitted["driver_pv_range_cad"][0] < omitted["driver_pv_range_cad"][1]
+    assert omitted["future_battery_capacity_kwh"] == 543_615

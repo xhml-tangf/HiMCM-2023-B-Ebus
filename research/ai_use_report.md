@@ -20,7 +20,7 @@ Neither tool was asked to locate or use an original 2023 HiMCM solution submissi
 7. "Create and upload the private GitHub repository." Output: https://github.com/xhml-tangf/HiMCM-2023-B-Ebus.
 8. "Fill the missing official fleet, double-deck/shuttle, regional economic and NOx/PM evidence rather than leaving unexplained gaps." Outputs: `results/apta_2023_fleet_audit.json`, `results/deck_shuttle_electrification_audit.json`, and `results/regional_and_air_quality_audit.json`.
 9. "Use the available CPU and run the model, with solution quality first." Outputs: `results/vancouver_transition_uncertainty.json` (432,768 cases), `results/vancouver_full_fleet_bound.json`, and the existing HiGHS/LP runs.
-10. "Resolve every issue in the independent adversarial review." Outputs: `research/adversarial_review_resolution.md`, periodic SOC and charger constraints, Route 100 duty sample, asset/infrastructure terminal-value scenarios, Chicago hard-age deadlines, fixed-service sensitivity, CPI rebasing, and a 63-test reproduction suite.
+10. "Resolve every issue in the independent adversarial review." Outputs: `research/adversarial_review_resolution.md`, periodic SOC and charger constraints, Route 100 duty sample, asset/infrastructure terminal-value scenarios, Chicago hard-age deadlines, fixed-service sensitivity, CPI rebasing, and a 64-test reproduction suite.
 
 ## Human-verification boundary
 

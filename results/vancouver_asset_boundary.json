@@ -160,11 +160,36 @@
     "reason": "The readiness-aligned 2029--2033 purchase schedule does not reach an assumed eight-year battery interval before 2033.",
     "future_obligation": "Batteries commissioned in 2029--2033 fall due after the decision horizon and must be carried as a future replacement reserve."
   },
+  "operating_omission_sensitivity": {
+    "extra_service_positions": 202,
+    "driver_cost_per_fte_cad": [
+      70500.0,
+      132000.0
+    ],
+    "driver_pv_range_cad": [
+      28389798.53074656,
+      53155367.46182335
+    ],
+    "deadhead_share_of_plan_om": [
+      0.05,
+      0.15
+    ],
+    "deadhead_pv_range_cad": [
+      104249150.11948672,
+      312747450.3584601
+    ],
+    "future_battery_capacity_kwh": 543615,
+    "future_battery_reserve_nominal_cad_at_100_200_per_kwh": [
+      54361500,
+      108723000
+    ],
+    "status": "SCREENING_RANGES_NOT_LOCAL_QUOTES_OR_FORECASTS"
+  },
   "excluded": [
     "site-specific disposal costs",
     "actual used-bus market bids",
-    "incremental driver and deadhead cash flows",
-    "future out-of-horizon battery replacements",
+    "incremental driver and deadhead cash flows from the central adjusted cases; separate screening ranges are reported",
+    "future out-of-horizon battery replacements from the central adjusted cases; capacity and reserve scenarios are reported",
     "infrastructure ownership or removal liabilities"
   ],
   "boundaries": [

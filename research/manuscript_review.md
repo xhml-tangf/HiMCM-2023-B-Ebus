@@ -11,7 +11,7 @@ checks only.
 | Three-city ten-year roadmaps | Vancouver facility-gated inventory, Chicago age-deadline stress, London solved cohorts | Answered; local dispatch remains a gate |
 | Decision letter | PDF page 25 | One page |
 | Format | 25 solution pages plus one AI report | Verified |
-| Reproducibility | Full local pipeline and 63 tests | Verified |
+| Reproducibility | Full local pipeline and 64 tests | Verified |
 
 ## Numerical checks
 
