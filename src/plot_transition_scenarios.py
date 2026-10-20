@@ -65,7 +65,9 @@ def main() -> None:
     rows += [r"\midrule", r"\multicolumn{3}{@{}l@{}}{Agency PV and score, grants 0/25/50\% (base plan)}\\",
              f"& {base['grant_cases'][0]['agency_pv_cad']/1e9:.3f} / {base['grant_cases'][1]['agency_pv_cad']/1e9:.3f} / {base['grant_cases'][2]['agency_pv_cad']/1e9:.3f} & "
              f"{base['grant_cases'][0]['agency_economic_score_vs_baseline_pct']:.1f} / {base['grant_cases'][1]['agency_economic_score_vs_baseline_pct']:.1f} / {base['grant_cases'][2]['agency_economic_score_vs_baseline_pct']:.1f}\\\\",
-             r"\bottomrule", r"\end{tabular}", r"\caption{Conditional generic non-deck inventory scenario in constant 2023 CAD. The 1,698--1,741 distance requests are proportionally projected to 1,630 positions and 1,612 route-purchase parameters after 18 assumed existing BEBs; this is not a vehicle or dispatch certificate. The 57 double-deck buses and 262 trolleys are outside this sub-boundary. The baseline renews 10/17 of unknown-age fossil positions.}", r"\end{table}"]
+             r"\bottomrule", r"\end{tabular}",
+             f"\\caption{{Conditional generic non-deck inventory scenario in constant 2023 CAD. The 1,698--1,741 distance requests are proportionally projected to {result['service_baseline']['scaled_battery_fleet_positions']:,} positions and {result['service_baseline']['net_new_battery_purchases']:,} route-purchase parameters after five same-day approximated existing BEBs; this is not a vehicle or dispatch certificate. The 57 double-deck buses and approximately 275 trolleys are outside this sub-boundary. The baseline renews 10/17 of unknown-age fossil positions.}}",
+             r"\end{table}"]
     (ROOT / "paper/tables/vancouver_transition_scenarios.tex").write_text("\n".join(rows) + "\n", encoding="utf-8")
     env_rows = [r"\begin{table}[htbp]", r"\centering", r"\begin{tabular}{@{}lrrrr@{}}",
                 r"\toprule", r"Baseline operating mix & g CO$_2$e/km & Renewal (kt) & Electric (kt) & Score (\%)\\",

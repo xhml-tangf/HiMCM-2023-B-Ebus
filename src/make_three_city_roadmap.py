@@ -262,7 +262,7 @@ def main() -> None:
     (ROOT / "paper/tables/three_city_roadmap.tex").write_text("\n".join(rows) + "\n", encoding="utf-8")
     age_rows = [r"\begin{table}[htbp]", r"\centering",
                 r"\begin{tabular}{@{}rrrrr@{}}", r"\toprule",
-                r"Year & Age-due slots & Cumulative buys & Newly missed & Overdue after year\\",
+                r"Year & Age-due slots & On-time new due & Newly missed & Overdue after year\\",
                 r"\midrule"]
     for row in cta_age17["annual_schedule"]:
         age_rows.append(
@@ -272,6 +272,7 @@ def main() -> None:
             f"{row['overdue_age_slots_after_year']}" + EOL)
     age_rows += [r"\bottomrule", r"\end{tabular}",
                  r"\caption{Chicago 17-year hard-age stress under the unverified 185-bus/year capacity. The 539 vehicles in the oldest bins exceed 2024 capacity by 354 immediately. Clearing later backlog cannot undo that missed deadline. Bins are reported age intervals, so oldest-age deadlines are a robust stress rather than a vehicle register.}",
+                 r"\label{tab:chicago_age}",
                  r"\end{table}"]
     (ROOT / "paper/tables/chicago_age_roadmap.tex").write_text(
         "\n".join(age_rows) + "\n", encoding="utf-8")

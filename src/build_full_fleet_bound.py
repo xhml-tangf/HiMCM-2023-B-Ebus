@@ -19,6 +19,7 @@ from build_transition_scenarios import allocate, pv, vehicle_residual_pv
 from transition_ledger import (READINESS_2024_33, service_ledger, operating_costs,
                                readiness_retirements, use_emissions)
 from price_index import to_2023
+from price_catalog import price
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -35,42 +36,46 @@ def main() -> None:
     # (cap50 + unclassified + cap75) contributes 1,074 + 265 + 295 = 1,634
     # requests against 1,401 base blocks.
     # Retained integer scenario, NOT a rounded lower bound or dispatch result.
-    heavy_positions = 1419
-    existing_beb = 18
+    # Official same-day split: 280 electric assets, approximately 275 trolleys
+    # and five BEBs. Moving 13 positions from heavy non-deck stock to trolleys
+    # preserves the 1,725 scenario total and the 1,927 endpoint.
+    heavy_positions = 1406
+    existing_beb = 5
+    existing_trolleys = 275
     heavy_purchases = heavy_positions - existing_beb
     heavy_standard_share = (1446 - 107) / ((1446 - 107) + 295)
     project_heavy_unit = (
-        heavy_standard_share * to_2023(106_846_000 / 57, 2025)
-        + (1 - heavy_standard_share) * to_2023(3_037_000, 2025)
+        heavy_standard_share * price("project_standard")
+        + (1 - heavy_standard_share) * price("project_articulated")
     )
     # Size the shared Marpole-style heavy-bus envelope from this scenario's
     # own heavy positions. Reusing the generic 1,612-position amount would
     # leave a shuttle allowance inside the shared depot and then add the
     # shuttle's dedicated site/charger envelope again.
-    shared_depot_nominal = heavy_positions * to_2023(500_000_000.0 / 340.0, 2023)
+    shared_depot_2023 = heavy_positions * price("depot_per_bus")
     annual_standard_km = float(
         vancouver["service_baseline"]["annual_nondeck_fossil_km_estimate"]
     )
     deck_km = 5_450_000.0
     annual_full_km = annual_standard_km + deck_km
     annual_service = service_ledger(annual_full_km)
-    om = {"conventional": to_2023(2.77, 2024), "beb": to_2023(2.28, 2024)}
+    om = {"conventional": price("om_cng"), "beb": price("om_beb")}
     rate = 0.03
-    baseline_heavy_unit = to_2023(922_860.0, 2024)
+    baseline_heavy_unit = price("baseline_cng")
     # 54 conventional community shuttles, CAD 16.265m gross in the 2025 plan.
-    baseline_shuttle_unit = to_2023(16_265_000.0 / 54, 2025)
+    baseline_shuttle_unit = price("baseline_shuttle")
     # Existing trolleys must be renewed even though their propulsion is already
     # electric. These costs occur in both the renewal and electric scenarios.
     trolley_standard_schedule = allocate(188, list(range(2024, 2029)))
     trolley_pilot_schedule = {2026: 1}
     trolley_articulated_schedule = allocate(73, [2028, 2029])
-    trolley_standard_unit = to_2023(414_600_000.0 / 188, 2025)
-    trolley_pilot_unit = to_2023(3_550_000.0, 2025)
-    trolley_articulated_unit = to_2023(182_900_000.0 / 73, 2025)
+    trolley_standard_unit = price("trolley_standard")
+    trolley_pilot_unit = price("trolley_pilot")
+    trolley_articulated_unit = price("trolley_articulated")
 
     cases = []
-    for name, heavy_unit in (("low", to_2023(1_200_000.0, 2023)),
-                             ("central", to_2023(1_200_000.0, 2023)),
+    for name, heavy_unit in (("low", price("hardware")),
+                             ("central", price("hardware")),
                              ("high", project_heavy_unit)):
         d = deck_rows.loc[name]
         s = shuttle_rows.loc[name]
@@ -79,7 +84,7 @@ def main() -> None:
         heavy_schedule = allocate(heavy_purchases, delivery_years)
         deck_schedule = allocate(57, range(2030, 2034))
         shuttle_schedule = allocate(shuttle_fleet, range(2030, 2034))
-        heavy_fossil = 1725 - 262 - 57 - shuttle_fleet - existing_beb
+        heavy_fossil = 1725 - existing_trolleys - 57 - shuttle_fleet - existing_beb
         baseline_heavy = round(heavy_fossil * 10 / 17)
         baseline_shuttle = round(shuttle_fleet * 10 / 17)
         # The 57 double-decks were delivered during 2019--23, so none reaches
@@ -91,17 +96,18 @@ def main() -> None:
         baseline_shuttle_schedule = allocate(baseline_shuttle, years)
 
         heavy_vehicle = {y: heavy_schedule.get(y, 0) * heavy_unit for y in years}
-        deck_unit = to_2023(float(d.vehicle_unit_cost_cad_low), 2024)
-        shuttle_unit = to_2023(float(s.vehicle_unit_cost_cad_low), 2023)
+        assert int(d.price_base_year) == int(s.price_base_year) == 2023
+        deck_unit = float(d.vehicle_unit_cost_cad_low)
+        shuttle_unit = float(s.vehicle_unit_cost_cad_low)
         deck_vehicle = {y: deck_schedule.get(y, 0) * deck_unit for y in years}
         shuttle_vehicle = {y: shuttle_schedule.get(y, 0) * shuttle_unit for y in years}
         extra_infrastructure = (
-            to_2023(float(d.infrastructure_cost_cad_low), 2024)
-            + to_2023(float(s.infrastructure_cost_cad_low), 2023)
+            float(d.infrastructure_cost_cad_low)
+            + float(s.infrastructure_cost_cad_low)
         )
-        infrastructure = shared_depot_nominal + extra_infrastructure
+        infrastructure = shared_depot_2023 + extra_infrastructure
         infra_schedule = {y: infrastructure / 8.0 for y in range(2024, 2032)}
-        shared_schedule = {y: shared_depot_nominal / 8.0 for y in range(2024, 2032)}
+        shared_schedule = {y: shared_depot_2023 / 8.0 for y in range(2024, 2032)}
         class_infra_schedule = {y: extra_infrastructure / 8.0 for y in range(2024, 2032)}
 
         baseline_om, plan_om = operating_costs(annual_service, om["conventional"], om["beb"])
@@ -189,19 +195,19 @@ def main() -> None:
             "heavy_unit_cost_cad": heavy_unit,
             "deck_unit_cost_cad": deck_unit,
             "shuttle_unit_cost_cad": shuttle_unit,
-            "shared_depot_cad": shared_depot_nominal,
-            "deck_core_capital_cad": to_2023(float(d.capital_cost_cad_low), 2024),
-            "shuttle_core_capital_cad": to_2023(float(s.capital_cost_cad_low), 2023),
+            "shared_depot_cad": shared_depot_2023,
+            "deck_core_capital_cad": float(d.capital_cost_cad_low),
+            "shuttle_core_capital_cad": float(s.capital_cost_cad_low),
             "additional_class_capital_cad": extra_infrastructure,
-            "capital_gross_nominal_cad": (
+            "capital_gross_2023_cad": (
                 sum(heavy_vehicle.values()) + sum(deck_vehicle.values())
                 + sum(shuttle_vehicle.values()) + infrastructure
             ),
-            "common_trolley_capital_nominal_cad": (
+            "common_trolley_capital_2023_cad": (
                 trolley_standard_unit * 188
                 + trolley_articulated_unit * 73 + trolley_pilot_unit
             ),
-            "total_modeled_capital_nominal_cad": (
+            "total_modeled_capital_2023_cad": (
                 sum(heavy_vehicle.values()) + sum(deck_vehicle.values())
                 + sum(shuttle_vehicle.values()) + infrastructure
                 + trolley_standard_unit * 188
@@ -278,7 +284,7 @@ def main() -> None:
     # Central annual inventory certificate. The extra heavy positions are
     # added capacity required by range splitting, while conventional retirements
     # cover only the 1,445 non-electric buses in the 2023 bridge.
-    heavy_retirements = 1217 - existing_beb
+    heavy_retirements = (heavy_positions - 202) - existing_beb
     deck_retirements = 57
     shuttle_retirements = 189
     # Rebuild the central ordinary-renewal schedules explicitly. The loop
@@ -295,7 +301,7 @@ def main() -> None:
     heavy_retire_schedule = readiness_retirements(heavy_retirements)
     deck_retire_schedule = readiness_retirements(deck_retirements)
     shuttle_retire_schedule = readiness_retirements(shuttle_retirements)
-    ev_stock = 262 + existing_beb
+    ev_stock = existing_trolleys + existing_beb
     conventional_stock = heavy_retirements + deck_retirements + shuttle_retirements
     annual_inventory = []
     for year in years:
@@ -373,7 +379,7 @@ def main() -> None:
         })
     plan_production_t = sum(x["plan_total_t"] for x in production_ledger)
     # Symmetric partial boundary: omit unknown shuttle bodies on BOTH sides.
-    baseline_heavy_count = round((1725 - 262 - 57 - 189 - existing_beb) * 10 / 17)
+    baseline_heavy_count = round((1725 - existing_trolleys - 57 - 189 - existing_beb) * 10 / 17)
     baseline_production_t = sum(x["baseline_total_listed_t"] for x in production_ledger)
     shuttle_km = 13_653_519.0
     class_km = {
@@ -441,7 +447,7 @@ def main() -> None:
     output = {
         "status": "CONDITIONAL_CLASS_INVENTORY_COST_SCENARIO_NOT_DISPATCH_CERTIFIED",
         "pv_basis": "constant 2023 CAD via Bank of Canada CPI; 3% real discount. CPI is not a construction-cost index.",
-        "method": "1419 heavy positions is a retained proportional inventory scenario, not a vehicle requirement bound. The 18 existing BEBs and initial 1725 assets are unverified stock assumptions, not delivery records.",
+        "method": "1406 heavy positions is a retained proportional inventory scenario, not a vehicle requirement bound. The central 2023 split uses the same-day approximate 275 trolleys plus five BEBs; 262/18 is a stress split. The initial 1,725 total remains a scenario choice.",
         "annual_service_ledger": annual_service,
         "annual_class_ledger": annual_class_ledger,
         "battery_replacement_boundary": (
@@ -457,7 +463,7 @@ def main() -> None:
             "heavy_non_deck": heavy_positions,
             "double_deck": 57,
             "community_shuttle_midpoint": 189,
-            "existing_beb": 18,
+            "existing_beb": existing_beb,
         },
         "service_km": {
             "current_non_deck_fossil_proxy": annual_standard_km,
@@ -504,10 +510,12 @@ def main() -> None:
             "heavy_conventional_scenario": heavy_retirements,
             "double_deck_conventional_scenario": deck_retirements,
             "community_shuttle_conventional_scenario": shuttle_retirements,
-            "electric_trolleys": 262,
+            "electric_trolleys": existing_trolleys,
+            "electric_trolleys_renewed": 262,
+            "existing_electric_carried_through_2033": existing_trolleys - 262,
             "existing_beb": existing_beb,
             "conventional": heavy_retirements + deck_retirements + shuttle_retirements,
-            "total": 262 + existing_beb + heavy_retirements + deck_retirements + shuttle_retirements,
+            "total": existing_trolleys + existing_beb + heavy_retirements + deck_retirements + shuttle_retirements,
         },
         "endpoint_2033": {
             "electric_stock": annual_inventory[-1]["electric_stock_end"],
@@ -523,9 +531,10 @@ def main() -> None:
         },
         "baseline_om_rate_sensitivity": [],
         "boundaries": [
-            "Vehicle prices come from public planning or external procurement envelopes and mix 2021--2026 nominal currencies; they are not rebased to a single bid year.",
+            "Vehicle and infrastructure leaves are CPI-rebased to constant 2023 CAD before aggregation; fixed FX and supply premiums remain explicit assumptions, not local bids.",
             f"Shared heavy-bus depot investment is sized from {heavy_positions} heavy positions and retained once. Class-specific charger/site items are added separately, but site power and civil works may still overlap.",
             "The double-deck annual distance is a weekday-share proxy; the shuttle distance is an independently published 2023 actual total.",
+            "The approximate 275-trolley/5-BEB split comes from same-day public statements. Only 262 known trolley replacements occur; 13 existing electric assets are carried through 2033. If those also require renewal, purchases rise by 13.",
             "Shuttle and double-deck manufacturing inventories include battery factors; the shuttle glider mass is not invented.",
             "Depot construction and end-of-life are excluded from the environmental boundary.",
             "The financial envelope excludes post-2023 battery replacement, retained pre-2024 asset terminal values, disposal proceeds and infrastructure terminal value; opposing omissions mean this is not a conservative bound or complete TCO.",
@@ -561,7 +570,7 @@ def main() -> None:
     print(json.dumps({
         "classes": output["classes"],
         "economics": [{k: c[k] for k in (
-            "case", "capital_gross_nominal_cad", "plan_gross_pv_cad",
+            "case", "capital_gross_2023_cad", "plan_gross_pv_cad",
             "economic_score_gross_pct", "grant_cases")}
             for c in cases],
         "environment_central": environment,

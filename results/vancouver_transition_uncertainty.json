@@ -49,63 +49,63 @@
     ]
   },
   "named_base_case": {
-    "gross_pv_cad": 4303074983.166855,
-    "economic_score_pct": -89.15843794000672
+    "gross_pv_cad": 4318264219.141689,
+    "economic_score_pct": -88.2437057708435
   },
   "gross_pv_cad": {
-    "p05": 4044280406.1422067,
-    "median": 4781688592.269171,
-    "p95": 5500545825.553917,
-    "minimum": 3793151537.851874,
-    "maximum": 5858961553.685654
+    "p05": 4040831511.3038526,
+    "median": 4772555550.676575,
+    "p95": 5486595677.811538,
+    "minimum": 3790947920.0557084,
+    "maximum": 5844273113.277594
   },
   "economic_score_pct": {
-    "p05": -140.22908786381976,
-    "median": -113.96773824153982,
-    "p95": -83.39989213781163,
-    "minimum": -147.84630201052772,
-    "maximum": -79.46326161566014
+    "p05": -137.84815353297026,
+    "median": -112.01592933510086,
+    "p95": -81.91734748733205,
+    "minimum": -145.4055068535904,
+    "maximum": -78.04644316146405
   },
   "environment_score_pct": {
-    "p05": -33.7364735554781,
-    "median": 7.786273244990558,
-    "p95": 15.176853987955457,
-    "minimum": -40.97278030600268,
-    "maximum": 16.427761590956038
+    "p05": -32.914951435888284,
+    "median": 8.071380828937926,
+    "p95": 15.342909811927694,
+    "minimum": -40.033596057087465,
+    "maximum": 16.574949412126045
   },
   "gross_pv_rank_correlations": {
-    "derived_2023_fleet_total": 0.031545816065529246,
-    "paired_range_midpoint_km": -0.8504983786092688,
-    "existing_beb_retained": -0.01393196207513983,
+    "derived_2023_fleet_total": 0.03223673560506001,
+    "paired_range_midpoint_km": -0.8490812902908551,
+    "existing_beb_retained": -0.014187209348173732,
     "natural_renewal_fraction": 0.0,
-    "discount_rate": -0.45668749244841667,
-    "project_envelope_cost_basis": 0.2058994550019609,
+    "discount_rate": -0.45949187219804466,
+    "project_envelope_cost_basis": 0.20517951663926964,
     "baseline_fuel_intensity_kg_co2e_km": 0.0,
-    "net_new_battery_positions": 0.8467046822334586
+    "net_new_battery_positions": 0.8454077129096423
   },
   "economic_score_rank_correlations": {
-    "derived_2023_fleet_total": -0.0326118892585117,
-    "paired_range_midpoint_km": 0.9541396157215221,
-    "existing_beb_retained": 0.01327964009231174,
-    "natural_renewal_fraction": 0.11352529434101352,
-    "discount_rate": -0.044141226936250305,
-    "project_envelope_cost_basis": -0.24838287686171298,
+    "derived_2023_fleet_total": -0.03282176032346786,
+    "paired_range_midpoint_km": 0.9541670790741333,
+    "existing_beb_retained": 0.013659460344195839,
+    "natural_renewal_fraction": 0.11263137129874812,
+    "discount_rate": -0.04546706918797525,
+    "project_envelope_cost_basis": -0.24834798699752877,
     "baseline_fuel_intensity_kg_co2e_km": 0.0,
-    "net_new_battery_positions": -0.9493916560228237
+    "net_new_battery_positions": -0.9494594988996419
   },
   "environment_rank_correlations": {
-    "derived_2023_fleet_total": -0.016265003509901794,
-    "paired_range_midpoint_km": 0.4116454789054716,
-    "existing_beb_retained": 0.006247271658560577,
-    "natural_renewal_fraction": 0.06358350717591732,
+    "derived_2023_fleet_total": -0.016209839549887167,
+    "paired_range_midpoint_km": 0.41104868863621485,
+    "existing_beb_retained": 0.006238619484295838,
+    "natural_renewal_fraction": 0.06326149080390539,
     "discount_rate": 0.0,
     "project_envelope_cost_basis": 0.0,
-    "baseline_fuel_intensity_kg_co2e_km": 0.8936693091199617,
-    "net_new_battery_positions": -0.40991950972320707
+    "baseline_fuel_intensity_kg_co2e_km": 0.8940876033143123,
+    "net_new_battery_positions": -0.40932083777492767
   },
   "quantile_weighting": "Equal weight across the Cartesian assumption grid; quantiles are not sampling confidence intervals.",
   "service_km_control": {
-    "annual_scored_km": 88786898.98172182,
+    "annual_scored_km": 89615491.72168045,
     "independent_of_fleet_scenario": true,
     "note": "The named 2023 fixed-route service quantity is held constant; fleet-grid variation does not manufacture or remove service kilometres."
   },
@@ -116,9 +116,9 @@
   ],
   "named_case_grid_reproduction": {
     "cases_matched": 1,
-    "net_new_battery_positions": 1612.0,
+    "net_new_battery_positions": 1610.0,
     "gross_pv_difference_cad": 0.0,
-    "economic_score_difference_pct_points": 0.0,
+    "economic_score_difference_pct_points": -4.263256414560601e-14,
     "environment_score_difference_pct_points": 0.0
   }
 }

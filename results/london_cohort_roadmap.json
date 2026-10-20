@@ -31,7 +31,7 @@
         0.0,
         0.0
       ],
-      "solve_elapsed_seconds": 0.013463700015563518,
+      "solve_elapsed_seconds": 0.013121500029228628,
       "annual_schedule": [
         {
           "year": 2024,
@@ -664,7 +664,7 @@
         0.0,
         0.0
       ],
-      "solve_elapsed_seconds": 0.013723400013986975,
+      "solve_elapsed_seconds": 0.015667499974370003,
       "annual_schedule": [
         {
           "year": 2024,
@@ -1277,7 +1277,7 @@
         0.0,
         0.0
       ],
-      "solve_elapsed_seconds": 0.01649180002277717,
+      "solve_elapsed_seconds": 0.018678000022191554,
       "annual_schedule": [
         {
           "year": 2024,

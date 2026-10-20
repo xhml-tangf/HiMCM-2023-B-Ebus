@@ -18,9 +18,11 @@ import pandas as pd
 try:
     from .transition_ledger import READINESS_2024_33, service_ledger, operating_costs, use_emissions
     from .price_index import to_2023
+    from .price_catalog import price
 except ImportError:
     from transition_ledger import READINESS_2024_33, service_ledger, operating_costs, use_emissions
     from price_index import to_2023
+    from price_catalog import price
 
 ROOT = Path(__file__).resolve().parents[1]
 PROC = ROOT / "data/processed"
@@ -63,8 +65,11 @@ def main() -> None:
     battery_base60 = next(x for x in weekday["range_scenarios"] if x["scenario"] == "60ft" and x["range_km"] == 150)["battery_candidate_blocks"]
     main_non_trolley = battery_base40 + battery_base60
     fleet2023_total = 1725
-    existing_trolleys = 262
-    existing_beb = 18
+    # Same-day December sources give 280 electric assets in total and an
+    # approximate split of 275 trolleys plus five BEBs. The 262/18 split is a
+    # retained stress scenario, not the central observation.
+    existing_trolleys = 275
+    existing_beb = 5
     non_trolley_fleet = fleet2023_total - existing_trolleys
     nondeck_non_trolley_fleet = non_trolley_fleet - double_deck
     scaled_battery_plan = round(nondeck_non_trolley_fleet * plan_battery / main_non_trolley)
@@ -72,8 +77,8 @@ def main() -> None:
     fossil_fleet_for_renewal = nondeck_non_trolley_fleet - existing_beb
     extra = scaled_battery_plan - nondeck_non_trolley_fleet
     # TransLink 2024 O&M per vehicle-km and 2024 fuel/energy intensity tables.
-    om = {"diesel": to_2023(3.30, 2024), "hybrid": to_2023(1.97, 2024),
-          "cng": to_2023(2.77, 2024), "beb": to_2023(2.28, 2024)}
+    om = {"diesel": price("om_diesel"), "hybrid": price("om_hybrid"),
+          "cng": price("om_cng"), "beb": price("om_beb")}
     operating_intensity = {"diesel": 1580, "hybrid": 1420, "cng": 1350, "rng": 250, "beb": 19}
     # For this fixed-service comparison, trolley-owned distances cancel. Build
     # fossil-share from the actual block distance interval to avoid allocating
@@ -92,12 +97,12 @@ def main() -> None:
     # 2024 screening envelope including service expansion and multi-site work;
     # it is a sensitivity, never an additive line item with Marpole alone.
     # Rebase public envelopes to 2023 CAD with CPI before applying a real rate.
-    conventional_bus_cad = to_2023(46_143_000 / 50, 2024)
-    beb_hardware_cad = to_2023(1_200_000, 2023)
-    beb_project_envelope_cad = to_2023(1_874_000, 2025)
-    depot_per_bus_cad = to_2023(500_000_000 / 340, 2023)
-    onroute_charger_cad = to_2023(610_000, 2023)
-    high_infrastructure_cad = to_2023(6_520_000_000, 2024)
+    conventional_bus_cad = price("baseline_cng")
+    beb_hardware_cad = price("hardware")
+    beb_project_envelope_cad = price("project_standard")
+    depot_per_bus_cad = price("depot_per_bus")
+    onroute_charger_cad = price("onroute")
+    high_infrastructure_cad = price("infrastructure_high")
     onroute_count = int(-(-double_deck // 8))
     years = range(2024, 2034)
     natural_renewal_fraction = 10 / 17
@@ -118,7 +123,7 @@ def main() -> None:
             target40_scaled = round(net_new_batteries * target40 / plan_battery)
             target60_scaled = net_new_batteries - target40_scaled
             plan_unit_price = ((target40_scaled * beb_project_envelope_cad
-                                + target60_scaled * 3_037_000) / net_new_batteries)
+                                + target60_scaled * price("project_articulated")) / net_new_batteries)
         else:
             plan_unit_price = beb_hardware_cad
         plan_capex = {y: plan_purchases.get(y, 0) * plan_unit_price for y in years}
@@ -211,7 +216,7 @@ def main() -> None:
                               "existing_trolleys": existing_trolleys,
                               "existing_beb_scenario_asset_count": existing_beb,
                               "existing_beb_in_service_approx": 5,
-                              "existing_beb_note": "18 is an unverified cross-date subtraction scenario, not a delivery record. About five were reported in service; 1725 and 1711--1733 are scenario choices, not verified stock or bounds.",
+                              "existing_beb_note": "Central split is the same-day approximate 275 trolleys plus five BEBs; 280 electric assets is the reported total. The 262/18 cross-date subtraction is retained only as stress. 1725 and 1711--1733 remain scenario stock choices.",
                               "double_deck_blocks_excluded": double_deck,
                               "baseline_natural_renewal_fraction": natural_renewal_fraction,
                               "conventional_bus_envelope_cad": conventional_bus_cad,

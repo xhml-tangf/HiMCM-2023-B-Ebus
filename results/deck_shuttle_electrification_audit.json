@@ -204,19 +204,20 @@
       "annual_energy_high_kwh": 10369684.123368533,
       "fleet_low": 57,
       "fleet_high": 57,
-      "vehicle_unit_cost_cad_low": 1572750.0,
-      "vehicle_unit_cost_cad_high": 1572750.0,
-      "vehicle_cost_cad_low": 89646750.0,
-      "vehicle_cost_cad_high": 89646750.0,
+      "vehicle_unit_cost_cad_low": 1744898.2375095629,
+      "vehicle_unit_cost_cad_high": 1744898.2375095629,
+      "vehicle_cost_cad_low": 99459199.53804508,
+      "vehicle_cost_cad_high": 99459199.53804508,
       "charger_count_low": 9,
       "charger_count_high": 9,
       "charger_cost_cad_each": 610000.0,
       "infrastructure_cost_cad_low": 10560000.0,
       "infrastructure_cost_cad_high": 10560000.0,
-      "capital_cost_cad_low": 100206750.0,
-      "capital_cost_cad_high": 100206750.0,
+      "capital_cost_cad_low": 110019199.53804508,
+      "capital_cost_cad_high": 110019199.53804508,
       "unit_cost_basis": "2021 BC incentive list: BYD DD10 double-deck coach MSRP US$1.165m at assumed CAD/USD 1.35; no TransLink bid",
-      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+      "price_base_year": 2023,
+      "cost_boundary": "constant 2023 CAD, leaf CPI/explicit FX conversion before aggregation; excludes operations, energy, taxes, financing and residual value"
     },
     {
       "asset_class": "community_shuttle",
@@ -245,19 +246,20 @@
       "annual_energy_high_kwh": 10922815.200000001,
       "fleet_low": 171,
       "fleet_high": 171,
-      "vehicle_unit_cost_cad_low": 357750.0,
-      "vehicle_unit_cost_cad_high": 357750.0,
-      "vehicle_cost_cad_low": 61175250.0,
-      "vehicle_cost_cad_high": 61175250.0,
+      "vehicle_unit_cost_cad_low": 396908.18278114515,
+      "vehicle_unit_cost_cad_high": 396908.18278114515,
+      "vehicle_cost_cad_low": 67871299.25557582,
+      "vehicle_cost_cad_high": 67871299.25557582,
       "charger_count_low": 57,
       "charger_count_high": 57,
       "charger_cost_cad_each": 50000.0,
       "infrastructure_cost_cad_low": 2850000.0,
       "infrastructure_cost_cad_high": 2850000.0,
-      "capital_cost_cad_low": 64025250.0,
-      "capital_cost_cad_high": 64025250.0,
+      "capital_cost_cad_low": 70721299.25557582,
+      "capital_cost_cad_high": 70721299.25557582,
       "unit_cost_basis": "2021 BC incentive list: EV Star Transit Plus with ADA MSRP US$265k at assumed CAD/USD 1.35",
-      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+      "price_base_year": 2023,
+      "cost_boundary": "constant 2023 CAD, leaf CPI/explicit FX conversion before aggregation; excludes operations, energy, taxes, financing and residual value"
     },
     {
       "asset_class": "double_deck",
@@ -286,19 +288,20 @@
       "annual_energy_high_kwh": 10427615.31958847,
       "fleet_low": 57,
       "fleet_high": 57,
-      "vehicle_unit_cost_cad_low": 2408460.0,
-      "vehicle_unit_cost_cad_high": 2408460.0,
-      "vehicle_cost_cad_low": 137282220.0,
-      "vehicle_cost_cad_high": 137282220.0,
+      "vehicle_unit_cost_cad_low": 2352434.7932856698,
+      "vehicle_unit_cost_cad_high": 2352434.7932856698,
+      "vehicle_cost_cad_low": 134088783.21728317,
+      "vehicle_cost_cad_high": 134088783.21728317,
       "charger_count_low": 9,
       "charger_count_high": 9,
-      "charger_cost_cad_each": 1300000.0,
-      "infrastructure_cost_cad_low": 16770000.0,
-      "infrastructure_cost_cad_high": 16770000.0,
-      "capital_cost_cad_low": 154052220.0,
-      "capital_cost_cad_high": 154052220.0,
+      "charger_cost_cad_each": 1501954.8964333865,
+      "infrastructure_cost_cad_low": 18587594.06790048,
+      "infrastructure_cost_cad_high": 18587594.06790048,
+      "capital_cost_cad_low": 152676377.28518367,
+      "capital_cost_cad_high": 152676377.28518367,
       "unit_cost_basis": "Foothill 2024 contract: US$1.758m/bus at assumed CAD/USD 1.37",
-      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+      "price_base_year": 2023,
+      "cost_boundary": "constant 2023 CAD, leaf CPI/explicit FX conversion before aggregation; excludes operations, energy, taxes, financing and residual value"
     },
     {
       "asset_class": "community_shuttle",
@@ -327,19 +330,20 @@
       "annual_energy_high_kwh": 12288167.1,
       "fleet_low": 189,
       "fleet_high": 189,
-      "vehicle_unit_cost_cad_low": 428571.4285714286,
-      "vehicle_unit_cost_cad_high": 428571.4285714286,
-      "vehicle_cost_cad_low": 81000000.0,
-      "vehicle_cost_cad_high": 81000000.0,
+      "vehicle_unit_cost_cad_low": 475481.50078603794,
+      "vehicle_unit_cost_cad_high": 475481.50078603794,
+      "vehicle_cost_cad_low": 89866003.64856116,
+      "vehicle_cost_cad_high": 89866003.64856116,
       "charger_count_low": 95,
       "charger_count_high": 95,
       "charger_cost_cad_each": 100000.0,
       "infrastructure_cost_cad_low": 9500000.0,
       "infrastructure_cost_cad_high": 9500000.0,
-      "capital_cost_cad_low": 90500000.0,
-      "capital_cost_cad_high": 90500000.0,
+      "capital_cost_cad_low": 99366003.64856116,
+      "capital_cost_cad_high": 99366003.64856116,
       "unit_cost_basis": "Calgary June-2021 order: over C$6m for 14 vehicles; midpoint fleet 189 of 171-206",
-      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+      "price_base_year": 2023,
+      "cost_boundary": "constant 2023 CAD, leaf CPI/explicit FX conversion before aggregation; excludes operations, energy, taxes, financing and residual value"
     },
     {
       "asset_class": "double_deck",
@@ -368,19 +372,20 @@
       "annual_energy_high_kwh": 9268991.395189751,
       "fleet_low": 57,
       "fleet_high": 57,
-      "vehicle_unit_cost_cad_low": 3010575.0,
-      "vehicle_unit_cost_cad_high": 3010575.0,
-      "vehicle_cost_cad_low": 171602775.0,
-      "vehicle_cost_cad_high": 171602775.0,
+      "vehicle_unit_cost_cad_low": 2940543.4916070877,
+      "vehicle_unit_cost_cad_high": 2940543.4916070877,
+      "vehicle_cost_cad_low": 167610979.021604,
+      "vehicle_cost_cad_high": 167610979.021604,
       "charger_count_low": 9,
       "charger_count_high": 9,
       "charger_cost_cad_each": 4600000.0,
       "infrastructure_cost_cad_low": 125223529.4117647,
       "infrastructure_cost_cad_high": 125223529.4117647,
-      "capital_cost_cad_low": 296826304.4117647,
-      "capital_cost_cad_high": 296826304.4117647,
+      "capital_cost_cad_low": 292834508.4333687,
+      "capital_cost_cad_high": 292834508.4333687,
       "unit_cost_basis": "2024 Foothill actual converted to CAD plus a 25% uncertainty/supply premium",
-      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+      "price_base_year": 2023,
+      "cost_boundary": "constant 2023 CAD, leaf CPI/explicit FX conversion before aggregation; excludes operations, energy, taxes, financing and residual value"
     },
     {
       "asset_class": "community_shuttle",
@@ -421,7 +426,8 @@
       "capital_cost_cad_low": 195700000.0,
       "capital_cost_cad_high": 195700000.0,
       "unit_cost_basis": "Forward 30-ft/20+ capacity vehicle and site-integration planning assumption; Calgary charging spend is the upper anchor",
-      "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value"
+      "price_base_year": 2023,
+      "cost_boundary": "constant 2023 CAD, leaf CPI/explicit FX conversion before aggregation; excludes operations, energy, taxes, financing and residual value"
     }
   ],
   "feasibility_judgment": {
@@ -441,30 +447,30 @@
   "cost_judgment": {
     "double_deck_class_envelope_cad": {
       "low": {
-        "capital_low": 100206750.0,
-        "capital_high": 100206750.0,
+        "capital_low": 110019199.53804508,
+        "capital_high": 110019199.53804508,
         "vehicle_unit_basis": "2021 BC incentive list: BYD DD10 double-deck coach MSRP US$1.165m at assumed CAD/USD 1.35; no TransLink bid"
       },
       "central": {
-        "capital_low": 154052220.0,
-        "capital_high": 154052220.0,
+        "capital_low": 152676377.28518367,
+        "capital_high": 152676377.28518367,
         "vehicle_unit_basis": "Foothill 2024 contract: US$1.758m/bus at assumed CAD/USD 1.37"
       },
       "high": {
-        "capital_low": 296826304.4117647,
-        "capital_high": 296826304.4117647,
+        "capital_low": 292834508.4333687,
+        "capital_high": 292834508.4333687,
         "vehicle_unit_basis": "2024 Foothill actual converted to CAD plus a 25% uncertainty/supply premium"
       }
     },
     "community_shuttle_class_envelope_cad": {
       "low": {
-        "capital_low": 64025250.0,
-        "capital_high": 64025250.0,
+        "capital_low": 70721299.25557582,
+        "capital_high": 70721299.25557582,
         "vehicle_unit_basis": "2021 BC incentive list: EV Star Transit Plus with ADA MSRP US$265k at assumed CAD/USD 1.35"
       },
       "central": {
-        "capital_low": 90500000.0,
-        "capital_high": 90500000.0,
+        "capital_low": 99366003.64856116,
+        "capital_high": 99366003.64856116,
         "vehicle_unit_basis": "Calgary June-2021 order: over C$6m for 14 vehicles; midpoint fleet 189 of 171-206"
       },
       "high": {
@@ -474,7 +480,7 @@
       }
     },
     "additivity_warning": "These class envelopes are not additive to results/vancouver_transition_scenarios.json. Removing shared depot/charger allocations from the non-deck baseline is required before combining them.",
-    "price_basis_warning": "The scenarios mix nominal 2020/2021/2023/2024 evidence and explicit FX/uncertainty assumptions. They are budgets, not bids, invoices or present values."
+    "price_basis_warning": "Leaves use source-year CPI to constant 2023 CAD before aggregation; fixed FX and forward premiums remain assumptions. See deck_shuttle_price_ledger.json. These are budgets, not local bids or present values."
   },
   "unverifiable": [
     "Exact 31 December 2023 class/age/depot vehicle register",

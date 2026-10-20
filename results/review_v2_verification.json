@@ -1,0 +1,32 @@
+{
+  "review_v2_findings_closed": [
+    "V2-01",
+    "V2-02",
+    "V2-03",
+    "V2-04",
+    "V2-05",
+    "V2-06"
+  ],
+  "additional_completion_work": [
+    "official fleet/depot/power/vehicle evidence",
+    "275-trolley/5-BEB central split",
+    "25-pattern absolute-time full-city screen",
+    "incremental TCO bridge",
+    "infrastructure-inclusive environment bridge",
+    "Chicago and London fleet-class execution certificates"
+  ],
+  "tests_passed": 88,
+  "full_reproduction_log": "tmp/reproduce-all-final2.log",
+  "total_pages": 26,
+  "solution_pages": 25,
+  "ai_report_pages": [
+    26
+  ],
+  "pdf_sha256": "82d6e1b70e9c09a7dce27ff352d069a1c6526bcec11cf2b1fedcb7c33778905c",
+  "source_sha256": "31bf0ffb31cd00aa33a03598900cace7c7bf90097a6602d26a6a912413b9faf4",
+  "source_editor_match": true,
+  "layout_issues": [],
+  "closure_note": "research/remaining_evidence_closure.md",
+  "unresolved_registry": "research/data/processed/unresolved_evidence_registry.csv",
+  "scope": "All review defects closed. Publicly unavailable operational inputs remain explicitly UNVERIFIED; no citywide dispatch, firm-site-power, route winter-load, loaded-axle or hourly zero-source certificate is claimed."
+}

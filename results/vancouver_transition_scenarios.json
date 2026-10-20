@@ -3,19 +3,19 @@
   "service_baseline": {
     "source_day": "2023-11-14",
     "derived_2023_fleet_total": 1725,
-    "derived_2023_non_trolley_fleet": 1463,
+    "derived_2023_non_trolley_fleet": 1450,
     "active_non_trolley_blocks": 1502,
     "capacity_proxy_blocks_not_purchased": 193,
     "selected_range_km": 300,
     "battery_depot_block_requests": 1741,
     "double_deck_in_route_blocks": 57,
-    "scaled_battery_fleet_positions": 1630,
-    "net_new_battery_purchases": 1612,
-    "additional_active_block_requests": 224,
-    "additional_active_block_requests_pct": 15.93172119487909,
+    "scaled_battery_fleet_positions": 1615,
+    "net_new_battery_purchases": 1610,
+    "additional_active_block_requests": 222,
+    "additional_active_block_requests_pct": 15.936826992103374,
     "annual_2023_bus_km": 106868324.0,
     "fossil_service_share": 0.8957886690558847,
-    "annual_nondeck_fossil_km_estimate": 88786898.98172182
+    "annual_nondeck_fossil_km_estimate": 89615491.72168045
   },
   "fleet_count_identification": {
     "necessary_concurrent_trip_lower_bound_min_across_patterns": 586,
@@ -28,121 +28,121 @@
     {
       "year": 2024,
       "electric_share": 0.0,
-      "baseline_km": 88786898.98172182,
-      "conventional_km": 88786898.98172182,
+      "baseline_km": 89615491.72168045,
+      "conventional_km": 89615491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2025,
       "electric_share": 0.0,
-      "baseline_km": 88786898.98172182,
-      "conventional_km": 88786898.98172182,
+      "baseline_km": 89615491.72168045,
+      "conventional_km": 89615491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2026,
       "electric_share": 0.0,
-      "baseline_km": 88786898.98172182,
-      "conventional_km": 88786898.98172182,
+      "baseline_km": 89615491.72168045,
+      "conventional_km": 89615491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2027,
       "electric_share": 0.0,
-      "baseline_km": 88786898.98172182,
-      "conventional_km": 88786898.98172182,
+      "baseline_km": 89615491.72168045,
+      "conventional_km": 89615491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2028,
       "electric_share": 0.0,
-      "baseline_km": 88786898.98172182,
-      "conventional_km": 88786898.98172182,
+      "baseline_km": 89615491.72168045,
+      "conventional_km": 89615491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2029,
       "electric_share": 0.0,
-      "baseline_km": 88786898.98172182,
-      "conventional_km": 88786898.98172182,
+      "baseline_km": 89615491.72168045,
+      "conventional_km": 89615491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2030,
       "electric_share": 0.25,
-      "baseline_km": 88786898.98172182,
-      "conventional_km": 66590174.236291364,
-      "electric_km": 22196724.745430455
+      "baseline_km": 89615491.72168045,
+      "conventional_km": 67211618.79126033,
+      "electric_km": 22403872.930420112
     },
     {
       "year": 2031,
       "electric_share": 0.5,
-      "baseline_km": 88786898.98172182,
-      "conventional_km": 44393449.49086091,
-      "electric_km": 44393449.49086091
+      "baseline_km": 89615491.72168045,
+      "conventional_km": 44807745.860840224,
+      "electric_km": 44807745.860840224
     },
     {
       "year": 2032,
       "electric_share": 0.85,
-      "baseline_km": 88786898.98172182,
-      "conventional_km": 13318034.847258275,
-      "electric_km": 75468864.13446355
+      "baseline_km": 89615491.72168045,
+      "conventional_km": 13442323.75825207,
+      "electric_km": 76173167.96342838
     },
     {
       "year": 2033,
       "electric_share": 1.0,
-      "baseline_km": 88786898.98172182,
+      "baseline_km": 89615491.72168045,
       "conventional_km": 0.0,
-      "electric_km": 88786898.98172182
+      "electric_km": 89615491.72168045
     }
   ],
   "battery_replacement_stress": {
     "status": "ILLUSTRATIVE_NOT_A_PREDICTED_REPLACEMENT",
-    "batteries": 323,
+    "batteries": 322,
     "capacity_kwh": 335,
-    "added_production_t": 6275.89,
-    "renewable_mix_score_pct": -19.27438365994365
+    "added_production_t": 6256.46,
+    "renewable_mix_score_pct": -18.905702386395678
   },
   "economics": [
     {
       "case": "low",
       "beb_unit_cost_cad": 1200000.0,
       "beb_cost_basis": "all-class hardware lower bound",
-      "infrastructure_gross_cad": 2370588235.2941175,
-      "baseline_gross_pv_cad": 2274852250.858412,
+      "infrastructure_gross_cad": 2367647058.8235292,
+      "baseline_gross_pv_cad": 2293975355.754249,
       "baseline_bus_capex_cad": 735536345.3155112,
-      "plan_gross_pv_cad": 4303074983.166855,
-      "plan_bus_capex_cad": 1934400000.0,
+      "plan_gross_pv_cad": 4318264219.141689,
+      "plan_bus_capex_cad": 1932000000.0,
       "components_pv_cad": {
         "baseline_bus_capex": 627697001.1823955,
-        "baseline_om": 2049114239.9923801,
+        "baseline_om": 2068237344.8882172,
         "baseline_vehicle_residual": -401958990.3163636,
-        "plan_bus_capex": 1528452209.9198449,
-        "plan_infrastructure": 2080099964.9873507,
-        "plan_om": 1964402237.4684684,
-        "plan_vehicle_residual": -1269879429.2088084
+        "plan_bus_capex": 1526471518.9982123,
+        "plan_infrastructure": 2077519195.8000216,
+        "plan_om": 1982734778.0909307,
+        "plan_vehicle_residual": -1268461273.7474756
       },
-      "incremental_gross_pv_cad": 2028222732.308443,
-      "economic_score_gross_pct": -89.15843794000672,
-      "vehicle_residual_credit_pv_cad": 867920438.8924448,
+      "incremental_gross_pv_cad": 2024288863.3874402,
+      "economic_score_gross_pct": -88.2437057708435,
+      "vehicle_residual_credit_pv_cad": 866502283.431112,
       "grant_cases": [
         {
           "grant_fraction": 0,
-          "agency_pv_cad": 4303074983.166855,
+          "agency_pv_cad": 4318264219.141689,
           "grant_transfer_pv_cad": 0.0,
-          "agency_economic_score_vs_baseline_pct": -89.15843794000672
+          "agency_economic_score_vs_baseline_pct": -88.2437057708435
         },
         {
           "grant_fraction": 0.25,
-          "agency_pv_cad": 3400936939.440056,
-          "grant_transfer_pv_cad": 902138043.7267989,
-          "agency_economic_score_vs_baseline_pct": -49.50144292477535
+          "agency_pv_cad": 3417266540.442131,
+          "grant_transfer_pv_cad": 900997678.6995585,
+          "agency_economic_score_vs_baseline_pct": -48.967011867420375
         },
         {
           "grant_fraction": 0.5,
-          "agency_pv_cad": 2498798895.713257,
-          "grant_transfer_pv_cad": 1804276087.4535978,
-          "agency_economic_score_vs_baseline_pct": -9.844447909543979
+          "agency_pv_cad": 2516268861.7425723,
+          "grant_transfer_pv_cad": 1801995357.399117,
+          "agency_economic_score_vs_baseline_pct": -9.690317963997224
         }
       ]
     },
@@ -150,83 +150,83 @@
       "case": "central",
       "beb_unit_cost_cad": 1200000.0,
       "beb_cost_basis": "all-class hardware lower bound",
-      "infrastructure_gross_cad": 2370588235.2941175,
-      "baseline_gross_pv_cad": 2274852250.858412,
+      "infrastructure_gross_cad": 2367647058.8235292,
+      "baseline_gross_pv_cad": 2293975355.754249,
       "baseline_bus_capex_cad": 735536345.3155112,
-      "plan_gross_pv_cad": 4303074983.166855,
-      "plan_bus_capex_cad": 1934400000.0,
+      "plan_gross_pv_cad": 4318264219.141689,
+      "plan_bus_capex_cad": 1932000000.0,
       "components_pv_cad": {
         "baseline_bus_capex": 627697001.1823955,
-        "baseline_om": 2049114239.9923801,
+        "baseline_om": 2068237344.8882172,
         "baseline_vehicle_residual": -401958990.3163636,
-        "plan_bus_capex": 1528452209.9198449,
-        "plan_infrastructure": 2080099964.9873507,
-        "plan_om": 1964402237.4684684,
-        "plan_vehicle_residual": -1269879429.2088084
+        "plan_bus_capex": 1526471518.9982123,
+        "plan_infrastructure": 2077519195.8000216,
+        "plan_om": 1982734778.0909307,
+        "plan_vehicle_residual": -1268461273.7474756
       },
-      "incremental_gross_pv_cad": 2028222732.308443,
-      "economic_score_gross_pct": -89.15843794000672,
-      "vehicle_residual_credit_pv_cad": 867920438.8924448,
+      "incremental_gross_pv_cad": 2024288863.3874402,
+      "economic_score_gross_pct": -88.2437057708435,
+      "vehicle_residual_credit_pv_cad": 866502283.431112,
       "grant_cases": [
         {
           "grant_fraction": 0,
-          "agency_pv_cad": 4303074983.166855,
+          "agency_pv_cad": 4318264219.141689,
           "grant_transfer_pv_cad": 0.0,
-          "agency_economic_score_vs_baseline_pct": -89.15843794000672
+          "agency_economic_score_vs_baseline_pct": -88.2437057708435
         },
         {
           "grant_fraction": 0.25,
-          "agency_pv_cad": 3400936939.440056,
-          "grant_transfer_pv_cad": 902138043.7267989,
-          "agency_economic_score_vs_baseline_pct": -49.50144292477535
+          "agency_pv_cad": 3417266540.442131,
+          "grant_transfer_pv_cad": 900997678.6995585,
+          "agency_economic_score_vs_baseline_pct": -48.967011867420375
         },
         {
           "grant_fraction": 0.5,
-          "agency_pv_cad": 2498798895.713257,
-          "grant_transfer_pv_cad": 1804276087.4535978,
-          "agency_economic_score_vs_baseline_pct": -9.844447909543979
+          "agency_pv_cad": 2516268861.7425723,
+          "grant_transfer_pv_cad": 1801995357.399117,
+          "agency_economic_score_vs_baseline_pct": -9.690317963997224
         }
       ]
     },
     {
       "case": "high",
-      "beb_unit_cost_cad": 2003881.307284998,
+      "beb_unit_cost_cad": 1982342.2154131646,
       "beb_cost_basis": "identified standard/articulated project-envelope weighted mean",
       "infrastructure_gross_cad": 6368332815.252305,
-      "baseline_gross_pv_cad": 2274852250.858412,
+      "baseline_gross_pv_cad": 2293975355.754249,
       "baseline_bus_capex_cad": 735536345.3155112,
-      "plan_gross_pv_cad": 7984160221.116728,
-      "plan_bus_capex_cad": 3230256667.3434167,
+      "plan_gross_pv_cad": 7996922294.514265,
+      "plan_bus_capex_cad": 3191570966.815195,
       "components_pv_cad": {
         "baseline_bus_capex": 627697001.1823955,
-        "baseline_om": 2049114239.9923801,
+        "baseline_om": 2068237344.8882172,
         "baseline_vehicle_residual": -401958990.3163636,
-        "plan_bus_capex": 2552364010.4473524,
+        "plan_bus_capex": 2521657443.946679,
         "plan_infrastructure": 5587967015.448635,
-        "plan_om": 1964402237.4684684,
-        "plan_vehicle_residual": -2120573042.247728
+        "plan_om": 1982734778.0909307,
+        "plan_vehicle_residual": -2095436942.9719799
       },
-      "incremental_gross_pv_cad": 5709307970.258316,
-      "economic_score_gross_pct": -250.97489158269147,
-      "vehicle_residual_credit_pv_cad": 1718614051.9313645,
+      "incremental_gross_pv_cad": 5702946938.7600155,
+      "economic_score_gross_pct": -248.60541437180837,
+      "vehicle_residual_credit_pv_cad": 1693477952.6556163,
       "grant_cases": [
         {
           "grant_fraction": 0,
-          "agency_pv_cad": 7984160221.116728,
+          "agency_pv_cad": 7996922294.514265,
           "grant_transfer_pv_cad": 0.0,
-          "agency_economic_score_vs_baseline_pct": -250.97489158269147
+          "agency_economic_score_vs_baseline_pct": -248.60541437180837
         },
         {
           "grant_fraction": 0.25,
-          "agency_pv_cad": 5949077464.642731,
-          "grant_transfer_pv_cad": 2035082756.4739969,
-          "agency_economic_score_vs_baseline_pct": -161.51489453426507
+          "agency_pv_cad": 5969516179.665437,
+          "grant_transfer_pv_cad": 2027406114.8488286,
+          "agency_economic_score_vs_baseline_pct": -160.22581998064604
         },
         {
           "grant_fraction": 0.5,
-          "agency_pv_cad": 3913994708.168734,
-          "grant_transfer_pv_cad": 4070165512.9479938,
-          "agency_economic_score_vs_baseline_pct": -72.05489748583868
+          "agency_pv_cad": 3942110064.816608,
+          "grant_transfer_pv_cad": 4054812229.697657,
+          "agency_economic_score_vs_baseline_pct": -71.8462255894837
         }
       ]
     }
@@ -235,54 +235,54 @@
     {
       "case": "renewable_fuel_mix",
       "baseline_operating_g_per_km": 302.0,
-      "baseline_lifecycle_boundary_t": 376212.79239122214,
-      "plan_lifecycle_boundary_t": 442449.5993744936,
-      "environment_score_boundary_pct": -17.606208061737586,
+      "baseline_lifecycle_boundary_t": 379149.3250616355,
+      "plan_lifecycle_boundary_t": 444573.70805781626,
+      "environment_score_boundary_pct": -17.25557153122854,
       "baseline_production_t": 61552.022399999994,
-      "plan_production_t": 189632.456,
-      "baseline_operating_t": 268136.4349247999,
-      "plan_operating_t": 202807.03465404897,
-      "baseline_maintenance_t": 46524.33506642224,
-      "plan_maintenance_t": 50010.10872044464
+      "plan_production_t": 189397.18000000002,
+      "baseline_operating_t": 270638.78499947494,
+      "plan_operating_t": 204699.7061906625,
+      "baseline_maintenance_t": 46958.51766216056,
+      "plan_maintenance_t": 50476.82186715373
     },
     {
       "case": "rng_heavy",
       "baseline_operating_g_per_km": 960.0,
-      "baseline_lifecycle_boundary_t": 960430.5876909515,
-      "plan_lifecycle_boundary_t": 874770.7678962934,
-      "environment_score_boundary_pct": 8.91889751247925,
+      "baseline_lifecycle_boundary_t": 968819.2605902929,
+      "plan_lifecycle_boundary_t": 880929.4603490226,
+      "environment_score_boundary_pct": 9.071846918869031,
       "baseline_production_t": 61552.022399999994,
-      "plan_production_t": 189632.456,
-      "baseline_operating_t": 852354.2302245293,
-      "plan_operating_t": 635128.2031758488,
-      "baseline_maintenance_t": 46524.33506642224,
-      "plan_maintenance_t": 50010.10872044464
+      "plan_production_t": 189397.18000000002,
+      "baseline_operating_t": 860308.7205281323,
+      "plan_operating_t": 641055.4584818688,
+      "baseline_maintenance_t": 46958.51766216056,
+      "plan_maintenance_t": 50476.82186715373
     },
     {
       "case": "weighted_mix",
       "baseline_operating_g_per_km": 1233.0,
-      "baseline_lifecycle_boundary_t": 1202818.8219110523,
-      "plan_lifecycle_boundary_t": 1054138.0612191681,
-      "environment_score_boundary_pct": 12.361027112600258,
+      "baseline_lifecycle_boundary_t": 1213469.5529904806,
+      "plan_lifecycle_boundary_t": 1061970.6767251615,
+      "environment_score_boundary_pct": 12.484769468831292,
       "baseline_production_t": 61552.022399999994,
-      "plan_production_t": 189632.456,
-      "baseline_operating_t": 1094742.46444463,
-      "plan_operating_t": 814495.4964987234,
-      "baseline_maintenance_t": 46524.33506642224,
-      "plan_maintenance_t": 50010.10872044464
+      "plan_production_t": 189397.18000000002,
+      "baseline_operating_t": 1104959.01292832,
+      "plan_operating_t": 822096.6748580078,
+      "baseline_maintenance_t": 46958.51766216056,
+      "plan_maintenance_t": 50476.82186715373
     },
     {
       "case": "fossil_diesel",
       "baseline_operating_g_per_km": 1580.0,
-      "baseline_lifecycle_boundary_t": 1510909.3613776271,
-      "plan_lifecycle_boundary_t": 1282125.060424433,
-      "environment_score_boundary_pct": 15.142159205671447,
+      "baseline_lifecycle_boundary_t": 1524435.3092647116,
+      "plan_lifecycle_boundary_t": 1292085.3363680926,
+      "environment_score_boundary_pct": 15.241707633280255,
       "baseline_production_t": 61552.022399999994,
-      "plan_production_t": 189632.456,
-      "baseline_operating_t": 1402833.0039112049,
-      "plan_operating_t": 1042482.4957039886,
-      "baseline_maintenance_t": 46524.33506642224,
-      "plan_maintenance_t": 50010.10872044464
+      "plan_production_t": 189397.18000000002,
+      "baseline_operating_t": 1415924.769202551,
+      "plan_operating_t": 1052211.334500939,
+      "baseline_maintenance_t": 46958.51766216056,
+      "plan_maintenance_t": 50476.82186715373
     }
   ],
   "roadmap": [
@@ -324,14 +324,14 @@
     {
       "year": 2029,
       "baseline_bus_purchases": 82,
-      "plan_bus_purchases": 323,
+      "plan_bus_purchases": 322,
       "plan_electric_share_pct": 0.0,
       "infrastructure_phase": true
     },
     {
       "year": 2030,
       "baseline_bus_purchases": 81,
-      "plan_bus_purchases": 323,
+      "plan_bus_purchases": 322,
       "plan_electric_share_pct": 25.0,
       "infrastructure_phase": true
     },
@@ -363,10 +363,10 @@
       1711,
       1733
     ],
-    "existing_trolleys": 262,
-    "existing_beb_scenario_asset_count": 18,
+    "existing_trolleys": 275,
+    "existing_beb_scenario_asset_count": 5,
     "existing_beb_in_service_approx": 5,
-    "existing_beb_note": "18 is an unverified cross-date subtraction scenario, not a delivery record. About five were reported in service; 1725 and 1711--1733 are scenario choices, not verified stock or bounds.",
+    "existing_beb_note": "Central split is the same-day approximate 275 trolleys plus five BEBs; 280 electric assets is the reported total. The 262/18 cross-date subtraction is retained only as stress. 1725 and 1711--1733 remain scenario stock choices.",
     "double_deck_blocks_excluded": 57,
     "baseline_natural_renewal_fraction": 0.5882352941176471,
     "conventional_bus_envelope_cad": 901392.5800435187,

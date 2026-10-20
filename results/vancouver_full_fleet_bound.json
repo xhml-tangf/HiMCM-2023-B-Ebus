@@ -1,77 +1,77 @@
 {
   "status": "CONDITIONAL_CLASS_INVENTORY_COST_SCENARIO_NOT_DISPATCH_CERTIFIED",
   "pv_basis": "constant 2023 CAD via Bank of Canada CPI; 3% real discount. CPI is not a construction-cost index.",
-  "method": "1419 heavy positions is a retained proportional inventory scenario, not a vehicle requirement bound. The 18 existing BEBs and initial 1725 assets are unverified stock assumptions, not delivery records.",
+  "method": "1406 heavy positions is a retained proportional inventory scenario, not a vehicle requirement bound. The central 2023 split uses the same-day approximate 275 trolleys plus five BEBs; 262/18 is a stress split. The initial 1,725 total remains a scenario choice.",
   "annual_service_ledger": [
     {
       "year": 2024,
       "electric_share": 0.0,
-      "baseline_km": 94236898.98172182,
-      "conventional_km": 94236898.98172182,
+      "baseline_km": 95065491.72168045,
+      "conventional_km": 95065491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2025,
       "electric_share": 0.0,
-      "baseline_km": 94236898.98172182,
-      "conventional_km": 94236898.98172182,
+      "baseline_km": 95065491.72168045,
+      "conventional_km": 95065491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2026,
       "electric_share": 0.0,
-      "baseline_km": 94236898.98172182,
-      "conventional_km": 94236898.98172182,
+      "baseline_km": 95065491.72168045,
+      "conventional_km": 95065491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2027,
       "electric_share": 0.0,
-      "baseline_km": 94236898.98172182,
-      "conventional_km": 94236898.98172182,
+      "baseline_km": 95065491.72168045,
+      "conventional_km": 95065491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2028,
       "electric_share": 0.0,
-      "baseline_km": 94236898.98172182,
-      "conventional_km": 94236898.98172182,
+      "baseline_km": 95065491.72168045,
+      "conventional_km": 95065491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2029,
       "electric_share": 0.0,
-      "baseline_km": 94236898.98172182,
-      "conventional_km": 94236898.98172182,
+      "baseline_km": 95065491.72168045,
+      "conventional_km": 95065491.72168045,
       "electric_km": 0.0
     },
     {
       "year": 2030,
       "electric_share": 0.25,
-      "baseline_km": 94236898.98172182,
-      "conventional_km": 70677674.23629136,
-      "electric_km": 23559224.745430455
+      "baseline_km": 95065491.72168045,
+      "conventional_km": 71299118.79126033,
+      "electric_km": 23766372.930420112
     },
     {
       "year": 2031,
       "electric_share": 0.5,
-      "baseline_km": 94236898.98172182,
-      "conventional_km": 47118449.49086091,
-      "electric_km": 47118449.49086091
+      "baseline_km": 95065491.72168045,
+      "conventional_km": 47532745.860840224,
+      "electric_km": 47532745.860840224
     },
     {
       "year": 2032,
       "electric_share": 0.85,
-      "baseline_km": 94236898.98172182,
-      "conventional_km": 14135534.847258275,
-      "electric_km": 80101364.13446355
+      "baseline_km": 95065491.72168045,
+      "conventional_km": 14259823.75825207,
+      "electric_km": 80805667.96342838
     },
     {
       "year": 2033,
       "electric_share": 1.0,
-      "baseline_km": 94236898.98172182,
+      "baseline_km": 95065491.72168045,
       "conventional_km": 0.0,
-      "electric_km": 94236898.98172182
+      "electric_km": 95065491.72168045
     }
   ],
   "annual_class_ledger": [
@@ -80,8 +80,8 @@
       "electric_service_share": 0.0,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
-          "conventional_km": 75133379.98172182,
+          "annual_scored_km": 75961972.72168045,
+          "conventional_km": 75961972.72168045,
           "electric_km": 0.0,
           "electric_grid_mwh_at_90pct_efficiency": 0.0
         },
@@ -132,8 +132,8 @@
       "electric_service_share": 0.0,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
-          "conventional_km": 75133379.98172182,
+          "annual_scored_km": 75961972.72168045,
+          "conventional_km": 75961972.72168045,
           "electric_km": 0.0,
           "electric_grid_mwh_at_90pct_efficiency": 0.0
         },
@@ -184,8 +184,8 @@
       "electric_service_share": 0.0,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
-          "conventional_km": 75133379.98172182,
+          "annual_scored_km": 75961972.72168045,
+          "conventional_km": 75961972.72168045,
           "electric_km": 0.0,
           "electric_grid_mwh_at_90pct_efficiency": 0.0
         },
@@ -236,8 +236,8 @@
       "electric_service_share": 0.0,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
-          "conventional_km": 75133379.98172182,
+          "annual_scored_km": 75961972.72168045,
+          "conventional_km": 75961972.72168045,
           "electric_km": 0.0,
           "electric_grid_mwh_at_90pct_efficiency": 0.0
         },
@@ -288,8 +288,8 @@
       "electric_service_share": 0.0,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
-          "conventional_km": 75133379.98172182,
+          "annual_scored_km": 75961972.72168045,
+          "conventional_km": 75961972.72168045,
           "electric_km": 0.0,
           "electric_grid_mwh_at_90pct_efficiency": 0.0
         },
@@ -340,8 +340,8 @@
       "electric_service_share": 0.0,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
-          "conventional_km": 75133379.98172182,
+          "annual_scored_km": 75961972.72168045,
+          "conventional_km": 75961972.72168045,
           "electric_km": 0.0,
           "electric_grid_mwh_at_90pct_efficiency": 0.0
         },
@@ -392,10 +392,10 @@
       "electric_service_share": 0.25,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
-          "conventional_km": 56350034.986291364,
-          "electric_km": 18783344.995430455,
-          "electric_grid_mwh_at_90pct_efficiency": 33392.6133252097
+          "annual_scored_km": 75961972.72168045,
+          "conventional_km": 56971479.54126033,
+          "electric_km": 18990493.180420112,
+          "electric_grid_mwh_at_90pct_efficiency": 33760.87676519131
         },
         "double_deck": {
           "annual_scored_km": 5450000.0,
@@ -444,10 +444,10 @@
       "electric_service_share": 0.5,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
-          "conventional_km": 37566689.99086091,
-          "electric_km": 37566689.99086091,
-          "electric_grid_mwh_at_90pct_efficiency": 66785.2266504194
+          "annual_scored_km": 75961972.72168045,
+          "conventional_km": 37980986.360840224,
+          "electric_km": 37980986.360840224,
+          "electric_grid_mwh_at_90pct_efficiency": 67521.75353038262
         },
         "double_deck": {
           "annual_scored_km": 5450000.0,
@@ -496,10 +496,10 @@
       "electric_service_share": 0.85,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
-          "conventional_km": 11270006.997258274,
-          "electric_km": 63863372.98446354,
-          "electric_grid_mwh_at_90pct_efficiency": 113534.88530571297
+          "annual_scored_km": 75961972.72168045,
+          "conventional_km": 11394295.90825207,
+          "electric_km": 64567676.81342838,
+          "electric_grid_mwh_at_90pct_efficiency": 114786.98100165045
         },
         "double_deck": {
           "annual_scored_km": 5450000.0,
@@ -548,10 +548,10 @@
       "electric_service_share": 1.0,
       "classes": {
         "heavy": {
-          "annual_scored_km": 75133379.98172182,
+          "annual_scored_km": 75961972.72168045,
           "conventional_km": 0.0,
-          "electric_km": 75133379.98172182,
-          "electric_grid_mwh_at_90pct_efficiency": 133570.4533008388
+          "electric_km": 75961972.72168045,
+          "electric_grid_mwh_at_90pct_efficiency": 135043.50706076523
         },
         "double_deck": {
           "annual_scored_km": 5450000.0,
@@ -605,21 +605,21 @@
     "percentage_denominator": "scored conversion service only; common trolley and retained BEB activity omitted"
   },
   "classes": {
-    "heavy_non_deck": 1419,
+    "heavy_non_deck": 1406,
     "double_deck": 57,
     "community_shuttle_midpoint": 189,
-    "existing_beb": 18
+    "existing_beb": 5
   },
   "service_km": {
-    "current_non_deck_fossil_proxy": 88786898.98172182,
+    "current_non_deck_fossil_proxy": 89615491.72168045,
     "double_deck_proxy": 5450000.0,
-    "full_scored_proxy": 94236898.98172182,
+    "full_scored_proxy": 95065491.72168045,
     "community_shuttle_official_2023": 13653519
   },
   "economics": [
     {
       "case": "low",
-      "heavy_positions_after_service_scale": 1419,
+      "heavy_positions_after_service_scale": 1406,
       "heavy_purchases_after_existing_beb": 1401,
       "shuttle_fleet": 171,
       "double_deck_fleet": 57,
@@ -630,94 +630,94 @@
       "baseline_heavy_unit_cost_cad": 901392.5800435187,
       "baseline_shuttle_unit_cost_cad": 288224.21205592965,
       "heavy_unit_cost_cad": 1200000.0,
-      "deck_unit_cost_cad": 1536164.944047249,
-      "shuttle_unit_cost_cad": 357750.0,
-      "shared_depot_cad": 2086764705.8823528,
-      "deck_core_capital_cad": 97875756.79981348,
-      "shuttle_core_capital_cad": 64025250.0,
-      "additional_class_capital_cad": 13164354.989120297,
-      "capital_gross_nominal_cad": 3929865712.682166,
-      "common_trolley_capital_nominal_cad": 575149510.2020099,
-      "total_modeled_capital_nominal_cad": 4505015222.884176,
-      "baseline_gross_pv_cad": 2626957575.9414635,
-      "plan_gross_pv_cad": 4412207121.574697,
-      "economic_score_gross_pct": -67.95882666637377,
-      "incremental_gross_pv_cad": 1785249545.633233,
+      "deck_unit_cost_cad": 1744898.2375095629,
+      "shuttle_unit_cost_cad": 396908.1827811452,
+      "shared_depot_cad": 2067647058.8235292,
+      "deck_core_capital_cad": 110019199.53804508,
+      "shuttle_core_capital_cad": 70721299.25557582,
+      "additional_class_capital_cad": 13410000.0,
+      "capital_gross_2023_cad": 3929587557.6171503,
+      "common_trolley_capital_2023_cad": 575149510.2020099,
+      "total_modeled_capital_2023_cad": 4504737067.81916,
+      "baseline_gross_pv_cad": 2646080680.8373003,
+      "plan_gross_pv_cad": 4415861022.942172,
+      "economic_score_gross_pct": -66.88308315470032,
+      "incremental_gross_pv_cad": 1769780342.1048717,
       "components_pv_cad": {
         "baseline_vehicle_capex": 575672324.9941993,
-        "baseline_om": 2174894875.8298535,
+        "baseline_om": 2194017980.7256904,
         "baseline_residual": -368511764.5972537,
         "plan_heavy_vehicle_capex": 1328371519.3673356,
-        "plan_deck_vehicle_capex": 68198428.28667478,
-        "plan_shuttle_vehicle_capex": 47622032.91173833,
+        "plan_deck_vehicle_capex": 77465195.24447696,
+        "plan_shuttle_vehicle_capex": 52834589.91849602,
         "common_trolley_replacement_capex": 515468327.43891585,
-        "plan_shared_heavy_depot": 1831055738.4100811,
-        "plan_class_charger_infrastructure": 11551214.987175018,
-        "plan_om": 2084983002.3897343,
-        "plan_residual": -1204476954.4927075,
+        "plan_shared_heavy_depot": 1814280738.6924412,
+        "plan_class_charger_infrastructure": 11766759.032708842,
+        "plan_om": 2103315543.0121963,
+        "plan_residual": -1217075462.0401473,
         "common_trolley_replacement_residual": -270566187.7242514
       },
       "grant_cases": [
         {
           "grant_fraction": 0.0,
-          "agency_pv_cad": 4412207121.574697,
-          "agency_economic_score_vs_baseline_pct": -67.95882666637377
+          "agency_pv_cad": 4415861022.942172,
+          "agency_economic_score_vs_baseline_pct": -66.88308315470032
         },
         {
           "grant_fraction": 0.25,
-          "agency_pv_cad": 3590507388.0839453,
-          "agency_economic_score_vs_baseline_pct": -36.67930616645606
+          "agency_pv_cad": 3594681322.3783073,
+          "agency_economic_score_vs_baseline_pct": -35.84927127924312
         },
         {
           "grant_fraction": 0.5,
-          "agency_pv_cad": 2768807654.593194,
-          "agency_economic_score_vs_baseline_pct": -5.399785666538354
+          "agency_pv_cad": 2773501621.8144426,
+          "agency_economic_score_vs_baseline_pct": -4.815459403785923
         }
       ],
-      "grant_eligible_capital_pv_cad": 3286798933.963005,
+      "grant_eligible_capital_pv_cad": 3284718802.255459,
       "grant_scope": "Incremental route-conversion capital only. Common trolley replacement is excluded because the same electric renewal is required in the ordinary-renewal comparator.",
       "grant_cases_with_common_trolley_capital": [
         {
           "grant_fraction": 0.0,
-          "agency_pv_cad": 4412207121.574697,
-          "agency_economic_score_vs_baseline_pct": -67.95882666637377
+          "agency_pv_cad": 4415861022.942172,
+          "agency_economic_score_vs_baseline_pct": -66.88308315470032
         },
         {
           "grant_fraction": 0.25,
-          "agency_pv_cad": 3461640306.2242165,
-          "agency_economic_score_vs_baseline_pct": -31.773742291350665
+          "agency_pv_cad": 3465814240.5185785,
+          "agency_economic_score_vs_baseline_pct": -30.97915969145316
         },
         {
           "grant_fraction": 0.5,
-          "agency_pv_cad": 2511073490.8737364,
-          "agency_economic_score_vs_baseline_pct": 4.411342083672436
+          "agency_pv_cad": 2515767458.094985,
+          "agency_economic_score_vs_baseline_pct": 4.924763771793996
         }
       ],
       "grant_cases_symmetric_common_trolley": [
         {
           "grant_fraction": 0.0,
-          "baseline_agency_pv_cad": 2626957575.9414635,
-          "plan_agency_pv_cad": 4412207121.574697,
-          "agency_economic_score_vs_baseline_pct": -67.95882666637377
+          "baseline_agency_pv_cad": 2646080680.8373003,
+          "plan_agency_pv_cad": 4415861022.942172,
+          "agency_economic_score_vs_baseline_pct": -66.88308315470032
         },
         {
           "grant_fraction": 0.25,
-          "baseline_agency_pv_cad": 2498090494.0817347,
-          "plan_agency_pv_cad": 3461640306.2242165,
-          "agency_economic_score_vs_baseline_pct": -38.57145345315723
+          "baseline_agency_pv_cad": 2517213598.9775715,
+          "plan_agency_pv_cad": 3465814240.5185785,
+          "agency_economic_score_vs_baseline_pct": -37.68455096247314
         },
         {
           "grant_fraction": 0.5,
-          "baseline_agency_pv_cad": 2369223412.2220054,
-          "plan_agency_pv_cad": 2511073490.8737364,
-          "agency_economic_score_vs_baseline_pct": -5.987197236021536
+          "baseline_agency_pv_cad": 2388346517.117842,
+          "plan_agency_pv_cad": 2515767458.094985,
+          "agency_economic_score_vs_baseline_pct": -5.335111135000173
         }
       ],
       "grant_extension_note": "grant_cases_with_common_trolley_capital applies a common-trolley grant only to the plan and is retained only as an intentionally asymmetric policy counterfactual. The symmetric_common_trolley case applies the same percentage to both comparator and plan."
     },
     {
       "case": "central",
-      "heavy_positions_after_service_scale": 1419,
+      "heavy_positions_after_service_scale": 1406,
       "heavy_purchases_after_existing_beb": 1401,
       "shuttle_fleet": 189,
       "double_deck_fleet": 57,
@@ -729,93 +729,93 @@
       "baseline_shuttle_unit_cost_cad": 288224.21205592965,
       "heavy_unit_cost_cad": 1200000.0,
       "deck_unit_cost_cad": 2352434.7932856698,
-      "shuttle_unit_cost_cad": 428571.4285714286,
-      "shared_depot_cad": 2086764705.8823528,
-      "deck_core_capital_cad": 150468682.19148272,
-      "shuttle_core_capital_cad": 90500000.0,
-      "additional_class_capital_cad": 25879898.974199563,
-      "capital_gross_nominal_cad": 4008933388.0738354,
-      "common_trolley_capital_nominal_cad": 575149510.2020099,
-      "total_modeled_capital_nominal_cad": 4584082898.275846,
-      "baseline_gross_pv_cad": 2624839942.469086,
-      "plan_gross_pv_cad": 4430076802.846726,
-      "economic_score_gross_pct": -68.7751215291064,
-      "incremental_gross_pv_cad": 1805236860.3776402,
+      "shuttle_unit_cost_cad": 475481.50078603794,
+      "shared_depot_cad": 2067647058.8235292,
+      "deck_core_capital_cad": 152676377.28518367,
+      "shuttle_core_capital_cad": 99366003.64856116,
+      "additional_class_capital_cad": 28087594.06790048,
+      "capital_gross_2023_cad": 4000889439.757274,
+      "common_trolley_capital_2023_cad": 575149510.2020099,
+      "total_modeled_capital_2023_cad": 4576038949.959285,
+      "baseline_gross_pv_cad": 2643963047.3649235,
+      "plan_gross_pv_cad": 4434461179.193175,
+      "economic_score_gross_pct": -67.7202404024796,
+      "incremental_gross_pv_cad": 1790498131.8282518,
       "components_pv_cad": {
         "baseline_vehicle_capex": 569686972.3472923,
-        "baseline_om": 2174894875.8298535,
+        "baseline_om": 2194017980.7256904,
         "baseline_residual": -364644045.422724,
         "plan_heavy_vehicle_capex": 1328371519.3673356,
         "plan_deck_vehicle_capex": 104436933.13706869,
-        "plan_shuttle_vehicle_capex": 63053411.56179963,
+        "plan_shuttle_vehicle_capex": 69955038.43786314,
         "common_trolley_replacement_capex": 515468327.43891585,
-        "plan_shared_heavy_depot": 1831055738.4100811,
-        "plan_class_charger_infrastructure": 22708615.586894486,
-        "plan_om": 2084983002.3897343,
-        "plan_residual": -1249434557.3208513,
+        "plan_shared_heavy_depot": 1814280738.6924412,
+        "plan_class_charger_infrastructure": 24645783.0876605,
+        "plan_om": 2103315543.0121963,
+        "plan_residual": -1255446516.2560542,
         "common_trolley_replacement_residual": -270566187.7242514
       },
       "grant_cases": [
         {
           "grant_fraction": 0.0,
-          "agency_pv_cad": 4430076802.846726,
-          "agency_economic_score_vs_baseline_pct": -68.7751215291064
+          "agency_pv_cad": 4434461179.193175,
+          "agency_economic_score_vs_baseline_pct": -67.7202404024796
         },
         {
           "grant_fraction": 0.25,
-          "agency_pv_cad": 3592670248.3309317,
-          "agency_economic_score_vs_baseline_pct": -36.87197418031687
+          "agency_pv_cad": 3599038676.012583,
+          "agency_economic_score_vs_baseline_pct": -36.1228811272353
         },
         {
           "grant_fraction": 0.5,
-          "agency_pv_cad": 2755263693.815137,
-          "agency_economic_score_vs_baseline_pct": -4.968826831527339
+          "agency_pv_cad": 2763616172.8319907,
+          "agency_economic_score_vs_baseline_pct": -4.525521851991018
         }
       ],
-      "grant_eligible_capital_pv_cad": 3349626218.0631795,
+      "grant_eligible_capital_pv_cad": 3341690012.722369,
       "grant_scope": "Incremental route-conversion capital only. Common trolley replacement is excluded because the same electric renewal is required in the ordinary-renewal comparator.",
       "grant_cases_with_common_trolley_capital": [
         {
           "grant_fraction": 0.0,
-          "agency_pv_cad": 4430076802.846726,
-          "agency_economic_score_vs_baseline_pct": -68.7751215291064
+          "agency_pv_cad": 4434461179.193175,
+          "agency_economic_score_vs_baseline_pct": -67.7202404024796
         },
         {
           "grant_fraction": 0.25,
-          "agency_pv_cad": 3463803166.471203,
-          "agency_economic_score_vs_baseline_pct": -31.962452659606218
+          "agency_pv_cad": 3470171594.152854,
+          "agency_economic_score_vs_baseline_pct": -31.248868913329257
         },
         {
           "grant_fraction": 0.5,
-          "agency_pv_cad": 2497529530.095679,
-          "agency_economic_score_vs_baseline_pct": 4.850216209893977
+          "agency_pv_cad": 2505882009.1125326,
+          "agency_economic_score_vs_baseline_pct": 5.222502575821088
         }
       ],
       "grant_cases_symmetric_common_trolley": [
         {
           "grant_fraction": 0.0,
-          "baseline_agency_pv_cad": 2624839942.469086,
-          "plan_agency_pv_cad": 4430076802.846726,
-          "agency_economic_score_vs_baseline_pct": -68.7751215291064
+          "baseline_agency_pv_cad": 2643963047.3649235,
+          "plan_agency_pv_cad": 4434461179.193175,
+          "agency_economic_score_vs_baseline_pct": -67.7202404024796
         },
         {
           "grant_fraction": 0.25,
-          "baseline_agency_pv_cad": 2495972860.6093574,
-          "plan_agency_pv_cad": 3463803166.471203,
-          "agency_economic_score_vs_baseline_pct": -38.77567425254629
+          "baseline_agency_pv_cad": 2515095965.5051947,
+          "plan_agency_pv_cad": 3470171594.152854,
+          "agency_economic_score_vs_baseline_pct": -37.97372512805165
         },
         {
           "grant_fraction": 0.5,
-          "baseline_agency_pv_cad": 2367105778.749628,
-          "plan_agency_pv_cad": 2497529530.095679,
-          "agency_economic_score_vs_baseline_pct": -5.509840435392128
+          "baseline_agency_pv_cad": 2386228883.6454654,
+          "plan_agency_pv_cad": 2505882009.1125326,
+          "agency_economic_score_vs_baseline_pct": -5.01431888144242
         }
       ],
       "grant_extension_note": "grant_cases_with_common_trolley_capital applies a common-trolley grant only to the plan and is retained only as an intentionally asymmetric policy counterfactual. The symmetric_common_trolley case applies the same percentage to both comparator and plan."
     },
     {
       "case": "high",
-      "heavy_positions_after_service_scale": 1419,
+      "heavy_positions_after_service_scale": 1406,
       "heavy_purchases_after_existing_beb": 1401,
       "shuttle_fleet": 206,
       "double_deck_fleet": 57,
@@ -826,87 +826,87 @@
       "baseline_heavy_unit_cost_cad": 901392.5800435187,
       "baseline_shuttle_unit_cost_cad": 288224.21205592965,
       "heavy_unit_cost_cad": 1994549.109032994,
-      "deck_unit_cost_cad": 2940543.491607087,
+      "deck_unit_cost_cad": 2940543.491607088,
       "shuttle_unit_cost_cad": 650000.0,
-      "shared_depot_cad": 2086764705.8823528,
-      "deck_core_capital_cad": 289921578.9594342,
+      "shared_depot_cad": 2067647058.8235292,
+      "deck_core_capital_cad": 292834508.4333687,
       "shuttle_core_capital_cad": 195700000.0,
-      "additional_class_capital_cad": 184110599.93783027,
-      "capital_gross_nominal_cad": 5366749586.597012,
-      "common_trolley_capital_nominal_cad": 575149510.2020099,
-      "total_modeled_capital_nominal_cad": 5941899096.799022,
-      "baseline_gross_pv_cad": 2622964307.001077,
-      "plan_gross_pv_cad": 4726412504.759631,
-      "economic_score_gross_pct": -80.19355018076844,
-      "incremental_gross_pv_cad": 2103448197.758554,
+      "additional_class_capital_cad": 187023529.41176468,
+      "capital_gross_2023_cad": 5350544869.012123,
+      "common_trolley_capital_2023_cad": 575149510.2020099,
+      "total_modeled_capital_2023_cad": 5925694379.214133,
+      "baseline_gross_pv_cad": 2642087411.896914,
+      "plan_gross_pv_cad": 4730526029.199059,
+      "economic_score_gross_pct": -79.04502356349855,
+      "incremental_gross_pv_cad": 2088438617.3021445,
       "components_pv_cad": {
         "baseline_vehicle_capex": 564456521.7952634,
-        "baseline_om": 2174894875.8298535,
+        "baseline_om": 2194017980.7256904,
         "baseline_residual": -361289230.338704,
         "plan_heavy_vehicle_capex": 2207918525.349103,
-        "plan_deck_vehicle_capex": 130546166.42133585,
+        "plan_deck_vehicle_capex": 130546166.42133589,
         "plan_shuttle_vehicle_capex": 104237953.15923403,
         "common_trolley_replacement_capex": 515468327.43891585,
-        "plan_shared_heavy_depot": 1831055738.4100811,
-        "plan_class_charger_infrastructure": 161549967.54928476,
-        "plan_om": 2084983002.3897343,
+        "plan_shared_heavy_depot": 1814280738.6924412,
+        "plan_class_charger_infrastructure": 164105951.08389038,
+        "plan_om": 2103315543.0121963,
         "plan_residual": -2038780988.2338068,
         "common_trolley_replacement_residual": -270566187.7242514
       },
       "grant_cases": [
         {
           "grant_fraction": 0.0,
-          "agency_pv_cad": 4726412504.759631,
-          "agency_economic_score_vs_baseline_pct": -80.19355018076844
+          "agency_pv_cad": 4730526029.199059,
+          "agency_economic_score_vs_baseline_pct": -79.04502356349855
         },
         {
           "grant_fraction": 0.25,
-          "agency_pv_cad": 3617585417.0373716,
-          "agency_economic_score_vs_baseline_pct": -37.91973483518264
+          "agency_pv_cad": 3625253695.5225573,
+          "agency_economic_score_vs_baseline_pct": -37.211724305509215
         },
         {
           "grant_fraction": 0.5,
-          "agency_pv_cad": 2508758329.3151116,
-          "agency_economic_score_vs_baseline_pct": 4.354080510403173
+          "agency_pv_cad": 2519981361.8460565,
+          "agency_economic_score_vs_baseline_pct": 4.621574952480102
         }
       ],
-      "grant_eligible_capital_pv_cad": 4435308350.889039,
+      "grant_eligible_capital_pv_cad": 4421089334.706004,
       "grant_scope": "Incremental route-conversion capital only. Common trolley replacement is excluded because the same electric renewal is required in the ordinary-renewal comparator.",
       "grant_cases_with_common_trolley_capital": [
         {
           "grant_fraction": 0.0,
-          "agency_pv_cad": 4726412504.759631,
-          "agency_economic_score_vs_baseline_pct": -80.19355018076844
+          "agency_pv_cad": 4730526029.199059,
+          "agency_economic_score_vs_baseline_pct": -79.04502356349855
         },
         {
           "grant_fraction": 0.25,
-          "agency_pv_cad": 3488718335.1776423,
-          "agency_economic_score_vs_baseline_pct": -33.00670260230917
+          "agency_pv_cad": 3496386613.6628284,
+          "agency_economic_score_vs_baseline_pct": -32.334251997838386
         },
         {
           "grant_fraction": 0.5,
-          "agency_pv_cad": 2251024165.5956535,
-          "agency_economic_score_vs_baseline_pct": 14.180144976150105
+          "agency_pv_cad": 2262247198.1265984,
+          "agency_economic_score_vs_baseline_pct": 14.37651956782177
         }
       ],
       "grant_cases_symmetric_common_trolley": [
         {
           "grant_fraction": 0.0,
-          "baseline_agency_pv_cad": 2622964307.001077,
-          "plan_agency_pv_cad": 4726412504.759631,
-          "agency_economic_score_vs_baseline_pct": -80.19355018076844
+          "baseline_agency_pv_cad": 2642087411.896914,
+          "plan_agency_pv_cad": 4730526029.199059,
+          "agency_economic_score_vs_baseline_pct": -79.04502356349855
         },
         {
           "grant_fraction": 0.25,
-          "baseline_agency_pv_cad": 2494097225.1413484,
-          "plan_agency_pv_cad": 3488718335.1776423,
-          "agency_economic_score_vs_baseline_pct": -39.87900311223535
+          "baseline_agency_pv_cad": 2513220330.037185,
+          "plan_agency_pv_cad": 3496386613.6628284,
+          "agency_economic_score_vs_baseline_pct": -39.119780779868854
         },
         {
           "grant_fraction": 0.5,
-          "baseline_agency_pv_cad": 2365230143.281619,
-          "plan_agency_pv_cad": 2251024165.5956535,
-          "agency_economic_score_vs_baseline_pct": 4.828535523714889
+          "baseline_agency_pv_cad": 2384353248.177456,
+          "plan_agency_pv_cad": 2262247198.1265984,
+          "agency_economic_score_vs_baseline_pct": 5.121139249991274
         }
       ],
       "grant_extension_note": "grant_cases_with_common_trolley_capital applies a common-trolley grant only to the plan and is retained only as an intentionally asymmetric policy counterfactual. The symmetric_common_trolley case applies the same percentage to both comparator and plan."
@@ -916,107 +916,107 @@
     {
       "case": "renewable_fuel_mix",
       "baseline_operating_g_per_km": 302.0,
-      "baseline_operating_t": 284595.4349247999,
-      "plan_operating_t": 215255.92465404898,
-      "baseline_maintenance_t": 49380.135066422234,
-      "plan_maintenance_t": 53079.87572044464,
+      "baseline_operating_t": 287097.784999475,
+      "plan_operating_t": 217148.5961906625,
+      "baseline_maintenance_t": 49814.31766216055,
+      "plan_maintenance_t": 53546.58886715373,
       "baseline_production_t": 53179.136999999995,
       "plan_production_t": 174367.194,
-      "avoided_emissions_t": -55548.287383271556,
-      "baseline_boundary_t": 387154.7069912221,
-      "plan_boundary_t": 442702.99437449366,
-      "environment_score_pct": -14.347826948809638
+      "avoided_emissions_t": -54971.13939618069,
+      "baseline_boundary_t": 390091.23966163554,
+      "plan_boundary_t": 445062.37905781623,
+      "environment_score_pct": -14.09186718570316
     },
     {
       "case": "rng_heavy",
       "baseline_operating_g_per_km": 960.0,
-      "baseline_operating_t": 904674.2302245293,
-      "plan_operating_t": 674114.2331758487,
-      "baseline_maintenance_t": 49380.135066422234,
-      "plan_maintenance_t": 53079.87572044464,
+      "baseline_operating_t": 912628.7205281323,
+      "plan_operating_t": 680041.4884818689,
+      "baseline_maintenance_t": 49814.31766216055,
+      "plan_maintenance_t": 53546.58886715373,
       "baseline_production_t": 53179.136999999995,
       "plan_production_t": 174367.194,
-      "avoided_emissions_t": 105672.19939465821,
-      "baseline_boundary_t": 1007233.5022909516,
-      "plan_boundary_t": 901561.3028962933,
-      "environment_score_pct": 10.491330873556818
+      "avoided_emissions_t": 107666.90384127013,
+      "baseline_boundary_t": 1015622.1751902928,
+      "plan_boundary_t": 907955.2713490226,
+      "environment_score_pct": 10.601078478923233
     },
     {
       "case": "weighted_mix",
       "baseline_operating_g_per_km": 1233.0,
-      "baseline_operating_t": 1161940.96444463,
-      "plan_operating_t": 864491.6164987233,
-      "baseline_maintenance_t": 49380.135066422234,
-      "plan_maintenance_t": 53079.87572044464,
+      "baseline_operating_t": 1172157.51292832,
+      "plan_operating_t": 872092.7948580078,
+      "baseline_maintenance_t": 49814.31766216055,
+      "plan_maintenance_t": 53546.58886715373,
       "baseline_production_t": 53179.136999999995,
       "plan_production_t": 174367.194,
-      "avoided_emissions_t": 172561.55029188446,
-      "baseline_boundary_t": 1264500.2365110524,
-      "plan_boundary_t": 1091938.686219168,
-      "environment_score_pct": 13.646620641844079
+      "avoided_emissions_t": 175144.38986531924,
+      "baseline_boundary_t": 1275150.9675904808,
+      "plan_boundary_t": 1100006.5777251616,
+      "environment_score_pct": 13.735188563301744
     },
     {
       "case": "fossil_diesel",
       "baseline_operating_g_per_km": 1580.0,
-      "baseline_operating_t": 1488943.0039112049,
-      "plan_operating_t": 1106473.1257039886,
-      "baseline_maintenance_t": 49380.135066422234,
-      "plan_maintenance_t": 53079.87572044464,
+      "baseline_operating_t": 1502034.769202551,
+      "plan_operating_t": 1116201.9645009388,
+      "baseline_maintenance_t": 49814.31766216055,
+      "plan_maintenance_t": 53546.58886715373,
       "baseline_production_t": 53179.136999999995,
       "plan_production_t": 174367.194,
-      "avoided_emissions_t": 257582.08055319404,
-      "baseline_boundary_t": 1591502.2759776271,
-      "plan_boundary_t": 1333920.195424433,
-      "environment_score_pct": 16.184838968889736
+      "avoided_emissions_t": 260912.4764966194,
+      "baseline_boundary_t": 1605028.2238647118,
+      "plan_boundary_t": 1344115.7473680924,
+      "environment_score_pct": 16.25594320505929
     }
   ],
   "electricity_source_sensitivity": [
     {
       "case": "renewable_fuel_mix",
       "electric_operating_g_per_km": 0.019,
-      "plan_boundary_t": 442702.99437449366,
+      "plan_boundary_t": 445062.37905781623,
       "label": "ZEFTP average-grid proxy"
     },
     {
       "case": "renewable_fuel_mix",
       "electric_operating_g_per_km": 0.0,
-      "plan_boundary_t": 438047.6915647966,
+      "plan_boundary_t": 440366.1437667652,
       "label": "contract-sensitivity only; no purchased clean-energy certificate"
     },
     {
       "case": "rng_heavy",
       "electric_operating_g_per_km": 0.019,
-      "plan_boundary_t": 901561.3028962933,
+      "plan_boundary_t": 907955.2713490226,
       "label": "ZEFTP average-grid proxy"
     },
     {
       "case": "rng_heavy",
       "electric_operating_g_per_km": 0.0,
-      "plan_boundary_t": 896906.0000865962,
+      "plan_boundary_t": 903259.0360579717,
       "label": "contract-sensitivity only; no purchased clean-energy certificate"
     },
     {
       "case": "weighted_mix",
       "electric_operating_g_per_km": 0.019,
-      "plan_boundary_t": 1091938.686219168,
+      "plan_boundary_t": 1100006.5777251616,
       "label": "ZEFTP average-grid proxy"
     },
     {
       "case": "weighted_mix",
       "electric_operating_g_per_km": 0.0,
-      "plan_boundary_t": 1087283.3834094708,
+      "plan_boundary_t": 1095310.3424341106,
       "label": "contract-sensitivity only; no purchased clean-energy certificate"
     },
     {
       "case": "fossil_diesel",
       "electric_operating_g_per_km": 0.019,
-      "plan_boundary_t": 1333920.195424433,
+      "plan_boundary_t": 1344115.7473680924,
       "label": "ZEFTP average-grid proxy"
     },
     {
       "case": "fossil_diesel",
       "electric_operating_g_per_km": 0.0,
-      "plan_boundary_t": 1329264.892614736,
+      "plan_boundary_t": 1339419.5120770414,
       "label": "contract-sensitivity only; no purchased clean-energy certificate"
     }
   ],
@@ -1203,7 +1203,7 @@
   },
   "central_result": {
     "case": "central",
-    "heavy_positions_after_service_scale": 1419,
+    "heavy_positions_after_service_scale": 1406,
     "heavy_purchases_after_existing_beb": 1401,
     "shuttle_fleet": 189,
     "double_deck_fleet": 57,
@@ -1215,86 +1215,86 @@
     "baseline_shuttle_unit_cost_cad": 288224.21205592965,
     "heavy_unit_cost_cad": 1200000.0,
     "deck_unit_cost_cad": 2352434.7932856698,
-    "shuttle_unit_cost_cad": 428571.4285714286,
-    "shared_depot_cad": 2086764705.8823528,
-    "deck_core_capital_cad": 150468682.19148272,
-    "shuttle_core_capital_cad": 90500000.0,
-    "additional_class_capital_cad": 25879898.974199563,
-    "capital_gross_nominal_cad": 4008933388.0738354,
-    "common_trolley_capital_nominal_cad": 575149510.2020099,
-    "total_modeled_capital_nominal_cad": 4584082898.275846,
-    "baseline_gross_pv_cad": 2624839942.469086,
-    "plan_gross_pv_cad": 4430076802.846726,
-    "economic_score_gross_pct": -68.7751215291064,
-    "incremental_gross_pv_cad": 1805236860.3776402,
+    "shuttle_unit_cost_cad": 475481.50078603794,
+    "shared_depot_cad": 2067647058.8235292,
+    "deck_core_capital_cad": 152676377.28518367,
+    "shuttle_core_capital_cad": 99366003.64856116,
+    "additional_class_capital_cad": 28087594.06790048,
+    "capital_gross_2023_cad": 4000889439.757274,
+    "common_trolley_capital_2023_cad": 575149510.2020099,
+    "total_modeled_capital_2023_cad": 4576038949.959285,
+    "baseline_gross_pv_cad": 2643963047.3649235,
+    "plan_gross_pv_cad": 4434461179.193175,
+    "economic_score_gross_pct": -67.7202404024796,
+    "incremental_gross_pv_cad": 1790498131.8282518,
     "components_pv_cad": {
       "baseline_vehicle_capex": 569686972.3472923,
-      "baseline_om": 2174894875.8298535,
+      "baseline_om": 2194017980.7256904,
       "baseline_residual": -364644045.422724,
       "plan_heavy_vehicle_capex": 1328371519.3673356,
       "plan_deck_vehicle_capex": 104436933.13706869,
-      "plan_shuttle_vehicle_capex": 63053411.56179963,
+      "plan_shuttle_vehicle_capex": 69955038.43786314,
       "common_trolley_replacement_capex": 515468327.43891585,
-      "plan_shared_heavy_depot": 1831055738.4100811,
-      "plan_class_charger_infrastructure": 22708615.586894486,
-      "plan_om": 2084983002.3897343,
-      "plan_residual": -1249434557.3208513,
+      "plan_shared_heavy_depot": 1814280738.6924412,
+      "plan_class_charger_infrastructure": 24645783.0876605,
+      "plan_om": 2103315543.0121963,
+      "plan_residual": -1255446516.2560542,
       "common_trolley_replacement_residual": -270566187.7242514
     },
     "grant_cases": [
       {
         "grant_fraction": 0.0,
-        "agency_pv_cad": 4430076802.846726,
-        "agency_economic_score_vs_baseline_pct": -68.7751215291064
+        "agency_pv_cad": 4434461179.193175,
+        "agency_economic_score_vs_baseline_pct": -67.7202404024796
       },
       {
         "grant_fraction": 0.25,
-        "agency_pv_cad": 3592670248.3309317,
-        "agency_economic_score_vs_baseline_pct": -36.87197418031687
+        "agency_pv_cad": 3599038676.012583,
+        "agency_economic_score_vs_baseline_pct": -36.1228811272353
       },
       {
         "grant_fraction": 0.5,
-        "agency_pv_cad": 2755263693.815137,
-        "agency_economic_score_vs_baseline_pct": -4.968826831527339
+        "agency_pv_cad": 2763616172.8319907,
+        "agency_economic_score_vs_baseline_pct": -4.525521851991018
       }
     ],
-    "grant_eligible_capital_pv_cad": 3349626218.0631795,
+    "grant_eligible_capital_pv_cad": 3341690012.722369,
     "grant_scope": "Incremental route-conversion capital only. Common trolley replacement is excluded because the same electric renewal is required in the ordinary-renewal comparator.",
     "grant_cases_with_common_trolley_capital": [
       {
         "grant_fraction": 0.0,
-        "agency_pv_cad": 4430076802.846726,
-        "agency_economic_score_vs_baseline_pct": -68.7751215291064
+        "agency_pv_cad": 4434461179.193175,
+        "agency_economic_score_vs_baseline_pct": -67.7202404024796
       },
       {
         "grant_fraction": 0.25,
-        "agency_pv_cad": 3463803166.471203,
-        "agency_economic_score_vs_baseline_pct": -31.962452659606218
+        "agency_pv_cad": 3470171594.152854,
+        "agency_economic_score_vs_baseline_pct": -31.248868913329257
       },
       {
         "grant_fraction": 0.5,
-        "agency_pv_cad": 2497529530.095679,
-        "agency_economic_score_vs_baseline_pct": 4.850216209893977
+        "agency_pv_cad": 2505882009.1125326,
+        "agency_economic_score_vs_baseline_pct": 5.222502575821088
       }
     ],
     "grant_cases_symmetric_common_trolley": [
       {
         "grant_fraction": 0.0,
-        "baseline_agency_pv_cad": 2624839942.469086,
-        "plan_agency_pv_cad": 4430076802.846726,
-        "agency_economic_score_vs_baseline_pct": -68.7751215291064
+        "baseline_agency_pv_cad": 2643963047.3649235,
+        "plan_agency_pv_cad": 4434461179.193175,
+        "agency_economic_score_vs_baseline_pct": -67.7202404024796
       },
       {
         "grant_fraction": 0.25,
-        "baseline_agency_pv_cad": 2495972860.6093574,
-        "plan_agency_pv_cad": 3463803166.471203,
-        "agency_economic_score_vs_baseline_pct": -38.77567425254629
+        "baseline_agency_pv_cad": 2515095965.5051947,
+        "plan_agency_pv_cad": 3470171594.152854,
+        "agency_economic_score_vs_baseline_pct": -37.97372512805165
       },
       {
         "grant_fraction": 0.5,
-        "baseline_agency_pv_cad": 2367105778.749628,
-        "plan_agency_pv_cad": 2497529530.095679,
-        "agency_economic_score_vs_baseline_pct": -5.509840435392128
+        "baseline_agency_pv_cad": 2386228883.6454654,
+        "plan_agency_pv_cad": 2505882009.1125326,
+        "agency_economic_score_vs_baseline_pct": -5.01431888144242
       }
     ],
     "grant_extension_note": "grant_cases_with_common_trolley_capital applies a common-trolley grant only to the plan and is retained only as an intentionally asymmetric policy counterfactual. The symmetric_common_trolley case applies the same percentage to both comparator and plan."
@@ -1505,8 +1505,10 @@
     "heavy_conventional_scenario": 1199,
     "double_deck_conventional_scenario": 57,
     "community_shuttle_conventional_scenario": 189,
-    "electric_trolleys": 262,
-    "existing_beb": 18,
+    "electric_trolleys": 275,
+    "electric_trolleys_renewed": 262,
+    "existing_electric_carried_through_2033": 13,
+    "existing_beb": 5,
     "conventional": 1445,
     "total": 1725
   },
@@ -1522,23 +1524,24 @@
     {
       "baseline_om_cad_per_vehicle_km": 1.97,
       "label": "hybrid-rate low",
-      "economic_score_gross_pct": -104.05693785208787
+      "economic_score_gross_pct": -102.76291139063633
     },
     {
       "baseline_om_cad_per_vehicle_km": 2.77,
       "label": "CNG-rate middle",
-      "economic_score_gross_pct": -66.42700832047308
+      "economic_score_gross_pct": -65.38912524643851
     },
     {
       "baseline_om_cad_per_vehicle_km": 3.3,
       "label": "diesel-rate high",
-      "economic_score_gross_pct": -50.08759057893365
+      "economic_score_gross_pct": -49.171726232497996
     }
   ],
   "boundaries": [
-    "Vehicle prices come from public planning or external procurement envelopes and mix 2021--2026 nominal currencies; they are not rebased to a single bid year.",
-    "Shared heavy-bus depot investment is sized from 1419 heavy positions and retained once. Class-specific charger/site items are added separately, but site power and civil works may still overlap.",
+    "Vehicle and infrastructure leaves are CPI-rebased to constant 2023 CAD before aggregation; fixed FX and supply premiums remain explicit assumptions, not local bids.",
+    "Shared heavy-bus depot investment is sized from 1406 heavy positions and retained once. Class-specific charger/site items are added separately, but site power and civil works may still overlap.",
     "The double-deck annual distance is a weekday-share proxy; the shuttle distance is an independently published 2023 actual total.",
+    "The approximate 275-trolley/5-BEB split comes from same-day public statements. Only 262 known trolley replacements occur; 13 existing electric assets are carried through 2033. If those also require renewal, purchases rise by 13.",
     "Shuttle and double-deck manufacturing inventories include battery factors; the shuttle glider mass is not invented.",
     "Depot construction and end-of-life are excluded from the environmental boundary.",
     "The financial envelope excludes post-2023 battery replacement, retained pre-2024 asset terminal values, disposal proceeds and infrastructure terminal value; opposing omissions mean this is not a conservative bound or complete TCO."

@@ -31,6 +31,11 @@ PROC = ROOT / "data/processed"
 RAW = ROOT / "data/raw/vancouver_gtfs_2023"
 
 
+def transfer_fails(gap_minutes, distance_km, turn_minutes=5, speed_kmh=50):
+    """Necessary screen under an explicit uniform turn-time assumption."""
+    return gap_minutes < turn_minutes + 60 * distance_km / speed_kmh
+
+
 def norm_route(value: str) -> str:
     text = str(value).strip().upper()
     return str(int(text)) if text.isdigit() else text
@@ -136,8 +141,7 @@ def main() -> None:
             np.inf,
         )
         transitions["cannot_meet_direct_transfer_at_50kmh_5min"] = (
-            transitions.straight_km >
-            np.maximum(0, transitions.gap_minutes - 5) / 60 * 50
+            transfer_fails(transitions.gap_minutes, transitions.straight_km)
         )
         dominant = data.sort_values(["block_id", "rank"]).drop_duplicates("block_id", keep="last")
         dominant = dominant[["block_id", "proxy_class", "route_short_name"]].rename(columns={"proxy_class": "block_proxy_class", "route_short_name": "highest_class_route"})

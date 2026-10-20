@@ -1,0 +1,134 @@
+{
+  "status": "PARTIAL_PUBLIC_EVIDENCE; FULL_2023_OPERATIONAL_CERTIFICATE_STILL_UNAVAILABLE",
+  "access_date": "2026-10-20",
+  "verified": {
+    "six_operating_centres_nominal_capacity_2020": 1991,
+    "total_including_planned_marpole": 2291,
+    "direct_cmbc_assigned_buses_2020": 1538,
+    "contractor_assigned_buses_2020": 134,
+    "total_cmbc_and_contractor_assigned_2020": 1672,
+    "operating_transit_centres_2020": 6,
+    "planned_marpole_capacity": 300,
+    "june_2023_bebs": 4,
+    "june_2023_trolleys": 262,
+    "january_2023_bebs_before_expansion": 4,
+    "lfse_plus_order": 15,
+    "december_2023_electric_total_exact": 280,
+    "december_2023_split_approximate": {
+      "trolleys": 275,
+      "bebs": 5
+    },
+    "all_depots_full_2023": true,
+    "additional_spaces_needed_by_2035": 2000,
+    "additional_space_requirement_percent": "nearly 90",
+    "future_grid_load_mw_2040": 78,
+    "existing_depot_power_delivery_years": [
+      6,
+      8
+    ],
+    "charger_ahead_of_delivery_months": [
+      6,
+      12
+    ],
+    "active_fleet_2025": 1733,
+    "active_storage_2025": 63
+  },
+  "source_hashes": {
+    "translink_2020_fleet_plan": "1042fbcf5bc4ba830d6b057514401af7d7956b8e0a1028474f908442d3b5ec15",
+    "translink_2021_fleet_update": "70b4c5c87fe4f0acd50882844392667edf382dffdc07a5049c1ba13b87871e4b",
+    "translink_2023_june_tech": "9e188c6db36d9383a2a2bb5ddf3b0d78159e66e3cc091cca36df48427d01085a",
+    "translink_2023_june_board": "6921d8cc018450304f9dac4bc3882f67613eb1c2846c39701b8082ff0226623d",
+    "translink_2024_zefpt": "00c6d6621b7c3b8804a6d7d9886a64989409379d64a446a266a5e0634bf96098"
+  },
+  "external_source_records": {
+    "translink_foi_2023_log": {
+      "sha256": "60c61527821fae42e456636777b4f9299a89cc72fabf74ce73fa0097d5fc1fba",
+      "bytes": 123449,
+      "status": "OFFICIAL_LOG_READ"
+    },
+    "cmbc_active_instorage_2025": {
+      "sha256": "be0d3cd5f00b8217872705c5a46e290923debacfa6002c849041123630f839b2",
+      "bytes": 373331,
+      "status": "VISUALLY_READ_SCANNED_RECORD"
+    },
+    "adl_enviro500ev_hk_2023": {
+      "sha256": "5a2387976b003617f0fa6d5306a8a1da67c6b7e9273d8530def20683dc3e5e4d",
+      "bytes": 866111,
+      "status": "PUBLIC_MANUFACTURER_PDF"
+    }
+  },
+  "source_assertions": {
+    "all_depots_full": {
+      "source": "translink_2023_june_tech",
+      "phrase": "All our depots are full"
+    },
+    "june_beb_count": {
+      "source": "translink_2023_june_tech",
+      "phrase": "4 Battery-Electric Buses"
+    },
+    "june_trolley_count": {
+      "source": "translink_2023_june_tech",
+      "phrase": "262 Electric-Trolleys"
+    },
+    "capacity_need": {
+      "source": "translink_2023_june_tech",
+      "phrase": "+2,000 spaces"
+    },
+    "capacity_need_pct": {
+      "source": "translink_2023_june_tech",
+      "phrase": "nearly 90%"
+    },
+    "delivery_duration": {
+      "source": "translink_2023_june_tech",
+      "phrase": "6+ years"
+    },
+    "future_grid_load": {
+      "source": "translink_2024_zefpt",
+      "phrase": "78 MW"
+    },
+    "pre2035_centres": {
+      "source": "translink_2024_zefpt",
+      "phrase": "transit centres transitioning before 2035"
+    },
+    "new_feeds": {
+      "source": "translink_2024_zefpt",
+      "phrase": "Seven on-route charging locations"
+    },
+    "existing_depot_delivery": {
+      "source": "translink_2024_zefpt",
+      "phrase": "6-8 years"
+    },
+    "depot_capacity_312": {
+      "source": "translink_2020_fleet_plan",
+      "phrase": "312"
+    },
+    "depot_capacity_539": {
+      "source": "translink_2020_fleet_plan",
+      "phrase": "539"
+    },
+    "weight_envelope": {
+      "source": "translink_2020_fleet_plan",
+      "phrase": "19,550"
+    },
+    "charging_power": {
+      "source": "translink_2020_fleet_plan",
+      "phrase": "50 kW per bus"
+    }
+  },
+  "unresolved": [
+    "31 December 2023 vehicle register by status, class, age, depot and propulsion",
+    "2023 block-to-vehicle and block-to-garage mapping",
+    "2023 depot occupancy and operational (not nominal) parking constraints",
+    "site-specific firm power, transformer, feeder, interconnection cost and commissioning date",
+    "candidate BEB axle-load and full-load payload certification on TransLink routes",
+    "route-level winter kWh/km and accessory-heating profiles",
+    "trolley feeder/rectifier concurrent firm capacity by segment",
+    "authentic load and crowd counts for every assigned trip",
+    "APTA 2023 TransLink/CMBC rows; official ZIP returned HTTP 403"
+  ],
+  "model_implication": {
+    "initial_beb_scenario": "The 18-BEB subtraction is contradicted by the December approximate 275+5 split. Retain as stress only; use five BEB plus about 275 trolleys as the 2023 central inventory if no better register is obtained.",
+    "depot_implication": "Nominal capacity alone does not prove feasibility: 2023 sources state all depots were full, while 2025 active fleet is below the 2020 nominal total. Mixed-class tracks, charging equipment and operational buffers are required.",
+    "power_implication": "The 78 MW result is system-wide planning evidence, not site firm capacity. A 2033 accelerated case needs earlier site scheduling than the 2040 roadmap."
+  }
+}

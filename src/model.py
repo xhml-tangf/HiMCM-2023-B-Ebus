@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Iterable
 
 
@@ -100,11 +100,10 @@ class Depot:
 
 @dataclass(frozen=True)
 class DailySchedule:
-    """One day's service and charging plan for a fixed fleet and site set.
+    """A service day; GTFS times after 24:00 retain their actual offsets.
 
-    ``check_periodic_schedule`` links these days by carrying each battery's
-    ending kWh into the next day. A day may include post-service depot
-    charging; the ending state is still the state available to the next day.
+    The periodic wrapper projects all days onto one repeating absolute time
+    axis. Midnight does not reset location, energy, or charging occupancy.
     """
     trips: Iterable[Trip]
     assignments: Iterable[Assignment]
@@ -137,6 +136,8 @@ def check_schedule(
     overhead_feeders: Iterable[OverheadFeeder] | None = None,
     initial_energy_kwh: dict[str, float] | None = None,
     initial_fuel: dict[str, float] | None = None,
+    record_event_states: bool = False,
+    spare_windows: list[tuple[float, float, dict[str, int]]] | None = None,
 ) -> Check:
     """Exact trip/SOC/site checks. Missing essential inputs yield UNVERIFIED.
 
@@ -187,6 +188,7 @@ def check_schedule(
     charge_accepted_kwh: dict[str, float] = {key: 0.0 for key in v}
     fuel_start: dict[str, float] = {}
     fuel_final: dict[str, float] = {}
+    event_states: dict[str, float] = {}
     if not trips or not vehicles or not depots:
         return Check("UNVERIFIED", missing=["nonempty_trip_vehicle_depot_data"])
     if len(t) != len(trips) or len(v) != len(vehicles) or len(d) != len(depots):
@@ -420,6 +422,9 @@ def check_schedule(
                 if movement_minutes > 0:
                     busy[vid].append((departure, start))
                 consume(departure, start, movement_km, ("link", *link))
+            if record_event_states:
+                event_states[f"event_start_energy_kwh:{vid}:{i}"] = energy
+                event_states[f"event_start_fuel:{vid}:{i}"] = fuel_left
             if kind == "charge" and bus.energy_source != "battery":
                 errors.append(f"plug-in charge assigned to {bus.energy_source} vehicle {vid}")
             consume(start, end, obj.distance_km if kind == "trip" else 0,
@@ -474,7 +479,7 @@ def check_schedule(
         # A spare must be physically at its depot and free of a trip or charge.
         # Counting only vehicles with no trips anywhere in the day undercounts
         # buses that return to the garage between peaks.
-        boundaries = sorted({0} | {minute for bus in vehicles if bus.depot == depot.name
+        boundaries = sorted({0} | {m for a, b, _ in (spare_windows or []) for m in (a, b)} | {minute for bus in vehicles if bus.depot == depot.name
                                   for start, end in busy[bus.vehicle_id]
                                   for minute in (start, end)})
         for moment in boundaries:
@@ -494,10 +499,14 @@ def check_schedule(
                         last_location = depot.name
                 if last_location == depot.name:
                     available += 1
-            if available < spare_by_depot.get(depot.name, 0):
+            policies = [policy for a, b, policy in (spare_windows or []) if a <= moment < b]
+            required_spares = (max(policy.get(depot.name, 0) for policy in policies)
+                               if policies else spare_by_depot.get(depot.name, 0))
+            if available < required_spares:
                 errors.append(f"spare requirement not met at {depot.name} minute {moment}")
                 break
     metrics = {"trips": len(trips), "vehicles": len(vehicles), "charges": len(charges)}
+    metrics.update(event_states)
     for vid, value in energy_start.items():
         metrics[f"initial_energy_kwh:{vid}"] = value
         metrics[f"final_energy_kwh:{vid}"] = energy_final[vid]
@@ -524,92 +533,112 @@ def check_periodic_schedule(
     overhead_feeders: Iterable[OverheadFeeder] | None = None,
     require_cycle_closure: bool = True,
 ) -> Check:
-    """Validate repeated service with ``e[d+1,0] = e[d,T]`` per vehicle.
+    """Check supplied service on one absolute timeline, including period wrap.
 
-    The single-day :func:`check_schedule` remains a local feasibility check.
-    This wrapper carries the ending battery state (and fuel state) into the
-    next day instead of resetting either state to the registered initial value.
-    It is therefore the API that may certify a repeating service pattern.
-
-    When ``require_cycle_closure`` is true, the final state after the last day
-    must be at least the first day's starting state. This permits an ordinary
-    post-service depot charge to restore the cycle; it rejects an apparent
-    daily PASS whose energy is silently replenished by the next day.
+    Day n contributes 1440*n + local_time. For repeating input, starts are
+    reduced modulo the period, preserving duration (never clipping a trip).
+    Two copies expose all wrap conflicts for intervals no longer than a cycle.
+    Each vehicle's state immediately before its first event is compared with
+    the SAME phase one cycle later, after road travel and idle accessories.
+    The fixed-event energy map is monotone: ending at least as high certifies
+    repeated energy feasibility under the declared rates and clipping rule.
+    Accessories remain on across inter-event layovers, including at depots;
+    no midnight shutdown, return, refill, or relocation is imputed.
     """
     if days is None or vehicles is None or depots is None:
-        return Check("UNVERIFIED", missing=[
-            key for key, value in (("daily_schedules", days),
-                                   ("vehicle_register", vehicles),
-                                   ("depots", depots)) if value is None])
-    days = list(days)
-    vehicles = list(vehicles)
-    depots = list(depots)
-    if not days:
-        return Check("UNVERIFIED", missing=["nonempty_daily_schedules"])
-    if not vehicles or not depots:
-        return Check("UNVERIFIED", missing=["nonempty_vehicle_depot_data"])
-
-    energy_state = {bus.vehicle_id: bus.initial_kwh for bus in vehicles
-                    if bus.energy_source == "battery"}
-    fuel_state = {bus.vehicle_id: bus.fuel.initial for bus in vehicles
-                  if bus.energy_source == "fuel" and bus.fuel is not None}
-    first_energy = dict(energy_state)
-    first_fuel = dict(fuel_state)
-    errors: list[str] = []
-    missing: list[str] = []
-    metrics: dict[str, float] = {"days": float(len(days))}
-
-    for day_index, day in enumerate(days, start=1):
-        result = check_schedule(
-            day.trips, vehicles, day.assignments, day.charges, depots,
-            year=year,
-            peak_capacity_by_route_direction=day.peak_capacity_by_route_direction,
-            spare_by_depot=day.spare_by_depot,
-            deadhead_minutes=deadhead_minutes,
-            deadhead_km=deadhead_km,
-            overhead_paths=overhead_paths,
-            overhead_feeders=overhead_feeders,
-            initial_energy_kwh=energy_state,
-            initial_fuel=fuel_state,
-        )
-        errors.extend(f"day {day_index}: {error}" for error in result.errors)
-        missing.extend(f"day {day_index}: {item}" for item in result.missing)
-        for vid, value in energy_state.items():
-            key = f"final_energy_kwh:{vid}"
-            if key not in result.metrics:
-                missing.append(f"day {day_index}: missing ending SOC on {vid}")
-                continue
-            ending = result.metrics[key]
-            metrics[f"initial_energy_kwh:{vid}:{day_index}"] = value
-            metrics[f"final_energy_kwh:{vid}:{day_index}"] = ending
-            energy_state[vid] = ending
-        for vid, value in fuel_state.items():
-            key = f"final_fuel:{vid}"
-            if key not in result.metrics:
-                missing.append(f"day {day_index}: missing ending fuel on {vid}")
-                continue
-            ending = result.metrics[key]
-            metrics[f"initial_fuel:{vid}:{day_index}"] = value
-            metrics[f"final_fuel:{vid}:{day_index}"] = ending
-            fuel_state[vid] = ending
-
+        return Check("UNVERIFIED", missing=["daily_schedules/vehicle_register/depots"])
+    days, vehicles, depots = list(days), list(vehicles), list(depots)
+    if not days or not vehicles or not depots:
+        return Check("UNVERIFIED", missing=["nonempty_daily_schedules/vehicles/depots"])
+    period = 1440 * len(days)
+    copies = 2 if require_cycle_closure else 1
+    missing, errors = [], []
+    prepared = []
+    counts = {bus.vehicle_id: 0 for bus in vehicles}
+    for n, day in enumerate(days):
+        if any(x is None for x in (day.trips, day.assignments, day.charges,
+                                    day.peak_capacity_by_route_direction, day.spare_by_depot)):
+            missing.append(f"day {n+1}: incomplete daily inputs")
+            continue
+        trips, assignments, charges = list(day.trips), list(day.assignments), list(day.charges)
+        prepared.append((trips, assignments, charges, day))
+        if len({t.trip_id for t in trips}) != len(trips):
+            errors.append(f"day {n+1}: duplicate trip identifier")
+        for event in [*trips, *charges]:
+            if (not math.isfinite(event.start_min) or not math.isfinite(event.end_min)
+                    or event.start_min < 0 or event.end_min <= event.start_min):
+                errors.append(f"day {n+1}: invalid absolute-time activity")
+            elif require_cycle_closure and event.end_min-event.start_min > period:
+                errors.append(f"day {n+1}: activity longer than its repeating period")
+        for a in assignments:
+            if a.vehicle_id in counts:
+                counts[a.vehicle_id] += 1
+        for c in charges:
+            if c.vehicle_id in counts:
+                counts[c.vehicle_id] += 1
+        for depot in {bus.depot for bus in vehicles}:
+            if depot not in day.spare_by_depot:
+                missing.append(f"day {n+1}: spare_policy:{depot}")
+    if errors or missing:
+        return Check("FAIL" if errors else "UNVERIFIED", errors, missing)
+    all_trips, all_assignments, all_charges, windows = [], [], [], []
+    peaks, paths = {}, dict(overhead_paths or {})
+    for cycle in range(copies):
+        for n, (trips, assignments, charges, day) in enumerate(prepared):
+            prefix = f"{cycle}/{n}/"
+            def times(event):
+                start = 1440*n + event.start_min
+                if require_cycle_closure:
+                    start %= period
+                start += cycle * period
+                return start, start + event.end_min-event.start_min
+            for trip in trips:
+                start, end = times(trip)
+                tid = prefix + trip.trip_id
+                all_trips.append(replace(trip, trip_id=tid, route=prefix+trip.route,
+                                         start_min=start, end_min=end))
+                if ("trip", trip.trip_id) in paths:
+                    paths[("trip", tid)] = paths[("trip", trip.trip_id)]
+            all_assignments.extend(Assignment(prefix+a.trip_id, a.vehicle_id) for a in assignments)
+            for charge in charges:
+                start, end = times(charge)
+                all_charges.append(replace(charge, start_min=start, end_min=end))
+            peaks.update({(prefix+r, direction): value
+                          for (r, direction), value in day.peak_capacity_by_route_direction.items()})
+            start = cycle*period + n*1440
+            windows.append((start, start+1440, day.spare_by_depot))
+    # Cover late tails with the next period's policy; they are not dropped.
     if require_cycle_closure:
-        for vid, start in first_energy.items():
-            end = energy_state[vid]
-            metrics[f"cycle_start_energy_kwh:{vid}"] = start
-            metrics[f"cycle_end_energy_kwh:{vid}"] = end
+        for n, (_, _, _, day) in enumerate(prepared):
+            windows.append((copies*period+n*1440, copies*period+(n+1)*1440, day.spare_by_depot))
+    result = check_schedule(
+        all_trips, vehicles, all_assignments, all_charges, depots, year=year,
+        peak_capacity_by_route_direction=peaks,
+        spare_by_depot={bus.depot: 0 for bus in vehicles}, spare_windows=windows,
+        deadhead_minutes=deadhead_minutes, deadhead_km=deadhead_km,
+        overhead_paths=paths, overhead_feeders=overhead_feeders,
+        record_event_states=True)
+    errors, missing = list(result.errors), list(result.missing)
+    metrics = dict(result.metrics, days=float(len(days)), period_minutes=float(period))
+    if require_cycle_closure:
+        for bus in vehicles:
+            count = counts[bus.vehicle_id]
+            if not count or bus.energy_source == "overhead":
+                continue
+            kind = "energy_kwh" if bus.energy_source == "battery" else "fuel"
+            first = f"event_start_{kind}:{bus.vehicle_id}:0"
+            repeated = f"event_start_{kind}:{bus.vehicle_id}:{count}"
+            if first not in metrics or repeated not in metrics:
+                missing.append(f"cycle phase states:{bus.vehicle_id}")
+                continue
+            start, end = metrics[first], metrics[repeated]
+            metrics[f"cycle_start_{kind}:{bus.vehicle_id}"] = start
+            metrics[f"cycle_end_{kind}:{bus.vehicle_id}"] = end
             if end < start - 1e-9:
-                errors.append(
-                    f"periodic SOC closure violated on {vid}: final {end:.6g} < initial {start:.6g} kWh")
-        for vid, start in first_fuel.items():
-            end = fuel_state[vid]
-            if end < start - 1e-9:
-                errors.append(
-                    f"periodic fuel closure violated on {vid}: final {end:.6g} < initial {start:.6g}")
-
-    missing = list(dict.fromkeys(missing))
+                label = "SOC" if kind == "energy_kwh" else "fuel"
+                errors.append(f"periodic {label} closure violated on {bus.vehicle_id}: {end:.6g} < {start:.6g}")
     return Check("FAIL" if errors else "UNVERIFIED" if missing else "PASS",
-                 errors, missing, metrics)
+                 errors, list(dict.fromkeys(missing)), metrics)
 
 
 def discounted_cost(cashflows: dict[int, float], base_year: int, real_rate: float) -> float:

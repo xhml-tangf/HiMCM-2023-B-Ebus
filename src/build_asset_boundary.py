@@ -74,7 +74,7 @@ def main() -> None:
         plan_terminal[name] = terminal_value(plan_ages, meta["plan_unit"])
         base_costs[name] = p_pur
         for year, retired in plan_retired.items():
-            sale_events[(name, year)] = (retired, meta["plan_unit"])
+            sale_events[(name, year)] = (retired, meta["base_unit"])
     # Existing electric buses survive in both paths and were omitted from the
     # purchase-only residual function.
     existing_ages = {10: existing_beb}
@@ -83,13 +83,23 @@ def main() -> None:
     plan_terminal_total = sum(plan_terminal.values())
     base_terminal_pv = discounted(base_terminal_total, 2033)
     plan_terminal_pv = discounted(plan_terminal_total, 2033)
+    # Main cash flows already credit NEW vehicles. Add that credit back before
+    # applying the unified initial+new terminal ledger, symmetrically. Common
+    # trolley renewal is excluded from both ledgers and remains credited once.
+    # Components store residuals as negative cash flows; credits here are positive.
+    base_new_credit = -central["components_pv_cad"]["baseline_residual"]
+    plan_new_credit = -central["components_pv_cad"]["plan_residual"]
+    base_initial_pv = base_terminal_pv - base_new_credit
+    plan_initial_pv = plan_terminal_pv - plan_new_credit
     sale_cases = []
     for recovery in (0.0, 0.10, 0.25):
         nominal = sum(
             discounted(early_retirement_value(retired, unit, recovery), year)
             for (_, year), (retired, unit) in sale_events.items())
-        adjusted_plan = central["plan_gross_pv_cad"] - existing_pv - nominal
-        adjusted_base = central["baseline_gross_pv_cad"] - base_terminal_pv - existing_pv
+        adjusted_plan = (central["plan_gross_pv_cad"] + plan_new_credit
+                         - plan_terminal_pv - existing_pv - nominal)
+        adjusted_base = (central["baseline_gross_pv_cad"] + base_new_credit
+                         - base_terminal_pv - existing_pv)
         sale_cases.append({
             "market_recovery_fraction_for_remaining_book_proxy": recovery,
             "period_disposal_receipts_pv_cad": nominal,
@@ -128,11 +138,18 @@ def main() -> None:
         "initial_age_scenario": "Uniform ages 0--16 for heavy non-deck and community shuttles; 32 double-decks age 4 and 25 age 0 at end-2023; existing 18 BEBs age 10 at horizon.",
         "life_years": 17,
         "initial_terminal_value": {
-            "baseline_by_class_nominal_cad": base_terminal,
-            "plan_by_class_nominal_cad": plan_terminal,
-            "baseline_pv_cad": base_terminal_pv,
-            "plan_pv_cad": plan_terminal_pv,
+            "baseline_pv_cad": base_initial_pv,
+            "plan_pv_cad": plan_initial_pv,
             "existing_beb_common_pv_cad": existing_pv,
+        },
+        "terminal_reconciliation": {
+            "baseline_all_by_class_nominal_cad": base_terminal,
+            "plan_all_by_class_nominal_cad": plan_terminal,
+            "baseline_all_pv_cad": base_terminal_pv,
+            "plan_all_pv_cad": plan_terminal_pv,
+            "baseline_new_already_credited_pv_cad": base_new_credit,
+            "plan_new_already_credited_pv_cad": plan_new_credit,
+            "common_trolley_credit_unchanged_pv_cad": -central["components_pv_cad"]["common_trolley_replacement_residual"],
         },
         "asset_adjusted_cases": sale_cases,
         "infrastructure_terminal_sensitivity": infra_cases,
@@ -173,6 +190,8 @@ def main() -> None:
             "infrastructure ownership or removal liabilities",
         ],
         "boundaries": [
+            "Unified terminal credits replace, rather than supplement, the new-vehicle credits in the main cash flows. Common trolley credits remain unchanged.",
+            "Early-sale proxies use conventional replacement costs for heavy/shuttle vehicles. The unpriced conventional deck retains the same disclosed equivalent-asset proxy as its baseline terminal value; no used-bus market value is claimed.",
             "Replacement-cost proxies are applied to unknown-age initial assets; they are not accounting book values.",
             "Both paths use the same initial age scenario and straight-line life. The baseline keeps the younger double-deck cohort at the 2033 endpoint.",
             "Market recovery percentages are disclosed policy cases, not observed bids.",

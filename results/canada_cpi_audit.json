@@ -1,10 +1,20 @@
 {
   "status": "OBSERVED_BANK_OF_CANADA_CPI_ANNUAL_AVERAGES",
-  "source": "https://www.bankofcanada.ca/valet/observations/V41690973/json?start_date=2021-01-01&end_date=2025-12-31",
+  "source": "https://www.bankofcanada.ca/valet/observations/V41690973/json?start_date=2019-01-01&end_date=2025-12-31",
   "series": "V41690973 Total CPI, 2002=100",
-  "raw_sha256": "9cc42efa0f5fd52cba8c2af34c3c3d16e67d73f9b2e420b7e94f8f0c6bd1ba5c",
-  "monthly_observations": 60,
+  "raw_sha256": "48b4c619e5fa8c8dc836509525d723a57ce1bf5c11123e6bd66142b1ff9cbf55",
+  "monthly_observations": 84,
   "annual": [
+    {
+      "year": 2019,
+      "annual_cpi_2002_100": 135.98333333333332,
+      "factor_to_2023_cad": 1.1553499203333741
+    },
+    {
+      "year": 2020,
+      "annual_cpi_2002_100": 136.95833333333334,
+      "factor_to_2023_cad": 1.1471250380285973
+    },
     {
       "year": 2021,
       "annual_cpi_2002_100": 141.60833333333332,
@@ -31,6 +41,6 @@
       "factor_to_2023_cad": 0.9569079281291238
     }
   ],
-  "usage": "Price envelopes dated 2021--2025 can be multiplied by factor_to_2023_cad; the 3% rate then acts as a real discount scenario.",
+  "usage": "Price envelopes dated 2019--2025 can be multiplied by factor_to_2023_cad; the 3% rate then acts as a real discount scenario.",
   "boundary": "CPI is an economy-wide deflator, not a bus or electrical-construction cost index."
 }

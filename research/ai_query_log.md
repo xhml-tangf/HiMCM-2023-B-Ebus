@@ -75,3 +75,20 @@ Outputs: `research/adversarial_review_resolution.md`, facility-gated
 service/emissions ledger, periodic SOC API, Route 100 duty sample, asset
 terminal-value scenarios, Chicago age deadlines, fixed-service grid, CPI
 rebasing and regenerated manuscript/PDF.
+
+
+## Request 6: second review corrections
+
+User requested priority fixes, then continuation toward all review findings. Corrected V2-01 through V2-06, rebuilt prices and residuals, replaced the temporary calendar-day guard with absolute-time periodic validation, reran local reproduction and regression tests, and updated the existing LaTeX source. See `research/review_v2_resolution.md` for scope and evidence limitations.
+
+## Request 7: complete the remaining evidence
+
+Working request (Chinese original):
+
+> 写个goal，我们把剩余部分补齐
+
+Outputs: official fleet/depot/power/vehicle evidence; the 25-pattern
+absolute-time full-city screen; official 275-trolley/5-BEB central split;
+incremental TCO and infrastructure-inclusive environmental bridges;
+body-compatible Chicago and London execution certificates; updated
+manuscript, results and tests. See `research/remaining_evidence_closure.md`.

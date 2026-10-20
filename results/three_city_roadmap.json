@@ -6,8 +6,10 @@
       "heavy_conventional_scenario": 1199,
       "double_deck_conventional_scenario": 57,
       "community_shuttle_conventional_scenario": 189,
-      "electric_trolleys": 262,
-      "existing_beb": 18,
+      "electric_trolleys": 275,
+      "electric_trolleys_renewed": 262,
+      "existing_electric_carried_through_2033": 13,
+      "existing_beb": 5,
       "conventional": 1445,
       "total": 1725
     },

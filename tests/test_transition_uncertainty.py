@@ -18,7 +18,7 @@ def test_uncertainty_grid_reproduces_named_case_and_orders_quantiles():
     ]
     reproduction = result["named_case_grid_reproduction"]
     assert reproduction["cases_matched"] == 1
-    assert reproduction["net_new_battery_positions"] == 1612
+    assert reproduction["net_new_battery_positions"] == 1610
     assert abs(reproduction["gross_pv_difference_cad"]) < 1.0
     assert abs(reproduction["economic_score_difference_pct_points"]) < 1e-8
     assert abs(reproduction["environment_score_difference_pct_points"]) < 1e-8

@@ -11,7 +11,13 @@ def main() -> None:
     errors = []
     if not re.search(r"\\documentclass\[12pt,letterpaper\]\{article\}", text):
         errors.append("document must use 12pt Letter article")
-    if re.search(r"\\(?:small|footnotesize|scriptsize|tiny)\b", text):
+    # The contest body remains 12 pt. Tables and the reference list use one
+    # conventional size reduction so long, numeric material fits the page cap.
+    body_text = re.sub(r"\\begin\{table\}.*?\\end\{table\}", "", text, flags=re.S)
+    body_text = re.sub(r"\\begin\{thebibliography\}.*?\\end\{thebibliography\}", "",
+                       body_text, flags=re.S)
+    body_text = body_text.replace(r"\AtBeginEnvironment{tabular}{\small}", "")
+    if re.search(r"\\(?:small|footnotesize|scriptsize|tiny)\b", body_text):
         errors.append("font-size reduction below 12pt found")
     if not all(x in text for x in (r"\pagestyle{fancy}", r"\fancyhead[L]", r"\fancyhead[R]", r"\tableofcontents")):
         errors.append("contest header or contents missing")

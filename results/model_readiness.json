@@ -64,6 +64,46 @@
   },
   "full_city_schedule_check": {
     "status": "UNVERIFIED",
+    "screened_patterns": 25,
+    "screened_trip_instances": 495198,
+    "worst_case": {
+      "peak_concurrent_trips": {
+        "value": 1089,
+        "pattern_id": 4,
+        "example_date": "2023-09-08"
+      },
+      "uniform_turn_failures": {
+        "value": 4621,
+        "pattern_id": 4,
+        "example_date": "2023-09-08"
+      },
+      "blocks_over_300km": {
+        "value": 265,
+        "pattern_id": 4,
+        "example_date": "2023-09-08"
+      },
+      "range_only_fragments": {
+        "value": 2032,
+        "pattern_id": 4,
+        "example_date": "2023-09-08"
+      },
+      "range_and_turn_fragments": {
+        "value": 6501,
+        "pattern_id": 4,
+        "example_date": "2023-09-08"
+      },
+      "winter_battery_mwh_day": {
+        "value": 469.20809871299997,
+        "pattern_id": 13,
+        "example_date": "2023-10-13"
+      },
+      "minimum_8h_site_power_mw": {
+        "value": 65.16779148791666,
+        "pattern_id": 13,
+        "example_date": "2023-10-13"
+      }
+    },
+    "source_block_transition_screen": "FAIL_UNDER_DECLARED_5MIN_50KMH_POLICY",
     "missing": [
       "vehicle_register",
       "assignments",
@@ -89,31 +129,263 @@
   "full_city_environment_score": null,
   "full_city_pareto_frontier": null,
   "full_city_yearly_purchase_table": null,
+  "official_vancouver_evidence_v3": {
+    "status": "PARTIAL_PUBLIC_EVIDENCE; FULL_2023_OPERATIONAL_CERTIFICATE_STILL_UNAVAILABLE",
+    "access_date": "2026-10-20",
+    "verified": {
+      "six_operating_centres_nominal_capacity_2020": 1991,
+      "total_including_planned_marpole": 2291,
+      "direct_cmbc_assigned_buses_2020": 1538,
+      "contractor_assigned_buses_2020": 134,
+      "total_cmbc_and_contractor_assigned_2020": 1672,
+      "operating_transit_centres_2020": 6,
+      "planned_marpole_capacity": 300,
+      "june_2023_bebs": 4,
+      "june_2023_trolleys": 262,
+      "january_2023_bebs_before_expansion": 4,
+      "lfse_plus_order": 15,
+      "december_2023_electric_total_exact": 280,
+      "december_2023_split_approximate": {
+        "trolleys": 275,
+        "bebs": 5
+      },
+      "all_depots_full_2023": true,
+      "additional_spaces_needed_by_2035": 2000,
+      "additional_space_requirement_percent": "nearly 90",
+      "future_grid_load_mw_2040": 78,
+      "existing_depot_power_delivery_years": [
+        6,
+        8
+      ],
+      "charger_ahead_of_delivery_months": [
+        6,
+        12
+      ],
+      "active_fleet_2025": 1733,
+      "active_storage_2025": 63
+    },
+    "source_hashes": {
+      "translink_2020_fleet_plan": "1042fbcf5bc4ba830d6b057514401af7d7956b8e0a1028474f908442d3b5ec15",
+      "translink_2021_fleet_update": "70b4c5c87fe4f0acd50882844392667edf382dffdc07a5049c1ba13b87871e4b",
+      "translink_2023_june_tech": "9e188c6db36d9383a2a2bb5ddf3b0d78159e66e3cc091cca36df48427d01085a",
+      "translink_2023_june_board": "6921d8cc018450304f9dac4bc3882f67613eb1c2846c39701b8082ff0226623d",
+      "translink_2024_zefpt": "00c6d6621b7c3b8804a6d7d9886a64989409379d64a446a266a5e0634bf96098"
+    },
+    "external_source_records": {
+      "translink_foi_2023_log": {
+        "sha256": "60c61527821fae42e456636777b4f9299a89cc72fabf74ce73fa0097d5fc1fba",
+        "bytes": 123449,
+        "status": "OFFICIAL_LOG_READ"
+      },
+      "cmbc_active_instorage_2025": {
+        "sha256": "be0d3cd5f00b8217872705c5a46e290923debacfa6002c849041123630f839b2",
+        "bytes": 373331,
+        "status": "VISUALLY_READ_SCANNED_RECORD"
+      },
+      "adl_enviro500ev_hk_2023": {
+        "sha256": "5a2387976b003617f0fa6d5306a8a1da67c6b7e9273d8530def20683dc3e5e4d",
+        "bytes": 866111,
+        "status": "PUBLIC_MANUFACTURER_PDF"
+      }
+    },
+    "source_assertions": {
+      "all_depots_full": {
+        "source": "translink_2023_june_tech",
+        "phrase": "All our depots are full"
+      },
+      "june_beb_count": {
+        "source": "translink_2023_june_tech",
+        "phrase": "4 Battery-Electric Buses"
+      },
+      "june_trolley_count": {
+        "source": "translink_2023_june_tech",
+        "phrase": "262 Electric-Trolleys"
+      },
+      "capacity_need": {
+        "source": "translink_2023_june_tech",
+        "phrase": "+2,000 spaces"
+      },
+      "capacity_need_pct": {
+        "source": "translink_2023_june_tech",
+        "phrase": "nearly 90%"
+      },
+      "delivery_duration": {
+        "source": "translink_2023_june_tech",
+        "phrase": "6+ years"
+      },
+      "future_grid_load": {
+        "source": "translink_2024_zefpt",
+        "phrase": "78 MW"
+      },
+      "pre2035_centres": {
+        "source": "translink_2024_zefpt",
+        "phrase": "transit centres transitioning before 2035"
+      },
+      "new_feeds": {
+        "source": "translink_2024_zefpt",
+        "phrase": "Seven on-route charging locations"
+      },
+      "existing_depot_delivery": {
+        "source": "translink_2024_zefpt",
+        "phrase": "6-8 years"
+      },
+      "depot_capacity_312": {
+        "source": "translink_2020_fleet_plan",
+        "phrase": "312"
+      },
+      "depot_capacity_539": {
+        "source": "translink_2020_fleet_plan",
+        "phrase": "539"
+      },
+      "weight_envelope": {
+        "source": "translink_2020_fleet_plan",
+        "phrase": "19,550"
+      },
+      "charging_power": {
+        "source": "translink_2020_fleet_plan",
+        "phrase": "50 kW per bus"
+      }
+    },
+    "unresolved": [
+      "31 December 2023 vehicle register by status, class, age, depot and propulsion",
+      "2023 block-to-vehicle and block-to-garage mapping",
+      "2023 depot occupancy and operational (not nominal) parking constraints",
+      "site-specific firm power, transformer, feeder, interconnection cost and commissioning date",
+      "candidate BEB axle-load and full-load payload certification on TransLink routes",
+      "route-level winter kWh/km and accessory-heating profiles",
+      "trolley feeder/rectifier concurrent firm capacity by segment",
+      "authentic load and crowd counts for every assigned trip",
+      "APTA 2023 TransLink/CMBC rows; official ZIP returned HTTP 403"
+    ],
+    "model_implication": {
+      "initial_beb_scenario": "The 18-BEB subtraction is contradicted by the December approximate 275+5 split. Retain as stress only; use five BEB plus about 275 trolleys as the 2023 central inventory if no better register is obtained.",
+      "depot_implication": "Nominal capacity alone does not prove feasibility: 2023 sources state all depots were full, while 2025 active fleet is below the 2020 nominal total. Mixed-class tracks, charging equipment and operational buffers are required.",
+      "power_implication": "The 78 MW result is system-wide planning evidence, not site firm capacity. A 2033 accelerated case needs earlier site scheduling than the 2040 roadmap."
+    }
+  },
+  "unresolved_evidence_registry": [
+    {
+      "evidence_id": "G01",
+      "scope": "Vancouver 2023 vehicle class-age-depot-status register",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "FOI log says several 2023 fleet/block requests were released to an applicant but no public attachment or URI is present; APTA 2023 archive endpoint returned HTTP 403",
+      "model_effect": "Exact initial ages and depot assignment remain scenario inputs",
+      "required_to_close": "Obtain the released records or an equivalent dated operator register"
+    },
+    {
+      "evidence_id": "G02",
+      "scope": "Vancouver vehicle-to-block and block-to-garage assignments",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "GTFS carries block IDs but no vehicle or garage ID; related FOI attachments are not public",
+      "model_effect": "Full-city screening is a necessary count/time/energy test rather than a dispatch certificate",
+      "required_to_close": "Vehicle-level block register and garage assignment"
+    },
+    {
+      "evidence_id": "G03",
+      "scope": "Vancouver depot occupancy and class-compatible parking",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "2020 nominal capacity and 2023 all-depots-full statement obtained; actual occupied slots by class are absent",
+      "model_effect": "Nominal 1991 plus planned 300 spaces do not certify current capacity",
+      "required_to_close": "Timestamped site occupancy and bus/charger footprints"
+    },
+    {
+      "evidence_id": "G04",
+      "scope": "Vancouver site transformer/feeder/firm power and interconnection cost",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "2024 plan gives 78 MW system load and new-feed requirements; no site firm MW or tariff quote is public",
+      "model_effect": "Site power and 2033 charging feasibility remain conditional",
+      "required_to_close": "Utility interconnection studies by site"
+    },
+    {
+      "evidence_id": "G05",
+      "scope": "Vancouver route winter kWh/km and loaded-axle approval",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "LFSe+ winter prototype exceeded 150 km; public source has no route-level winter energy or axle approval",
+      "model_effect": "150-300-350 km screens remain technology scenarios",
+      "required_to_close": "Route duty-cycle test with load and axle certification"
+    },
+    {
+      "evidence_id": "G06",
+      "scope": "Vancouver trolley feeder concurrent capacity and block paths",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "Official architecture gives about 320 km 600 V DC overhead and 20-22 rectifier stations; segment firm capacity is absent",
+      "model_effect": "Trolley feasibility remains UNVERIFIED without assigning fictitious batteries",
+      "required_to_close": "Feeder/rectifier load study and route path map"
+    },
+    {
+      "evidence_id": "G07",
+      "scope": "Vancouver full-year as-operated times and passenger loads",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "Recovered fall GTFS is planned service; January-August as-operated data absent",
+      "model_effect": "Service obligation is represented by recovered fall departures and capacity proxies",
+      "required_to_close": "Full-year AVL/APC records"
+    },
+    {
+      "evidence_id": "G08",
+      "scope": "Strict zero-emission electricity sourcing behind every charger",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "BC Hydro reports a 100% clean fixed-period portfolio and 2023 factor 11.3 tCO2e/GWh; no hourly matching or TransLink certificate is public",
+      "model_effect": "Central environment ledger uses nonzero average factor; zero source is sensitivity only",
+      "required_to_close": "Hourly clean-energy contract/matching evidence"
+    },
+    {
+      "evidence_id": "G09",
+      "scope": "TransLink-specific local vehicle/site bids and construction costs",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "Planning envelopes and project budgets are public; as-procured item bids and site construction cash flows are absent",
+      "model_effect": "Financial scores are conditional 2023-CAD envelopes rather than awarded TCO",
+      "required_to_close": "Awarded contracts and site schedules"
+    },
+    {
+      "evidence_id": "G10",
+      "scope": "Road-vehicle end-of-life timing and facility decommissioning",
+      "status": "OUTSIDE_2033_HORIZON",
+      "public_search_result": "Buses bought in 2029-33 do not reach end of life by 2033; no local EOL inventory is public",
+      "model_effect": "Vehicle EOL is outside the 10-year comparison; charger equipment lifecycle is included",
+      "required_to_close": "Whole-life disposal plan and local recycling factors"
+    },
+    {
+      "evidence_id": "C01",
+      "scope": "Chicago route blocks garages chargers and firm power",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "Purchase envelope and age bins obtained; these operational records are absent",
+      "model_effect": "Chicago certificate is fleet/body/deadline only",
+      "required_to_close": "Route and depot dispatch records"
+    },
+    {
+      "evidence_id": "L01",
+      "scope": "London route blocks garages charging power and local prices",
+      "status": "UNVERIFIED_PUBLIC_GAP",
+      "public_search_result": "TfL fleet audit supports body slots; operational and local cost records are absent",
+      "model_effect": "London certificate is fleet-slot only",
+      "required_to_close": "Route/depot/power and cost data"
+    }
+  ],
   "conditional_2033_policy_scenario": {
     "status": "CONDITIONAL_EXECUTED_SCENARIO_NOT_CERTIFIED_CITY_OPTIMUM",
     "service_baseline": {
       "source_day": "2023-11-14",
       "derived_2023_fleet_total": 1725,
-      "derived_2023_non_trolley_fleet": 1463,
+      "derived_2023_non_trolley_fleet": 1450,
       "active_non_trolley_blocks": 1502,
       "capacity_proxy_blocks_not_purchased": 193,
       "selected_range_km": 300,
       "battery_depot_block_requests": 1741,
       "double_deck_in_route_blocks": 57,
-      "scaled_battery_fleet_positions": 1630,
-      "net_new_battery_purchases": 1612,
-      "additional_active_block_requests": 224,
-      "additional_active_block_requests_pct": 15.93172119487909,
+      "scaled_battery_fleet_positions": 1615,
+      "net_new_battery_purchases": 1610,
+      "additional_active_block_requests": 222,
+      "additional_active_block_requests_pct": 15.936826992103374,
       "annual_2023_bus_km": 106868324.0,
       "fossil_service_share": 0.8957886690558847,
-      "annual_nondeck_fossil_km_estimate": 88786898.98172182
+      "annual_nondeck_fossil_km_estimate": 89615491.72168045
     },
-    "base_gross_pv_cad": 2274852250.858412,
-    "base_plan_gross_pv_cad": 4303074983.166855,
-    "base_economic_score_pct": -89.15843794000672,
+    "base_gross_pv_cad": 2293975355.754249,
+    "base_plan_gross_pv_cad": 4318264219.141689,
+    "base_economic_score_pct": -88.2437057708435,
     "environment_score_boundary_range_pct": [
-      -17.606208061737586,
-      15.142159205671447
+      -17.25557153122854,
+      15.241707633280255
     ],
     "boundary": "partial life cycle: vehicle/battery production, operation and maintenance; infrastructure construction and end-of-life excluded",
     "warning": "Not a certified full-city optimum because vehicle, depot, charger and winter records are missing.",
@@ -121,41 +393,43 @@
       "status": "EXECUTED_CARTESIAN_ASSUMPTION_SPACE_NOT_A_CONFIDENCE_INTERVAL",
       "cells": 432768,
       "economic_score_percentiles": {
-        "p05": -140.22908786381976,
-        "median": -113.96773824153982,
-        "p95": -83.39989213781163,
-        "minimum": -147.84630201052772,
-        "maximum": -79.46326161566014
+        "p05": -137.84815353297026,
+        "median": -112.01592933510086,
+        "p95": -81.91734748733205,
+        "minimum": -145.4055068535904,
+        "maximum": -78.04644316146405
       },
       "environment_score_percentiles": {
-        "p05": -33.7364735554781,
-        "median": 7.786273244990558,
-        "p95": 15.176853987955457,
-        "minimum": -40.97278030600268,
-        "maximum": 16.427761590956038
+        "p05": -32.914951435888284,
+        "median": 8.071380828937926,
+        "p95": 15.342909811927694,
+        "minimum": -40.033596057087465,
+        "maximum": 16.574949412126045
       },
       "named_case_reproduction": {
         "cases_matched": 1,
-        "net_new_battery_positions": 1612.0,
+        "net_new_battery_positions": 1610.0,
         "gross_pv_difference_cad": 0.0,
-        "economic_score_difference_pct_points": 0.0,
+        "economic_score_difference_pct_points": -4.263256414560601e-14,
         "environment_score_difference_pct_points": 0.0
       }
     },
     "class_specific_full_fleet_core_bound": {
       "status": "CONDITIONAL_CLASS_INVENTORY_COST_SCENARIO_NOT_DISPATCH_CERTIFIED",
       "classes": {
-        "heavy_non_deck": 1419,
+        "heavy_non_deck": 1406,
         "double_deck": 57,
         "community_shuttle_midpoint": 189,
-        "existing_beb": 18
+        "existing_beb": 5
       },
       "initial_stock_2023": {
         "heavy_conventional_scenario": 1199,
         "double_deck_conventional_scenario": 57,
         "community_shuttle_conventional_scenario": 189,
-        "electric_trolleys": 262,
-        "existing_beb": 18,
+        "electric_trolleys": 275,
+        "electric_trolleys_renewed": 262,
+        "existing_electric_carried_through_2033": 13,
+        "existing_beb": 5,
         "conventional": 1445,
         "total": 1725
       },
@@ -371,7 +645,7 @@
       ],
       "central": {
         "case": "central",
-        "heavy_positions_after_service_scale": 1419,
+        "heavy_positions_after_service_scale": 1406,
         "heavy_purchases_after_existing_beb": 1401,
         "shuttle_fleet": 189,
         "double_deck_fleet": 57,
@@ -383,86 +657,86 @@
         "baseline_shuttle_unit_cost_cad": 288224.21205592965,
         "heavy_unit_cost_cad": 1200000.0,
         "deck_unit_cost_cad": 2352434.7932856698,
-        "shuttle_unit_cost_cad": 428571.4285714286,
-        "shared_depot_cad": 2086764705.8823528,
-        "deck_core_capital_cad": 150468682.19148272,
-        "shuttle_core_capital_cad": 90500000.0,
-        "additional_class_capital_cad": 25879898.974199563,
-        "capital_gross_nominal_cad": 4008933388.0738354,
-        "common_trolley_capital_nominal_cad": 575149510.2020099,
-        "total_modeled_capital_nominal_cad": 4584082898.275846,
-        "baseline_gross_pv_cad": 2624839942.469086,
-        "plan_gross_pv_cad": 4430076802.846726,
-        "economic_score_gross_pct": -68.7751215291064,
-        "incremental_gross_pv_cad": 1805236860.3776402,
+        "shuttle_unit_cost_cad": 475481.50078603794,
+        "shared_depot_cad": 2067647058.8235292,
+        "deck_core_capital_cad": 152676377.28518367,
+        "shuttle_core_capital_cad": 99366003.64856116,
+        "additional_class_capital_cad": 28087594.06790048,
+        "capital_gross_2023_cad": 4000889439.757274,
+        "common_trolley_capital_2023_cad": 575149510.2020099,
+        "total_modeled_capital_2023_cad": 4576038949.959285,
+        "baseline_gross_pv_cad": 2643963047.3649235,
+        "plan_gross_pv_cad": 4434461179.193175,
+        "economic_score_gross_pct": -67.7202404024796,
+        "incremental_gross_pv_cad": 1790498131.8282518,
         "components_pv_cad": {
           "baseline_vehicle_capex": 569686972.3472923,
-          "baseline_om": 2174894875.8298535,
+          "baseline_om": 2194017980.7256904,
           "baseline_residual": -364644045.422724,
           "plan_heavy_vehicle_capex": 1328371519.3673356,
           "plan_deck_vehicle_capex": 104436933.13706869,
-          "plan_shuttle_vehicle_capex": 63053411.56179963,
+          "plan_shuttle_vehicle_capex": 69955038.43786314,
           "common_trolley_replacement_capex": 515468327.43891585,
-          "plan_shared_heavy_depot": 1831055738.4100811,
-          "plan_class_charger_infrastructure": 22708615.586894486,
-          "plan_om": 2084983002.3897343,
-          "plan_residual": -1249434557.3208513,
+          "plan_shared_heavy_depot": 1814280738.6924412,
+          "plan_class_charger_infrastructure": 24645783.0876605,
+          "plan_om": 2103315543.0121963,
+          "plan_residual": -1255446516.2560542,
           "common_trolley_replacement_residual": -270566187.7242514
         },
         "grant_cases": [
           {
             "grant_fraction": 0.0,
-            "agency_pv_cad": 4430076802.846726,
-            "agency_economic_score_vs_baseline_pct": -68.7751215291064
+            "agency_pv_cad": 4434461179.193175,
+            "agency_economic_score_vs_baseline_pct": -67.7202404024796
           },
           {
             "grant_fraction": 0.25,
-            "agency_pv_cad": 3592670248.3309317,
-            "agency_economic_score_vs_baseline_pct": -36.87197418031687
+            "agency_pv_cad": 3599038676.012583,
+            "agency_economic_score_vs_baseline_pct": -36.1228811272353
           },
           {
             "grant_fraction": 0.5,
-            "agency_pv_cad": 2755263693.815137,
-            "agency_economic_score_vs_baseline_pct": -4.968826831527339
+            "agency_pv_cad": 2763616172.8319907,
+            "agency_economic_score_vs_baseline_pct": -4.525521851991018
           }
         ],
-        "grant_eligible_capital_pv_cad": 3349626218.0631795,
+        "grant_eligible_capital_pv_cad": 3341690012.722369,
         "grant_scope": "Incremental route-conversion capital only. Common trolley replacement is excluded because the same electric renewal is required in the ordinary-renewal comparator.",
         "grant_cases_with_common_trolley_capital": [
           {
             "grant_fraction": 0.0,
-            "agency_pv_cad": 4430076802.846726,
-            "agency_economic_score_vs_baseline_pct": -68.7751215291064
+            "agency_pv_cad": 4434461179.193175,
+            "agency_economic_score_vs_baseline_pct": -67.7202404024796
           },
           {
             "grant_fraction": 0.25,
-            "agency_pv_cad": 3463803166.471203,
-            "agency_economic_score_vs_baseline_pct": -31.962452659606218
+            "agency_pv_cad": 3470171594.152854,
+            "agency_economic_score_vs_baseline_pct": -31.248868913329257
           },
           {
             "grant_fraction": 0.5,
-            "agency_pv_cad": 2497529530.095679,
-            "agency_economic_score_vs_baseline_pct": 4.850216209893977
+            "agency_pv_cad": 2505882009.1125326,
+            "agency_economic_score_vs_baseline_pct": 5.222502575821088
           }
         ],
         "grant_cases_symmetric_common_trolley": [
           {
             "grant_fraction": 0.0,
-            "baseline_agency_pv_cad": 2624839942.469086,
-            "plan_agency_pv_cad": 4430076802.846726,
-            "agency_economic_score_vs_baseline_pct": -68.7751215291064
+            "baseline_agency_pv_cad": 2643963047.3649235,
+            "plan_agency_pv_cad": 4434461179.193175,
+            "agency_economic_score_vs_baseline_pct": -67.7202404024796
           },
           {
             "grant_fraction": 0.25,
-            "baseline_agency_pv_cad": 2495972860.6093574,
-            "plan_agency_pv_cad": 3463803166.471203,
-            "agency_economic_score_vs_baseline_pct": -38.77567425254629
+            "baseline_agency_pv_cad": 2515095965.5051947,
+            "plan_agency_pv_cad": 3470171594.152854,
+            "agency_economic_score_vs_baseline_pct": -37.97372512805165
           },
           {
             "grant_fraction": 0.5,
-            "baseline_agency_pv_cad": 2367105778.749628,
-            "plan_agency_pv_cad": 2497529530.095679,
-            "agency_economic_score_vs_baseline_pct": -5.509840435392128
+            "baseline_agency_pv_cad": 2386228883.6454654,
+            "plan_agency_pv_cad": 2505882009.1125326,
+            "agency_economic_score_vs_baseline_pct": -5.01431888144242
           }
         ],
         "grant_extension_note": "grant_cases_with_common_trolley_capital applies a common-trolley grant only to the plan and is retained only as an intentionally asymmetric policy counterfactual. The symmetric_common_trolley case applies the same percentage to both comparator and plan."
@@ -471,75 +745,75 @@
         {
           "baseline_om_cad_per_vehicle_km": 1.97,
           "label": "hybrid-rate low",
-          "economic_score_gross_pct": -104.05693785208787
+          "economic_score_gross_pct": -102.76291139063633
         },
         {
           "baseline_om_cad_per_vehicle_km": 2.77,
           "label": "CNG-rate middle",
-          "economic_score_gross_pct": -66.42700832047308
+          "economic_score_gross_pct": -65.38912524643851
         },
         {
           "baseline_om_cad_per_vehicle_km": 3.3,
           "label": "diesel-rate high",
-          "economic_score_gross_pct": -50.08759057893365
+          "economic_score_gross_pct": -49.171726232497996
         }
       ],
       "environment_central": [
         {
           "case": "renewable_fuel_mix",
           "baseline_operating_g_per_km": 302.0,
-          "baseline_operating_t": 284595.4349247999,
-          "plan_operating_t": 215255.92465404898,
-          "baseline_maintenance_t": 49380.135066422234,
-          "plan_maintenance_t": 53079.87572044464,
+          "baseline_operating_t": 287097.784999475,
+          "plan_operating_t": 217148.5961906625,
+          "baseline_maintenance_t": 49814.31766216055,
+          "plan_maintenance_t": 53546.58886715373,
           "baseline_production_t": 53179.136999999995,
           "plan_production_t": 174367.194,
-          "avoided_emissions_t": -55548.287383271556,
-          "baseline_boundary_t": 387154.7069912221,
-          "plan_boundary_t": 442702.99437449366,
-          "environment_score_pct": -14.347826948809638
+          "avoided_emissions_t": -54971.13939618069,
+          "baseline_boundary_t": 390091.23966163554,
+          "plan_boundary_t": 445062.37905781623,
+          "environment_score_pct": -14.09186718570316
         },
         {
           "case": "rng_heavy",
           "baseline_operating_g_per_km": 960.0,
-          "baseline_operating_t": 904674.2302245293,
-          "plan_operating_t": 674114.2331758487,
-          "baseline_maintenance_t": 49380.135066422234,
-          "plan_maintenance_t": 53079.87572044464,
+          "baseline_operating_t": 912628.7205281323,
+          "plan_operating_t": 680041.4884818689,
+          "baseline_maintenance_t": 49814.31766216055,
+          "plan_maintenance_t": 53546.58886715373,
           "baseline_production_t": 53179.136999999995,
           "plan_production_t": 174367.194,
-          "avoided_emissions_t": 105672.19939465821,
-          "baseline_boundary_t": 1007233.5022909516,
-          "plan_boundary_t": 901561.3028962933,
-          "environment_score_pct": 10.491330873556818
+          "avoided_emissions_t": 107666.90384127013,
+          "baseline_boundary_t": 1015622.1751902928,
+          "plan_boundary_t": 907955.2713490226,
+          "environment_score_pct": 10.601078478923233
         },
         {
           "case": "weighted_mix",
           "baseline_operating_g_per_km": 1233.0,
-          "baseline_operating_t": 1161940.96444463,
-          "plan_operating_t": 864491.6164987233,
-          "baseline_maintenance_t": 49380.135066422234,
-          "plan_maintenance_t": 53079.87572044464,
+          "baseline_operating_t": 1172157.51292832,
+          "plan_operating_t": 872092.7948580078,
+          "baseline_maintenance_t": 49814.31766216055,
+          "plan_maintenance_t": 53546.58886715373,
           "baseline_production_t": 53179.136999999995,
           "plan_production_t": 174367.194,
-          "avoided_emissions_t": 172561.55029188446,
-          "baseline_boundary_t": 1264500.2365110524,
-          "plan_boundary_t": 1091938.686219168,
-          "environment_score_pct": 13.646620641844079
+          "avoided_emissions_t": 175144.38986531924,
+          "baseline_boundary_t": 1275150.9675904808,
+          "plan_boundary_t": 1100006.5777251616,
+          "environment_score_pct": 13.735188563301744
         },
         {
           "case": "fossil_diesel",
           "baseline_operating_g_per_km": 1580.0,
-          "baseline_operating_t": 1488943.0039112049,
-          "plan_operating_t": 1106473.1257039886,
-          "baseline_maintenance_t": 49380.135066422234,
-          "plan_maintenance_t": 53079.87572044464,
+          "baseline_operating_t": 1502034.769202551,
+          "plan_operating_t": 1116201.9645009388,
+          "baseline_maintenance_t": 49814.31766216055,
+          "plan_maintenance_t": 53546.58886715373,
           "baseline_production_t": 53179.136999999995,
           "plan_production_t": 174367.194,
-          "avoided_emissions_t": 257582.08055319404,
-          "baseline_boundary_t": 1591502.2759776271,
-          "plan_boundary_t": 1333920.195424433,
-          "environment_score_pct": 16.184838968889736
+          "avoided_emissions_t": 260912.4764966194,
+          "baseline_boundary_t": 1605028.2238647118,
+          "plan_boundary_t": 1344115.7473680924,
+          "environment_score_pct": 16.25594320505929
         }
       ],
       "production_components_t_central": {
@@ -556,13 +830,2902 @@
         ]
       },
       "boundaries": [
-        "Vehicle prices come from public planning or external procurement envelopes and mix 2021--2026 nominal currencies; they are not rebased to a single bid year.",
-        "Shared heavy-bus depot investment is sized from 1419 heavy positions and retained once. Class-specific charger/site items are added separately, but site power and civil works may still overlap.",
+        "Vehicle and infrastructure leaves are CPI-rebased to constant 2023 CAD before aggregation; fixed FX and supply premiums remain explicit assumptions, not local bids.",
+        "Shared heavy-bus depot investment is sized from 1406 heavy positions and retained once. Class-specific charger/site items are added separately, but site power and civil works may still overlap.",
         "The double-deck annual distance is a weekday-share proxy; the shuttle distance is an independently published 2023 actual total.",
+        "The approximate 275-trolley/5-BEB split comes from same-day public statements. Only 262 known trolley replacements occur; 13 existing electric assets are carried through 2033. If those also require renewal, purchases rise by 13.",
         "Shuttle and double-deck manufacturing inventories include battery factors; the shuttle glider mass is not invented.",
         "Depot construction and end-of-life are excluded from the environmental boundary.",
         "The financial envelope excludes post-2023 battery replacement, retained pre-2024 asset terminal values, disposal proceeds and infrastructure terminal value; opposing omissions mean this is not a conservative bound or complete TCO."
       ]
+    },
+    "incremental_tco_bridge": {
+      "status": "SOURCE_LABELLED_ANNUALIZED_TCO_BRIDGE_NOT_LOCAL_QUOTE_OR_FORECAST",
+      "base_year": 2023,
+      "discount_rate_real": 0.03,
+      "price_leaves": {
+        "battery_replacement": {
+          "amount": 0.07,
+          "source_year": 2019,
+          "currency": "CAD",
+          "cad_per_unit": 1.0,
+          "FX_basis": "CAD; no FX",
+          "base_year": 2023,
+          "source_scope": "Appendix D, lower 2019-CAD mid-life battery replacement rate per service-km",
+          "source_id": "fleet2020",
+          "status": "PUBLIC_ENVELOPE",
+          "cpi_factor": 1.1553499203333741,
+          "value_2023_cad": 0.08087449442333619
+        },
+        "battery_replacement_high": {
+          "amount": 0.2,
+          "source_year": 2019,
+          "currency": "CAD",
+          "cad_per_unit": 1.0,
+          "FX_basis": "CAD; no FX",
+          "base_year": 2023,
+          "source_scope": "Appendix D, upper 2019-CAD mid-life battery replacement rate per service-km",
+          "source_id": "fleet2020",
+          "status": "PUBLIC_ENVELOPE",
+          "cpi_factor": 1.1553499203333741,
+          "value_2023_cad": 0.23106998406667484
+        },
+        "charger_maintenance": {
+          "amount": 0.03,
+          "source_year": 2019,
+          "currency": "CAD",
+          "cad_per_unit": 1.0,
+          "FX_basis": "CAD; no FX",
+          "base_year": 2023,
+          "source_scope": "Appendix D, lower 2019-CAD charger maintenance rate per service-km",
+          "source_id": "fleet2020",
+          "status": "PUBLIC_ENVELOPE",
+          "cpi_factor": 1.1553499203333741,
+          "value_2023_cad": 0.03466049761000122
+        },
+        "charger_maintenance_high": {
+          "amount": 0.05,
+          "source_year": 2019,
+          "currency": "CAD",
+          "cad_per_unit": 1.0,
+          "FX_basis": "CAD; no FX",
+          "base_year": 2023,
+          "source_scope": "Appendix D, upper 2019-CAD charger maintenance rate per service-km",
+          "source_id": "fleet2020",
+          "status": "PUBLIC_ENVELOPE",
+          "cpi_factor": 1.1553499203333741,
+          "value_2023_cad": 0.05776749601666871
+        },
+        "extra_operator": {
+          "amount": 0.02,
+          "source_year": 2019,
+          "currency": "CAD",
+          "cad_per_unit": 1.0,
+          "FX_basis": "CAD; no FX",
+          "base_year": 2023,
+          "source_scope": "Appendix D, lower electric-bus operator labour increment per service-km",
+          "source_id": "fleet2020",
+          "status": "PUBLIC_ENVELOPE",
+          "cpi_factor": 1.1553499203333741,
+          "value_2023_cad": 0.023106998406667485
+        },
+        "extra_operator_high": {
+          "amount": 0.16,
+          "source_year": 2019,
+          "currency": "CAD",
+          "cad_per_unit": 1.0,
+          "FX_basis": "CAD; no FX",
+          "base_year": 2023,
+          "source_scope": "Appendix D, upper electric-bus operator labour increment per service-km",
+          "source_id": "fleet2020",
+          "status": "PUBLIC_ENVELOPE",
+          "cpi_factor": 1.1553499203333741,
+          "value_2023_cad": 0.18485598725333988
+        }
+      },
+      "cases": [
+        {
+          "case": "low",
+          "annualized_rate_2023_cad_per_electric_km": 0.1386419904400049,
+          "added_pv_cad": 26274805.376997396,
+          "plan_full_tco_pv_cad": 4460735984.570172,
+          "economic_score_pct": -68.71400638582735
+        },
+        {
+          "case": "high",
+          "annualized_rate_2023_cad_per_electric_km": 0.47369346733668344,
+          "added_pv_cad": 89772251.7047411,
+          "plan_full_tco_pv_cad": 4524233430.897917,
+          "economic_score_pct": -71.11560751225112
+        }
+      ],
+      "included_to_avoid_double_counting": [
+        "charger maintenance",
+        "mid-life battery replacement reserve",
+        "extra operator labour for electric layover/deadhead"
+      ],
+      "already_in_central_ledger_not_added": [
+        "vehicle and infrastructure capital",
+        "bus maintenance and energy",
+        "demand and commodity electricity charges",
+        "vehicle residual"
+      ],
+      "separate_overlapping_scenarios_not_added": {
+        "extra_service_positions": 202,
+        "driver_cost_per_fte_cad": [
+          70500.0,
+          132000.0
+        ],
+        "driver_pv_range_cad": [
+          28389798.53074656,
+          53155367.46182335
+        ],
+        "deadhead_share_of_plan_om": [
+          0.05,
+          0.15
+        ],
+        "deadhead_pv_range_cad": [
+          105165777.15060982,
+          315497331.45182943
+        ],
+        "future_battery_capacity_kwh": 539260,
+        "future_battery_reserve_nominal_cad_at_100_200_per_kwh": [
+          53926000,
+          107852000
+        ],
+        "status": "SCREENING_RANGES_NOT_LOCAL_QUOTES_OR_FORECASTS"
+      },
+      "scope": "Electric service kilometres in the class-specific 2024--2033 ledger only.",
+      "boundary": "The rates come from a 2019 40-ft lifecycle case, not local 2024--2033 invoices. They are annualized reserves and are not the year in which a battery or charger is procured. Training, insurance, tax, financing, local site upgrades and post-horizon replacement of newly installed assets remain outside the two scores."
+    },
+    "infrastructure_environment_bridge": {
+      "status": "HORIZON_LCA_WITH_SOURCE_LABELLED_INFRASTRUCTURE_SCENARIO",
+      "horizon": [
+        2024,
+        2033
+      ],
+      "charger_count": {
+        "heavy_depot": 1406,
+        "double_deck": 9,
+        "community_shuttle": 95
+      },
+      "charger_equipment_t_per_unit_range": [
+        4.2693,
+        8.5386
+      ],
+      "depot_area": {
+        "source_sqft": 800000,
+        "source_capacity_buses": 340,
+        "source_m2": 74322.432,
+        "modeled_m2": 307345.1158588235,
+        "embodied_factor_kgco2e_per_m2": 650,
+        "depot_embodied_t": 199774.32530823527
+      },
+      "infrastructure_t_range": [
+        206220.9683082353,
+        212667.61130823527
+      ],
+      "cases": [
+        {
+          "fuel_case": "renewable_fuel_mix",
+          "equipment_bound": "low",
+          "baseline_t": 390091.23966163554,
+          "plan_t": 651283.3473660515,
+          "infrastructure_t": 206220.9683082353,
+          "environment_score_pct": -66.95667093959187
+        },
+        {
+          "fuel_case": "renewable_fuel_mix",
+          "equipment_bound": "high",
+          "baseline_t": 390091.23966163554,
+          "plan_t": 657729.9903660514,
+          "infrastructure_t": 212667.61130823527,
+          "environment_score_pct": -68.6092697022792
+        },
+        {
+          "fuel_case": "rng_heavy",
+          "equipment_bound": "low",
+          "baseline_t": 1015622.1751902928,
+          "plan_t": 1114176.239657258,
+          "infrastructure_t": 206220.9683082353,
+          "environment_score_pct": -9.703811798762617
+        },
+        {
+          "fuel_case": "rng_heavy",
+          "equipment_bound": "high",
+          "baseline_t": 1015622.1751902928,
+          "plan_t": 1120622.8826572578,
+          "infrastructure_t": 212667.61130823527,
+          "environment_score_pct": -10.338559951912387
+        },
+        {
+          "fuel_case": "weighted_mix",
+          "equipment_bound": "low",
+          "baseline_t": 1275150.9675904808,
+          "plan_t": 1306227.5460333969,
+          "infrastructure_t": 206220.9683082353,
+          "environment_score_pct": -2.437090135424372
+        },
+        {
+          "fuel_case": "weighted_mix",
+          "equipment_bound": "high",
+          "baseline_t": 1275150.9675904808,
+          "plan_t": 1312674.1890333968,
+          "infrastructure_t": 212667.61130823527,
+          "environment_score_pct": -2.9426493330291446
+        },
+        {
+          "fuel_case": "fossil_diesel",
+          "equipment_bound": "low",
+          "baseline_t": 1605028.2238647118,
+          "plan_t": 1550336.7156763277,
+          "infrastructure_t": 206220.9683082353,
+          "environment_score_pct": 3.40751068269028
+        },
+        {
+          "fuel_case": "fossil_diesel",
+          "equipment_bound": "high",
+          "baseline_t": 1605028.2238647118,
+          "plan_t": 1556783.3586763276,
+          "infrastructure_t": 212667.61130823527,
+          "environment_score_pct": 3.005857745742094
+        }
+      ],
+      "included": [
+        "vehicle/battery production proxies",
+        "shared service ledger",
+        "maintenance and energy",
+        "charging equipment lifecycle",
+        "depot building structure and envelope at a 650 kgCO2e/m2 scenario"
+      ],
+      "excluded_because_outside_horizon": [
+        "end-of-life of buses purchased in 2029--2033 (first cohort reaches age 8 in 2037)",
+        "post-2033 service, battery replacements and infrastructure decommissioning"
+      ],
+      "remaining_proxy": [
+        "shuttle body/powertrain",
+        "deck-specific body mass",
+        "articulated body mass",
+        "common trolley body"
+      ],
+      "source_boundary": "The floor-area factor and charger equipment case come from non-TransLink LCA studies and are scenario parameters, not Vancouver EPDs. The 800,000-sqft floor area is a project-participant published value, not an as-built quantity."
+    },
+    "three_city_execution_certificates": {
+      "date": "2026-10-20",
+      "status": "TWO_CITY_FLEET_CLASS_EXECUTION_CERTIFICATES_COMPLETED",
+      "chicago": {
+        "status": "INFEASIBLE_AGAINST_CURRENT_OFFICIAL_FMP_ENVELOPE_AND_2024_RAMP",
+        "fleet_basis": {
+          "year_end_2023_slots": 1875,
+          "standard": 1576,
+          "articulated": 299,
+          "current_standard_40ft_bebs": 25,
+          "current_bebs_2014": 2,
+          "current_bebs_2022": 23
+        },
+        "official_fmp_purchase_envelope": {
+          "standard_40ft": 1157,
+          "articulated_60ft": 310,
+          "total": 1467,
+          "2023_26_standard_plus_articulated": 597,
+          "source": "CTA FY2024 Proposed Budget, Bus Fleet Management Plan, PDF p. 63",
+          "warning": "Up-to period envelopes, not annual deliveries. The 1,467 is already generous because some 2023 purchases are in the year-end 2023 inventory."
+        },
+        "2033_electrification_shortfall_under_fmp": {
+          "non_electric_standard_to_replace": 1551,
+          "known_age_due_2014_beb_renewals": 2,
+          "standard_purchase_shortfall": 396,
+          "non_electric_articulated_to_replace": 299,
+          "articulated_envelope_surplus": 11,
+          "total_minimum_purchases": 1852,
+          "total_purchase_shortfall": 385,
+          "outer_beb_age_uncertainty_purchase_range": [
+            1850,
+            1875
+          ]
+        },
+        "2024_ramp_certificate": {
+          "known_2024_new_bus_deliveries_in_budget": 200,
+          "due_at_14_year_cap_no_extension": 1056,
+          "due_after_430_funded_life_extensions": 626,
+          "due_after_608_fmp_max_life_extensions": 448,
+          "shortfall_after_430_vs_200_budgeted_deliveries": 426,
+          "shortfall_after_608_vs_200_budgeted_deliveries": 248,
+          "entire_2023_26_purchase_envelope_vs_2024_due_after_430": -29,
+          "note": "The 200 deliveries are a budget statement, not a typed, dated completion certificate; they still expose a ramp gap."
+        },
+        "stress_scenarios_without_life_extension": [
+          {
+            "life_cap_years": 12,
+            "funded_1000_series_life_extensions": 0,
+            "minimum_peak_annual_purchases": 1086,
+            "minimum_total_purchases_with_known_beb_renewals": 1852,
+            "non_electric_target_by_type": {
+              "Bus": 1551,
+              "Articulated Bus": 299
+            },
+            "2024_due_before_extensions": 1086,
+            "2024_due_after_extensions": 1086,
+            "schedule": [
+              {
+                "year": 2024,
+                "standard_due_slots": 850,
+                "articulated_due_slots": 236,
+                "standard_non_electric_replacements": 850,
+                "articulated_non_electric_replacements": 236,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 1086,
+                "non_electric_slots_remaining": 764
+              },
+              {
+                "year": 2025,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 63,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 63,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 63,
+                "non_electric_slots_remaining": 701
+              },
+              {
+                "year": 2026,
+                "standard_due_slots": 95,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 95,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 2,
+                "total_purchases": 97,
+                "non_electric_slots_remaining": 606
+              },
+              {
+                "year": 2027,
+                "standard_due_slots": 177,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 177,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 177,
+                "non_electric_slots_remaining": 429
+              },
+              {
+                "year": 2028,
+                "standard_due_slots": 146,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 146,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 146,
+                "non_electric_slots_remaining": 283
+              },
+              {
+                "year": 2029,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 0,
+                "non_electric_slots_remaining": 283
+              },
+              {
+                "year": 2030,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 0,
+                "non_electric_slots_remaining": 283
+              },
+              {
+                "year": 2031,
+                "standard_due_slots": 24,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 24,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 24,
+                "non_electric_slots_remaining": 259
+              },
+              {
+                "year": 2032,
+                "standard_due_slots": 6,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 6,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 6,
+                "non_electric_slots_remaining": 253
+              },
+              {
+                "year": 2033,
+                "standard_due_slots": 17,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 253,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 253,
+                "non_electric_slots_remaining": 0
+              }
+            ],
+            "solver_status": "OPTIMAL",
+            "mip_gap": 0.0,
+            "note": "Oldest-age robust deadlines; the 430/608 extension is applied to 14+-year standard 1000-series slots and is an optimistic 2024 deferral because the public age bins do not identify vehicles."
+          },
+          {
+            "life_cap_years": 14,
+            "funded_1000_series_life_extensions": 0,
+            "minimum_peak_annual_purchases": 1056,
+            "minimum_total_purchases_with_known_beb_renewals": 1852,
+            "non_electric_target_by_type": {
+              "Bus": 1551,
+              "Articulated Bus": 299
+            },
+            "2024_due_before_extensions": 1056,
+            "2024_due_after_extensions": 1056,
+            "schedule": [
+              {
+                "year": 2024,
+                "standard_due_slots": 850,
+                "articulated_due_slots": 206,
+                "standard_non_electric_replacements": 850,
+                "articulated_non_electric_replacements": 206,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 1056,
+                "non_electric_slots_remaining": 794
+              },
+              {
+                "year": 2025,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 0,
+                "non_electric_slots_remaining": 794
+              },
+              {
+                "year": 2026,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 30,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 30,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 30,
+                "non_electric_slots_remaining": 764
+              },
+              {
+                "year": 2027,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 63,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 63,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 63,
+                "non_electric_slots_remaining": 701
+              },
+              {
+                "year": 2028,
+                "standard_due_slots": 95,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 95,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 2,
+                "total_purchases": 97,
+                "non_electric_slots_remaining": 606
+              },
+              {
+                "year": 2029,
+                "standard_due_slots": 177,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 177,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 177,
+                "non_electric_slots_remaining": 429
+              },
+              {
+                "year": 2030,
+                "standard_due_slots": 146,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 146,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 146,
+                "non_electric_slots_remaining": 283
+              },
+              {
+                "year": 2031,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 0,
+                "non_electric_slots_remaining": 283
+              },
+              {
+                "year": 2032,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 0,
+                "non_electric_slots_remaining": 283
+              },
+              {
+                "year": 2033,
+                "standard_due_slots": 24,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 283,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 283,
+                "non_electric_slots_remaining": 0
+              }
+            ],
+            "solver_status": "OPTIMAL",
+            "mip_gap": 0.0,
+            "note": "Oldest-age robust deadlines; the 430/608 extension is applied to 14+-year standard 1000-series slots and is an optimistic 2024 deferral because the public age bins do not identify vehicles."
+          },
+          {
+            "life_cap_years": 17,
+            "funded_1000_series_life_extensions": 0,
+            "minimum_peak_annual_purchases": 539,
+            "minimum_total_purchases_with_known_beb_renewals": 1852,
+            "non_electric_target_by_type": {
+              "Bus": 1551,
+              "Articulated Bus": 299
+            },
+            "2024_due_before_extensions": 539,
+            "2024_due_after_extensions": 539,
+            "schedule": [
+              {
+                "year": 2024,
+                "standard_due_slots": 539,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 539,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 539,
+                "non_electric_slots_remaining": 1311
+              },
+              {
+                "year": 2025,
+                "standard_due_slots": 311,
+                "articulated_due_slots": 206,
+                "standard_non_electric_replacements": 311,
+                "articulated_non_electric_replacements": 206,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 517,
+                "non_electric_slots_remaining": 794
+              },
+              {
+                "year": 2026,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 0,
+                "non_electric_slots_remaining": 794
+              },
+              {
+                "year": 2027,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 0,
+                "non_electric_slots_remaining": 794
+              },
+              {
+                "year": 2028,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 0,
+                "non_electric_slots_remaining": 794
+              },
+              {
+                "year": 2029,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 30,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 30,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 30,
+                "non_electric_slots_remaining": 764
+              },
+              {
+                "year": 2030,
+                "standard_due_slots": 0,
+                "articulated_due_slots": 63,
+                "standard_non_electric_replacements": 0,
+                "articulated_non_electric_replacements": 63,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 63,
+                "non_electric_slots_remaining": 701
+              },
+              {
+                "year": 2031,
+                "standard_due_slots": 95,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 95,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 2,
+                "total_purchases": 97,
+                "non_electric_slots_remaining": 606
+              },
+              {
+                "year": 2032,
+                "standard_due_slots": 177,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 177,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 177,
+                "non_electric_slots_remaining": 429
+              },
+              {
+                "year": 2033,
+                "standard_due_slots": 146,
+                "articulated_due_slots": 0,
+                "standard_non_electric_replacements": 429,
+                "articulated_non_electric_replacements": 0,
+                "known_2014_beb_renewals": 0,
+                "total_purchases": 429,
+                "non_electric_slots_remaining": 0
+              }
+            ],
+            "solver_status": "OPTIMAL",
+            "mip_gap": 0.0,
+            "note": "Oldest-age robust deadlines; the 430/608 extension is applied to 14+-year standard 1000-series slots and is an optimistic 2024 deferral because the public age bins do not identify vehicles."
+          }
+        ],
+        "funded_life_extension_schedule": {
+          "life_cap_years": 14,
+          "funded_1000_series_life_extensions": 430,
+          "minimum_peak_annual_purchases": 626,
+          "minimum_total_purchases_with_known_beb_renewals": 1852,
+          "non_electric_target_by_type": {
+            "Bus": 1551,
+            "Articulated Bus": 299
+          },
+          "2024_due_before_extensions": 1056,
+          "2024_due_after_extensions": 626,
+          "schedule": [
+            {
+              "year": 2024,
+              "standard_due_slots": 420,
+              "articulated_due_slots": 206,
+              "standard_non_electric_replacements": 420,
+              "articulated_non_electric_replacements": 206,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 626,
+              "non_electric_slots_remaining": 1224
+            },
+            {
+              "year": 2025,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 0,
+              "non_electric_slots_remaining": 1224
+            },
+            {
+              "year": 2026,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 30,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 30,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 30,
+              "non_electric_slots_remaining": 1194
+            },
+            {
+              "year": 2027,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 63,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 63,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 63,
+              "non_electric_slots_remaining": 1131
+            },
+            {
+              "year": 2028,
+              "standard_due_slots": 95,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 95,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 2,
+              "total_purchases": 97,
+              "non_electric_slots_remaining": 1036
+            },
+            {
+              "year": 2029,
+              "standard_due_slots": 607,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 607,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 607,
+              "non_electric_slots_remaining": 429
+            },
+            {
+              "year": 2030,
+              "standard_due_slots": 146,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 146,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 146,
+              "non_electric_slots_remaining": 283
+            },
+            {
+              "year": 2031,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 0,
+              "non_electric_slots_remaining": 283
+            },
+            {
+              "year": 2032,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 0,
+              "non_electric_slots_remaining": 283
+            },
+            {
+              "year": 2033,
+              "standard_due_slots": 24,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 283,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 283,
+              "non_electric_slots_remaining": 0
+            }
+          ],
+          "solver_status": "OPTIMAL",
+          "mip_gap": 0.0,
+          "note": "Oldest-age robust deadlines; the 430/608 extension is applied to 14+-year standard 1000-series slots and is an optimistic 2024 deferral because the public age bins do not identify vehicles."
+        },
+        "fmp_maximum_extension_schedule": {
+          "life_cap_years": 14,
+          "funded_1000_series_life_extensions": 608,
+          "minimum_peak_annual_purchases": 448,
+          "minimum_total_purchases_with_known_beb_renewals": 1852,
+          "non_electric_target_by_type": {
+            "Bus": 1551,
+            "Articulated Bus": 299
+          },
+          "2024_due_before_extensions": 1056,
+          "2024_due_after_extensions": 448,
+          "schedule": [
+            {
+              "year": 2024,
+              "standard_due_slots": 242,
+              "articulated_due_slots": 206,
+              "standard_non_electric_replacements": 242,
+              "articulated_non_electric_replacements": 206,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 448,
+              "non_electric_slots_remaining": 1402
+            },
+            {
+              "year": 2025,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 0,
+              "non_electric_slots_remaining": 1402
+            },
+            {
+              "year": 2026,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 30,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 30,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 30,
+              "non_electric_slots_remaining": 1372
+            },
+            {
+              "year": 2027,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 63,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 63,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 63,
+              "non_electric_slots_remaining": 1309
+            },
+            {
+              "year": 2028,
+              "standard_due_slots": 95,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 432,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 2,
+              "total_purchases": 434,
+              "non_electric_slots_remaining": 877
+            },
+            {
+              "year": 2029,
+              "standard_due_slots": 785,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 448,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 448,
+              "non_electric_slots_remaining": 429
+            },
+            {
+              "year": 2030,
+              "standard_due_slots": 146,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 146,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 146,
+              "non_electric_slots_remaining": 283
+            },
+            {
+              "year": 2031,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 0,
+              "non_electric_slots_remaining": 283
+            },
+            {
+              "year": 2032,
+              "standard_due_slots": 0,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 0,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 0,
+              "non_electric_slots_remaining": 283
+            },
+            {
+              "year": 2033,
+              "standard_due_slots": 24,
+              "articulated_due_slots": 0,
+              "standard_non_electric_replacements": 283,
+              "articulated_non_electric_replacements": 0,
+              "known_2014_beb_renewals": 0,
+              "total_purchases": 283,
+              "non_electric_slots_remaining": 0
+            }
+          ],
+          "solver_status": "OPTIMAL",
+          "mip_gap": 0.0,
+          "note": "Oldest-age robust deadlines; the 430/608 extension is applied to 14+-year standard 1000-series slots and is an optimistic 2024 deferral because the public age bins do not identify vehicles."
+        },
+        "residual_limits": [
+          "No public vehicle ID register, so the 25 BEB ages are inferred only from the two 2014 and twenty-three 2022 purchases.",
+          "No route block, depot, charger or firm-power data are used in this Chicago certificate.",
+          "The conclusion is against the current published FMP envelope and 2024 ramp; a larger procurement plan can change it."
+        ]
+      },
+      "london": {
+        "status": "FLEET_CLASS_BODY_COMPATIBLE_PLAN_EXECUTABLE; ROUTE_DEPOT_CHARGING_UNVERIFIED",
+        "source": "TfL Bus Fleet Audit, 31 March 2023, detailed registration/body tables",
+        "fleet_basis": {
+          "total_slots": 8643,
+          "single_deck": 2445,
+          "double_deck": 6198,
+          "audited_electric_single_deck": 362,
+          "audited_electric_double_deck": 588,
+          "audited_hydrogen_double_deck_reclassified_for_strict_electric_endpoint": 20,
+          "non_electric_single_deck": 2083,
+          "non_electric_double_deck": 5610
+        },
+        "plan_interpretation": "One like-body electric bus replaces each non-electric fleet slot; existing electric slots due under the selected life cap are renewed. This is an order-batch plan at body-class level, not a route or garage plan.",
+        "scenarios": [
+          {
+            "life_cap_years": 12,
+            "minimum_peak_annual_new_electric_deliveries": 2568,
+            "analytic_cumulative_deadline_bound": 2568,
+            "non_electric_conversions_by_body": {
+              "single_deck": 2083,
+              "double_deck": 5610
+            },
+            "existing_electric_renewals_by_body": {
+              "single_deck": 313,
+              "double_deck": 422
+            },
+            "minimum_total_new_electric_deliveries": 8428,
+            "maximum_annual_single_deck_deliveries": 855,
+            "maximum_annual_double_deck_deliveries": 1713,
+            "hydrogen_double_deck_converted_by_year": {
+              "2032": 4,
+              "2033": 16
+            },
+            "strict_electric_body_class_certificate": true,
+            "route_or_charging_certificate": false,
+            "solver_status": "OPTIMAL",
+            "phase_mip_gaps": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "annual_plan": [
+              {
+                "year": 2024,
+                "single_deck_non_electric_conversions": 855,
+                "double_deck_non_electric_conversions": 1713,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 2568,
+                "remaining_non_electric_single_deck": 1228,
+                "remaining_non_electric_double_deck": 3897,
+                "remaining_non_electric_total": 5125
+              },
+              {
+                "year": 2025,
+                "single_deck_non_electric_conversions": 87,
+                "double_deck_non_electric_conversions": 467,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 1,
+                "total_new_electric_deliveries": 555,
+                "remaining_non_electric_single_deck": 1141,
+                "remaining_non_electric_double_deck": 3430,
+                "remaining_non_electric_total": 4571
+              },
+              {
+                "year": 2026,
+                "single_deck_non_electric_conversions": 72,
+                "double_deck_non_electric_conversions": 488,
+                "single_deck_existing_electric_renewals": 6,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 566,
+                "remaining_non_electric_single_deck": 1069,
+                "remaining_non_electric_double_deck": 2942,
+                "remaining_non_electric_total": 4011
+              },
+              {
+                "year": 2027,
+                "single_deck_non_electric_conversions": 171,
+                "double_deck_non_electric_conversions": 629,
+                "single_deck_existing_electric_renewals": 7,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 807,
+                "remaining_non_electric_single_deck": 898,
+                "remaining_non_electric_double_deck": 2313,
+                "remaining_non_electric_total": 3211
+              },
+              {
+                "year": 2028,
+                "single_deck_non_electric_conversions": 186,
+                "double_deck_non_electric_conversions": 792,
+                "single_deck_existing_electric_renewals": 47,
+                "double_deck_existing_electric_renewals": 5,
+                "total_new_electric_deliveries": 1030,
+                "remaining_non_electric_single_deck": 712,
+                "remaining_non_electric_double_deck": 1521,
+                "remaining_non_electric_total": 2233
+              },
+              {
+                "year": 2029,
+                "single_deck_non_electric_conversions": 321,
+                "double_deck_non_electric_conversions": 689,
+                "single_deck_existing_electric_renewals": 18,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 1028,
+                "remaining_non_electric_single_deck": 391,
+                "remaining_non_electric_double_deck": 832,
+                "remaining_non_electric_total": 1223
+              },
+              {
+                "year": 2030,
+                "single_deck_non_electric_conversions": 199,
+                "double_deck_non_electric_conversions": 479,
+                "single_deck_existing_electric_renewals": 66,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 744,
+                "remaining_non_electric_single_deck": 192,
+                "remaining_non_electric_double_deck": 353,
+                "remaining_non_electric_total": 545
+              },
+              {
+                "year": 2031,
+                "single_deck_non_electric_conversions": 179,
+                "double_deck_non_electric_conversions": 203,
+                "single_deck_existing_electric_renewals": 32,
+                "double_deck_existing_electric_renewals": 65,
+                "total_new_electric_deliveries": 479,
+                "remaining_non_electric_single_deck": 13,
+                "remaining_non_electric_double_deck": 150,
+                "remaining_non_electric_total": 163
+              },
+              {
+                "year": 2032,
+                "single_deck_non_electric_conversions": 13,
+                "double_deck_non_electric_conversions": 134,
+                "single_deck_existing_electric_renewals": 53,
+                "double_deck_existing_electric_renewals": 116,
+                "total_new_electric_deliveries": 316,
+                "remaining_non_electric_single_deck": 0,
+                "remaining_non_electric_double_deck": 16,
+                "remaining_non_electric_total": 16
+              },
+              {
+                "year": 2033,
+                "single_deck_non_electric_conversions": 0,
+                "double_deck_non_electric_conversions": 16,
+                "single_deck_existing_electric_renewals": 84,
+                "double_deck_existing_electric_renewals": 235,
+                "total_new_electric_deliveries": 335,
+                "remaining_non_electric_single_deck": 0,
+                "remaining_non_electric_double_deck": 0,
+                "remaining_non_electric_total": 0
+              }
+            ],
+            "procurement_batches": [
+              {
+                "vintage": 2007,
+                "kind": "single_diesel",
+                "count": 3,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 3
+              },
+              {
+                "vintage": 2007,
+                "kind": "double_diesel",
+                "count": 1,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 1
+              },
+              {
+                "vintage": 2008,
+                "kind": "single_diesel",
+                "count": 42,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 42
+              },
+              {
+                "vintage": 2008,
+                "kind": "double_diesel",
+                "count": 30,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 30
+              },
+              {
+                "vintage": 2009,
+                "kind": "single_diesel",
+                "count": 155,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 155
+              },
+              {
+                "vintage": 2009,
+                "kind": "double_diesel",
+                "count": 216,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 216
+              },
+              {
+                "vintage": 2009,
+                "kind": "double_hybrid",
+                "count": 5,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 5
+              },
+              {
+                "vintage": 2010,
+                "kind": "single_diesel",
+                "count": 165,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 165
+              },
+              {
+                "vintage": 2010,
+                "kind": "double_diesel",
+                "count": 326,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 326
+              },
+              {
+                "vintage": 2010,
+                "kind": "double_hybrid",
+                "count": 34,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 34
+              },
+              {
+                "vintage": 2011,
+                "kind": "single_diesel",
+                "count": 298,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 298
+              },
+              {
+                "vintage": 2011,
+                "kind": "double_diesel",
+                "count": 440,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 440
+              },
+              {
+                "vintage": 2011,
+                "kind": "double_hybrid",
+                "count": 83,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 83
+              },
+              {
+                "vintage": 2012,
+                "kind": "single_diesel",
+                "count": 192,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 192
+              },
+              {
+                "vintage": 2012,
+                "kind": "double_diesel",
+                "count": 430,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 430
+              },
+              {
+                "vintage": 2012,
+                "kind": "double_hybrid",
+                "count": 148,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 148
+              },
+              {
+                "vintage": 2013,
+                "kind": "single_diesel",
+                "count": 87,
+                "electric": false,
+                "deadline": 2025,
+                "natural_due": 2025,
+                "year": 2025,
+                "slots": 87
+              },
+              {
+                "vintage": 2013,
+                "kind": "double_diesel",
+                "count": 200,
+                "electric": false,
+                "deadline": 2025,
+                "natural_due": 2025,
+                "year": 2025,
+                "slots": 200
+              },
+              {
+                "vintage": 2013,
+                "kind": "double_hybrid",
+                "count": 267,
+                "electric": false,
+                "deadline": 2025,
+                "natural_due": 2025,
+                "year": 2025,
+                "slots": 267
+              },
+              {
+                "vintage": 2013,
+                "kind": "double_electric",
+                "count": 1,
+                "electric": true,
+                "deadline": 2025,
+                "natural_due": 2025,
+                "year": 2025,
+                "slots": 1
+              },
+              {
+                "vintage": 2014,
+                "kind": "single_diesel",
+                "count": 72,
+                "electric": false,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2026,
+                "slots": 72
+              },
+              {
+                "vintage": 2014,
+                "kind": "double_diesel",
+                "count": 10,
+                "electric": false,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2026,
+                "slots": 10
+              },
+              {
+                "vintage": 2014,
+                "kind": "double_hybrid",
+                "count": 478,
+                "electric": false,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2026,
+                "slots": 478
+              },
+              {
+                "vintage": 2014,
+                "kind": "single_electric",
+                "count": 6,
+                "electric": true,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2026,
+                "slots": 6
+              },
+              {
+                "vintage": 2015,
+                "kind": "single_diesel",
+                "count": 171,
+                "electric": false,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2027,
+                "slots": 171
+              },
+              {
+                "vintage": 2015,
+                "kind": "double_diesel",
+                "count": 20,
+                "electric": false,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2027,
+                "slots": 20
+              },
+              {
+                "vintage": 2015,
+                "kind": "double_hybrid",
+                "count": 609,
+                "electric": false,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2027,
+                "slots": 609
+              },
+              {
+                "vintage": 2015,
+                "kind": "single_electric",
+                "count": 7,
+                "electric": true,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2027,
+                "slots": 7
+              },
+              {
+                "vintage": 2016,
+                "kind": "single_diesel",
+                "count": 186,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 186
+              },
+              {
+                "vintage": 2016,
+                "kind": "double_diesel",
+                "count": 70,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 70
+              },
+              {
+                "vintage": 2016,
+                "kind": "double_hybrid",
+                "count": 722,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 722
+              },
+              {
+                "vintage": 2016,
+                "kind": "single_electric",
+                "count": 47,
+                "electric": true,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 47
+              },
+              {
+                "vintage": 2016,
+                "kind": "double_electric",
+                "count": 5,
+                "electric": true,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 5
+              },
+              {
+                "vintage": 2017,
+                "kind": "single_diesel",
+                "count": 321,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 321
+              },
+              {
+                "vintage": 2017,
+                "kind": "double_diesel",
+                "count": 12,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 12
+              },
+              {
+                "vintage": 2017,
+                "kind": "double_hybrid",
+                "count": 677,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 677
+              },
+              {
+                "vintage": 2017,
+                "kind": "single_electric",
+                "count": 18,
+                "electric": true,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 18
+              },
+              {
+                "vintage": 2018,
+                "kind": "single_diesel",
+                "count": 199,
+                "electric": false,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2030,
+                "slots": 199
+              },
+              {
+                "vintage": 2018,
+                "kind": "double_hybrid",
+                "count": 479,
+                "electric": false,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2030,
+                "slots": 479
+              },
+              {
+                "vintage": 2018,
+                "kind": "single_electric",
+                "count": 66,
+                "electric": true,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2030,
+                "slots": 66
+              },
+              {
+                "vintage": 2019,
+                "kind": "single_diesel",
+                "count": 179,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 179
+              },
+              {
+                "vintage": 2019,
+                "kind": "double_hybrid",
+                "count": 203,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 203
+              },
+              {
+                "vintage": 2019,
+                "kind": "single_electric",
+                "count": 32,
+                "electric": true,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 32
+              },
+              {
+                "vintage": 2019,
+                "kind": "double_electric",
+                "count": 65,
+                "electric": true,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 65
+              },
+              {
+                "vintage": 2020,
+                "kind": "single_diesel",
+                "count": 13,
+                "electric": false,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 13
+              },
+              {
+                "vintage": 2020,
+                "kind": "double_hybrid",
+                "count": 130,
+                "electric": false,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 130
+              },
+              {
+                "vintage": 2020,
+                "kind": "single_electric",
+                "count": 53,
+                "electric": true,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 53
+              },
+              {
+                "vintage": 2020,
+                "kind": "double_electric",
+                "count": 116,
+                "electric": true,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 116
+              },
+              {
+                "vintage": 2020,
+                "kind": "double_hydrogen",
+                "count": 4,
+                "electric": false,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 4
+              },
+              {
+                "vintage": 2021,
+                "kind": "single_electric",
+                "count": 84,
+                "electric": true,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2033,
+                "slots": 84
+              },
+              {
+                "vintage": 2021,
+                "kind": "double_electric",
+                "count": 235,
+                "electric": true,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2033,
+                "slots": 235
+              },
+              {
+                "vintage": 2021,
+                "kind": "double_hydrogen",
+                "count": 16,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2033,
+                "slots": 16
+              }
+            ]
+          },
+          {
+            "life_cap_years": 14,
+            "minimum_peak_annual_new_electric_deliveries": 977,
+            "analytic_cumulative_deadline_bound": 977,
+            "non_electric_conversions_by_body": {
+              "single_deck": 2083,
+              "double_deck": 5610
+            },
+            "existing_electric_renewals_by_body": {
+              "single_deck": 176,
+              "double_deck": 71
+            },
+            "minimum_total_new_electric_deliveries": 7940,
+            "maximum_annual_single_deck_deliveries": 365,
+            "maximum_annual_double_deck_deliveries": 797,
+            "hydrogen_double_deck_converted_by_year": {
+              "2033": 20
+            },
+            "strict_electric_body_class_certificate": true,
+            "route_or_charging_certificate": false,
+            "solver_status": "OPTIMAL",
+            "phase_mip_gaps": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "annual_plan": [
+              {
+                "year": 2024,
+                "single_deck_non_electric_conversions": 365,
+                "double_deck_non_electric_conversions": 612,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 977,
+                "remaining_non_electric_single_deck": 1718,
+                "remaining_non_electric_double_deck": 4998,
+                "remaining_non_electric_total": 6716
+              },
+              {
+                "year": 2025,
+                "single_deck_non_electric_conversions": 298,
+                "double_deck_non_electric_conversions": 523,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 821,
+                "remaining_non_electric_single_deck": 1420,
+                "remaining_non_electric_double_deck": 4475,
+                "remaining_non_electric_total": 5895
+              },
+              {
+                "year": 2026,
+                "single_deck_non_electric_conversions": 192,
+                "double_deck_non_electric_conversions": 578,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 770,
+                "remaining_non_electric_single_deck": 1228,
+                "remaining_non_electric_double_deck": 3897,
+                "remaining_non_electric_total": 5125
+              },
+              {
+                "year": 2027,
+                "single_deck_non_electric_conversions": 87,
+                "double_deck_non_electric_conversions": 467,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 1,
+                "total_new_electric_deliveries": 555,
+                "remaining_non_electric_single_deck": 1141,
+                "remaining_non_electric_double_deck": 3430,
+                "remaining_non_electric_total": 4571
+              },
+              {
+                "year": 2028,
+                "single_deck_non_electric_conversions": 72,
+                "double_deck_non_electric_conversions": 488,
+                "single_deck_existing_electric_renewals": 6,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 566,
+                "remaining_non_electric_single_deck": 1069,
+                "remaining_non_electric_double_deck": 2942,
+                "remaining_non_electric_total": 4011
+              },
+              {
+                "year": 2029,
+                "single_deck_non_electric_conversions": 275,
+                "double_deck_non_electric_conversions": 629,
+                "single_deck_existing_electric_renewals": 7,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 911,
+                "remaining_non_electric_single_deck": 794,
+                "remaining_non_electric_double_deck": 2313,
+                "remaining_non_electric_total": 3107
+              },
+              {
+                "year": 2030,
+                "single_deck_non_electric_conversions": 133,
+                "double_deck_non_electric_conversions": 792,
+                "single_deck_existing_electric_renewals": 47,
+                "double_deck_existing_electric_renewals": 5,
+                "total_new_electric_deliveries": 977,
+                "remaining_non_electric_single_deck": 661,
+                "remaining_non_electric_double_deck": 1521,
+                "remaining_non_electric_total": 2182
+              },
+              {
+                "year": 2031,
+                "single_deck_non_electric_conversions": 270,
+                "double_deck_non_electric_conversions": 689,
+                "single_deck_existing_electric_renewals": 18,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 977,
+                "remaining_non_electric_single_deck": 391,
+                "remaining_non_electric_double_deck": 832,
+                "remaining_non_electric_total": 1223
+              },
+              {
+                "year": 2032,
+                "single_deck_non_electric_conversions": 199,
+                "double_deck_non_electric_conversions": 479,
+                "single_deck_existing_electric_renewals": 66,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 744,
+                "remaining_non_electric_single_deck": 192,
+                "remaining_non_electric_double_deck": 353,
+                "remaining_non_electric_total": 545
+              },
+              {
+                "year": 2033,
+                "single_deck_non_electric_conversions": 192,
+                "double_deck_non_electric_conversions": 353,
+                "single_deck_existing_electric_renewals": 32,
+                "double_deck_existing_electric_renewals": 65,
+                "total_new_electric_deliveries": 642,
+                "remaining_non_electric_single_deck": 0,
+                "remaining_non_electric_double_deck": 0,
+                "remaining_non_electric_total": 0
+              }
+            ],
+            "procurement_batches": [
+              {
+                "vintage": 2007,
+                "kind": "single_diesel",
+                "count": 3,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 3
+              },
+              {
+                "vintage": 2007,
+                "kind": "double_diesel",
+                "count": 1,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 1
+              },
+              {
+                "vintage": 2008,
+                "kind": "single_diesel",
+                "count": 42,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 42
+              },
+              {
+                "vintage": 2008,
+                "kind": "double_diesel",
+                "count": 30,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 30
+              },
+              {
+                "vintage": 2009,
+                "kind": "single_diesel",
+                "count": 155,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 155
+              },
+              {
+                "vintage": 2009,
+                "kind": "double_diesel",
+                "count": 216,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 216
+              },
+              {
+                "vintage": 2009,
+                "kind": "double_hybrid",
+                "count": 5,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 5
+              },
+              {
+                "vintage": 2010,
+                "kind": "single_diesel",
+                "count": 165,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 165
+              },
+              {
+                "vintage": 2010,
+                "kind": "double_diesel",
+                "count": 326,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 326
+              },
+              {
+                "vintage": 2010,
+                "kind": "double_hybrid",
+                "count": 34,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 34
+              },
+              {
+                "vintage": 2011,
+                "kind": "single_diesel",
+                "count": 298,
+                "electric": false,
+                "deadline": 2025,
+                "natural_due": 2025,
+                "year": 2025,
+                "slots": 298
+              },
+              {
+                "vintage": 2011,
+                "kind": "double_diesel",
+                "count": 440,
+                "electric": false,
+                "deadline": 2025,
+                "natural_due": 2025,
+                "year": 2025,
+                "slots": 440
+              },
+              {
+                "vintage": 2011,
+                "kind": "double_hybrid",
+                "count": 83,
+                "electric": false,
+                "deadline": 2025,
+                "natural_due": 2025,
+                "year": 2025,
+                "slots": 83
+              },
+              {
+                "vintage": 2012,
+                "kind": "single_diesel",
+                "count": 192,
+                "electric": false,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2026,
+                "slots": 192
+              },
+              {
+                "vintage": 2012,
+                "kind": "double_diesel",
+                "count": 430,
+                "electric": false,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2026,
+                "slots": 430
+              },
+              {
+                "vintage": 2012,
+                "kind": "double_hybrid",
+                "count": 148,
+                "electric": false,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2026,
+                "slots": 148
+              },
+              {
+                "vintage": 2013,
+                "kind": "single_diesel",
+                "count": 87,
+                "electric": false,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2027,
+                "slots": 87
+              },
+              {
+                "vintage": 2013,
+                "kind": "double_diesel",
+                "count": 200,
+                "electric": false,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2027,
+                "slots": 200
+              },
+              {
+                "vintage": 2013,
+                "kind": "double_hybrid",
+                "count": 267,
+                "electric": false,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2027,
+                "slots": 267
+              },
+              {
+                "vintage": 2013,
+                "kind": "double_electric",
+                "count": 1,
+                "electric": true,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2027,
+                "slots": 1
+              },
+              {
+                "vintage": 2014,
+                "kind": "single_diesel",
+                "count": 72,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 72
+              },
+              {
+                "vintage": 2014,
+                "kind": "double_diesel",
+                "count": 10,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 10
+              },
+              {
+                "vintage": 2014,
+                "kind": "double_hybrid",
+                "count": 478,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 478
+              },
+              {
+                "vintage": 2014,
+                "kind": "single_electric",
+                "count": 6,
+                "electric": true,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 6
+              },
+              {
+                "vintage": 2015,
+                "kind": "single_diesel",
+                "count": 171,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 171
+              },
+              {
+                "vintage": 2015,
+                "kind": "double_diesel",
+                "count": 20,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 20
+              },
+              {
+                "vintage": 2015,
+                "kind": "double_hybrid",
+                "count": 609,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 609
+              },
+              {
+                "vintage": 2015,
+                "kind": "single_electric",
+                "count": 7,
+                "electric": true,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 7
+              },
+              {
+                "vintage": 2016,
+                "kind": "single_diesel",
+                "count": 186,
+                "electric": false,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2029,
+                "slots": 104
+              },
+              {
+                "vintage": 2016,
+                "kind": "single_diesel",
+                "count": 186,
+                "electric": false,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2030,
+                "slots": 82
+              },
+              {
+                "vintage": 2016,
+                "kind": "double_diesel",
+                "count": 70,
+                "electric": false,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2030,
+                "slots": 70
+              },
+              {
+                "vintage": 2016,
+                "kind": "double_hybrid",
+                "count": 722,
+                "electric": false,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2030,
+                "slots": 722
+              },
+              {
+                "vintage": 2016,
+                "kind": "single_electric",
+                "count": 47,
+                "electric": true,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2030,
+                "slots": 47
+              },
+              {
+                "vintage": 2016,
+                "kind": "double_electric",
+                "count": 5,
+                "electric": true,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2030,
+                "slots": 5
+              },
+              {
+                "vintage": 2017,
+                "kind": "single_diesel",
+                "count": 321,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2030,
+                "slots": 51
+              },
+              {
+                "vintage": 2017,
+                "kind": "single_diesel",
+                "count": 321,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 270
+              },
+              {
+                "vintage": 2017,
+                "kind": "double_diesel",
+                "count": 12,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 12
+              },
+              {
+                "vintage": 2017,
+                "kind": "double_hybrid",
+                "count": 677,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 677
+              },
+              {
+                "vintage": 2017,
+                "kind": "single_electric",
+                "count": 18,
+                "electric": true,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 18
+              },
+              {
+                "vintage": 2018,
+                "kind": "single_diesel",
+                "count": 199,
+                "electric": false,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 199
+              },
+              {
+                "vintage": 2018,
+                "kind": "double_hybrid",
+                "count": 479,
+                "electric": false,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 479
+              },
+              {
+                "vintage": 2018,
+                "kind": "single_electric",
+                "count": 66,
+                "electric": true,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 66
+              },
+              {
+                "vintage": 2019,
+                "kind": "single_diesel",
+                "count": 179,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2033,
+                "slots": 179
+              },
+              {
+                "vintage": 2019,
+                "kind": "double_hybrid",
+                "count": 203,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2033,
+                "slots": 203
+              },
+              {
+                "vintage": 2019,
+                "kind": "single_electric",
+                "count": 32,
+                "electric": true,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2033,
+                "slots": 32
+              },
+              {
+                "vintage": 2019,
+                "kind": "double_electric",
+                "count": 65,
+                "electric": true,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2033,
+                "slots": 65
+              },
+              {
+                "vintage": 2020,
+                "kind": "single_diesel",
+                "count": 13,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2034,
+                "year": 2033,
+                "slots": 13
+              },
+              {
+                "vintage": 2020,
+                "kind": "double_hybrid",
+                "count": 130,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2034,
+                "year": 2033,
+                "slots": 130
+              },
+              {
+                "vintage": 2020,
+                "kind": "double_hydrogen",
+                "count": 4,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2034,
+                "year": 2033,
+                "slots": 4
+              },
+              {
+                "vintage": 2021,
+                "kind": "double_hydrogen",
+                "count": 16,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2035,
+                "year": 2033,
+                "slots": 16
+              }
+            ]
+          },
+          {
+            "life_cap_years": 17,
+            "minimum_peak_annual_new_electric_deliveries": 776,
+            "analytic_cumulative_deadline_bound": 776,
+            "non_electric_conversions_by_body": {
+              "single_deck": 2083,
+              "double_deck": 5610
+            },
+            "existing_electric_renewals_by_body": {
+              "single_deck": 60,
+              "double_deck": 6
+            },
+            "minimum_total_new_electric_deliveries": 7759,
+            "maximum_annual_single_deck_deliveries": 408,
+            "maximum_annual_double_deck_deliveries": 776,
+            "hydrogen_double_deck_converted_by_year": {
+              "2024": 4,
+              "2029": 16
+            },
+            "strict_electric_body_class_certificate": true,
+            "route_or_charging_certificate": false,
+            "solver_status": "OPTIMAL",
+            "phase_mip_gaps": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "annual_plan": [
+              {
+                "year": 2024,
+                "single_deck_non_electric_conversions": 223,
+                "double_deck_non_electric_conversions": 552,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 775,
+                "remaining_non_electric_single_deck": 1860,
+                "remaining_non_electric_double_deck": 5058,
+                "remaining_non_electric_total": 6918
+              },
+              {
+                "year": 2025,
+                "single_deck_non_electric_conversions": 0,
+                "double_deck_non_electric_conversions": 776,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 776,
+                "remaining_non_electric_single_deck": 1860,
+                "remaining_non_electric_double_deck": 4282,
+                "remaining_non_electric_total": 6142
+              },
+              {
+                "year": 2026,
+                "single_deck_non_electric_conversions": 339,
+                "double_deck_non_electric_conversions": 437,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 776,
+                "remaining_non_electric_single_deck": 1521,
+                "remaining_non_electric_double_deck": 3845,
+                "remaining_non_electric_total": 5366
+              },
+              {
+                "year": 2027,
+                "single_deck_non_electric_conversions": 370,
+                "double_deck_non_electric_conversions": 406,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 776,
+                "remaining_non_electric_single_deck": 1151,
+                "remaining_non_electric_double_deck": 3439,
+                "remaining_non_electric_total": 4590
+              },
+              {
+                "year": 2028,
+                "single_deck_non_electric_conversions": 408,
+                "double_deck_non_electric_conversions": 368,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 776,
+                "remaining_non_electric_single_deck": 743,
+                "remaining_non_electric_double_deck": 3071,
+                "remaining_non_electric_total": 3814
+              },
+              {
+                "year": 2029,
+                "single_deck_non_electric_conversions": 187,
+                "double_deck_non_electric_conversions": 589,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 776,
+                "remaining_non_electric_single_deck": 556,
+                "remaining_non_electric_double_deck": 2482,
+                "remaining_non_electric_total": 3038
+              },
+              {
+                "year": 2030,
+                "single_deck_non_electric_conversions": 0,
+                "double_deck_non_electric_conversions": 775,
+                "single_deck_existing_electric_renewals": 0,
+                "double_deck_existing_electric_renewals": 1,
+                "total_new_electric_deliveries": 776,
+                "remaining_non_electric_single_deck": 556,
+                "remaining_non_electric_double_deck": 1707,
+                "remaining_non_electric_total": 2263
+              },
+              {
+                "year": 2031,
+                "single_deck_non_electric_conversions": 186,
+                "double_deck_non_electric_conversions": 584,
+                "single_deck_existing_electric_renewals": 6,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 776,
+                "remaining_non_electric_single_deck": 370,
+                "remaining_non_electric_double_deck": 1123,
+                "remaining_non_electric_total": 1493
+              },
+              {
+                "year": 2032,
+                "single_deck_non_electric_conversions": 370,
+                "double_deck_non_electric_conversions": 399,
+                "single_deck_existing_electric_renewals": 7,
+                "double_deck_existing_electric_renewals": 0,
+                "total_new_electric_deliveries": 776,
+                "remaining_non_electric_single_deck": 0,
+                "remaining_non_electric_double_deck": 724,
+                "remaining_non_electric_total": 724
+              },
+              {
+                "year": 2033,
+                "single_deck_non_electric_conversions": 0,
+                "double_deck_non_electric_conversions": 724,
+                "single_deck_existing_electric_renewals": 47,
+                "double_deck_existing_electric_renewals": 5,
+                "total_new_electric_deliveries": 776,
+                "remaining_non_electric_single_deck": 0,
+                "remaining_non_electric_double_deck": 0,
+                "remaining_non_electric_total": 0
+              }
+            ],
+            "procurement_batches": [
+              {
+                "vintage": 2007,
+                "kind": "single_diesel",
+                "count": 3,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 3
+              },
+              {
+                "vintage": 2007,
+                "kind": "double_diesel",
+                "count": 1,
+                "electric": false,
+                "deadline": 2024,
+                "natural_due": 2024,
+                "year": 2024,
+                "slots": 1
+              },
+              {
+                "vintage": 2008,
+                "kind": "single_diesel",
+                "count": 42,
+                "electric": false,
+                "deadline": 2025,
+                "natural_due": 2025,
+                "year": 2024,
+                "slots": 42
+              },
+              {
+                "vintage": 2008,
+                "kind": "double_diesel",
+                "count": 30,
+                "electric": false,
+                "deadline": 2025,
+                "natural_due": 2025,
+                "year": 2024,
+                "slots": 30
+              },
+              {
+                "vintage": 2009,
+                "kind": "single_diesel",
+                "count": 155,
+                "electric": false,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2026,
+                "slots": 155
+              },
+              {
+                "vintage": 2009,
+                "kind": "double_diesel",
+                "count": 216,
+                "electric": false,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2024,
+                "slots": 216
+              },
+              {
+                "vintage": 2009,
+                "kind": "double_hybrid",
+                "count": 5,
+                "electric": false,
+                "deadline": 2026,
+                "natural_due": 2026,
+                "year": 2026,
+                "slots": 5
+              },
+              {
+                "vintage": 2010,
+                "kind": "single_diesel",
+                "count": 165,
+                "electric": false,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2024,
+                "slots": 165
+              },
+              {
+                "vintage": 2010,
+                "kind": "double_diesel",
+                "count": 326,
+                "electric": false,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2026,
+                "slots": 326
+              },
+              {
+                "vintage": 2010,
+                "kind": "double_hybrid",
+                "count": 34,
+                "electric": false,
+                "deadline": 2027,
+                "natural_due": 2027,
+                "year": 2026,
+                "slots": 34
+              },
+              {
+                "vintage": 2011,
+                "kind": "single_diesel",
+                "count": 298,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2027,
+                "slots": 298
+              },
+              {
+                "vintage": 2011,
+                "kind": "double_diesel",
+                "count": 440,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2026,
+                "slots": 72
+              },
+              {
+                "vintage": 2011,
+                "kind": "double_diesel",
+                "count": 440,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2028,
+                "slots": 368
+              },
+              {
+                "vintage": 2011,
+                "kind": "double_hybrid",
+                "count": 83,
+                "electric": false,
+                "deadline": 2028,
+                "natural_due": 2028,
+                "year": 2025,
+                "slots": 83
+              },
+              {
+                "vintage": 2012,
+                "kind": "single_diesel",
+                "count": 192,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2026,
+                "slots": 184
+              },
+              {
+                "vintage": 2012,
+                "kind": "single_diesel",
+                "count": 192,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 8
+              },
+              {
+                "vintage": 2012,
+                "kind": "double_diesel",
+                "count": 430,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2025,
+                "slots": 24
+              },
+              {
+                "vintage": 2012,
+                "kind": "double_diesel",
+                "count": 430,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2027,
+                "slots": 406
+              },
+              {
+                "vintage": 2012,
+                "kind": "double_hybrid",
+                "count": 148,
+                "electric": false,
+                "deadline": 2029,
+                "natural_due": 2029,
+                "year": 2029,
+                "slots": 148
+              },
+              {
+                "vintage": 2013,
+                "kind": "single_diesel",
+                "count": 87,
+                "electric": false,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2028,
+                "slots": 87
+              },
+              {
+                "vintage": 2013,
+                "kind": "double_diesel",
+                "count": 200,
+                "electric": false,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2029,
+                "slots": 200
+              },
+              {
+                "vintage": 2013,
+                "kind": "double_hybrid",
+                "count": 267,
+                "electric": false,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2025,
+                "slots": 267
+              },
+              {
+                "vintage": 2013,
+                "kind": "double_electric",
+                "count": 1,
+                "electric": true,
+                "deadline": 2030,
+                "natural_due": 2030,
+                "year": 2030,
+                "slots": 1
+              },
+              {
+                "vintage": 2014,
+                "kind": "single_diesel",
+                "count": 72,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2027,
+                "slots": 72
+              },
+              {
+                "vintage": 2014,
+                "kind": "double_diesel",
+                "count": 10,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 10
+              },
+              {
+                "vintage": 2014,
+                "kind": "double_hybrid",
+                "count": 478,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2024,
+                "slots": 103
+              },
+              {
+                "vintage": 2014,
+                "kind": "double_hybrid",
+                "count": 478,
+                "electric": false,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 375
+              },
+              {
+                "vintage": 2014,
+                "kind": "single_electric",
+                "count": 6,
+                "electric": true,
+                "deadline": 2031,
+                "natural_due": 2031,
+                "year": 2031,
+                "slots": 6
+              },
+              {
+                "vintage": 2015,
+                "kind": "single_diesel",
+                "count": 171,
+                "electric": false,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 171
+              },
+              {
+                "vintage": 2015,
+                "kind": "double_diesel",
+                "count": 20,
+                "electric": false,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2029,
+                "slots": 20
+              },
+              {
+                "vintage": 2015,
+                "kind": "double_hybrid",
+                "count": 609,
+                "electric": false,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2025,
+                "slots": 402
+              },
+              {
+                "vintage": 2015,
+                "kind": "double_hybrid",
+                "count": 609,
+                "electric": false,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 207
+              },
+              {
+                "vintage": 2015,
+                "kind": "single_electric",
+                "count": 7,
+                "electric": true,
+                "deadline": 2032,
+                "natural_due": 2032,
+                "year": 2032,
+                "slots": 7
+              },
+              {
+                "vintage": 2016,
+                "kind": "single_diesel",
+                "count": 186,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2031,
+                "slots": 186
+              },
+              {
+                "vintage": 2016,
+                "kind": "double_diesel",
+                "count": 70,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2024,
+                "slots": 70
+              },
+              {
+                "vintage": 2016,
+                "kind": "double_hybrid",
+                "count": 722,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2030,
+                "slots": 722
+              },
+              {
+                "vintage": 2016,
+                "kind": "single_electric",
+                "count": 47,
+                "electric": true,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2033,
+                "slots": 47
+              },
+              {
+                "vintage": 2016,
+                "kind": "double_electric",
+                "count": 5,
+                "electric": true,
+                "deadline": 2033,
+                "natural_due": 2033,
+                "year": 2033,
+                "slots": 5
+              },
+              {
+                "vintage": 2017,
+                "kind": "single_diesel",
+                "count": 321,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2034,
+                "year": 2028,
+                "slots": 321
+              },
+              {
+                "vintage": 2017,
+                "kind": "double_diesel",
+                "count": 12,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2034,
+                "year": 2030,
+                "slots": 12
+              },
+              {
+                "vintage": 2017,
+                "kind": "double_hybrid",
+                "count": 677,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2034,
+                "year": 2031,
+                "slots": 199
+              },
+              {
+                "vintage": 2017,
+                "kind": "double_hybrid",
+                "count": 677,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2034,
+                "year": 2032,
+                "slots": 192
+              },
+              {
+                "vintage": 2017,
+                "kind": "double_hybrid",
+                "count": 677,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2034,
+                "year": 2033,
+                "slots": 286
+              },
+              {
+                "vintage": 2018,
+                "kind": "single_diesel",
+                "count": 199,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2035,
+                "year": 2032,
+                "slots": 199
+              },
+              {
+                "vintage": 2018,
+                "kind": "double_hybrid",
+                "count": 479,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2035,
+                "year": 2030,
+                "slots": 41
+              },
+              {
+                "vintage": 2018,
+                "kind": "double_hybrid",
+                "count": 479,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2035,
+                "year": 2033,
+                "slots": 438
+              },
+              {
+                "vintage": 2019,
+                "kind": "single_diesel",
+                "count": 179,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2036,
+                "year": 2029,
+                "slots": 179
+              },
+              {
+                "vintage": 2019,
+                "kind": "double_hybrid",
+                "count": 203,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2036,
+                "year": 2024,
+                "slots": 128
+              },
+              {
+                "vintage": 2019,
+                "kind": "double_hybrid",
+                "count": 203,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2036,
+                "year": 2029,
+                "slots": 75
+              },
+              {
+                "vintage": 2020,
+                "kind": "single_diesel",
+                "count": 13,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2037,
+                "year": 2024,
+                "slots": 13
+              },
+              {
+                "vintage": 2020,
+                "kind": "double_hybrid",
+                "count": 130,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2037,
+                "year": 2029,
+                "slots": 130
+              },
+              {
+                "vintage": 2020,
+                "kind": "double_hydrogen",
+                "count": 4,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2037,
+                "year": 2024,
+                "slots": 4
+              },
+              {
+                "vintage": 2021,
+                "kind": "double_hydrogen",
+                "count": 16,
+                "electric": false,
+                "deadline": 2033,
+                "natural_due": 2038,
+                "year": 2029,
+                "slots": 16
+              }
+            ]
+          }
+        ],
+        "residual_limits": [
+          "Route-to-vehicle assignments and the required spare fleet are not in the audit.",
+          "Depot charging capacity, site power, delivery lead times and local prices are absent.",
+          "Life caps are sensitivity scenarios, not asserted TfL retirement rules.",
+          "The 2024 catch-up must be paired with facility-ready garages before it is operationally executable."
+        ]
+      },
+      "shared_boundary": "These certificates establish vehicle-body and age stock flows only. They do not establish route-level service preservation or charging feasibility."
     }
   },
   "separate_reference_case_file": "results/cpu_reference_scores.json",
@@ -570,6 +3733,10 @@
   "separate_block_range_audit": "results/vancouver_block_range_audit.json",
   "separate_fleet_scale_audit": "results/fleet_scale_audit.json",
   "separate_full_fleet_bound": "results/vancouver_full_fleet_bound.json",
+  "separate_full_city_schedule_screen": "results/vancouver_full_city_schedule_v3.json",
+  "separate_incremental_tco_bridge": "results/vancouver_full_tco_bridge.json",
+  "separate_infrastructure_environment_bridge": "results/vancouver_environment_bridge.json",
+  "separate_three_city_execution_certificates": "results/threecity_execution_certificates_v3.json",
   "separate_joint_uncertainty_grid": "results/vancouver_transition_uncertainty.json",
   "separate_regional_and_air_quality_audit": "results/regional_and_air_quality_audit.json",
   "regional_economic_scope": {
@@ -635,16 +3802,16 @@
         "scenario": "low",
         "component": "zeb_infrastructure_transitional",
         "recurrence": "one_time_2024_2031",
-        "reported_spend_m_cad": 2370.5882352941176,
-        "regional_spend_envelope_m_cad": 1718.6764705882351,
-        "bc_supplier_retained_spend_m_cad": 1718.6764705882351,
-        "regional_value_added_proxy_m_cad": 623.8795588235294,
-        "wage_income_m_cad": 397.01426470588234,
+        "reported_spend_m_cad": 2367.6470588235293,
+        "regional_spend_envelope_m_cad": 1716.5441176470588,
+        "bc_supplier_retained_spend_m_cad": 1716.5441176470588,
+        "regional_value_added_proxy_m_cad": 623.1055147058823,
+        "wage_income_m_cad": 396.5216911764706,
         "direct_fte": null,
         "total_fte": null,
-        "job_years": 4198.726617647058,
-        "annual_average_gva_m_cad": 77.98494485294117,
-        "annual_average_fte": 524.8408272058823,
+        "job_years": 4193.517279411764,
+        "annual_average_gva_m_cad": 77.88818933823529,
+        "annual_average_fte": 524.1896599264705,
         "accounting_rule": "gross transitional value-added, not a net benefit; no revenue or benefit recognition of capex",
         "source_basis": "StatCan 36-10-0595-01 BS23C500; project infrastructure envelope (direct); assumed 2024--2031 phase",
         "additive_to_capital": false,
@@ -656,16 +3823,16 @@
         "scenario": "central",
         "component": "zeb_infrastructure_transitional",
         "recurrence": "one_time_2024_2031",
-        "reported_spend_m_cad": 2370.5882352941176,
-        "regional_spend_envelope_m_cad": 1718.6764705882351,
-        "bc_supplier_retained_spend_m_cad": 1718.6764705882351,
-        "regional_value_added_proxy_m_cad": 1055.2673529411763,
-        "wage_income_m_cad": 665.127794117647,
+        "reported_spend_m_cad": 2367.6470588235293,
+        "regional_spend_envelope_m_cad": 1716.5441176470588,
+        "bc_supplier_retained_spend_m_cad": 1716.5441176470588,
+        "regional_value_added_proxy_m_cad": 1053.958088235294,
+        "wage_income_m_cad": 664.3025735294118,
         "direct_fte": null,
         "total_fte": null,
-        "job_years": 7223.597205882353,
-        "annual_average_gva_m_cad": 131.90841911764704,
-        "annual_average_fte": 902.9496507352941,
+        "job_years": 7214.634926470589,
+        "annual_average_gva_m_cad": 131.74476102941176,
+        "annual_average_fte": 901.8293658088236,
         "accounting_rule": "gross transitional value-added, not a net benefit; no revenue or benefit recognition of capex",
         "source_basis": "StatCan 36-10-0595-01 BS23C500; project infrastructure envelope (simple); assumed 2024--2031 phase",
         "additive_to_capital": false,
@@ -698,14 +3865,14 @@
         "scenario": "low",
         "component": "bus_manufacturing_ceiling_not_included",
         "recurrence": "one_time_2024_2033",
-        "reported_spend_m_cad": 1934.4,
-        "regional_spend_envelope_m_cad": 1402.44,
-        "bc_supplier_retained_spend_m_cad": 1402.44,
-        "regional_value_added_proxy_m_cad": 493.65888,
+        "reported_spend_m_cad": 1932.0,
+        "regional_spend_envelope_m_cad": 1400.7,
+        "bc_supplier_retained_spend_m_cad": 1400.7,
+        "regional_value_added_proxy_m_cad": 493.0464,
         "wage_income_m_cad": null,
         "direct_fte": null,
         "total_fte": null,
-        "job_years": 4985.6742,
+        "job_years": 4979.4885,
         "accounting_rule": "NON-ADDITIVE ceiling assuming 72.5% BC manufacturing content; final-assembly location unverified",
         "source_basis": "StatCan 36-10-0595-01 BS336200; project bus-purchase envelope (direct)",
         "additive_to_capital": false,
@@ -717,14 +3884,14 @@
         "scenario": "central",
         "component": "bus_manufacturing_ceiling_not_included",
         "recurrence": "one_time_2024_2033",
-        "reported_spend_m_cad": 1934.4,
-        "regional_spend_envelope_m_cad": 1402.44,
-        "bc_supplier_retained_spend_m_cad": 1402.44,
-        "regional_value_added_proxy_m_cad": 640.9150800000001,
+        "reported_spend_m_cad": 1932.0,
+        "regional_spend_envelope_m_cad": 1400.7,
+        "bc_supplier_retained_spend_m_cad": 1400.7,
+        "regional_value_added_proxy_m_cad": 640.1199,
         "wage_income_m_cad": null,
         "direct_fte": null,
         "total_fte": null,
-        "job_years": 6062.748120000001,
+        "job_years": 6055.226100000001,
         "accounting_rule": "NON-ADDITIVE ceiling assuming 72.5% BC manufacturing content; final-assembly location unverified",
         "source_basis": "StatCan 36-10-0595-01 BS336200; project bus-purchase envelope (simple)",
         "additive_to_capital": false,
@@ -736,14 +3903,14 @@
         "scenario": "high",
         "component": "bus_manufacturing_ceiling_not_included",
         "recurrence": "one_time_2024_2033",
-        "reported_spend_m_cad": 3230.2566673434167,
-        "regional_spend_envelope_m_cad": 2341.936083823977,
-        "bc_supplier_retained_spend_m_cad": 2341.936083823977,
-        "regional_value_added_proxy_m_cad": 1430.9229472164498,
+        "reported_spend_m_cad": 3191.570966815195,
+        "regional_spend_envelope_m_cad": 2313.888950941016,
+        "bc_supplier_retained_spend_m_cad": 2313.888950941016,
+        "regional_value_added_proxy_m_cad": 1413.7861490249607,
         "wage_income_m_cad": null,
         "direct_fte": null,
         "total_fte": null,
-        "job_years": 12412.261244267076,
+        "job_years": 12263.611439987384,
         "accounting_rule": "NON-ADDITIVE ceiling assuming 72.5% BC manufacturing content; final-assembly location unverified",
         "source_basis": "StatCan 36-10-0595-01 BS336200; project bus-purchase envelope (total)",
         "additive_to_capital": false,
@@ -910,7 +4077,7 @@
         "diesel_stock": 448,
         "hybrid_stock": 492,
         "diesel_share_of_remaining_fossil_vkt_proxy": 0.4765957446808511,
-        "existing_scenario_fossil_km_crosscheck": 88786898.98172182,
+        "existing_scenario_fossil_km_crosscheck": 89615491.72168045,
         "quality": "PROXY_FIXED_SERVICE_FUEL_ALLOCATION",
         "warning": "The 2022 stock split is not a 2023 vehicle-km register. Community shuttles are assigned to gasoline and the remaining diesel/hybrid activity is stock-weighted."
       },

@@ -10,14 +10,14 @@ def test_full_fleet_bound_reconciles_and_covers_named_classes():
         (ROOT / "results/vancouver_full_fleet_bound.json").read_text()
     )
     assert result["classes"] == {
-        "heavy_non_deck": 1419,
+        "heavy_non_deck": 1406,
         "double_deck": 57,
         "community_shuttle_midpoint": 189,
-        "existing_beb": 18,
+        "existing_beb": 5,
     }
     central = result["central_result"]
     assert central["heavy_purchases_after_existing_beb"] == 1401
-    assert abs(central["shared_depot_cad"] - 1419 * 500_000_000 / 340) < 1e-6
+    assert abs(central["shared_depot_cad"] - 1406 * 500_000_000 / 340) < 1e-6
     assert result["initial_stock_2023"]["total"] == 1725
     assert result["endpoint_2033"] == {
         "electric_stock": 1927,
@@ -87,3 +87,15 @@ def test_annual_class_ledger_conserves_service_km_and_tracks_energy():
         for cls in row["classes"].values():
             assert abs(cls["conventional_km"] + cls["electric_km"] - cls["annual_scored_km"]) < 1e-6
             assert cls["electric_grid_mwh_at_90pct_efficiency"] >= 0
+
+
+def test_central_official_split_preserves_stock_and_separates_carryover():
+    result = json.loads((ROOT / "results/vancouver_full_fleet_bound.json").read_text())
+    initial = result["initial_stock_2023"]
+    assert initial["electric_trolleys"] == 275
+    assert initial["existing_beb"] == 5
+    assert initial["electric_trolleys_renewed"] == 262
+    assert initial["existing_electric_carried_through_2033"] == 13
+    assert initial["total"] == 1725
+    assert result["endpoint_2033"]["electric_stock"] == 1927
+    assert result["endpoint_2033"]["total_electric_vehicle_purchases"] == 1909

@@ -1,0 +1,112 @@
+{
+  "status": "HORIZON_LCA_WITH_SOURCE_LABELLED_INFRASTRUCTURE_SCENARIO",
+  "horizon": [
+    2024,
+    2033
+  ],
+  "charger_count": {
+    "heavy_depot": 1406,
+    "double_deck": 9,
+    "community_shuttle": 95
+  },
+  "charger_equipment_t_per_unit_range": [
+    4.2693,
+    8.5386
+  ],
+  "depot_area": {
+    "source_sqft": 800000,
+    "source_capacity_buses": 340,
+    "source_m2": 74322.432,
+    "modeled_m2": 307345.1158588235,
+    "embodied_factor_kgco2e_per_m2": 650,
+    "depot_embodied_t": 199774.32530823527
+  },
+  "infrastructure_t_range": [
+    206220.9683082353,
+    212667.61130823527
+  ],
+  "cases": [
+    {
+      "fuel_case": "renewable_fuel_mix",
+      "equipment_bound": "low",
+      "baseline_t": 390091.23966163554,
+      "plan_t": 651283.3473660515,
+      "infrastructure_t": 206220.9683082353,
+      "environment_score_pct": -66.95667093959187
+    },
+    {
+      "fuel_case": "renewable_fuel_mix",
+      "equipment_bound": "high",
+      "baseline_t": 390091.23966163554,
+      "plan_t": 657729.9903660514,
+      "infrastructure_t": 212667.61130823527,
+      "environment_score_pct": -68.6092697022792
+    },
+    {
+      "fuel_case": "rng_heavy",
+      "equipment_bound": "low",
+      "baseline_t": 1015622.1751902928,
+      "plan_t": 1114176.239657258,
+      "infrastructure_t": 206220.9683082353,
+      "environment_score_pct": -9.703811798762617
+    },
+    {
+      "fuel_case": "rng_heavy",
+      "equipment_bound": "high",
+      "baseline_t": 1015622.1751902928,
+      "plan_t": 1120622.8826572578,
+      "infrastructure_t": 212667.61130823527,
+      "environment_score_pct": -10.338559951912387
+    },
+    {
+      "fuel_case": "weighted_mix",
+      "equipment_bound": "low",
+      "baseline_t": 1275150.9675904808,
+      "plan_t": 1306227.5460333969,
+      "infrastructure_t": 206220.9683082353,
+      "environment_score_pct": -2.437090135424372
+    },
+    {
+      "fuel_case": "weighted_mix",
+      "equipment_bound": "high",
+      "baseline_t": 1275150.9675904808,
+      "plan_t": 1312674.1890333968,
+      "infrastructure_t": 212667.61130823527,
+      "environment_score_pct": -2.9426493330291446
+    },
+    {
+      "fuel_case": "fossil_diesel",
+      "equipment_bound": "low",
+      "baseline_t": 1605028.2238647118,
+      "plan_t": 1550336.7156763277,
+      "infrastructure_t": 206220.9683082353,
+      "environment_score_pct": 3.40751068269028
+    },
+    {
+      "fuel_case": "fossil_diesel",
+      "equipment_bound": "high",
+      "baseline_t": 1605028.2238647118,
+      "plan_t": 1556783.3586763276,
+      "infrastructure_t": 212667.61130823527,
+      "environment_score_pct": 3.005857745742094
+    }
+  ],
+  "included": [
+    "vehicle/battery production proxies",
+    "shared service ledger",
+    "maintenance and energy",
+    "charging equipment lifecycle",
+    "depot building structure and envelope at a 650 kgCO2e/m2 scenario"
+  ],
+  "excluded_because_outside_horizon": [
+    "end-of-life of buses purchased in 2029--2033 (first cohort reaches age 8 in 2037)",
+    "post-2033 service, battery replacements and infrastructure decommissioning"
+  ],
+  "remaining_proxy": [
+    "shuttle body/powertrain",
+    "deck-specific body mass",
+    "articulated body mass",
+    "common trolley body"
+  ],
+  "source_boundary": "The floor-area factor and charger equipment case come from non-TransLink LCA studies and are scenario parameters, not Vancouver EPDs. The 800,000-sqft floor area is a project-participant published value, not an as-built quantity."
+}

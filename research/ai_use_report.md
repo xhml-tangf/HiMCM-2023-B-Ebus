@@ -21,6 +21,7 @@ Neither tool was asked to locate or use an original 2023 HiMCM solution submissi
 8. "Fill the missing official fleet, double-deck/shuttle, regional economic and NOx/PM evidence rather than leaving unexplained gaps." Outputs: `results/apta_2023_fleet_audit.json`, `results/deck_shuttle_electrification_audit.json`, and `results/regional_and_air_quality_audit.json`.
 9. "Use the available CPU and run the model, with solution quality first." Outputs: `results/vancouver_transition_uncertainty.json` (432,768 cases), `results/vancouver_full_fleet_bound.json`, and the existing HiGHS/LP runs.
 10. "Resolve every issue in the independent adversarial review." Outputs: `research/adversarial_review_resolution.md`, periodic SOC and charger constraints, Route 100 duty sample, asset/infrastructure terminal-value scenarios, Chicago hard-age deadlines, fixed-service sensitivity, CPI rebasing, and a 64-test reproduction suite.
+11. "Complete the remaining evidence." Outputs: official TransLink depot, fleet, power and vehicle evidence; the 25-pattern absolute-time city screen; a 275-trolley/5-BEB central split; incremental TCO and infrastructure-inclusive emissions bridges; and body-compatible Chicago/London execution certificates. See `research/remaining_evidence_closure.md` and the current result JSON files.
 
 ## Human-verification boundary
 

@@ -1,0 +1,2812 @@
+{
+  "status": "UNVERIFIED",
+  "scope": "The feed contains 54,497 unique published bus-trip records in 25 unique service-ID patterns. This screen executes one representative date per pattern, totaling 495,198 trip instances; every trip in every screened pattern is retained.",
+  "original_feed_unique_trip_records": 54497,
+  "screened_pattern_trip_instances": 495198,
+  "calendar_window_service_days_covered_by_patterns": 119,
+  "calendar_window_scheduled_trip_occurrences": 2410442,
+  "not_a_citywide_dispatch_certificate": true,
+  "constants": {
+    "range_km": 300.0,
+    "turn_minutes": 5.0,
+    "straight_line_speed_kmh": 50.0,
+    "charge_efficiency": 0.9,
+    "fleet_scenario_positions": {
+      "community_shuttle": 189,
+      "heavy_non_deck": 1419,
+      "double_deck": 57,
+      "trolley": 262
+    }
+  },
+  "patterns": [
+    {
+      "pattern_id": 1,
+      "example_date": "2023-09-04",
+      "service_ids": [
+        "162503",
+        "259803",
+        "3",
+        "32603",
+        "HD"
+      ],
+      "trips": 14726,
+      "routes": 190,
+      "source_blocks": 734,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 538,
+        "trips_ending_after_24h": 712,
+        "max_end_seconds": 107400,
+        "max_end_hours": 29.833333333333332,
+        "blocks_spanning_over_24h": 0,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 587,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 63,
+        "cap47": 89,
+        "cap50": 305,
+        "cap70": 29,
+        "cap75": 71,
+        "cap85": 21,
+        "unclassified": 35
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 63,
+        "heavy_non_deck": 402,
+        "double_deck": 21,
+        "trolley": 116
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 63,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 402,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 21,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 116,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 13992,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 2848,
+        "failure_share": 0.2035448827901658,
+        "max_gap_shortfall_minutes": 5.073200621090302,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 221,
+        "max_block_distance_upper_km": 802.2330000000001,
+        "range_only_fragment_count": 967,
+        "range_only_extra_recharge_or_vehicle_segments": 233,
+        "range_and_turn_fragment_count": 3727,
+        "turn_policy_incremental_segments": 2760,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 293.56845919899996,
+        "grid_energy_mwh_day_at_90pct_efficiency": 326.18717688777775,
+        "minimum_average_site_power_mw_8h": 40.77339711097222,
+        "energy_by_class_mwh_day": {
+          "cap24": 15.351204509999999,
+          "cap47": 0.0,
+          "cap50": 177.989494164,
+          "cap70": 0.0,
+          "cap75": 56.480872712,
+          "cap85": 21.855447899999998,
+          "unclassified": 21.891439913000003
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 2,
+      "example_date": "2023-09-05",
+      "service_ids": [
+        "1",
+        "101",
+        "1101",
+        "152201",
+        "155601",
+        "1901",
+        "259801",
+        "401",
+        "59001",
+        "62101",
+        "63901",
+        "75301",
+        "801",
+        "HD"
+      ],
+      "trips": 22429,
+      "routes": 232,
+      "source_blocks": 1752,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 720,
+        "trips_ending_after_24h": 921,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1087,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 35,
+        "unclassified": 75
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 35,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 35,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20677,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4603,
+        "failure_share": 0.2226144992020119,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 262,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2025,
+        "range_only_extra_recharge_or_vehicle_segments": 273,
+        "range_and_turn_fragment_count": 6479,
+        "turn_policy_incremental_segments": 4454,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 467.303144821,
+        "grid_energy_mwh_day_at_90pct_efficiency": 519.2257164677777,
+        "minimum_average_site_power_mw_8h": 64.90321455847221,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.454413260000003,
+          "cap47": 0.0,
+          "cap50": 280.246332988,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 28.24226514,
+          "unclassified": 37.782976857
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 3,
+      "example_date": "2023-09-06",
+      "service_ids": [
+        "1",
+        "101",
+        "1101",
+        "152201",
+        "155601",
+        "2001",
+        "259801",
+        "401",
+        "59001",
+        "62201",
+        "75301",
+        "801",
+        "HD"
+      ],
+      "trips": 22428,
+      "routes": 232,
+      "source_blocks": 1751,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 720,
+        "trips_ending_after_24h": 921,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1087,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 35,
+        "unclassified": 75
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 35,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 35,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20677,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4603,
+        "failure_share": 0.2226144992020119,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 262,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2024,
+        "range_only_extra_recharge_or_vehicle_segments": 273,
+        "range_and_turn_fragment_count": 6478,
+        "turn_policy_incremental_segments": 4454,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 467.298369601,
+        "grid_energy_mwh_day_at_90pct_efficiency": 519.2204106677777,
+        "minimum_average_site_power_mw_8h": 64.90255133347222,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.44963804,
+          "cap47": 0.0,
+          "cap50": 280.246332988,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 28.24226514,
+          "unclassified": 37.782976857
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 4,
+      "example_date": "2023-09-08",
+      "service_ids": [
+        "1",
+        "101",
+        "1201",
+        "152301",
+        "155601",
+        "162601",
+        "169801",
+        "1901",
+        "259801",
+        "401",
+        "59001",
+        "62101",
+        "701",
+        "75401",
+        "HD"
+      ],
+      "trips": 22492,
+      "routes": 232,
+      "source_blocks": 1756,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 730,
+        "trips_ending_after_24h": 931,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1089,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 159,
+        "cap85": 37,
+        "unclassified": 75
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 37,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 37,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20736,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4621,
+        "failure_share": 0.2228491512345679,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 265,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2032,
+        "range_only_extra_recharge_or_vehicle_segments": 276,
+        "range_and_turn_fragment_count": 6501,
+        "turn_policy_incremental_segments": 4469,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 469.18806037900004,
+        "grid_energy_mwh_day_at_90pct_efficiency": 521.3200670877778,
+        "minimum_average_site_power_mw_8h": 65.16500838597223,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.76116647,
+          "cap47": 0.0,
+          "cap50": 280.277125821,
+          "cap70": 0.0,
+          "cap75": 95.994483156,
+          "cap85": 29.13582312,
+          "unclassified": 38.019461812
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 5,
+      "example_date": "2023-09-09",
+      "service_ids": [
+        "2",
+        "259802",
+        "HD"
+      ],
+      "trips": 16823,
+      "routes": 198,
+      "source_blocks": 858,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 691,
+        "trips_ending_after_24h": 897,
+        "max_end_seconds": 107640,
+        "max_end_hours": 29.9,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 699,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 74,
+        "cap47": 105,
+        "cap50": 365,
+        "cap70": 32,
+        "cap75": 83,
+        "cap85": 22,
+        "unclassified": 43
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 74,
+        "heavy_non_deck": 484,
+        "double_deck": 22,
+        "trolley": 136
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 74,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 484,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 22,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 136,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 15965,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 3319,
+        "failure_share": 0.20789226432821797,
+        "max_gap_shortfall_minutes": 5.066976106437353,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 249,
+        "max_block_distance_upper_km": 802.2330000000001,
+        "range_only_fragment_count": 1117,
+        "range_only_extra_recharge_or_vehicle_segments": 259,
+        "range_and_turn_fragment_count": 4316,
+        "turn_policy_incremental_segments": 3199,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 334.62721077400005,
+        "grid_energy_mwh_day_at_90pct_efficiency": 371.80801197111117,
+        "minimum_average_site_power_mw_8h": 46.476001496388896,
+        "energy_by_class_mwh_day": {
+          "cap24": 18.7367013,
+          "cap47": 0.0,
+          "cap50": 202.541318176,
+          "cap70": 0.0,
+          "cap75": 63.972362894,
+          "cap85": 21.65655618,
+          "unclassified": 27.720272224
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 6,
+      "example_date": "2023-09-10",
+      "service_ids": [
+        "253403",
+        "259803",
+        "3",
+        "32603",
+        "HD"
+      ],
+      "trips": 14726,
+      "routes": 190,
+      "source_blocks": 734,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 538,
+        "trips_ending_after_24h": 712,
+        "max_end_seconds": 107400,
+        "max_end_hours": 29.833333333333332,
+        "blocks_spanning_over_24h": 0,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 586,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 63,
+        "cap47": 89,
+        "cap50": 305,
+        "cap70": 29,
+        "cap75": 70,
+        "cap85": 22,
+        "unclassified": 35
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 63,
+        "heavy_non_deck": 401,
+        "double_deck": 22,
+        "trolley": 116
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 63,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 401,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 22,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 116,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 13992,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 2848,
+        "failure_share": 0.2035448827901658,
+        "max_gap_shortfall_minutes": 5.073200621090302,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 221,
+        "max_block_distance_upper_km": 802.2330000000001,
+        "range_only_fragment_count": 967,
+        "range_only_extra_recharge_or_vehicle_segments": 233,
+        "range_and_turn_fragment_count": 3727,
+        "turn_policy_incremental_segments": 2760,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 293.547252283,
+        "grid_energy_mwh_day_at_90pct_efficiency": 326.16361364777777,
+        "minimum_average_site_power_mw_8h": 40.77045170597222,
+        "energy_by_class_mwh_day": {
+          "cap24": 15.351204509999999,
+          "cap47": 0.0,
+          "cap50": 177.989494164,
+          "cap70": 0.0,
+          "cap75": 56.161813136,
+          "cap85": 22.153300559999998,
+          "unclassified": 21.891439913000003
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 7,
+      "example_date": "2023-09-11",
+      "service_ids": [
+        "1",
+        "101",
+        "1101",
+        "152201",
+        "155601",
+        "1901",
+        "259801",
+        "401",
+        "59101",
+        "62101",
+        "75301",
+        "801",
+        "HD"
+      ],
+      "trips": 22427,
+      "routes": 232,
+      "source_blocks": 1751,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 720,
+        "trips_ending_after_24h": 921,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1087,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 35,
+        "unclassified": 75
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 35,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 35,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20676,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4603,
+        "failure_share": 0.2226252660088992,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 262,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2024,
+        "range_only_extra_recharge_or_vehicle_segments": 273,
+        "range_and_turn_fragment_count": 6478,
+        "turn_policy_incremental_segments": 4454,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 467.28881261199996,
+        "grid_energy_mwh_day_at_90pct_efficiency": 519.209791791111,
+        "minimum_average_site_power_mw_8h": 64.90122397388888,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.44963804,
+          "cap47": 0.0,
+          "cap50": 280.23677599900003,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 28.24226514,
+          "unclassified": 37.782976857
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 8,
+      "example_date": "2023-09-28",
+      "service_ids": [
+        "1",
+        "101",
+        "1101",
+        "152201",
+        "155601",
+        "169801",
+        "1901",
+        "259801",
+        "401",
+        "59001",
+        "62101",
+        "63901",
+        "75301",
+        "801",
+        "HD"
+      ],
+      "trips": 22447,
+      "routes": 232,
+      "source_blocks": 1754,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 721,
+        "trips_ending_after_24h": 922,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1089,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 37,
+        "unclassified": 75
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 37,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 37,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20693,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4605,
+        "failure_share": 0.2225390228579713,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 263,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2028,
+        "range_only_extra_recharge_or_vehicle_segments": 274,
+        "range_and_turn_fragment_count": 6483,
+        "turn_policy_incremental_segments": 4455,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 468.196702801,
+        "grid_energy_mwh_day_at_90pct_efficiency": 520.2185586677778,
+        "minimum_average_site_power_mw_8h": 65.02731983347222,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.454413260000003,
+          "cap47": 0.0,
+          "cap50": 280.246332988,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 29.13582312,
+          "unclassified": 37.782976857
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 9,
+      "example_date": "2023-10-02",
+      "service_ids": [
+        "1",
+        "1101",
+        "152201",
+        "1901",
+        "201",
+        "259801",
+        "59101",
+        "62201",
+        "75401",
+        "801",
+        "HD"
+      ],
+      "trips": 22273,
+      "routes": 223,
+      "source_blocks": 1743,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 707,
+        "trips_ending_after_24h": 905,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1087,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 106,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 35,
+        "unclassified": 75
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 106,
+        "heavy_non_deck": 811,
+        "double_deck": 35,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 106,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 35,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20530,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4551,
+        "failure_share": 0.22167559668777398,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 262,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2016,
+        "range_only_extra_recharge_or_vehicle_segments": 273,
+        "range_and_turn_fragment_count": 6418,
+        "turn_policy_incremental_segments": 4402,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 465.48248033699997,
+        "grid_energy_mwh_day_at_90pct_efficiency": 517.20275593,
+        "minimum_average_site_power_mw_8h": 64.65034449125,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.275931649999997,
+          "cap47": 0.0,
+          "cap50": 279.089999969,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 28.24226514,
+          "unclassified": 37.297127002
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 10,
+      "example_date": "2023-10-08",
+      "service_ids": [
+        "1803",
+        "253403",
+        "259803",
+        "3",
+        "HD"
+      ],
+      "trips": 14742,
+      "routes": 190,
+      "source_blocks": 734,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 538,
+        "trips_ending_after_24h": 712,
+        "max_end_seconds": 107400,
+        "max_end_hours": 29.833333333333332,
+        "blocks_spanning_over_24h": 0,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 586,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 63,
+        "cap47": 89,
+        "cap50": 305,
+        "cap70": 29,
+        "cap75": 70,
+        "cap85": 22,
+        "unclassified": 35
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 63,
+        "heavy_non_deck": 401,
+        "double_deck": 22,
+        "trolley": 116
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 63,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 401,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 22,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 116,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 14008,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 2854,
+        "failure_share": 0.2037407195888064,
+        "max_gap_shortfall_minutes": 5.073200621090302,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 222,
+        "max_block_distance_upper_km": 802.2330000000001,
+        "range_only_fragment_count": 968,
+        "range_only_extra_recharge_or_vehicle_segments": 234,
+        "range_and_turn_fragment_count": 3733,
+        "turn_policy_incremental_segments": 2765,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 294.078354591,
+        "grid_energy_mwh_day_at_90pct_efficiency": 326.7537273233333,
+        "minimum_average_site_power_mw_8h": 40.84421591541666,
+        "energy_by_class_mwh_day": {
+          "cap24": 15.351204509999999,
+          "cap47": 0.0,
+          "cap50": 177.989494164,
+          "cap70": 0.0,
+          "cap75": 56.161813136,
+          "cap85": 22.153300559999998,
+          "unclassified": 22.422542221
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 11,
+      "example_date": "2023-10-10",
+      "service_ids": [
+        "1",
+        "101",
+        "1101",
+        "152201",
+        "155601",
+        "1901",
+        "259701",
+        "401",
+        "59001",
+        "62101",
+        "63901",
+        "75301",
+        "801",
+        "HD"
+      ],
+      "trips": 22431,
+      "routes": 232,
+      "source_blocks": 1752,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 720,
+        "trips_ending_after_24h": 921,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1087,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 35,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 35,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 35,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20679,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4588,
+        "failure_share": 0.22186759514483292,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 262,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2025,
+        "range_only_extra_recharge_or_vehicle_segments": 273,
+        "range_and_turn_fragment_count": 6464,
+        "turn_policy_incremental_segments": 4439,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 467.323183155,
+        "grid_energy_mwh_day_at_90pct_efficiency": 519.2479812833333,
+        "minimum_average_site_power_mw_8h": 64.90599766041666,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.454413260000003,
+          "cap47": 0.0,
+          "cap50": 280.246332988,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 28.24226514,
+          "unclassified": 37.803015191
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 12,
+      "example_date": "2023-10-11",
+      "service_ids": [
+        "1",
+        "101",
+        "1101",
+        "152201",
+        "155601",
+        "2001",
+        "259701",
+        "401",
+        "59001",
+        "62201",
+        "75301",
+        "801",
+        "HD"
+      ],
+      "trips": 22430,
+      "routes": 232,
+      "source_blocks": 1751,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 720,
+        "trips_ending_after_24h": 921,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1087,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 35,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 35,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 35,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20679,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4588,
+        "failure_share": 0.22186759514483292,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 262,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2024,
+        "range_only_extra_recharge_or_vehicle_segments": 273,
+        "range_and_turn_fragment_count": 6463,
+        "turn_policy_incremental_segments": 4439,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 467.31840793500004,
+        "grid_energy_mwh_day_at_90pct_efficiency": 519.2426754833334,
+        "minimum_average_site_power_mw_8h": 64.90533443541668,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.44963804,
+          "cap47": 0.0,
+          "cap50": 280.246332988,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 28.24226514,
+          "unclassified": 37.803015191
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 13,
+      "example_date": "2023-10-13",
+      "service_ids": [
+        "1",
+        "101",
+        "1201",
+        "152301",
+        "155601",
+        "162601",
+        "169801",
+        "1901",
+        "259701",
+        "401",
+        "59001",
+        "62101",
+        "701",
+        "75401",
+        "HD"
+      ],
+      "trips": 22494,
+      "routes": 232,
+      "source_blocks": 1756,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 730,
+        "trips_ending_after_24h": 931,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1089,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 159,
+        "cap85": 37,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 37,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 37,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20738,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4606,
+        "failure_share": 0.22210434950332722,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 265,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2032,
+        "range_only_extra_recharge_or_vehicle_segments": 276,
+        "range_and_turn_fragment_count": 6486,
+        "turn_policy_incremental_segments": 4454,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 469.20809871299997,
+        "grid_energy_mwh_day_at_90pct_efficiency": 521.3423319033333,
+        "minimum_average_site_power_mw_8h": 65.16779148791666,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.76116647,
+          "cap47": 0.0,
+          "cap50": 280.277125821,
+          "cap70": 0.0,
+          "cap75": 95.994483156,
+          "cap85": 29.13582312,
+          "unclassified": 38.039500146
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 14,
+      "example_date": "2023-10-14",
+      "service_ids": [
+        "2",
+        "259702",
+        "HD"
+      ],
+      "trips": 16823,
+      "routes": 198,
+      "source_blocks": 856,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 691,
+        "trips_ending_after_24h": 897,
+        "max_end_seconds": 107640,
+        "max_end_hours": 29.9,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 699,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 74,
+        "cap47": 105,
+        "cap50": 365,
+        "cap70": 32,
+        "cap75": 83,
+        "cap85": 22,
+        "unclassified": 43
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 74,
+        "heavy_non_deck": 484,
+        "double_deck": 22,
+        "trolley": 136
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 74,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 484,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 22,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 136,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 15967,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 3312,
+        "failure_share": 0.2074278198784994,
+        "max_gap_shortfall_minutes": 5.066976106437353,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 249,
+        "max_block_distance_upper_km": 802.2330000000001,
+        "range_only_fragment_count": 1115,
+        "range_only_extra_recharge_or_vehicle_segments": 259,
+        "range_and_turn_fragment_count": 4307,
+        "turn_policy_incremental_segments": 3192,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 334.627210774,
+        "grid_energy_mwh_day_at_90pct_efficiency": 371.8080119711111,
+        "minimum_average_site_power_mw_8h": 46.47600149638889,
+        "energy_by_class_mwh_day": {
+          "cap24": 18.7367013,
+          "cap47": 0.0,
+          "cap50": 202.541318176,
+          "cap70": 0.0,
+          "cap75": 63.972362894,
+          "cap85": 21.65655618,
+          "unclassified": 27.720272224
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 15,
+      "example_date": "2023-10-15",
+      "service_ids": [
+        "253403",
+        "259703",
+        "3",
+        "32603",
+        "HD"
+      ],
+      "trips": 14726,
+      "routes": 190,
+      "source_blocks": 731,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 538,
+        "trips_ending_after_24h": 712,
+        "max_end_seconds": 107400,
+        "max_end_hours": 29.833333333333332,
+        "blocks_spanning_over_24h": 0,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 586,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 63,
+        "cap47": 89,
+        "cap50": 305,
+        "cap70": 29,
+        "cap75": 70,
+        "cap85": 22,
+        "unclassified": 34
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 63,
+        "heavy_non_deck": 401,
+        "double_deck": 22,
+        "trolley": 116
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 63,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 401,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 22,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 116,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 13995,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 2843,
+        "failure_share": 0.20314397999285458,
+        "max_gap_shortfall_minutes": 5.073200621090302,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 221,
+        "max_block_distance_upper_km": 802.2330000000001,
+        "range_only_fragment_count": 964,
+        "range_only_extra_recharge_or_vehicle_segments": 233,
+        "range_and_turn_fragment_count": 3719,
+        "turn_policy_incremental_segments": 2755,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 293.547252283,
+        "grid_energy_mwh_day_at_90pct_efficiency": 326.16361364777777,
+        "minimum_average_site_power_mw_8h": 40.77045170597222,
+        "energy_by_class_mwh_day": {
+          "cap24": 15.351204509999999,
+          "cap47": 0.0,
+          "cap50": 177.989494164,
+          "cap70": 0.0,
+          "cap75": 56.161813136,
+          "cap85": 22.153300559999998,
+          "unclassified": 21.891439913000003
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 16,
+      "example_date": "2023-10-16",
+      "service_ids": [
+        "1",
+        "101",
+        "1101",
+        "152201",
+        "155601",
+        "1901",
+        "259701",
+        "401",
+        "59101",
+        "62101",
+        "75301",
+        "801",
+        "HD"
+      ],
+      "trips": 22429,
+      "routes": 232,
+      "source_blocks": 1751,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 720,
+        "trips_ending_after_24h": 921,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1087,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 35,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 35,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 35,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20678,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4588,
+        "failure_share": 0.2218783247896315,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 262,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2024,
+        "range_only_extra_recharge_or_vehicle_segments": 273,
+        "range_and_turn_fragment_count": 6463,
+        "turn_policy_incremental_segments": 4439,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 467.308850946,
+        "grid_energy_mwh_day_at_90pct_efficiency": 519.2320566066667,
+        "minimum_average_site_power_mw_8h": 64.90400707583333,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.44963804,
+          "cap47": 0.0,
+          "cap50": 280.23677599900003,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 28.24226514,
+          "unclassified": 37.803015191
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 17,
+      "example_date": "2023-11-09",
+      "service_ids": [
+        "1",
+        "101",
+        "1101",
+        "152201",
+        "155601",
+        "169801",
+        "1901",
+        "259701",
+        "401",
+        "59001",
+        "62101",
+        "63901",
+        "75301",
+        "801",
+        "HD"
+      ],
+      "trips": 22449,
+      "routes": 232,
+      "source_blocks": 1754,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 721,
+        "trips_ending_after_24h": 922,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1089,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 37,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 37,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 37,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20695,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4590,
+        "failure_share": 0.2217927035515825,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 263,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2028,
+        "range_only_extra_recharge_or_vehicle_segments": 274,
+        "range_and_turn_fragment_count": 6468,
+        "turn_policy_incremental_segments": 4440,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 468.216741135,
+        "grid_energy_mwh_day_at_90pct_efficiency": 520.2408234833333,
+        "minimum_average_site_power_mw_8h": 65.03010293541666,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.454413260000003,
+          "cap47": 0.0,
+          "cap50": 280.246332988,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 29.13582312,
+          "unclassified": 37.803015191
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 18,
+      "example_date": "2023-11-11",
+      "service_ids": [
+        "162503",
+        "259703",
+        "3",
+        "32603",
+        "HD"
+      ],
+      "trips": 14726,
+      "routes": 190,
+      "source_blocks": 731,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 538,
+        "trips_ending_after_24h": 712,
+        "max_end_seconds": 107400,
+        "max_end_hours": 29.833333333333332,
+        "blocks_spanning_over_24h": 0,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 587,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 63,
+        "cap47": 89,
+        "cap50": 305,
+        "cap70": 29,
+        "cap75": 71,
+        "cap85": 21,
+        "unclassified": 34
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 63,
+        "heavy_non_deck": 402,
+        "double_deck": 21,
+        "trolley": 116
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 63,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 402,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 21,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 116,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 13995,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 2843,
+        "failure_share": 0.20314397999285458,
+        "max_gap_shortfall_minutes": 5.073200621090302,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 221,
+        "max_block_distance_upper_km": 802.2330000000001,
+        "range_only_fragment_count": 964,
+        "range_only_extra_recharge_or_vehicle_segments": 233,
+        "range_and_turn_fragment_count": 3719,
+        "turn_policy_incremental_segments": 2755,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 293.56845919899996,
+        "grid_energy_mwh_day_at_90pct_efficiency": 326.18717688777775,
+        "minimum_average_site_power_mw_8h": 40.77339711097222,
+        "energy_by_class_mwh_day": {
+          "cap24": 15.351204509999999,
+          "cap47": 0.0,
+          "cap50": 177.989494164,
+          "cap70": 0.0,
+          "cap75": 56.480872712,
+          "cap85": 21.855447899999998,
+          "unclassified": 21.891439913000003
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 19,
+      "example_date": "2023-11-12",
+      "service_ids": [
+        "1803",
+        "253403",
+        "259703",
+        "3",
+        "HD"
+      ],
+      "trips": 14742,
+      "routes": 190,
+      "source_blocks": 731,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 538,
+        "trips_ending_after_24h": 712,
+        "max_end_seconds": 107400,
+        "max_end_hours": 29.833333333333332,
+        "blocks_spanning_over_24h": 0,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 586,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 63,
+        "cap47": 89,
+        "cap50": 305,
+        "cap70": 29,
+        "cap75": 70,
+        "cap85": 22,
+        "unclassified": 34
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 63,
+        "heavy_non_deck": 401,
+        "double_deck": 22,
+        "trolley": 116
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 63,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 401,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 22,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 116,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 14011,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 2849,
+        "failure_share": 0.20334023267432733,
+        "max_gap_shortfall_minutes": 5.073200621090302,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 222,
+        "max_block_distance_upper_km": 802.2330000000001,
+        "range_only_fragment_count": 965,
+        "range_only_extra_recharge_or_vehicle_segments": 234,
+        "range_and_turn_fragment_count": 3725,
+        "turn_policy_incremental_segments": 2760,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 294.078354591,
+        "grid_energy_mwh_day_at_90pct_efficiency": 326.7537273233333,
+        "minimum_average_site_power_mw_8h": 40.84421591541666,
+        "energy_by_class_mwh_day": {
+          "cap24": 15.351204509999999,
+          "cap47": 0.0,
+          "cap50": 177.989494164,
+          "cap70": 0.0,
+          "cap75": 56.161813136,
+          "cap85": 22.153300559999998,
+          "unclassified": 22.422542221
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 20,
+      "example_date": "2023-11-13",
+      "service_ids": [
+        "1",
+        "1101",
+        "152201",
+        "1901",
+        "201",
+        "259701",
+        "59101",
+        "62201",
+        "75401",
+        "801",
+        "HD"
+      ],
+      "trips": 22275,
+      "routes": 223,
+      "source_blocks": 1743,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 707,
+        "trips_ending_after_24h": 905,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1087,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 106,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 35,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 106,
+        "heavy_non_deck": 811,
+        "double_deck": 35,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 106,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 35,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20532,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4536,
+        "failure_share": 0.22092343658679134,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 262,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2016,
+        "range_only_extra_recharge_or_vehicle_segments": 273,
+        "range_and_turn_fragment_count": 6403,
+        "turn_policy_incremental_segments": 4387,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 465.50251867099996,
+        "grid_energy_mwh_day_at_90pct_efficiency": 517.2250207455555,
+        "minimum_average_site_power_mw_8h": 64.65312759319444,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.275931649999997,
+          "cap47": 0.0,
+          "cap50": 279.089999969,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 28.24226514,
+          "unclassified": 37.317165335999995
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 21,
+      "example_date": "2023-12-22",
+      "service_ids": [
+        "1",
+        "101",
+        "1201",
+        "152301",
+        "162601",
+        "169801",
+        "1901",
+        "259701",
+        "401",
+        "59001",
+        "62101",
+        "701",
+        "75401",
+        "HD"
+      ],
+      "trips": 22454,
+      "routes": 232,
+      "source_blocks": 1752,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 717,
+        "trips_ending_after_24h": 915,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1089,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 107,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 159,
+        "cap85": 37,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 107,
+        "heavy_non_deck": 811,
+        "double_deck": 37,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 107,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 37,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20702,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4586,
+        "failure_share": 0.22152449038740218,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 265,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2028,
+        "range_only_extra_recharge_or_vehicle_segments": 276,
+        "range_and_turn_fragment_count": 6462,
+        "turn_policy_incremental_segments": 4434,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 468.920463613,
+        "grid_energy_mwh_day_at_90pct_efficiency": 521.0227373477777,
+        "minimum_average_site_power_mw_8h": 65.12784216847221,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.76116647,
+          "cap47": 0.0,
+          "cap50": 279.989490721,
+          "cap70": 0.0,
+          "cap75": 95.994483156,
+          "cap85": 29.13582312,
+          "unclassified": 38.039500146
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 22,
+      "example_date": "2023-12-25",
+      "service_ids": [
+        "259703",
+        "3",
+        "32603",
+        "HD"
+      ],
+      "trips": 14720,
+      "routes": 190,
+      "source_blocks": 730,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 538,
+        "trips_ending_after_24h": 712,
+        "max_end_seconds": 107400,
+        "max_end_hours": 29.833333333333332,
+        "blocks_spanning_over_24h": 0,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 586,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 63,
+        "cap47": 89,
+        "cap50": 305,
+        "cap70": 29,
+        "cap75": 70,
+        "cap85": 21,
+        "unclassified": 34
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 63,
+        "heavy_non_deck": 401,
+        "double_deck": 21,
+        "trolley": 116
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 63,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 401,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 21,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 116,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 13990,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 2843,
+        "failure_share": 0.203216583273767,
+        "max_gap_shortfall_minutes": 5.073200621090302,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 221,
+        "max_block_distance_upper_km": 802.2330000000001,
+        "range_only_fragment_count": 963,
+        "range_only_extra_recharge_or_vehicle_segments": 233,
+        "range_and_turn_fragment_count": 3718,
+        "turn_policy_incremental_segments": 2755,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 293.24939962299993,
+        "grid_energy_mwh_day_at_90pct_efficiency": 325.8326662477777,
+        "minimum_average_site_power_mw_8h": 40.72908328097221,
+        "energy_by_class_mwh_day": {
+          "cap24": 15.351204509999999,
+          "cap47": 0.0,
+          "cap50": 177.989494164,
+          "cap70": 0.0,
+          "cap75": 56.161813136,
+          "cap85": 21.855447899999998,
+          "unclassified": 21.891439913000003
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 23,
+      "example_date": "2023-12-27",
+      "service_ids": [
+        "1",
+        "1101",
+        "152201",
+        "155601",
+        "1901",
+        "201",
+        "259701",
+        "59101",
+        "62201",
+        "75401",
+        "801",
+        "HD"
+      ],
+      "trips": 22315,
+      "routes": 223,
+      "source_blocks": 1747,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 720,
+        "trips_ending_after_24h": 921,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1087,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 106,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 35,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 106,
+        "heavy_non_deck": 811,
+        "double_deck": 35,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 106,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 35,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20568,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4556,
+        "failure_share": 0.22150914041229094,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 262,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2020,
+        "range_only_extra_recharge_or_vehicle_segments": 273,
+        "range_and_turn_fragment_count": 6427,
+        "turn_policy_incremental_segments": 4407,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 465.790153771,
+        "grid_energy_mwh_day_at_90pct_efficiency": 517.5446153011111,
+        "minimum_average_site_power_mw_8h": 64.69307691263889,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.275931649999997,
+          "cap47": 0.0,
+          "cap50": 279.377635069,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 28.24226514,
+          "unclassified": 37.317165335999995
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 24,
+      "example_date": "2023-12-28",
+      "service_ids": [
+        "1",
+        "1101",
+        "152201",
+        "155601",
+        "169801",
+        "1901",
+        "201",
+        "259701",
+        "59101",
+        "62201",
+        "75401",
+        "801",
+        "HD"
+      ],
+      "trips": 22333,
+      "routes": 223,
+      "source_blocks": 1749,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 721,
+        "trips_ending_after_24h": 922,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1089,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 106,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 158,
+        "cap85": 37,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 106,
+        "heavy_non_deck": 811,
+        "double_deck": 37,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 106,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 37,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20584,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4558,
+        "failure_share": 0.22143412359113876,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 263,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2023,
+        "range_only_extra_recharge_or_vehicle_segments": 274,
+        "range_and_turn_fragment_count": 6431,
+        "turn_policy_incremental_segments": 4408,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 466.683711751,
+        "grid_energy_mwh_day_at_90pct_efficiency": 518.537457501111,
+        "minimum_average_site_power_mw_8h": 64.81718218763888,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.275931649999997,
+          "cap47": 0.0,
+          "cap50": 279.377635069,
+          "cap70": 0.0,
+          "cap75": 95.577156576,
+          "cap85": 29.13582312,
+          "unclassified": 37.317165335999995
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    },
+    {
+      "pattern_id": 25,
+      "example_date": "2023-12-29",
+      "service_ids": [
+        "1",
+        "1201",
+        "152301",
+        "162601",
+        "169801",
+        "1901",
+        "201",
+        "259701",
+        "59101",
+        "62201",
+        "75401",
+        "801",
+        "HD"
+      ],
+      "trips": 22338,
+      "routes": 223,
+      "source_blocks": 1748,
+      "all_trips_preserved": true,
+      "absolute_time": {
+        "trips_starting_after_24h": 717,
+        "trips_ending_after_24h": 915,
+        "max_end_seconds": 107940,
+        "max_end_hours": 29.983333333333334,
+        "blocks_spanning_over_24h": 1,
+        "source_block_overlapping_trip_count": 0
+      },
+      "peak_concurrent_trips": 1089,
+      "exact_class_peak_lower_bounds": {
+        "cap24": 106,
+        "cap47": 109,
+        "cap50": 589,
+        "cap70": 39,
+        "cap75": 159,
+        "cap85": 37,
+        "unclassified": 76
+      },
+      "group_peak_lower_bounds": {
+        "community_shuttle": 106,
+        "heavy_non_deck": 811,
+        "double_deck": 37,
+        "trolley": 147
+      },
+      "scenario_fleet_checks": {
+        "community_shuttle": {
+          "required_exact_class_peak": 106,
+          "scenario_positions": 189,
+          "count_sufficient": true
+        },
+        "heavy_non_deck": {
+          "required_exact_class_peak": 811,
+          "scenario_positions": 1419,
+          "count_sufficient": true
+        },
+        "double_deck": {
+          "required_exact_class_peak": 37,
+          "scenario_positions": 57,
+          "count_sufficient": true
+        },
+        "trolley": {
+          "required_exact_class_peak": 147,
+          "scenario_positions": 262,
+          "count_sufficient": true
+        }
+      },
+      "scenario_total_positions": 1927,
+      "source_block_transition_screen": {
+        "transitions": 20590,
+        "negative_gap_count": 0,
+        "uniform_5min_50kmh_failures": 4554,
+        "failure_share": 0.22117532782904323,
+        "max_gap_shortfall_minutes": 5.197114296298491,
+        "status": "SOURCE_BLOCK_CHAINS_NOT_CERTIFIED"
+      },
+      "range_screen": {
+        "range_km": 300.0,
+        "source_blocks_over_range": 265,
+        "max_block_distance_upper_km": 745.3279,
+        "range_only_fragment_count": 2024,
+        "range_only_extra_recharge_or_vehicle_segments": 276,
+        "range_and_turn_fragment_count": 6426,
+        "turn_policy_incremental_segments": 4402,
+        "interpretation": "Task segments under retained source-block order; not a physical vehicle lower bound."
+      },
+      "winter_energy_lower_bound": {
+        "battery_energy_mwh_day": 467.36141661600004,
+        "grid_energy_mwh_day_at_90pct_efficiency": 519.2904629066667,
+        "minimum_average_site_power_mw_8h": 64.91130786333333,
+        "energy_by_class_mwh_day": {
+          "cap24": 25.58746008,
+          "cap47": 0.0,
+          "cap50": 279.089999969,
+          "cap70": 0.0,
+          "cap75": 95.994483156,
+          "cap85": 29.13582312,
+          "unclassified": 37.553650291
+        },
+        "accessory_energy": "EXCLUDED; vehicle duty profiles and winter accessory tests are unavailable",
+        "trolley": "zero battery traction assumed under overhead supply; feeder capacity remains unverified"
+      },
+      "fatal_errors": [],
+      "status": "UNVERIFIED",
+      "status_reason": [
+        "no actual vehicle-to-block assignments",
+        "no depot or terminal charger stock",
+        "no site firm-power and commissioning records",
+        "no measured winter accessory load or payload"
+      ]
+    }
+  ],
+  "worst_case": {
+    "peak_concurrent_trips": {
+      "value": 1089,
+      "pattern_id": 4,
+      "example_date": "2023-09-08"
+    },
+    "uniform_turn_failures": {
+      "value": 4621,
+      "pattern_id": 4,
+      "example_date": "2023-09-08"
+    },
+    "blocks_over_300km": {
+      "value": 265,
+      "pattern_id": 4,
+      "example_date": "2023-09-08"
+    },
+    "range_only_fragments": {
+      "value": 2032,
+      "pattern_id": 4,
+      "example_date": "2023-09-08"
+    },
+    "range_and_turn_fragments": {
+      "value": 6501,
+      "pattern_id": 4,
+      "example_date": "2023-09-08"
+    },
+    "winter_battery_mwh_day": {
+      "value": 469.20809871299997,
+      "pattern_id": 13,
+      "example_date": "2023-10-13"
+    },
+    "minimum_8h_site_power_mw": {
+      "value": 65.16779148791666,
+      "pattern_id": 13,
+      "example_date": "2023-10-13"
+    }
+  },
+  "exact_class_concurrency_within_scenario_positions": true,
+  "source_block_transition_screen_all_patterns": "FAIL_UNDER_DECLARED_5MIN_50KMH_POLICY",
+  "charging_screen": {
+    "status": "UNVERIFIED",
+    "what_is_quantified": "Traction-only winter energy, 90% charging efficiency and average site-wide power for an eight-hour window.",
+    "missing": [
+      "charger locations",
+      "charger slots and power",
+      "site firm power",
+      "utility interconnection",
+      "commissioning dates",
+      "arrival SOC",
+      "accessory heater energy",
+      "route terminal dwell geometry"
+    ]
+  },
+  "binding_limits": [
+    "The 300-km range screen leaves blocks over 300 km and requires recharge or vehicle exchange.",
+    "Original source-block chains fail the declared uniform transfer screen for thousands of connections.",
+    "Traction-only full-city energy is hundreds of MWh per day; site-specific charging feasibility is absent.",
+    "Capacity proxies do not supply trip-level payload or accessible-vehicle compatibility."
+  ],
+  "interpretation": "All departures are retained and exact-class interval concurrency is below the scenario inventory. That is only a necessary condition. The absent vehicle, depot, charger, power, payload and winter records prevent a city-wide PASS."
+}

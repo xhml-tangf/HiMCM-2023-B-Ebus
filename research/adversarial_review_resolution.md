@@ -1,5 +1,8 @@
 # Adversarial review resolution matrix
 
+Historical first-round record. The V2 terminal-value and periodic-validation corrections supersede the relevant closure claims below; see `research/review_v2_resolution.md`.
+
+
 Audit date: 19 October 2026. Source review:
 `D:/AI/ebus-peer-review/审稿报告.md`. This file maps every F finding to the
 current code result, manuscript claim and verification evidence. It does not

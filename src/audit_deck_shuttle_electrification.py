@@ -14,6 +14,10 @@ import math
 from pathlib import Path
 
 import pandas as pd
+try:
+    from .price_index import price_record
+except ImportError:
+    from price_index import price_record
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -470,26 +474,54 @@ def screen_duties(blocks: pd.DataFrame, asset_class: str, scenario: str, paramet
     return frame
 
 
+def scenario_prices(asset_class: str, scenario: str, parameters: dict) -> dict:
+    """Source years attach to leaves, never to a mixed vehicle/site total."""
+    deck = asset_class == "double_deck"
+    vehicle_year = {"low": 2021, "central": 2024 if deck else 2021,
+                    "high": 2024 if deck else 2023}[scenario]
+    fx = (CAD_PER_USD_2023 if scenario == "low" else CAD_PER_USD_2024
+          if deck else 1.0)
+    currency = "USD" if fx != 1 else "CAD"
+    vehicle = price_record(
+        parameters["unit_cost_cad_low"] / fx, vehicle_year,
+        currency=currency, cad_per_unit=fx,
+        fx_basis=f"Fixed sensitivity CAD/USD {fx}; not a verified historical FX rate" if fx != 1 else "CAD; no FX",
+        source_scope=parameters["unit_cost_basis"],
+        source_id="bc_suvi_2021" if scenario == "low" else "foothill_2024" if deck else "vicinity_2021" if scenario == "central" else "scenario",
+        status="SCENARIO_PREMIUM" if scenario == "high" else "PUBLIC_ENVELOPE")
+    # Central pantograph cost is explicitly 2019 CAD in the 2020 report.
+    charger = price_record(
+        parameters["charger_cost_cad_each"], 2019 if deck and scenario == "central" else 2023,
+        source_scope="Per charger equipment/site envelope; shuttle values are assumed 2023-CAD scenarios",
+        source_id="translink_fleet_2020" if deck and scenario == "central" else "translink_tech_2023" if deck else "scenario",
+        status="PUBLIC_ENVELOPE" if deck else "SCENARIO")
+    depot = price_record(parameters.get("depot_share_cad_per_vehicle", 0), 2023,
+                        source_scope="Incremental depot allocation per vehicle; 0 for shuttles",
+                        source_id="translink_tech_2023" if deck else "scenario")
+    return dict(vehicle=vehicle, charger=charger, depot=depot)
+
+
 def scenario_summary(screen: pd.DataFrame, asset_class: str, scenario: str, parameters: dict) -> dict:
     status = screen["overnight_status"].value_counts()
     certain_shortfall = screen[screen["overnight_status"].eq("CERTAIN_SHORTFALL")]
     fleet_low = int(parameters["fleet_low"])
     fleet_high = int(parameters["fleet_high"])
-    unit_low = float(parameters["unit_cost_cad_low"])
-    unit_high = float(parameters["unit_cost_cad_high"])
+    prices = scenario_prices(asset_class, scenario, parameters)
+    unit_low = prices["vehicle"]["value_2023_cad"]
+    unit_high = unit_low * parameters["unit_cost_cad_high"] / parameters["unit_cost_cad_low"]
     vehicle_low = fleet_low * unit_low
     vehicle_high = fleet_high * unit_high
 
     if asset_class == "double_deck":
         charger_count_low = charger_count_high = int(parameters["chargers"])
-        depot_low = fleet_low * float(parameters["depot_share_cad_per_vehicle"])
-        depot_high = fleet_high * float(parameters["depot_share_cad_per_vehicle"])
+        depot_low = fleet_low * prices["depot"]["value_2023_cad"]
+        depot_high = fleet_high * prices["depot"]["value_2023_cad"]
     else:
         charger_count_low = math.ceil(fleet_low / int(parameters["vehicles_per_charger"]))
         charger_count_high = math.ceil(fleet_high / int(parameters["vehicles_per_charger"]))
         depot_low = depot_high = 0.0
 
-    charger_unit = float(parameters["charger_cost_cad_each"])
+    charger_unit = prices["charger"]["value_2023_cad"]
     infrastructure_low = depot_low + charger_count_low * charger_unit
     infrastructure_high = depot_high + charger_count_high * charger_unit
     annual_km_low = float(parameters.get("annual_km_low", 0.0))
@@ -537,7 +569,8 @@ def scenario_summary(screen: pd.DataFrame, asset_class: str, scenario: str, para
         "capital_cost_cad_low": vehicle_low + infrastructure_low,
         "capital_cost_cad_high": vehicle_high + infrastructure_high,
         "unit_cost_basis": parameters["unit_cost_basis"],
-        "cost_boundary": "nominal vehicle + incremental charging/site envelope; excludes operations, energy, taxes, financing and residual value",
+        "price_base_year": 2023,
+        "cost_boundary": "constant 2023 CAD, leaf CPI/explicit FX conversion before aggregation; excludes operations, energy, taxes, financing and residual value",
     }
 
 
@@ -641,6 +674,10 @@ def main() -> None:
     fleet_mapping.to_csv(PROC / "deck_shuttle_fleet_mapping.csv", index=False, encoding="utf-8")
     duty_wide.to_csv(PROC / "deck_shuttle_duty_screen_2023.csv", index=False, encoding="utf-8")
     scenario_frame.to_csv(PROC / "deck_shuttle_scenarios.csv", index=False, encoding="utf-8")
+    (RESULTS / "deck_shuttle_price_ledger.json").write_text(json.dumps({
+        name: {kind: scenario_prices(kind, name, scenario[kind])
+               for kind in ("double_deck", "community_shuttle")}
+        for name, scenario in SCENARIOS.items()}, indent=2) + "\n", encoding="utf-8")
 
     deck_rows = {row["scenario"]: row for row in scenario_rows if row["asset_class"] == "double_deck"}
     shuttle_rows = {row["scenario"]: row for row in scenario_rows if row["asset_class"] == "community_shuttle"}
@@ -699,7 +736,7 @@ def main() -> None:
                 for level, row in shuttle_rows.items()
             },
             "additivity_warning": "These class envelopes are not additive to results/vancouver_transition_scenarios.json. Removing shared depot/charger allocations from the non-deck baseline is required before combining them.",
-            "price_basis_warning": "The scenarios mix nominal 2020/2021/2023/2024 evidence and explicit FX/uncertainty assumptions. They are budgets, not bids, invoices or present values.",
+            "price_basis_warning": "Leaves use source-year CPI to constant 2023 CAD before aggregation; fixed FX and forward premiums remain assumptions. See deck_shuttle_price_ledger.json. These are budgets, not local bids or present values.",
         },
         "unverifiable": [
             "Exact 31 December 2023 class/age/depot vehicle register",

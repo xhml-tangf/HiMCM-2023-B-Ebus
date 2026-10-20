@@ -1,9 +1,18 @@
 from pathlib import Path
 
 import pandas as pd
+from src.analyze_vancouver_blocks import transfer_fails
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_same_stop_short_turn_is_not_lost_by_clamping_available_time():
+    assert transfer_fails(0, 0)
+    assert transfer_fails(4, 0)
+    assert not transfer_fails(5, 0)
+    assert transfer_fails(10, 5)
+    assert not transfer_fails(11, 5)
 
 
 def test_route100_terminal_fragments_respect_daily_range_and_cover_trips():

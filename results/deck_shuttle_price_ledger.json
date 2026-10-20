@@ -1,0 +1,254 @@
+{
+  "low": {
+    "double_deck": {
+      "vehicle": {
+        "amount": 1165000.0,
+        "source_year": 2021,
+        "currency": "USD",
+        "cad_per_unit": 1.35,
+        "FX_basis": "Fixed sensitivity CAD/USD 1.35; not a verified historical FX rate",
+        "base_year": 2023,
+        "source_scope": "2021 BC incentive list: BYD DD10 double-deck coach MSRP US$1.165m at assumed CAD/USD 1.35; no TransLink bid",
+        "source_id": "bc_suvi_2021",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.1094568351674219,
+        "value_2023_cad": 1744898.2375095629
+      },
+      "charger": {
+        "amount": 610000.0,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Per charger equipment/site envelope; shuttle values are assumed 2023-CAD scenarios",
+        "source_id": "translink_tech_2023",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 610000.0
+      },
+      "depot": {
+        "amount": 88947.36842105263,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Incremental depot allocation per vehicle; 0 for shuttles",
+        "source_id": "translink_tech_2023",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 88947.36842105263
+      }
+    },
+    "community_shuttle": {
+      "vehicle": {
+        "amount": 265000.0,
+        "source_year": 2021,
+        "currency": "USD",
+        "cad_per_unit": 1.35,
+        "FX_basis": "Fixed sensitivity CAD/USD 1.35; not a verified historical FX rate",
+        "base_year": 2023,
+        "source_scope": "2021 BC incentive list: EV Star Transit Plus with ADA MSRP US$265k at assumed CAD/USD 1.35",
+        "source_id": "bc_suvi_2021",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.1094568351674219,
+        "value_2023_cad": 396908.18278114515
+      },
+      "charger": {
+        "amount": 50000.0,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Per charger equipment/site envelope; shuttle values are assumed 2023-CAD scenarios",
+        "source_id": "scenario",
+        "status": "SCENARIO",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 50000.0
+      },
+      "depot": {
+        "amount": 0,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Incremental depot allocation per vehicle; 0 for shuttles",
+        "source_id": "scenario",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 0.0
+      }
+    }
+  },
+  "central": {
+    "double_deck": {
+      "vehicle": {
+        "amount": 1757999.9999999998,
+        "source_year": 2024,
+        "currency": "USD",
+        "cad_per_unit": 1.37,
+        "FX_basis": "Fixed sensitivity CAD/USD 1.37; not a verified historical FX rate",
+        "base_year": 2023,
+        "source_scope": "Foothill 2024 contract: US$1.758m/bus at assumed CAD/USD 1.37",
+        "source_id": "foothill_2024",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 0.976738161848513,
+        "value_2023_cad": 2352434.7932856698
+      },
+      "charger": {
+        "amount": 1300000.0,
+        "source_year": 2019,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Per charger equipment/site envelope; shuttle values are assumed 2023-CAD scenarios",
+        "source_id": "translink_fleet_2020",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.1553499203333741,
+        "value_2023_cad": 1501954.8964333865
+      },
+      "depot": {
+        "amount": 88947.36842105263,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Incremental depot allocation per vehicle; 0 for shuttles",
+        "source_id": "translink_tech_2023",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 88947.36842105263
+      }
+    },
+    "community_shuttle": {
+      "vehicle": {
+        "amount": 428571.4285714286,
+        "source_year": 2021,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Calgary June-2021 order: over C$6m for 14 vehicles; midpoint fleet 189 of 171-206",
+        "source_id": "vicinity_2021",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.1094568351674219,
+        "value_2023_cad": 475481.50078603794
+      },
+      "charger": {
+        "amount": 100000.0,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Per charger equipment/site envelope; shuttle values are assumed 2023-CAD scenarios",
+        "source_id": "scenario",
+        "status": "SCENARIO",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 100000.0
+      },
+      "depot": {
+        "amount": 0,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Incremental depot allocation per vehicle; 0 for shuttles",
+        "source_id": "scenario",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 0.0
+      }
+    }
+  },
+  "high": {
+    "double_deck": {
+      "vehicle": {
+        "amount": 2197500.0,
+        "source_year": 2024,
+        "currency": "USD",
+        "cad_per_unit": 1.37,
+        "FX_basis": "Fixed sensitivity CAD/USD 1.37; not a verified historical FX rate",
+        "base_year": 2023,
+        "source_scope": "2024 Foothill actual converted to CAD plus a 25% uncertainty/supply premium",
+        "source_id": "foothill_2024",
+        "status": "SCENARIO_PREMIUM",
+        "cpi_factor": 0.976738161848513,
+        "value_2023_cad": 2940543.4916070877
+      },
+      "charger": {
+        "amount": 4600000.0,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Per charger equipment/site envelope; shuttle values are assumed 2023-CAD scenarios",
+        "source_id": "translink_tech_2023",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 4600000.0
+      },
+      "depot": {
+        "amount": 1470588.2352941176,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Incremental depot allocation per vehicle; 0 for shuttles",
+        "source_id": "translink_tech_2023",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 1470588.2352941176
+      }
+    },
+    "community_shuttle": {
+      "vehicle": {
+        "amount": 650000.0,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Forward 30-ft/20+ capacity vehicle and site-integration planning assumption; Calgary charging spend is the upper anchor",
+        "source_id": "scenario",
+        "status": "SCENARIO_PREMIUM",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 650000.0
+      },
+      "charger": {
+        "amount": 300000.0,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Per charger equipment/site envelope; shuttle values are assumed 2023-CAD scenarios",
+        "source_id": "scenario",
+        "status": "SCENARIO",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 300000.0
+      },
+      "depot": {
+        "amount": 0,
+        "source_year": 2023,
+        "currency": "CAD",
+        "cad_per_unit": 1.0,
+        "FX_basis": "CAD; no FX",
+        "base_year": 2023,
+        "source_scope": "Incremental depot allocation per vehicle; 0 for shuttles",
+        "source_id": "scenario",
+        "status": "PUBLIC_ENVELOPE",
+        "cpi_factor": 1.0,
+        "value_2023_cad": 0.0
+      }
+    }
+  }
+}

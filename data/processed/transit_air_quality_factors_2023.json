@@ -82,7 +82,7 @@
       "diesel_stock": 448,
       "hybrid_stock": 492,
       "diesel_share_of_remaining_fossil_vkt_proxy": 0.4765957446808511,
-      "existing_scenario_fossil_km_crosscheck": 88786898.98172182,
+      "existing_scenario_fossil_km_crosscheck": 89615491.72168045,
       "quality": "PROXY_FIXED_SERVICE_FUEL_ALLOCATION",
       "warning": "The 2022 stock split is not a 2023 vehicle-km register. Community shuttles are assigned to gasoline and the remaining diesel/hybrid activity is stock-weighted."
     },

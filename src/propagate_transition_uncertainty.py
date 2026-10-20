@@ -16,6 +16,7 @@ import pandas as pd
 from scipy.stats import rankdata
 from transition_ledger import service_ledger, operating_costs, use_emissions
 from price_index import to_2023
+from price_catalog import price
 
 ROOT = Path(__file__).resolve().parents[1]
 PROC = ROOT / "data/processed"
@@ -82,7 +83,7 @@ def main() -> None:
     (fleet, range_idx, beb_existing, renew_n, rate,
      cost_basis, fuel_kg_per_km) = [x.ravel() for x in grid]
 
-    non_trolley = fleet - 262.0
+    non_trolley = fleet - 275.0
     nondeck_fleet = non_trolley - 57.0  # 57 inferred 2023 double-deck buses
     plan_requests = range_requests[range_idx.astype(int)]
     plan_positions = np.floor(nondeck_fleet * plan_requests / base_requests + 0.5)
@@ -97,15 +98,15 @@ def main() -> None:
     # purchase counts only; availability/utilization is reported separately.
     annual_fossil_km = base_fossil_km
 
-    conventional_unit = to_2023(46_143_000.0 / 50.0, 2024)
-    hardware_unit = to_2023(1_200_000.0, 2023)
-    project_standard = to_2023(106_846_000.0 / 57.0, 2025)
-    project_articulated = to_2023(3_037_000.0, 2025)
+    conventional_unit = price("baseline_cng")
+    hardware_unit = price("hardware")
+    project_standard = price("project_standard")
+    project_articulated = price("project_articulated")
     standard40 = np.array([ranges40[a] for a, _ in paired_ranges], dtype=float)[range_idx.astype(int)]
     standard_share = standard40 / plan_requests
     project_unit = standard_share * project_standard + (1 - standard_share) * project_articulated
     plan_unit = np.where(cost_basis == 1, project_unit, hardware_unit)
-    infrastructure = net_new * to_2023(500_000_000.0 / 340.0, 2023)
+    infrastructure = net_new * price("depot_per_bus")
 
     years = np.arange(2024, 2034)
     plan_q, plan_rem = np.divmod(net_new.astype(int), 5)
@@ -132,7 +133,7 @@ def main() -> None:
 
     annual_service = service_ledger(annual_fossil_km)
     base_om_ledger, plan_om_ledger = operating_costs(
-        annual_service, to_2023(2.77, 2024), to_2023(2.28, 2024))
+        annual_service, price("om_cng"), price("om_beb"))
     baseline_om = sum(value / (1 + rate) ** (year - 2023) for year, value in base_om_ledger.items())
     plan_om = sum(value / (1 + rate) ** (year - 2023) for year, value in plan_om_ledger.items())
     baseline_gross = base_capex + baseline_om - base_residual
@@ -207,7 +208,7 @@ def main() -> None:
     }
     named_mask = (
         (fleet == 1725) & (range_midpoints[range_idx.astype(int)] == 300)
-        & (beb_existing == 18) & (renew_n == 10) & np.isclose(rate, 0.03)
+        & (beb_existing == 5) & (renew_n == 10) & np.isclose(rate, 0.03)
         & (cost_basis == 0) & np.isclose(fuel_kg_per_km, 1.233)
     )
     summary["named_case_grid_reproduction"] = {

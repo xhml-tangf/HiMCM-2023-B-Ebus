@@ -305,7 +305,7 @@
       },
       "transitions_over_3km_straight_line": 197,
       "zero_gap_long_transfer": 0,
-      "direct_transfer_failures_at_50kmh_5min": 1249,
+      "direct_transfer_failures_at_50kmh_5min": 4588,
       "gaps_minutes": {
         "ge30": 177,
         "ge40": 67,
@@ -588,7 +588,7 @@
       },
       "transitions_over_3km_straight_line": 40,
       "zero_gap_long_transfer": 0,
-      "direct_transfer_failures_at_50kmh_5min": 769,
+      "direct_transfer_failures_at_50kmh_5min": 3312,
       "gaps_minutes": {
         "ge30": 84,
         "ge40": 11,
@@ -871,7 +871,7 @@
       },
       "transitions_over_3km_straight_line": 35,
       "zero_gap_long_transfer": 0,
-      "direct_transfer_failures_at_50kmh_5min": 636,
+      "direct_transfer_failures_at_50kmh_5min": 2843,
       "gaps_minutes": {
         "ge30": 73,
         "ge40": 12,
@@ -1154,7 +1154,7 @@
       },
       "transitions_over_3km_straight_line": 35,
       "zero_gap_long_transfer": 0,
-      "direct_transfer_failures_at_50kmh_5min": 636,
+      "direct_transfer_failures_at_50kmh_5min": 2843,
       "gaps_minutes": {
         "ge30": 72,
         "ge40": 12,
@@ -1368,6 +1368,6 @@
     "Range values assume midlife batteries and 10% duty variability as modeled in 2020; current 2033 vehicles may differ."
   ],
   "computation": {
-    "elapsed_seconds": 1.42422569997143
+    "elapsed_seconds": 1.4409573000157252
   }
 }

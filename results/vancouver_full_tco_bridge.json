@@ -1,0 +1,139 @@
+{
+  "status": "SOURCE_LABELLED_ANNUALIZED_TCO_BRIDGE_NOT_LOCAL_QUOTE_OR_FORECAST",
+  "base_year": 2023,
+  "discount_rate_real": 0.03,
+  "price_leaves": {
+    "battery_replacement": {
+      "amount": 0.07,
+      "source_year": 2019,
+      "currency": "CAD",
+      "cad_per_unit": 1.0,
+      "FX_basis": "CAD; no FX",
+      "base_year": 2023,
+      "source_scope": "Appendix D, lower 2019-CAD mid-life battery replacement rate per service-km",
+      "source_id": "fleet2020",
+      "status": "PUBLIC_ENVELOPE",
+      "cpi_factor": 1.1553499203333741,
+      "value_2023_cad": 0.08087449442333619
+    },
+    "battery_replacement_high": {
+      "amount": 0.2,
+      "source_year": 2019,
+      "currency": "CAD",
+      "cad_per_unit": 1.0,
+      "FX_basis": "CAD; no FX",
+      "base_year": 2023,
+      "source_scope": "Appendix D, upper 2019-CAD mid-life battery replacement rate per service-km",
+      "source_id": "fleet2020",
+      "status": "PUBLIC_ENVELOPE",
+      "cpi_factor": 1.1553499203333741,
+      "value_2023_cad": 0.23106998406667484
+    },
+    "charger_maintenance": {
+      "amount": 0.03,
+      "source_year": 2019,
+      "currency": "CAD",
+      "cad_per_unit": 1.0,
+      "FX_basis": "CAD; no FX",
+      "base_year": 2023,
+      "source_scope": "Appendix D, lower 2019-CAD charger maintenance rate per service-km",
+      "source_id": "fleet2020",
+      "status": "PUBLIC_ENVELOPE",
+      "cpi_factor": 1.1553499203333741,
+      "value_2023_cad": 0.03466049761000122
+    },
+    "charger_maintenance_high": {
+      "amount": 0.05,
+      "source_year": 2019,
+      "currency": "CAD",
+      "cad_per_unit": 1.0,
+      "FX_basis": "CAD; no FX",
+      "base_year": 2023,
+      "source_scope": "Appendix D, upper 2019-CAD charger maintenance rate per service-km",
+      "source_id": "fleet2020",
+      "status": "PUBLIC_ENVELOPE",
+      "cpi_factor": 1.1553499203333741,
+      "value_2023_cad": 0.05776749601666871
+    },
+    "extra_operator": {
+      "amount": 0.02,
+      "source_year": 2019,
+      "currency": "CAD",
+      "cad_per_unit": 1.0,
+      "FX_basis": "CAD; no FX",
+      "base_year": 2023,
+      "source_scope": "Appendix D, lower electric-bus operator labour increment per service-km",
+      "source_id": "fleet2020",
+      "status": "PUBLIC_ENVELOPE",
+      "cpi_factor": 1.1553499203333741,
+      "value_2023_cad": 0.023106998406667485
+    },
+    "extra_operator_high": {
+      "amount": 0.16,
+      "source_year": 2019,
+      "currency": "CAD",
+      "cad_per_unit": 1.0,
+      "FX_basis": "CAD; no FX",
+      "base_year": 2023,
+      "source_scope": "Appendix D, upper electric-bus operator labour increment per service-km",
+      "source_id": "fleet2020",
+      "status": "PUBLIC_ENVELOPE",
+      "cpi_factor": 1.1553499203333741,
+      "value_2023_cad": 0.18485598725333988
+    }
+  },
+  "cases": [
+    {
+      "case": "low",
+      "annualized_rate_2023_cad_per_electric_km": 0.1386419904400049,
+      "added_pv_cad": 26274805.376997396,
+      "plan_full_tco_pv_cad": 4460735984.570172,
+      "economic_score_pct": -68.71400638582735
+    },
+    {
+      "case": "high",
+      "annualized_rate_2023_cad_per_electric_km": 0.47369346733668344,
+      "added_pv_cad": 89772251.7047411,
+      "plan_full_tco_pv_cad": 4524233430.897917,
+      "economic_score_pct": -71.11560751225112
+    }
+  ],
+  "included_to_avoid_double_counting": [
+    "charger maintenance",
+    "mid-life battery replacement reserve",
+    "extra operator labour for electric layover/deadhead"
+  ],
+  "already_in_central_ledger_not_added": [
+    "vehicle and infrastructure capital",
+    "bus maintenance and energy",
+    "demand and commodity electricity charges",
+    "vehicle residual"
+  ],
+  "separate_overlapping_scenarios_not_added": {
+    "extra_service_positions": 202,
+    "driver_cost_per_fte_cad": [
+      70500.0,
+      132000.0
+    ],
+    "driver_pv_range_cad": [
+      28389798.53074656,
+      53155367.46182335
+    ],
+    "deadhead_share_of_plan_om": [
+      0.05,
+      0.15
+    ],
+    "deadhead_pv_range_cad": [
+      105165777.15060982,
+      315497331.45182943
+    ],
+    "future_battery_capacity_kwh": 539260,
+    "future_battery_reserve_nominal_cad_at_100_200_per_kwh": [
+      53926000,
+      107852000
+    ],
+    "status": "SCREENING_RANGES_NOT_LOCAL_QUOTES_OR_FORECASTS"
+  },
+  "scope": "Electric service kilometres in the class-specific 2024--2033 ledger only.",
+  "boundary": "The rates come from a 2019 40-ft lifecycle case, not local 2024--2033 invoices. They are annualized reserves and are not the year in which a battery or charger is procured. Training, insurance, tax, financing, local site upgrades and post-horizon replacement of newly installed assets remain outside the two scores."
+}

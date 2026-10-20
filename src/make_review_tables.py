@@ -47,6 +47,39 @@ def main() -> None:
     (ROOT / "paper/tables/vancouver_asset_boundary.tex").write_text(
         "\n".join(rows) + "\n", encoding="utf-8")
 
+    bridge = json.loads((ROOT / "results/vancouver_full_tco_bridge.json").read_text())
+    rows = [r"\begin{table}[htbp]", r"\centering", r"\begin{tabular}{@{}lrrr@{}}",
+            r"\toprule", r"Bound & Rate & Added PV & Full-TCO score (\%)\\", r"\midrule"]
+    for case in bridge["cases"]:
+        rows.append(f"{case['case'].title()} & {case['annualized_rate_2023_cad_per_electric_km']:.3f} & "
+                    f"{case['added_pv_cad']/1e6:.1f} & {case['economic_score_pct']:.1f}" + EOL)
+    rows += [r"\bottomrule", r"\end{tabular}",
+             r"\caption{Incremental TCO bridge. The rate is 2023 CAD per electric service-km; added PV is in million 2023 CAD. Charger maintenance, annualized battery replacement and extra operator labour are added once because the central O\&M ledger omits them. Driver-position and deadhead scenarios overlap and are not added.}",
+             r"\label{tab:tco_bridge}",
+             r"\end{table}"]
+    (ROOT / "paper/tables/complete_tco_bridge.tex").write_text(
+        "\n".join(rows) + "\n", encoding="utf-8")
+
+    env = json.loads((ROOT / "results/vancouver_environment_bridge.json").read_text())
+    by_case = {}
+    for row in env["cases"]:
+        by_case.setdefault(row["fuel_case"], []).append(row["environment_score_pct"])
+    partial = {row["case"]: row["environment_score_pct"] for row in full["environment_central"]}
+    rows = [r"\begin{table}[htbp]", r"\centering", r"\begin{tabular}{@{}lrr@{}}",
+            r"\toprule", r"Renewal fuel & Partial score (\%) & Complete-horizon score (\%)\\",
+            r"\midrule"]
+    labels = {"renewable_fuel_mix": "Renewable mix", "rng_heavy": "RNG heavy",
+              "weighted_mix": "Weighted mix", "fossil_diesel": "Fossil diesel"}
+    for case in ("renewable_fuel_mix", "rng_heavy", "weighted_mix", "fossil_diesel"):
+        vals = by_case[case]
+        rows.append(f"{labels[case]} & {partial[case]:.1f} & {min(vals):.1f} to {max(vals):.1f}" + EOL)
+    rows += [r"\bottomrule", r"\end{tabular}",
+             r"\caption{Adds plan-only depot and charger embodied carbon to the scored-conversion horizon. The complete-horizon range uses 4.269--8.539 t CO$_2$e per charger. Depot floor area is scaled from Marpole's 800,000 ft$^2$ and 340 positions at 650 kg CO$_2$e/m$^2$. These are transfer scenarios, not local EPDs.}",
+             r"\label{tab:environment_bridge}",
+             r"\end{table}"]
+    (ROOT / "paper/tables/environment_bridge.tex").write_text(
+        "\n".join(rows) + "\n", encoding="utf-8")
+
 
 if __name__ == "__main__":
     main()

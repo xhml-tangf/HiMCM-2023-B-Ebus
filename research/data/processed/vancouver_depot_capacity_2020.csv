@@ -1,0 +1,8 @@
+depot,location,max_capacity_40ft_equivalent,assigned_60ft,assigned_40ft,assigned_highway_40ft,assigned_26ft_shuttle,assigned_trolley,assigned_total,source_id,source_page,capacity_status
+Burnaby (BTC),Burnaby,312,92,150,0,0,0,242,translink_2020_fleet_plan,p.14,2020 nominal maximum; not a 2023 occupancy record
+Hamilton (HTC),Richmond,296,22,163,0,0,0,185,translink_2020_fleet_plan,p.14,2020 nominal maximum; not a 2023 occupancy record
+Port Coquitlam (PTC),Port Coquitlam,288,23,89,14,77,0,203,translink_2020_fleet_plan,p.14,2020 nominal maximum; not a 2023 occupancy record
+Richmond (RTC),Richmond,271,59,89,64,0,0,212,translink_2020_fleet_plan,p.14,2020 nominal maximum; not a 2023 occupancy record
+Surrey (STC),Surrey,285,22,193,0,34,0,249,translink_2020_fleet_plan,p.14,2020 nominal maximum; not a 2023 occupancy record
+Vancouver (VTC),Vancouver,539,0,185,0,0,262,447,translink_2020_fleet_plan,p.14,2020 nominal maximum; not a 2023 occupancy record
+Marpole (MTC),Vancouver,300,0,0,0,0,0,0,translink_2020_fleet_plan,p.14,planned 300-bus facility; not open in 2023

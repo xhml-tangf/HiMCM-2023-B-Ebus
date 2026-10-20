@@ -51,7 +51,7 @@ def test_single_day_pass_cannot_reset_soc_for_a_repeating_service():
 
     periodic = check_periodic_schedule(days, vehicles, depots, **options)
     assert periodic.status == "FAIL"
-    assert any("day 2: minimum SOC violated" in error for error in periodic.errors)
+    assert any("minimum SOC violated" in error for error in periodic.errors)
     assert any("periodic SOC closure violated" in error for error in periodic.errors)
 
 
@@ -60,9 +60,97 @@ def test_periodic_service_accepts_post_service_depot_charge():
     days, vehicles, depots, options = periodic_counterexample([charge])
     result = check_periodic_schedule(days, vehicles, depots, **options)
     assert result.status == "PASS"
-    assert result.metrics["final_energy_kwh:electric:1"] == pytest.approx(100)
-    assert result.metrics["initial_energy_kwh:electric:2"] == pytest.approx(100)
+    assert result.metrics["cycle_start_energy_kwh:electric"] == pytest.approx(100)
     assert result.metrics["cycle_end_energy_kwh:electric"] == pytest.approx(100)
+
+
+@pytest.mark.parametrize("day_count", [1, 2])
+def test_periodic_rejects_next_day_charge_even_with_closed_soc(day_count):
+    # Review V2-02: the late charge overlaps next day's driving, including
+    # the wrap from the final service day back to the first day of the cycle.
+    charge = Charge("electric", "D", 1440, 1500, 10, 1.0)
+    days, vehicles, depots, options = periodic_counterexample([charge])
+    trip = replace(days[0].trips[0], start_min=0, end_min=60, distance_km=10)
+    day = replace(days[0], trips=[trip])
+    vehicles = [replace(vehicles[0], initial_kwh=50)]
+    result = check_periodic_schedule([day]*day_count, vehicles, depots, **options)
+    assert result.status == "FAIL"
+    assert any("overlapping vehicle activity" in e for e in result.errors)
+
+
+def test_periodic_rejects_cross_day_station_load_on_distinct_vehicles():
+    days, vehicles, depots, options = periodic_counterexample()
+    other = replace(vehicles[0], vehicle_id="other")
+    depots = [replace(depots[0], charger_slots=1, charger_power_kw=10,
+                      grid_limit_kw=10, physical_bus_spaces=2)]
+    first = replace(days[0], charges=[Charge("electric", "D", 1440, 1500, 10, 1)])
+    second = replace(days[1], charges=[Charge("other", "D", 0, 60, 10, 1)])
+    result = check_periodic_schedule([first, second], [*vehicles, other], depots, **options)
+    assert result.status == "FAIL"
+    assert any("charger slots exceeded" in e for e in result.errors)
+    assert any("grid power exceeded" in e for e in result.errors)
+
+
+def test_periodic_checks_travel_time_across_midnight():
+    days, vehicles, depots, options = periodic_counterexample()
+    trip = replace(days[0].trips[0], start_min=1380, end_min=1430, end_location="X", distance_km=0)
+    day = replace(days[0], trips=[trip])
+    options["deadhead_minutes"] = {("D", "D"): 0, ("X", "D"): 20}
+    options["deadhead_km"] = {("D", "D"): 0, ("X", "D"): 1}
+    next_day = replace(day, trips=[replace(trip, start_min=0, end_min=60, end_location="D")])
+    result = check_periodic_schedule([day, next_day], vehicles, depots, **options)
+    assert result.status == "FAIL"
+    assert any("insufficient travel/turn time" in e for e in result.errors)
+
+
+def test_periodic_preserves_raw_gtfs_26_hour_trip_and_can_certify_it():
+    days, vehicles, depots, options = periodic_counterexample()
+    trip = replace(days[0].trips[0], start_min=1500, end_min=1581, distance_km=10)
+    charge = Charge("electric", "D", 1600, 1660, 10, 1.0)
+    day = replace(days[0], trips=[trip], charges=[charge])
+    depots = [replace(depots[0], charger_slots=1, charger_power_kw=10, grid_limit_kw=10)]
+    result = check_periodic_schedule([day], vehicles, depots, **options)
+    assert result.status == "PASS", result
+    assert day.trips[0].end_min == 1581
+
+
+def test_trip_straddling_midnight_and_late_return_charge_can_repeat():
+    days, vehicles, depots, options = periodic_counterexample()
+    trip = replace(days[0].trips[0], start_min=1380, end_min=1500,
+                   distance_km=9, end_location="X")
+    day = replace(days[0], trips=[trip], charges=[Charge("electric", "D", 1510, 1570, 10, 1)])
+    vehicles = [replace(vehicles[0], initial_kwh=50)]
+    depots = [replace(depots[0], charger_slots=1, charger_power_kw=10, grid_limit_kw=10)]
+    options["deadhead_minutes"] = {("D", "D"): 0, ("X", "D"): 10}
+    options["deadhead_km"] = {("D", "D"): 0, ("X", "D"): 1}
+    result = check_periodic_schedule([day], vehicles, depots, **options)
+    assert result.status == "PASS", result
+    assert result.metrics["cycle_start_energy_kwh:electric"] == pytest.approx(50)
+    assert result.metrics["cycle_end_energy_kwh:electric"] == pytest.approx(50)
+
+
+def test_slow_depletion_cannot_pass_on_a_finite_two_cycle_run():
+    days, vehicles, depots, options = periodic_counterexample()
+    day = replace(days[0], trips=[replace(days[0].trips[0], distance_km=1)])
+    result = check_periodic_schedule([day], vehicles, depots, **options)
+    assert not any("minimum SOC" in e for e in result.errors)
+    assert any("periodic SOC closure" in e for e in result.errors)
+    assert result.status == "FAIL"
+
+
+def test_overhead_feeder_concurrency_crosses_service_day_boundary():
+    days, vehicles, depots, options = periodic_counterexample()
+    a = replace(vehicles[0], energy_source="overhead", overhead_peak_kw=30)
+    b = replace(a, vehicle_id="other")
+    first = replace(days[0], trips=[replace(days[0].trips[0], start_min=1440, end_min=1500)])
+    second = replace(days[0], trips=[replace(days[0].trips[0], start_min=0, end_min=60)],
+                     assignments=[Assignment("daily", "other")])
+    options["overhead_paths"] = {("trip", "daily"): ("F",)}
+    options["overhead_feeders"] = [OverheadFeeder("F", 50, 2023)]
+    result = check_periodic_schedule([first, second], [a, b],
+                                    [replace(depots[0], physical_bus_spaces=2)], **options)
+    assert result.status == "FAIL"
+    assert any("overhead feeder power exceeded" in e for e in result.errors)
 
 
 def test_charge_energy_power_and_station_relation_is_explicit():

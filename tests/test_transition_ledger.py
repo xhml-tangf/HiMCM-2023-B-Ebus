@@ -44,5 +44,5 @@ def test_low_carbon_case_can_reverse_with_one_replacement_cohort():
     km = 88786898.9817
     use = use_emissions(service_ledger(km, [i / 10 for i in range(1, 11)]), .302)
     baseline = 816 * 11429 * 6.6 / 1000 + use['baseline_operating_t'] + use['baseline_maintenance_t']
-    plan = 1612 * (14880 * 6.6 + 335 * 58) / 1000 + use['plan_operating_t'] + use['plan_maintenance_t']
+    plan = 1610 * (14880 * 6.6 + 335 * 58) / 1000 + use['plan_operating_t'] + use['plan_maintenance_t']
     assert 0 < baseline - plan < 162 * 335 * 58 / 1000

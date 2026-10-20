@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import csv
 import json
 from pathlib import Path
 
@@ -27,6 +28,14 @@ def main() -> None:
     policy_case = json.loads((ROOT / "results/vancouver_transition_scenarios.json").read_text())
     uncertainty = json.loads((ROOT / "results/vancouver_transition_uncertainty.json").read_text())
     full_fleet = json.loads((ROOT / "results/vancouver_full_fleet_bound.json").read_text())
+    full_city = json.loads((ROOT / "results/vancouver_full_city_schedule_v3.json").read_text())
+    tco_bridge = json.loads((ROOT / "results/vancouver_full_tco_bridge.json").read_text())
+    environment_bridge = json.loads((ROOT / "results/vancouver_environment_bridge.json").read_text())
+    three_city_execution = json.loads((ROOT / "results/threecity_execution_certificates_v3.json").read_text())
+    official_evidence = json.loads((ROOT / "research/data/processed/vancouver_official_evidence_v3.json").read_text())
+    with (ROOT / "research/data/processed/unresolved_evidence_registry.csv").open(
+            newline="", encoding="utf-8") as handle:
+        unresolved_evidence = list(csv.DictReader(handle))
     regional = json.loads((ROOT / "results/regional_and_air_quality_audit.json").read_text())
     fleet_audit = json.loads((ROOT / "results/fleet_scale_audit.json").read_text())
     site_check = check_schedule(None, None, None, None, None, year=2033)
@@ -118,7 +127,11 @@ def main() -> None:
             "source": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf",
         },
         "full_city_schedule_check": {
-            "status": site_check.status,
+            "status": full_city["status"],
+            "screened_patterns": len(full_city["patterns"]),
+            "screened_trip_instances": full_city["screened_pattern_trip_instances"],
+            "worst_case": full_city["worst_case"],
+            "source_block_transition_screen": full_city["source_block_transition_screen_all_patterns"],
             "missing": [m for m in site_check.missing if m != "trip_manifest"] + ["observed 2023 class/age/energy fleet register",
                                               "depot space/grid/commissioning inventory",
                                               "block-to-vehicle and block-to-garage links",
@@ -132,6 +145,8 @@ def main() -> None:
         "full_city_environment_score": None,
         "full_city_pareto_frontier": None,
         "full_city_yearly_purchase_table": None,
+        "official_vancouver_evidence_v3": official_evidence,
+        "unresolved_evidence_registry": unresolved_evidence,
         "conditional_2033_policy_scenario": {
             "status": policy_case["status"],
             "service_baseline": policy_case["service_baseline"],
@@ -162,12 +177,19 @@ def main() -> None:
                 "production_components_t_central": full_fleet["production_components_t_central"],
                 "boundaries": full_fleet["boundaries"],
             },
+            "incremental_tco_bridge": tco_bridge,
+            "infrastructure_environment_bridge": environment_bridge,
+            "three_city_execution_certificates": three_city_execution,
         },
         "separate_reference_case_file": "results/cpu_reference_scores.json",
         "separate_charging_power_tariff_bounds": "results/charging_tariff_bounds.json",
         "separate_block_range_audit": "results/vancouver_block_range_audit.json",
         "separate_fleet_scale_audit": "results/fleet_scale_audit.json",
         "separate_full_fleet_bound": "results/vancouver_full_fleet_bound.json",
+        "separate_full_city_schedule_screen": "results/vancouver_full_city_schedule_v3.json",
+        "separate_incremental_tco_bridge": "results/vancouver_full_tco_bridge.json",
+        "separate_infrastructure_environment_bridge": "results/vancouver_environment_bridge.json",
+        "separate_three_city_execution_certificates": "results/threecity_execution_certificates_v3.json",
         "separate_joint_uncertainty_grid": "results/vancouver_transition_uncertainty.json",
         "separate_regional_and_air_quality_audit": "results/regional_and_air_quality_audit.json",
         "regional_economic_scope": {
