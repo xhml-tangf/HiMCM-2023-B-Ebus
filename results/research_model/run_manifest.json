@@ -1,0 +1,19 @@
+{
+  "input_sha256": {
+    "src\\solve_research_schedule.py": "8fa266d02ebcb3d6910f408e6ba5a21085ce35fc04a7192cbe90bb922f3f7deb",
+    "src\\solve_research_transition.py": "3b0a50c72380cbf62615dc7d4f41cce250827ea618788a9006379a381e47cb89",
+    "data\\processed\\vancouver_gtfs_trip_manifest_classified_2023.csv": "a1d8503ebb7c999400adccb793861cb0761a86efa1716e8f61f2d7047154b8ac",
+    "data\\processed\\vancouver_gtfs_daily_service_2023.csv": "2a909ff23920e32790327b56ff79e10ac63fdc24315234a961c4f1a3879b8e42",
+    "results\\research_model\\input_ledger.json": "77596f43a2d1424661f029a79369166fd50f004350fe0891a7022ecfaef80d93"
+  },
+  "runtime": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "cpu_workers": 12,
+  "command": "python scripts/run_research_model.py --canonical; python src/build_canonical_results.py; python scripts/build_paper_tables.py",
+  "canonical_v4_sha256": "ef391efb886d4f76ba0abff0fec782890a868d37c6ddd90ec9f2513c88c65cb7",
+  "verification_status": "PASS_RESEARCH_ARTIFACTS",
+  "pytest_passed": 103,
+  "manuscript_pdf_sha256": "6fe9ad706117a4b6a87c4d2384ec4b06e35e339c0096e3dbdb240a139f8f654d",
+  "manuscript_pages": 17,
+  "ai_report_pages": 1,
+  "reference_count": 25
+}

@@ -10,4 +10,9 @@ paper/*.log
 paper/*.out
 paper/*.toc
 paper/*.synctex.gz
+results/research_model/*_assignments.csv
+results/research_model/*_duties.csv
+results/research_model/*_calendar.csv.gz
+results/research_model/run*.log
+results/research_model/*_console.json
 

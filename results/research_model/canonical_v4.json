@@ -1,0 +1,724 @@
+{
+  "status": "CANONICAL_RESEARCH_RESULT",
+  "source_transition": "canonical_transition.json",
+  "inputs": {
+    "source": "results/research_model/input_ledger.json",
+    "sha256": "77596f43a2d1424661f029a79369166fd50f004350fe0891a7022ecfaef80d93",
+    "baseline_fuel": "current low-carbon mix",
+    "baseline_intensity_kg_per_km": 0.302,
+    "grid_intensity_kg_per_kwh": 0.0113,
+    "vehicle_life_years": {
+      "standard": 17,
+      "articulated": 17,
+      "deck": 17,
+      "shuttle": 8
+    },
+    "facility_life_years": 30,
+    "reserve_policy": "schedule fleet plus 15% reserve in the canonical policy"
+  },
+  "schedule": {
+    "service_patterns": 25,
+    "calendar_days": 119,
+    "pattern_trips_non_trolley": 434669,
+    "calendar_trip_instances": 2119742,
+    "active_buses": 1817,
+    "fleet_with_spares": 2100,
+    "baseline_active_buses": 1192,
+    "baseline_fleet_with_spares": 1383,
+    "fleet_by_class": {
+      "articulated": 352,
+      "deck": 89,
+      "shuttle": 290,
+      "standard": 1369
+    },
+    "firm_power_mw_conservative_sum": 101.67,
+    "annual_grid_gwh": 283.4490739393083,
+    "annual_revenue_km": 85238795.13295798,
+    "annual_deadhead_km": 15729238.155416956,
+    "cyclic_vehicle_collision_check": "PASS",
+    "independent_ledger_max_error": 6.821210263296962e-13
+  },
+  "transition": {
+    "source": "canonical_transition.json",
+    "recommended": {
+      "weight": 0.0,
+      "status": "OPTIMAL_RESTRICTED_MASTER",
+      "mip_gap": 0.0,
+      "annual_electric_purchases": [
+        170,
+        635,
+        650,
+        645
+      ],
+      "plan_pv_cad": 5804283201.945935,
+      "baseline_pv_cad": 5246611398.728997,
+      "economic_score_pct": -10.629180643186862,
+      "plan_ghg_t": 700359.7073975799,
+      "baseline_ghg_t": 400635.7469617147,
+      "environmental_score_pct": -74.81208621768522,
+      "full_life_plan_t": 32961.237957035475,
+      "full_life_baseline_t": 40448.550910289116,
+      "full_life_environment_score_pct": 18.510707515479996,
+      "ledger_file": "canonical_renewable_mix_w0.0_ledger.csv",
+      "zero_conventional_2033_check": "PASS",
+      "annual_inventory_and_spares_check": "PASS",
+      "conversion_years": [
+        {
+          "site": "Burnaby",
+          "vehicle_class": "articulated",
+          "year": 2033
+        },
+        {
+          "site": "Burnaby",
+          "vehicle_class": "shuttle",
+          "year": 2030
+        },
+        {
+          "site": "Burnaby",
+          "vehicle_class": "standard",
+          "year": 2032
+        },
+        {
+          "site": "Hamilton",
+          "vehicle_class": "deck",
+          "year": 2033
+        },
+        {
+          "site": "Hamilton",
+          "vehicle_class": "shuttle",
+          "year": 2032
+        },
+        {
+          "site": "Hamilton",
+          "vehicle_class": "standard",
+          "year": 2033
+        },
+        {
+          "site": "Langley",
+          "vehicle_class": "shuttle",
+          "year": 2031
+        },
+        {
+          "site": "Langley",
+          "vehicle_class": "standard",
+          "year": 2033
+        },
+        {
+          "site": "North_Shore",
+          "vehicle_class": "articulated",
+          "year": 2033
+        },
+        {
+          "site": "North_Shore",
+          "vehicle_class": "shuttle",
+          "year": 2031
+        },
+        {
+          "site": "North_Shore",
+          "vehicle_class": "standard",
+          "year": 2031
+        },
+        {
+          "site": "Port_Coquitlam",
+          "vehicle_class": "articulated",
+          "year": 2031
+        },
+        {
+          "site": "Port_Coquitlam",
+          "vehicle_class": "deck",
+          "year": 2032
+        },
+        {
+          "site": "Port_Coquitlam",
+          "vehicle_class": "shuttle",
+          "year": 2030
+        },
+        {
+          "site": "Port_Coquitlam",
+          "vehicle_class": "standard",
+          "year": 2031
+        },
+        {
+          "site": "Richmond",
+          "vehicle_class": "deck",
+          "year": 2033
+        },
+        {
+          "site": "Richmond",
+          "vehicle_class": "shuttle",
+          "year": 2031
+        },
+        {
+          "site": "Richmond",
+          "vehicle_class": "standard",
+          "year": 2032
+        },
+        {
+          "site": "Surrey",
+          "vehicle_class": "articulated",
+          "year": 2033
+        },
+        {
+          "site": "Surrey",
+          "vehicle_class": "shuttle",
+          "year": 2030
+        },
+        {
+          "site": "Surrey",
+          "vehicle_class": "standard",
+          "year": 2032
+        },
+        {
+          "site": "Vancouver",
+          "vehicle_class": "articulated",
+          "year": 2033
+        },
+        {
+          "site": "Vancouver",
+          "vehicle_class": "shuttle",
+          "year": 2031
+        },
+        {
+          "site": "Vancouver",
+          "vehicle_class": "standard",
+          "year": 2031
+        }
+      ],
+      "grants": [
+        {
+          "grant_fraction": 0,
+          "baseline_agency_pv_cad": 5246611398.728997,
+          "plan_agency_pv_cad": 5804283201.945935,
+          "economic_score_pct": -10.629180643186862
+        },
+        {
+          "grant_fraction": 0.25,
+          "baseline_agency_pv_cad": 5168152509.302714,
+          "plan_agency_pv_cad": 5552506889.371986,
+          "economic_score_pct": -7.436978289193888
+        },
+        {
+          "grant_fraction": 0.5,
+          "baseline_agency_pv_cad": 5089693619.876432,
+          "plan_agency_pv_cad": 5300730576.798038,
+          "economic_score_pct": -4.146358753254948
+        }
+      ]
+    },
+    "minimum_cost": {
+      "weight": 0.0,
+      "status": "OPTIMAL_RESTRICTED_MASTER",
+      "mip_gap": 0.0,
+      "annual_electric_purchases": [
+        170,
+        635,
+        650,
+        645
+      ],
+      "plan_pv_cad": 5804283201.945935,
+      "baseline_pv_cad": 5246611398.728997,
+      "economic_score_pct": -10.629180643186862,
+      "plan_ghg_t": 700359.7073975799,
+      "baseline_ghg_t": 400635.7469617147,
+      "environmental_score_pct": -74.81208621768522,
+      "full_life_plan_t": 32961.237957035475,
+      "full_life_baseline_t": 40448.550910289116,
+      "full_life_environment_score_pct": 18.510707515479996,
+      "ledger_file": "canonical_renewable_mix_w0.0_ledger.csv",
+      "zero_conventional_2033_check": "PASS",
+      "annual_inventory_and_spares_check": "PASS",
+      "conversion_years": [
+        {
+          "site": "Burnaby",
+          "vehicle_class": "articulated",
+          "year": 2033
+        },
+        {
+          "site": "Burnaby",
+          "vehicle_class": "shuttle",
+          "year": 2030
+        },
+        {
+          "site": "Burnaby",
+          "vehicle_class": "standard",
+          "year": 2032
+        },
+        {
+          "site": "Hamilton",
+          "vehicle_class": "deck",
+          "year": 2033
+        },
+        {
+          "site": "Hamilton",
+          "vehicle_class": "shuttle",
+          "year": 2032
+        },
+        {
+          "site": "Hamilton",
+          "vehicle_class": "standard",
+          "year": 2033
+        },
+        {
+          "site": "Langley",
+          "vehicle_class": "shuttle",
+          "year": 2031
+        },
+        {
+          "site": "Langley",
+          "vehicle_class": "standard",
+          "year": 2033
+        },
+        {
+          "site": "North_Shore",
+          "vehicle_class": "articulated",
+          "year": 2033
+        },
+        {
+          "site": "North_Shore",
+          "vehicle_class": "shuttle",
+          "year": 2031
+        },
+        {
+          "site": "North_Shore",
+          "vehicle_class": "standard",
+          "year": 2031
+        },
+        {
+          "site": "Port_Coquitlam",
+          "vehicle_class": "articulated",
+          "year": 2031
+        },
+        {
+          "site": "Port_Coquitlam",
+          "vehicle_class": "deck",
+          "year": 2032
+        },
+        {
+          "site": "Port_Coquitlam",
+          "vehicle_class": "shuttle",
+          "year": 2030
+        },
+        {
+          "site": "Port_Coquitlam",
+          "vehicle_class": "standard",
+          "year": 2031
+        },
+        {
+          "site": "Richmond",
+          "vehicle_class": "deck",
+          "year": 2033
+        },
+        {
+          "site": "Richmond",
+          "vehicle_class": "shuttle",
+          "year": 2031
+        },
+        {
+          "site": "Richmond",
+          "vehicle_class": "standard",
+          "year": 2032
+        },
+        {
+          "site": "Surrey",
+          "vehicle_class": "articulated",
+          "year": 2033
+        },
+        {
+          "site": "Surrey",
+          "vehicle_class": "shuttle",
+          "year": 2030
+        },
+        {
+          "site": "Surrey",
+          "vehicle_class": "standard",
+          "year": 2032
+        },
+        {
+          "site": "Vancouver",
+          "vehicle_class": "articulated",
+          "year": 2033
+        },
+        {
+          "site": "Vancouver",
+          "vehicle_class": "shuttle",
+          "year": 2031
+        },
+        {
+          "site": "Vancouver",
+          "vehicle_class": "standard",
+          "year": 2031
+        }
+      ],
+      "grants": [
+        {
+          "grant_fraction": 0,
+          "baseline_agency_pv_cad": 5246611398.728997,
+          "plan_agency_pv_cad": 5804283201.945935,
+          "economic_score_pct": -10.629180643186862
+        },
+        {
+          "grant_fraction": 0.25,
+          "baseline_agency_pv_cad": 5168152509.302714,
+          "plan_agency_pv_cad": 5552506889.371986,
+          "economic_score_pct": -7.436978289193888
+        },
+        {
+          "grant_fraction": 0.5,
+          "baseline_agency_pv_cad": 5089693619.876432,
+          "plan_agency_pv_cad": 5300730576.798038,
+          "economic_score_pct": -4.146358753254948
+        }
+      ]
+    },
+    "weighted_points": [
+      {
+        "weight": 0.0,
+        "plan_pv_cad": 5804283201.945935,
+        "plan_ghg_t": 700359.7073975799,
+        "full_life_plan_t": 32961.237957035475,
+        "full_life_environment_score_pct": 18.510707515479996,
+        "economic_score_pct": -10.629180643186862,
+        "transition_environment_score_pct": -74.81208621768522
+      },
+      {
+        "weight": 0.6000000000000001,
+        "plan_pv_cad": 5806391923.610603,
+        "plan_ghg_t": 698922.2364440272,
+        "full_life_plan_t": 33012.08435703548,
+        "full_life_environment_score_pct": 18.385001158006837,
+        "economic_score_pct": -10.669372712017783,
+        "transition_environment_score_pct": -74.45328874031232
+      },
+      {
+        "weight": 0.7000000000000001,
+        "plan_pv_cad": 5820986110.376127,
+        "plan_ghg_t": 692027.2047480518,
+        "full_life_plan_t": 32907.50153350607,
+        "full_life_environment_score_pct": 18.643558810075422,
+        "economic_score_pct": -10.94753676222854,
+        "transition_environment_score_pct": -72.73226615351997
+      },
+      {
+        "weight": 0.8,
+        "plan_pv_cad": 5849011458.604477,
+        "plan_ghg_t": 682530.8748033537,
+        "full_life_plan_t": 32760.500898211947,
+        "full_life_environment_score_pct": 19.0069850193855,
+        "economic_score_pct": -11.481697691988632,
+        "transition_environment_score_pct": -70.36195096903754
+      },
+      {
+        "weight": 0.9,
+        "plan_pv_cad": 5881181674.141827,
+        "plan_ghg_t": 678115.0229337866,
+        "full_life_plan_t": 32708.85434527077,
+        "full_life_environment_score_pct": 19.13466957613445,
+        "economic_score_pct": -12.09485946617955,
+        "transition_environment_score_pct": -69.2597398201185
+      },
+      {
+        "weight": 1.0,
+        "plan_pv_cad": 5912054038.904207,
+        "plan_ghg_t": 676846.2153805309,
+        "full_life_plan_t": 32921.562251153126,
+        "full_life_environment_score_pct": 18.6087968289151,
+        "economic_score_pct": -12.683284306827353,
+        "transition_environment_score_pct": -68.94304128213783
+      }
+    ],
+    "construction": "Six annual equal payments before commissioning; all-in facility envelope, no extra charger capex.",
+    "annual_delivery_cap_assumption": 650
+  },
+  "lifecycle_scores": {
+    "recommended": 27.526608407220294,
+    "minimum_cost": 27.526608407220294,
+    "recommended_detail": {
+      "basis": "annualized steady-state 2033 fleet; undiscounted physical emissions",
+      "plan_vehicle_manufacturing_t_year": 16229.162352941177,
+      "baseline_vehicle_manufacturing_t_year": 6664.472294117648,
+      "plan_infrastructure_t_year": 3436.342540482353,
+      "plan_operation_t_year": 9377.721875376654,
+      "baseline_operation_t_year": 33409.85861617146,
+      "plan_total_t_year": 29043.226768800185,
+      "baseline_total_t_year": 40074.33091028911,
+      "plan_gco2e_per_service_km": 340.72779564161726,
+      "baseline_gco2e_per_service_km": 470.1419212669535,
+      "environmental_score_pct": 27.526608407220294,
+      "annual_service_km": 85238795.13295798,
+      "fleet_by_class": {
+        "articulated": 352,
+        "deck": 89,
+        "shuttle": 290,
+        "standard": 1369
+      },
+      "baseline_fleet_by_class": {
+        "articulated": 219,
+        "deck": 57,
+        "shuttle": 189,
+        "standard": 985
+      },
+      "operation_score_2033_pct": 71.93127339114949,
+      "whole_fleet_with_common_trolley": {
+        "plan_total_t_year": 32211.420490753026,
+        "baseline_total_t_year": 43242.52463224195,
+        "environmental_score_pct": 25.50985224684141,
+        "basis": "Adds the same retained trolley activity to both sides."
+      }
+    },
+    "minimum_cost_detail": {
+      "basis": "annualized steady-state 2033 fleet; undiscounted physical emissions",
+      "plan_vehicle_manufacturing_t_year": 16229.162352941177,
+      "baseline_vehicle_manufacturing_t_year": 6664.472294117648,
+      "plan_infrastructure_t_year": 3436.342540482353,
+      "plan_operation_t_year": 9377.721875376654,
+      "baseline_operation_t_year": 33409.85861617146,
+      "plan_total_t_year": 29043.226768800185,
+      "baseline_total_t_year": 40074.33091028911,
+      "plan_gco2e_per_service_km": 340.72779564161726,
+      "baseline_gco2e_per_service_km": 470.1419212669535,
+      "environmental_score_pct": 27.526608407220294,
+      "annual_service_km": 85238795.13295798,
+      "fleet_by_class": {
+        "articulated": 352,
+        "deck": 89,
+        "shuttle": 290,
+        "standard": 1369
+      },
+      "baseline_fleet_by_class": {
+        "articulated": 219,
+        "deck": 57,
+        "shuttle": 189,
+        "standard": 985
+      },
+      "operation_score_2033_pct": 71.93127339114949,
+      "whole_fleet_with_common_trolley": {
+        "plan_total_t_year": 32211.420490753026,
+        "baseline_total_t_year": 43242.52463224195,
+        "environmental_score_pct": 25.50985224684141,
+        "basis": "Adds the same retained trolley activity to both sides."
+      }
+    },
+    "transition_boundary": "2024--2033 actual cash/emission ledger; reported separately"
+  },
+  "city_comparison": {
+    "method": "common vehicle-size, life, manufacturing and operating parameter model",
+    "basis": "fleet/body comparison; Vancouver uniquely receives route-level schedule validation",
+    "cities": [
+      {
+        "city": "Vancouver",
+        "basis": "full-city scheduled plan",
+        "fleet_slots": 1725,
+        "existing_electric": 280,
+        "conventional_slots": 1445,
+        "electric_slots_2033": 2375,
+        "annual_service_km": 106868324.0,
+        "conversion_fleet_service_km": 85238795.13295798,
+        "full_life_vehicle_manufacturing_t": 274932.0,
+        "lifecycle_environmental_score_pct": 27.526608407220294,
+        "transition_operating_reduction_pct": 71.93127339114949,
+        "peak_or_required_annual_delivery": 650,
+        "status": "parameterized operational case; common trolley excluded from conversion denominator"
+      },
+      {
+        "city": "Chicago",
+        "basis": "fleet/body case comparison",
+        "fleet_slots": 1875,
+        "existing_electric": 25,
+        "conventional_slots": 1850,
+        "electric_slots_2033": 1875,
+        "annual_service_km": 73082284.095744,
+        "full_life_vehicle_manufacturing_t": 256289.83,
+        "lifecycle_environmental_score_pct": null,
+        "transition_operating_reduction_pct": null,
+        "peak_or_required_annual_delivery": 539,
+        "status": "body/age replacement case; no route dispatch certificate"
+      },
+      {
+        "city": "London",
+        "basis": "fleet/body case comparison",
+        "fleet_slots": 8643,
+        "existing_electric": 950,
+        "conventional_slots": 7693,
+        "electric_slots_2033": 8643,
+        "annual_service_km": null,
+        "full_life_vehicle_manufacturing_t": 1308060.6,
+        "lifecycle_environmental_score_pct": null,
+        "transition_operating_reduction_pct": null,
+        "peak_or_required_annual_delivery": 776,
+        "status": "cohort/body case; annual route km not available in loaded record"
+      }
+    ]
+  },
+  "common_trolley": {
+    "annual_km": 11045141.524579413,
+    "annual_vehicle_manufacturing_t_year": 2173.026470588235,
+    "annual_common_emissions_t": 3168.19372195284,
+    "source": "Existing 262 common trolley renewal and 275 retained trolley positions; common to both scenarios."
+  },
+  "sensitivity": [
+    {
+      "label": "primary_transition",
+      "source": "central_transition.json",
+      "plan_pv_cad": 5804283201.945935,
+      "economic_score_pct": -10.629180643186862,
+      "transition_environment_score_pct": -74.81208621768522,
+      "full_life_environment_score_pct": 27.526608407220294,
+      "full_life_plan_t": 29043.226768800185,
+      "required_power_mw": 101.67,
+      "fuel_case": "renewable_mix",
+      "parameter_overrides": {
+        "infra_multiplier": 0.5,
+        "infra_carbon_multiplier": 0.3,
+        "annual_energy_multiplier": 0.8
+      },
+      "reserve": "16.8% approximately; all reserve vehicles purchased and housed."
+    },
+    {
+      "label": "weighted_mix_baseline",
+      "source": "central_transition.json",
+      "plan_pv_cad": 5804283201.945935,
+      "economic_score_pct": -10.629180643186862,
+      "transition_environment_score_pct": -3.034299655335939,
+      "full_life_environment_score_pct": 77.27124927412548,
+      "full_life_plan_t": 29043.226768800185,
+      "required_power_mw": 101.67,
+      "fuel_case": "weighted_mix",
+      "parameter_overrides": {
+        "infra_multiplier": 0.5,
+        "infra_carbon_multiplier": 0.3,
+        "annual_energy_multiplier": 0.8
+      },
+      "reserve": "16.8% approximately; all reserve vehicles purchased and housed."
+    },
+    {
+      "label": "fossil_diesel_baseline",
+      "source": "central_transition.json",
+      "plan_pv_cad": 5804283201.945935,
+      "economic_score_pct": -10.629180643186862,
+      "transition_environment_score_pct": 3.1928775639926354,
+      "full_life_environment_score_pct": 81.9013775934169,
+      "full_life_plan_t": 29043.226768800185,
+      "required_power_mw": 101.67,
+      "fuel_case": "fossil_diesel",
+      "parameter_overrides": {
+        "infra_multiplier": 0.5,
+        "infra_carbon_multiplier": 0.3,
+        "annual_energy_multiplier": 0.8
+      },
+      "reserve": "16.8% approximately; all reserve vehicles purchased and housed."
+    },
+    {
+      "label": "full_new_depots",
+      "source": "full_new_transition.json",
+      "plan_pv_cad": 6208780383.581964,
+      "economic_score_pct": -18.338865064145093,
+      "transition_environment_score_pct": -123.27826204627712,
+      "full_life_environment_score_pct": 9.776811996689274,
+      "full_life_plan_t": 36156.338918259,
+      "required_power_mw": 101.67,
+      "fuel_case": "renewable_mix",
+      "parameter_overrides": {
+        "infra_multiplier": 1.0,
+        "infra_carbon_multiplier": 1.0,
+        "annual_energy_multiplier": 0.8
+      },
+      "reserve": "16.8% approximately; all reserve vehicles purchased and housed."
+    },
+    {
+      "label": "ten_percent_reserve",
+      "source": "spare10_transition.json",
+      "plan_pv_cad": 5893486360.352092,
+      "economic_score_pct": -12.329177795205089,
+      "transition_environment_score_pct": -65.65594676691254,
+      "full_life_environment_score_pct": 29.61608484183623,
+      "full_life_plan_t": 28207.132117619007,
+      "required_power_mw": 101.67,
+      "fuel_case": "renewable_mix",
+      "parameter_overrides": {
+        "infra_multiplier": 0.5,
+        "infra_carbon_multiplier": 0.3,
+        "annual_energy_multiplier": 0.8
+      },
+      "reserve": "11.4% approximately; all reserve vehicles purchased and housed."
+    },
+    {
+      "label": "half_power",
+      "source": "slow_charge_transition.json",
+      "plan_pv_cad": 5951660426.133626,
+      "economic_score_pct": -13.438178927744266,
+      "transition_environment_score_pct": -78.25924190064676,
+      "full_life_environment_score_pct": 22.792431111320955,
+      "full_life_plan_t": 30940.416644238663,
+      "required_power_mw": 85.95,
+      "fuel_case": "renewable_mix",
+      "parameter_overrides": {
+        "infra_multiplier": 0.5,
+        "infra_carbon_multiplier": 0.3,
+        "annual_energy_multiplier": 0.8
+      },
+      "reserve": "16.3% approximately; all reserve vehicles purchased and housed."
+    },
+    {
+      "label": "winter_stress",
+      "source": "winter_stress_transition.json",
+      "plan_pv_cad": 6150796771.436448,
+      "economic_score_pct": -14.67295731063221,
+      "transition_environment_score_pct": -80.46147665781648,
+      "full_life_environment_score_pct": 16.859627412363558,
+      "full_life_plan_t": 33539.497668857395,
+      "required_power_mw": 122.04,
+      "fuel_case": "renewable_mix",
+      "parameter_overrides": {
+        "infra_multiplier": 0.5,
+        "infra_carbon_multiplier": 0.3,
+        "annual_energy_multiplier": 1.0
+      },
+      "reserve": "16.0% approximately; all reserve vehicles purchased and housed."
+    },
+    {
+      "label": "capacity_stress",
+      "source": "capacity_stress_transition.json",
+      "plan_pv_cad": 6088441209.704179,
+      "economic_score_pct": -13.00751522429139,
+      "transition_environment_score_pct": -69.41906551874216,
+      "full_life_environment_score_pct": 28.02507661806395,
+      "full_life_plan_t": 29582.51769744452,
+      "required_power_mw": 108.42,
+      "fuel_case": "renewable_mix",
+      "parameter_overrides": {
+        "infra_multiplier": 0.5,
+        "infra_carbon_multiplier": 0.3,
+        "annual_energy_multiplier": 0.8
+      },
+      "reserve": "17.6% approximately; all reserve vehicles purchased and housed."
+    },
+    {
+      "label": "high_cost",
+      "source": "central_high_cost_transition.json",
+      "plan_pv_cad": 7183076710.317127,
+      "economic_score_pct": -20.64173839954043,
+      "transition_environment_score_pct": -70.01457649098968,
+      "full_life_environment_score_pct": 27.526608407220294,
+      "full_life_plan_t": 29043.226768800185,
+      "required_power_mw": 101.67,
+      "fuel_case": "renewable_mix",
+      "parameter_overrides": {
+        "infra_multiplier": 1.25,
+        "infra_carbon_multiplier": 0.3,
+        "annual_energy_multiplier": 0.8,
+        "driver_rate": 75.0,
+        "electric_maintenance": 1.4
+      },
+      "reserve": "16.8% approximately; all reserve vehicles purchased and housed."
+    }
+  ],
+  "verification": {
+    "all_non_trolley_pattern_trips_preserved": 434669,
+    "electric_and_baseline_calendar_match": true,
+    "cyclic_collision": "PASS",
+    "independent_ledger_error": 6.821210263296962e-13,
+    "main_mip_gap": 0.0,
+    "transition_zero_conventional_2033": "PASS",
+    "method_note": "The schedule is a checked feasible construction; the annual MILP is exact for the selected packages within reported solver tolerance."
+  }
+}

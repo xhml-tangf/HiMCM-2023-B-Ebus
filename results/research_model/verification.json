@@ -1,0 +1,88 @@
+{
+  "status": "PASS_RESEARCH_ARTIFACTS",
+  "dispatch_audits": [
+    {
+      "scenario": "central",
+      "mode": "electric",
+      "pattern_trips": 434669,
+      "cyclic_assignments": 215393,
+      "status": "PASS"
+    },
+    {
+      "scenario": "central",
+      "mode": "baseline",
+      "pattern_trips": 434669,
+      "cyclic_assignments": 121715,
+      "status": "PASS"
+    },
+    {
+      "scenario": "slow_charge",
+      "mode": "electric",
+      "pattern_trips": 434669,
+      "cyclic_assignments": 215393,
+      "status": "PASS"
+    },
+    {
+      "scenario": "slow_charge",
+      "mode": "baseline",
+      "pattern_trips": 434669,
+      "cyclic_assignments": 121715,
+      "status": "PASS"
+    },
+    {
+      "scenario": "winter_stress",
+      "mode": "electric",
+      "pattern_trips": 434669,
+      "cyclic_assignments": 327231,
+      "status": "PASS"
+    },
+    {
+      "scenario": "winter_stress",
+      "mode": "baseline",
+      "pattern_trips": 434669,
+      "cyclic_assignments": 124381,
+      "status": "PASS"
+    },
+    {
+      "scenario": "capacity_stress",
+      "mode": "electric",
+      "pattern_trips": 434669,
+      "cyclic_assignments": 217060,
+      "status": "PASS"
+    },
+    {
+      "scenario": "capacity_stress",
+      "mode": "baseline",
+      "pattern_trips": 434669,
+      "cyclic_assignments": 125861,
+      "status": "PASS"
+    }
+  ],
+  "independently_recomputed_master_solutions": 145,
+  "sha256": {
+    "src\\solve_research_schedule.py": "e8727e35690be821b5f886e65f7112c60012b9f98023efeaa251f606fa368122",
+    "src\\solve_research_transition.py": "3b0a50c72380cbf62615dc7d4f41cce250827ea618788a9006379a381e47cb89",
+    "src\\price_catalog.py": "aea32d180ef6d1d9ae0b7482f721ab11abec2a14f8b8e074e309a7b88282daa6",
+    "src\\price_index.py": "1dfcaabacbccb1665f67e28ede61af82e0ddf170fea4f0675abf1d281a531fb8",
+    "data\\processed\\canada_cpi_annual_2019_2025.csv": "97c1ecf1234725e820a7aca696292f8cdd9daac2f6aac8bfee96542d4bccf843",
+    "data\\processed\\deck_shuttle_scenarios.csv": "4526cfedb4b5ce48b66eb1151a104b0828491cb47854f5e99ee36d179888d6f1",
+    "data\\processed\\bchydro_2023_charging_tariffs.json": "5857944f659c778c50ff8cebd542f406505ce10b6f5b16768ceddcd3fae2bf62",
+    "results\\vancouver_full_fleet_bound.json": "896c6364398e5c0f5600908abf9289381b973aacc5e9e1b6053c84e50d3759b5",
+    "results\\research_model\\capacity_stress_schedule.json": "9080fdc29b03d460a35f05b2e8c4d35614cfea6a477af5e65538d2e3205ed64f",
+    "results\\research_model\\central_schedule.json": "d84b2f4c27ebab8868f09f39d997eecb21afe4a71c15f89dc55a865688dc368a",
+    "results\\research_model\\slow_charge_schedule.json": "71c8d5958f96b204aebbccdc7ccbb0ac1f77f799411c757399fba4f019a1a12e",
+    "results\\research_model\\spare10_schedule.json": "c6ff7818e0a2e5d568053bfa6b5f1fa73c2368976f4f95b410d5dec788ce8a1d",
+    "results\\research_model\\winter_stress_schedule.json": "ab771e78662d957dae51b87dafb8f4ca62ba40b9b5f1bdfe2e56dd7c373f2002",
+    "results\\research_model\\canonical_transition.json": "718081c756521900f3b0c145131cc7ad4b48d28eef26138a5de0b36040526dcb",
+    "results\\research_model\\capacity_stress_transition.json": "5ef9108f2f23943be2084442f5ca8ce20f53add98697e6e4be426c191872d587",
+    "results\\research_model\\central_high_cost_transition.json": "8026019b381658cfca5096ef4ef45b2f9561bee4ca0873b3dac09b82970524e8",
+    "results\\research_model\\central_retrofit_transition.json": "4d64d4265a849e2a63ecf56be96adb1c2442c94a1cfed501fc31d5b2f2934072",
+    "results\\research_model\\central_transition.json": "d71b7924b4ce2d11a41f7257d7a2d9a9817e4da1e37baf75b80f881e5c9c8f34",
+    "results\\research_model\\fossil_sensitivity_transition.json": "79a761e1ed072a5ef76798bc85ae46b675ecf22a2014010ea4489c2b00dfbbd0",
+    "results\\research_model\\full_new_transition.json": "addb8bab9f6be4075860131fd78a7314eb0f5c3a99f883442439fa673de3b4a5",
+    "results\\research_model\\slow_charge_transition.json": "bd80cdd7d18fadfa0757b22f7a34290ba571d1dab13151c82104098e8bda9761",
+    "results\\research_model\\spare10_transition.json": "91ee1140047ab48679265b5d1b266b7fa1009789aa43bfa23f7bf59aa23eb815",
+    "results\\research_model\\winter_stress_transition.json": "5f1bce61c6f0ce975a3a5a042a54e342e468bab6dd41bdf6416c3dc2c13a44f4"
+  },
+  "qualification": "Tests certify the declared mathematical assumptions, not real land/grid/payload permissions."
+}

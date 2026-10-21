@@ -1,0 +1,5421 @@
+{
+  "status": "EXECUTED_CONDITIONAL_RESTRICTED_MASTER",
+  "scenario": "central",
+  "annual_delivery_cap_assumption": 650,
+  "packages": 24,
+  "parameter_overrides": {
+    "infra_multiplier": 1.0,
+    "infra_carbon_multiplier": 1.0,
+    "annual_energy_multiplier": 0.8
+  },
+  "source_schedule": "central_schedule.json",
+  "scoring_boundary": "Non-trolley fleet only; unchanged trolley costs/emissions excluded from both denominators.",
+  "construction": "Six annual equal payments before commissioning; all-in facility envelope, no extra charger capex.",
+  "reserve": "16.8% approximately; all reserve vehicles purchased and housed.",
+  "reserve_ratio": 0.1675292017457973,
+  "initial_age": "Synthetic uniform completed-age cohorts at start 2024: heavy ages 1--17, shuttle ages 1--5, decks ages 1--5; five existing BEBs age one. Retire before service; age at year end.",
+  "operating_boundary": "Winter service design; annual energy multiplied by explicit scenario factor (default 1). Driver paid full duty span, including idle; charging unattended except 10 minutes per event.",
+  "terminal": "Straight-line 17-year heavy/8-year EV shuttle/30-year infrastructure; initial residuals included symmetrically; 25% book-value resale recovery.",
+  "grants": "Symmetric capex subsidy with proportional recapture for sale/terminal value of funded assets.",
+  "incomplete_lca": [
+    "Local infrastructure EPD",
+    "route-specific glider masses",
+    "disposal of retired initial vehicles"
+  ],
+  "results": [
+    {
+      "fuel_case": "renewable_mix",
+      "baseline_intensity_kg_per_km": 0.302,
+      "solutions": [
+        {
+          "weight": 0.0,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            19,
+            21,
+            25,
+            29,
+            35,
+            36,
+            41,
+            47,
+            51,
+            52,
+            58,
+            63,
+            65,
+            69,
+            75,
+            77,
+            82,
+            87,
+            90,
+            95
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            161,
+            640,
+            649,
+            650
+          ],
+          "plan_pv_cad": 6050186393.343504,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.316076102170907,
+          "plan_ghg_t": 914439.8132937162,
+          "baseline_ghg_t": 400635.7469617147,
+          "environmental_score_pct": -128.24718468796576,
+          "full_life_plan_t": 40107.050777082535,
+          "full_life_baseline_t": 40448.550910289116,
+          "full_life_environment_score_pct": 0.8442827382469,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050186393.343504,
+              "economic_score_pct": -15.316076102170907
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737326123.182691,
+              "economic_score_pct": -11.013096321276498
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5424465853.021876,
+              "economic_score_pct": -6.577453539405217
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2033
+            }
+          ],
+          "ledger_file": "full_new_renewable_mix_w0.0_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.30000000000000004,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            19,
+            21,
+            25,
+            30,
+            35,
+            36,
+            41,
+            47,
+            51,
+            52,
+            57,
+            63,
+            65,
+            69,
+            75,
+            77,
+            82,
+            87,
+            90,
+            95
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            161,
+            645,
+            644,
+            650
+          ],
+          "plan_pv_cad": 6050208638.512824,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.316500093345965,
+          "plan_ghg_t": 914382.7633655169,
+          "baseline_ghg_t": 400635.7469617147,
+          "environmental_score_pct": -128.2329448382689,
+          "full_life_plan_t": 40107.050777082535,
+          "full_life_baseline_t": 40448.550910289116,
+          "full_life_environment_score_pct": 0.8442827382469,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050208638.512824,
+              "economic_score_pct": -15.316500093345965
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737180639.512631,
+              "economic_score_pct": -11.01028131785318
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5424152640.512438,
+              "economic_score_pct": -6.571299681573474
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2033
+            }
+          ],
+          "ledger_file": "full_new_renewable_mix_w0.3_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.4,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            18,
+            23,
+            25,
+            31,
+            35,
+            36,
+            41,
+            45,
+            50,
+            52,
+            57,
+            63,
+            65,
+            70,
+            75,
+            77,
+            82,
+            87,
+            89,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            161,
+            644,
+            650,
+            645
+          ],
+          "plan_pv_cad": 6050467077.775115,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.321425925328748,
+          "plan_ghg_t": 913874.7561520459,
+          "baseline_ghg_t": 400635.7469617147,
+          "environmental_score_pct": -128.10614456711897,
+          "full_life_plan_t": 40079.6301064943,
+          "full_life_baseline_t": 40448.550910289116,
+          "full_life_environment_score_pct": 0.9120742164856332,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050467077.775115,
+              "economic_score_pct": -15.321425925328748
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737277637.683929,
+              "economic_score_pct": -11.012158162066337
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5424088197.592745,
+              "economic_score_pct": -6.57003353621177
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_renewable_mix_w0.4_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.5,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            18,
+            23,
+            25,
+            31,
+            35,
+            37,
+            41,
+            45,
+            50,
+            52,
+            57,
+            63,
+            65,
+            70,
+            75,
+            76,
+            82,
+            87,
+            89,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            170,
+            635,
+            650,
+            645
+          ],
+          "plan_pv_cad": 6050569298.291129,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.323374240312376,
+          "plan_ghg_t": 913753.0718813447,
+          "baseline_ghg_t": 400635.7469617147,
+          "environmental_score_pct": -128.07577177297267,
+          "full_life_plan_t": 40074.350106494305,
+          "full_life_baseline_t": 40448.550910289116,
+          "full_life_environment_score_pct": 0.9251278361609323,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050569298.291129,
+              "economic_score_pct": -15.323374240312376
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737221461.630882,
+              "economic_score_pct": -11.01107119621256
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5423873624.970634,
+              "economic_score_pct": -6.5658177103068
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_renewable_mix_w0.5_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.8,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            16,
+            23,
+            25,
+            31,
+            35,
+            36,
+            41,
+            45,
+            50,
+            52,
+            57,
+            63,
+            65,
+            70,
+            75,
+            76,
+            82,
+            87,
+            89,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            214,
+            598,
+            643,
+            645
+          ],
+          "plan_pv_cad": 6052734629.741081,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.364645287191827,
+          "plan_ghg_t": 913165.7397799599,
+          "baseline_ghg_t": 400635.7469617147,
+          "environmental_score_pct": -127.92917174892617,
+          "full_life_plan_t": 40042.670106494304,
+          "full_life_baseline_t": 40448.550910289116,
+          "full_life_environment_score_pct": 1.0034495542127444,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6052734629.741081,
+              "economic_score_pct": -15.364645287191827
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5738508787.432573,
+              "economic_score_pct": -11.035980016131747
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5424282945.124066,
+              "economic_score_pct": -6.573859847692701
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_renewable_mix_w0.8_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.9,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            9,
+            15,
+            16,
+            21,
+            26,
+            29,
+            35,
+            36,
+            40,
+            45,
+            50,
+            52,
+            56,
+            63,
+            66,
+            68,
+            75,
+            76,
+            82,
+            87,
+            88,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            643,
+            648,
+            397,
+            412
+          ],
+          "plan_pv_cad": 6142372659.675937,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -17.073139077232582,
+          "plan_ghg_t": 895384.6416303902,
+          "baseline_ghg_t": 400635.7469617147,
+          "environmental_score_pct": -123.49095117464752,
+          "full_life_plan_t": 39857.77304767077,
+          "full_life_baseline_t": 40448.550910289116,
+          "full_life_environment_score_pct": 1.4605661990923469,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6142372659.675937,
+              "economic_score_pct": -17.073139077232582
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5790943691.04573,
+              "economic_score_pct": -12.05055734369267
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5439514722.415523,
+              "economic_score_pct": -6.8731269240442625
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_renewable_mix_w0.9_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 1.0,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            2,
+            6,
+            8,
+            12,
+            19,
+            22,
+            27,
+            30,
+            34,
+            39,
+            40,
+            44,
+            48,
+            52,
+            57,
+            63,
+            67,
+            68,
+            75,
+            78,
+            81,
+            86,
+            91,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            649,
+            647,
+            647,
+            157
+          ],
+          "plan_pv_cad": 6225620603.798469,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -18.659838335018264,
+          "plan_ghg_t": 890239.5798642957,
+          "baseline_ghg_t": 400635.7469617147,
+          "environmental_score_pct": -122.20672683742526,
+          "full_life_plan_t": 40034.67440061195,
+          "full_life_baseline_t": 40448.550910289116,
+          "full_life_environment_score_pct": 1.0232171495960505,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6225620603.798469,
+              "economic_score_pct": -18.659838335018264
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5848221616.409736,
+              "economic_score_pct": -13.158843627058058
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5470822629.021004,
+              "economic_score_pct": -7.488250523689172
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_renewable_mix_w1.0_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        }
+      ],
+      "sampled_nondominated_weights": [
+        0.0,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "recommended": {
+        "status": "OPTIMAL_RESTRICTED_MASTER",
+        "selected": [
+          2,
+          4,
+          9,
+          15,
+          16,
+          22,
+          24,
+          31,
+          32,
+          36,
+          40,
+          45,
+          51,
+          52,
+          56,
+          63,
+          64,
+          70,
+          73,
+          76,
+          82,
+          85,
+          88,
+          93
+        ],
+        "mip_gap": 0.0,
+        "annual_electric_purchases": [
+          645,
+          637,
+          608,
+          210
+        ],
+        "full_life_plan_t": 39726.22107120018,
+        "full_life_baseline_t": 40448.550910289116,
+        "full_life_environment_score_pct": 1.785799052952449,
+        "plan_pv_cad": 6208780383.581964,
+        "baseline_pv_cad": 5246611398.728997,
+        "economic_score_pct": -18.338865064145093,
+        "plan_ghg_t": 894532.5329522371,
+        "baseline_ghg_t": 400635.7469617147,
+        "environmental_score_pct": -123.27826204627712,
+        "grants": [
+          {
+            "grant_fraction": 0,
+            "baseline_agency_pv_cad": 5246611398.728997,
+            "plan_agency_pv_cad": 6208780383.581964,
+            "economic_score_pct": -18.338865064145093
+          },
+          {
+            "grant_fraction": 0.25,
+            "baseline_agency_pv_cad": 5168152509.302714,
+            "plan_agency_pv_cad": 5842564818.590451,
+            "economic_score_pct": -13.049388694969615
+          },
+          {
+            "grant_fraction": 0.5,
+            "baseline_agency_pv_cad": 5089693619.876432,
+            "plan_agency_pv_cad": 5476349253.59894,
+            "economic_score_pct": -7.596835145685934
+          }
+        ],
+        "conversion_years": [
+          {
+            "site": "Burnaby",
+            "vehicle_class": "articulated",
+            "year": 2032
+          },
+          {
+            "site": "Burnaby",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Burnaby",
+            "vehicle_class": "standard",
+            "year": 2031
+          },
+          {
+            "site": "Hamilton",
+            "vehicle_class": "deck",
+            "year": 2033
+          },
+          {
+            "site": "Hamilton",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Hamilton",
+            "vehicle_class": "standard",
+            "year": 2032
+          },
+          {
+            "site": "Langley",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Langley",
+            "vehicle_class": "standard",
+            "year": 2033
+          },
+          {
+            "site": "North_Shore",
+            "vehicle_class": "articulated",
+            "year": 2030
+          },
+          {
+            "site": "North_Shore",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "North_Shore",
+            "vehicle_class": "standard",
+            "year": 2030
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "articulated",
+            "year": 2031
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "deck",
+            "year": 2033
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "standard",
+            "year": 2030
+          },
+          {
+            "site": "Richmond",
+            "vehicle_class": "deck",
+            "year": 2033
+          },
+          {
+            "site": "Richmond",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Richmond",
+            "vehicle_class": "standard",
+            "year": 2032
+          },
+          {
+            "site": "Surrey",
+            "vehicle_class": "articulated",
+            "year": 2031
+          },
+          {
+            "site": "Surrey",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Surrey",
+            "vehicle_class": "standard",
+            "year": 2032
+          },
+          {
+            "site": "Vancouver",
+            "vehicle_class": "articulated",
+            "year": 2031
+          },
+          {
+            "site": "Vancouver",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Vancouver",
+            "vehicle_class": "standard",
+            "year": 2031
+          }
+        ],
+        "annual_inventory_and_spares_check": "PASS",
+        "zero_conventional_2033_check": "PASS",
+        "ledger_file": "full_new_renewable_mix_recommended_ledger.csv"
+      }
+    },
+    {
+      "fuel_case": "weighted_mix",
+      "baseline_intensity_kg_per_km": 1.233,
+      "solutions": [
+        {
+          "weight": 0.0,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            19,
+            21,
+            25,
+            29,
+            35,
+            36,
+            41,
+            47,
+            51,
+            52,
+            58,
+            63,
+            65,
+            69,
+            75,
+            77,
+            82,
+            87,
+            90,
+            95
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            161,
+            640,
+            649,
+            650
+          ],
+          "plan_pv_cad": 6050186393.343504,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.316076102170907,
+          "plan_ghg_t": 1605007.0812882483,
+          "baseline_ghg_t": 1277711.3166473194,
+          "environmental_score_pct": -25.61578350106066,
+          "full_life_plan_t": 40107.050777082535,
+          "full_life_baseline_t": 128156.10787884958,
+          "full_life_environment_score_pct": 68.70453430514827,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050186393.343504,
+              "economic_score_pct": -15.316076102170907
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737326123.182691,
+              "economic_score_pct": -11.013096321276498
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5424465853.021876,
+              "economic_score_pct": -6.577453539405217
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2033
+            }
+          ],
+          "ledger_file": "full_new_weighted_mix_w0.0_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.2,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            18,
+            23,
+            25,
+            31,
+            35,
+            37,
+            41,
+            45,
+            50,
+            52,
+            57,
+            63,
+            65,
+            70,
+            75,
+            76,
+            82,
+            87,
+            89,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            170,
+            635,
+            650,
+            645
+          ],
+          "plan_pv_cad": 6050569298.291129,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.323374240312376,
+          "plan_ghg_t": 1603006.9670974638,
+          "baseline_ghg_t": 1277711.3166473194,
+          "environmental_score_pct": -25.459244683197422,
+          "full_life_plan_t": 40074.350106494305,
+          "full_life_baseline_t": 128156.10787884958,
+          "full_life_environment_score_pct": 68.73005058457458,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050569298.291129,
+              "economic_score_pct": -15.323374240312376
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737221461.630882,
+              "economic_score_pct": -11.01107119621256
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5423873624.970634,
+              "economic_score_pct": -6.5658177103068
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_weighted_mix_w0.2_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.5,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            9,
+            15,
+            19,
+            23,
+            27,
+            30,
+            35,
+            36,
+            41,
+            47,
+            51,
+            52,
+            57,
+            63,
+            67,
+            69,
+            75,
+            76,
+            82,
+            87,
+            91,
+            94
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            207,
+            615,
+            642,
+            636
+          ],
+          "plan_pv_cad": 6056611308.871964,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.438534486072124,
+          "plan_ghg_t": 1596604.8635848851,
+          "baseline_ghg_t": 1277711.3166473194,
+          "environmental_score_pct": -24.95818443358035,
+          "full_life_plan_t": 40129.63364767077,
+          "full_life_baseline_t": 128156.10787884958,
+          "full_life_environment_score_pct": 68.68691292840549,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6056611308.871964,
+              "economic_score_pct": -15.438534486072124
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5739911072.015364,
+              "economic_score_pct": -11.0631132050279
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5423210835.158763,
+              "economic_score_pct": -6.552795515625313
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2032
+            }
+          ],
+          "ledger_file": "full_new_weighted_mix_w0.5_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.6000000000000001,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            9,
+            15,
+            16,
+            23,
+            27,
+            29,
+            35,
+            36,
+            40,
+            46,
+            51,
+            52,
+            56,
+            63,
+            67,
+            68,
+            75,
+            76,
+            81,
+            87,
+            88,
+            94
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            643,
+            635,
+            220,
+            602
+          ],
+          "plan_pv_cad": 6125263126.5577545,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -16.747032723666415,
+          "plan_ghg_t": 1542587.6613338774,
+          "baseline_ghg_t": 1277711.3166473194,
+          "environmental_score_pct": -20.730531320767085,
+          "full_life_plan_t": 39923.13051825901,
+          "full_life_baseline_t": 128156.10787884958,
+          "full_life_environment_score_pct": 68.84804698032829,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6125263126.5577545,
+              "economic_score_pct": -16.747032723666415
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5779721738.8237505,
+              "economic_score_pct": -11.83342071311183
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5434180351.089747,
+              "economic_score_pct": -6.768319607058753
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2032
+            }
+          ],
+          "ledger_file": "full_new_weighted_mix_w0.6_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.7000000000000001,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            8,
+            14,
+            17,
+            22,
+            26,
+            29,
+            35,
+            36,
+            41,
+            45,
+            50,
+            52,
+            56,
+            63,
+            66,
+            68,
+            75,
+            76,
+            81,
+            87,
+            89,
+            94
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            646,
+            650,
+            456,
+            348
+          ],
+          "plan_pv_cad": 6155198369.620325,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -17.31759609853009,
+          "plan_ghg_t": 1525382.0708267572,
+          "baseline_ghg_t": 1277711.3166473194,
+          "environmental_score_pct": -19.383936805797365,
+          "full_life_plan_t": 39877.20733002372,
+          "full_life_baseline_t": 128156.10787884958,
+          "full_life_environment_score_pct": 68.88388076850693,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6155198369.620325,
+              "economic_score_pct": -17.31759609853009
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5799166707.903004,
+              "economic_score_pct": -12.20966675159951
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5443135046.185683,
+              "economic_score_pct": -6.944257409306135
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2032
+            }
+          ],
+          "ledger_file": "full_new_weighted_mix_w0.7_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.8,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            2,
+            4,
+            8,
+            12,
+            17,
+            22,
+            26,
+            29,
+            34,
+            38,
+            42,
+            44,
+            50,
+            52,
+            56,
+            62,
+            66,
+            68,
+            75,
+            78,
+            81,
+            87,
+            90,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            645,
+            649,
+            584,
+            222
+          ],
+          "plan_pv_cad": 6193869980.982886,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -18.054673965054178,
+          "plan_ghg_t": 1513415.178785451,
+          "baseline_ghg_t": 1277711.3166473194,
+          "environmental_score_pct": -18.44734871384033,
+          "full_life_plan_t": 39952.59136531783,
+          "full_life_baseline_t": 128156.10787884958,
+          "full_life_environment_score_pct": 68.82505872986842,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6193869980.982886,
+              "economic_score_pct": -18.054673965054178
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5825466971.113613,
+              "economic_score_pct": -12.718557755943301
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5457063961.244339,
+              "economic_score_pct": -7.217926437325034
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_weighted_mix_w0.8_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.9,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            2,
+            4,
+            8,
+            12,
+            18,
+            22,
+            27,
+            28,
+            35,
+            38,
+            42,
+            44,
+            49,
+            52,
+            56,
+            62,
+            67,
+            69,
+            75,
+            78,
+            81,
+            86,
+            91,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            648,
+            650,
+            650,
+            152
+          ],
+          "plan_pv_cad": 6215378664.737823,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -18.46462778324904,
+          "plan_ghg_t": 1508958.4389891056,
+          "baseline_ghg_t": 1277711.3166473194,
+          "environmental_score_pct": -18.098542239460837,
+          "full_life_plan_t": 39967.27791825901,
+          "full_life_baseline_t": 128156.10787884958,
+          "full_life_environment_score_pct": 68.81359883678627,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6215378664.737823,
+              "economic_score_pct": -18.46462778324904
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5840621142.126997,
+              "economic_score_pct": -13.011779966125882
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5465863619.516171,
+              "economic_score_pct": -7.390818146119996
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_weighted_mix_w0.9_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 1.0,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            2,
+            5,
+            8,
+            12,
+            19,
+            22,
+            27,
+            28,
+            33,
+            38,
+            42,
+            45,
+            48,
+            54,
+            56,
+            60,
+            67,
+            68,
+            75,
+            79,
+            81,
+            86,
+            91,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            649,
+            649,
+            650,
+            152
+          ],
+          "plan_pv_cad": 6239308077.0127535,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -18.9207204963615,
+          "plan_ghg_t": 1507611.0910330224,
+          "baseline_ghg_t": 1277711.3166473194,
+          "environmental_score_pct": -17.99309213202822,
+          "full_life_plan_t": 40105.045153553125,
+          "full_life_baseline_t": 128156.10787884958,
+          "full_life_environment_score_pct": 68.7060992898865,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6239308077.0127535,
+              "economic_score_pct": -18.9207204963615
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5858191844.768609,
+              "economic_score_pct": -13.351760309391386
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5477075612.524464,
+              "economic_score_pct": -7.611106317582945
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_weighted_mix_w1.0_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        }
+      ],
+      "sampled_nondominated_weights": [
+        0.0,
+        0.2,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "recommended": {
+        "status": "OPTIMAL_RESTRICTED_MASTER",
+        "selected": [
+          2,
+          4,
+          9,
+          15,
+          16,
+          22,
+          24,
+          31,
+          32,
+          36,
+          40,
+          45,
+          51,
+          52,
+          56,
+          63,
+          64,
+          70,
+          73,
+          76,
+          82,
+          85,
+          88,
+          93
+        ],
+        "mip_gap": 0.0,
+        "annual_electric_purchases": [
+          645,
+          637,
+          608,
+          210
+        ],
+        "full_life_plan_t": 39726.22107120018,
+        "full_life_baseline_t": 128156.10787884958,
+        "full_life_environment_score_pct": 69.00169509770478,
+        "plan_pv_cad": 6208780383.581964,
+        "baseline_pv_cad": 5246611398.728997,
+        "economic_score_pct": -18.338865064145093,
+        "plan_ghg_t": 1531080.9910905156,
+        "baseline_ghg_t": 1277711.3166473194,
+        "environmental_score_pct": -19.829962460380454,
+        "grants": [
+          {
+            "grant_fraction": 0,
+            "baseline_agency_pv_cad": 5246611398.728997,
+            "plan_agency_pv_cad": 6208780383.581964,
+            "economic_score_pct": -18.338865064145093
+          },
+          {
+            "grant_fraction": 0.25,
+            "baseline_agency_pv_cad": 5168152509.302714,
+            "plan_agency_pv_cad": 5842564818.590451,
+            "economic_score_pct": -13.049388694969615
+          },
+          {
+            "grant_fraction": 0.5,
+            "baseline_agency_pv_cad": 5089693619.876432,
+            "plan_agency_pv_cad": 5476349253.59894,
+            "economic_score_pct": -7.596835145685934
+          }
+        ],
+        "conversion_years": [
+          {
+            "site": "Burnaby",
+            "vehicle_class": "articulated",
+            "year": 2032
+          },
+          {
+            "site": "Burnaby",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Burnaby",
+            "vehicle_class": "standard",
+            "year": 2031
+          },
+          {
+            "site": "Hamilton",
+            "vehicle_class": "deck",
+            "year": 2033
+          },
+          {
+            "site": "Hamilton",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Hamilton",
+            "vehicle_class": "standard",
+            "year": 2032
+          },
+          {
+            "site": "Langley",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Langley",
+            "vehicle_class": "standard",
+            "year": 2033
+          },
+          {
+            "site": "North_Shore",
+            "vehicle_class": "articulated",
+            "year": 2030
+          },
+          {
+            "site": "North_Shore",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "North_Shore",
+            "vehicle_class": "standard",
+            "year": 2030
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "articulated",
+            "year": 2031
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "deck",
+            "year": 2033
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "standard",
+            "year": 2030
+          },
+          {
+            "site": "Richmond",
+            "vehicle_class": "deck",
+            "year": 2033
+          },
+          {
+            "site": "Richmond",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Richmond",
+            "vehicle_class": "standard",
+            "year": 2032
+          },
+          {
+            "site": "Surrey",
+            "vehicle_class": "articulated",
+            "year": 2031
+          },
+          {
+            "site": "Surrey",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Surrey",
+            "vehicle_class": "standard",
+            "year": 2032
+          },
+          {
+            "site": "Vancouver",
+            "vehicle_class": "articulated",
+            "year": 2031
+          },
+          {
+            "site": "Vancouver",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Vancouver",
+            "vehicle_class": "standard",
+            "year": 2031
+          }
+        ],
+        "annual_inventory_and_spares_check": "PASS",
+        "zero_conventional_2033_check": "PASS",
+        "ledger_file": "full_new_weighted_mix_recommended_ledger.csv"
+      }
+    },
+    {
+      "fuel_case": "fossil_diesel",
+      "baseline_intensity_kg_per_km": 1.58,
+      "solutions": [
+        {
+          "weight": 0.0,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            19,
+            21,
+            25,
+            29,
+            35,
+            36,
+            41,
+            47,
+            51,
+            52,
+            58,
+            63,
+            65,
+            69,
+            75,
+            77,
+            82,
+            87,
+            90,
+            95
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            161,
+            640,
+            649,
+            650
+          ],
+          "plan_pv_cad": 6050186393.343504,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.316076102170907,
+          "plan_ghg_t": 1862393.5925601094,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -16.064988716683615,
+          "full_life_plan_t": 40107.050777082535,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.06497615605564,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050186393.343504,
+              "economic_score_pct": -15.316076102170907
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737326123.182691,
+              "economic_score_pct": -11.013096321276498
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5424465853.021876,
+              "economic_score_pct": -6.577453539405217
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2033
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w0.0_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.1,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            19,
+            21,
+            25,
+            30,
+            35,
+            36,
+            41,
+            47,
+            51,
+            52,
+            57,
+            63,
+            65,
+            69,
+            75,
+            77,
+            82,
+            87,
+            90,
+            95
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            161,
+            645,
+            644,
+            650
+          ],
+          "plan_pv_cad": 6050208638.512824,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.316500093345965,
+          "plan_ghg_t": 1862159.4811382806,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -16.050398814934834,
+          "full_life_plan_t": 40107.050777082535,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.06497615605564,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050208638.512824,
+              "economic_score_pct": -15.316500093345965
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737180639.512631,
+              "economic_score_pct": -11.01028131785318
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5424152640.512438,
+              "economic_score_pct": -6.571299681573474
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2033
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w0.1_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.2,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            10,
+            15,
+            18,
+            23,
+            25,
+            31,
+            35,
+            37,
+            41,
+            45,
+            50,
+            52,
+            57,
+            63,
+            65,
+            70,
+            75,
+            76,
+            82,
+            87,
+            89,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            170,
+            635,
+            650,
+            645
+          ],
+          "plan_pv_cad": 6050569298.291129,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.323374240312376,
+          "plan_ghg_t": 1859903.9613402062,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -15.909834070210868,
+          "full_life_plan_t": 40074.350106494305,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.08530654647407,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050569298.291129,
+              "economic_score_pct": -15.323374240312376
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737221461.630882,
+              "economic_score_pct": -11.01107119621256
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5423873624.970634,
+              "economic_score_pct": -6.5658177103068
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w0.2_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.4,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            9,
+            15,
+            17,
+            23,
+            25,
+            31,
+            35,
+            37,
+            41,
+            45,
+            50,
+            52,
+            57,
+            63,
+            65,
+            70,
+            75,
+            76,
+            82,
+            87,
+            89,
+            94
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            170,
+            635,
+            650,
+            645
+          ],
+          "plan_pv_cad": 6050827051.527066,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -15.32828699668689,
+          "plan_ghg_t": 1859439.1148245176,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -15.88086468059639,
+          "full_life_plan_t": 40073.50724767077,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.08583056168972,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6050827051.527066,
+              "economic_score_pct": -15.32828699668689
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5737491643.412484,
+              "economic_score_pct": -11.016299017588103
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5424156235.297903,
+              "economic_score_pct": -6.571370310293662
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2032
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w0.4_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.5,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            9,
+            15,
+            16,
+            23,
+            27,
+            30,
+            35,
+            36,
+            40,
+            47,
+            51,
+            52,
+            56,
+            63,
+            67,
+            68,
+            75,
+            76,
+            82,
+            87,
+            88,
+            94
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            643,
+            195,
+            642,
+            620
+          ],
+          "plan_pv_cad": 6088746386.700864,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -16.05102653830767,
+          "plan_ghg_t": 1817229.126242705,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -13.250324139622467,
+          "full_life_plan_t": 40009.21082414136,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.12580440226695,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6088746386.700864,
+              "economic_score_pct": -16.05102653830767
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5758064363.10582,
+              "economic_score_pct": -11.414366211934718
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5427382339.510775,
+              "economic_score_pct": -6.6347553478580625
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2032
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w0.5_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.6000000000000001,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            8,
+            15,
+            17,
+            22,
+            26,
+            29,
+            35,
+            36,
+            41,
+            45,
+            50,
+            52,
+            56,
+            63,
+            66,
+            68,
+            75,
+            76,
+            81,
+            87,
+            89,
+            94
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            646,
+            650,
+            392,
+            412
+          ],
+          "plan_pv_cad": 6144959755.162503,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -17.122448913428823,
+          "plan_ghg_t": 1767261.3956268844,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -10.136318532380606,
+          "full_life_plan_t": 39877.20733002372,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.20787252269798,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6144959755.162503,
+              "economic_score_pct": -17.122448913428823
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5792582604.884946,
+              "economic_score_pct": -12.082269136954697
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5440205454.607388,
+              "economic_score_pct": -6.886698117979543
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2032
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w0.6_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.7000000000000001,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            2,
+            4,
+            8,
+            14,
+            17,
+            22,
+            26,
+            29,
+            35,
+            38,
+            42,
+            44,
+            48,
+            52,
+            56,
+            63,
+            66,
+            68,
+            75,
+            76,
+            81,
+            87,
+            88,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            647,
+            649,
+            515,
+            289
+          ],
+          "plan_pv_cad": 6170108438.914125,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -17.601780844848683,
+          "plan_ghg_t": 1754003.3430437178,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -9.310072281524926,
+          "full_life_plan_t": 39896.3748947296,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.19595582292298,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6170108438.914125,
+              "economic_score_pct": -17.601780844848683
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5809327612.955182,
+              "economic_score_pct": -12.40627288955478
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5448546786.99624,
+              "economic_score_pct": -7.050584846962154
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w0.7_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.8,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            3,
+            4,
+            8,
+            12,
+            19,
+            22,
+            26,
+            28,
+            35,
+            38,
+            42,
+            44,
+            49,
+            52,
+            56,
+            63,
+            66,
+            69,
+            75,
+            78,
+            81,
+            86,
+            90,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            648,
+            650,
+            646,
+            156
+          ],
+          "plan_pv_cad": 6208318160.286796,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -18.33005512454713,
+          "plan_ghg_t": 1741083.304706335,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -8.504891190998249,
+          "full_life_plan_t": 39948.953212376655,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.16326726620285,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6208318160.286796,
+              "economic_score_pct": -18.33005512454713
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5835807873.423893,
+              "economic_score_pct": -12.918646710200479
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5463297586.560989,
+              "economic_score_pct": -7.3404018903131405
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w0.8_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 0.9,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            2,
+            5,
+            9,
+            12,
+            18,
+            22,
+            27,
+            28,
+            35,
+            38,
+            42,
+            44,
+            49,
+            53,
+            56,
+            62,
+            67,
+            68,
+            75,
+            78,
+            81,
+            86,
+            91,
+            92
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            649,
+            649,
+            650,
+            152
+          ],
+          "plan_pv_cad": 6222328754.154576,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -18.597095940094757,
+          "plan_ghg_t": 1738623.729784592,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -8.351609663033194,
+          "full_life_plan_t": 40040.13221237666,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.10658021255476,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6222328754.154576,
+              "economic_score_pct": -18.597095940094757
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5845429224.9869375,
+              "economic_score_pct": -13.104812879749966
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5468529695.819299,
+              "economic_score_pct": -7.443200008413546
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2032
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2030
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w0.9_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        },
+        {
+          "weight": 1.0,
+          "status": "OPTIMAL_RESTRICTED_MASTER",
+          "selected": [
+            2,
+            5,
+            8,
+            12,
+            19,
+            22,
+            27,
+            28,
+            33,
+            38,
+            42,
+            45,
+            48,
+            54,
+            56,
+            60,
+            67,
+            68,
+            75,
+            79,
+            81,
+            86,
+            91,
+            93
+          ],
+          "mip_gap": 0.0,
+          "annual_electric_purchases": [
+            649,
+            649,
+            650,
+            152
+          ],
+          "plan_pv_cad": 6239308077.0127535,
+          "baseline_pv_cad": 5246611398.728997,
+          "economic_score_pct": -18.9207204963615,
+          "plan_ghg_t": 1737687.1955368498,
+          "baseline_ghg_t": 1604612.7373572062,
+          "environmental_score_pct": -8.293244536922781,
+          "full_life_plan_t": 40105.045153553125,
+          "full_life_baseline_t": 160846.24994983827,
+          "full_life_environment_score_pct": 75.06622307572583,
+          "grants": [
+            {
+              "grant_fraction": 0,
+              "baseline_agency_pv_cad": 5246611398.728997,
+              "plan_agency_pv_cad": 6239308077.0127535,
+              "economic_score_pct": -18.9207204963615
+            },
+            {
+              "grant_fraction": 0.25,
+              "baseline_agency_pv_cad": 5168152509.302714,
+              "plan_agency_pv_cad": 5858191844.768609,
+              "economic_score_pct": -13.351760309391386
+            },
+            {
+              "grant_fraction": 0.5,
+              "baseline_agency_pv_cad": 5089693619.876432,
+              "plan_agency_pv_cad": 5477075612.524464,
+              "economic_score_pct": -7.611106317582945
+            }
+          ],
+          "conversion_years": [
+            {
+              "site": "Burnaby",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "shuttle",
+              "year": 2031
+            },
+            {
+              "site": "Burnaby",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Hamilton",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Langley",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "North_Shore",
+              "vehicle_class": "standard",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "articulated",
+              "year": 2031
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "shuttle",
+              "year": 2032
+            },
+            {
+              "site": "Port_Coquitlam",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "deck",
+              "year": 2030
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Richmond",
+              "vehicle_class": "standard",
+              "year": 2030
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "articulated",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Surrey",
+              "vehicle_class": "standard",
+              "year": 2031
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "articulated",
+              "year": 2032
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "shuttle",
+              "year": 2033
+            },
+            {
+              "site": "Vancouver",
+              "vehicle_class": "standard",
+              "year": 2031
+            }
+          ],
+          "ledger_file": "full_new_fossil_diesel_w1.0_ledger.csv",
+          "zero_conventional_2033_check": "PASS",
+          "annual_inventory_and_spares_check": "PASS"
+        }
+      ],
+      "sampled_nondominated_weights": [
+        0.0,
+        0.1,
+        0.2,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "recommended": {
+        "status": "OPTIMAL_RESTRICTED_MASTER",
+        "selected": [
+          2,
+          4,
+          9,
+          15,
+          16,
+          22,
+          24,
+          31,
+          32,
+          36,
+          40,
+          45,
+          51,
+          52,
+          56,
+          63,
+          64,
+          70,
+          73,
+          76,
+          82,
+          85,
+          88,
+          93
+        ],
+        "mip_gap": 0.0,
+        "annual_electric_purchases": [
+          645,
+          637,
+          608,
+          210
+        ],
+        "full_life_plan_t": 39726.22107120018,
+        "full_life_baseline_t": 160846.24994983827,
+        "full_life_environment_score_pct": 75.30174245057671,
+        "plan_pv_cad": 6208780383.581964,
+        "baseline_pv_cad": 5246611398.728997,
+        "economic_score_pct": -18.338865064145093,
+        "plan_ghg_t": 1768333.7461646108,
+        "baseline_ghg_t": 1604612.7373572062,
+        "environmental_score_pct": -10.20314777489881,
+        "grants": [
+          {
+            "grant_fraction": 0,
+            "baseline_agency_pv_cad": 5246611398.728997,
+            "plan_agency_pv_cad": 6208780383.581964,
+            "economic_score_pct": -18.338865064145093
+          },
+          {
+            "grant_fraction": 0.25,
+            "baseline_agency_pv_cad": 5168152509.302714,
+            "plan_agency_pv_cad": 5842564818.590451,
+            "economic_score_pct": -13.049388694969615
+          },
+          {
+            "grant_fraction": 0.5,
+            "baseline_agency_pv_cad": 5089693619.876432,
+            "plan_agency_pv_cad": 5476349253.59894,
+            "economic_score_pct": -7.596835145685934
+          }
+        ],
+        "conversion_years": [
+          {
+            "site": "Burnaby",
+            "vehicle_class": "articulated",
+            "year": 2032
+          },
+          {
+            "site": "Burnaby",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Burnaby",
+            "vehicle_class": "standard",
+            "year": 2031
+          },
+          {
+            "site": "Hamilton",
+            "vehicle_class": "deck",
+            "year": 2033
+          },
+          {
+            "site": "Hamilton",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Hamilton",
+            "vehicle_class": "standard",
+            "year": 2032
+          },
+          {
+            "site": "Langley",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Langley",
+            "vehicle_class": "standard",
+            "year": 2033
+          },
+          {
+            "site": "North_Shore",
+            "vehicle_class": "articulated",
+            "year": 2030
+          },
+          {
+            "site": "North_Shore",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "North_Shore",
+            "vehicle_class": "standard",
+            "year": 2030
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "articulated",
+            "year": 2031
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "deck",
+            "year": 2033
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Port_Coquitlam",
+            "vehicle_class": "standard",
+            "year": 2030
+          },
+          {
+            "site": "Richmond",
+            "vehicle_class": "deck",
+            "year": 2033
+          },
+          {
+            "site": "Richmond",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Richmond",
+            "vehicle_class": "standard",
+            "year": 2032
+          },
+          {
+            "site": "Surrey",
+            "vehicle_class": "articulated",
+            "year": 2031
+          },
+          {
+            "site": "Surrey",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Surrey",
+            "vehicle_class": "standard",
+            "year": 2032
+          },
+          {
+            "site": "Vancouver",
+            "vehicle_class": "articulated",
+            "year": 2031
+          },
+          {
+            "site": "Vancouver",
+            "vehicle_class": "shuttle",
+            "year": 2030
+          },
+          {
+            "site": "Vancouver",
+            "vehicle_class": "standard",
+            "year": 2031
+          }
+        ],
+        "annual_inventory_and_spares_check": "PASS",
+        "zero_conventional_2033_check": "PASS",
+        "ledger_file": "full_new_fossil_diesel_recommended_ledger.csv"
+      }
+    }
+  ]
+}

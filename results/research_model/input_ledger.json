@@ -1,0 +1,204 @@
+{
+  "status": "SOURCE_VALUES_PLUS_EXPLICIT_RESEARCH_ASSUMPTIONS",
+  "service": {
+    "value": "All published fall-2023 GTFS trips execute at scheduled times",
+    "source": "User-authorized assumption, 2026-10-21",
+    "annualization": "Observed 119-day calendar repeated at 365/119 for annual costs and emissions"
+  },
+  "technology_tuple_fields": [
+    "required_available_capacity",
+    "battery_kwh",
+    "traction_kwh_per_km",
+    "active_heat_kw",
+    "grid_charge_kw"
+  ],
+  "technology": {
+    "standard": [
+      59,
+      564.0,
+      1.79,
+      12.0,
+      150.0
+    ],
+    "articulated": [
+      75,
+      605.0,
+      2.42,
+      18.0,
+      150.0
+    ],
+    "deck": [
+      85,
+      700.0,
+      1.8,
+      15.0,
+      150.0
+    ],
+    "shuttle": [
+      24,
+      150.0,
+      0.9,
+      6.0,
+      60.0
+    ]
+  },
+  "technology_evidence": {
+    "standard": "Nova 2021 LFSe+ brochure: 564 kWh, 59 total passengers, 150 kW plug; energy/heat are design assumptions.",
+    "articulated": "Winnipeg RFP 763-2023 appendix A table 1: 605 kWh and 90% manufacturer usable. Model 75 passengers is a procurement requirement, not a local certification.",
+    "deck": "Foothill 2024 procurement >700 kWh, model uses 700; North America price. Capacity 85 including standees assumed. 150 kW is a conservative design setting.",
+    "shuttle": "150 kWh/24 passengers is a REQUIRED future accessible configuration, assembled from evidence envelopes; not a proven single TransLink product. Compare 260-kWh later product in existing source table."
+  },
+  "site_anchors": {
+    "status": "ASSUMED_REGIONAL_SERVICE_HUBS_NOT_SURVEYED_DEPOTS",
+    "coordinates": {
+      "Vancouver": [
+        49.211,
+        -123.106
+      ],
+      "Burnaby": [
+        49.252,
+        -122.978
+      ],
+      "Hamilton": [
+        49.178,
+        -122.955
+      ],
+      "Richmond": [
+        49.174,
+        -123.126
+      ],
+      "Surrey": [
+        49.164,
+        -122.843
+      ],
+      "Port_Coquitlam": [
+        49.258,
+        -122.78
+      ],
+      "North_Shore": [
+        49.322,
+        -123.094
+      ],
+      "Langley": [
+        49.115,
+        -122.659
+      ]
+    },
+    "parking": "Size facilities for every active and spare vehicle; no use of nominal old capacity as vacant spaces.",
+    "power": "Compute a sufficient firm-power requirement from concurrency, not a promised utility allocation."
+  },
+  "operations": {
+    "spare_ratio": 0.15,
+    "charge_efficiency": 0.9,
+    "initial_soc_fraction": 0.9,
+    "central_min_soc_fraction": 0.1,
+    "driver_relief": true,
+    "vehicle_duty_span_cap": "none; driver replacement allowed without plug-in dwell",
+    "standby_heat": "Off during waiting and parking; heat on during all movement and charging.",
+    "charge_policy": "Unattended immediate depot charge, five-minute release margin, 10 driver minutes per event.",
+    "driver_shifts": "Relief allowed without reducing service; driver paid full duty span incl waiting. Labour-law rostering outside scope.",
+    "charger_ports": "One per active scheduled bus, dedicated; spares assumed ready and interchangeable."
+  },
+  "operational_scenarios": {
+    "central": {
+      "road_factor": 1.35,
+      "speed_kmh": 30.0,
+      "heat_factor": 1.0,
+      "traction_factor": 1.0,
+      "charge_factor": 1.0,
+      "usable": 0.8,
+      "turn_min": 2.0
+    },
+    "slow_charge": {
+      "road_factor": 1.35,
+      "speed_kmh": 30.0,
+      "heat_factor": 1.0,
+      "traction_factor": 1.0,
+      "charge_factor": 0.5,
+      "usable": 0.8,
+      "turn_min": 2.0
+    },
+    "winter_stress": {
+      "road_factor": 1.5,
+      "speed_kmh": 25.0,
+      "heat_factor": 1.5,
+      "traction_factor": 1.2,
+      "charge_factor": 1.0,
+      "usable": 0.7,
+      "turn_min": 3.0
+    },
+    "capacity_stress": {
+      "road_factor": 1.35,
+      "speed_kmh": 30.0,
+      "heat_factor": 1.0,
+      "traction_factor": 1.0,
+      "charge_factor": 1.0,
+      "usable": 0.8,
+      "turn_min": 2.0,
+      "unclassified_capacity": 85
+    },
+    "spare10": {
+      "road_factor": 1.35,
+      "speed_kmh": 30.0,
+      "heat_factor": 1.0,
+      "traction_factor": 1.0,
+      "charge_factor": 1.0,
+      "usable": 0.8,
+      "turn_min": 2.0,
+      "spare_ratio": 0.1
+    }
+  },
+  "finance": {
+    "currency": "Constant 2023 CAD",
+    "discount_real": 0.03,
+    "delivery_cap_per_year": 650,
+    "heavy_life": 17,
+    "conventional_shuttle_life": 5,
+    "electric_shuttle_life": 8,
+    "building_life": 30,
+    "construction_years": 6,
+    "driver_cad_per_h": 60,
+    "standard_price": "2023 TransLink hardware 1.2m incl installed battery",
+    "articulated_price": "1.5 x standard hardware, ASSUMPTION",
+    "conventional_deck_price": "1m CAD ASSUMPTION; no in-horizon natural deck expiry",
+    "deck_and_shuttle_prices": "Existing CPI/FX-converted class source table, external costs",
+    "maintenance": "0.80 CAD/km in 2019, TransLink appendix D-1, CPI to 2023; transferred across classes",
+    "conventional_om": "2024 CNG benchmark 2.77 CAD/km, CPI to 2023; excludes driver",
+    "facilities": "500m/340 slots in 2023, multiplied by required 40-foot equivalents; all-in construction/charging/utility planning envelope",
+    "facility_scenarios": "Primary: retrofit-first .5 cost/.3 building carbon plus required expansion; full new-build 1.0 is sensitivity",
+    "annual_energy": "Winter schedule x 0.8 seasonal-average factor in primary; factor 1.0 in winter sensitivity",
+    "resale": "25% remaining straight-line value at early conversion, zero-value sensitivity available",
+    "taxes_financing": "Real unlevered budget; no VAT/debt interest transfers",
+    "grants": "0/25/50%, same rules for both fleets with proportional funded-asset recapture"
+  },
+  "lca": {
+    "glider_kg_assumptions": {
+      "standard": 14880.0,
+      "articulated": 20000.0,
+      "deck": 18000.0,
+      "shuttle": 4500.0
+    },
+    "conventional_glider_kg_assumptions": {
+      "standard": 11429.0,
+      "articulated": 16000.0,
+      "deck": 14000.0,
+      "shuttle": 4000.0
+    },
+    "glider_kgco2_per_kg": 6.6,
+    "battery_kgco2_per_kwh": 58,
+    "building_kgco2_per_m2": 650,
+    "building_m2_per_standard_slot": 218.5953882352941,
+    "charger_tco2_per_port": 6.40395,
+    "grid_kgco2_per_kwh": 0.0113,
+    "end_of_life": "Initial-vehicle disposal unmeasured; excluded and retained as limitation. No credit for possible second-life displacement.",
+    "source": "ICCT 2024 transfer factors and existing infrastructure LCA ledger; no local EPD"
+  },
+  "body_footprint_factors": {
+    "standard": 1.0,
+    "articulated": 1.5,
+    "deck": 1.0,
+    "shuttle": 0.55
+  },
+  "trolleys": "275 retained electrical positions; official existing service and power infrastructure assumed functional. Unchanged common trolley costs/emissions excluded from scoring denominators.",
+  "real_world_status": "Not a delivered fleet, construction permit, utility agreement, or globally optimal city design."
+}

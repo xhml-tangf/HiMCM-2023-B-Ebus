@@ -22,6 +22,7 @@ Neither tool was asked to locate or use an original 2023 HiMCM solution submissi
 9. "Use the available CPU and run the model, with solution quality first." Outputs: `results/vancouver_transition_uncertainty.json` (432,768 cases), `results/vancouver_full_fleet_bound.json`, and the existing HiGHS/LP runs.
 10. "Resolve every issue in the independent adversarial review." Outputs: `research/adversarial_review_resolution.md`, periodic SOC and charger constraints, Route 100 duty sample, asset/infrastructure terminal-value scenarios, Chicago hard-age deadlines, fixed-service sensitivity, CPI rebasing, and a 64-test reproduction suite.
 11. "Complete the remaining evidence." Outputs: official TransLink depot, fleet, power and vehicle evidence; the 25-pattern absolute-time city screen; a 275-trolley/5-BEB central split; incremental TCO and infrastructure-inclusive emissions bridges; and body-compatible Chicago/London execution certificates. See `research/remaining_evidence_closure.md` and the current result JSON files.
+12. "Restructure the paper around a 90% canonical decision model and remove repeated concessions." Outputs: 15% reserve schedule, driver-relief duty construction, retrofit-first depot model, full-lifecycle score, canonical JSON interface, generated LaTeX values/tables and a rewritten compact manuscript.
 
 ## Human-verification boundary
 

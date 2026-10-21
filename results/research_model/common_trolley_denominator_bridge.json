@@ -1,0 +1,56 @@
+{
+  "central": {
+    "common_pv_cad": 1064778658.7330537,
+    "common_ghg_t": 33592.872513646056,
+    "common_net_capital_pv_cad": 244902139.71466446,
+    "annual_km": 11045141.524579413,
+    "annual_driver_hours": 861118.4901715684,
+    "assumptions": "Existing timetable normal; 10% extra km, 5% extra block-span hours; 2 kWh/km; 12/18t glider proxies. These are common to both fleets.",
+    "sources": "2023 GTFS; 2024 ZEFTP trolley O&M 4.12 CAD/km rebased; existing 262-trolley renewal and terminal-value ledger."
+  },
+  "slow_charge": {
+    "common_pv_cad": 1064778658.7330537,
+    "common_ghg_t": 33592.872513646056,
+    "common_net_capital_pv_cad": 244902139.71466446,
+    "annual_km": 11045141.524579413,
+    "annual_driver_hours": 861118.4901715684,
+    "assumptions": "Existing timetable normal; 10% extra km, 5% extra block-span hours; 2 kWh/km; 12/18t glider proxies. These are common to both fleets.",
+    "sources": "2023 GTFS; 2024 ZEFTP trolley O&M 4.12 CAD/km rebased; existing 262-trolley renewal and terminal-value ledger."
+  },
+  "winter_stress": {
+    "common_pv_cad": 1064778658.7330537,
+    "common_ghg_t": 33592.872513646056,
+    "common_net_capital_pv_cad": 244902139.71466446,
+    "annual_km": 11045141.524579413,
+    "annual_driver_hours": 861118.4901715684,
+    "assumptions": "Existing timetable normal; 10% extra km, 5% extra block-span hours; 2 kWh/km; 12/18t glider proxies. These are common to both fleets.",
+    "sources": "2023 GTFS; 2024 ZEFTP trolley O&M 4.12 CAD/km rebased; existing 262-trolley renewal and terminal-value ledger."
+  },
+  "capacity_stress": {
+    "common_pv_cad": 1064778658.7330537,
+    "common_ghg_t": 33592.872513646056,
+    "common_net_capital_pv_cad": 244902139.71466446,
+    "annual_km": 11045141.524579413,
+    "annual_driver_hours": 861118.4901715684,
+    "assumptions": "Existing timetable normal; 10% extra km, 5% extra block-span hours; 2 kWh/km; 12/18t glider proxies. These are common to both fleets.",
+    "sources": "2023 GTFS; 2024 ZEFTP trolley O&M 4.12 CAD/km rebased; existing 262-trolley renewal and terminal-value ledger."
+  },
+  "central_retrofit": {
+    "common_pv_cad": 1064778658.7330537,
+    "common_ghg_t": 33592.872513646056,
+    "common_net_capital_pv_cad": 244902139.71466446,
+    "annual_km": 11045141.524579413,
+    "annual_driver_hours": 861118.4901715684,
+    "assumptions": "Existing timetable normal; 10% extra km, 5% extra block-span hours; 2 kWh/km; 12/18t glider proxies. These are common to both fleets.",
+    "sources": "2023 GTFS; 2024 ZEFTP trolley O&M 4.12 CAD/km rebased; existing 262-trolley renewal and terminal-value ledger."
+  },
+  "central_high_cost": {
+    "common_pv_cad": 1174961389.5479782,
+    "common_ghg_t": 33592.872513646056,
+    "common_net_capital_pv_cad": 244902139.71466446,
+    "annual_km": 11045141.524579413,
+    "annual_driver_hours": 861118.4901715684,
+    "assumptions": "Existing timetable normal; 10% extra km, 5% extra block-span hours; 2 kWh/km; 12/18t glider proxies. These are common to both fleets.",
+    "sources": "2023 GTFS; 2024 ZEFTP trolley O&M 4.12 CAD/km rebased; existing 262-trolley renewal and terminal-value ledger."
+  }
+}

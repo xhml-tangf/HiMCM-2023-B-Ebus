@@ -1,5 +1,32 @@
 # HiMCM 2023 Problem B: electric bus fleet transition
 
+## 21 October canonical full-timetable model
+
+The user authorized explicit research assumptions, including normal execution
+of published services. `scripts/run_research_model.py` now constructs and checks
+every non-trolley trip in all 25 recovered service patterns, cyclic vehicle use
+over 119 days, depot recharge, a 15% reserve and annual procurement MILPs. The
+canonical scenario uses driver relief, retrofit-first depots, current low-carbon
+fuel as the baseline and annualized full-lifecycle environmental scoring. It
+selects **2,100 battery buses**, **27.53%** full-life environmental improvement,
+**71.93%** lower 2033 operating emissions and a ten-year economic score of
+**−10.63%** for the converted fleet. The whole-fleet environmental score with
+retained trolleys is **25.51%**. The transition-period ledger is retained separately.
+
+The manuscript consumes only `results/research_model/canonical_v4.json` through
+`paper/generated/canonical_macros.tex`. Rebuild with:
+
+```powershell
+python scripts/run_research_model.py --canonical
+python scripts/build_paper_tables.py
+python scripts/check_manuscript_numbers.py
+python scripts/check_tex_format.py
+```
+
+The complete paper has 17 solution pages plus the one-page AI report. Chicago
+and London are common-model fleet-level comparisons; Vancouver alone receives
+route-level dispatch validation.
+
 This is a reproducible research workspace and evidence-locked paper draft for
 2023 HiMCM Problem B. The original problem PDF is supplied by the user and
 remains at its original path. No original HiMCM solution paper was used.
@@ -145,10 +172,9 @@ conditional inventory scenarios, not dispatch certificates. See
   buses, current technical specifications or trip adequacy.
 - `paper/ebus_transition.tex`: canonical 12-point HiMCM-style LaTeX research
   draft. Set the official team control number at the top before submission.
-- `paper/ebus_transition.pdf`: current research draft compiled with the Codex app-owned
-  Tectonic 0.17 executable after the built-in editor compiler passed the same
-  source. It currently has 25 solution pages
-  plus the Report on Use of AI; the research completion gates below remain open.
+- `paper/ebus_transition.pdf`: canonical manuscript compiled with the Codex
+  app-owned Tectonic 0.17 cache after the built-in editor compiler passed the
+  same source. It has 17 solution pages plus the one-page Report on Use of AI.
 - `scripts/capture_editor_pdf.py` remains a diagnostic fallback for editor-cache
   exports. `scripts/qa_editor_pdf.py` checks page
   count, summary/letter length, headers, references and text boundaries, then

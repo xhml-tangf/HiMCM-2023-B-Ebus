@@ -1,14 +1,20 @@
 {
-  "producer": "built-in editor compiler; no separate compilation",
-  "pdf_sha256": "82d6e1b70e9c09a7dce27ff352d069a1c6526bcec11cf2b1fedcb7c33778905c",
-  "main_tex_sha256": "31bf0ffb31cd00aa33a03598900cace7c7bf90097a6602d26a6a912413b9faf4",
+  "producer": "OpenAI Codex app-owned Tectonic 0.17.0 using the editor cache; the built-in editor compiler returned success for the same source",
+  "pdf_sha256": "6fe9ad706117a4b6a87c4d2384ec4b06e35e339c0096e3dbdb240a139f8f654d",
+  "main_tex_sha256": "798305a379f84ea096ec5843762e17615d11308eb4f70993e226e931cac113e9",
   "project_source_files_sha256": {
-    "ebus_transition.tex": "31bf0ffb31cd00aa33a03598900cace7c7bf90097a6602d26a6a912413b9faf4",
+    "ebus_transition.tex": "798305a379f84ea096ec5843762e17615d11308eb4f70993e226e931cac113e9",
     "figures/block_range_stress.png": "026c7329f09f7ae059ecaf24484cac6f0205641634dc433b90c83171bb3ab530",
     "figures/charging_tariff_bounds.png": "9e75100acd2a152f6e0d119048b9d2748502143ca8c4861fd1d9d437f2b8d235",
     "figures/london_cohort_roadmap.png": "a70d684a099fdafe36b186981b29b1d97e65126ccaa1336d4daf79869523ada8",
     "figures/service_floor.png": "073aafa80ae1f512da39b3afab577e4e12097ce4d7ad48eeccb0ba90eb0bbaf2",
     "figures/vancouver_transition_scenarios.png": "b1f5a16b6fb30bd8e247e89e21861504b389df2a2f08ef138e2440b14d62aad3",
+    "generated/canonical_macros.tex": "1892e3c96b8e69d705c3e6ceb5a7988809528e3951eed92efd4ec7b111d28b5a",
+    "generated/canonical_sensitivity.tex": "240d921e50fca931c8f85c4aeea2ec31b823856de2b00cdffca661116384b071",
+    "generated/cost_lifecycle_tradeoff.png": "4c8e0bbdef8722c04a0a730ec5f2154e1a74b895cb3348154ae7688ffb45c430",
+    "generated/three_city_comparison.tex": "51e93f34641e4c968b055c6dfe142a8ba8e744556a336380d4f261b87f6b5aa1",
+    "generated/vancouver_roadmap.tex": "ef8041a2e05f4dbcb9d263b22b88ab77c0beb5192f8e70703163f6df1cda2927",
+    "generated/vancouver_scores.tex": "4cdbdbbc11c00991567857d3af9febd691bbde6613e5c7b19b3a04c18a95e7d1",
     "tables/block_range_stress.tex": "a9bd76faad57e6ca2ef0e9f6a6034f4ded4defb19a606a9b0407753e1cf811b2",
     "tables/charging_tariff_bounds.tex": "3cde914d72e2611472f8e6a04b9ca21cfff874679e45f5d35d6dc76b96011a00",
     "tables/chicago_age_roadmap.tex": "a661a35179ef325cf910328606b0f82f408073b1fe7b015a38b57fcb01b995a6",
@@ -24,11 +30,11 @@
     "tables/vancouver_transition_scenarios.tex": "101d54b168da70f11a265c5aa4b46025fc68aa2550c106644da527d3eef072a7",
     "tables/vancouver_uncertainty.tex": "758fc97fbabe9c8b5a6929d38017cc09078423bbe9c55fa02381d1053c1ec73f"
   },
-  "pages_including_ai_report": 26,
+  "pages_including_ai_report": 18,
   "ai_report_pages": [
-    26
+    18
   ],
   "letter_heading_pages": [
-    25
+    15
   ]
 }

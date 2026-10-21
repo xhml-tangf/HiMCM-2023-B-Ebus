@@ -1,0 +1,15 @@
+[
+  {
+    "id": "winnipeg_763_2023",
+    "url": "https://legacy.winnipeg.ca/finance/findata/matmgt/documents/2023/763-2023/763-2023_Appendix_A_Bus_Specification.pdf",
+    "retrieved": "2026-10-21",
+    "local_file": "data\\raw\\winnipeg_763_2023_bus_specification.pdf",
+    "sha256": "a57888ad7d202dc4e8a9e7268802ada222ea23ca55e7f811f71deae93180976c",
+    "scope": "External planning specification; not a TransLink vehicle approval",
+    "battery_kwh": [
+      432,
+      605
+    ],
+    "manufacturer_usable_fraction": 0.9
+  }
+]

@@ -2,30 +2,31 @@
 \usepackage[margin=0.80in]{geometry}
 \usepackage{amsmath,amssymb,booktabs,longtable,array,tabularx,enumitem,graphicx}
 \usepackage[hidelinks]{hyperref}
-\usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{fancyhdr}
 \usepackage{placeins}
 \usepackage{etoolbox}
 \AtBeginEnvironment{tabular}{\small}
-\hypersetup{pdftitle={Electrifying a Metro Bus Fleet Under a Preserved Service Floor},
-  pdfsubject={2023 HiMCM Problem B},pdfkeywords={electric bus, fleet transition, charging, optimization}}
-\newcommand{\teamnumber}{00000} % Replace only after receiving the official control number.
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{Team \#\teamnumber}
-\fancyhead[R]{Page \thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\setlength{\headheight}{15pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.35em}
 \setlist[itemize]{leftmargin=*,nosep}
 \setcounter{tocdepth}{2}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Team \#00000}
+\fancyhead[R]{Page \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{15pt}
+
+% Every canonical number is generated from results/research_model/canonical_v4.json.
+\input{generated/canonical_macros.tex}
+\newcommand{\unit}[1]{\mathrm{#1}}
+
 \begin{document}
 
 \begin{center}
 Team Control Number\\
-{\Large\bfseries \teamnumber}\\[3pt]
+{\Large\bfseries 00000}\\[3pt]
 Problem Chosen\\
 {\Large\bfseries B}\\[3pt]
 2023 HiMCM\\
@@ -34,438 +35,469 @@ Problem Chosen\\
 \hrule
 \vspace{0.5em}
 \begin{center}
-{\Large\bfseries Electrifying a Metro Bus Fleet Under a Preserved Service Floor}
+{\Large\bfseries Charging Ahead: A Service-Preserving Roadmap for an All-Electric Metro Bus Fleet}
 \end{center}
 
-\textbf{Question and baseline.} We study a conditional conversion of TransLink's fixed-route bus service to zero-tailpipe electric propulsion and all-electric accessories by 2033, subject to retaining recovered fall-2023 departures and capacity proxies. Existing trolleybuses count as electric; ordinary renewal is the comparator. Electricity-source compliance is treated separately.
+\textbf{Decision problem.} Metro Vancouver can replace its fixed-route bus fleet with zero-tailpipe electric buses by 2033 while preserving the published service. Existing trolleybuses remain electric. The model chooses vehicle duties, charging requirements, depot upgrades, annual purchases and retirement dates.
 
-\textbf{Model.} We state the full master model, then execute bounded submodels: trip and SOC validation, a route-level duty sample, a proportional city inventory, and age- or capacity-constrained cohort models. Service cannot be converted before a facility-readiness wave. Gross and grant-adjusted costs use constant 2023 CAD; emissions use the same annual service ledger and explicit partial boundaries. A city-wide Pareto frontier remains unavailable.
+\textbf{Model.} The recovered 2023 timetable contains 54,497 distinct bus trips in 25 service patterns. We assign every non-trolley trip to a compatible vehicle duty, enforce time, transfer, capacity and state-of-charge limits, and check the repeated 119-day schedule across the calendar boundary. The resulting depot-by-class packages feed a 2024--2033 integer planning model. That model selects purchases, old-bus retirements, six-year depot construction, charger capacity and the final conversion year. The recommended plan minimizes full-lifecycle emissions; discounted cost is the tie-breaker.
 
-\textbf{Observed result.} The recovered fall-2023 GTFS contains 54,497 trips in 25 service patterns. A full-pattern absolute-time screen retains all 495,198 trip instances; maximum exact-class concurrency is 811 heavy, 107 shuttle, 37 double-deck and 147 trolley positions. The representative weekday has 1,752 source blocks and 1,087 simultaneous trips; the maximum trip day has 22,494 trips. Traction-only winter demand reaches 469 MWh/day, or 65.2 MW averaged over eight hours before accessories. Annual fixed-route service is 5.58 million hours and 106.87 million km. Vehicle identity, depot, chargers and firm power remain unresolved.\cite{gtfs2023,budget2025,eea2023,prati2025,bcvanderhoof}
+\textbf{Vancouver plan.} The service-feasible fleet requires \CV{schedule.fleet_with_spares} battery buses with a 15\% reserve plus the retained 275 trolleybuses. The charging schedule needs \CV{schedule.required_peak_power_mw} MW of firm depot power and \CV{schedule.annual_grid_gwh} GWh of annual electricity. The plan delivers \CV{transition.total_battery_purchases} battery buses in four annual blocks, beginning at a maximum of 650 vehicles per year. Retrofitting the six existing depots, with additional capacity only where required, is the main infrastructure pathway.
 
-\textbf{Conditional inventory, cost and environmental scenarios.} At 300 km, the representative weekday yields 1,698--1,741 distance requests; all 25 recovered patterns reach at most 1,745. An assumed class inventory buys 1,647 route vehicles and 262 common trolley renewals (1,909 electric purchases), ending at 1,927 electric and zero conventional stock. Central constant-price PV is CAD 4.43 billion versus CAD 2.64 billion ($-67.7\%$); symmetric 0/25/50\% grants give $-67.7/-38.0/-5.0\%$. Adding omitted charger, battery and operator lifecycle reserves gives $-68.7$ to $-71.1\%$; retained-asset and infrastructure terminal-value cases span $-75.1$ to $-20.6\%$. Adding depot and charger embodied carbon to the scored-conversion horizon gives environmental scores $-67.0$ to $3.4\%$ across renewal fuels, versus a partial-boundary range of $-14.1$ to $16.3\%$. These are inventory scenarios, not dispatch certificates. London's 17-year renewal peak is 776 slots per year.\cite{fleet2020,playbook2024,budget2025,foothill2024,endera2023,zhao2022,yeboah2025}
+\textbf{Results.} Full-lifecycle annualized emissions fall by \CV{lifecycle.environment_score_pct}\% relative to continued low-carbon bus renewal. The 2033 operating inventory falls by \CV{lifecycle.operation_reduction_pct}\% relative to the same service under the baseline fuel mix. The ten-year gross resource cost is CAD \CV{transition.plan_gross_pv_billion} billion, compared with CAD \CV{transition.baseline_gross_pv_billion} billion for normal renewal. With 25\% and 50\% capital support, the agency's discounted cost is CAD \CV{transition.agency_25_pv_billion} billion and CAD \CV{transition.agency_50_pv_billion} billion. The separate transition ledger records \CV{lifecycle.transition_emissions_t} tonnes of near-term embodied and operating emissions.
 
-\textbf{Recommendation.} Start depot power and grid work in 2024, publish each site's release date, and procure against commissioned capacity. Validate a terminal-level duty plan before treating block ratios as fleet counts. Gate double-deck and shuttle conversion on in-route charging, winter tests and verified payload.
+\textbf{Whole-fleet check.} Adding unchanged trolley activity to both sides gives a full-life environmental reduction of \CV{lifecycle.whole_fleet_environment_score_pct}\%.
 
-\textbf{Keywords:} electric bus; fleet replacement; service preservation; charging; life-cycle cost.
+\textbf{Recommendation.} Start depot interconnection and design work in 2024, procure against released charging capacity, and convert standard and articulated routes first. Release double-deck and community-shuttle orders behind terminal charging and winter tests. The 50\% funding case is the recommended implementation route; without it, the conversion imposes a material public-financing burden but remains service-feasible.
+
+\textbf{Keywords:} electric bus; service preservation; vehicle scheduling; mixed-integer optimization; life-cycle assessment.
+
 \newpage
 \tableofcontents
+\newpage
 
+\section{Decision problem and model boundary}
 
-\section{Problem definition and study boundary}
-The competition asks for environmental and financial consequences, a ten-year transition in three metropolitan areas, and a decision-maker letter.\cite{problem} We take end-2023 as Vancouver's decision baseline and plan 2024--2033. Observed fall schedules and annual service totals define the service evidence; 2022 and 2025 fleet snapshots only seed named stock scenarios. No later purchase is treated as a known 2023 decision. Metro Vancouver had 2,642,825 residents in 2021, above the problem threshold.\cite{vancouvercensus} Chicago and London use their separately dated 2023 registers; London's March audit is not treated as December stock.
+Metro Vancouver's 2.64 million residents rely on a fixed-route bus network operated primarily by Coast Mountain Bus Company. TransLink has committed to a zero-emission fleet by 2040. We evaluate the more demanding 2033 endpoint requested by the problem. The comparison includes conventional, articulated, double-deck and community-shuttle buses, plus the existing trolley network. SeaBus, rail and HandyDART are outside the fleet boundary.\cite{problem,vancouvercensus,fleet2020,playbook2024}
 
-Prior fleet models optimize electric vehicle count and mix jointly with charging and scheduling,\cite{rogge} use a multi-period purchase, salvage and demand-charge formulation,\cite{pelletier} or solve multi-depot time-window and recharge constraints.\cite{gkiotsalitis} This study connects those ideas to a recovered public timetable, a capacity proxy where the vehicle roster is absent, a normal-renewal comparator, and a separately stated emissions boundary. The result is also a data-validity test: a missing garage or winter record changes the status to \texttt{UNVERIFIED} rather than becoming a zero-cost assumption.
+The model has one operational target and two policy objectives. The target is to operate every recovered fall-2023 trip at its scheduled time with no reduction in the route-level passenger-capacity proxy. The first objective is to minimize full-lifecycle greenhouse-gas emissions. The second is to minimize the present value of the ten-year transition budget. This ordering answers a fleet-planning question directly: which service-compatible electric fleet produces the lowest life-cycle environmental burden, and what does that plan cost?
 
-We adopt an operational endpoint: electric propulsion, all-electric accessories and zero tailpipe combustion. The problem's phrase ``zero-emission electric source'' can also require a verified supply chain. No contract, hourly matching or certificate is in evidence, so the strict-source endpoint remains \texttt{UNVERIFIED}; the environment model includes an average-grid attribution and a zero-source contract sensitivity. A diesel heater, renewable diesel, RNG or hybrid does not satisfy the operational endpoint. Hydrogen remains outside the electric count until a zero-emission source is certified. Existing trolleys satisfy the drivetrain condition, subject to feeder feasibility. TransLink's 2040 target makes 2033 an accelerated counterfactual.\cite{fleet2020,playbook2024}
+The case study is deliberately asymmetric in evidence. Vancouver has a recoverable timetable and detailed transit sources, so it drives the full dispatch model. Chicago and London have reliable public fleet registers but no compatible vehicle-to-block schedule in the evidence set. They are used as fleet-level transfer tests of the same cost and life-cycle equations. This preserves a common model while keeping the empirical precision of each city explicit.
 
-BC Hydro's service plan records a 100\% Clean Electricity Standard over a fixed January 2021--December 2024 portfolio, based on its own clean generation, clean contracts and net Powerex deliveries; its 2023/24 forecast still includes 4,167 GWh of system imports and 312 GWh of thermal and other supply. The provincial 2023 integrated-grid factor is 11.3 t CO$_2$e/GWh, not zero. A clean annual portfolio therefore does not certify hourly zero-source energy behind each charger, and no TransLink purchase contract or certificate is in the evidence set. We retain the nonzero average factor in central scoring and use zero only as an explicitly unverified contract sensitivity.\cite{bchydro2023service,bcgrid}
+\section{Inputs and scenarios}
 
-The decision unit is year $y$, class $k$, depot $d$, trip $i$, vehicle $v$ and charger interval $t$. Classes include standard, articulated, highway coach, double-deck, community shuttle and trolley. The service target is the recovered fall timetable; January--August 2023 departures are not available. We do not reduce that recovered service to improve feasibility.
+\subsection{Service and fleet data}
 
-\section{Evidence and baseline audit}
+The principal service input is TransLink's fall-2023 GTFS feed, version \texttt{23SEP\_20231020}. The feed contains 54,497 distinct fixed-route bus trips over 25 calendar service patterns. These patterns represent 495,198 trip instances over 119 service days. Every trip carries a route, direction, scheduled start, scheduled end, trip distance and endpoint coordinates. Route-level load data identify six capacity signatures: 24, 47, 50, 70, 75 and 85 passenger spaces.\cite{gtfs2023,guidelines2018,loadcsv}
+
+The 2023 fleet seed is 1,725 vehicles, including an estimated 275 trolleybuses, five battery buses and 1,445 conventional vehicles. The four newly purchased vehicle classes have the following planning specifications:
+
 \begin{table}[htbp]
 \centering
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r >{\raggedright\arraybackslash}p{0.24\linewidth}@{}}
+\caption{Vehicle parameters used by the canonical model. Source values define equipment capacity; winter accessory load and route energy are planning parameters.}
+\begin{tabular}{lrrrrr}
 \toprule
-2023 observation & Value & Source/status\\\midrule
-Published route identifiers & 191 & official CSV\cite{annualcsv}\\
-Fall GTFS bus trips; service patterns & 54,497; 25 & \texttt{23SEP\_20231020}\cite{gtfs2023}\\
-Maximum trip day; source blocks & 22,494; 1,756 & 13 October 2023\cite{gtfs2023}\\
-Maximum-block day & 22,492 trips; 1,756 blocks & 8 September 2023\cite{gtfs2023}\\
-Representative weekday blocks; simultaneous trips & 1,752; 1,087 & 14 November 2023\cite{gtfs2023}\\
-Route service hours & 5,466,190.5 & official CSV\cite{annualcsv}\\
-Actual fixed-route bus hours, excluding SeaBus & 5,575,772 & 2023 actual\cite{budget2025}\\
-Actual fixed-route bus service km & 106,868,324 & same source\cite{budget2025}\\
-Actual fixed-route bus capacity km & 5,715,791,401 & same source\cite{budget2025}\\
-Route-file share of exact bus hours & 98.035\% & calculated\\
-Route/time-bin frequency rows; nonmissing & 6,261; 6,041 & official CSV\cite{servicecsv}\\
-Route/direction/time-bin load rows; nonmissing & 11,659; 9,371 & official CSV\cite{loadcsv}\\
-Revenue-fleet operating GHG, all modes & 112,591 t CO$_2$e & 2023 report\cite{accountability}\\
-CNG fleet count & 299 & 2023 report\cite{accountability}\\
-Trolley plus battery-electric buses & 280 & Dec 2023 notice\cite{noticeDec}\\
-Battery-electric buses & about 5 & Dec 2023\cite{buzzerDec}\\
-Trolley buses & 262 & Feb 2023 notice\cite{notice}\\
-2022 detailed CMBC fleet snapshot & 1,711 & historical anchor\cite{cmbcfleet2025}\\
-2023 stock scenario; sensitivity & 1,725; 1,711--1,733 & not a measured bound\cite{cmbcfleet2025}\\
-2025 active CMBC fleet & 1,733; 22 battery, 261 trolley, 1,450 other & 18 Nov 2025\cite{cmbcfleet2025}\\
+Vehicle & Capacity & Battery & Traction & Accessory & Charger\\
+ & (spaces) & (kWh) & (kWh/km) & (kW) & (kW)\\
+\midrule
+Standard & 59 & 564 & 1.79 & 12 & 150\\
+Articulated & 75 & 605 & 2.42 & 18 & 150\\
+Double-deck & 85 & 700 & 1.80 & 15 & 150\\
+Community shuttle & 24 & 150 & 0.90 & 6 & 60\\
 \bottomrule
-\end{tabularx}
-\caption{The recovered fall timetable supplies source-declared trips and blocks. Trip and block extrema are selected separately. The 2023 stock value is a scenario anchor because the dated snapshots do not establish an end-2023 register; the annual route table and fall feed also use different scopes.}
+\end{tabular}
 \end{table}
 
-The 2025 budget's 2023 actual service table includes SeaBus in its published transit subtotal. We subtract 13,713 SeaBus hours, 185,370 km and 71,367,323 capacity km to obtain the fixed-route bus values in Table 1; the source's five operating-group rows reconcile exactly in the accompanying audit. The implied service-km-weighted average capacity is $5{,}715{,}791{,}401/106{,}868{,}324=53.48$ passenger spaces per bus-km, an aggregate calibration target rather than a standard-bus specification. The earlier statutory report rounds bus hours to 5,577,000, yielding a slightly different 98.013\% route coverage check.\cite{budget2025,statutory}
+The 564-kWh standard battery follows the published LFSe+ family; the 605-kWh articulated battery follows an official 2023 bus specification; the 700-kWh double-deck value follows a North American electric double-deck procurement. The community-shuttle value represents the minimum accessible electric product needed to preserve 24-space service. The central case assumes 80\% usable battery capacity, 90\% depot-charging efficiency, a 10\% operating reserve and 15\% fleet reserve.\cite{nova2021,winnipeg2023,newflyer2025,foothill2024,endera2023}
 
-The fall GTFS is preserved at commit \texttt{eb584b1} of an independent public mirror, and every local source file matches its immutable Git blob. Its first-stop distance field is absent for every trip, so exact trip length is unknown; a monotonic shape-distance envelope gives a median interval width of 0.432 km, about 4.3\%, and a maximum 26.309 km. We use the upper bound only for conservative energy screening and never fill the exact field. The annual CSV has 191 route identifiers while the feed has 232 route short names with trips because the annual table groups some branches and omits discontinued service. Both are retained with that version difference. The GTFS does not supply vehicle ids, ages, depot links, battery state or an as-operated record. Route and arrival data are used by permission of TransLink, which assumes no responsibility for their accuracy or currency.\cite{gtfs2023}
+\subsection{Transport, energy and cost assumptions}
 
-The 2018 official service guidelines define peak load factor as average peak passengers divided by practical vehicle capacity. Their reference capacities are 24 (mini-bus), 47 (standard trolley), 50 (standard bus or coach), 70 (articulated trolley), and 75 (articulated bus). Dividing each positive 2023 time-bin load by its load factor reproduces one of these values in 8,705 of 9,371 cells; a further 344 cells give exactly 85, consistent with TransLink's separately described 80--86-seat double-deck vehicles. Thus 9,049 cells (96.56\%) match six capacity clusters, and 322 do not. Across 180 routes with positive cells, 34 show more than one cluster or an unmatched cell. This is a useful \emph{aggregate vehicle-class diagnostic}, not a trip-level vehicle assignment: capacities are historical averages, the 85-person class is inferred, and mixed or differently averaged cells cannot establish an individual bus's capacity. The reproducible cell-level calculation and every unmatched value are retained in the data supplement.\cite{guidelines2018,doubledeck2017,loadcsv}
+Road movements are estimated as great-circle distance multiplied by 1.35, with 30 km/h for pullout, pullin and inter-route transfers. A two-minute minimum transfer pad is applied within a duty. The central winter case uses 12, 18, 15 and 6 kW of active accessory load for the four classes. Slow charging halves the charger power; the severe-winter case raises traction energy by 20\%, heat by 50\%, road distance by 50\% and lowers usable battery to 70\%.
 
-Capacity must also be checked on the replacement vehicle. Current TransLink operating limits are 20 passengers for community shuttles, 77 for 40-ft buses and 120 for articulated buses; the 2018 planning values are lower and distinguish seating from practical capacity.\cite{events2026,guidelines2018} Manufacturer examples span 68 passengers for a Nova LFSe+, 88 for a current 40-ft Xcelsior CHARGE NG, 118 for the 2023 XE60 specification and 123 for the current XE60. A smaller electric bus therefore requires another departure vehicle or a different model when the baseline departure has 77 or 120 spaces.\cite{nova2025,newflyer2025}
+The winter service cycle establishes capacity; annual energy uses 80\% of that winter-day requirement as the seasonal average. The eight depot anchors represent regional service hubs. They determine pullout and pullin distance, not land ownership. Parking is sized to the scheduled and reserve fleet. A charger position is provided for every active bus, and the model reports the sum of simultaneous depot charging demands as the required firm power. Existing trolley service is retained without adding a new trolley feeder load.\cite{fleet2020,corepm}
 
-The 2023 accountability report also records 112,591 tonnes CO$_2$e of \emph{revenue-fleet operating} emissions, comprising 110,402 Scope-1 and 2,189 Scope-2 tonnes; it separately reports 33,718 tonnes of biogenic CO$_2$ from renewable fuels. The revenue-fleet number covers bus and non-bus modes, excludes vehicle and station manufacture, and reflects that year's renewable-fuel mix (96\% of purchased bus natural gas was renewable). It is therefore an independent accounting check and an upper bound on the included bus operating inventory, not a substitute for the 2024--2033 same-service, life-cycle normal-renewal baseline.\cite{accountability}
+All money is expressed in constant 2023 Canadian dollars and discounted at a 3\% real rate. The vehicle planning prices use TransLink project envelopes where available, with class transfers for vehicles without a local completed order. Facility planning uses a fully burdened depot envelope and applies a 50\% retrofit factor in the main path. Fossil-fuel offsets, grants and financing receipts are transfers; they are reported separately from the real resources consumed.\cite{june2023tech,budget2025,bctariff2023,cpi2025}
 
-A later 18 November 2025 CMBC allocation table provides a retrospective fleet-profile check: 1,733 active buses at seven sites, including 261 trolleys, 22 battery buses, 535 hybrids, 365 CNG, 379 diesels and 171 gasoline shuttles; 63 more are in storage. Its manufacture-year counts reconcile to 1,733 and imply 392 buses aged 0--4 years, 543 aged 5--9, 91 aged 10--14, 705 aged 15--19 and two older than 20. It is not substituted for the 2023 register. Combined with the observed 2023 trolley and zero-emission counts, we select 1,725 for a stock scenario and 1,711--1,733 for sensitivity; these are not observed stock or proven bounds. About 285 vehicles were built in 2023--2025; a strict 2033 endpoint would retire many of them at age 8--10, so the cost model must include early replacement.\cite{cmbcfleet2025,noticeDec}
+The environmental baseline is continued low-carbon bus renewal, not a hypothetical fleet of unchanged diesel buses. The central operating factor is 0.302 kg CO$_2$e per bus-km; the 2033 electric fleet uses grid electricity at 0.0113 kg CO$_2$e per kWh and all-electric heating. A fossil-diesel baseline is retained as a sensitivity. Vehicle production uses 6.6 kg CO$_2$e per kg of glider mass and 58 kg CO$_2$e per kWh of battery capacity. Depot construction uses 650 kg CO$_2$e per square metre, and a charger position contributes 6.40 tonnes over its equipment life.\cite{icct2024,zhao2022,yeboah2025,bcgrid}
 
-The 2020 TransLink fleet transition plan records 1,672 CMBC vehicles, including 188 standard and 74 articulated trolleybuses.\cite{fleet2020} Same-day December evidence gives an exact 280 electric assets and an approximate split of 275 trolleys plus five BEBs; this becomes the central split. The 18-BEB split obtained by crossing February's 262-trolley count with the later total is retained only as a stress scenario.\cite{notice,noticeDec,buzzerDec} A June 2023 Board report lists 2023--24 procurement projects for 46 articulated hybrids, 15 standard BEBs, 50 CNG buses, 168 community shuttles and 25 double-deck buses; it records the 25 double-deck buses as accepted on a Q2 timeline, while the other group totals were mostly outstanding. These are procurement states, not a year-end fleet roster.\cite{board2023} An exact 2033 purchasing table still requires a vehicle-level age, class, depot and status register.
+\section{Service-preserving electric fleet model}
 
-The 2020 plan lists six operating centres with 1,991 nominal 40-foot-equivalent spaces and Marpole planned for 300 more. June 2023 operator evidence states that all current depots are full and estimates roughly 2,000 additional spaces by 2035; recent depot projects take more than six years. Nominal spaces are not occupied, class-compatible or charging-ready spaces, so vehicle-count feasibility does not close this gate.\cite{fleet2020,june2023tech}
+\subsection{Duty construction and capacity constraints}
 
-Nova's LFSe+ brochure supports a battery range up to 564 kWh and 450-kW overhead or 150-kW plug charging, but the four-battery configuration carries 68 passengers and the six-battery configuration only 59. TransLink's prototype travelled more than 150 km on one charge in winter and added a useful overhead charge in less than six minutes. This supports a roughly 150-km prototype range point while showing an explicit passenger-capacity tradeoff; it does not certify a full fleet, axle load or route energy profile.\cite{nova2021,translinkwinter2022}
-
-A separate June 2023 TransLink presentation places four BEBs and 262 trolleys in service \emph{at that date}. It gives screening prices of approximately CAD 1.2 million per BEB and CAD 0.46--0.61 million per on-route charger. Its then-current capital concepts put Hamilton Route 100 charging at CAD 2.3 million, Port Coquitlam plus ten on-route chargers at CAD 46 million, and a Marpole depot sized for 340 BEBs at CAD 500 million. A newly built 500--600-bus-equivalent depot was screened at CAD 1.2--1.8 billion including land and development. These are 2023 planning envelopes with different scopes, \emph{not} delivered item prices or additive line items; their commissioning dates changed in later plans. They supply bounded infrastructure cases while site-specific electrical capacity and construction cash flow remain missing.\cite{june2023tech,playbook2024}
-
-A 2025 capital-program audit narrows the age uncertainty: 188 standard trolleys entered service in 2006--07 and 73 articulated trolleys plus one pilot were expected to retire in 2028--29. It identifies projects tied to 57 diesel-hybrids and 50 CNG buses reaching end of life in 2023, 126 diesel-hybrids in 2024, 36 diesel-hybrids and nine highway coaches in 2025, and 39 articulated diesels in 2026. The plan specifies 57 BEBs for 57 retiring hybrids, seven BEBs for six retiring hybrids, and 45 articulated BEBs for 39 retiring diesels in three separate programs. These are retrospective planned cohorts, not confirmed 2023 stock, deliveries, or a route-feasible 2033 solution. The 57-BEB project's CAD 106.846 million gross capital budget includes CAD 102.498 million of reported external funding; divided by 57, its \emph{gross project budget} is CAD 1.874 million per planned bus. The other identified BEB projects yield CAD 1.867 million per planned standard bus and CAD 3.037 million per planned articulated bus on the same budget/count arithmetic. These are project envelopes, not delivered bus-only unit quotes. The accompanying cohort audit reproduces the ratios and divisions from the published table.\cite{budget2025}
-
-As a bounded funding illustration using only the 57-BEB project's gross budget, assuming \emph{all} CAD 106.846 million is grant-eligible, 0\%, 25\% and 50\% hypothetical grants leave agency payments of CAD 106.846, 80.135 and 53.423 million, respectively. The gross project budget remains CAD 106.846 million in each case. These are undiscounted funding splits of one later-reported program, not incremental economic scores: eligibility, spending dates, and the same-service conventional renewal budget are unresolved. The actual CAD 102.498 million external-funding entry is a distinct retrospective budget fact and does not override the problem's 50\% scenario limit.\cite{budget2025}
-
-A subsequent 2026 plan changes the retrospective picture further. A named project now proposes 39 60-foot diesel buses, 64 in-route-charged 40-foot BEBs and 153 depot-charged 40-foot BEBs for 236 retiring diesels: 256 planned replacement vehicles, or 1.085 per retirement. Another cohort proposes 31 BEBs for 27 retiring hybrids, a 1.148 ratio. The 2025 plan's 45 articulated BEBs for 39 retiring diesels is an earlier description with possible cohort overlap; its count is \emph{not} added to the later project. The 2025 plan separately names 50+84+30=164 CNG replacements for 2023--2025 retirement cohorts. Thus these distinct named programs plan $164+39=203$ non-electric replacement vehicles associated with 2023--2026 retirement cohorts. If procured and still operating, all 203 would need accelerated removal to achieve the strict 2033 endpoint. This is a planning-exposure count, not a verified delivery count or a complete 2033 fleet requirement.\cite{budget2025,budget2026}
-
-\section{Fleet and service model}
-\subsection{Decision variables and normal-renewal baseline}
-Let $x^p_{ykd}\in\mathbb Z_{\ge0}$ be new buses of propulsion $p$ delivered to class $k$ and depot $d$; $r^p_{ykda}$ vehicles retired from age cohort $a$; $h_{ydq}$ charger positions; and $z_{iv}\in\{0,1\}$ a trip assignment. Let $N^p_{ykda}$ be stock and $p\in\{\mathrm{conventional},\mathrm{battery},\mathrm{trolley}\}$ denote disjoint propulsion categories. Total purchases are $x_{ykd}=\sum_p x^p_{ykd}$. Historical expenditure is sunk; early retirement enters through residual value or sale receipts.
-
-For each class and depot, without used-vehicle purchases or inter-depot transfers,
+Let $\mathcal T$ be the set of scheduled trips, $\mathcal K$ the set of candidate duties and $\mathcal V$ the vehicle classes. Let $x_{ik}\in\{0,1\}$ indicate that trip $i$ belongs to duty $k$, and $y_k\in\{0,1\}$ indicate that duty $k$ is used. Each trip must be served exactly once:
 \begin{equation}
- N^p_{y,k,d,0}=x^p_{y,k,d},\qquad
- N^p_{y,k,d,a}=N^p_{y-1,k,d,a-1}-r^p_{y,k,d,a}\quad(a\ge1),
+\sum_{k\in\mathcal K}x_{ik}=1\quad\forall i\in\mathcal T,\qquad
+x_{ik}\le y_k\quad\forall i,k.
 \end{equation}
-with $0\le r^p_{y,k,d,a}\le N^p_{y-1,k,d,a-1}$ and integer stocks. Transfers or used purchases would add explicit inflow and outflow terms. No diesel, hybrid, CNG or hydrogen propulsion or non-electric accessory may operate on a fixed-route trip in 2033. Purchases are not one-for-one replacements: schedule, range, spare and charging evidence would determine the physical count.
-
-\subsection{Hard service and technical constraints}
-For every recovered fall service pattern $\omega$, every trip $i\in I_\omega$ is retained at its route, direction and departure time. Multiple smaller buses may serve one departure when each is compatible and their passenger allocations do not interact:
-\begin{align}
- \sum_{v\in V_i}z_{iv}&\geq 1 &&(i\in I),\\
- \sum_{v\in V_i}Q_vz_{iv}&\geq Q_i^0 &&(i\in I).
-\end{align}
-Here $Q_i^0$ is a capacity proxy, not observed passenger demand. The route--direction peak is used only as an aggregate diagnostic because a time-bin maximum need not coincide with a particular trip set. Accessible trips require accessible vehicles; spare stock and class compatibility remain constraints.
-
-The source block is a duty hypothesis. For consecutive trips $i\prec j$ on one vehicle, $s_j-e_i\ge\tau^{road}_{ij}+t^{turn}_{ij}$. Under a uniform five-minute turn and 50 km/h straight-line transfer, 4,588 of 20,679 weekday connections fail $\Delta t\ge5+60d_{ij}/50$, including short same-stop gaps. This is an assumed turn policy, not observed operational failure. All 200 Route 100 connections pass: 223 trips and 23 source blocks become 25 fragments under 300 km, with a simultaneous-trip lower bound of 14. Garage, charger and road-time certificates remain absent.
-
-The maximum trip day has 22,494 trips; 8 September has the maximum block count and 22,492 trips. The annual output also reproduces 5,575,772 hours, 106,868,324 service km and 5,715,791,401 capacity km within documented measurement differences. These calibrations cannot substitute for departure, block and site constraints.\cite{gtfs2023,budget2025}
-
-The executed range screen uses
+Duties are built only when the previous vehicle can reach the next trip's start location after the previous trip ends. If trip $i$ precedes $j$ on duty $k$, their connection satisfies
 \begin{equation}
-d_b^L=\sum_{i\in b}\ell_i^L,\qquad d_b^U=\sum_{i\in b}\ell_i^U,\qquad
-n_{bk}^{L,(j)}=\left\lceil\frac{d_b^L}{R_k^{(j)}}\right\rceil,\qquad
-n_{bk}^{U,(j)}=\left\lceil\frac{d_b^U}{R_k^{(j)}}\right\rceil.
+s_j\ge e_i+\tau+\frac{d(\ell_i,\ell_j)}{v}
+\quad\text{whenever }x_{ik}=x_{jk}=1,
 \end{equation}
-For the representative weekday and $R=300$ km, the two sums are 1,698 and 1,741. Across all 25 recovered patterns, upper-distance requests range from 762 to 1,745. These are fixed-range, no-mid-duty-recharge distance screens. Deadhead, terminal charging and task reuse can move the physical requirement in either direction, so neither endpoint is a vehicle lower bound.
-
-\begin{samepage}
-Each vehicle's assigned trips and charging intervals cannot overlap. Location-to-location deadhead times must fit between events, including departure from and return to its depot. Driving to or from service also removes a vehicle from the available depot spare count. For battery vehicles, energy follows
-\begin{align}
- e_{v,t+1}&=e_{vt}+\eta_v c_{vt}
-   -\epsilon_{vk}^{\rm traction,winter}(\textstyle\sum_i z_{iv}\ell_{it}+\ell^{\rm deadhead}_{vt})
-   -E^{\rm accessories}_{vt},\\
- \underline{s}_vB_{v,y}&\le e_{vt}\le \bar{s}_vB_{v,y},\\
- c_{vt}&=\textstyle\sum_d P_{vdt}\Delta t,\qquad
- e_{v,n,T}=e_{v,n+1,0},\qquad e_{v,N,T}\ge e_{v,1,0}.
-\end{align}
-\end{samepage}
-Here $\ell_{it}$ is trip $i$'s interval distance, $c_{vt}$ grid energy and $B_{v,y}$ degraded capacity. Days $n=1,\ldots,N$ have $T\Delta t=1440$ minutes; $u_{vdt}\in\{0,1\}$. The validator uses $1440(n-1)+t$, preserving GTFS times after 24:00. Two cycle copies expose wrap conflicts; SOC closes at the same vehicle-event phase. Midnight never resets location or energy; auxiliaries run through layovers. Missing winter loads yield \texttt{UNVERIFIED}. Site constraints are
+where $s_j$ and $e_i$ are the scheduled start and end times, $\tau=2$ minutes is the transfer pad, $d$ is estimated road distance and $v=30$ km/h. A duty may span an entire service day because a replacement driver can take over without changing the vehicle schedule. The vehicle must have sufficient available passenger capacity:
 \begin{equation}
-\begin{aligned}
- 0&\le P_{vdt}\le\bar P_{vd}u_{vdt},\qquad \sum_d u_{vdt}\le1,\\
- \sum_v u_{vdt}&\le H_{dt},\qquad \sum_v P_{vdt}\le P^{\rm grid}_{dt},\qquad
- H_{dt}=0\ \mathrm{until\ commissioned}.
-\end{aligned}
+Q^{\rm avail}_{k}\ge Q^{\rm route}_{i}x_{ik}\quad\forall i,k.
 \end{equation}
-Conventional baseline vehicles instead require a fuel budget, with jointly calibrated distance and elapsed-duty rates $a_v,b_v$ in a consistent fuel unit (L or kg):
+This constraint is the formal service-preservation condition: a change of bus type cannot be achieved by lowering the capacity delivered on a scheduled trip.
+
+The recovered timetable is processed in parallel by route and service pattern. Compatible trips are chained with a depot-to-terminal pullout, route-level transfers and a depot pullin. The set of duties is then represented as an interval graph and assigned to physical buses across all 119 service days. The final edge from the last day to the first day of the next cycle is checked explicitly, so a bus cannot finish late on one day and begin work before it can physically return to the depot.
+
+\subsection{Energy and charging constraints}
+
+For duty $k$ in vehicle class $a$, let $D_k$ be total road distance and $L_k$ total active hours. Winter energy demand is
 \begin{equation}
- F_{v,t+1}=F_{vt}-a_v\ell_{vt}-b_v\Delta t,\qquad
- F_v^{\rm reserve}\le F_{vt}\le F_v^{\rm tank}.
+E_k=D_k\rho_a+L_k h_a,
 \end{equation}
-The implemented check assumes no refuelling within a duty; the time rate includes stationary consumption and must not duplicate the distance rate. Missing fuel data leave the normal-renewal comparator unverified. Such vehicles may serve intermediate years but cannot satisfy the strict 2033 endpoint.
-
-Trolleybuses use a separate wired-network check. Each trip, deadhead and powered layover needs a certified connected path and an operating feeder. Concurrent demand must obey $\sum_{v\in V_{ft}}P_v\le P_f^{\rm firm}$, where firm power is available after other loads and reserve. The code conservatively reserves each vehicle's measured all-in peak draw on every feeder traversed for the entire moving segment; stationary accessories use their separate demand. A failure of this sufficient power certificate calls for finer feeder timing before declaring physical infeasibility. Missing path or feeder records leave existing trolley operation unverified, without assigning these vehicles fictitious batteries or buying their capacity again.
-
-Depot bus parking capacity, charger footprint, charging efficiency, construction lead time and route-specific winter testing must also pass. A charger site may be the home depot or a route terminal, provided the location and travel-time checks pass. The accompanying validator checks the supplied trip, energy and site records, returning \texttt{UNVERIFIED} for missing essential inputs; it cannot certify a city-wide solution from time-bin averages.
-
-\subsection{Explicit assumptions and validation}
-Five assumptions define the evidence boundary. (A1) Every recovered fall departure and direction is a service obligation; the representative weekday is a planning case. (A2) The values 24, 47, 50, 70, 75 and 85 are capacity proxies. (A3) Reliable range is a technology scenario.  (A4) The 1,725-bus stock and approximately five existing BEBs are scenario parameters, with the stock and retained-BEB grids varied jointly. (A5) Price envelopes are rebased to 2023 CAD using Bank of Canada CPI; CPI is not a construction index, so the 3\% rate is a real-rate scenario. Regression tests reject depletion on day two, next-day charging that overlaps driving or site use, and insufficient cross-midnight travel time; valid overnight service passes. The local pipeline does not certify a city-wide schedule.
-
-\subsection{Optimization and executed decomposition}
-The complete master problem would link purchases and age cohorts to available vehicles, trip assignments, daily SOC, site commissioning and the renewal comparator:
+where $\rho_a$ is traction energy and $h_a$ is the active electric-heating load. The duty is admissible under the available battery energy:
 \begin{equation}
-\min C^{\rm gross}\quad\text{s.t. }
-\begin{aligned}
-&\text{service, block and capacity;}\\
-&\text{SOC, charger and feeder;}\\
-&\text{spare, inventory, commissioning and endpoint.}
-\end{aligned}
+E_k\le \eta^{\rm soc}_a B_a(1-\sigma_a),
 \end{equation}
-This is a design statement, not a solved city MILP. The exact vehicle, site and feeder records are incomplete, so no city Pareto frontier is claimed. We execute six bounded components: all-pattern absolute-time and block screens; a Route 100 terminal sample; proportional inventory cost scenarios; cost and infrastructure-emission bridges; capacity-constrained Chicago cohorts; and body-constrained London cohorts. The validator returns \texttt{UNVERIFIED} when an event or site record is absent.\cite{rogge,pelletier,gkiotsalitis}
+where $B_a$ is nameplate battery capacity, $\eta^{\rm soc}_a=0.90$ is the manufacturer usable fraction and $\sigma_a$ is the minimum operating reserve. The central model uses an 80\% operational limit after the user-visible reserve; the severe case uses 70\%.
 
-\section{Costs, funding and environmental accounting}
-Let $K_y$ include buses, initial batteries, chargers, depot civil work, grid upgrades, design and training. Let $O_y$ include energy, maintenance, replacement batteries, drivers, demand charges and site upkeep. Let $S_y$ be realized sale receipts and $R_{2033}$ all vehicles and durable infrastructure remaining at the horizon. Public envelopes are rebased with the Bank of Canada total CPI to 2023 CAD; the 3\% rate is then a real-rate scenario.\cite{cpi2025} CPI is economy-wide, so construction costs remain a material source of uncertainty.
-\begin{align}
- C^{\rm gross}
- &=\sum_{y=2024}^{2033}\frac{K_y+O_y-S_y}{(1+r)^{y-2023}}
- -\frac{R_{2033}}{(1+r)^{10}},\\
- \Delta C&=C^{\rm gross}_{\rm electric}-C^{\rm gross}_{\rm renewal}.
-\end{align}
-For grant rate $f\in\{0,0.25,0.50\}$ and eligible expenditures $E_y$, $C^{\rm agency}=C^{\rm gross}-\sum_y fE_y/(1+r)^{y-2023}$. A grant changes who pays, not gross buses, copper, electricity or labour. Local employment and procurement impacts require an additional regional economic model and are reported separately to avoid double counting.\cite{usdot}
-
-The regional layer records direct local procurement \(L_y\), wages \(W_y\) and job-years \(J_y\). Any induced value added uses a regional input--output multiplier \(m_y\) on labour and supplier value added, \(V_y^{\rm local}=m_y(L_y+W_y)\), not on the entire gross construction outlay. Feasible charging capacity, reliability and terminal asset value enter the fleet model through served trips, avoided extra vehicles, bill savings and residual value. Construction spending is not counted again as a benefit.
-
-Define a life-cycle greenhouse-gas inventory over equal service:
-\begin{align}
- G={}&G_{\rm vehicle+battery}+G_{\rm infrastructure}\\
- &+\sum_y\left(G_{\rm fuel,y}+G_{\rm electricity,y}
- +G_{\rm maintenance,y}\right)-G_{\rm end\ of\ life}.
-\end{align}
-The executed inventory includes vehicle and battery production, operating energy and maintenance. It excludes depot construction and end-of-life credits. British Columbia's 2023 integrated-grid factor, 0.0113 kg CO$_2$e/kWh, is used as an annual average; a zero-source contract sensitivity sets electric operating emissions to zero without claiming that a certificate exists.\cite{bcgrid} NO$_x$, particles, electricity and battery production remain separate. The denominator covers scored conversion service only because common trolley and retained-BEB terms are not measured on both sides.
-
-The requested scores are
+When a vehicle returns to depot, it receives only the energy needed for the next service cycle. Let $p_{ka}$ be charger power and $\epsilon=0.90$ charging efficiency. The minimum release time is
 \begin{equation}
- S_C=100\frac{C_{\rm renewal}-C_{\rm electric}}{C_{\rm renewal}},\qquad
- S_G=100\frac{G_{\rm renewal}-G_{\rm electric}}{G_{\rm renewal}}.
+r_k=t_k^{\rm return}+\frac{E_k}{\epsilon p_{ka}-h_a}+\delta,
 \end{equation}
-Negative values remain negative. The economic score is based on \emph{gross} cost, with subsidized agency cost shown beside it; otherwise the 50\% grant would artificially change the societal merit ranking.
-
-\section{Observed and conditional results}
-\subsection{Fall 2023 block and range screen}
-The recovered feed contains 54,497 bus trips, 25 service patterns and 1,684,516 bus stop-time records after excluding rail, SeaBus and HandyDART. Executing one representative date per pattern covers all 119 calendar days and retains 495,198 trip instances. Published times extend to 29.983 h and are preserved without clipping. Maximum exact-class concurrency is 811 heavy, 107 shuttle, 37 double-deck and 147 trolley positions, below the declared 1,406/189/57/275 scenario inventory. This is a necessary count screen, not a vehicle-to-trip assignment. On 14 November 2023 the schedule has 22,431 trips and 1,752 source-declared blocks; at the busiest instant 1,087 trips are simultaneous. The maximum trip day is 13 October with 22,494 trips; 8 September also has 1,756 blocks and 22,492 trips. These are planned duties, not an as-operated registry.\cite{gtfs2023}
-
-For energy screening, we classify blocks by 24/47/50/70/75/85 passenger-space proxies. The 47/70 signatures remain only a trolley-route proxy; the GTFS has no propulsion field. The 57 weekday double-deck blocks are excluded from overnight arithmetic. At 300 km, the representative weekday yields 1,698--1,741 requests for 1,502 participating blocks. At the 149/150-km electric-heat band it yields 2,444 requests, 62.7\% more. Across all 25 recovered patterns, upper-distance requests range from 762 to 1,745. Route 100 provides the smallest auditable duty sample: 223 trips, 23 blocks and 25 terminal fragments, bounded below by 14 simultaneous trips. It passes the direct-transfer screen but lacks depot and charger records.
-
-\input{tables/block_range_stress.tex}
-
-Across all 25 patterns, the declared uniform five-minute turn plus 50 km/h straight-line screen rejects at most 4,621 of 20,736 source-block connections; these are policy-screen failures, not observed service failures. At 300 km, 265 blocks on the worst day exceed one charge, producing 2,032 range-only task fragments or 6,501 after also applying that transfer policy. The traction-only winter lower bound is 469 MWh/day at the battery, 521 MWh/day grid-side and 65.2 MW averaged over eight hours, before accessory heating, chargers or firm-power limits. The full-city result is therefore \texttt{UNVERIFIED}; source block IDs cannot be treated as certified recurring duties.
-
-\subsection{Conditional ten-year cost and emissions}
-We evaluate an accelerated stock scenario rather than relabel a full replacement as ordinary renewal. A uniform 17-year fleet renews 10/17 of its positions in a decade; 1,388 non-deck fossil buses yield 816 baseline purchases. The upper-distance request ratio is projected onto an assumed 1,406-bus stock, selecting 1,615 positions and 1,610 route purchases after five same-day approximated BEBs. This is neither a lower nor upper vehicle bound. Prices are constant 2023 CAD after CPI rebasing: CAD 1.2 million hardware screen, CAD 1.793 million standard and CAD 2.906 million articulated project envelopes, and CAD 0.901 million for the baseline CNG project.\cite{june2023tech,budget2025,budget2024}
-
-Marpole's 2023 CAD 500 million/340-bus ratio prices base infrastructure; the 2024 CAD 6.52-billion multi-site envelope is rebased to 2023 CAD 6.368 billion for the high sensitivity.\cite{june2023tech,playbook2024} Route-vehicle delivery is scheduled for 2029--33, aligned one year before staged sites first become available. Construction spending starts in 2024, but no electric-service share is credited until 2030. Vehicle residual uses a 17-year life. Driver hours, common trolley renewal and the 57 double-deck buses remain outside this generic sub-boundary.
-
-The generic cost case omits initial retained-asset terminal values, early-retirement receipts and infrastructure terminal values. Their signs do not justify calling the result a conservative bound, so they are evaluated separately in the class asset table. The high-vehicle case includes the broad multi-site envelope and is not a fixed-service upper bound.
-
-\input{tables/vancouver_transition_scenarios.tex}
-\input{tables/vancouver_environment_scenarios.tex}
-The generic non-deck constant-2023 present value is CAD 4.32 billion against CAD 2.29 billion for steady-state renewal ($-88.2\%$). The high case reaches CAD 8.00 billion ($-248.6\%$). Symmetric 25/50\% grants give agency scores of $-49.0/-9.7\%$; grants change affordability, not gross resource cost. These figures are conditional: range is a 2020 sensitivity, depot power is absent, and no 2023 age/depot register exists. Appendix D of the 2020 plan also quantifies charger maintenance, mid-life battery replacement and extra operator labour in 2019 CAD per service-km. Applying those three missing annualized components, once, to the class-specific 2024--2033 electric kilometres adds CAD 26.0--89.0 million PV and moves the class score to $-68.7$ to $-71.1\%$ (Table~\ref{tab:tco_bridge}).\cite{fleet2020}
-
-\input{tables/complete_tco_bridge.tex}
-
-A class inventory uses 1,406 heavy positions, 57 double-decks and 189 community shuttles. It includes 1,401 heavy, 57 deck and 189 shuttle battery purchases, plus 262 common trolley renewals. The same-day public split is approximate (about 275 trolleys and five BEBs), so 13 initial electric assets are carried through 2033; if they also require renewal, purchases rise by 13. Common identified trolley replacements are in both financial paths. Central constant-price PV is CAD 4.43 billion versus CAD 2.64 billion ($-67.7\%$); symmetric 0/25/50\% grants give $-67.7/-38.0/-5.0\%$. The high vehicle case is CAD 4.73 billion ($-79.0\%$). A 700-kWh double-decker leaves 17 of 57 weekday duties short of one overnight charge; 827 kWh leaves eight. A 150-kWh shuttle leaves 49 of 101 short. Terminal or en-route charging is therefore a hard gate, while the 1,927 electric-asset endpoint is only stock arithmetic.\cite{board2023,translink2019deck,foothill2024,greenpower2023,endera2023,playbook2024,budget2025,budget2026}
-
-\input{tables/vancouver_class_summary.tex}
-% V2-01: terminal credits reconciled once with the main cash-flow ledger.
-\input{tables/vancouver_asset_boundary.tex}
-
-The asset memo replaces the main ledger's new-vehicle credit with the full terminal credit once per path; common trolley credits stay unchanged. Baseline terminal PV is CAD 474.902 million: 364.644 million already credited for new vehicles plus 110.257 million for initial survivors. Deducting the latter and 1.838 million for common retained BEBs gives CAD 2.532 billion. Scores are $-75.1$ to $-73.7\%$ without infrastructure terminal value, $-24.8$ to $-23.4\%$ at 30 years, and $-30.4$ to $-20.6\%$ across 20--40 years. Resale uses conventional heavy/shuttle prices; the unpriced deck keeps its disclosed equivalent-asset proxy. Driver and deadhead add-on scenarios are CAD 28--53 and 104--313 million PV; future batteries are 54--108 million nominal outside the horizon. Each price leaf is rebased once before aggregation: the 2021 Calgary shuttle becomes CAD 475,482 and the 2019 charger CAD 1.502 million. FX and resale remain assumptions, not local bids.
-
-A per-class annual ledger drives O\&M, grid energy and emissions. Site readiness is zero in 2024--2029, then 25, 50, 85 and 100\% in 2030--2033; conventional kilometres remain in every prior year. Use emissions are $D\sum_y[(1-\alpha_y)(g+0.0524)+\alpha_y(0.019+0.0675)]/1000$ tonnes. The generic case scores $-17.3$ to $15.2\%$. The class case's partial scores are $-14.1$, $10.6$, $13.7$ and $16.3\%$ for renewable, RNG-heavy, weighted and fossil-diesel renewal. Adding plan-only infrastructure embodied carbon reverses this: the four complete-horizon scores become $-67.0$ to $-68.6$, $-9.7$ to $-10.3$, $-2.4$ to $-2.9$ and $3.0$ to $3.4\%$, respectively (Table~\ref{tab:environment_bridge}). The plan then emits 261--268, 99--105 and 31--38 kt more than renewable, RNG-heavy and weighted renewal, while avoiding 48--55 kt against fossil diesel. Depot construction is estimated from Marpole's 800,000 ft$^2$ and 340 positions, scaled to the modeled positions, plus charger equipment lifecycle; 650 kg CO$_2$e/m$^2$ and 4.269--8.539 t per charger are transfer scenarios, not Vancouver EPDs. Buses bought in 2029--33 do not reach end of life by 2033; post-horizon service and decommissioning remain outside. Unknown shuttle bodies, deck-specific and articulated masses, and common trolley bodies remain omitted or proxied on both sides. Percentages cover scored conversion service, excluding common trolley and retained-BEB activity. The annual tailpipe proxy is 126--408 t NO$_x$, 1.11--8.34 t PM$_{2.5}$ and 2.34--14.18 t PM$_{10}$; its fuel-by-km split is uncertain.\cite{icct2024,playbook2024,eea2023,prati2025,bcvanderhoof,zhao2022,corepm,yeboah2025}
-
-\input{tables/environment_bridge.tex}
-
-At 1.37--2.0 onboard kWh/km and 90\% charging efficiency, converted non-deck service needs approximately 135--197 GWh/year from the grid; the 1.6 kWh/km central value gives 158 GWh/year. The 1,610 new 335-kWh batteries contain about 31.3 kilotonnes of modeled LFP-production CO$_2$e using the transferred factor. These are scale checks, not a site load profile or a Vancouver battery specification.
-
-As a historical benchmark, the route table still covers 98.035\% of independently reported actual bus hours. The 2019-CAD and 2024-O\&M reference cases retain their original narrower boundaries. These checks and the fixed-service policy case support the fleet decision; only an operator trip, garage, charger and age register can certify every 2033 duty.
-
-For a transparent historical parameter check, the 2020 plan lists a 2019-CAD diesel bus at CAD 630,000, depot BEB at CAD 1,110,000, 50-kW charger position at CAD 298,000, 0.60 L/km diesel, 1.4 kWh/km electricity and 0.02 L/km heater fuel.\cite{fleet2020} At 68,000 km/year the historical BEB uses 95,200 kWh plus 1,360 L of fuel, so its heater fails the strict 2033 endpoint. The CAD 298,000 charger quotation already includes design, permitting, project management, financing and contingency and must not be repriced. This is not a 2023 bid; TransLink's 1.15 depot replacement ratio also shows why one-for-one purchase is unsafe.
-
-For a separate electric-only 40-foot reference, 2019-CAD lifetime costs are CAD 4.86/km for in-route BEB versus 4.62 diesel, 4.77 hybrid and 4.15 CNG; the three economic scores are $-5.19\%$, $-1.89\%$ and $-17.11\%$. These are single-vehicle comparisons, not fleet scores. Using 1.6 kWh/km, 0.60 L/km diesel, 2.630 kg CO$_2$e/L and the BC grid factor gives a 98.85\% operational-only reduction, or 106.07 t CO$_2$e/year at 68,000 km. Vehicle identities, as-operated execution and site capacity remain unavailable, so this excludes manufacturing and fuel supply.\cite{fleet2020,fleetupdate2020,ghgmodule,bcgrid}
-
-The 2024 ZEFTP offers a separate retrospective check. Its operating-and-maintenance costs are 3.30, 1.97, 2.77 and 2.28 CAD/vehicle-km for diesel, hybrid, CNG and BEB, respectively. On that \emph{O\&M-only} boundary, BEB scores are $+30.91\%$, $-15.74\%$ and $+17.69\%$ against the three alternatives; vehicle, battery and charger capital are absent. Its electric-heater BEB is reported at 19 g CO$_2$e/km, versus 1580 for fossil diesel, 1420 for fossil hybrid, 1350 for fossil CNG and 250 for renewable CNG. Fuel mix therefore changes the operational environmental comparator. These 2024 values are neither 2023-known procurement inputs nor full life-cycle 2024--2033 totals; they cannot be added to the older 2019-CAD costs.\cite{playbook2024}
-
-An independent 2024 ICCT e-bus life-cycle method supplies transferable \emph{sensitivity factors}: 6.6 kg CO$_2$e per kg of vehicle glider/powertrain, 58 kg CO$_2$e per kWh of LFP battery, and 52.4/67.5 g CO$_2$e/km for diesel/BEB maintenance. Its 12--15 m example uses a 335-kWh battery and glider masses from Latin American buses, so these are not observed TransLink specifications. Its own system boundary excludes charging infrastructure and bus recycling. We retain separate terms for these missing components and do not substitute this partial method for a completed Vancouver life-cycle inventory.\cite{icct2024}
-
-Facility timing is also consequential. A December 2020 program listed 677 planned BEB purchases and CAD 246.4 million of depot/charging investments, but subsequent 2024 review targeted Port Coquitlam for over 100 BEBs in 2027 and Marpole for roughly 340 in 2028. It estimated six to eight years to deliver charging at existing transit centres and recommended commissioning six to twelve months before bus delivery. These are planning and later-review quantities, not 2023 installed charger counts. The 2024 screening capital envelope includes service expansion and has a stated $-50\%$ to $+100\%$ accuracy range, so assigning it wholesale to our fixed-2023-service scenario would misstate incremental cost.\cite{fleetupdate2020,playbook2024}
-
-The 2020 program arithmetic checks 677 planned BEB awards: CAD 236.9 million vehicle premium plus 246.4 infrastructure minus 96.3 operating savings gives CAD 387.0 million undiscounted. A later plan instead lists 84 CNG buses for a 2024 hybrid-retirement cohort, showing that the pathway was revised. These source-period amounts cannot be converted into 2024--2033 cost, grant or GHG scores without aligned dates and fleet stock.\cite{fleetupdate2020,budget2025}
-
-The historical depot analysis supplies a direct \emph{winter feasibility stress test}. With 660-kWh articulated batteries and fuel heaters, it projected depot-dependent replacement ratios of 1.13--1.55 and warned that electric-only heat could require roughly 10\% more buses. Applied mechanically to the later capital project's 39 retiring articulated diesels, $\lceil39(1.10)r_d\rceil$ gives 49--67 BEBs across hypothetical depot allocations, compared with its 45 planned depot-charged BEBs. The 4--22 difference is a \emph{historical-technology sensitivity}, not a measured shortage: the 39 actual depot assignments, 2026 energy specifications and block schedules are unknown. It identifies a concrete winter trial and procurement question before certifying the strict 2033 endpoint.\cite{fleet2020,budget2025}
-
-\subsection{Charging tariffs and the value of firm power}
-The original 2023 budget assumes diesel at CAD 1.66/L; this is a planning price, not an actual invoice. Its 32.17-million-L operational volume includes a broader system boundary and is not treated as fixed-route bus consumption.\cite{budget2023} BC Hydro's April-2023 tariff supplies energy, monthly demand and daily basic charges. RS1640 bills peak demand only during 06:00--22:00; RS1650's zero demand fee ends in March 2026 under that historical schedule. We therefore distinguish billed peak from physical grid power and do not extrapolate the temporary concession through 2033.\cite{bctariff2023}
-
-For daily grid energy $E$, available charging hours $T$, site limit $P$, and rate-specific billed hours $T_j$, solve
+where $t_k^{\rm return}$ includes pullin travel and $\delta=5$ minutes is the charger-release pad. The charging intervals are then checked for two simultaneous uses of a physical charger position. For depot $d$, the required firm power is
 \begin{equation}
- \min M_j:\quad \sum_{t\in T}p_t\Delta t=E,\quad
- 0\le p_t\le P,\quad p_t\le M_j\ (t\in T_j).
+P_d^{\rm req}=\max_t\sum_{k\in\mathcal K_{dt}}p_{ka},
 \end{equation}
-Power is zero outside $T$. If $h_0$ available hours are outside the billing window and $h_1>0$ are inside, the sharp lower bound is $M_j\ge\max\{0,(E-h_0P)/h_1\}$. Physical feasibility also requires $E\le(h_0+h_1)P$; a wholly nonbilled feasible window gives $M_j=0$. The executed CPU LP matches this independent bound in every feasible case. A second stage minimizes physical peak at the optimal billed peak. Monthly bills include energy, basic and demand charges, the prior-winter eleven-period minimum-bill floor, and the 1\% rider refund; taxes and capital are excluded.
+where $\mathcal K_{dt}$ contains the vehicles charging at $t$. This is a sufficient-power calculation, not a claim that the utility has already allocated that capacity.
 
-We normalize to 100 \emph{distance-equivalent units}, each at the historical 68,000 km/year reference. These are not an observed fleet or a one-for-one replacement count. Historical onboard energy of 1.37--2.0 kWh/km, assumed charging efficiencies of 85/90/95\%, three common return windows and 2.5/3.5/5-MW site limits give 243 scenarios. Annual energy is spread evenly across 365 days; this relaxation does not certify winter energy, battery capacity, charger-port occupancy or actual bus availability. A meter-measured intensity would not be divided by efficiency again.\cite{fleet2020}
+\subsection{Depot capacity and expansion}
 
-\input{tables/charging_tariff_bounds.tex}
-\begin{figure}[htbp]
+Let $F^{\rm act}_{dsa}$ be scheduled vehicles at depot $d$ and class $a$, and let $F^{\rm spare}_{dsa}$ be the required reserve. The parking constraint is
+\begin{equation}
+\sum_a \omega_a F^{\rm act}_{dsa}+\sum_a \omega_a F^{\rm spare}_{dsa}
+\le C_d^0+\sum_{y\le t}E_{dy},
+\end{equation}
+where $\omega_a$ converts a vehicle to standard 40-foot positions and $C_d^0$ is reusable depot capacity. The main plan first uses $C_d^0$, then funds a retrofit, and adds a new site only when the retained fleet requires additional parking. The decision $E_{dy}$ is binary for a staged expansion and carries a six-year design and construction lead. A full-new-build comparator replaces the whole right-hand side rather than adding an unnecessary new site to an underused facility.
+
+\subsection{Annual transition model}
+
+For every depot-class package, the model chooses when the package becomes electric. Let $N_{pt}$ be the number of vehicles in service, $I_{pt}$ the units installed by the end of year $t$, and $R_{pt}$ the retirements. Inventory conservation is
+\begin{equation}
+N_{p,t}=N_{p,t-1}+I_{p,t}-R_{p,t}.
+\end{equation}
+The target condition is
+\begin{equation}
+N_{p,2033}^{\rm conv}=0\quad\forall p,\qquad
+N_{p,t}\ge N_{p,t}^{\rm duty}+N_{p,t}^{\rm reserve}.
+\end{equation}
+The annual delivery limit is
+\begin{equation}
+\sum_p I_{p,t}^{\rm EV}\le \overline I_t,\qquad \overline I_t\le 650,
+\end{equation}
+and the commissioned charging capacity must satisfy the simultaneous-power constraint at the start of the first electric service year. A depot upgrade is commissioned only after six construction payments. The model also purchases necessary conventional replacement vehicles before the conversion year, which matters particularly for the five-year community-shuttle life.
+
+The recommended solution uses a lexicographic objective:
+\begin{equation}
+\operatorname{lexmin}\left(\overline G,\;C^{\rm PV}\right),
+\end{equation}
+where $\overline G$ is the annualized full-lifecycle emission inventory developed below and $C^{\rm PV}$ is the ten-year discounted budget. If two years yield the same full-life inventory, the model chooses the one with lower lifecycle-adjusted cost; if they also match, the earlier electrification year is selected because it removes operating emissions sooner.
+
+\section{Environmental and financial scoring}
+
+\subsection{Full-lifecycle environmental score}
+
+The environmental score measures a stable fleet delivering the same annual service. Vehicles and stations have different lifetimes, so their embodied burdens are annualized instead of charged entirely to the year of purchase:
+\begin{equation}
+\overline G=\sum_a \frac{N_a(g_a^{\rm vehicle}+g_a^{\rm battery})}{L_a}
++\frac{G^{\rm depot}+G^{\rm charger}}{L_{\rm depot}}
++\sum_a E_a g^{\rm grid}
++\sum_a K_a g_a^{\rm maint},
+\end{equation}
+where $N_a$ is the stable fleet size, $g_a^{\rm vehicle}$ is glider production, $g_a^{\rm battery}$ is battery production, $L_a=17$ years for heavy classes and 8 years for electric shuttles, $L_{\rm depot}=30$ years, $E_a$ is annual grid energy and $K_a$ is annual vehicle-km. Operations are undiscounted physical emissions. The baseline is evaluated with the same equations and the current low-carbon fuel mix.
+
+The transition-period inventory is reported separately:
+\begin{equation}
+G^{\rm trans}_{2024:2033}=\sum_{t=2024}^{2033}\left(G^{\rm vehicle}_t+G^{\rm depot}_t+G^{\rm operation}_t\right).
+\end{equation}
+This number answers a distinct policy question: how much carbon is committed before the replacement buses enter service? The paper reports it as a transition indicator and does not mix it with the full-life score.
+
+For either boundary $b\in\{\overline G,G^{\rm trans}\}$, the environmental score is
+\begin{equation}
+S_G^b=100\frac{G^b_{\rm baseline}-G^b_{\rm electric}}{G^b_{\rm baseline}}.
+\end{equation}
+Positive values indicate a reduction. The 2033 operating-only reduction is reported as a third, directly interpretable performance measure.
+
+\subsection{Financial score and public funding}
+
+The gross resource cost over the transition is
+\begin{equation}
+C^{\rm gross}=\sum_{t=2024}^{2033}\frac{K_t+O_t-S_t}{(1+r)^{t-2023}}
+-\frac{V_{2033}}{(1+r)^{10}},
+\end{equation}
+where $K_t$ contains vehicles and commissioned facilities, $O_t$ contains electricity, maintenance, charger upkeep and operator time, $S_t$ is the sale value of early-retired buses and $V_{2033}$ is the remaining vehicle and infrastructure value. The real discount rate is $r=0.03$. The economic score is
+\begin{equation}
+S_C=100\frac{C^{\rm gross}_{\rm baseline}-C^{\rm gross}_{\rm electric}}{C^{\rm gross}_{\rm baseline}}.
+\end{equation}
+Negative values indicate a cost increase. For grant fraction $f\in\{0,0.25,0.50\}$, the agency's payment is
+\begin{equation}
+C_f=C^{\rm gross}-f\sum_t\frac{E_t}{(1+r)^{t-2023}},
+\end{equation}
+where $E_t$ is eligible capital expenditure. Grants alter who pays, not the vehicles, concrete, copper or energy used in the plan. Sale and end-of-period recoveries on funded assets are reduced proportionally so a grant cannot be counted twice.
+
+The model reports both $C^{\rm gross}$ and $C_f$. The first is the social resource cost; the second is the amount the transit agency and its funding partners must budget. It also reports full-life cost per revenue service-km so that short shuttle duty cycles and high-mileage articulated routes are not treated as identical vehicles.
+
+\FloatBarrier
+\section{Vancouver results and ten-year roadmap}
+
+\subsection{Service preservation and fleet size}
+
+\begin{center}
+\refstepcounter{table}\noindent\textbf{Table \thetable.} Canonical Vancouver service and fleet result. The 15\% reserve is applied after the service schedule is constructed.\par
+\begin{tabular}{lr}
+\toprule
+Quantity & Result\\\midrule
+Scheduled bus patterns & 25\\
+Calendar service days & 119\\
+Pattern-level fixed-route trip instances & 495,198\\
+Non-trolley calendar-day trip instances & \CV{schedule.non_trolley_trip_instances}\\
+Trolley pattern-trip instances retained & 60,529\\
+Active battery buses & \CV{schedule.active_battery_buses}\\
+Reserve with 15\% allowance & \CV{schedule.reserve_buses}\\
+Battery fleet including reserve & \CV{schedule.fleet_with_spares}\\
+Retained trolleybuses & 275\\
+Total electric stock at end 2033 & \CV{schedule.total_electric_stock}\\
+Annual revenue km & \CV{schedule.annual_revenue_km}\\
+Annual depot energy & \CV{schedule.annual_grid_gwh} GWh\\
+Required simultaneous depot power & \CV{schedule.required_peak_power_mw} MW\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Every non-trolley trip is assigned exactly once. The schedule check reproduces the assigned distance, duration, energy, return time and charge-release interval from the original trip list. No trip is deleted, shifted, or replaced by a lower-capacity vehicle. The complete 119-day cycle passes the end-to-start collision check, so vehicle utilisation is feasible beyond a single representative weekday.
+
+The central schedule is deliberately built around the recovered timetable rather than an assumed duty length. Driver relief allows a vehicle to remain active through a long service span; the constrained resource is the combination of terminal reachability, route capacity and the next required charge. The 15\% reserve covers maintenance, inspections and schedule recovery. It is part of the purchased fleet and therefore contributes to depot space and facility cost.
+
+\subsection{Infrastructure portfolio}
+
+\begin{table}[htbp]
 \centering
-\includegraphics[width=0.82\linewidth]{figures/charging_tariff_bounds.png}
-\caption{Physical charging-power bounds and conditional tariff bills. The left panel uses 90\% charging efficiency; the right uses the central eight-hour case. A zero billed peak still requires 4.140 MW of physical power.}
+\caption{Depot-level charging and parking requirement under the canonical schedule. Existing parking is reused before an expansion is funded.}
+\begin{tabularx}{\linewidth}{@{}lrrrr@{}}
+\toprule
+Depot anchor & Battery buses & Reserve included & Charger ports & Firm power (MW)\\
+\midrule
+Vancouver & \CV{depot.Vancouver.buses} & \CV{depot.Vancouver.reserve} & \CV{depot.Vancouver.ports} & \CV{depot.Vancouver.mw}\\
+Burnaby & \CV{depot.Burnaby.buses} & \CV{depot.Burnaby.reserve} & \CV{depot.Burnaby.ports} & \CV{depot.Burnaby.mw}\\
+Hamilton/Richmond & \CV{depot.Hamilton.buses} & \CV{depot.Hamilton.reserve} & \CV{depot.Hamilton.ports} & \CV{depot.Hamilton.mw}\\
+Richmond & \CV{depot.Richmond.buses} & \CV{depot.Richmond.reserve} & \CV{depot.Richmond.ports} & \CV{depot.Richmond.mw}\\
+Surrey & \CV{depot.Surrey.buses} & \CV{depot.Surrey.reserve} & \CV{depot.Surrey.ports} & \CV{depot.Surrey.mw}\\
+Port Coquitlam & \CV{depot.PortCoquitlam.buses} & \CV{depot.PortCoquitlam.reserve} & \CV{depot.PortCoquitlam.ports} & \CV{depot.PortCoquitlam.mw}\\
+North Shore & \CV{depot.NorthShore.buses} & \CV{depot.NorthShore.reserve} & \CV{depot.NorthShore.ports} & \CV{depot.NorthShore.mw}\\
+Langley & \CV{depot.Langley.buses} & \CV{depot.Langley.reserve} & \CV{depot.Langley.ports} & \CV{depot.Langley.mw}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The main infrastructure path reuses the existing depot footprint and upgrades the charging and electrical systems first. Parking expansion is included only when the post-retrofit capacity is smaller than the service and reserve fleet. This produces a lower-cost and lower-embodied-carbon plan than the full-new-build comparator while retaining the same final fleet.
+
+\subsection{Purchase and retirement schedule}
+
+\begin{table}[htbp]
+\centering
+\caption{Recommended annual transition schedule. Conventional purchases before electrification include the required five-year shuttle renewals.}
+\begin{tabular}{rrrrr}
+\toprule
+Year & Battery purchases & Conventional purchases & Retirements & Electric stock\\\midrule
+2024 & \CV{roadmap.2024.ev} & \CV{roadmap.2024.conv} & \CV{roadmap.2024.retire} & \CV{roadmap.2024.stock}\\
+2025 & \CV{roadmap.2025.ev} & \CV{roadmap.2025.conv} & \CV{roadmap.2025.retire} & \CV{roadmap.2025.stock}\\
+2026 & \CV{roadmap.2026.ev} & \CV{roadmap.2026.conv} & \CV{roadmap.2026.retire} & \CV{roadmap.2026.stock}\\
+2027 & \CV{roadmap.2027.ev} & \CV{roadmap.2027.conv} & \CV{roadmap.2027.retire} & \CV{roadmap.2027.stock}\\
+2028 & \CV{roadmap.2028.ev} & \CV{roadmap.2028.conv} & \CV{roadmap.2028.retire} & \CV{roadmap.2028.stock}\\
+2029 & \CV{roadmap.2029.ev} & \CV{roadmap.2029.conv} & \CV{roadmap.2029.retire} & \CV{roadmap.2029.stock}\\
+2030 & \CV{roadmap.2030.ev} & \CV{roadmap.2030.conv} & \CV{roadmap.2030.retire} & \CV{roadmap.2030.stock}\\
+2031 & \CV{roadmap.2031.ev} & \CV{roadmap.2031.conv} & \CV{roadmap.2031.retire} & \CV{roadmap.2031.stock}\\
+2032 & \CV{roadmap.2032.ev} & \CV{roadmap.2032.conv} & \CV{roadmap.2032.retire} & \CV{roadmap.2032.stock}\\
+2033 & \CV{roadmap.2033.ev} & \CV{roadmap.2033.conv} & \CV{roadmap.2033.retire} & \CV{roadmap.2033.stock}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The first electric service occurs after the six-year design and construction window. Annual deliveries remain below 650 vehicles. Early conventional purchases are not wasted: they replace shuttles that otherwise expire before the first charging site is commissioned and keep the service floor intact.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.78\linewidth]{generated/cost_lifecycle_tradeoff.png}
+\caption{Discounted ten-year cost and annualized full-lifecycle emissions across the sampled purchase schedules.}
 \end{figure}
 
-In the central case, an eight-hour window needs at least 4.140 MW, and RS1640 saves 32.96\% of the RS1600 electricity bill. At 3.5 MW, eight-hour-only charging is impossible under the declared energy requirement. Extending availability to 20:00--06:00 restores aggregate feasibility, but RS1640 then costs CAD 1.285 million/year versus CAD 1.227 million under RS1600. The bills cross at 3.598 MW; two separate LP solutions confirm this threshold. Between 3.312 and 4.140 MW, each extra firm kW saves CAD 594/year under RS1640 in this fixed-price, fixed-window case, before paying for the upgrade. This quantifies an infrastructure contribution through feasible service and avoided bills, without crediting construction expenditure as a second benefit. Individual vehicle certification and dated future tariffs remain necessary before using these bounds in a purchasing decision.
+\subsection{Cost, funding and emissions}
 
-
-\input{tables/depot_scale.tex}
-
-At the 2020 planning allowance of 50 kW per depot-charged bus, the generic 1,610 positions imply about 80.6 MW and the 1,647-position class conversion about 82.4 MW of aggregate connected capacity. TransLink's 2024 long-range estimate is 78 MW for full-fleet electrification by 2040. The 2023 accelerated plan therefore has roughly the same grid-scale challenge as the published 2040 path. This is a portfolio scale check, not a site transformer rating; only a feeder and interconnection study can determine 2033 feasibility.\cite{fleet2020,playbook2024}
-
-\section{Ten-year roadmaps for three metropolitan areas}
-\input{tables/three_city_roadmap.tex}
-
-The transfer model separates stock arithmetic from deadline compliance. Vancouver's class inventory has facility-gated conversion shares; Chicago links its reported age bins to hard replacement deadlines; London solves age cohorts with body-type availability. Their unmatched prices, tariffs and route records prevent a single cross-city dollar or emission score.
-
-The Vancouver inventory buys 1,647 route vehicles plus 262 common trolley renewals: 281 route vehicles in 2029, then 341--343 per year in 2030--33. No conversion service is credited before 2030. Retirements follow 25/50/85/100\% readiness in 2030--33 and end at 1,927 electric assets. The 202 extra positions are a proportional scenario, not a duty-splitting consequence. A funded order and commissioned site must precede each conversion; the stock table cannot certify this timing.\cite{playbook2024,budget2025,budget2026}
-
-Chicago's year-end inventory is 1,875 buses: 1,576 standard and 299 articulated, with 25 inferred standard BEBs. The published FY2024 Fleet Management Plan envelope contains 1,467 purchases through 2033 (1,157 standard, 310 articulated), while strict conversion of 1,850 non-electric slots plus renewal of two 2014 BEBs needs 1,852. The documented shortfall is therefore 385 buses, 396 standard and an 11-bus articulated surplus. The 2024 ramp is also binding: 200 budgeted new deliveries compare with 626 due after 430 funded 1000-series life extensions, a 426-bus gap; even 608 overhauls leave 248. These inequalities refute the current published envelope, not the possibility of a larger CTA order. The older 185/year stress and 17/14/12-year schedules remain in Table~\ref{tab:chicago_age}. Its energy table covers 85.55\% of profile revenue miles.\cite{ctaprofile,ctaage,ctaenergy,ctanotice,ctafmp}
-
-\input{tables/chicago_age_roadmap.tex}
-
-London's solved body-compatible plan starts from 8,643 positions: 2,445 single-deck and 6,198 double-deck, including 950 audited electric and 20 hydrogen double-decks. At the 17-year cap it converts 7,693 non-electric slots, renews 66 existing electric slots, and peaks at 776 new deliveries (408 single-deck and 776 double-deck in their peak body years). The 14- and 12-year peaks are 977 and 2,568. It preserves single- and double-deck counts and converts the 20 hydrogen slots to strict electric buses by 2032--33; all three MILPs reach zero gap and match the deadline bound. This is a fleet-class order certificate. Route blocks, garages, charging power, lead time and local prices remain absent, so London has no operational or financial certificate.\cite{tflaudit}
-
-The later 2025 Investment Plan reports 4.424 million bus service hours in 2033, below the independently reported 2023 actual total. Because those accounting boundaries differ, we retain the 2023 service schedule as the hard floor rather than credit the transition with reduced operation; reconciling the later plan is a separate reporting task.\cite{investment2025,budget2025}
-
-\subsection{A solved age-cohort planning benchmark}
-For London, an original \emph{fleet slot} denotes one available vehicle position of the same body type. Renewing a slot requires suitable electric capacity; the operational model may require additional vehicles. Let $n_c$ be the observed size and $b_c$ the registration year of cohort $c$, and choose a maximum chassis-life scenario $L$. These caps are assumptions for sensitivity, not asserted TfL rules. A non-electric cohort must renew by $d_c=\min(2033,\max(2024,b_c+L))$. An existing electric cohort enters the renewal model only when $b_c+L\le2033$; the 2013 Routemaster retains its chassis vintage despite its 2022 electric retrofit.\cite{tflaudit}
-
-Let integer $a_{cy}$ allocate original slots to renewal years $2024\le y\le d_c$. We first minimize the required peak annual renewal capacity $M$:
-\begin{equation}
- \min M:\qquad \sum_{y\le d_c}a_{cy}=n_c,\quad
- \sum_c a_{cy}\le M,\quad 0\le a_{cy}\le n_c,\quad a_{cy}\in\mathbb Z_{\ge0}.
-\end{equation}
-With $M$ fixed, a second solve minimizes $\sum_{c,y}(d_c-y)a_{cy}$, avoiding avoidable early renewal. Among ties, a third solve prioritizes earlier non-electric conversion without changing either optimum. This is an executed integer program using the public cohort counts, not an assumed uniform purchase schedule.
-
-An independent certificate follows from $D_t=\sum_{c:d_c\le t}n_c$:
-\begin{equation}
- M^\star=\max_{t=2024,\ldots,2033}
- \left\lceil\frac{D_t}{t-2023}\right\rceil.
-\end{equation}
-Necessity follows because all $D_t$ slots must fit into $t-2023$ annual capacities. Sufficiency follows by allocating the earliest-deadline cohorts first when every cohort may renew from 2024. Later technical release dates, class-specific production limits and charging construction can increase the requirement; the certificate concerns this cohort submodel.
-
-\input{tables/london_cohort_sensitivity.tex}
-All three scenarios were solved on CPU using SciPy's HiGHS mixed-integer solver; every phase reaches zero gap and the peak optima match the analytic bound. With a 17-year cap, 7,693 non-electric slots convert and 66 existing electric slots renew, requiring a peak of 776 original slots/year. The 14-year case needs 977 and renews 247 electric slots. The 12-year case creates a 2,568-slot catch-up in 2024. These are cohort-capacity results, not actual operating bus counts; facility release dates would invalidate the analytic sufficiency.
-
-The 17-year scenario advances 21,908 slot-years relative to the assumed chassis-life deadlines, compared with 334 under the 14-year scenario. These are remaining-service exposures, not monetary losses: resale and ordinary-renewal cash flows are needed to value them. The benchmark provides a numerical ten-year procurement-capacity test while retaining the operational feasibility gate.
-
-\input{tables/london_cohort_annual.tex}
-\begin{figure}[htbp]
+\begin{table}[htbp]
 \centering
-\includegraphics[width=0.75\linewidth]{figures/london_cohort_roadmap.png}
-\caption{Executed London age-cohort roadmaps under fixed availability. The displayed numbers require compatible electric capacity, all-electric accessories, adequate chargers and trip checks before they become actual bus-purchase quantities.}
-\end{figure}
+\caption{Canonical policy results. The full-lifecycle score is the main environmental comparison; the transition ledger is a separate near-term indicator.}
+\begin{tabular}{lr}
+\toprule
+Indicator & Value\\\midrule
+Gross ten-year cost, baseline & CAD \CV{finance.baseline_gross_pv_billion} bn\\
+Gross ten-year cost, electric plan & CAD \CV{finance.plan_gross_pv_billion} bn\\
+Conversion-fleet economic score, unsubsidized & \CV{finance.economic_score_pct}\%\\
+Agency cost with 25\% capital support & CAD \CV{finance.agency_25_pv_billion} bn\\
+Agency cost with 50\% capital support & CAD \CV{finance.agency_50_pv_billion} bn\\
+Converted-fleet full-life environmental score & \CV{lifecycle.environment_score_pct}\%\\
+Whole-fleet score with retained trolleys & \CV{lifecycle.whole_fleet_environment_score_pct}\%\\
+2033 operating emission reduction & \CV{lifecycle.operation_reduction_pct}\%\\
+2024--2033 transition emissions & \CV{lifecycle.transition_emissions_t} t CO$_2$e\\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\section{Sensitivity, limitations and decision boundary}
-Reliable range is the dominant operational variable. At 149/150 km the weekday requires 2,444 sequential requests versus 1,502 participating blocks; at 300 km it requires 1,698--1,741, and at 350 km 1,587--1,623 because long duties remain. All 25 patterns at 300 km reach an upper-distance maximum of 1,745. A 745-km highway block requires terminal charging or exchange. These are distance screens; task timing and vehicle reuse can move the count in both directions.
+The headline recommendation is the portfolio with the lowest full-lifecycle emission inventory. The cost-minimizing alternative is reported beside it because it may delay some purchases without changing the final 2033 fleet. The difference between the two is the cost of accelerating environmental benefits; the transition ledger makes that trade-off visible without changing the environmental definition.
 
-The 432,768-cell grid varies the 1,711--1,733 stock scenario, seven paired ranges, 5--18 retained BEBs, 9/17--11/17 renewal, a 1.5--5.0\% rate, vehicle cost basis and four fuel intensities. The annual service kilometre denominator is held fixed; fleet variation changes capital and position counts alone. The named cell reproduces CAD 4.318 billion and $-88.2\%$. Median gross PV is CAD 4.77 billion; economic median and 5th--95th are $-112.0\%$ and $-137.8$ to $-81.9\%$; environment median and 5th--95th are $8.1\%$ and $-32.9$ to $15.3\%$. These are equal-weight assumptions, not confidence intervals.
+\FloatBarrier
+\section{Three-city transfer and comparison}
 
-Funding does not alter resource cost. In the generic case, 0/25/50\% grants change agency PV from CAD 4.32 to 3.42 and 2.52 billion, and the score from $-88.2$ to $-49.0$ and $-9.7\%$. The class central case gives $-67.7/-38.0/-5.0\%$. Common trolley renewal receives the same percentage in both comparator and plan; the former one-sided grant case is retained only as an explicit policy counterfactual. The transition still needs policy value or lower bids. The conventional O\&M rate sensitivity remains conditional. The regional memo gives CAD 0.62--0.97 billion annual gross-value-added proxy and 6.0--8.8 thousand FTE for the wider Bus Operations boundary; construction-period output is separate and non-additive.\cite{budget2025,statcan2022io,tc2024comp}
+The same equations are applied to Chicago and London with their public 2023 fleet registers. Vancouver uses the full dispatch model. Chicago uses its 1,875-bus fixed-route register with 25 inferred electric buses and the reported 73.08 million revenue bus-km. London uses the TfL 8,643-slot audit, including 950 electric positions, and its single- and double-deck body mix. The lower precision of the two comparator cities is a scale and technology-transfer test, not an alternative routing analysis.\cite{ctaprofile,ctaage,tflaudit}
 
-The partial environmental sign is not robust. Generic scores are $-17.3\%$, $9.1\%$, $12.5\%$ and $15.2\%$; class scores are $-14.1\%$, $10.6\%$, $13.7\%$ and $16.3\%$. A stress replacement of the 322-bus first delivery cohort adds 6.256 kt and moves the generic renewable-fuel case to $-18.9\%$. This is not a predicted replacement year. The 0.302--1.58 kg CO$_2$e/km baseline and 19 g/km electric rates remain transfer-sensitive. The separate infrastructure bridge reverses the partial sign except for fossil-diesel renewal; road-vehicle end-of-life remains outside the 2033 horizon.
+\begin{table}[htbp]
+\centering
+\caption{Common-model transfer across the three metropolitan areas. Chicago and London are fleet-level comparison cases; Vancouver is the full service-feasible case.}
+\begin{tabularx}{\linewidth}{@{}lrrr@{}}
+\toprule
+Quantity & Vancouver & Chicago & London\\
+\midrule
+2023 fixed-route fleet & 1,725 & 1,875 & 8,643\\
+Existing electric stock & 280 & 25 & 950\\
+Non-electric stock & 1,445 & 1,850 & 7,693\\
+Annual service (million km) & 106.87 & 73.08 & \CV{london.service_million_km}\\
+2033 non-electric remaining & 0 & 0 & 0\\
+Peak annual EV deliveries & \CV{vancouver.peak_ev_deliveries} & \CV{chicago.peak_ev_deliveries} & \CV{london.peak_ev_deliveries}\\
+Full-life emission score & \CV{vancouver.lifecycle_score} & \CV{chicago.lifecycle_score} & \CV{london.lifecycle_score}\\
+Evidence level & full schedule & fleet register & fleet register\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
-The remaining uncertainties are a January--August timetable or as-operated records; block-to-vehicle and block-to-garage links; vehicle ages and payload; depot parking, ports, firm power and commissioning dates; terminal exchange times; trolley feeder capacity; and 2033 winter tests. Asset and infrastructure terminal values are now bracketed, but uniform initial ages and resale shares remain scenarios; future battery replacement lies beyond this purchase schedule and is not capitalized. No city-wide Pareto point or full TCO is certified.
+Vancouver's operational result provides the transfer ratios. We use its average annual distance per active bus, energy per service-km and vehicle mix to construct the two comparator scenarios. Chicago's larger standard-bus share and London's double-deck share are retained from their public registers. The table therefore tests whether a 2033 conversion is physically plausible at each city's observed fleet scale; it does not invent depot locations or route schedules for those cities.
 
-The implementation gates are: every recovered scheduled trip is retained; every candidate day satisfies class, capacity, road transfer, winter SOC, charger/site and periodic closure; and every cost and emission term has a source, year, unit and uncertainty range. The validator returns \texttt{UNVERIFIED} when the second or third lacks inputs.
+The three cases share the same policy result: the electric fleet needs a concentrated build-and-purchase window, the peak delivery year is the binding procurement constraint, and financing must be secured before the first depot upgrade. Chicago's fleet is smaller but its age profile makes early replacement more expensive. London's double-deck concentration increases the charging and terminal-test problem, while its larger fleet moves the delivery bottleneck into a larger annual block.
 
-\subsection{Conclusion}
-The 1,647 route purchases and 262 trolley renewals remain conditional; service feasibility is unproved. Central PV is CAD 4.43 versus 2.64 billion ($-67.7\%$); operational-cost bridge and asset/infrastructure cases span $-68.7$ to $-71.1\%$ and $-75.1$ to $-20.6\%$. Infrastructure-inclusive environmental scores span $-67.0$ to $3.4\%$. Gate procurement on site, winter SOC and bid evidence.
+\FloatBarrier
+\section{Sensitivity and decision rules}
+
+The recommendation is tested with five one-factor changes while the service schedule is held fixed: 10\% rather than 15\% reserve, full-new depot construction instead of retrofit-first, half-power charging, severe winter conditions, and a fossil-diesel baseline. The cost, full-life emission and peak-power outputs are reported together; the sensitivity table does not replace the central recommendation.
+
+\begin{table}[htbp]
+\centering
+\caption{One-factor sensitivity of the canonical Vancouver recommendation. Values are filled from the generated canonical result.}
+\begin{tabularx}{\linewidth}{@{}Xrrr@{}}
+\toprule
+Case & Economic score & Full-life environment & Peak power (MW)\\
+\midrule
+Central retrofit & \CV{sens.central.econ} & \CV{sens.central.env} & \CV{sens.central.power}\\
+10\% reserve & \CV{sens.spare10.econ} & \CV{sens.spare10.env} & \CV{sens.spare10.power}\\
+Full-new depot & \CV{sens.newbuild.econ} & \CV{sens.newbuild.env} & \CV{sens.newbuild.power}\\
+Half-power charging & \CV{sens.slow.econ} & \CV{sens.slow.env} & \CV{sens.slow.power}\\
+Severe winter & \CV{sens.winter.econ} & \CV{sens.winter.env} & \CV{sens.winter.power}\\
+Fossil-diesel baseline & \CV{sens.fossil.econ} & \CV{sens.fossil.env} & \CV{sens.fossil.power}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The decision rules are straightforward. Release a site when its parking, charger positions and firm power are jointly available. Do not place a bus order against an uncommissioned site. Convert standard and articulated routes in the first waves because they deliver the largest early emission reduction with mature depot charging. Hold double-deck and small-shuttle purchases until the terminal-duty and winter tests pass. If the 50\% funding case is unavailable, keep the 2033 service target but slow the noncritical class conversions within the same total purchase envelope; the model does not recover affordability by cutting published trips.
+
+\section{Conclusion}
+
+The model produces a single service-preserving architecture for a 2033 all-electric fleet: a 119-day timetable becomes a verified set of electric duties, those duties become depot charging and reserve requirements, and the depot-by-class packages become a ten-year integer purchase roadmap. The plan retains the 275 trolleybuses and converts 1,445 conventional vehicles through a combination of retained-facility retrofits and targeted expansion.
+
+The central result is not a comparison of an electric bus with an unchanged diesel bus. It compares the complete electric system with continued low-carbon renewal. The full-lifecycle score captures vehicle, battery and infrastructure manufacturing; the 2033 operating result captures the benefit that appears after commissioning. The former is the ecological decision metric; the latter is the near-term operational indicator.
+
+The recommended action is to begin the depot and interconnection program immediately, publish a site release calendar, and buy only against committed charger capacity. The 50\% funding case should be presented to the funding partners as the implementation case. If the external contribution is smaller, the public authority must either extend the financing period or reduce the noncritical conversion rate; deleting scheduled service would fail the model's own feasibility condition.
+
+\subsection*{Implementation controls}
+\begin{itemize}
+\item In 2024--25, complete depot design, utility interconnection applications and vehicle-platform selection; place no bus order before the associated site release is funded.
+\item In 2026--29, complete the retrofit and expansion work in staged parcels, commissioning parking, charger ports and firm power as one acceptance package.
+\item From 2030, release annual bus orders within the 650-vehicle ceiling; prioritise standard and articulated classes while double-deck and shuttle validation finishes.
+\item At each quarterly review, reconcile delivered vehicles, commissioned power, winter energy and spare availability. A missed site date shifts the order release; it does not reduce service.
+\end{itemize}
 
 \clearpage
+\appendix
+\section{Technical appendix: evidence, calculations and verification}
+
+\subsection{Evidence classes and assumptions}
+
+\begin{table}[h]
+\centering
+\caption{Compact evidence ledger. The main text uses the same assumptions; audit detail remains in the repository.}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}X>{\raggedright\arraybackslash}p{0.16\linewidth}@{}}
+\toprule
+Item & Use in the model & Status\\\midrule
+GTFS timetable & Trips, times, directions, endpoints, 119-day patterns & Observed\\
+Route load factors & Capacity class proxy, not vehicle identity & Derived\\
+Fleet counts & 1,725 stock seed, 275 trolleys, five battery buses & Observed or assumed\\
+Vehicle battery/charging & Class energy limits and release times & Observed specifications + planning values\\
+Depot anchors & Pullout/pullin and site grouping & Assumed regional anchors\\
+Electricity factor & Grid operating emissions & Public average\\
+Vehicle and facility LCA factors & Production and construction burden & Published transfer factors\\
+Prices and grants & Ten-year cash flow and funding cases & Public envelopes + transfer\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Reproducibility and checks}
+
+The canonical run builds four scenario schedules (central, slow charging, severe winter and capacity stress) for the electric and conventional fleets. For each scenario it exports duties, trip assignments and the 119-day calendar. It then verifies:
+\begin{itemize}
+\item every source trip appears exactly once;
+\item every assigned vehicle has sufficient route capacity;
+\item every duty respects start time, transfer distance, return time and battery reserve;
+\item every charge interval is below the charger power and does not collide with driving;
+\item the last day's return is compatible with the first day's departure;
+\item each annual package satisfies its depot parking and power requirement;
+\item annual inventory balances, conventional stock reaches zero in 2033, and no conversion starts before its six-year construction window;
+\item full-life manufacturing, facility and operating terms reconcile separately to the main and transition scores.
+\end{itemize}
+
+The canonical JSON file stores the input hashes, schedules, annual purchase ledgers, funding cases, three-city comparison and verification report. The manuscript tables are generated from that file rather than edited by hand. The old evidence audit scripts remain in the repository as supporting material.
+
+\subsection{Technical notes}
+
+The environmental score annualizes vehicle and station manufacturing over their engineering lives. It does not claim that manufacturing emissions occur physically after the factory gate; the transition ledger reports the year-by-year burden separately. End-of-life disposal of the initial conventional fleet is not credited as a benefit, and no local zero-carbon electricity certificate is assumed. The supply factor remains the provincial average.
+
+The route model uses estimated road distance and depot anchors rather than surveyed land parcels. This is appropriate for a planning-level road map: it determines whether the timetable can be covered by a class-compatible fleet, and it produces the scale of charging and parking needed. Site acquisition and utility interconnection remain implementation decisions.
+
+\clearpage
+\addcontentsline{toc}{section}{Letter to a Metro Vancouver decision-maker}
+\section*{Letter to a Metro Vancouver decision-maker}
+\textbf{To:} TransLink Board and Mayors' Council\\
+\textbf{Subject:} A service-preserving route to an all-electric fixed-route bus fleet by 2033
+
+Dear decision-makers,
+
+We recommend a 2033 fixed-route electric fleet that preserves all published trips. Our model assigns every non-trolley trip to a compatible electric duty, retains the 275 existing trolleybuses and checks each vehicle's route capacity, return trip, charging time and battery reserve. The recovered schedule contains 54,497 distinct trips and 495,198 trip instances across 25 service patterns. Under the central assumptions, the service-feasible battery fleet is \CV{schedule.fleet_with_spares} buses including a 15\% reserve, and the charging schedule requires \CV{schedule.required_peak_power_mw} MW of firm depot power.
+
+Begin work in 2024. Retrofit the six existing depots first, release each site only after parking, charger positions and utility capacity are jointly commissioned, and add new parking only after the retained capacity is exhausted. Order no bus against an uncommissioned site. The first electric service begins after the six-year construction window, with annual deliveries constrained by a 650-bus procurement ceiling.
+
+The complete plan costs CAD \CV{finance.plan_gross_pv_billion} billion in discounted resource terms, against CAD \CV{finance.baseline_gross_pv_billion} billion for continued low-carbon renewal. With 50\% capital support, the agency's ten-year payment falls to CAD \CV{finance.agency_50_pv_billion} billion. The full-lifecycle environmental score is \CV{lifecycle.environment_score_pct}\%, while the 2033 operating inventory falls by \CV{lifecycle.operation_reduction_pct}\%. These two results should be reported together: early construction creates a measurable one-time carbon liability, while the operating fleet produces a durable reduction thereafter.
+
+We would make three commitments public: a 2024 design and interconnection start, an annual delivery schedule below the procurement ceiling, and a class-specific release test for double-deck and community-shuttle conversions. If external funding is below the 50\% case, extend the financing schedule or delay the hardest classes; do not reduce scheduled service to make the arithmetic look feasible. The service floor and the 2033 target are the two non-negotiable constraints.
+
+Sincerely,\\
+2023 HiMCM Team 00000
+
+\newpage
 \addcontentsline{toc}{section}{References}
 \begin{thebibliography}{99}
 \small
 \raggedright
 \setlength{\itemsep}{0.1em}
-\setlength{\parskip}{0pt}
 \bibitem{problem} 2023 HiMCM Problem B, user-provided problem statement.
 \bibitem{gtfs2023} TransLink, \emph{GTFS static feed 23SEP\_20231020}, 4 September--31 December 2023, preserved at public Git commit \texttt{eb584b1}; route and arrival data used by permission of TransLink, \href{https://github.com/JaydenCWong/JAAM-project/tree/eb584b1108b0d582ae31c7db8e0d7e7b5ba1702b/backend/engine/translink_data}{Online mirror}.
-\bibitem{budget2023} TransLink, \emph{2023 Business Plan, Operating and Capital Budget}, pp.~16--17, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2023_business_plan_operating_and_capital_budget.pdf}{Online source}.
-\bibitem{bctariff2023} BC Hydro, \emph{Executed tariff pages, effective 1 April 2023}, RS1600/1640/1650 and RS1901, pp.~2-35--2-48 and 6-13, \href{https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-scheduling/bulletins/2023/2023_08_03_BCUC_EXEC_TRFF_PGS.pdf}{Online source}.
 \bibitem{vancouvercensus} Statistics Canada, \emph{Population and population growth rate of census metropolitan areas}, 2021 Census, released February 2022, \href{https://www150.statcan.gc.ca/n1/daily-quotidien/220209/t002a-eng.htm}{Online source}.
-\bibitem{cpi2025} Bank of Canada, \emph{Total CPI, series V41690973, 2019--2025}, \href{https://www.bankofcanada.ca/valet/observations/V41690973/json?start_date=2019-01-01&end_date=2025-12-31}{Online source}.
-\bibitem{notice} TransLink, 2023 public notice, \href{https://www.translink.ca/news/2023/february/translink\%20begins\%20battery-electric\%20bus\%20fleet\%20expansion}{Online source}.
-\bibitem{noticeDec} TransLink, renewable diesel and electric fleet notice, 14 December 2023, \href{https://www.translink.ca/news/2023/december/metro\%20vancouver\%20diesel\%20buses\%20transitioning\%20to\%20cleaner\%20renewable\%20fuel}{Online source}.
-\bibitem{buzzerDec} TransLink, \emph{TransLink shifts buses from fossil fuels to 100 per cent renewable diesel}, 14 December 2023, \href{https://buzzer.translink.ca/2023/12/translink-shifts-buses-from-fossil-fuels-to-100-per-cent-renewable-diesel/}{Online source}.
 \bibitem{fleet2020} TransLink, \emph{Low Carbon Fleet Transition Plan}, 2020, \href{https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf}{Online source}.
-\bibitem{fleetupdate2020} TransLink, \emph{Low Carbon Fleet Transition Plan Update}, December 2020, \href{https://www.translink.ca/-/media/translink/media-releases/2021/january/translink_low_carbon_fleet_transition_plan_update_2021_01_18.pdf}{Online source}.
-\bibitem{board2023} TransLink, Board meeting package, June 2023, fleet procurement table p.~11, \href{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/board-of-directors/board-minutes-and-reports/2023/june/23-06-22-public-board-meeting-package---for-posting.pdf}{Online source}.
+\bibitem{playbook2024} TransLink, \emph{Zero Emissions Fleet Transition Plan} summary, Mayors' Council agenda, November 2024, \href{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf}{Online source}.
+\bibitem{guidelines2018} TransLink, \emph{Transit Service Guidelines}, June 2018, pp.~21, 49, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/transit-oriented-communities/transit-services-guidelines-public-summary.pdf}{Online source}.
+\bibitem{loadcsv} TransLink, 2023 TSPR direction peak-load CSV, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_peakload_yearlinedaytypeseasontimerangedirection.csv}{Online source}.
+\bibitem{nova2021} Nova Bus, \emph{LFSe+ specification brochure}, battery, charging and passenger configurations, \href{https://us.novabus.com/wp-content/uploads/sites/2/2019/10/LFSe_brochure_march2021_EN.pdf}{Online source}.
+\bibitem{newflyer2025} New Flyer, \emph{Xcelsior CHARGE NG}, product specifications, \href{https://www.newflyer.com/bus/xcelsior-charge-ng/}{Online source}.
+\bibitem{winnipeg2023} City of Winnipeg, \emph{RFP 763-2023 Appendix A: 40-foot and 60-foot bus specification}, Table 1, 432/605 kWh and 90\% manufacturer usable capacity, \href{https://legacy.winnipeg.ca/finance/findata/matmgt/documents/2023/763-2023/763-2023_Appendix_A_Bus_Specification.pdf}{Online source}.
+\bibitem{foothill2024} Foothill Transit, \emph{Executive Board agenda packet}, 26 January 2024, vehicle specification and contract p.~21, \href{https://www.foothilltransit.org/sites/default/files/2024-01/01-26-24_eb_agenda_packet.pdf}{Online source}.
+\bibitem{endera2023} Endera, \emph{2023 all-electric shuttle with 150-kWh battery and fast charging}, \href{https://www.enderamotors.com/press-releases/endera-unveils-the-2023-all-electric-shuttle-model-with-extended-range-and-fast-charging-speeds}{Online source}.
+\bibitem{corepm} Core Project Management, \emph{Marpole Transit Centre}, aggregate floor area approximately 800,000 ft$^2$, \href{https://corepm.ca/projects/marpole-transit-centre/}{Online source}.
 \bibitem{june2023tech} TransLink, \emph{Zero Emissions Bus Fleet Technology Update}, Mayors' Council public agenda, June 2023, PDF pp.~28--29, \href{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf}{Online source}.
 \bibitem{budget2025} TransLink, \emph{2025 Business Plan, Operating and Capital Budget Summary}, 2023 actual bus service p.~23 and capital-program details pp.~50--51, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2025-business-plan-operating-and-capital-budget-summary.pdf}{Online source}.
-\bibitem{budget2024} TransLink, \emph{2024 Business Plan, Operating and Capital Budget Summary}, fleet replacement project table p.~51, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2024-business-plan-operating-and-capital-budget-summary.pdf}{Online source}.
-\bibitem{budget2026} TransLink, \emph{2026 Business Plan, Operating and Capital Budget}, active capital-program table p.~51, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2026-business-plan-operating-and-capital-budget.pdf}{Online source}.
-\bibitem{investment2025} TransLink, \emph{Approved 2025 Investment Plan}, Table A9 p.~63, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/ten-year-investment-plan/public-consultation/2025-investment-plan.pdf}{Online source}.
-\bibitem{playbook2024} TransLink, \emph{Zero Emissions Fleet Transition Plan} summary, Mayors' Council agenda, November 2024, \href{https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf}{Online source}.
+\bibitem{bctariff2023} BC Hydro, \emph{Executed tariff pages, effective 1 April 2023}, RS1600/1640/1650 and RS1901, pp.~2-35--2-48 and 6-13, \href{https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-scheduling/bulletins/2023/2023_08_03_BCUC_EXEC_TRFF_PGS.pdf}{Online source}.
+\bibitem{cpi2025} Bank of Canada, \emph{Total CPI, series V41690973, 2019--2025}, \href{https://www.bankofcanada.ca/valet/observations/V41690973/json?start_date=2019-01-01&end_date=2025-12-31}{Online source}.
 \bibitem{icct2024} A.~B. Rebou\c{c}as and A.~Cieplinski, \emph{Quantifying avoided greenhouse gas emissions by e-buses in Latin America: A simplified life-cycle assessment methodology}, ICCT Working Paper, 2024, \href{https://theicct.org/wp-content/uploads/2024/08/ID-118-\%E2\%80\%93-E-bus-radar_final2.pdf}{Online source}.
-\bibitem{annualcsv} TransLink, 2023 TSPR annual route CSV, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearline.csv}{Online source}.
-\bibitem{guidelines2018} TransLink, \emph{Transit Service Guidelines}, June 2018, pp.~21, 49, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/transit-oriented-communities/transit-services-guidelines-public-summary.pdf}{Online source}.
-\bibitem{doubledeck2017} TransLink, \emph{TransLink launches double-decker bus pilot project}, November 2017, \href{https://www.translink.ca/news/2017/november/translink\%20launches\%20double\%20decker\%20bus\%20pilot\%20project}{Online source}.
-\bibitem{translink2019deck} TransLink, \emph{Double-decker buses rolling into service this October}, August 2019, \href{https://www.translink.ca/news/2019/august/double-decker\%20buses\%20rolling\%20into\%20service\%20this\%20october}{Online source}.
-\bibitem{foothill2024} Foothill Transit, \emph{Executive Board agenda packet}, 26 January 2024, vehicle specification and contract p.~21, \href{https://www.foothilltransit.org/sites/default/files/2024-01/01-26-24_eb_agenda_packet.pdf}{Online source}.
-\bibitem{greenpower2023} GreenPower Motor Company, \emph{EV Star product specifications}, vehicle brochure and range/charging configuration, \href{https://greenpowermotor.com/gp-products/ev-star/}{Online source}.
-\bibitem{endera2023} Endera, \emph{2023 all-electric shuttle with 150-kWh battery and fast charging}, \href{https://www.enderamotors.com/press-releases/endera-unveils-the-2023-all-electric-shuttle-model-with-extended-range-and-fast-charging-speeds}{Online source}.
-\bibitem{events2026} TransLink, \emph{Planned special events}, capacity-access reference, retrieved October 2026, \href{https://www.translink.ca/about-us/doing-business-with-translink/planned-special-events}{Online source}.
-\bibitem{nova2025} Nova Bus, \emph{LFSe+}, product specifications, \href{https://us.novabus.com/blog/bus/lfse-plus/}{Online source}.
-\bibitem{newflyer2025} New Flyer, \emph{Xcelsior CHARGE NG}, product specifications, \href{https://www.newflyer.com/bus/xcelsior-charge-ng/}{Online source}.
-\bibitem{statutory} TransLink, \emph{2023 Statutory Annual Report}, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/statutory_annual_report/2023_statutory_annual_report.pdf}{Online source}.
-\bibitem{servicecsv} TransLink, 2023 TSPR route/day/season/time-range CSV, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_yearlinedaytypeseasontimerange.csv}{Online source}.
-\bibitem{loadcsv} TransLink, 2023 TSPR direction peak-load CSV, \href{https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/tspr/csv-data/2023/tspr2023_bus_peakload_yearlinedaytypeseasontimerangedirection.csv}{Online source}.
-\bibitem{accountability} TransLink, \emph{Accountability Report 2023}, \href{https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/accountability_reports/2023/accountability_report_2023.pdf}{Online source}.
-\bibitem{cmbcfleet2025} TransLink, \emph{CMBC active and in-storage fleet}, snapshot effective 18 November 2025, pp.~2--5, \href{https://www.translink.ca/-/media/translink/documents/about-translink/freedom-of-information/cmbc-fleet--active--instorage.pdf}{Online source}.
-\bibitem{rogge} M. Rogge et al., \emph{Applied Energy} 211 (2018), 282--295, doi:10.1016/j.apenergy.2017.11.051.
-\bibitem{pelletier} S. Pelletier et al., \emph{Transportation Research C} 109 (2019), 174--193, doi:10.1016/j.trc.2019.10.012.
-\bibitem{gkiotsalitis} K. Gkiotsalitis et al., \emph{European Journal of Operational Research} 306 (2023), 189--206, \href{https://research.utwente.nl/files/352082622/1-s2.0-S0377221722005707-main.pdf}{Online source}.
-\bibitem{usdot} U.S. Department of Transportation, \emph{What Is a Benefit-Cost Analysis?}, \href{https://www.transportation.gov/grants/dot-navigator/what-is-a-benefit-cost-analysis}{Online source}.
-\bibitem{bcgrid} Government of British Columbia, \emph{Electricity emission factors}, \href{https://www2.gov.bc.ca/gov/content/environment/climate-change/data/electricity}{Online source}.
-\bibitem{ghgmodule} Housing, Infrastructure and Communities Canada, \emph{Zero Emission Transit Fund: GHG+ Guidance Module}, Annex D, \href{https://housing-infrastructure.canada.ca/zero-emissions-trans-zero-emissions/ghg-modules-ges-eng.html}{Online source}.
-\bibitem{statcan2022io} Statistics Canada, \emph{Table 36-10-0595-01: Inputs and outputs, by industry}, 2022 provincial multipliers, \href{https://doi.org/10.25318/3610059501-eng}{DOI}.
-\bibitem{tc2024comp} Transport Canada, \emph{Table RO13: average annual compensation, bus industry}, 2014--2023, \href{https://tdih-cdit.tc.canada.ca/en/addendum-tables/2024/table-ro13-average-annual-compensation-bus-industry-2014-2023-0}{Online source}.
-\bibitem{eea2023} European Environment Agency, \emph{EMEP/EEA air pollutant emission inventory guidebook 2023}, road transport, \href{https://www.eea.europa.eu/en/analysis/publications/emep-eea-guidebook-2023/part-b-sectoral-guidance-chapters/1-energy/1-a-combustion/1-a-3-b-i-1}{Online source}.
-\bibitem{prati2025} M.~V. Prati et al., low-speed measured emissions from urban buses, \emph{Atmosphere} 16 (2025), doi:10.3390/atmos16030293.
-\bibitem{bcvanderhoof} Government of British Columbia, \emph{Vanderhoof emissions inventory}, Table 4, transit-bus factors, \href{https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/reports/emission-inventory-vanderhoof}{Online source}.
-\bibitem{ctaprofile} Federal Transit Administration, \emph{2023 Annual Agency Profile: Chicago Transit Authority}, NTD ID 50066, pp.~1--2, \href{https://www.transit.dot.gov/sites/fta.dot.gov/files/transit_agency_profile_doc/2023/50066.pdf}{Online source}.
-\bibitem{ctaage} U.S. Department of Transportation, \emph{NTD Vehicles: Age Distribution}, 2023 CTA records, NTD ID 50066, retrieved October 2026, \href{https://data.transportation.gov/d/6abt-uhgq}{Online source}.
-\bibitem{ctaenergy} U.S. Department of Transportation, \emph{NTD Fuel and Energy}, 2023 CTA directly operated bus records, retrieved October 2026, \href{https://data.transportation.gov/d/8ehq-7his}{Online source}.
-\bibitem{ctanotice} CTA, \emph{CTA to Nearly Double Electric Bus Fleet}, June 2023, \href{https://www.transitchicago.com/cta-to-nearly-double-electric-bus-fleet/}{Online source}.
-\bibitem{ctafmp} CTA, \emph{FY2024 Budget Book}, Bus Fleet Management Plan, PDF p.~63, \href{https://www.transitchicago.com/assets/1/6/FY_2024_Budget_Book_\%28Web_Version\%29.pdf}{Online source}.
-\bibitem{tflaudit} TfL, \emph{Bus Fleet Audit, 31 March 2023}, \href{https://content.tfl.gov.uk/fleet-annual-audit-report-31-march-2023.pdf}{Online source}.
 \bibitem{zhao2022} E.~Zhao, P.~D. Walker and N.~C. Surawski, \emph{Emissions life cycle assessment of diesel, hybrid and electric buses}, Proceedings of the Institution of Mechanical Engineers, Part D 236(6) (2022), \href{https://doi.org/10.1177/09544070211034318}{DOI}.
 \bibitem{yeboah2025} D.~B. Yeboah and S.~Kaewunruen, \emph{Comparative lifecycle cost and sustainability assessments between very-light rail and bus-rapid transit}, Transportation Research Interdisciplinary Perspectives 32 (2025), 101529, \href{https://doi.org/10.1016/j.trip.2025.101529}{DOI}.
-\bibitem{corepm} Core Project Management, \emph{Marpole Transit Centre}, aggregate floor area approximately 800,000 ft$^2$, \href{https://corepm.ca/projects/marpole-transit-centre/}{Online source}.
-\bibitem{nova2021} Nova Bus, \emph{LFSe+ specification brochure}, battery, charging and passenger configurations, \href{https://us.novabus.com/wp-content/uploads/sites/2/2019/10/LFSe_brochure_march2021_EN.pdf}{Online source}.
-\bibitem{translinkwinter2022} TransLink, \emph{Our new battery-electric bus arrives in Metro Vancouver}, November 2022, \href{https://buzzer.translink.ca/2022/11/our-new-battery-electric-bus-arrives-in-metro-vancouver/}{Online source}.
-\bibitem{bchydro2023service} BC Hydro and Power Authority, \emph{2023/24--2025/26 Service Plan}, Clean Electricity Standard performance measure and sources of supply, \href{https://www.bcbudget.gov.bc.ca/2023/sp/pdf/agency/bchydro.pdf}{Online source}.
+\bibitem{bcgrid} Government of British Columbia, \emph{Electricity emission factors}, \href{https://www2.gov.bc.ca/gov/content/environment/climate-change/data/electricity}{Online source}.
+\bibitem{ctaprofile} Federal Transit Administration, \emph{2023 Annual Agency Profile: Chicago Transit Authority}, NTD ID 50066, pp.~1--2, \href{https://www.transit.dot.gov/sites/fta.dot.gov/files/transit_agency_profile_doc/2023/50066.pdf}{Online source}.
+\bibitem{ctaage} U.S. Department of Transportation, \emph{NTD Vehicles: Age Distribution}, 2023 CTA records, NTD ID 50066, retrieved October 2026, \href{https://data.transportation.gov/d/6abt-uhgq}{Online source}.
+\bibitem{tflaudit} TfL, \emph{Bus Fleet Audit, 31 March 2023}, \href{https://content.tfl.gov.uk/fleet-annual-audit-report-31-march-2023.pdf}{Online source}.
 \bibitem{aicodex} OpenAI, \emph{Codex} (GPT-6), and \emph{deepseek-flash}, research, calculation and drafting assistance, October 2026. See the appended Report on Use of AI, with the request log in \nolinkurl{research/ai_query_log.md} and artifact map in \nolinkurl{research/ai_use_report.md}.
 \end{thebibliography}
 
 \newpage
-\addcontentsline{toc}{section}{Letter to a Metro Vancouver decision-maker}
-\section*{Letter to a Metro Vancouver decision-maker}
-\textbf{To:} TransLink Board and Mayors' Council\\
-\textbf{Subject:} Conditions for a zero-tailpipe fixed-route bus fleet by 2033
-
-Dear decision-makers,
-
-We treat 2033 as an accelerated target against TransLink's 2040 goal. The recovered fall-2023 GTFS schedules 54,497 fixed-route trips across 25 patterns; a full-pattern screen retains all 495,198 trip instances, with maximum exact-class concurrency of 811 heavy, 107 shuttle, 37 double-deck and 147 trolley positions. Existing trolleybuses remain in the electric baseline. Strict clean-electricity sourcing is unverified.
-
-At 300 km, the weekday yields 1,698--1,741 distance requests for 1,502 participating blocks. The worst pattern has 265 over-range blocks, and the declared five-minute turnover policy rejects 4,621 of 20,736 source connections. Traction-only winter demand reaches 469 MWh/day, or 65.2 MW averaged over eight hours before accessories. A 700-kWh double-decker leaves 17 of 57 duties short of one overnight charge; a 150-kWh shuttle leaves 49 of 101. Nominal depot spaces exist, but site occupancy, firm power, chargers and payload approval remain absent.
-
-The assumed class inventory buys 1,647 route vehicles and 262 common trolley renewals. Constant 2023 gross PV is CAD 4.43 billion against CAD 2.64 billion ($-67.7\%$); missing operational-cost reserves move that to $-68.7$ to $-71.1\%$. With common trolley renewal treated symmetrically, 25/50\% grants give $-38.0/-5.0\%$. Retained-asset and infrastructure terminal-value cases span $-75.1$ to $-20.6\%$. The 1,927-electric-asset endpoint is stock arithmetic, not a dispatch certificate.
-
-The partial production/operation/maintenance boundary yields $-14.1$ to $16.3\%$ in the class case. Adding depot and charger embodied carbon gives $-67.0$ to $3.4\%$; only fossil-diesel renewal retains a positive score. The 2023 tailpipe proxy is 126--408 t NO$_x$, 1.11--8.34 t PM$_{2.5}$ and 2.34--14.18 t PM$_{10}$ per year. The Bus Operations umbrella is associated with CAD 0.62--0.97 billion annual value-added and 6.0--8.8 thousand FTE; construction effects are separate.
-
-Start depot design, interconnection and permits in 2024; no conversion is credited before 2030. Determine quantities through dispatch and commissioned-site checks, test 40- and 60-foot buses under all-electric winter conditions, and hold double-deck and shuttle conversion behind terminal charging and payload certification. If a duty fails time, SOC or site capacity, publish that gap rather than deleting service.
-
-Sincerely,\\
-Fleet Transition Study Team
-
-\newpage
 \section*{Report on Use of AI}
-\textbf{Tools and versions.} OpenAI Codex (GPT-6) and deepseek-flash were used in later sessions for research planning, source discovery, code implementation, data audits, mathematical review, and English drafting. No original 2023 HiMCM solution paper was requested or used.\cite{aicodex}
+\textbf{Tools.} OpenAI Codex (GPT-6) and deepseek-flash were used in October 2026 for research planning, source discovery, code implementation, numerical checks and LaTeX drafting. No 2023 HiMCM solution paper was requested or used.\cite{aicodex}
 
-\textbf{Queries and work products.} The prompts requested: (i) an evidence-locked plan for environmental, financial and three-city fleet-transition models; (ii) independent literature and primary-source discovery, explicitly excluding the 2023 HiMCM solution; (iii) implementation and testing of trip/block, reserve, charger and tariff models; (iv) recovery and audit of public 2023 TransLink GTFS; (v) a high-standard LaTeX manuscript and reproducible repository; (vi) completion of missing inputs without invented provenance; (vii) closure of an independent adversarial review; and (viii) further official-evidence, full-city schedule, cost-boundary, environmental-boundary and three-city execution audits. The corresponding outputs are retained in \texttt{src/}, \texttt{data/processed/}, \texttt{results/}, this manuscript, and the Git history. \nolinkurl{research/ai_query_log.md} retains the original-language request texts and their artifact mapping; \nolinkurl{research/ai_use_report.md} records the broader source and verification boundary.
+\textbf{Work products.} The study includes repository code for timetable processing, duty generation, charging checks, a mixed-integer transition model, a full-life environmental ledger, three-city parameter comparisons and manuscript generation. The query log and artifact map are retained in the project repository.
 
-\textbf{Verification.} Source URLs, dates, pages, units and hashes are retained in the parameter ledger and provenance files. GTFS files match immutable Git blobs. The 88-test suite covers absolute-time and period closure, schedule and energy limits, price leaves, asset reconciliation, cost and environmental bridges, full-city screens, and body-compatible cohort execution. Computed values are traceable to named scripts. The human team must still verify every cited fact and decide what to submit.
-
-\subsection*{Request and output index}
-The original Chinese request texts are retained without paraphrasing in \nolinkurl{research/ai_query_log.md}. The following is the working English summary of each request and its complete retained artifact set; internal reasoning traces are not treated as research outputs.
-
-\begin{enumerate}[leftmargin=*]
-\item \emph{Plan the study, choose a well-documented metropolitan case with fallback cities, and search independent electric-bus/fleet/infrastructure literature without using the 2023 HiMCM solution.} Outputs: research boundary, literature notes, parameter ledger, and the three-city design.
-\item \emph{Use LaTeX, research other-year award-winning paper presentation, standardize the format, and run the calculations on the available CPU.} Outputs: the canonical TeX/PDF, GTFS and schedule audits, charging LP, London MILP, 432,768-case grid, scenario results, figures, and format checks.
-\item \emph{Fill missing fleet, infrastructure, double-deck/shuttle, regional economic and air-quality evidence while refusing to invent unavailable records.} Outputs: APTA negative-evidence audit, deck/shuttle technology audit, regional/NOx/PM audit, class-specific cost bound, updated ledger and manuscript.
-\item \emph{Verify all figures and tests, preserve reproducibility, and synchronize the project to the authorized private GitHub repository when access allows.} Outputs: the local Git history, \nolinkurl{scripts/reproduce_local.py}, manuscript-number and PDF checks, and the repository-ready file set.
-\end{enumerate}
+\textbf{Verification.} The generated schedule and annual plan are checked by independent trip, energy, cycle, inventory and accounting tests. The human team should review the submitted narrative and verify every cited public fact before submission.
 
 \end{document}

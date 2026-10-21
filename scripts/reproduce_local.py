@@ -47,6 +47,10 @@ STEPS = [
     "src/make_three_city_roadmap.py",
     "src/build_threecity_execution_v3.py",
     "src/run_analysis.py",
+    "scripts/run_research_model.py",
+    "src/build_canonical_results.py",
+    "scripts/build_paper_tables.py",
+    "scripts/verify_research_model.py",
     "scripts/check_manuscript_numbers.py",
 ]
 

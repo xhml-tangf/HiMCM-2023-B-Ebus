@@ -92,3 +92,15 @@ absolute-time full-city screen; official 275-trolley/5-BEB central split;
 incremental TCO and infrastructure-inclusive environmental bridges;
 body-compatible Chicago and London execution certificates; updated
 manuscript, results and tests. See `research/remaining_evidence_closure.md`.
+
+## Request 8: canonical decision-paper restructuring
+
+Working request (Chinese original):
+
+> 我感觉现在想得太多了，我需要90%情况下非常漂亮的模型，而不是100%情况下不太错的。理一下论文逻辑，清除大量让步的内容。
+
+The approved revision establishes one canonical Vancouver model, a 15% reserve,
+driver relief instead of a 16-hour vehicle cap, retrofit-first depots, a
+full-lifecycle environmental score, and separate transition-period emissions.
+Audit prose is compressed into a technical appendix. The paper and all headline
+numbers are consumed from `results/research_model/canonical_v4.json`.
