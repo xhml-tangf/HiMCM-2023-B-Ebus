@@ -45,5 +45,6 @@
     "team.tex": "c9c6df6c332fd55d66dbb048b0039250f4832e3bc6e3f06996f57127d8592b5c"
   },
   "pdf_sha256": "babb62a8127ce8d7624a88bcf63bb9aded628751801a683bae0f17c42e35d2f0",
-  "visual_review": "pending image inspection"
+  "visual_review": "Reviewed all 22 rendered pages plus full-size equation and letter pages; no clipping, overlap or orphan headings found.",
+  "repository_layout": "Model and plotting code: src/ and scripts/; manuscript: paper/claude_plan/latex/; evidence and notes: materials/; outgoing candidates: release/."
 }
