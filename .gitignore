@@ -28,4 +28,5 @@ results/claude_plan/duties_*.json
 results/claude_plan/roadmap_duties_*.json
 results/claude_plan/*/duties_*.json
 results/claude_plan/*/roadmap_duties_*.json
+release/*.bundle
 
