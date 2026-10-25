@@ -15,7 +15,7 @@ STEPS = [
     "src/audit_service_actual.py",
     "src/audit_capacity_proxy.py",
     "src/audit_gtfs_baseline.py",
-    "research/audit_vancouver_official_evidence_v3.py",
+    "materials/research/audit_vancouver_official_evidence_v3.py",
     "src/analyze_vancouver_blocks.py",
     "src/build_full_city_schedule_v3.py",
     "src/audit_deck_shuttle_electrification.py",

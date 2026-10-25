@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {I}Problem Statement, Evidence, and Scope}{3}{section.1}%
+\contentsline {section}{\numberline {II}Data, Assumptions, and Notation}{3}{section.2}%
+\contentsline {section}{\numberline {III}Timetable-Preserving Scheduling Model}{5}{section.3}%
+\contentsline {subsection}{\numberline {III.A}Correcting the Reference Algorithm}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {III.B}Validation and Optimality Gaps}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {IV}Vancouver Results Across Service Patterns}{7}{section.4}%
+\contentsline {subsection}{\numberline {IV.A}Charging Sites and Recharge Requirements}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {IV.B}Fleet Sensitivity}{9}{subsection.4.2}%
+\contentsline {section}{\numberline {V}Ecological Model and Results}{9}{section.5}%
+\contentsline {section}{\numberline {VI}Financial Model}{10}{section.6}%
+\contentsline {subsection}{\numberline {VI.A}Financial and Carbon Results}{11}{subsection.6.1}%
+\contentsline {subsection}{\numberline {VI.B}Financial Sensitivity}{12}{subsection.6.2}%
+\contentsline {section}{\numberline {VII}Ten-Year Nested-Route Roadmap}{13}{section.7}%
+\contentsline {subsection}{\numberline {VII.A}Staged Investment and Implementation Gates}{14}{subsection.7.1}%
+\contentsline {section}{\numberline {VIII}Three-City Comparison}{15}{section.8}%
+\contentsline {subsection}{\numberline {VIII.A}Common-Parameter Transfer and Annual Stages}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {VIII.B}Speed, Sensitivity, and Inventory Boundary}{17}{subsection.8.2}%
+\contentsline {section}{\numberline {IX}Strengths, Limitations, and Completion Status}{18}{section.9}%
+\contentsline {section}{\numberline {X}Letter to Transportation Officials}{19}{section.10}%
+\contentsline {section}{References}{20}{section*.3}%

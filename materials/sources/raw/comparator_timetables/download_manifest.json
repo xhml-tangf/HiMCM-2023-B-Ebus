@@ -1,0 +1,52 @@
+{
+  "chicago_current.zip": {
+    "status": "downloaded",
+    "url": "https://files.mobilitydatabase.org/mdb-389/mdb-389-202609160157/mdb-389-202609160157.zip",
+    "final_url": "https://files.mobilitydatabase.org/mdb-389/mdb-389-202609160157/mdb-389-202609160157.zip",
+    "bytes": 68738293,
+    "sha256": "a9372be5b70fcee4ed98c9476433f86065637a9a500b8af6afbb84d000ef2746",
+    "retrieved_utc": "2026-10-22T11:59:34.733979+00:00",
+    "last_modified": "Wed, 16 Sep 2026 01:57:41 GMT",
+    "content_type": "application/zip"
+  },
+  "london_current.zip": {
+    "status": "downloaded",
+    "url": "https://data.bus-data.dft.gov.uk/timetable/download/gtfs-file/london/",
+    "final_url": "https://data.bus-data.dft.gov.uk/timetable/download/gtfs-file/london/",
+    "bytes": 321467840,
+    "sha256": "da22722512004cb152c85db9bfb501a5809e3a7a1572794f6e0ce5d5ac56978e",
+    "retrieved_utc": "2026-10-22T11:57:25.074854+00:00",
+    "last_modified": null,
+    "content_type": "application/zip"
+  },
+  "ubdc_archive_catalog.html": {
+    "status": "downloaded",
+    "url": "https://data.ubdc.ac.uk/datasets/f5b1d965-46b3-4a19-92e5-ff87d89859cd",
+    "final_url": "https://data.ubdc.ac.uk/datasets/f5b1d965-46b3-4a19-92e5-ff87d89859cd",
+    "bytes": 20020,
+    "sha256": "87dd675b46a1aabd17bbb0b1c5f4d0d3dce947f67133eed92daf25af47f56231",
+    "retrieved_utc": "2026-10-22T11:54:44.354428+00:00",
+    "last_modified": null,
+    "content_type": "text/html; charset=utf-8"
+  },
+  "cta_archive_tree.json": {
+    "status": "downloaded",
+    "url": "https://api.github.com/repos/brandonmcfadd/cta-reliability/git/trees/main?recursive=1",
+    "final_url": "https://api.github.com/repos/brandonmcfadd/cta-reliability/git/trees/main?recursive=1",
+    "bytes": 20325,
+    "sha256": "4155f414ed1a10a180568ebf62208446cf5d6a84bd48dbf16faf6665e76bf6d7",
+    "retrieved_utc": "2026-10-22T11:54:43.765492+00:00",
+    "last_modified": "Fri, 29 May 2026 17:10:53 GMT",
+    "content_type": "application/json; charset=utf-8"
+  },
+  "chicago_2023.zip": {
+    "status": "downloaded",
+    "url": "https://openmobilitydata-data.s3.us-west-1.amazonaws.com/public/feeds/chicago-transit-authority/165/20230503/gtfs.zip",
+    "final_url": "https://openmobilitydata-data.s3.us-west-1.amazonaws.com/public/feeds/chicago-transit-authority/165/20230503/gtfs.zip",
+    "bytes": 65120098,
+    "sha256": "a930f769f005468b72db71b2eb3a4ae4d749f19e5169539cdb498b98f03bf85a",
+    "retrieved_utc": "2026-10-22T12:05:10.413365+00:00",
+    "last_modified": "Wed, 03 May 2023 16:59:30 GMT",
+    "content_type": "application/zip"
+  }
+}

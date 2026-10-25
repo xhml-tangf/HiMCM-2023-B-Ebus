@@ -1,0 +1,102 @@
+[
+  {
+    "page": 1,
+    "title": "Summary Sheet"
+  },
+  {
+    "page": 2,
+    "title": "Contents"
+  },
+  {
+    "page": 3,
+    "title": "I. Problem Statement, Evidence, and Scope"
+  },
+  {
+    "page": 4,
+    "title": "II. Data, Assumptions, and Notation"
+  },
+  {
+    "page": 5,
+    "title": "III. Timetable-Preserving Scheduling Model"
+  },
+  {
+    "page": 6,
+    "title": "III.A. Correcting the Reference Algorithm"
+  },
+  {
+    "page": 7,
+    "title": "III.B. Validation and Optimality Gaps"
+  },
+  {
+    "page": 8,
+    "title": "IV. Vancouver Results Across Service Patterns"
+  },
+  {
+    "page": 9,
+    "title": "IV.A. Charging Sites and Recharge Requirements"
+  },
+  {
+    "page": 10,
+    "title": "IV.B. Fleet Sensitivity"
+  },
+  {
+    "page": 11,
+    "title": "V. Ecological Model and Results"
+  },
+  {
+    "page": 12,
+    "title": "VI. Financial Model"
+  },
+  {
+    "page": 13,
+    "title": "VI.A. Financial and Carbon Results"
+  },
+  {
+    "page": 14,
+    "title": "VI.B. Financial Sensitivity"
+  },
+  {
+    "page": 15,
+    "title": "VII. Ten-Year Nested-Route Roadmap"
+  },
+  {
+    "page": 16,
+    "title": "VII.A. Staged Investment and Implementation Gates"
+  },
+  {
+    "page": 17,
+    "title": "VIII. Three-City Comparison"
+  },
+  {
+    "page": 18,
+    "title": "VIII.A. Common-Parameter Transfer and Annual Stages"
+  },
+  {
+    "page": 19,
+    "title": "VIII.B. Speed, Sensitivity, and Inventory Boundary"
+  },
+  {
+    "page": 20,
+    "title": "IX. Strengths, Limitations, and Completion Status"
+  },
+  {
+    "page": 21,
+    "title": "X. Letter to Transportation Officials"
+  },
+  {
+    "page": 22,
+    "title": "References: data and problem sources"
+  },
+  {
+    "page": 23,
+    "title": "References: accounting and methods"
+  },
+  {
+    "page": 24,
+    "title": "References: acquired comparator timetables"
+  },
+  {
+    "page": 25,
+    "title": "Report on Use of AI"
+  }
+]

@@ -15,7 +15,7 @@ URL = ("https://www.bankofcanada.ca/valet/observations/V41690973/json"
 
 
 def main() -> None:
-    cache = ROOT / "data/raw/canada_cpi_monthly_2019_2025.json"
+    cache = ROOT / "materials/sources/raw/canada_cpi_monthly_2019_2025.json"
     if cache.exists():
         raw = cache.read_bytes()
     else:

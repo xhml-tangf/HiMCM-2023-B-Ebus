@@ -32,8 +32,8 @@ def main() -> None:
     tco_bridge = json.loads((ROOT / "results/vancouver_full_tco_bridge.json").read_text())
     environment_bridge = json.loads((ROOT / "results/vancouver_environment_bridge.json").read_text())
     three_city_execution = json.loads((ROOT / "results/threecity_execution_certificates_v3.json").read_text())
-    official_evidence = json.loads((ROOT / "research/data/processed/vancouver_official_evidence_v3.json").read_text())
-    with (ROOT / "research/data/processed/unresolved_evidence_registry.csv").open(
+    official_evidence = json.loads((ROOT / "materials/research/data/processed/vancouver_official_evidence_v3.json").read_text())
+    with (ROOT / "materials/research/data/processed/unresolved_evidence_registry.csv").open(
             newline="", encoding="utf-8") as handle:
         unresolved_evidence = list(csv.DictReader(handle))
     regional = json.loads((ROOT / "results/regional_and_air_quality_audit.json").read_text())

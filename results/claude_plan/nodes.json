@@ -1,0 +1,3206 @@
+[
+  {
+    "stop_id": "1",
+    "name": "Westbound Davie St @ Bidwell St",
+    "lat": 49.286458,
+    "lon": -123.140424
+  },
+  {
+    "stop_id": "10114",
+    "name": "Eastbound W Georgia St @ Hamilton St",
+    "lat": 49.280019,
+    "lon": -123.114489
+  },
+  {
+    "stop_id": "10130",
+    "name": "Northbound Banbury Rd @ Gallant Ave",
+    "lat": 49.326512,
+    "lon": -122.949168
+  },
+  {
+    "stop_id": "1016",
+    "name": "Northbound Seymour St @ W Georgia St",
+    "lat": 49.281477,
+    "lon": -123.117549
+  },
+  {
+    "stop_id": "10196",
+    "name": "VCC-Clark Station @ Unloading Only",
+    "lat": 49.265975,
+    "lon": -123.079842
+  },
+  {
+    "stop_id": "10198",
+    "name": "Eastbound Mall Access Rd @ Meadowtown Centre",
+    "lat": 49.220613,
+    "lon": -122.672576
+  },
+  {
+    "stop_id": "10202",
+    "name": "Westbound Beresford St @ Royal Oak Ave",
+    "lat": 49.219859,
+    "lon": -122.98817
+  },
+  {
+    "stop_id": "10300",
+    "name": "Southbound Laity St @ Cutler Place",
+    "lat": 49.216218,
+    "lon": -122.631989
+  },
+  {
+    "stop_id": "10316",
+    "name": "Southbound 203 St @ Lougheed Hwy",
+    "lat": 49.220665,
+    "lon": -122.65716
+  },
+  {
+    "stop_id": "10328",
+    "name": "Caulfeild Village @ Safeway",
+    "lat": 49.350855,
+    "lon": -123.252168
+  },
+  {
+    "stop_id": "10399",
+    "name": "Southbound Howe St @ Dunsmuir St",
+    "lat": 49.284576,
+    "lon": -123.117067
+  },
+  {
+    "stop_id": "10411",
+    "name": "Westbound Citadel Dr @ Capital Court",
+    "lat": 49.228417,
+    "lon": -122.790545
+  },
+  {
+    "stop_id": "10428",
+    "name": "South Delta Exchange @ Bay 3",
+    "lat": 49.03611,
+    "lon": -123.066984
+  },
+  {
+    "stop_id": "10429",
+    "name": "Edmonds Station @ Bay 7",
+    "lat": 49.212044,
+    "lon": -122.958701
+  },
+  {
+    "stop_id": "10435",
+    "name": "Main Street-Science World Station @ Bay 3",
+    "lat": 49.273162,
+    "lon": -123.098684
+  },
+  {
+    "stop_id": "10553",
+    "name": "Northbound Seymour St @ W Hastings St",
+    "lat": 49.28481,
+    "lon": -123.112535
+  },
+  {
+    "stop_id": "10564",
+    "name": "Braid Station @ Bay 4",
+    "lat": 49.233381,
+    "lon": -122.882642
+  },
+  {
+    "stop_id": "10582",
+    "name": "Southbound Buswell St @ Cook Rd",
+    "lat": 49.16621,
+    "lon": -123.133812
+  },
+  {
+    "stop_id": "10598",
+    "name": "Northbound 180 St @ 55 Ave",
+    "lat": 49.102886,
+    "lon": -122.723724
+  },
+  {
+    "stop_id": "10739",
+    "name": "Westbound 56 Ave @ 213A St",
+    "lat": 49.104567,
+    "lon": -122.631667
+  },
+  {
+    "stop_id": "10740",
+    "name": "Eastbound 56 Ave @ 213A St",
+    "lat": 49.104374,
+    "lon": -122.631454
+  },
+  {
+    "stop_id": "10744",
+    "name": "Northbound Ferry Rd @ Commodore Dr",
+    "lat": 49.106195,
+    "lon": -123.078934
+  },
+  {
+    "stop_id": "10811",
+    "name": "Eastbound Chippendale Rd @ Westhill Dr (Flag)",
+    "lat": 49.349419,
+    "lon": -123.163179
+  },
+  {
+    "stop_id": "10860",
+    "name": "Moody Centre Station @ Bay 1 Unloading Only",
+    "lat": 49.277676,
+    "lon": -122.84529
+  },
+  {
+    "stop_id": "10866",
+    "name": "Lonsdale Quay @ Bay 4",
+    "lat": 49.3111,
+    "lon": -123.082393
+  },
+  {
+    "stop_id": "10867",
+    "name": "Lonsdale Quay @ Bay 6",
+    "lat": 49.311066,
+    "lon": -123.082557
+  },
+  {
+    "stop_id": "10880",
+    "name": "Surrey Central Station @ Bay 12",
+    "lat": 49.189699,
+    "lon": -122.847774
+  },
+  {
+    "stop_id": "10882",
+    "name": "Lynn Valley @ Bay 1",
+    "lat": 49.336608,
+    "lon": -123.038743
+  },
+  {
+    "stop_id": "10885",
+    "name": "Haney Place @ Bay 1",
+    "lat": 49.219454,
+    "lon": -122.597616
+  },
+  {
+    "stop_id": "10886",
+    "name": "Haney Place @ Bay 2",
+    "lat": 49.219451,
+    "lon": -122.59727
+  },
+  {
+    "stop_id": "10887",
+    "name": "Haney Place @ Bay 3",
+    "lat": 49.21945,
+    "lon": -122.596908
+  },
+  {
+    "stop_id": "10888",
+    "name": "Haney Place @ Bay 4",
+    "lat": 49.219453,
+    "lon": -122.596658
+  },
+  {
+    "stop_id": "10889",
+    "name": "Haney Place @ Bay 5",
+    "lat": 49.219508,
+    "lon": -122.596543
+  },
+  {
+    "stop_id": "10891",
+    "name": "Haney Place @ Bay 7",
+    "lat": 49.219505,
+    "lon": -122.597034
+  },
+  {
+    "stop_id": "10892",
+    "name": "Haney Place @ Bay 8",
+    "lat": 49.219502,
+    "lon": -122.597301
+  },
+  {
+    "stop_id": "10915",
+    "name": "22nd Street Station @ Bay 1",
+    "lat": 49.200112,
+    "lon": -122.948345
+  },
+  {
+    "stop_id": "10917",
+    "name": "Eastbound Anderson Rd @ Buswell St",
+    "lat": 49.163406,
+    "lon": -123.134015
+  },
+  {
+    "stop_id": "10921",
+    "name": "Joyce Station @ Bay 7",
+    "lat": 49.238723,
+    "lon": -123.031266
+  },
+  {
+    "stop_id": "10926",
+    "name": "VCC-Clark Station @ Bay 1",
+    "lat": 49.265476,
+    "lon": -123.079447
+  },
+  {
+    "stop_id": "10929",
+    "name": "22nd Street Station @ Unloading Only",
+    "lat": 49.199857,
+    "lon": -122.949711
+  },
+  {
+    "stop_id": "10931",
+    "name": "Newton Exchange @ Unloading Bay",
+    "lat": 49.132811,
+    "lon": -122.842877
+  },
+  {
+    "stop_id": "10947",
+    "name": "Eastbound Marine Dr @ 1000 Block",
+    "lat": 49.326813,
+    "lon": -123.139026
+  },
+  {
+    "stop_id": "10948",
+    "name": "Scott Road Station @ Bay 1",
+    "lat": 49.204326,
+    "lon": -122.875671
+  },
+  {
+    "stop_id": "10961",
+    "name": "Northbound Wesbrook Mall @ W 16 Ave",
+    "lat": 49.255309,
+    "lon": -123.235823
+  },
+  {
+    "stop_id": "10971",
+    "name": "Production Way Station @ Bay 1",
+    "lat": 49.253683,
+    "lon": -122.918013
+  },
+  {
+    "stop_id": "10972",
+    "name": "Production Way Station @ Bay 2",
+    "lat": 49.253798,
+    "lon": -122.918198
+  },
+  {
+    "stop_id": "10999",
+    "name": "Southbound Endswell Farm @ Smith Rd (Flag)",
+    "lat": 49.401676,
+    "lon": -123.365576
+  },
+  {
+    "stop_id": "11094",
+    "name": "Southbound Tsawwassen Dr N @ Falcon Way",
+    "lat": 49.044149,
+    "lon": -123.103979
+  },
+  {
+    "stop_id": "11196",
+    "name": "Capilano University @ Bay 2",
+    "lat": 49.319395,
+    "lon": -123.018759
+  },
+  {
+    "stop_id": "11199",
+    "name": "Capilano University @ Bay 3",
+    "lat": 49.31939,
+    "lon": -123.018631
+  },
+  {
+    "stop_id": "11229",
+    "name": "Coquitlam Central Station @ Bay 13",
+    "lat": 49.274886,
+    "lon": -122.79928
+  },
+  {
+    "stop_id": "11246",
+    "name": "Bridgeport Station @ Bay 7",
+    "lat": 49.195053,
+    "lon": -123.127304
+  },
+  {
+    "stop_id": "11247",
+    "name": "Richmond-Brighouse Station @ Bay 6",
+    "lat": 49.168747,
+    "lon": -123.13555
+  },
+  {
+    "stop_id": "11250",
+    "name": "Bridgeport Station @ Bay 3",
+    "lat": 49.195229,
+    "lon": -123.126551
+  },
+  {
+    "stop_id": "11251",
+    "name": "Marine Drive Station @ Bay 1",
+    "lat": 49.209087,
+    "lon": -123.116823
+  },
+  {
+    "stop_id": "11252",
+    "name": "Marine Drive Station @ Bay 2",
+    "lat": 49.209383,
+    "lon": -123.116116
+  },
+  {
+    "stop_id": "11253",
+    "name": "Bridgeport Station @ Bay 10",
+    "lat": 49.195366,
+    "lon": -123.126635
+  },
+  {
+    "stop_id": "11255",
+    "name": "Westbound River Rd @ Hollybridge Way",
+    "lat": 49.173922,
+    "lon": -123.150998
+  },
+  {
+    "stop_id": "11258",
+    "name": "Olympic Village Station @ Bay 3",
+    "lat": 49.265937,
+    "lon": -123.116053
+  },
+  {
+    "stop_id": "11260",
+    "name": "Olympic Village Station @ Bay 1",
+    "lat": 49.266245,
+    "lon": -123.115944
+  },
+  {
+    "stop_id": "11266",
+    "name": "Bridgeport Station @ Bay 8",
+    "lat": 49.195144,
+    "lon": -123.127071
+  },
+  {
+    "stop_id": "11267",
+    "name": "Bridgeport Station @ Bay 9",
+    "lat": 49.195246,
+    "lon": -123.126904
+  },
+  {
+    "stop_id": "11269",
+    "name": "Bridgeport Station @ Bay 12",
+    "lat": 49.195652,
+    "lon": -123.125982
+  },
+  {
+    "stop_id": "11270",
+    "name": "Bridgeport Station @ Bay 1 Unloading Only",
+    "lat": 49.195515,
+    "lon": -123.125911
+  },
+  {
+    "stop_id": "11363",
+    "name": "Northbound Renaissance Square @ Quayside Dr",
+    "lat": 49.199988,
+    "lon": -122.924574
+  },
+  {
+    "stop_id": "11384",
+    "name": "Westbound Anderson Rd @ Buswell St",
+    "lat": 49.163531,
+    "lon": -123.134652
+  },
+  {
+    "stop_id": "11392",
+    "name": "Southbound Cliveden Ave @ 1600 Block",
+    "lat": 49.162461,
+    "lon": -122.972288
+  },
+  {
+    "stop_id": "11410",
+    "name": "Westbound Brunswick Rd @ Hwy 99 Overpass",
+    "lat": 49.474111,
+    "lon": -123.242087
+  },
+  {
+    "stop_id": "11434",
+    "name": "Eastbound Fraser Way @ Bay Mill Rd",
+    "lat": 49.202814,
+    "lon": -122.679862
+  },
+  {
+    "stop_id": "11471",
+    "name": "Lansdowne Station @ Bay 2",
+    "lat": 49.173763,
+    "lon": -123.135822
+  },
+  {
+    "stop_id": "11534",
+    "name": "Westbound Dunsmuir St @ Cambie St",
+    "lat": 49.280837,
+    "lon": -123.112004
+  },
+  {
+    "stop_id": "1160",
+    "name": "Eastbound Kingsway @ Joyce St",
+    "lat": 49.233641,
+    "lon": -123.035167
+  },
+  {
+    "stop_id": "11629",
+    "name": "Westbound Nordel Way @ Brooke Rd",
+    "lat": 49.160274,
+    "lon": -122.922146
+  },
+  {
+    "stop_id": "11639",
+    "name": "Northbound Capilano Rd @ Curling Rd",
+    "lat": 49.325441,
+    "lon": -123.121059
+  },
+  {
+    "stop_id": "11664",
+    "name": "Guildford Exchange @ Bay 4",
+    "lat": 49.193248,
+    "lon": -122.80216
+  },
+  {
+    "stop_id": "11704",
+    "name": "White Rock Centre @ Bay 9",
+    "lat": 49.033307,
+    "lon": -122.801052
+  },
+  {
+    "stop_id": "11710",
+    "name": "New Westminster Station @ Bay 10",
+    "lat": 49.201085,
+    "lon": -122.914339
+  },
+  {
+    "stop_id": "11712",
+    "name": "New Westminster Station @ Bay 9",
+    "lat": 49.201472,
+    "lon": -122.911997
+  },
+  {
+    "stop_id": "11713",
+    "name": "New Westminster Station @ Bay 3",
+    "lat": 49.200804,
+    "lon": -122.912513
+  },
+  {
+    "stop_id": "11714",
+    "name": "New Westminster Station @ Bay 2",
+    "lat": 49.201037,
+    "lon": -122.912095
+  },
+  {
+    "stop_id": "11715",
+    "name": "New Westminster Station @ Bay 4",
+    "lat": 49.20088,
+    "lon": -122.912854
+  },
+  {
+    "stop_id": "11716",
+    "name": "New Westminster Station @ Bay 5",
+    "lat": 49.20106,
+    "lon": -122.913116
+  },
+  {
+    "stop_id": "11718",
+    "name": "New Westminster Station @ Bay 7",
+    "lat": 49.201379,
+    "lon": -122.913535
+  },
+  {
+    "stop_id": "11754",
+    "name": "Northbound 198 St @ 64 Ave",
+    "lat": 49.118307,
+    "lon": -122.67461
+  },
+  {
+    "stop_id": "11764",
+    "name": "Surrey Central Station @ Bay 5A",
+    "lat": 49.189461,
+    "lon": -122.849708
+  },
+  {
+    "stop_id": "11765",
+    "name": "New Westminster Station @ Unloading Only",
+    "lat": 49.200807,
+    "lon": -122.912785
+  },
+  {
+    "stop_id": "11788",
+    "name": "Bridgeport Station @ Bay 6",
+    "lat": 49.19488,
+    "lon": -123.127321
+  },
+  {
+    "stop_id": "11792",
+    "name": "UBC Exchange @ Bay 9",
+    "lat": 49.265726,
+    "lon": -123.248724
+  },
+  {
+    "stop_id": "11798",
+    "name": "Carvolth Exchange @ Bay 8",
+    "lat": 49.159711,
+    "lon": -122.660703
+  },
+  {
+    "stop_id": "11799",
+    "name": "Carvolth Exchange @ Bay 9",
+    "lat": 49.159965,
+    "lon": -122.660566
+  },
+  {
+    "stop_id": "11801",
+    "name": "Carvolth Exchange @ Bay 11",
+    "lat": 49.160528,
+    "lon": -122.660365
+  },
+  {
+    "stop_id": "11805",
+    "name": "Carvolth Exchange @ Bay 1 Unloading Only",
+    "lat": 49.160693,
+    "lon": -122.660159
+  },
+  {
+    "stop_id": "11806",
+    "name": "Carvolth Exchange @ Bay 2",
+    "lat": 49.160518,
+    "lon": -122.660253
+  },
+  {
+    "stop_id": "1181",
+    "name": "Westbound Kingsway @ Boundary Rd",
+    "lat": 49.232402,
+    "lon": -123.024096
+  },
+  {
+    "stop_id": "11811",
+    "name": "Carvolth Exchange @ Bay 7",
+    "lat": 49.15953,
+    "lon": -122.660673
+  },
+  {
+    "stop_id": "11852",
+    "name": "Tsawwassen Ferry Terminal @ Bay 2",
+    "lat": 49.006806,
+    "lon": -123.129744
+  },
+  {
+    "stop_id": "11858",
+    "name": "Newton Exchange @ Bay 11",
+    "lat": 49.133491,
+    "lon": -122.840565
+  },
+  {
+    "stop_id": "11860",
+    "name": "Newton Exchange @ Bay 9",
+    "lat": 49.133098,
+    "lon": -122.842704
+  },
+  {
+    "stop_id": "11861",
+    "name": "Newton Exchange @ Bay 10",
+    "lat": 49.132578,
+    "lon": -122.842905
+  },
+  {
+    "stop_id": "11867",
+    "name": "Park Royal @ Bay 4",
+    "lat": 49.326832,
+    "lon": -123.138645
+  },
+  {
+    "stop_id": "11868",
+    "name": "Eastbound Marine Dr @ South Mall Access",
+    "lat": 49.326699,
+    "lon": -123.141262
+  },
+  {
+    "stop_id": "11872",
+    "name": "Northbound Entertainment Blvd @ Steveston Hwy",
+    "lat": 49.134871,
+    "lon": -123.064805
+  },
+  {
+    "stop_id": "11874",
+    "name": "Brentwood Station @ Bay 2",
+    "lat": 49.266554,
+    "lon": -123.001462
+  },
+  {
+    "stop_id": "11875",
+    "name": "Brentwood Station @ Bay 3",
+    "lat": 49.266221,
+    "lon": -122.99977
+  },
+  {
+    "stop_id": "11882",
+    "name": "Surrey Central Station @ Bay 14",
+    "lat": 49.189133,
+    "lon": -122.847582
+  },
+  {
+    "stop_id": "11911",
+    "name": "Eastbound 8th Ave @ 8th St",
+    "lat": 49.214252,
+    "lon": -122.927079
+  },
+  {
+    "stop_id": "11941",
+    "name": "Moody Centre Station @ Bay 6",
+    "lat": 49.277828,
+    "lon": -122.84682
+  },
+  {
+    "stop_id": "11942",
+    "name": "Moody Centre Station @ Bay 7",
+    "lat": 49.27783,
+    "lon": -122.847102
+  },
+  {
+    "stop_id": "11943",
+    "name": "Moody Centre Station @ Bay 8",
+    "lat": 49.277832,
+    "lon": -122.847385
+  },
+  {
+    "stop_id": "12022",
+    "name": "Moody Centre Station @ Bay 3",
+    "lat": 49.277757,
+    "lon": -122.84582
+  },
+  {
+    "stop_id": "12027",
+    "name": "Marpole Loop @ Bay 5",
+    "lat": 49.203203,
+    "lon": -123.133071
+  },
+  {
+    "stop_id": "12036",
+    "name": "Westbound W Pender St @ Howe St",
+    "lat": 49.285131,
+    "lon": -123.115432
+  },
+  {
+    "stop_id": "12057",
+    "name": "UBC Exchange @ Bay 7",
+    "lat": 49.267419,
+    "lon": -123.246831
+  },
+  {
+    "stop_id": "12076",
+    "name": "Westbound Boyd St @ Gifford St",
+    "lat": 49.184961,
+    "lon": -122.953118
+  },
+  {
+    "stop_id": "12077",
+    "name": "Eastbound Boyd St @ Gifford St",
+    "lat": 49.185476,
+    "lon": -122.95184
+  },
+  {
+    "stop_id": "12139",
+    "name": "Eastbound Westminster Hwy @ Boundary Rd",
+    "lat": 49.183562,
+    "lon": -122.957993
+  },
+  {
+    "stop_id": "12155",
+    "name": "King George Station @ Bay 4",
+    "lat": 49.182677,
+    "lon": -122.845166
+  },
+  {
+    "stop_id": "12173",
+    "name": "Langley Centre @ Bay 7",
+    "lat": 49.107179,
+    "lon": -122.655848
+  },
+  {
+    "stop_id": "12209",
+    "name": "Burquitlam Station @ Bay 1",
+    "lat": 49.261403,
+    "lon": -122.889518
+  },
+  {
+    "stop_id": "12210",
+    "name": "Burquitlam Station @ Bay 2",
+    "lat": 49.261203,
+    "lon": -122.889784
+  },
+  {
+    "stop_id": "12211",
+    "name": "Burquitlam Station @ Bay 3",
+    "lat": 49.260871,
+    "lon": -122.890337
+  },
+  {
+    "stop_id": "12212",
+    "name": "Burquitlam Station @ Bay 4",
+    "lat": 49.261316,
+    "lon": -122.890197
+  },
+  {
+    "stop_id": "12213",
+    "name": "Westbound Dominion Ave @ Fremont Connector",
+    "lat": 49.258459,
+    "lon": -122.729332
+  },
+  {
+    "stop_id": "12214",
+    "name": "Southbound Fremont St @ Dominion Ave",
+    "lat": 49.258051,
+    "lon": -122.728821
+  },
+  {
+    "stop_id": "12217",
+    "name": "Northbound Princeton Ave @ David Ave",
+    "lat": 49.295933,
+    "lon": -122.742764
+  },
+  {
+    "stop_id": "12318",
+    "name": "Kootenay Loop @ Bay 1",
+    "lat": 49.281403,
+    "lon": -123.025625
+  },
+  {
+    "stop_id": "12332",
+    "name": "Moody Centre Station @ Bay 9",
+    "lat": 49.277832,
+    "lon": -122.847667
+  },
+  {
+    "stop_id": "12358",
+    "name": "UBC Exchange @ Bay 1",
+    "lat": 49.267415,
+    "lon": -123.247954
+  },
+  {
+    "stop_id": "12359",
+    "name": "UBC Exchange @ Bay 2",
+    "lat": 49.2673,
+    "lon": -123.24828
+  },
+  {
+    "stop_id": "12360",
+    "name": "UBC Exchange @ Bay 3",
+    "lat": 49.267177,
+    "lon": -123.24863
+  },
+  {
+    "stop_id": "12361",
+    "name": "UBC Exchange @ Bay 4",
+    "lat": 49.26704,
+    "lon": -123.247902
+  },
+  {
+    "stop_id": "12362",
+    "name": "UBC Exchange @ Bay 5",
+    "lat": 49.26715,
+    "lon": -123.247589
+  },
+  {
+    "stop_id": "12363",
+    "name": "UBC Exchange @ Bay 6",
+    "lat": 49.267304,
+    "lon": -123.247155
+  },
+  {
+    "stop_id": "12380",
+    "name": "Westbound 68 Ave @ 18700 Block",
+    "lat": 49.126165,
+    "lon": -122.704228
+  },
+  {
+    "stop_id": "12381",
+    "name": "Eastbound 133 Ave @ Rock Ridge Dr",
+    "lat": 49.243951,
+    "lon": -122.564882
+  },
+  {
+    "stop_id": "12382",
+    "name": "Northbound 232 St @ Anderson Creek Dr",
+    "lat": 49.256017,
+    "lon": -122.580567
+  },
+  {
+    "stop_id": "12393",
+    "name": "29th Avenue Station @ Bay 4",
+    "lat": 49.244435,
+    "lon": -123.044461
+  },
+  {
+    "stop_id": "12405",
+    "name": "Metrotown Station @ Bay 11",
+    "lat": 49.226034,
+    "lon": -123.004152
+  },
+  {
+    "stop_id": "12406",
+    "name": "Metrotown Station @ Bay 10",
+    "lat": 49.22639,
+    "lon": -123.004928
+  },
+  {
+    "stop_id": "12409",
+    "name": "Metrotown Station @ Bay 12",
+    "lat": 49.225643,
+    "lon": -123.003278
+  },
+  {
+    "stop_id": "12410",
+    "name": "Metrotown Station @ Bay 13",
+    "lat": 49.22541,
+    "lon": -123.002774
+  },
+  {
+    "stop_id": "12411",
+    "name": "Metrotown Station @ Bay 14",
+    "lat": 49.225091,
+    "lon": -123.002091
+  },
+  {
+    "stop_id": "12499",
+    "name": "Northbound Windjammer Rd @ Arbutus Point Rd (Flag)",
+    "lat": 49.366352,
+    "lon": -123.422783
+  },
+  {
+    "stop_id": "12519",
+    "name": "Southbound Station St @ Terminal Ave",
+    "lat": 49.273628,
+    "lon": -123.098659
+  },
+  {
+    "stop_id": "12531",
+    "name": "Southbound 15 St @ Ottawa Ave",
+    "lat": 49.340163,
+    "lon": -123.156999
+  },
+  {
+    "stop_id": "12535",
+    "name": "Northbound Seymour St @ Robson St",
+    "lat": 49.28102,
+    "lon": -123.11824
+  },
+  {
+    "stop_id": "12556",
+    "name": "Nanaimo Station @ Bay 1",
+    "lat": 49.248336,
+    "lon": -123.056509
+  },
+  {
+    "stop_id": "12580",
+    "name": "Port Haney Station @ Bay 3",
+    "lat": 49.212575,
+    "lon": -122.606432
+  },
+  {
+    "stop_id": "12596",
+    "name": "Eastbound W Georgia St @ Homer St",
+    "lat": 49.280236,
+    "lon": -123.114837
+  },
+  {
+    "stop_id": "12600",
+    "name": "UBC Exchange @ Unloading Only",
+    "lat": 49.267674,
+    "lon": -123.247621
+  },
+  {
+    "stop_id": "12617",
+    "name": "Westbound Blundell Rd @ 16100 Block",
+    "lat": 49.15544,
+    "lon": -123.044877
+  },
+  {
+    "stop_id": "12624",
+    "name": "Eastbound 105 Ave @ 150 St",
+    "lat": 49.194098,
+    "lon": -122.805781
+  },
+  {
+    "stop_id": "12628",
+    "name": "Phibbs Exchange @ Bay 10",
+    "lat": 49.305578,
+    "lon": -123.030021
+  },
+  {
+    "stop_id": "12629",
+    "name": "Phibbs Exchange @ Bay 9",
+    "lat": 49.305651,
+    "lon": -123.030281
+  },
+  {
+    "stop_id": "12647",
+    "name": "Coquitlam Central Station @ Bay 14",
+    "lat": 49.275276,
+    "lon": -122.799074
+  },
+  {
+    "stop_id": "12655",
+    "name": "Haney Place @ Bay 9",
+    "lat": 49.219122,
+    "lon": -122.596382
+  },
+  {
+    "stop_id": "12681",
+    "name": "Burrard Station @ Bay 6",
+    "lat": 49.28616,
+    "lon": -123.118293
+  },
+  {
+    "stop_id": "12693",
+    "name": "Lonsdale Quay @ Bay 9",
+    "lat": 49.311537,
+    "lon": -123.082514
+  },
+  {
+    "stop_id": "12696",
+    "name": "Northbound Grand Blvd East @ E 15 St",
+    "lat": 49.322113,
+    "lon": -123.056272
+  },
+  {
+    "stop_id": "12716",
+    "name": "Richmond-Brighouse Station @ Bay 1",
+    "lat": 49.167722,
+    "lon": -123.136073
+  },
+  {
+    "stop_id": "12717",
+    "name": "Richmond-Brighouse Station @ Bay 2",
+    "lat": 49.167576,
+    "lon": -123.135746
+  },
+  {
+    "stop_id": "12736",
+    "name": "Lynn Valley @ Bay 5",
+    "lat": 49.333441,
+    "lon": -123.039947
+  },
+  {
+    "stop_id": "12761",
+    "name": "Eastbound Sawmill Cres @ River District Crossing",
+    "lat": 49.205803,
+    "lon": -123.030484
+  },
+  {
+    "stop_id": "12786",
+    "name": "Northbound 51 St @ 47 Ave",
+    "lat": 49.088733,
+    "lon": -123.082465
+  },
+  {
+    "stop_id": "12793",
+    "name": "Haney Place @ Bay 10",
+    "lat": 49.219427,
+    "lon": -122.596176
+  },
+  {
+    "stop_id": "12823",
+    "name": "Westbound W Georgia St @ Richards St",
+    "lat": 49.281177,
+    "lon": -123.115895
+  },
+  {
+    "stop_id": "1283",
+    "name": "Eastbound E Pender St @ Main St",
+    "lat": 49.280323,
+    "lon": -123.099245
+  },
+  {
+    "stop_id": "12835",
+    "name": "Brentwood Station @ Bay 4",
+    "lat": 49.266305,
+    "lon": -123.003908
+  },
+  {
+    "stop_id": "12836",
+    "name": "Brentwood Station @ Bay 5",
+    "lat": 49.266331,
+    "lon": -123.004628
+  },
+  {
+    "stop_id": "12853",
+    "name": "Westbound Vine Ave @ Anderson St",
+    "lat": 49.030357,
+    "lon": -122.8146
+  },
+  {
+    "stop_id": "12857",
+    "name": "Kootenay Loop @ Bay 8-",
+    "lat": 49.281036,
+    "lon": -123.026286
+  },
+  {
+    "stop_id": "12884",
+    "name": "Westbound Lansdowne Rd @ No. 3 Rd",
+    "lat": 49.173946,
+    "lon": -123.137742
+  },
+  {
+    "stop_id": "12899",
+    "name": "Main St @ Phibbs Exchange",
+    "lat": 49.304927,
+    "lon": -123.028714
+  },
+  {
+    "stop_id": "12900",
+    "name": "Main St @ Phibbs Exchange",
+    "lat": 49.304904,
+    "lon": -123.029461
+  },
+  {
+    "stop_id": "12901",
+    "name": "Phibbs Exchange @ Bay 4",
+    "lat": 49.305041,
+    "lon": -123.02981
+  },
+  {
+    "stop_id": "12902",
+    "name": "Phibbs Exchange @ Bay 5",
+    "lat": 49.305263,
+    "lon": -123.029698
+  },
+  {
+    "stop_id": "12903",
+    "name": "Phibbs Exchange @ Bay 6",
+    "lat": 49.305749,
+    "lon": -123.029183
+  },
+  {
+    "stop_id": "12904",
+    "name": "Phibbs Exchange @ Bay 7",
+    "lat": 49.306019,
+    "lon": -123.029057
+  },
+  {
+    "stop_id": "12906",
+    "name": "Phibbs Exchange @ Bay 11",
+    "lat": 49.305348,
+    "lon": -123.029938
+  },
+  {
+    "stop_id": "12915",
+    "name": "Eastbound Sawmill Cres @ River District Crossing",
+    "lat": 49.205918,
+    "lon": -123.031907
+  },
+  {
+    "stop_id": "1301",
+    "name": "Southbound Clark Dr @ E Broadway",
+    "lat": 49.262018,
+    "lon": -123.07773
+  },
+  {
+    "stop_id": "1316",
+    "name": "Southbound Knight St @ E 41 Ave",
+    "lat": 49.232305,
+    "lon": -123.077224
+  },
+  {
+    "stop_id": "1328",
+    "name": "Southbound Knight St @ E 63 Ave",
+    "lat": 49.212389,
+    "lon": -123.077238
+  },
+  {
+    "stop_id": "1329",
+    "name": "Knight St Underpass @ SE Marine Dr",
+    "lat": 49.21125,
+    "lon": -123.076921
+  },
+  {
+    "stop_id": "1334",
+    "name": "Northbound Jacombs Rd @ Rowan Place",
+    "lat": 49.186906,
+    "lon": -123.080211
+  },
+  {
+    "stop_id": "1347",
+    "name": "Northbound Knight St @ E 41 Ave",
+    "lat": 49.233088,
+    "lon": -123.076848
+  },
+  {
+    "stop_id": "1401",
+    "name": "Brentwood Station @ Bay 7",
+    "lat": 49.266007,
+    "lon": -123.003347
+  },
+  {
+    "stop_id": "1429",
+    "name": "Southbound 8th St @ 8th Ave",
+    "lat": 49.213493,
+    "lon": -122.927156
+  },
+  {
+    "stop_id": "1443",
+    "name": "Northbound 8th St @ 7th Ave",
+    "lat": 49.212787,
+    "lon": -122.925861
+  },
+  {
+    "stop_id": "1446",
+    "name": "Northbound Canada Way @ 12 Ave",
+    "lat": 49.218787,
+    "lon": -122.933888
+  },
+  {
+    "stop_id": "1482",
+    "name": "Kootenay Loop @ Bay 6",
+    "lat": 49.281212,
+    "lon": -123.026407
+  },
+  {
+    "stop_id": "1505",
+    "name": "Eastbound W King Edward Ave @ Dunbar St",
+    "lat": 49.249918,
+    "lon": -123.184491
+  },
+  {
+    "stop_id": "1519",
+    "name": "Eastbound W King Edward Ave @ Granville St",
+    "lat": 49.249267,
+    "lon": -123.138678
+  },
+  {
+    "stop_id": "1565",
+    "name": "Westbound E 22 Ave @ Boundary Rd",
+    "lat": 49.250709,
+    "lon": -123.024281
+  },
+  {
+    "stop_id": "1572",
+    "name": "Nanaimo Station @ Bay 2",
+    "lat": 49.248591,
+    "lon": -123.055976
+  },
+  {
+    "stop_id": "1615",
+    "name": "29th Avenue Station @ Bay 2",
+    "lat": 49.244186,
+    "lon": -123.045328
+  },
+  {
+    "stop_id": "1685",
+    "name": "Joyce Station @ Bay 2",
+    "lat": 49.238709,
+    "lon": -123.032702
+  },
+  {
+    "stop_id": "1709",
+    "name": "Kootenay Loop @ Bay 3",
+    "lat": 49.281408,
+    "lon": -123.026254
+  },
+  {
+    "stop_id": "1721",
+    "name": "Southbound Rupert St @ E Broadway",
+    "lat": 49.262185,
+    "lon": -123.03393
+  },
+  {
+    "stop_id": "1736",
+    "name": "Joyce Station @ Bay 1 Unload Only",
+    "lat": 49.238592,
+    "lon": -123.032425
+  },
+  {
+    "stop_id": "1754",
+    "name": "Northbound Boundary Rd @ Lougheed Hwy",
+    "lat": 49.26604,
+    "lon": -123.023373
+  },
+  {
+    "stop_id": "1757",
+    "name": "Northbound Boundary Rd @ Kitchener St",
+    "lat": 49.272518,
+    "lon": -123.02333
+  },
+  {
+    "stop_id": "1778",
+    "name": "Southbound Boundary Rd @ Kitchener St",
+    "lat": 49.271739,
+    "lon": -123.023795
+  },
+  {
+    "stop_id": "1801",
+    "name": "Joyce Station @ Bay 4",
+    "lat": 49.237907,
+    "lon": -123.031047
+  },
+  {
+    "stop_id": "1818",
+    "name": "Northbound Muirfield Dr @ Scarboro Ave",
+    "lat": 49.213192,
+    "lon": -123.057069
+  },
+  {
+    "stop_id": "1832",
+    "name": "29th Avenue Station @ Bay 1",
+    "lat": 49.244269,
+    "lon": -123.045608
+  },
+  {
+    "stop_id": "1856",
+    "name": "Burrard Station @ Bay 4",
+    "lat": 49.286899,
+    "lon": -123.12119
+  },
+  {
+    "stop_id": "1857",
+    "name": "Burrard Station @ Bay 3",
+    "lat": 49.286391,
+    "lon": -123.121757
+  },
+  {
+    "stop_id": "1875",
+    "name": "SFU Transit Exchange @ Bay 1",
+    "lat": 49.278518,
+    "lon": -122.91294
+  },
+  {
+    "stop_id": "1972",
+    "name": "Eastbound W 49 Ave @ East Blvd",
+    "lat": 49.227085,
+    "lon": -123.153974
+  },
+  {
+    "stop_id": "1977",
+    "name": "Eastbound W 49 Ave @ Granville St",
+    "lat": 49.226886,
+    "lon": -123.139329
+  },
+  {
+    "stop_id": "2016",
+    "name": "Metrotown Station @ Bay 3",
+    "lat": 49.226002,
+    "lon": -123.002615
+  },
+  {
+    "stop_id": "2054",
+    "name": "Westbound W 49 Ave @ Oak St",
+    "lat": 49.226658,
+    "lon": -123.128988
+  },
+  {
+    "stop_id": "2110",
+    "name": "Westbound Lougheed Hwy @ Boundary Loop",
+    "lat": 49.265243,
+    "lon": -123.02541
+  },
+  {
+    "stop_id": "2111",
+    "name": "Southbound N Grandview Hwy @ E 8th Ave",
+    "lat": 49.262833,
+    "lon": -123.067725
+  },
+  {
+    "stop_id": "2203",
+    "name": "22nd Street Station @ Bay 8",
+    "lat": 49.199522,
+    "lon": -122.950167
+  },
+  {
+    "stop_id": "2222",
+    "name": "Westbound Marine Dr @ Greenall Ave",
+    "lat": 49.208428,
+    "lon": -123.017297
+  },
+  {
+    "stop_id": "2252",
+    "name": "22nd Street Station @ Bay 4",
+    "lat": 49.199857,
+    "lon": -122.949097
+  },
+  {
+    "stop_id": "2264",
+    "name": "Northbound 6th St @ 6th Ave",
+    "lat": 49.213612,
+    "lon": -122.920751
+  },
+  {
+    "stop_id": "2310",
+    "name": "Westbound Armstrong Ave @ Coquitlam St",
+    "lat": 49.231178,
+    "lon": -122.912547
+  },
+  {
+    "stop_id": "2380",
+    "name": "Southbound Furness St @ Ewen Ave",
+    "lat": 49.194614,
+    "lon": -122.927269
+  },
+  {
+    "stop_id": "2390",
+    "name": "Westbound Westminster Hwy @ Boundary Rd",
+    "lat": 49.183679,
+    "lon": -122.958145
+  },
+  {
+    "stop_id": "2397",
+    "name": "22nd Street Station @ Bay 5",
+    "lat": 49.199792,
+    "lon": -122.949358
+  },
+  {
+    "stop_id": "2414",
+    "name": "Metrotown Station @ Bay 7",
+    "lat": 49.226075,
+    "lon": -123.003117
+  },
+  {
+    "stop_id": "2477",
+    "name": "Edmonds Station @ Bay 3",
+    "lat": 49.212031,
+    "lon": -122.958288
+  },
+  {
+    "stop_id": "2523",
+    "name": "Metrotown Station @ Bay 8",
+    "lat": 49.226172,
+    "lon": -123.003354
+  },
+  {
+    "stop_id": "2539",
+    "name": "Patterson Station @ Bay 1",
+    "lat": 49.229426,
+    "lon": -123.012448
+  },
+  {
+    "stop_id": "2630",
+    "name": "Edmonds Station @ Bay 5",
+    "lat": 49.212185,
+    "lon": -122.95867
+  },
+  {
+    "stop_id": "2650",
+    "name": "Northbound 12 St @ 10 Ave",
+    "lat": 49.213306,
+    "lon": -122.937545
+  },
+  {
+    "stop_id": "2671",
+    "name": "Metrotown Station @ Bay 5",
+    "lat": 49.225917,
+    "lon": -123.002755
+  },
+  {
+    "stop_id": "2692",
+    "name": "Edmonds Station @ Bay 6",
+    "lat": 49.212256,
+    "lon": -122.958512
+  },
+  {
+    "stop_id": "2717",
+    "name": "Metrotown Station @ Bay 1",
+    "lat": 49.226277,
+    "lon": -123.003299
+  },
+  {
+    "stop_id": "2741",
+    "name": "Bus Loop @ Burnaby City Hall",
+    "lat": 49.243262,
+    "lon": -122.973407
+  },
+  {
+    "stop_id": "2761",
+    "name": "Metrotown Station @ Bay 4",
+    "lat": 49.225794,
+    "lon": -123.002518
+  },
+  {
+    "stop_id": "2766",
+    "name": "Westbound Pender St @ Willingdon Ave",
+    "lat": 49.280153,
+    "lon": -123.004372
+  },
+  {
+    "stop_id": "2799",
+    "name": "Edmonds Station @ Bay 4",
+    "lat": 49.21197,
+    "lon": -122.958485
+  },
+  {
+    "stop_id": "2833",
+    "name": "Metrotown Station @ Bay 6",
+    "lat": 49.225986,
+    "lon": -123.002908
+  },
+  {
+    "stop_id": "2836",
+    "name": "SFU Transit Exchange @ Bay 3",
+    "lat": 49.278466,
+    "lon": -122.912681
+  },
+  {
+    "stop_id": "2897",
+    "name": "Northbound Eastlake Dr @ Beaverbrook Dr",
+    "lat": 49.255374,
+    "lon": -122.909668
+  },
+  {
+    "stop_id": "2911",
+    "name": "Westbound Broadway @ Lawrence Dr",
+    "lat": 49.260966,
+    "lon": -122.942128
+  },
+  {
+    "stop_id": "2938",
+    "name": "Southbound Duthie Ave @ Hastings St",
+    "lat": 49.280065,
+    "lon": -122.953482
+  },
+  {
+    "stop_id": "2985",
+    "name": "Eastbound Cambridge St @ N Grosvenor Ave",
+    "lat": 49.286257,
+    "lon": -122.984345
+  },
+  {
+    "stop_id": "3023",
+    "name": "Edmonds Station @ Bay 2",
+    "lat": 49.212196,
+    "lon": -122.958297
+  },
+  {
+    "stop_id": "3029",
+    "name": "SFU Transit Exchange @ Bay 4",
+    "lat": 49.278447,
+    "lon": -122.912574
+  },
+  {
+    "stop_id": "3053",
+    "name": "Coquitlam Central Station @ Bay 3",
+    "lat": 49.275352,
+    "lon": -122.79869
+  },
+  {
+    "stop_id": "3067",
+    "name": "Coquitlam Central Station @ Bay 4",
+    "lat": 49.275172,
+    "lon": -122.798784
+  },
+  {
+    "stop_id": "3077",
+    "name": "Westbound Como Lake Ave @ 2500 Block",
+    "lat": 49.263283,
+    "lon": -122.823035
+  },
+  {
+    "stop_id": "3129",
+    "name": "SFU Transit Exchange @ Bay 2",
+    "lat": 49.278484,
+    "lon": -122.91279
+  },
+  {
+    "stop_id": "318",
+    "name": "Eastbound W Broadway @ Alma St",
+    "lat": 49.264278,
+    "lon": -123.185239
+  },
+  {
+    "stop_id": "3195",
+    "name": "Coquitlam Central Station @ Bay 6",
+    "lat": 49.27466,
+    "lon": -122.799011
+  },
+  {
+    "stop_id": "3204",
+    "name": "Coquitlam Central Station @ Bay 7",
+    "lat": 49.274922,
+    "lon": -122.799039
+  },
+  {
+    "stop_id": "3216",
+    "name": "Westbound St. Johns St @ Buller St",
+    "lat": 49.276739,
+    "lon": -122.840881
+  },
+  {
+    "stop_id": "3221",
+    "name": "Westbound St. Johns St @ Barnet Hwy",
+    "lat": 49.276695,
+    "lon": -122.867831
+  },
+  {
+    "stop_id": "3274",
+    "name": "Southbound 2nd Ave @ Ioco Rd",
+    "lat": 49.302877,
+    "lon": -122.874617
+  },
+  {
+    "stop_id": "3334",
+    "name": "Coquitlam Central Station @ Bay 1",
+    "lat": 49.27573,
+    "lon": -122.79841
+  },
+  {
+    "stop_id": "3385",
+    "name": "Port Coquitlam Station @ Bay 6",
+    "lat": 49.261013,
+    "lon": -122.774138
+  },
+  {
+    "stop_id": "3394",
+    "name": "Coquitlam Central Station @ Bay 9",
+    "lat": 49.275316,
+    "lon": -122.79883
+  },
+  {
+    "stop_id": "3444",
+    "name": "Northbound Poirier St @ King Albert Ave",
+    "lat": 49.251691,
+    "lon": -122.846464
+  },
+  {
+    "stop_id": "3478",
+    "name": "Port Coquitlam Station @ Bay 2",
+    "lat": 49.261178,
+    "lon": -122.773908
+  },
+  {
+    "stop_id": "3533",
+    "name": "Coquitlam Central Station @ Bay 8",
+    "lat": 49.275145,
+    "lon": -122.79893
+  },
+  {
+    "stop_id": "3535",
+    "name": "22nd Street Station @ Bay 3",
+    "lat": 49.199941,
+    "lon": -122.948853
+  },
+  {
+    "stop_id": "361",
+    "name": "Southbound Alma St @ W 10 Ave",
+    "lat": 49.26367,
+    "lon": -123.186028
+  },
+  {
+    "stop_id": "3712",
+    "name": "Northbound Shaughnessy St @ Citadel Dr",
+    "lat": 49.231882,
+    "lon": -122.793872
+  },
+  {
+    "stop_id": "3721",
+    "name": "Eastbound Kebet Way @ Mustang Place",
+    "lat": 49.243514,
+    "lon": -122.748593
+  },
+  {
+    "stop_id": "3727",
+    "name": "Southbound Reeve St @ Riverside Secondary",
+    "lat": 49.256547,
+    "lon": -122.788193
+  },
+  {
+    "stop_id": "3769",
+    "name": "Coquitlam Central Station @ Bay 12",
+    "lat": 49.275845,
+    "lon": -122.798427
+  },
+  {
+    "stop_id": "3776",
+    "name": "Northbound Reeve St @ Hawthorne Ave",
+    "lat": 49.257511,
+    "lon": -122.78796
+  },
+  {
+    "stop_id": "3779",
+    "name": "Port Coquitlam Station @ Bay 4",
+    "lat": 49.261234,
+    "lon": -122.774173
+  },
+  {
+    "stop_id": "3806",
+    "name": "Port Coquitlam Station @ Bay 5",
+    "lat": 49.261224,
+    "lon": -122.774302
+  },
+  {
+    "stop_id": "3810",
+    "name": "Northbound Western Dr @ Eastern Dr",
+    "lat": 49.240697,
+    "lon": -122.783681
+  },
+  {
+    "stop_id": "3822",
+    "name": "Port Coquitlam Station @ Bay 3",
+    "lat": 49.260996,
+    "lon": -122.773778
+  },
+  {
+    "stop_id": "3823",
+    "name": "Eastbound Riverwood Gate @ Terry Fox Secondary",
+    "lat": 49.263782,
+    "lon": -122.747793
+  },
+  {
+    "stop_id": "3847",
+    "name": "Eastbound Victoria Dr @ 900 Block",
+    "lat": 49.285705,
+    "lon": -122.74013
+  },
+  {
+    "stop_id": "3868",
+    "name": "Southbound Shaughnessy St @ Prairie Ave",
+    "lat": 49.27075,
+    "lon": -122.77538
+  },
+  {
+    "stop_id": "3885",
+    "name": "Westbound Victoria Dr @ Rocklin St",
+    "lat": 49.285827,
+    "lon": -122.737672
+  },
+  {
+    "stop_id": "3904",
+    "name": "Coquitlam Central Station @ Bay 10",
+    "lat": 49.275476,
+    "lon": -122.798723
+  },
+  {
+    "stop_id": "3906",
+    "name": "Coquitlam Central Station @ Bay 5",
+    "lat": 49.274999,
+    "lon": -122.798874
+  },
+  {
+    "stop_id": "3918",
+    "name": "Westbound Harwood Ave @ Gabriola Dr",
+    "lat": 49.291271,
+    "lon": -122.774651
+  },
+  {
+    "stop_id": "3927",
+    "name": "Coquitlam Central Station @ Bay 11",
+    "lat": 49.275643,
+    "lon": -122.798596
+  },
+  {
+    "stop_id": "3944",
+    "name": "Southbound Lansdowne Dr @ Panorama Dr",
+    "lat": 49.297051,
+    "lon": -122.813827
+  },
+  {
+    "stop_id": "4011",
+    "name": "Northbound Boulevard Cres @ E 19 St",
+    "lat": 49.326339,
+    "lon": -123.056094
+  },
+  {
+    "stop_id": "4018",
+    "name": "Lynn Valley @ Bay 3",
+    "lat": 49.337424,
+    "lon": -123.038096
+  },
+  {
+    "stop_id": "4030",
+    "name": "Northbound Underwood Ave @ Evelyn St",
+    "lat": 49.348848,
+    "lon": -123.024599
+  },
+  {
+    "stop_id": "4042",
+    "name": "Southbound Mountain Hwy @ Frederick Rd",
+    "lat": 49.341238,
+    "lon": -123.038129
+  },
+  {
+    "stop_id": "4059",
+    "name": "Southbound Grand Blvd East @ E 19 St",
+    "lat": 49.325776,
+    "lon": -123.056353
+  },
+  {
+    "stop_id": "4061",
+    "name": "Southbound Grand Blvd East @ E 15 St",
+    "lat": 49.321559,
+    "lon": -123.056457
+  },
+  {
+    "stop_id": "4074",
+    "name": "Eastbound Mt Seymour Parkway @ Lytton St",
+    "lat": 49.315397,
+    "lon": -123.00062
+  },
+  {
+    "stop_id": "409",
+    "name": "Burrard Station @ Bay 2",
+    "lat": 49.286035,
+    "lon": -123.12037
+  },
+  {
+    "stop_id": "4094",
+    "name": "Southbound Panorama Dr @ Naughton Ave",
+    "lat": 49.326063,
+    "lon": -122.950816
+  },
+  {
+    "stop_id": "4101",
+    "name": "Northbound Fairway Dr @ Dollar Rd",
+    "lat": 49.309134,
+    "lon": -122.957116
+  },
+  {
+    "stop_id": "4113",
+    "name": "Westbound Mt Seymour Parkway @ Lytton St",
+    "lat": 49.315032,
+    "lon": -123.002171
+  },
+  {
+    "stop_id": "4154",
+    "name": "Westbound Sechelt Dr @ Hyannis Dr",
+    "lat": 49.326496,
+    "lon": -122.995619
+  },
+  {
+    "stop_id": "4171",
+    "name": "Northbound Inlet Cres @ Indian River Dr",
+    "lat": 49.32154,
+    "lon": -122.962341
+  },
+  {
+    "stop_id": "4217",
+    "name": "Northbound Queensbury Ave @ E 4th St",
+    "lat": 49.309693,
+    "lon": -123.057121
+  },
+  {
+    "stop_id": "4224",
+    "name": "Eastbound E 15 St @ Grand Blvd East",
+    "lat": 49.321838,
+    "lon": -123.05669
+  },
+  {
+    "stop_id": "4242",
+    "name": "Lonsdale Quay @ Bay 2",
+    "lat": 49.310753,
+    "lon": -123.082752
+  },
+  {
+    "stop_id": "4243",
+    "name": "Northbound Lonsdale Ave @ E 15 St",
+    "lat": 49.322458,
+    "lon": -123.072182
+  },
+  {
+    "stop_id": "4304",
+    "name": "Eastbound E Osborne Rd @ Lonsdale Ave",
+    "lat": 49.340108,
+    "lon": -123.071013
+  },
+  {
+    "stop_id": "4319",
+    "name": "Southbound Prospect Rd @ W Rockland Rd",
+    "lat": 49.344827,
+    "lon": -123.07376
+  },
+  {
+    "stop_id": "4322",
+    "name": "Southbound Lonsdale Ave @ Carisbrooke Cres",
+    "lat": 49.341224,
+    "lon": -123.072008
+  },
+  {
+    "stop_id": "4337",
+    "name": "Grouse Mountain @ Skyride",
+    "lat": 49.372151,
+    "lon": -123.099143
+  },
+  {
+    "stop_id": "4342",
+    "name": "Eastbound Clements Ave @ Capilano Rd",
+    "lat": 49.35797,
+    "lon": -123.106332
+  },
+  {
+    "stop_id": "4347",
+    "name": "Southbound Capilano Rd @ Teviot Place",
+    "lat": 49.354149,
+    "lon": -123.106771
+  },
+  {
+    "stop_id": "4352",
+    "name": "Northbound Capilano Rd @ 3600 Block",
+    "lat": 49.342653,
+    "lon": -123.113437
+  },
+  {
+    "stop_id": "4429",
+    "name": "Westbound Marine Dr @ Fell Ave",
+    "lat": 49.32151,
+    "lon": -123.095264
+  },
+  {
+    "stop_id": "4438",
+    "name": "Westbound W 22 St @ Philip Ave",
+    "lat": 49.330029,
+    "lon": -123.113635
+  },
+  {
+    "stop_id": "4439",
+    "name": "Eastbound W 22 St @ Philip Ave",
+    "lat": 49.329912,
+    "lon": -123.112618
+  },
+  {
+    "stop_id": "4461",
+    "name": "Park Royal @ Bay 5",
+    "lat": 49.326849,
+    "lon": -123.13825
+  },
+  {
+    "stop_id": "4463",
+    "name": "Eastbound Marine Dr @ Capilano Rd",
+    "lat": 49.323943,
+    "lon": -123.121834
+  },
+  {
+    "stop_id": "4471",
+    "name": "Lonsdale Quay @ Bay 1",
+    "lat": 49.310597,
+    "lon": -123.082918
+  },
+  {
+    "stop_id": "4491",
+    "name": "Park Royal @ Bay 2",
+    "lat": 49.327118,
+    "lon": -123.138911
+  },
+  {
+    "stop_id": "4494",
+    "name": "Westbound W Georgia St @ Homer St",
+    "lat": 49.280921,
+    "lon": -123.115491
+  },
+  {
+    "stop_id": "4501",
+    "name": "Eastbound W Keith Rd @ Delbruck Ave",
+    "lat": 49.3199,
+    "lon": -123.087019
+  },
+  {
+    "stop_id": "4525",
+    "name": "Northbound Lonsdale Ave @ E Osborne Rd",
+    "lat": 49.340769,
+    "lon": -123.071822
+  },
+  {
+    "stop_id": "4551",
+    "name": "Eastbound Montroyal Blvd @ Glencanyon Dr",
+    "lat": 49.352341,
+    "lon": -123.082935
+  },
+  {
+    "stop_id": "4568",
+    "name": "Lonsdale Quay @ Bay 8",
+    "lat": 49.310742,
+    "lon": -123.082912
+  },
+  {
+    "stop_id": "4579",
+    "name": "Westbound Montroyal Blvd @ Glencanyon Dr",
+    "lat": 49.352734,
+    "lon": -123.083406
+  },
+  {
+    "stop_id": "4608",
+    "name": "Keith Rd @ Horseshoe Bay Ferry Terminal",
+    "lat": 49.374191,
+    "lon": -123.272831
+  },
+  {
+    "stop_id": "4636",
+    "name": "Eastbound Marine Dr @ Creery Ave",
+    "lat": 49.34176,
+    "lon": -123.21298
+  },
+  {
+    "stop_id": "4644",
+    "name": "Eastbound Marine Dr @ 25 St",
+    "lat": 49.334732,
+    "lon": -123.182038
+  },
+  {
+    "stop_id": "4652",
+    "name": "Eastbound Marine Dr @ 17 St",
+    "lat": 49.328534,
+    "lon": -123.159782
+  },
+  {
+    "stop_id": "4656",
+    "name": "Eastbound Marine Dr @ Main St",
+    "lat": 49.326632,
+    "lon": -123.142638
+  },
+  {
+    "stop_id": "4660",
+    "name": "Park Royal @ Bay 3",
+    "lat": 49.327109,
+    "lon": -123.139104
+  },
+  {
+    "stop_id": "4674",
+    "name": "Westbound Marine Dr @ 25 St",
+    "lat": 49.335115,
+    "lon": -123.182838
+  },
+  {
+    "stop_id": "4750",
+    "name": "Westbound Mathers Ave @ 20 St",
+    "lat": 49.338261,
+    "lon": -123.166908
+  },
+  {
+    "stop_id": "4756",
+    "name": "Eastbound Caulfeild Dr @ Headland Dr",
+    "lat": 49.350447,
+    "lon": -123.25185
+  },
+  {
+    "stop_id": "4790",
+    "name": "Northbound Chartwell Dr @ 1300 Block",
+    "lat": 49.346851,
+    "lon": -123.151814
+  },
+  {
+    "stop_id": "4817",
+    "name": "Southbound Bonnymuir Dr @ Glenmore Dr",
+    "lat": 49.35995,
+    "lon": -123.12364
+  },
+  {
+    "stop_id": "4830",
+    "name": "Westbound E 15 St @ Grand Blvd East",
+    "lat": 49.321967,
+    "lon": -123.057142
+  },
+  {
+    "stop_id": "4845",
+    "name": "Scottsdale Exchange @ Bay 6",
+    "lat": 49.137661,
+    "lon": -122.887792
+  },
+  {
+    "stop_id": "4891",
+    "name": "Northbound 62B St @ 60 Ave",
+    "lat": 49.112775,
+    "lon": -123.050359
+  },
+  {
+    "stop_id": "4894",
+    "name": "Southbound 72 St @ River Rd",
+    "lat": 49.136122,
+    "lon": -123.02519
+  },
+  {
+    "stop_id": "4939",
+    "name": "Scottsdale Exchange @ Bay 3",
+    "lat": 49.137611,
+    "lon": -122.888058
+  },
+  {
+    "stop_id": "4961",
+    "name": "Eastbound 96 Ave @ Scott Rd",
+    "lat": 49.177023,
+    "lon": -122.889399
+  },
+  {
+    "stop_id": "4962",
+    "name": "Northbound Scott Rd @ 96 Ave",
+    "lat": 49.177856,
+    "lon": -122.889974
+  },
+  {
+    "stop_id": "4968",
+    "name": "Scott Rd Station @ Bay 5",
+    "lat": 49.204285,
+    "lon": -122.874488
+  },
+  {
+    "stop_id": "4972",
+    "name": "Westbound 96 Ave @ Scott Rd",
+    "lat": 49.177231,
+    "lon": -122.890965
+  },
+  {
+    "stop_id": "5007",
+    "name": "Eastbound River Rd @ Centre St",
+    "lat": 49.158756,
+    "lon": -122.938051
+  },
+  {
+    "stop_id": "5042",
+    "name": "King George Station @ Bay 2",
+    "lat": 49.183124,
+    "lon": -122.845136
+  },
+  {
+    "stop_id": "5045",
+    "name": "Surrey Central Station @ Bay 8",
+    "lat": 49.188961,
+    "lon": -122.848754
+  },
+  {
+    "stop_id": "5050",
+    "name": "Westbound 96 Ave @ King George Blvd",
+    "lat": 49.177135,
+    "lon": -122.847002
+  },
+  {
+    "stop_id": "5093",
+    "name": "Scottsdale Exchange @ Bay 2",
+    "lat": 49.137505,
+    "lon": -122.888277
+  },
+  {
+    "stop_id": "5122",
+    "name": "Surrey Central Station @ Bay 9",
+    "lat": 49.188967,
+    "lon": -122.848465
+  },
+  {
+    "stop_id": "5148",
+    "name": "Scott Road Station @ Bay 7",
+    "lat": 49.204192,
+    "lon": -122.874952
+  },
+  {
+    "stop_id": "5180",
+    "name": "Guildford Exchange @ Bay 1",
+    "lat": 49.191353,
+    "lon": -122.803459
+  },
+  {
+    "stop_id": "5183",
+    "name": "Guildford Exchange @ Bay 2",
+    "lat": 49.191632,
+    "lon": -122.804013
+  },
+  {
+    "stop_id": "5216",
+    "name": "Ladner Exchange @ Bay 6",
+    "lat": 49.087606,
+    "lon": -123.062487
+  },
+  {
+    "stop_id": "5230",
+    "name": "Scottsdale Exchange @ Bay 7",
+    "lat": 49.137551,
+    "lon": -122.888021
+  },
+  {
+    "stop_id": "5244",
+    "name": "Scottsdale Exchange @ Bay 9",
+    "lat": 49.137335,
+    "lon": -122.888569
+  },
+  {
+    "stop_id": "5255",
+    "name": "Southbound Scott Rd @ 92 Ave",
+    "lat": 49.170175,
+    "lon": -122.890437
+  },
+  {
+    "stop_id": "5262",
+    "name": "Surrey Central Station @ Bay 2",
+    "lat": 49.188849,
+    "lon": -122.848551
+  },
+  {
+    "stop_id": "5287",
+    "name": "Westbound Fraser Hwy @ 156 St",
+    "lat": 49.162452,
+    "lon": -122.791705
+  },
+  {
+    "stop_id": "5352",
+    "name": "Langley Centre @ Bay 1",
+    "lat": 49.105658,
+    "lon": -122.654233
+  },
+  {
+    "stop_id": "5391",
+    "name": "Westbound 60 Ave @ 180 St",
+    "lat": 49.111512,
+    "lon": -122.724292
+  },
+  {
+    "stop_id": "5428",
+    "name": "Northbound King George Blvd @ 1100 Block",
+    "lat": 49.023353,
+    "lon": -122.765764
+  },
+  {
+    "stop_id": "5431",
+    "name": "Westbound 16 Ave @ King George Blvd",
+    "lat": 49.031134,
+    "lon": -122.776584
+  },
+  {
+    "stop_id": "5436",
+    "name": "White Rock Centre @ Bay 8",
+    "lat": 49.032785,
+    "lon": -122.801052
+  },
+  {
+    "stop_id": "5448",
+    "name": "Northbound King George Blvd @ Crescent Rd",
+    "lat": 49.067997,
+    "lon": -122.82107
+  },
+  {
+    "stop_id": "5464",
+    "name": "Newton Exchange @ Bay 3",
+    "lat": 49.133297,
+    "lon": -122.842298
+  },
+  {
+    "stop_id": "5494",
+    "name": "Surrey Central Station @ Bay 10",
+    "lat": 49.189004,
+    "lon": -122.847969
+  },
+  {
+    "stop_id": "55",
+    "name": "Eastbound W 16 Ave @ Carnarvon St",
+    "lat": 49.257583,
+    "lon": -123.17185
+  },
+  {
+    "stop_id": "5509",
+    "name": "Newton Exchange @ Bay 5",
+    "lat": 49.133426,
+    "lon": -122.842328
+  },
+  {
+    "stop_id": "5524",
+    "name": "Southbound King George Blvd @ Crescent Rd",
+    "lat": 49.0669,
+    "lon": -122.820133
+  },
+  {
+    "stop_id": "5528",
+    "name": "Southbound King George Blvd @ 32 Ave Diversion",
+    "lat": 49.058138,
+    "lon": -122.809349
+  },
+  {
+    "stop_id": "5542",
+    "name": "White Rock Centre @ Bay 10",
+    "lat": 49.032567,
+    "lon": -122.801322
+  },
+  {
+    "stop_id": "5593",
+    "name": "Newton Exchange @ Bay 1",
+    "lat": 49.133306,
+    "lon": -122.841764
+  },
+  {
+    "stop_id": "5633",
+    "name": "Newton Exchange @ Bay 6",
+    "lat": 49.133429,
+    "lon": -122.842059
+  },
+  {
+    "stop_id": "5667",
+    "name": "Surrey Central Station @ Bay 4",
+    "lat": 49.18885,
+    "lon": -122.849361
+  },
+  {
+    "stop_id": "5670",
+    "name": "Westbound 104 Ave @ 132 St",
+    "lat": 49.191756,
+    "lon": -122.857116
+  },
+  {
+    "stop_id": "5695",
+    "name": "Northbound 132 St @ 7700 Block",
+    "lat": 49.14306,
+    "lon": -122.856653
+  },
+  {
+    "stop_id": "5700",
+    "name": "Newton Exchange @ Bay 2",
+    "lat": 49.133299,
+    "lon": -122.842037
+  },
+  {
+    "stop_id": "5743",
+    "name": "Newton Exchange @ Bay 7",
+    "lat": 49.13343,
+    "lon": -122.841794
+  },
+  {
+    "stop_id": "5748",
+    "name": "Northbound 140 St @ 77A Ave",
+    "lat": 49.143377,
+    "lon": -122.834416
+  },
+  {
+    "stop_id": "5768",
+    "name": "Surrey Central Station @ Bay 5",
+    "lat": 49.188845,
+    "lon": -122.849625
+  },
+  {
+    "stop_id": "5769",
+    "name": "Surrey Central Station @ Bay 6",
+    "lat": 49.188948,
+    "lon": -122.849377
+  },
+  {
+    "stop_id": "5793",
+    "name": "Surrey Central Station @ Bay 7",
+    "lat": 49.188956,
+    "lon": -122.849103
+  },
+  {
+    "stop_id": "5815",
+    "name": "Westbound 104 Ave @ 152 St",
+    "lat": 49.191596,
+    "lon": -122.801592
+  },
+  {
+    "stop_id": "5852",
+    "name": "Northbound 143A St @ Gladstone Dr",
+    "lat": 49.206441,
+    "lon": -122.82503
+  },
+  {
+    "stop_id": "5890",
+    "name": "Scott Road Station @ Bay 9",
+    "lat": 49.204125,
+    "lon": -122.875541
+  },
+  {
+    "stop_id": "5891",
+    "name": "Surrey Central Station @ Bay 3",
+    "lat": 49.188847,
+    "lon": -122.848829
+  },
+  {
+    "stop_id": "5918",
+    "name": "Southbound 160 St @ 88 Ave",
+    "lat": 49.16239,
+    "lon": -122.778991
+  },
+  {
+    "stop_id": "5961",
+    "name": "Northbound 160 St @ 88 Ave",
+    "lat": 49.163211,
+    "lon": -122.778726
+  },
+  {
+    "stop_id": "5975",
+    "name": "Northbound 168 St @ 104 Ave",
+    "lat": 49.191997,
+    "lon": -122.756353
+  },
+  {
+    "stop_id": "5989",
+    "name": "22nd Street Station @ Bay 6",
+    "lat": 49.199727,
+    "lon": -122.949615
+  },
+  {
+    "stop_id": "5997",
+    "name": "Scottsdale Exchange @ Bay 4",
+    "lat": 49.137718,
+    "lon": -122.887834
+  },
+  {
+    "stop_id": "6077",
+    "name": "Newton Exchange @ Bay 4",
+    "lat": 49.133304,
+    "lon": -122.842598
+  },
+  {
+    "stop_id": "6080",
+    "name": "Scottsdale Exchange @ Bay 8",
+    "lat": 49.137443,
+    "lon": -122.888253
+  },
+  {
+    "stop_id": "6139",
+    "name": "White Rock Centre @ Bay 5",
+    "lat": 49.031826,
+    "lon": -122.801091
+  },
+  {
+    "stop_id": "6140",
+    "name": "Westbound Sullivan St @ Kidd Rd",
+    "lat": 49.055547,
+    "lon": -122.884378
+  },
+  {
+    "stop_id": "6146",
+    "name": "Southbound 128 St @ Crescent Rd",
+    "lat": 49.052483,
+    "lon": -122.867458
+  },
+  {
+    "stop_id": "6174",
+    "name": "White Rock Centre @ Bay 7",
+    "lat": 49.032418,
+    "lon": -122.80105
+  },
+  {
+    "stop_id": "6197",
+    "name": "Westbound Thrift Ave @ Johnston Rd",
+    "lat": 49.027658,
+    "lon": -122.802497
+  },
+  {
+    "stop_id": "6280",
+    "name": "Southbound 128 St @ 16 Ave",
+    "lat": 49.03091,
+    "lon": -122.86764
+  },
+  {
+    "stop_id": "6298",
+    "name": "Eastbound Marine Dr @ Martin St",
+    "lat": 49.021811,
+    "lon": -122.807478
+  },
+  {
+    "stop_id": "6318",
+    "name": "Westbound Russell Ave @ Hospital St",
+    "lat": 49.029326,
+    "lon": -122.793181
+  },
+  {
+    "stop_id": "6340",
+    "name": "White Rock Centre @ Bay 1",
+    "lat": 49.031208,
+    "lon": -122.802091
+  },
+  {
+    "stop_id": "6425",
+    "name": "Westbound 24 Ave @ 134 St",
+    "lat": 49.045844,
+    "lon": -122.851445
+  },
+  {
+    "stop_id": "6455",
+    "name": "Scottsdale Exchange @ Bay 1",
+    "lat": 49.137407,
+    "lon": -122.88851
+  },
+  {
+    "stop_id": "6456",
+    "name": "Surrey Central Station @ Bay 1 Unloading Only",
+    "lat": 49.188852,
+    "lon": -122.848203
+  },
+  {
+    "stop_id": "646",
+    "name": "Dunbar Loop @ Bay 2",
+    "lat": 49.234625,
+    "lon": -123.185758
+  },
+  {
+    "stop_id": "6482",
+    "name": "Steveston Exchange @ Bay 2",
+    "lat": 49.126357,
+    "lon": -123.18361
+  },
+  {
+    "stop_id": "6512",
+    "name": "Eastbound Cook Rd @ No. 3 Rd",
+    "lat": 49.166453,
+    "lon": -123.135795
+  },
+  {
+    "stop_id": "6578",
+    "name": "Steveston Exchange @ Bay 3",
+    "lat": 49.126496,
+    "lon": -123.184059
+  },
+  {
+    "stop_id": "6661",
+    "name": "Westbound Steveston Hwy @ No. 5 Rd",
+    "lat": 49.133466,
+    "lon": -123.092736
+  },
+  {
+    "stop_id": "6709",
+    "name": "Entertainment Blvd @ Riverport Recreation Complex",
+    "lat": 49.134875,
+    "lon": -123.065049
+  },
+  {
+    "stop_id": "6727",
+    "name": "Ladner Exchange @ Bay 1",
+    "lat": 49.087654,
+    "lon": -123.062442
+  },
+  {
+    "stop_id": "6732",
+    "name": "Tsawwassen Ferry Terminal @ Bay 1",
+    "lat": 49.007327,
+    "lon": -123.130103
+  },
+  {
+    "stop_id": "6736",
+    "name": "Ladner Exchange @ Bay 4",
+    "lat": 49.087605,
+    "lon": -123.061986
+  },
+  {
+    "stop_id": "6777",
+    "name": "Westbound Machrina Way @ No. 5 Rd",
+    "lat": 49.124332,
+    "lon": -123.092898
+  },
+  {
+    "stop_id": "6778",
+    "name": "Eastbound Machrina Way @ No. 5 Rd",
+    "lat": 49.124218,
+    "lon": -123.093373
+  },
+  {
+    "stop_id": "6914",
+    "name": "Westbound Horseshoe Way @ No. 5 Rd",
+    "lat": 49.131088,
+    "lon": -123.093785
+  },
+  {
+    "stop_id": "6921",
+    "name": "Westbound Williams Rd @ No. 4 Rd",
+    "lat": 49.140808,
+    "lon": -123.11456
+  },
+  {
+    "stop_id": "6940",
+    "name": "Eastbound Williams Rd @ Garden City Rd",
+    "lat": 49.14078,
+    "lon": -123.126386
+  },
+  {
+    "stop_id": "6944",
+    "name": "Eastbound Williams Rd @ Shell Rd",
+    "lat": 49.140638,
+    "lon": -123.103716
+  },
+  {
+    "stop_id": "6976",
+    "name": "Eastbound Ewen Ave @ Hume St",
+    "lat": 49.182596,
+    "lon": -122.955241
+  },
+  {
+    "stop_id": "6984",
+    "name": "22nd Street Station @ Bay 7",
+    "lat": 49.199633,
+    "lon": -122.949901
+  },
+  {
+    "stop_id": "6992",
+    "name": "Westbound Cambie Rd @ Jacombs Rd",
+    "lat": 49.184628,
+    "lon": -123.08085
+  },
+  {
+    "stop_id": "7025",
+    "name": "Northbound Knight St Bridge Offramp @ SE Marine Dr",
+    "lat": 49.210846,
+    "lon": -123.075497
+  },
+  {
+    "stop_id": "7050",
+    "name": "Southbound Agar Dr @ Inglis Dr",
+    "lat": 49.179832,
+    "lon": -123.173796
+  },
+  {
+    "stop_id": "7064",
+    "name": "Westbound 40 Ave @ 208 St",
+    "lat": 49.074727,
+    "lon": -122.648439
+  },
+  {
+    "stop_id": "7066",
+    "name": "Northbound 204 St @ 40 Ave",
+    "lat": 49.075072,
+    "lon": -122.658419
+  },
+  {
+    "stop_id": "7095",
+    "name": "Langley Centre @ Bay 3",
+    "lat": 49.106256,
+    "lon": -122.654259
+  },
+  {
+    "stop_id": "7166",
+    "name": "Langley Centre @ Bay 4",
+    "lat": 49.106346,
+    "lon": -122.654492
+  },
+  {
+    "stop_id": "7192",
+    "name": "Southbound 198 St @ 24 Ave",
+    "lat": 49.044614,
+    "lon": -122.674967
+  },
+  {
+    "stop_id": "7207",
+    "name": "Langley Centre @ Bay 2",
+    "lat": 49.106169,
+    "lon": -122.654028
+  },
+  {
+    "stop_id": "7214",
+    "name": "Langley Centre @ Bay 5",
+    "lat": 49.106449,
+    "lon": -122.654727
+  },
+  {
+    "stop_id": "7217",
+    "name": "Eastbound 48 Ave @ 208 St",
+    "lat": 49.089503,
+    "lon": -122.645445
+  },
+  {
+    "stop_id": "7259",
+    "name": "Langley Centre @ Bay 6",
+    "lat": 49.106538,
+    "lon": -122.654955
+  },
+  {
+    "stop_id": "7281",
+    "name": "Westbound 88 Ave @ 212 St",
+    "lat": 49.162351,
+    "lon": -122.63347
+  },
+  {
+    "stop_id": "7311",
+    "name": "Eastbound 88 Ave @ 212 St",
+    "lat": 49.162127,
+    "lon": -122.632424
+  },
+  {
+    "stop_id": "7319",
+    "name": "Northbound Trattle St @ 9000 Block",
+    "lat": 49.167916,
+    "lon": -122.588666
+  },
+  {
+    "stop_id": "7384",
+    "name": "Southbound 276 St @ Fraser Hwy",
+    "lat": 49.057195,
+    "lon": -122.459825
+  },
+  {
+    "stop_id": "7422",
+    "name": "Westbound 1A Ave @ 67 St",
+    "lat": 49.004794,
+    "lon": -123.039191
+  },
+  {
+    "stop_id": "7432",
+    "name": "Westbound 2nd Ave @ 52A St",
+    "lat": 49.006407,
+    "lon": -123.077664
+  },
+  {
+    "stop_id": "744",
+    "name": "Dunbar Loop @ Bay 1",
+    "lat": 49.234424,
+    "lon": -123.185469
+  },
+  {
+    "stop_id": "745",
+    "name": "Marpole Loop @ Bay 1",
+    "lat": 49.202789,
+    "lon": -123.133802
+  },
+  {
+    "stop_id": "7450",
+    "name": "South Delta Exchange @ Bay 1",
+    "lat": 49.035721,
+    "lon": -123.06846
+  },
+  {
+    "stop_id": "7469",
+    "name": "Ladner Exchange @ Bay 5",
+    "lat": 49.087604,
+    "lon": -123.062236
+  },
+  {
+    "stop_id": "7489",
+    "name": "South Delta Exchange @ Bay 2",
+    "lat": 49.035889,
+    "lon": -123.068854
+  },
+  {
+    "stop_id": "7516",
+    "name": "Westbound 1st Ave @ 49 St",
+    "lat": 49.004521,
+    "lon": -123.088265
+  },
+  {
+    "stop_id": "7544",
+    "name": "Eastbound 1st Ave @ English Bluff Rd",
+    "lat": 49.004415,
+    "lon": -123.088671
+  },
+  {
+    "stop_id": "7572",
+    "name": "Northbound 46A St @ River Rd West",
+    "lat": 49.088518,
+    "lon": -123.094879
+  },
+  {
+    "stop_id": "7591",
+    "name": "Ladner Exchange @ Bay 7",
+    "lat": 49.08759,
+    "lon": -123.062747
+  },
+  {
+    "stop_id": "7602",
+    "name": "Southbound 46A St @ River Rd West",
+    "lat": 49.088565,
+    "lon": -123.095068
+  },
+  {
+    "stop_id": "7622",
+    "name": "Southbound Ferry Rd @ Commodore Dr",
+    "lat": 49.105389,
+    "lon": -123.079236
+  },
+  {
+    "stop_id": "7635",
+    "name": "Ladner Exchange @ Bay 3",
+    "lat": 49.087654,
+    "lon": -123.061833
+  },
+  {
+    "stop_id": "7636",
+    "name": "Eastbound River Rd @ 72 St",
+    "lat": 49.137172,
+    "lon": -123.024713
+  },
+  {
+    "stop_id": "7639",
+    "name": "Scott Road Station @ Bay 8",
+    "lat": 49.204154,
+    "lon": -122.875283
+  },
+  {
+    "stop_id": "7708",
+    "name": "Southbound 227 St @ Haney Bypass",
+    "lat": 49.209621,
+    "lon": -122.595106
+  },
+  {
+    "stop_id": "7743",
+    "name": "Maple Meadows Station @ Bay 4",
+    "lat": 49.216767,
+    "lon": -122.666484
+  },
+  {
+    "stop_id": "7826",
+    "name": "Westbound Dewdney Trunk Rd @ 248 St",
+    "lat": 49.220336,
+    "lon": -122.535885
+  },
+  {
+    "stop_id": "7851",
+    "name": "Northbound 232 St @ 128 Ave",
+    "lat": 49.235283,
+    "lon": -122.579248
+  },
+  {
+    "stop_id": "7863",
+    "name": "Westbound 116 Ave @ 231B St",
+    "lat": 49.21313,
+    "lon": -122.580605
+  },
+  {
+    "stop_id": "7926",
+    "name": "Southbound 280 St @ Lougheed Hwy",
+    "lat": 49.174293,
+    "lon": -122.444274
+  },
+  {
+    "stop_id": "7979",
+    "name": "Westbound 100 Ave @ 268 St (Flag)",
+    "lat": 49.184073,
+    "lon": -122.479591
+  },
+  {
+    "stop_id": "8018",
+    "name": "Southbound Jones Ave @ W 21 St",
+    "lat": 49.328504,
+    "lon": -123.081606
+  },
+  {
+    "stop_id": "8094",
+    "name": "Northbound Eaglecliff Rd @ Baker Rd",
+    "lat": 49.40493,
+    "lon": -123.312912
+  },
+  {
+    "stop_id": "8139",
+    "name": "Kootenay Loop @ Bay 2",
+    "lat": 49.281495,
+    "lon": -123.026062
+  },
+  {
+    "stop_id": "8140",
+    "name": "Kootenay Loop @ Bay 4",
+    "lat": 49.281365,
+    "lon": -123.025918
+  },
+  {
+    "stop_id": "8283",
+    "name": "Southbound Hwy 99 Onramp @ Steveston Hwy",
+    "lat": 49.13283,
+    "lon": -123.08712
+  },
+  {
+    "stop_id": "8288",
+    "name": "Southbound Kensington Ave @ Hammarskjold Dr",
+    "lat": 49.277492,
+    "lon": -122.970149
+  },
+  {
+    "stop_id": "8289",
+    "name": "Eastbound Keefer Place @ Taylor St",
+    "lat": 49.279294,
+    "lon": -123.105515
+  },
+  {
+    "stop_id": "8351",
+    "name": "Southbound King George Blvd @ 94A Ave",
+    "lat": 49.17367,
+    "lon": -122.846025
+  },
+  {
+    "stop_id": "8394",
+    "name": "Northbound Granville St @ W 71 Ave",
+    "lat": 49.207431,
+    "lon": -123.1404
+  },
+  {
+    "stop_id": "8396",
+    "name": "Northbound MacDonald Ave @ Albert St",
+    "lat": 49.281716,
+    "lon": -123.016137
+  },
+  {
+    "stop_id": "8484",
+    "name": "Westbound Steveston Hwy @ Hwy 99",
+    "lat": 49.133527,
+    "lon": -123.087985
+  },
+  {
+    "stop_id": "8490",
+    "name": "Steveston Exchange @ Bay 1",
+    "lat": 49.126357,
+    "lon": -123.18513
+  },
+  {
+    "stop_id": "8497",
+    "name": "Northbound Bonnymuir Dr @ Glenmore Dr",
+    "lat": 49.359874,
+    "lon": -123.12356
+  },
+  {
+    "stop_id": "8552",
+    "name": "Braid Station @ Bay 2",
+    "lat": 49.23303,
+    "lon": -122.88308
+  },
+  {
+    "stop_id": "8561",
+    "name": "Braid Station @ Bay 3",
+    "lat": 49.23321,
+    "lon": -122.883024
+  },
+  {
+    "stop_id": "8563",
+    "name": "Joyce Station @ Bay 6",
+    "lat": 49.237996,
+    "lon": -123.032261
+  },
+  {
+    "stop_id": "8573",
+    "name": "Braid Station @ Bay 1",
+    "lat": 49.232855,
+    "lon": -122.883137
+  },
+  {
+    "stop_id": "8574",
+    "name": "Braid Station @ Bay 5",
+    "lat": 49.233145,
+    "lon": -122.882556
+  },
+  {
+    "stop_id": "8575",
+    "name": "Braid Station @ Bay 6",
+    "lat": 49.232968,
+    "lon": -122.882501
+  },
+  {
+    "stop_id": "8592",
+    "name": "Westbound Dominion Ave @ Archbishop Carney Secondary",
+    "lat": 49.258466,
+    "lon": -122.751944
+  },
+  {
+    "stop_id": "863",
+    "name": "Southbound Granville St @ W 49 Ave",
+    "lat": 49.226415,
+    "lon": -123.139991
+  },
+  {
+    "stop_id": "8649",
+    "name": "Eastbound N Grandview Hwy @ Commercial Dr",
+    "lat": 49.263172,
+    "lon": -123.068542
+  },
+  {
+    "stop_id": "8650",
+    "name": "Eastbound Cook Rd @ No. 3 Rd",
+    "lat": 49.166455,
+    "lon": -123.135111
+  },
+  {
+    "stop_id": "8654",
+    "name": "Eastbound 88 Ave @ 156 St",
+    "lat": 49.162722,
+    "lon": -122.791163
+  },
+  {
+    "stop_id": "8657",
+    "name": "Lougheed Station @ Bay 5",
+    "lat": 49.247378,
+    "lon": -122.894518
+  },
+  {
+    "stop_id": "8659",
+    "name": "Sperling Station @ Bay 4",
+    "lat": 49.258603,
+    "lon": -122.963986
+  },
+  {
+    "stop_id": "8672",
+    "name": "Lougheed Station @ Bay 8",
+    "lat": 49.247657,
+    "lon": -122.89519
+  },
+  {
+    "stop_id": "8674",
+    "name": "Gilmore Station @ Bay 3",
+    "lat": 49.26457,
+    "lon": -123.015179
+  },
+  {
+    "stop_id": "8676",
+    "name": "Lougheed Station @ Bay 9",
+    "lat": 49.247772,
+    "lon": -122.895398
+  },
+  {
+    "stop_id": "8680",
+    "name": "Sperling Station @ Bay 3",
+    "lat": 49.258754,
+    "lon": -122.963937
+  },
+  {
+    "stop_id": "8683",
+    "name": "Northbound Holdom Ave @ Lougheed Hwy",
+    "lat": 49.264688,
+    "lon": -122.981032
+  },
+  {
+    "stop_id": "8685",
+    "name": "Lougheed Station @ Bay 2",
+    "lat": 49.247722,
+    "lon": -122.89515
+  },
+  {
+    "stop_id": "8687",
+    "name": "Lougheed Station @ Bay 10",
+    "lat": 49.247897,
+    "lon": -122.895638
+  },
+  {
+    "stop_id": "8688",
+    "name": "Lougheed Station @ Bay 7",
+    "lat": 49.247544,
+    "lon": -122.894975
+  },
+  {
+    "stop_id": "8689",
+    "name": "Lougheed Station @ Bay 4",
+    "lat": 49.24749,
+    "lon": -122.894732
+  },
+  {
+    "stop_id": "8690",
+    "name": "Lougheed Station @ Bay 3",
+    "lat": 49.247609,
+    "lon": -122.894945
+  },
+  {
+    "stop_id": "8691",
+    "name": "Lougheed Station @ Bay 6",
+    "lat": 49.247428,
+    "lon": -122.894766
+  },
+  {
+    "stop_id": "8697",
+    "name": "Southbound Holdom Ave @ Lougheed Hwy",
+    "lat": 49.264489,
+    "lon": -122.981313
+  },
+  {
+    "stop_id": "8703",
+    "name": "Northbound Lake City Way @ Enterprise St",
+    "lat": 49.255883,
+    "lon": -122.937855
+  },
+  {
+    "stop_id": "8802",
+    "name": "Westbound Hastings St @ Duthie Ave",
+    "lat": 49.280475,
+    "lon": -122.954024
+  },
+  {
+    "stop_id": "8830",
+    "name": "Northbound Riverside Dr @ Dollarton Hwy",
+    "lat": 49.306139,
+    "lon": -123.014172
+  },
+  {
+    "stop_id": "8854",
+    "name": "White Rock Centre @ Bay 6",
+    "lat": 49.032156,
+    "lon": -122.801051
+  },
+  {
+    "stop_id": "8915",
+    "name": "Westbound Broadway @ 7900 Block",
+    "lat": 49.260979,
+    "lon": -122.934473
+  },
+  {
+    "stop_id": "8917",
+    "name": "Westbound 91 Ave @ 152 St",
+    "lat": 49.168347,
+    "lon": -122.800512
+  },
+  {
+    "stop_id": "8928",
+    "name": "Southbound 208 St @ Grade Cres",
+    "lat": 49.087955,
+    "lon": -122.647019
+  },
+  {
+    "stop_id": "8970",
+    "name": "Eastbound 17 Ave @ 128 St",
+    "lat": 49.033024,
+    "lon": -122.866103
+  },
+  {
+    "stop_id": "899",
+    "name": "Eastbound E Broadway @ Penticton St",
+    "lat": 49.261916,
+    "lon": -123.051333
+  },
+  {
+    "stop_id": "9069",
+    "name": "Waterfront Station @ Bay 1",
+    "lat": 49.285803,
+    "lon": -123.112372
+  },
+  {
+    "stop_id": "908",
+    "name": "Lougheed Hwy @ Boundary Loop",
+    "lat": 49.265467,
+    "lon": -123.024843
+  },
+  {
+    "stop_id": "9110",
+    "name": "Eastbound Harbourside Dr @ Harbourside Place",
+    "lat": 49.314517,
+    "lon": -123.099393
+  },
+  {
+    "stop_id": "9124",
+    "name": "Southbound Granville St @ W King Edward Ave",
+    "lat": 49.248838,
+    "lon": -123.139224
+  },
+  {
+    "stop_id": "9126",
+    "name": "Southbound Deer Lake Parkway @ Canada Way",
+    "lat": 49.244496,
+    "lon": -122.974395
+  },
+  {
+    "stop_id": "9132",
+    "name": "Eastbound 24 Ave @ 136 St",
+    "lat": 49.045679,
+    "lon": -122.84726
+  },
+  {
+    "stop_id": "9136",
+    "name": "Southbound Granville St @ W Broadway",
+    "lat": 49.263073,
+    "lon": -123.138707
+  },
+  {
+    "stop_id": "915",
+    "name": "Westbound E Broadway @ Renfrew St",
+    "lat": 49.262097,
+    "lon": -123.044962
+  },
+  {
+    "stop_id": "9179",
+    "name": "Westbound Panorama Dr @ Lansdowne Dr",
+    "lat": 49.29749,
+    "lon": -122.814601
+  },
+  {
+    "stop_id": "9184",
+    "name": "Westbound Queens Park Care Centre @ Blackberry Dr",
+    "lat": 49.216676,
+    "lon": -122.901632
+  },
+  {
+    "stop_id": "9244",
+    "name": "Northbound Paddock Dr @ 1700 Block",
+    "lat": 49.311487,
+    "lon": -122.787478
+  },
+  {
+    "stop_id": "9245",
+    "name": "Westbound Parkway Blvd @ Plateau Blvd",
+    "lat": 49.320671,
+    "lon": -122.79293
+  },
+  {
+    "stop_id": "928",
+    "name": "Westbound W Broadway @ Ontario St",
+    "lat": 49.263101,
+    "lon": -123.105291
+  },
+  {
+    "stop_id": "935",
+    "name": "Westbound W 10 Ave @ Fir St",
+    "lat": 49.262724,
+    "lon": -123.14034
+  },
+  {
+    "stop_id": "9356",
+    "name": "Southbound Ottawa St @ Riverside Dr",
+    "lat": 49.260389,
+    "lon": -122.746578
+  },
+  {
+    "stop_id": "9433",
+    "name": "Southbound Belcarra Bay Rd @ Whiskey Cove Lane",
+    "lat": 49.321611,
+    "lon": -122.925493
+  },
+  {
+    "stop_id": "9452",
+    "name": "Westbound 88 Ave @ 160 St",
+    "lat": 49.162829,
+    "lon": -122.779625
+  },
+  {
+    "stop_id": "9492",
+    "name": "Mall Access Rd @ Willowbrook Mall",
+    "lat": 49.115376,
+    "lon": -122.677041
+  },
+  {
+    "stop_id": "9530",
+    "name": "Eastbound W Broadway @ Alma St",
+    "lat": 49.264263,
+    "lon": -123.184623
+  },
+  {
+    "stop_id": "9543",
+    "name": "Westbound Marine Dr @ McGuire Ave",
+    "lat": 49.324033,
+    "lon": -123.11995
+  },
+  {
+    "stop_id": "9560",
+    "name": "Northbound Railway Ave @ Steveston Hwy",
+    "lat": 49.134013,
+    "lon": -123.169691
+  },
+  {
+    "stop_id": "9608",
+    "name": "Bowen Island Trunk Rd @ Snug Cove",
+    "lat": 49.37985,
+    "lon": -123.333585
+  },
+  {
+    "stop_id": "9634",
+    "name": "Eastbound Chatham St @ 4th Ave",
+    "lat": 49.126361,
+    "lon": -123.186418
+  },
+  {
+    "stop_id": "9635",
+    "name": "Westbound 104 Ave @ 245 St",
+    "lat": 49.191349,
+    "lon": -122.542917
+  },
+  {
+    "stop_id": "9665",
+    "name": "Northbound Jackson Rd @ 103 Ave",
+    "lat": 49.189248,
+    "lon": -122.540433
+  },
+  {
+    "stop_id": "9701",
+    "name": "Southbound Jackson Rd @ 103 Ave",
+    "lat": 49.188967,
+    "lon": -122.540852
+  },
+  {
+    "stop_id": "985",
+    "name": "Eastbound W Georgia St @ Granville St",
+    "lat": 49.28264,
+    "lon": -123.118529
+  },
+  {
+    "stop_id": "989",
+    "name": "Lonsdale Quay @ Bay 5",
+    "lat": 49.311218,
+    "lon": -123.082407
+  },
+  {
+    "stop_id": "9956",
+    "name": "Mission City Station @ Bay 1",
+    "lat": 49.133882,
+    "lon": -122.305153
+  },
+  {
+    "stop_id": "9973",
+    "name": "Westbound 8th Ave @ New Westminster Secondary",
+    "lat": 49.214693,
+    "lon": -122.926613
+  },
+  {
+    "stop_id": "9989",
+    "name": "Westbound E 49 Ave @ Tyne St",
+    "lat": 49.224736,
+    "lon": -123.032636
+  },
+  {
+    "stop_id": "9992",
+    "name": "Northbound Commerce Parkway @ International Place",
+    "lat": 49.174135,
+    "lon": -123.071653
+  }
+]

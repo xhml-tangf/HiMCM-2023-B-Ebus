@@ -1,0 +1,9 @@
+{
+  "archive_url": "https://zenodo.org/api/records/14779119/files/obds_archive_jun2023.zip/content",
+  "archive_published_md5": "md5:1c8352fc910e91490d0a814577f1f120",
+  "archive_member": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-06-10_21.00.02_gtfs.zip",
+  "sha256": "e542e686a5f6982ad643ba5049fcf191486bcc18c37adf0a4330e44c75f254da",
+  "retrieved_utc": "2026-10-22T12:22:09.559513+00:00",
+  "outer_member_crc_verified": true,
+  "inner_gtfs_all_member_crc_verified": true
+}

@@ -1,0 +1,519 @@
+{
+  "route": "231 Harbourside/Lonsdale Quay",
+  "representative_date": "2023-11-14",
+  "loaded_trips": 10,
+  "loaded_km_lower": 20.437000000000005,
+  "loaded_km_upper": 24.528499999999998,
+  "concurrent_trip_lower_bound": 1,
+  "no_reposition_minimum_fleet": 4,
+  "no_reposition_proof": "Four A->B departures before the first B->A departure; all four end at B.",
+  "source_calendar_days": 119,
+  "source_calendar_operating_days": 81,
+  "source_calendar_trip_occurrences": 810,
+  "ten_year_reference": {
+    "start": "2024-01-01",
+    "end_exclusive": "2034-01-01",
+    "days": 3653,
+    "repeated_source_cycle_days": 119,
+    "operating_days": 2488,
+    "status": "STATIONARY_REPLAY_EXPERIMENT_NOT_FORECAST"
+  },
+  "candidate": {
+    "name": "Nova LFSe+ 6-battery 2025 published specification",
+    "total_passengers": 59,
+    "nominal_battery_kwh": 564,
+    "max_plug_grid_kw": 150,
+    "source_url": "https://novabus.com/wp-content/uploads/2017/09/LFSe_Letter-Size_April-2025_EN.pdf",
+    "availability": "2025 technical reference; not asserted known in 2023"
+  },
+  "external_inputs": {
+    "energy_kwh_per_km": {
+      "annual_route_low_planning_transfer": 1.37,
+      "annual_fleet_mean_planning_transfer": 1.6,
+      "winter_fleet_mean_not_worst_case": 1.79,
+      "annual_route_high_planning_transfer": 2.0
+    },
+    "grid_kgco2e_per_kwh": 0.0113,
+    "energy_component_2023_cad_per_kwh": 0.0614,
+    "generic_hardware_screen_2023_cad": 1200000.0
+  },
+  "evidence": {
+    "energy": "2020 fleet plan, PDF p73: all-in propulsion+HVAC projections, NOT route231 measurements",
+    "hardware": "2023 June technology package PDF p29: generic BEB screening price, NOT Nova quote",
+    "demand": "cap50 route/time proxy, NOT per-trip passenger maximum",
+    "alignment": "Loaded passenger alignment reused for empty reposition; actual time remains unknown"
+  },
+  "unknowns": [
+    "actual directed deadhead times",
+    "local road/stop approval for selected configuration",
+    "usable battery/SOC policy",
+    "charging efficiency/curve and real charging facility at A",
+    "stationary HVAC energy",
+    "garage travel/parking and interlining",
+    "actual future demand/weather/calendar/prices",
+    "awarded vehicle price, maintenance and facility costs"
+  ],
+  "hashes": {
+    "data\\processed\\vancouver_gtfs_trip_manifest_classified_2023.csv": "a1d8503ebb7c999400adccb793861cb0761a86efa1716e8f61f2d7047154b8ac",
+    "data\\raw\\vancouver_gtfs_2023\\calendar.txt": "f9b3c07ee8bc7f923bf2b550d9a628e7dadc7ee7f069d92c348f129d61e5d9da",
+    "data\\raw\\vancouver_gtfs_2023\\calendar_dates.txt": "7ec38e47e8c94c3e345b0fea7c2e98ce562a56edc649780a39d7ed2635925858",
+    "data\\raw\\translink_2020_fleet_plan.pdf": "1042fbcf5bc4ba830d6b057514401af7d7956b8e0a1028474f908442d3b5ec15",
+    "data\\raw\\translink_2023_june_technology_update.pdf": "9e188c6db36d9383a2a2bb5ddf3b0d78159e66e3cc091cca36df48427d01085a"
+  },
+  "exhaustive_partition_min_empty_km": {
+    "1": 14.7171,
+    "2": 9.811399999999999,
+    "3": 4.9056999999999995,
+    "4": 0.0
+  },
+  "solutions": [
+    {
+      "vehicles": 1,
+      "min_empty_distance_upper_km": 14.7171,
+      "reposition_legs": 6,
+      "common_deadhead_time_bound_min": 7.0,
+      "daily_km_lower": 32.699200000000005,
+      "daily_km_upper": 39.2456,
+      "T_capacity_proxy": 1.18,
+      "capacity_status": "NOMINAL_MANUFACTURER_MAX_DIVIDED_BY_HISTORICAL_PRACTICAL_PROXY_NOT_CERTIFIED",
+      "required_battery_usable_kwh_central": 62.79296000000001,
+      "required_battery_usable_kwh_transfer_2": 78.4912,
+      "central_daily_battery_kwh": 62.79296000000001,
+      "common_overnight_charging_window_hours": 13.4,
+      "one_port_required_received_kw_central": 4.686041791044777,
+      "one_port_required_received_kw_transfer_2": 5.857552238805971,
+      "ten_year_km_lower": 81355.60960000001,
+      "ten_year_km_upper": 97643.0528,
+      "ten_year_battery_kwh_central_upper": 156228.88448,
+      "ten_year_grid_ghg_kg_coefficient_divided_by_eta": 1765.3863946239999,
+      "ten_year_energy_charge_cad_coefficient_divided_by_eta": 9592.453507072001,
+      "hardware_screening_budget_2023_cad": 1200000.0,
+      "score_status": "E=-GHG_COEFFICIENT/eta; C=-(HARDWARE+ENERGY_COMPONENT/eta); PARTIAL_ONLY",
+      "solver_gap": 0.0,
+      "solver_nodes": 0,
+      "validation": {
+        "exact_trip_coverage": true,
+        "no_time_overlap": true,
+        "every_reposition_has_a_published_alignment": true,
+        "repeated_day_location_and_time_checked": true,
+        "battery_and_charging_status": "REQUIREMENTS_ONLY_NOT_MEASURED_FEASIBILITY"
+      },
+      "annual_route_low_planning_transfer": {
+        "battery_kwh_lower": 44.79790400000001,
+        "battery_kwh_upper": 53.76647200000001
+      },
+      "annual_fleet_mean_planning_transfer": {
+        "battery_kwh_lower": 52.31872000000001,
+        "battery_kwh_upper": 62.79296000000001
+      },
+      "winter_fleet_mean_not_worst_case": {
+        "battery_kwh_lower": 58.53156800000001,
+        "battery_kwh_upper": 70.24962400000001
+      },
+      "annual_route_high_planning_transfer": {
+        "battery_kwh_lower": 65.39840000000001,
+        "battery_kwh_upper": 78.4912
+      }
+    },
+    {
+      "vehicles": 2,
+      "min_empty_distance_upper_km": 9.811399999999999,
+      "reposition_legs": 4,
+      "common_deadhead_time_bound_min": 37.0,
+      "daily_km_lower": 28.611800000000002,
+      "daily_km_upper": 34.3399,
+      "T_capacity_proxy": 1.18,
+      "capacity_status": "NOMINAL_MANUFACTURER_MAX_DIVIDED_BY_HISTORICAL_PRACTICAL_PROXY_NOT_CERTIFIED",
+      "required_battery_usable_kwh_central": 31.396479999999997,
+      "required_battery_usable_kwh_transfer_2": 39.245599999999996,
+      "central_daily_battery_kwh": 54.94384,
+      "common_overnight_charging_window_hours": 13.4,
+      "one_port_required_received_kw_central": 4.100286567164179,
+      "one_port_required_received_kw_transfer_2": 5.125358208955224,
+      "ten_year_km_lower": 71186.1584,
+      "ten_year_km_upper": 85437.6712,
+      "ten_year_battery_kwh_central_upper": 136700.27392,
+      "ten_year_grid_ghg_kg_coefficient_divided_by_eta": 1544.713095296,
+      "ten_year_energy_charge_cad_coefficient_divided_by_eta": 8393.396818688001,
+      "hardware_screening_budget_2023_cad": 2400000.0,
+      "score_status": "E=-GHG_COEFFICIENT/eta; C=-(HARDWARE+ENERGY_COMPONENT/eta); PARTIAL_ONLY",
+      "solver_gap": 0.0,
+      "solver_nodes": 1,
+      "validation": {
+        "exact_trip_coverage": true,
+        "no_time_overlap": true,
+        "every_reposition_has_a_published_alignment": true,
+        "repeated_day_location_and_time_checked": true,
+        "battery_and_charging_status": "REQUIREMENTS_ONLY_NOT_MEASURED_FEASIBILITY"
+      },
+      "annual_route_low_planning_transfer": {
+        "battery_kwh_lower": 39.19816600000001,
+        "battery_kwh_upper": 47.045663000000005
+      },
+      "annual_fleet_mean_planning_transfer": {
+        "battery_kwh_lower": 45.77888000000001,
+        "battery_kwh_upper": 54.94384
+      },
+      "winter_fleet_mean_not_worst_case": {
+        "battery_kwh_lower": 51.21512200000001,
+        "battery_kwh_upper": 61.468421
+      },
+      "annual_route_high_planning_transfer": {
+        "battery_kwh_lower": 57.223600000000005,
+        "battery_kwh_upper": 68.6798
+      }
+    },
+    {
+      "vehicles": 3,
+      "min_empty_distance_upper_km": 4.9056999999999995,
+      "reposition_legs": 2,
+      "common_deadhead_time_bound_min": 67.0,
+      "daily_km_lower": 24.524400000000004,
+      "daily_km_upper": 29.434199999999997,
+      "T_capacity_proxy": 1.18,
+      "capacity_status": "NOMINAL_MANUFACTURER_MAX_DIVIDED_BY_HISTORICAL_PRACTICAL_PROXY_NOT_CERTIFIED",
+      "required_battery_usable_kwh_central": 15.698240000000002,
+      "required_battery_usable_kwh_transfer_2": 19.6228,
+      "central_daily_battery_kwh": 47.094719999999995,
+      "common_overnight_charging_window_hours": 13.4,
+      "one_port_required_received_kw_central": 3.514531343283582,
+      "one_port_required_received_kw_transfer_2": 4.393164179104477,
+      "ten_year_km_lower": 61016.70720000001,
+      "ten_year_km_upper": 73232.28959999999,
+      "ten_year_battery_kwh_central_upper": 117171.66335999999,
+      "ten_year_grid_ghg_kg_coefficient_divided_by_eta": 1324.039795968,
+      "ten_year_energy_charge_cad_coefficient_divided_by_eta": 7194.340130304,
+      "hardware_screening_budget_2023_cad": 3600000.0,
+      "score_status": "E=-GHG_COEFFICIENT/eta; C=-(HARDWARE+ENERGY_COMPONENT/eta); PARTIAL_ONLY",
+      "solver_gap": 0.0,
+      "solver_nodes": 1,
+      "validation": {
+        "exact_trip_coverage": true,
+        "no_time_overlap": true,
+        "every_reposition_has_a_published_alignment": true,
+        "repeated_day_location_and_time_checked": true,
+        "battery_and_charging_status": "REQUIREMENTS_ONLY_NOT_MEASURED_FEASIBILITY"
+      },
+      "annual_route_low_planning_transfer": {
+        "battery_kwh_lower": 33.598428000000006,
+        "battery_kwh_upper": 40.324854
+      },
+      "annual_fleet_mean_planning_transfer": {
+        "battery_kwh_lower": 39.23904000000001,
+        "battery_kwh_upper": 47.094719999999995
+      },
+      "winter_fleet_mean_not_worst_case": {
+        "battery_kwh_lower": 43.89867600000001,
+        "battery_kwh_upper": 52.687217999999994
+      },
+      "annual_route_high_planning_transfer": {
+        "battery_kwh_lower": 49.04880000000001,
+        "battery_kwh_upper": 58.868399999999994
+      }
+    },
+    {
+      "vehicles": 4,
+      "min_empty_distance_upper_km": 0.0,
+      "reposition_legs": 0,
+      "common_deadhead_time_bound_min": null,
+      "daily_km_lower": 20.437000000000005,
+      "daily_km_upper": 24.528499999999998,
+      "T_capacity_proxy": 1.18,
+      "capacity_status": "NOMINAL_MANUFACTURER_MAX_DIVIDED_BY_HISTORICAL_PRACTICAL_PROXY_NOT_CERTIFIED",
+      "required_battery_usable_kwh_central": 15.698239999999998,
+      "required_battery_usable_kwh_transfer_2": 19.622799999999998,
+      "central_daily_battery_kwh": 39.245599999999996,
+      "common_overnight_charging_window_hours": 13.4,
+      "one_port_required_received_kw_central": 2.928776119402985,
+      "one_port_required_received_kw_transfer_2": 3.660970149253731,
+      "ten_year_km_lower": 50847.25600000001,
+      "ten_year_km_upper": 61026.907999999996,
+      "ten_year_battery_kwh_central_upper": 97643.05279999999,
+      "ten_year_grid_ghg_kg_coefficient_divided_by_eta": 1103.36649664,
+      "ten_year_energy_charge_cad_coefficient_divided_by_eta": 5995.28344192,
+      "hardware_screening_budget_2023_cad": 4800000.0,
+      "score_status": "E=-GHG_COEFFICIENT/eta; C=-(HARDWARE+ENERGY_COMPONENT/eta); PARTIAL_ONLY",
+      "solver_gap": 0.0,
+      "solver_nodes": 1,
+      "validation": {
+        "exact_trip_coverage": true,
+        "no_time_overlap": true,
+        "every_reposition_has_a_published_alignment": true,
+        "repeated_day_location_and_time_checked": true,
+        "battery_and_charging_status": "REQUIREMENTS_ONLY_NOT_MEASURED_FEASIBILITY"
+      },
+      "annual_route_low_planning_transfer": {
+        "battery_kwh_lower": 27.998690000000007,
+        "battery_kwh_upper": 33.604045
+      },
+      "annual_fleet_mean_planning_transfer": {
+        "battery_kwh_lower": 32.69920000000001,
+        "battery_kwh_upper": 39.245599999999996
+      },
+      "winter_fleet_mean_not_worst_case": {
+        "battery_kwh_lower": 36.58223000000001,
+        "battery_kwh_upper": 43.906015
+      },
+      "annual_route_high_planning_transfer": {
+        "battery_kwh_lower": 40.87400000000001,
+        "battery_kwh_upper": 49.056999999999995
+      }
+    }
+  ],
+  "vehicle_plans": [
+    {
+      "fleet_size": 1,
+      "vehicle": 1,
+      "mask": 1023,
+      "trip_ids": [
+        13556765,
+        13556764,
+        13556763,
+        13556762,
+        13556758,
+        13556757,
+        13556761,
+        13556756,
+        13556760,
+        13556759
+      ],
+      "deadhead_legs": [
+        {
+          "origin": "9110",
+          "destination": "12693",
+          "window_min": 20.0,
+          "kind": "between_trips",
+          "after_trip": 13556765,
+          "before_trip": 13556764
+        },
+        {
+          "origin": "9110",
+          "destination": "12693",
+          "window_min": 21.0,
+          "kind": "between_trips",
+          "after_trip": 13556764,
+          "before_trip": 13556763
+        },
+        {
+          "origin": "9110",
+          "destination": "12693",
+          "window_min": 7.0,
+          "kind": "between_trips",
+          "after_trip": 13556763,
+          "before_trip": 13556762
+        },
+        {
+          "origin": "12693",
+          "destination": "9110",
+          "window_min": 20.0,
+          "kind": "between_trips",
+          "after_trip": 13556758,
+          "before_trip": 13556757
+        },
+        {
+          "origin": "12693",
+          "destination": "9110",
+          "window_min": 17.0,
+          "kind": "between_trips",
+          "after_trip": 13556756,
+          "before_trip": 13556760
+        },
+        {
+          "origin": "12693",
+          "destination": "9110",
+          "window_min": 25.0,
+          "kind": "between_trips",
+          "after_trip": 13556760,
+          "before_trip": 13556759
+        }
+      ],
+      "loaded_km_upper": 24.5285,
+      "empty_km_upper": 14.7171,
+      "received_energy_kwh_central": 62.79296000000001
+    },
+    {
+      "fleet_size": 2,
+      "vehicle": 1,
+      "mask": 298,
+      "trip_ids": [
+        13556764,
+        13556762,
+        13556757,
+        13556760
+      ],
+      "deadhead_legs": [
+        {
+          "origin": "9110",
+          "destination": "12693",
+          "window_min": 37.0,
+          "kind": "between_trips",
+          "after_trip": 13556764,
+          "before_trip": 13556762
+        },
+        {
+          "origin": "12693",
+          "destination": "9110",
+          "window_min": 48.0,
+          "kind": "between_trips",
+          "after_trip": 13556757,
+          "before_trip": 13556760
+        }
+      ],
+      "loaded_km_upper": 9.811399999999999,
+      "empty_km_upper": 4.9056999999999995,
+      "received_energy_kwh_central": 23.547359999999998
+    },
+    {
+      "fleet_size": 2,
+      "vehicle": 2,
+      "mask": 725,
+      "trip_ids": [
+        13556765,
+        13556763,
+        13556758,
+        13556761,
+        13556756,
+        13556759
+      ],
+      "deadhead_legs": [
+        {
+          "origin": "9110",
+          "destination": "12693",
+          "window_min": 51.0,
+          "kind": "between_trips",
+          "after_trip": 13556765,
+          "before_trip": 13556763
+        },
+        {
+          "origin": "12693",
+          "destination": "9110",
+          "window_min": 52.0,
+          "kind": "between_trips",
+          "after_trip": 13556756,
+          "before_trip": 13556759
+        }
+      ],
+      "loaded_km_upper": 14.7171,
+      "empty_km_upper": 4.9056999999999995,
+      "received_energy_kwh_central": 31.396479999999997
+    },
+    {
+      "fleet_size": 3,
+      "vehicle": 1,
+      "mask": 137,
+      "trip_ids": [
+        13556765,
+        13556762,
+        13556756
+      ],
+      "deadhead_legs": [
+        {
+          "origin": "9110",
+          "destination": "12693",
+          "window_min": 67.0,
+          "kind": "between_trips",
+          "after_trip": 13556765,
+          "before_trip": 13556762
+        }
+      ],
+      "loaded_km_upper": 7.3260000000000005,
+      "empty_km_upper": 2.4854,
+      "received_energy_kwh_central": 15.698240000000002
+    },
+    {
+      "fleet_size": 3,
+      "vehicle": 2,
+      "mask": 356,
+      "trip_ids": [
+        13556763,
+        13556757,
+        13556761,
+        13556760
+      ],
+      "deadhead_legs": [],
+      "loaded_km_upper": 9.811399999999999,
+      "empty_km_upper": 0,
+      "received_energy_kwh_central": 15.698239999999998
+    },
+    {
+      "fleet_size": 3,
+      "vehicle": 3,
+      "mask": 530,
+      "trip_ids": [
+        13556764,
+        13556758,
+        13556759
+      ],
+      "deadhead_legs": [
+        {
+          "origin": "12693",
+          "destination": "9110",
+          "window_min": 113.0,
+          "kind": "between_trips",
+          "after_trip": 13556758,
+          "before_trip": 13556759
+        }
+      ],
+      "loaded_km_upper": 7.3911,
+      "empty_km_upper": 2.4203,
+      "received_energy_kwh_central": 15.698239999999998
+    },
+    {
+      "fleet_size": 4,
+      "vehicle": 1,
+      "mask": 36,
+      "trip_ids": [
+        13556763,
+        13556757
+      ],
+      "deadhead_legs": [],
+      "loaded_km_upper": 4.9056999999999995,
+      "empty_km_upper": 0,
+      "received_energy_kwh_central": 7.849119999999999
+    },
+    {
+      "fleet_size": 4,
+      "vehicle": 2,
+      "mask": 136,
+      "trip_ids": [
+        13556762,
+        13556756
+      ],
+      "deadhead_legs": [],
+      "loaded_km_upper": 4.9056999999999995,
+      "empty_km_upper": 0,
+      "received_energy_kwh_central": 7.849119999999999
+    },
+    {
+      "fleet_size": 4,
+      "vehicle": 3,
+      "mask": 258,
+      "trip_ids": [
+        13556764,
+        13556760
+      ],
+      "deadhead_legs": [],
+      "loaded_km_upper": 4.9056999999999995,
+      "empty_km_upper": 0,
+      "received_energy_kwh_central": 7.849119999999999
+    },
+    {
+      "fleet_size": 4,
+      "vehicle": 4,
+      "mask": 593,
+      "trip_ids": [
+        13556765,
+        13556758,
+        13556761,
+        13556759
+      ],
+      "deadhead_legs": [],
+      "loaded_km_upper": 9.811399999999999,
+      "empty_km_upper": 0,
+      "received_energy_kwh_central": 15.698239999999998
+    }
+  ],
+  "status": "COUNTERFACTUAL_REBLOCKING_WITHDRAWN_AS_ORIGINAL_BASELINE",
+  "corrected_baseline": "../short_route_231_original_blocks/readout.md",
+  "correction": "Original 231 trips belong to cross-route source blocks; the imposed 7-minute return is not an original requirement."
+}

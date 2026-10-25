@@ -141,7 +141,7 @@ def main():
              '环境边界尚无本地车辆拆解清单；设施和部分车体生产用外部代理，故称十年期环境情景，不称完整本地生命周期实测结果。',
              '当前没有求解充电延迟控制、场站选址或车型任意混搭的全局最优；后续可降低这里给出的保守可行上界。','',
              '详细来源与假设：[研究假设说明](research_assumptions_2026_10_21.md)。机器可读参数、每个解的逐年账本和图表见 `results/research_model/`。']
-    (ROOT/'research/research_model_results_2026_10_21.md').write_text('\n'.join(text)+'\n',encoding='utf-8')
+    (ROOT/'materials/research/research_model_results_2026_10_21.md').write_text('\n'.join(text)+'\n',encoding='utf-8')
     print(table[table.fuel_case=='renewable_mix'].to_json(orient='records',force_ascii=False,indent=2))
 
 

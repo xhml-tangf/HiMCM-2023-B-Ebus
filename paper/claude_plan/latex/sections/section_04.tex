@@ -1,0 +1,26 @@
+\NeedRoom{10}
+
+\subsection{Correcting the Reference Algorithm}
+
+The reference links fixed blocks using their internal distance and a charging detour. However, incoming station-to-block mileage persists until the next charge. Pairwise feasibility alone does not account for that state.
+
+
+Consider $R=10$ km and $T=5$ min, with a charger at A and node B 3 km away. Three well-separated blocks are A-to-A (10 km), B-to-B (7 km) and A-to-A (10 km). Both reference edges pass. But the middle block requires 3 + 7 + 3 = 13 km between charges. An independent validator rejects the one-bus chain; the repaired and exact solutions use two buses.
+
+
+\begin{equation}
+w(c_{\mathrm{prev}},o_b)+L_b+w(d_b,c_{\mathrm{next}})\le R.
+\end{equation}
+Here $L_b$ includes the service and internal deadhead distance of block $b$.
+
+The corrected routine propagates actual incoming mileage, chooses a feasible charger, and prunes incompatible outgoing edges before rematching. Each repair removes an edge and therefore terminates. The pruning is conservative if a later matching changes the predecessor. Consequently fixed-block matching is a relaxation, and the repaired solution is not claimed exact.
+
+
+Greedy blocks use range-first, time-first and balanced scores plus seeded restarts. Additional 55\%- and 75\%-range partitions expose intermediate charging opportunities while remaining feasible at the actual R. Small-instance experiments add bounded relocate and swap moves. A charging-aware pass reserves station-access mileage.
+
+
+Site search ranks charge-compatible trip pairs, evaluates the top 12 of 534 candidates, greedily adds a site and performs exchanges. The ranking samples 50 successors per trip in the network experiment. It does not restrict the diesel graph. A cap of four daytime sites is supplied; no globally optimal site claim follows.
+
+
+The independent validator reconstructs every trip, travel leg, charge interval and mileage state from output tokens. It also checks energy closure: daytime replenishment plus final overnight replenishment equals total vehicle travel. Malformed tokens, duplicate trips and missed departures are rejected.
+

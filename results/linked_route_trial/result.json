@@ -1,0 +1,334 @@
+{
+  "date": "2023-11-14",
+  "status": "EVIDENCE_LABELLED_TERMINAL_LEVEL_WINDOW_TRIAL",
+  "source_sha256": "a1d8503ebb7c999400adccb793861cb0761a86efa1716e8f61f2d7047154b8ac",
+  "source_path": "data\\processed\\vancouver_gtfs_trip_manifest_classified_2023.csv",
+  "maximum_generated_paths": 10000000000,
+  "maximum_solver_nodes": 2000000000,
+  "historical_contract_average_cad_2021": 1066666.6666666667,
+  "north": {
+    "data": {
+      "trips": 55,
+      "route_counts": {
+        "229": 28,
+        "236": 23,
+        "231": 4
+      },
+      "start": "06:02",
+      "last_arrival": "12:25",
+      "loaded_km_lower": 369.53670000000005,
+      "loaded_km_upper": 397.2156,
+      "concurrency_lower_bound": 6,
+      "capacity_proxy_classes": [
+        "cap50"
+      ]
+    },
+    "all_time_terminal_paths": 76533,
+    "cases": {
+      "joint_150": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "fleet_size": 11,
+        "objective_lower_bound": 11.0,
+        "mip_gap": 0.0,
+        "branch_nodes": 1,
+        "seconds": 48.39974550000625,
+        "eligible_paths": 76533,
+        "reference_range_km": 150.0,
+        "contract_average_budget_cad_2021": 11733333.333333334,
+        "checks": {
+          "exact_trip_coverage": true,
+          "chronological_and_terminal_continuity": true,
+          "range_credit_valid": true,
+          "minimum_connection_window_min": 0.0,
+          "physical_bay_transfers_checked": false,
+          "depot_and_periodic_closure_checked": false
+        }
+      },
+      "joint_40": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "fleet_size": 12,
+        "objective_lower_bound": 11.999999999999805,
+        "mip_gap": 0.0,
+        "branch_nodes": 1,
+        "seconds": 1.9942149000125937,
+        "eligible_paths": 19164,
+        "reference_range_km": 40.0,
+        "contract_average_budget_cad_2021": null,
+        "checks": {
+          "exact_trip_coverage": true,
+          "chronological_and_terminal_continuity": true,
+          "range_credit_valid": true,
+          "minimum_connection_window_min": 0.0,
+          "physical_bay_transfers_checked": false,
+          "depot_and_periodic_closure_checked": false
+        }
+      },
+      "separate_150": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "fleet_size": 14,
+        "objective_lower_bound": 14.0,
+        "mip_gap": 0.0,
+        "branch_nodes": 1,
+        "seconds": 1.9658170000184327,
+        "eligible_paths": 13472,
+        "reference_range_km": 150.0,
+        "contract_average_budget_cad_2021": 14933333.333333334,
+        "checks": {
+          "exact_trip_coverage": true,
+          "chronological_and_terminal_continuity": true,
+          "range_credit_valid": true,
+          "minimum_connection_window_min": 3.0,
+          "physical_bay_transfers_checked": false,
+          "depot_and_periodic_closure_checked": false
+        }
+      }
+    },
+    "separate_paths": 13472,
+    "full_day_time_terminal_paths_not_enumerated": 473537954615759
+  },
+  "south": {
+    "data": {
+      "trips": 274,
+      "route_counts": {
+        "100": 196,
+        "101": 78
+      },
+      "start": "06:00",
+      "last_arrival": "24:22",
+      "loaded_km_lower": 3948.3521999999994,
+      "loaded_km_upper": 4088.7547000000004,
+      "concurrency_lower_bound": 18,
+      "capacity_proxy_classes": [
+        "cap50"
+      ]
+    },
+    "topup_credit_km": 14.7922,
+    "end_hour": 24,
+    "cases": {
+      "no_charging": {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+        "fleet_size": 112,
+        "objective_lower_bound": 28.00000000000297,
+        "mip_gap": 0.7499999999999735,
+        "branch_nodes": 148,
+        "seconds": 60.070828999974765,
+        "events": 274,
+        "arcs": 13620,
+        "variables": 14990,
+        "constraints": 28611,
+        "independent_time_terminal_bound": 22,
+        "aggregate_range_bound_without_charge": 28,
+        "contract_average_budget_cad_2021": 119466666.66666667,
+        "charging_enabled": false,
+        "credit_per_five_minutes_km": 0,
+        "charging_sessions": 0,
+        "total_charge_credit_km": 0.0,
+        "checks": {
+          "exact_trip_coverage": true,
+          "chronological_and_terminal_continuity": true,
+          "range_credit_replay": true,
+          "single_position_charger_capacity": true,
+          "minimum_connection_window_min": 0.0,
+          "battery_SOC_curve_verified": false,
+          "physical_bay_transfers_checked": false,
+          "depot_and_periodic_closure_checked": false
+        }
+      },
+      "charging": {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+        "fleet_size": 84,
+        "objective_lower_bound": 22.000000000000746,
+        "mip_gap": 0.7380952380952293,
+        "branch_nodes": 0,
+        "seconds": 60.70087230001809,
+        "events": 714,
+        "arcs": 111308,
+        "variables": 114878,
+        "constraints": 225747,
+        "independent_time_terminal_bound": 22,
+        "aggregate_range_bound_without_charge": null,
+        "contract_average_budget_cad_2021": 89600000.0,
+        "charging_enabled": true,
+        "credit_per_five_minutes_km": 14.7922,
+        "charging_sessions": 17,
+        "total_charge_credit_km": 0.0,
+        "checks": {
+          "exact_trip_coverage": true,
+          "chronological_and_terminal_continuity": true,
+          "range_credit_replay": true,
+          "single_position_charger_capacity": true,
+          "minimum_connection_window_min": 0.0,
+          "battery_SOC_curve_verified": false,
+          "physical_bay_transfers_checked": false,
+          "depot_and_periodic_closure_checked": false
+        }
+      }
+    }
+  },
+  "south_windows": {
+    "14": {
+      "data": {
+        "trips": 134,
+        "route_counts": {
+          "100": 95,
+          "101": 39
+        },
+        "start": "06:00",
+        "last_arrival": "14:42",
+        "loaded_km_lower": 1932.4972999999995,
+        "loaded_km_upper": 2001.4826000000003,
+        "concurrency_lower_bound": 18,
+        "capacity_proxy_classes": [
+          "cap50"
+        ]
+      },
+      "topup_credit_km": 14.7922,
+      "end_hour": 14,
+      "cases": {
+        "no_charging": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "fleet_size": 19,
+          "objective_lower_bound": 19.0,
+          "mip_gap": 0.0,
+          "branch_nodes": 1,
+          "seconds": 1.2400261999573559,
+          "events": 134,
+          "arcs": 2927,
+          "variables": 3597,
+          "constraints": 6524,
+          "contract_average_budget_cad_2021": 20266666.666666668,
+          "charging_enabled": false,
+          "credit_per_five_minutes_km": 0,
+          "charging_sessions": 0,
+          "total_charge_credit_km": 0.0,
+          "checks": {
+            "exact_trip_coverage": true,
+            "chronological_and_terminal_continuity": true,
+            "range_credit_replay": true,
+            "single_position_charger_capacity": true,
+            "minimum_connection_window_min": 0.0,
+            "battery_SOC_curve_verified": false,
+            "physical_bay_transfers_checked": false,
+            "depot_and_periodic_closure_checked": false
+          }
+        },
+        "charging": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "fleet_size": 19,
+          "objective_lower_bound": 19.0,
+          "mip_gap": 0.0,
+          "branch_nodes": 1,
+          "seconds": 25.745838399976492,
+          "events": 342,
+          "arcs": 24471,
+          "variables": 26181,
+          "constraints": 50444,
+          "contract_average_budget_cad_2021": 20266666.666666668,
+          "charging_enabled": true,
+          "credit_per_five_minutes_km": 14.7922,
+          "charge_count_tiebreak_status": 0,
+          "charging_sessions": 0,
+          "total_charge_credit_km": 0.0,
+          "checks": {
+            "exact_trip_coverage": true,
+            "chronological_and_terminal_continuity": true,
+            "range_credit_replay": true,
+            "single_position_charger_capacity": true,
+            "minimum_connection_window_min": 0.0,
+            "battery_SOC_curve_verified": false,
+            "physical_bay_transfers_checked": false,
+            "depot_and_periodic_closure_checked": false
+          }
+        }
+      }
+    },
+    "24": {
+      "data": {
+        "trips": 274,
+        "route_counts": {
+          "100": 196,
+          "101": 78
+        },
+        "start": "06:00",
+        "last_arrival": "24:22",
+        "loaded_km_lower": 3948.3521999999994,
+        "loaded_km_upper": 4088.7547000000004,
+        "concurrency_lower_bound": 18,
+        "capacity_proxy_classes": [
+          "cap50"
+        ]
+      },
+      "topup_credit_km": 14.7922,
+      "end_hour": 24,
+      "cases": {
+        "no_charging": {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+          "fleet_size": 112,
+          "objective_lower_bound": 28.00000000000297,
+          "mip_gap": 0.7499999999999735,
+          "branch_nodes": 148,
+          "seconds": 60.070828999974765,
+          "events": 274,
+          "arcs": 13620,
+          "variables": 14990,
+          "constraints": 28611,
+          "independent_time_terminal_bound": 22,
+          "aggregate_range_bound_without_charge": 28,
+          "contract_average_budget_cad_2021": 119466666.66666667,
+          "charging_enabled": false,
+          "credit_per_five_minutes_km": 0,
+          "charging_sessions": 0,
+          "total_charge_credit_km": 0.0,
+          "checks": {
+            "exact_trip_coverage": true,
+            "chronological_and_terminal_continuity": true,
+            "range_credit_replay": true,
+            "single_position_charger_capacity": true,
+            "minimum_connection_window_min": 0.0,
+            "battery_SOC_curve_verified": false,
+            "physical_bay_transfers_checked": false,
+            "depot_and_periodic_closure_checked": false
+          }
+        },
+        "charging": {
+          "status": 1,
+          "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+          "fleet_size": 84,
+          "objective_lower_bound": 22.000000000000746,
+          "mip_gap": 0.7380952380952293,
+          "branch_nodes": 0,
+          "seconds": 60.70087230001809,
+          "events": 714,
+          "arcs": 111308,
+          "variables": 114878,
+          "constraints": 225747,
+          "independent_time_terminal_bound": 22,
+          "aggregate_range_bound_without_charge": null,
+          "contract_average_budget_cad_2021": 89600000.0,
+          "charging_enabled": true,
+          "credit_per_five_minutes_km": 14.7922,
+          "charging_sessions": 17,
+          "total_charge_credit_km": 0.0,
+          "checks": {
+            "exact_trip_coverage": true,
+            "chronological_and_terminal_continuity": true,
+            "range_credit_replay": true,
+            "single_position_charger_capacity": true,
+            "minimum_connection_window_min": 0.0,
+            "battery_SOC_curve_verified": false,
+            "physical_bay_transfers_checked": false,
+            "depot_and_periodic_closure_checked": false
+          }
+        }
+      }
+    }
+  }
+}

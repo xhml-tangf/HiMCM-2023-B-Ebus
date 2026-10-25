@@ -9,7 +9,7 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data" / "raw"
+RAW = ROOT / "materials" / "sources" / "raw"
 PROCESSED = ROOT / "data" / "processed"
 
 

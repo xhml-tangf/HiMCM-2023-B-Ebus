@@ -1,0 +1,37 @@
+\begin{center}
+
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccc}
+
+Problem Chosen & 2023 & Team Control Number\\
+
+{\Large\bfseries B} & {\Large\bfseries HiMCM} & {\Large\bfseries\TeamNumber}\\
+
+\end{tabular*}
+
+\vspace{9pt}
+
+{\Large\bfseries Summary Sheet}
+
+\end{center}\hrule\vspace{8pt}
+
+\begin{center}{\Large\bfseries Charging Ahead: A Two-Constant, Timetable-Preserving Transition}\end{center}
+
+\begin{center}Modeling solution for 2023 HiMCM Problem B\\Retrospective study; LaTeX reconstruction, 24 October 2026\end{center}
+
+We model electric buses using usable range R and full-charge duration T. Every included timetable trip must be served exactly once at its published time. Exact diesel matching provides a lower bound; range blocks, resource-aware linking and station search construct feasible electric duties.
+
+
+The existing fall-2023 TransLink data provide the primary case. The representative day has 19,967 trips. At $R=270$ km and $T=60$ min, the exact diesel baseline is 1,043 buses; the electric heuristic uses 1,247 buses and 4 daytime charging nodes. Across all 25 service patterns, the largest tested electric requirement is 1,256 active buses. These are conditional model outputs, without spares or depot certification.
+
+
+On 300 independent random instances, the improved heuristic equals the exact optimum in 252 cases; its maximum excess is 2 buses. All 200 infinite-range tests agree with exhaustive search. A three-block counterexample reveals why the reference algorithm must preserve incoming charging-detour mileage through the next block.
+
+
+Against a homogeneous fossil-diesel counterfactual, the stated vehicle-production and operating boundary avoids 1,416.2 kt CO$_2$e over ten years. Net present savings are CAD -80.3, 159.8 and 399.9 million under 0\%, 25\% and 50\% support of the eligible capital increment. The zero-source electricity case is reported separately from the grid-average diagnostic.
+
+
+The same engine processed recovered 2023 CTA and London bus timetables: representative-day diesel/electric pairs are 1,151/1,434 in Chicago and 6,755/7,383 in London. Each nested-route illustration reaches zero modeled diesel trips by 2033. Comparator financial screens use common transferred parameters and are not local investment forecasts. Full AI transcripts are missing, so contest disclosure remains incomplete.
+
+
+Keywords: electric bus scheduling; matching; charging sites; lifecycle boundary; external funding.
+

@@ -1,0 +1,14 @@
+{
+  "archive": "himcm-complete-data-2026-10-25.tar.gz",
+  "status": "local; upload to GitHub Release",
+  "bytes": 1454092336,
+  "uncompressed_bytes": 1908273186,
+  "files": 735,
+  "sha256": "4f50acd4cfa056d0e36d3780c1da6e5d5bd7e40fcd9e62388251e374944be5ba",
+  "contents": [
+    "materials",
+    "data",
+    "results"
+  ],
+  "elapsed_seconds": 65.1
+}

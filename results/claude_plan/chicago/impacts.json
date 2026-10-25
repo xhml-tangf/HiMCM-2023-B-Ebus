@@ -1,0 +1,2037 @@
+{
+  "standardized_transfer": {
+    "Nd": 1151,
+    "Ne": 1436,
+    "annual_diesel_km": 110987878.70953986,
+    "annual_electric_km": 114545753.89495106,
+    "annual_grid_kwh": 203636895.81324634,
+    "B_kwh": 540.0,
+    "charger_grid_kw": 480.0,
+    "stations": 2,
+    "daytime_plugs": 71,
+    "infrastructure": 162995999.99999887,
+    "capex_electric": 1886195999.9999988,
+    "capex_diesel": 837778887.7313397,
+    "grant_eligible_increment": 1048417112.2686591,
+    "pv_diesel": 2244892784.367128,
+    "pv_electric_gross": 2246820793.9215093,
+    "residual_diesel": 139629814.62188992,
+    "residual_electric": 427480503.3367189,
+    "phi_star": 0.0018389718479597974,
+    "phi_star_within_cap": true,
+    "diesel_tco_per_discounted_vehicle_km": 2.3711590981421757,
+    "electric_tco_per_discounted_vehicle_km": 2.2994823550070973,
+    "battery_carbon_payback_years": 0.25988434414233635,
+    "initial_embodied_diesel_t": 80570.0,
+    "initial_embodied_electric_t": 145495.52,
+    "ten_year_avoided_t": 1620696.4743838334,
+    "grants": [
+      {
+        "phi": 0.0,
+        "grant": 0.0,
+        "agency_pv": 2246820793.9215093,
+        "NPV": -1928009.5543813705,
+        "payback_year": 10,
+        "cashflow": [
+          {
+            "t": 0,
+            "cash": -1048417112.2686591,
+            "cumulative": -1048417112.2686591
+          },
+          {
+            "t": 1,
+            "year": 2024,
+            "cash": 107694743.28112055,
+            "cumulative": -940722368.9875386
+          },
+          {
+            "t": 2,
+            "year": 2025,
+            "cash": 107694743.28112055,
+            "cumulative": -833027625.706418
+          },
+          {
+            "t": 3,
+            "year": 2026,
+            "cash": 107694743.28112055,
+            "cumulative": -725332882.4252975
+          },
+          {
+            "t": 4,
+            "year": 2027,
+            "cash": 107694743.28112055,
+            "cumulative": -617638139.144177
+          },
+          {
+            "t": 5,
+            "year": 2028,
+            "cash": 107694743.28112055,
+            "cumulative": -509943395.8630564
+          },
+          {
+            "t": 6,
+            "year": 2029,
+            "cash": 107694743.28112055,
+            "cumulative": -402248652.5819359
+          },
+          {
+            "t": 7,
+            "year": 2030,
+            "cash": 107694743.28112055,
+            "cumulative": -294553909.30081534
+          },
+          {
+            "t": 8,
+            "year": 2031,
+            "cash": -1699527.8345054984,
+            "cumulative": -296253437.13532084
+          },
+          {
+            "t": 9,
+            "year": 2032,
+            "cash": 107694743.28112055,
+            "cumulative": -188558693.8542003
+          },
+          {
+            "t": 10,
+            "year": 2033,
+            "cash": 395545431.9959495,
+            "cumulative": 206986738.1417492
+          }
+        ]
+      },
+      {
+        "phi": 0.25,
+        "grant": 262104278.06716478,
+        "agency_pv": 1984716515.8543444,
+        "NPV": 260176268.5127834,
+        "payback_year": 9,
+        "cashflow": [
+          {
+            "t": 0,
+            "cash": -786312834.2014943,
+            "cumulative": -786312834.2014943
+          },
+          {
+            "t": 1,
+            "year": 2024,
+            "cash": 107694743.28112055,
+            "cumulative": -678618090.9203738
+          },
+          {
+            "t": 2,
+            "year": 2025,
+            "cash": 107694743.28112055,
+            "cumulative": -570923347.6392533
+          },
+          {
+            "t": 3,
+            "year": 2026,
+            "cash": 107694743.28112055,
+            "cumulative": -463228604.3581327
+          },
+          {
+            "t": 4,
+            "year": 2027,
+            "cash": 107694743.28112055,
+            "cumulative": -355533861.0770122
+          },
+          {
+            "t": 5,
+            "year": 2028,
+            "cash": 107694743.28112055,
+            "cumulative": -247839117.79589164
+          },
+          {
+            "t": 6,
+            "year": 2029,
+            "cash": 107694743.28112055,
+            "cumulative": -140144374.5147711
+          },
+          {
+            "t": 7,
+            "year": 2030,
+            "cash": 107694743.28112055,
+            "cumulative": -32449631.23365055
+          },
+          {
+            "t": 8,
+            "year": 2031,
+            "cash": -1699527.8345054984,
+            "cumulative": -34149159.06815605
+          },
+          {
+            "t": 9,
+            "year": 2032,
+            "cash": 107694743.28112055,
+            "cumulative": 73545584.2129645
+          },
+          {
+            "t": 10,
+            "year": 2033,
+            "cash": 395545431.9959495,
+            "cumulative": 469091016.20891404
+          }
+        ]
+      },
+      {
+        "phi": 0.5,
+        "grant": 524208556.13432956,
+        "agency_pv": 1722612237.7871797,
+        "NPV": 522280546.5799482,
+        "payback_year": 5,
+        "cashflow": [
+          {
+            "t": 0,
+            "cash": -524208556.13432956,
+            "cumulative": -524208556.13432956
+          },
+          {
+            "t": 1,
+            "year": 2024,
+            "cash": 107694743.28112055,
+            "cumulative": -416513812.853209
+          },
+          {
+            "t": 2,
+            "year": 2025,
+            "cash": 107694743.28112055,
+            "cumulative": -308819069.5720885
+          },
+          {
+            "t": 3,
+            "year": 2026,
+            "cash": 107694743.28112055,
+            "cumulative": -201124326.29096794
+          },
+          {
+            "t": 4,
+            "year": 2027,
+            "cash": 107694743.28112055,
+            "cumulative": -93429583.00984739
+          },
+          {
+            "t": 5,
+            "year": 2028,
+            "cash": 107694743.28112055,
+            "cumulative": 14265160.271273166
+          },
+          {
+            "t": 6,
+            "year": 2029,
+            "cash": 107694743.28112055,
+            "cumulative": 121959903.55239372
+          },
+          {
+            "t": 7,
+            "year": 2030,
+            "cash": 107694743.28112055,
+            "cumulative": 229654646.83351427
+          },
+          {
+            "t": 8,
+            "year": 2031,
+            "cash": -1699527.8345054984,
+            "cumulative": 227955118.99900877
+          },
+          {
+            "t": 9,
+            "year": 2032,
+            "cash": 107694743.28112055,
+            "cumulative": 335649862.2801293
+          },
+          {
+            "t": 10,
+            "year": 2033,
+            "cash": 395545431.9959495,
+            "cumulative": 731195294.2760788
+          }
+        ]
+      }
+    ],
+    "annual": [
+      {
+        "year": 2024,
+        "t": 1,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 255930.84836107297,
+        "cumulative_electric_t": 147796.61692268966,
+        "cumulative_avoided_t": 108134.23143838331,
+        "grid_factor": 0.0113
+      },
+      {
+        "year": 2025,
+        "t": 2,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 431291.69672214595,
+        "cumulative_electric_t": 150097.71384537933,
+        "cumulative_avoided_t": 281193.9828767666,
+        "grid_factor": 0.0113
+      },
+      {
+        "year": 2026,
+        "t": 3,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 606652.545083219,
+        "cumulative_electric_t": 152398.810768069,
+        "cumulative_avoided_t": 454253.73431514995,
+        "grid_factor": 0.0113
+      },
+      {
+        "year": 2027,
+        "t": 4,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 782013.3934442919,
+        "cumulative_electric_t": 154699.90769075867,
+        "cumulative_avoided_t": 627313.4857535332,
+        "grid_factor": 0.0113
+      },
+      {
+        "year": 2028,
+        "t": 5,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 957374.2418053648,
+        "cumulative_electric_t": 157001.00461344834,
+        "cumulative_avoided_t": 800373.2371919164,
+        "grid_factor": 0.0113
+      },
+      {
+        "year": 2029,
+        "t": 6,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 1132735.090166438,
+        "cumulative_electric_t": 159302.101536138,
+        "cumulative_avoided_t": 973432.9886302999,
+        "grid_factor": 0.0113
+      },
+      {
+        "year": 2030,
+        "t": 7,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 1308095.938527511,
+        "cumulative_electric_t": 161603.19845882768,
+        "cumulative_avoided_t": 1146492.7400686834,
+        "grid_factor": 0.0113
+      },
+      {
+        "year": 2031,
+        "t": 8,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 178836182.2549311,
+        "battery_replacement": 109394271.11562605,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 44975.52,
+        "cumulative_diesel_t": 1483456.786888584,
+        "cumulative_electric_t": 208879.81538151737,
+        "cumulative_avoided_t": 1274576.9715070666,
+        "grid_factor": 0.0113
+      },
+      {
+        "year": 2032,
+        "t": 9,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 1658817.635249657,
+        "cumulative_electric_t": 211180.91230420704,
+        "cumulative_avoided_t": 1447636.72294545,
+        "grid_factor": 0.0113
+      },
+      {
+        "year": 2033,
+        "t": 10,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 2301.096922689683,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 1834178.4836107302,
+        "cumulative_electric_t": 213482.0092268967,
+        "cumulative_avoided_t": 1620696.4743838334,
+        "grid_factor": 0.0113
+      }
+    ],
+    "exclusions": [
+      "local construction embodied carbon",
+      "vehicle disposal",
+      "non-exhaust particles",
+      "new labour/driver arrangements"
+    ],
+    "boundary": "Full replacement at start of 2024; no initial old-bus sale. Terminal assets symmetric. Grid average, not certified zero-carbon electricity."
+  },
+  "strict_zero_source": {
+    "Nd": 1151,
+    "Ne": 1436,
+    "annual_diesel_km": 110987878.70953986,
+    "annual_electric_km": 114545753.89495106,
+    "annual_grid_kwh": 203636895.81324634,
+    "B_kwh": 540.0,
+    "charger_grid_kw": 480.0,
+    "stations": 2,
+    "daytime_plugs": 71,
+    "infrastructure": 162995999.99999887,
+    "capex_electric": 1886195999.9999988,
+    "capex_diesel": 837778887.7313397,
+    "grant_eligible_increment": 1048417112.2686591,
+    "pv_diesel": 2244892784.367128,
+    "pv_electric_gross": 2246820793.9215093,
+    "residual_diesel": 139629814.62188992,
+    "residual_electric": 427480503.3367189,
+    "phi_star": 0.0018389718479597974,
+    "phi_star_within_cap": true,
+    "diesel_tco_per_discounted_vehicle_km": 2.3711590981421757,
+    "electric_tco_per_discounted_vehicle_km": 2.2994823550070973,
+    "battery_carbon_payback_years": 0.2564741241864554,
+    "initial_embodied_diesel_t": 80570.0,
+    "initial_embodied_electric_t": 145495.52,
+    "ten_year_avoided_t": 1643707.44361073,
+    "grants": [
+      {
+        "phi": 0.0,
+        "grant": 0.0,
+        "agency_pv": 2246820793.9215093,
+        "NPV": -1928009.5543813705,
+        "payback_year": 10,
+        "cashflow": [
+          {
+            "t": 0,
+            "cash": -1048417112.2686591,
+            "cumulative": -1048417112.2686591
+          },
+          {
+            "t": 1,
+            "year": 2024,
+            "cash": 107694743.28112055,
+            "cumulative": -940722368.9875386
+          },
+          {
+            "t": 2,
+            "year": 2025,
+            "cash": 107694743.28112055,
+            "cumulative": -833027625.706418
+          },
+          {
+            "t": 3,
+            "year": 2026,
+            "cash": 107694743.28112055,
+            "cumulative": -725332882.4252975
+          },
+          {
+            "t": 4,
+            "year": 2027,
+            "cash": 107694743.28112055,
+            "cumulative": -617638139.144177
+          },
+          {
+            "t": 5,
+            "year": 2028,
+            "cash": 107694743.28112055,
+            "cumulative": -509943395.8630564
+          },
+          {
+            "t": 6,
+            "year": 2029,
+            "cash": 107694743.28112055,
+            "cumulative": -402248652.5819359
+          },
+          {
+            "t": 7,
+            "year": 2030,
+            "cash": 107694743.28112055,
+            "cumulative": -294553909.30081534
+          },
+          {
+            "t": 8,
+            "year": 2031,
+            "cash": -1699527.8345054984,
+            "cumulative": -296253437.13532084
+          },
+          {
+            "t": 9,
+            "year": 2032,
+            "cash": 107694743.28112055,
+            "cumulative": -188558693.8542003
+          },
+          {
+            "t": 10,
+            "year": 2033,
+            "cash": 395545431.9959495,
+            "cumulative": 206986738.1417492
+          }
+        ]
+      },
+      {
+        "phi": 0.25,
+        "grant": 262104278.06716478,
+        "agency_pv": 1984716515.8543444,
+        "NPV": 260176268.5127834,
+        "payback_year": 9,
+        "cashflow": [
+          {
+            "t": 0,
+            "cash": -786312834.2014943,
+            "cumulative": -786312834.2014943
+          },
+          {
+            "t": 1,
+            "year": 2024,
+            "cash": 107694743.28112055,
+            "cumulative": -678618090.9203738
+          },
+          {
+            "t": 2,
+            "year": 2025,
+            "cash": 107694743.28112055,
+            "cumulative": -570923347.6392533
+          },
+          {
+            "t": 3,
+            "year": 2026,
+            "cash": 107694743.28112055,
+            "cumulative": -463228604.3581327
+          },
+          {
+            "t": 4,
+            "year": 2027,
+            "cash": 107694743.28112055,
+            "cumulative": -355533861.0770122
+          },
+          {
+            "t": 5,
+            "year": 2028,
+            "cash": 107694743.28112055,
+            "cumulative": -247839117.79589164
+          },
+          {
+            "t": 6,
+            "year": 2029,
+            "cash": 107694743.28112055,
+            "cumulative": -140144374.5147711
+          },
+          {
+            "t": 7,
+            "year": 2030,
+            "cash": 107694743.28112055,
+            "cumulative": -32449631.23365055
+          },
+          {
+            "t": 8,
+            "year": 2031,
+            "cash": -1699527.8345054984,
+            "cumulative": -34149159.06815605
+          },
+          {
+            "t": 9,
+            "year": 2032,
+            "cash": 107694743.28112055,
+            "cumulative": 73545584.2129645
+          },
+          {
+            "t": 10,
+            "year": 2033,
+            "cash": 395545431.9959495,
+            "cumulative": 469091016.20891404
+          }
+        ]
+      },
+      {
+        "phi": 0.5,
+        "grant": 524208556.13432956,
+        "agency_pv": 1722612237.7871797,
+        "NPV": 522280546.5799482,
+        "payback_year": 5,
+        "cashflow": [
+          {
+            "t": 0,
+            "cash": -524208556.13432956,
+            "cumulative": -524208556.13432956
+          },
+          {
+            "t": 1,
+            "year": 2024,
+            "cash": 107694743.28112055,
+            "cumulative": -416513812.853209
+          },
+          {
+            "t": 2,
+            "year": 2025,
+            "cash": 107694743.28112055,
+            "cumulative": -308819069.5720885
+          },
+          {
+            "t": 3,
+            "year": 2026,
+            "cash": 107694743.28112055,
+            "cumulative": -201124326.29096794
+          },
+          {
+            "t": 4,
+            "year": 2027,
+            "cash": 107694743.28112055,
+            "cumulative": -93429583.00984739
+          },
+          {
+            "t": 5,
+            "year": 2028,
+            "cash": 107694743.28112055,
+            "cumulative": 14265160.271273166
+          },
+          {
+            "t": 6,
+            "year": 2029,
+            "cash": 107694743.28112055,
+            "cumulative": 121959903.55239372
+          },
+          {
+            "t": 7,
+            "year": 2030,
+            "cash": 107694743.28112055,
+            "cumulative": 229654646.83351427
+          },
+          {
+            "t": 8,
+            "year": 2031,
+            "cash": -1699527.8345054984,
+            "cumulative": 227955118.99900877
+          },
+          {
+            "t": 9,
+            "year": 2032,
+            "cash": 107694743.28112055,
+            "cumulative": 335649862.2801293
+          },
+          {
+            "t": 10,
+            "year": 2033,
+            "cash": 395545431.9959495,
+            "cumulative": 731195294.2760788
+          }
+        ]
+      }
+    ],
+    "annual": [
+      {
+        "year": 2024,
+        "t": 1,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 255930.84836107297,
+        "cumulative_electric_t": 145495.52,
+        "cumulative_avoided_t": 110435.32836107298,
+        "grid_factor": 0.0
+      },
+      {
+        "year": 2025,
+        "t": 2,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 431291.69672214595,
+        "cumulative_electric_t": 145495.52,
+        "cumulative_avoided_t": 285796.176722146,
+        "grid_factor": 0.0
+      },
+      {
+        "year": 2026,
+        "t": 3,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 606652.545083219,
+        "cumulative_electric_t": 145495.52,
+        "cumulative_avoided_t": 461157.02508321893,
+        "grid_factor": 0.0
+      },
+      {
+        "year": 2027,
+        "t": 4,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 782013.3934442919,
+        "cumulative_electric_t": 145495.52,
+        "cumulative_avoided_t": 636517.8734442919,
+        "grid_factor": 0.0
+      },
+      {
+        "year": 2028,
+        "t": 5,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 957374.2418053648,
+        "cumulative_electric_t": 145495.52,
+        "cumulative_avoided_t": 811878.7218053648,
+        "grid_factor": 0.0
+      },
+      {
+        "year": 2029,
+        "t": 6,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 1132735.090166438,
+        "cumulative_electric_t": 145495.52,
+        "cumulative_avoided_t": 987239.5701664379,
+        "grid_factor": 0.0
+      },
+      {
+        "year": 2030,
+        "t": 7,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 1308095.938527511,
+        "cumulative_electric_t": 145495.52,
+        "cumulative_avoided_t": 1162600.418527511,
+        "grid_factor": 0.0
+      },
+      {
+        "year": 2031,
+        "t": 8,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 178836182.2549311,
+        "battery_replacement": 109394271.11562605,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 44975.52,
+        "cumulative_diesel_t": 1483456.786888584,
+        "cumulative_electric_t": 190471.03999999998,
+        "cumulative_avoided_t": 1292985.746888584,
+        "grid_factor": 0.0
+      },
+      {
+        "year": 2032,
+        "t": 9,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 1658817.635249657,
+        "cumulative_electric_t": 190471.03999999998,
+        "cumulative_avoided_t": 1468346.595249657,
+        "grid_factor": 0.0
+      },
+      {
+        "year": 2033,
+        "t": 10,
+        "baseline_cost": 177136654.4204256,
+        "electric_cost": 69441911.13930504,
+        "battery_replacement": 0.0,
+        "diesel_operating_t": 175360.84836107297,
+        "electric_operating_t": 0.0,
+        "battery_replacement_t": 0.0,
+        "cumulative_diesel_t": 1834178.4836107302,
+        "cumulative_electric_t": 190471.03999999998,
+        "cumulative_avoided_t": 1643707.44361073,
+        "grid_factor": 0.0
+      }
+    ],
+    "exclusions": [
+      "local construction embodied carbon",
+      "vehicle disposal",
+      "non-exhaust particles",
+      "new labour/driver arrangements"
+    ],
+    "boundary": "Full replacement at start of 2024; no initial old-bus sale. Terminal assets symmetric. Grid average, not certified zero-carbon electricity."
+  },
+  "boundary": "Common Vancouver 2023-CAD technical/cost parameters, not local tariffs, local grid intensity, or a city investment forecast. One observed week annualized by 365/7.",
+  "annual_service_km": 99874787.72457471,
+  "peaks": {
+    "113": 45,
+    "248": 26
+  },
+  "grid_decline_cases": [
+    {
+      "rate": 0.0,
+      "result": {
+        "Nd": 1151,
+        "Ne": 1436,
+        "annual_diesel_km": 110987878.70953986,
+        "annual_electric_km": 114545753.89495106,
+        "annual_grid_kwh": 203636895.81324634,
+        "B_kwh": 540.0,
+        "charger_grid_kw": 480.0,
+        "stations": 2,
+        "daytime_plugs": 71,
+        "infrastructure": 162995999.99999887,
+        "capex_electric": 1886195999.9999988,
+        "capex_diesel": 837778887.7313397,
+        "grant_eligible_increment": 1048417112.2686591,
+        "pv_diesel": 2244892784.367128,
+        "pv_electric_gross": 2246820793.9215093,
+        "residual_diesel": 139629814.62188992,
+        "residual_electric": 427480503.3367189,
+        "phi_star": 0.0018389718479597974,
+        "phi_star_within_cap": true,
+        "diesel_tco_per_discounted_vehicle_km": 2.3711590981421757,
+        "electric_tco_per_discounted_vehicle_km": 2.2994823550070973,
+        "battery_carbon_payback_years": 0.25988434414233635,
+        "initial_embodied_diesel_t": 80570.0,
+        "initial_embodied_electric_t": 145495.52,
+        "ten_year_avoided_t": 1620696.4743838334,
+        "grants": [
+          {
+            "phi": 0.0,
+            "grant": 0.0,
+            "agency_pv": 2246820793.9215093,
+            "NPV": -1928009.5543813705,
+            "payback_year": 10,
+            "cashflow": [
+              {
+                "t": 0,
+                "cash": -1048417112.2686591,
+                "cumulative": -1048417112.2686591
+              },
+              {
+                "t": 1,
+                "year": 2024,
+                "cash": 107694743.28112055,
+                "cumulative": -940722368.9875386
+              },
+              {
+                "t": 2,
+                "year": 2025,
+                "cash": 107694743.28112055,
+                "cumulative": -833027625.706418
+              },
+              {
+                "t": 3,
+                "year": 2026,
+                "cash": 107694743.28112055,
+                "cumulative": -725332882.4252975
+              },
+              {
+                "t": 4,
+                "year": 2027,
+                "cash": 107694743.28112055,
+                "cumulative": -617638139.144177
+              },
+              {
+                "t": 5,
+                "year": 2028,
+                "cash": 107694743.28112055,
+                "cumulative": -509943395.8630564
+              },
+              {
+                "t": 6,
+                "year": 2029,
+                "cash": 107694743.28112055,
+                "cumulative": -402248652.5819359
+              },
+              {
+                "t": 7,
+                "year": 2030,
+                "cash": 107694743.28112055,
+                "cumulative": -294553909.30081534
+              },
+              {
+                "t": 8,
+                "year": 2031,
+                "cash": -1699527.8345054984,
+                "cumulative": -296253437.13532084
+              },
+              {
+                "t": 9,
+                "year": 2032,
+                "cash": 107694743.28112055,
+                "cumulative": -188558693.8542003
+              },
+              {
+                "t": 10,
+                "year": 2033,
+                "cash": 395545431.9959495,
+                "cumulative": 206986738.1417492
+              }
+            ]
+          },
+          {
+            "phi": 0.25,
+            "grant": 262104278.06716478,
+            "agency_pv": 1984716515.8543444,
+            "NPV": 260176268.5127834,
+            "payback_year": 9,
+            "cashflow": [
+              {
+                "t": 0,
+                "cash": -786312834.2014943,
+                "cumulative": -786312834.2014943
+              },
+              {
+                "t": 1,
+                "year": 2024,
+                "cash": 107694743.28112055,
+                "cumulative": -678618090.9203738
+              },
+              {
+                "t": 2,
+                "year": 2025,
+                "cash": 107694743.28112055,
+                "cumulative": -570923347.6392533
+              },
+              {
+                "t": 3,
+                "year": 2026,
+                "cash": 107694743.28112055,
+                "cumulative": -463228604.3581327
+              },
+              {
+                "t": 4,
+                "year": 2027,
+                "cash": 107694743.28112055,
+                "cumulative": -355533861.0770122
+              },
+              {
+                "t": 5,
+                "year": 2028,
+                "cash": 107694743.28112055,
+                "cumulative": -247839117.79589164
+              },
+              {
+                "t": 6,
+                "year": 2029,
+                "cash": 107694743.28112055,
+                "cumulative": -140144374.5147711
+              },
+              {
+                "t": 7,
+                "year": 2030,
+                "cash": 107694743.28112055,
+                "cumulative": -32449631.23365055
+              },
+              {
+                "t": 8,
+                "year": 2031,
+                "cash": -1699527.8345054984,
+                "cumulative": -34149159.06815605
+              },
+              {
+                "t": 9,
+                "year": 2032,
+                "cash": 107694743.28112055,
+                "cumulative": 73545584.2129645
+              },
+              {
+                "t": 10,
+                "year": 2033,
+                "cash": 395545431.9959495,
+                "cumulative": 469091016.20891404
+              }
+            ]
+          },
+          {
+            "phi": 0.5,
+            "grant": 524208556.13432956,
+            "agency_pv": 1722612237.7871797,
+            "NPV": 522280546.5799482,
+            "payback_year": 5,
+            "cashflow": [
+              {
+                "t": 0,
+                "cash": -524208556.13432956,
+                "cumulative": -524208556.13432956
+              },
+              {
+                "t": 1,
+                "year": 2024,
+                "cash": 107694743.28112055,
+                "cumulative": -416513812.853209
+              },
+              {
+                "t": 2,
+                "year": 2025,
+                "cash": 107694743.28112055,
+                "cumulative": -308819069.5720885
+              },
+              {
+                "t": 3,
+                "year": 2026,
+                "cash": 107694743.28112055,
+                "cumulative": -201124326.29096794
+              },
+              {
+                "t": 4,
+                "year": 2027,
+                "cash": 107694743.28112055,
+                "cumulative": -93429583.00984739
+              },
+              {
+                "t": 5,
+                "year": 2028,
+                "cash": 107694743.28112055,
+                "cumulative": 14265160.271273166
+              },
+              {
+                "t": 6,
+                "year": 2029,
+                "cash": 107694743.28112055,
+                "cumulative": 121959903.55239372
+              },
+              {
+                "t": 7,
+                "year": 2030,
+                "cash": 107694743.28112055,
+                "cumulative": 229654646.83351427
+              },
+              {
+                "t": 8,
+                "year": 2031,
+                "cash": -1699527.8345054984,
+                "cumulative": 227955118.99900877
+              },
+              {
+                "t": 9,
+                "year": 2032,
+                "cash": 107694743.28112055,
+                "cumulative": 335649862.2801293
+              },
+              {
+                "t": 10,
+                "year": 2033,
+                "cash": 395545431.9959495,
+                "cumulative": 731195294.2760788
+              }
+            ]
+          }
+        ],
+        "annual": [
+          {
+            "year": 2024,
+            "t": 1,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 255930.84836107297,
+            "cumulative_electric_t": 147796.61692268966,
+            "cumulative_avoided_t": 108134.23143838331,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2025,
+            "t": 2,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 431291.69672214595,
+            "cumulative_electric_t": 150097.71384537933,
+            "cumulative_avoided_t": 281193.9828767666,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2026,
+            "t": 3,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 606652.545083219,
+            "cumulative_electric_t": 152398.810768069,
+            "cumulative_avoided_t": 454253.73431514995,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2027,
+            "t": 4,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 782013.3934442919,
+            "cumulative_electric_t": 154699.90769075867,
+            "cumulative_avoided_t": 627313.4857535332,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2028,
+            "t": 5,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 957374.2418053648,
+            "cumulative_electric_t": 157001.00461344834,
+            "cumulative_avoided_t": 800373.2371919164,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2029,
+            "t": 6,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1132735.090166438,
+            "cumulative_electric_t": 159302.101536138,
+            "cumulative_avoided_t": 973432.9886302999,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2030,
+            "t": 7,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1308095.938527511,
+            "cumulative_electric_t": 161603.19845882768,
+            "cumulative_avoided_t": 1146492.7400686834,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2031,
+            "t": 8,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 178836182.2549311,
+            "battery_replacement": 109394271.11562605,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 44975.52,
+            "cumulative_diesel_t": 1483456.786888584,
+            "cumulative_electric_t": 208879.81538151737,
+            "cumulative_avoided_t": 1274576.9715070666,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2032,
+            "t": 9,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1658817.635249657,
+            "cumulative_electric_t": 211180.91230420704,
+            "cumulative_avoided_t": 1447636.72294545,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2033,
+            "t": 10,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1834178.4836107302,
+            "cumulative_electric_t": 213482.0092268967,
+            "cumulative_avoided_t": 1620696.4743838334,
+            "grid_factor": 0.0113
+          }
+        ],
+        "exclusions": [
+          "local construction embodied carbon",
+          "vehicle disposal",
+          "non-exhaust particles",
+          "new labour/driver arrangements"
+        ],
+        "boundary": "Full replacement at start of 2024; no initial old-bus sale. Terminal assets symmetric. Grid average, not certified zero-carbon electricity."
+      }
+    },
+    {
+      "rate": 0.03,
+      "result": {
+        "Nd": 1151,
+        "Ne": 1436,
+        "annual_diesel_km": 110987878.70953986,
+        "annual_electric_km": 114545753.89495106,
+        "annual_grid_kwh": 203636895.81324634,
+        "B_kwh": 540.0,
+        "charger_grid_kw": 480.0,
+        "stations": 2,
+        "daytime_plugs": 71,
+        "infrastructure": 162995999.99999887,
+        "capex_electric": 1886195999.9999988,
+        "capex_diesel": 837778887.7313397,
+        "grant_eligible_increment": 1048417112.2686591,
+        "pv_diesel": 2244892784.367128,
+        "pv_electric_gross": 2246820793.9215093,
+        "residual_diesel": 139629814.62188992,
+        "residual_electric": 427480503.3367189,
+        "phi_star": 0.0018389718479597974,
+        "phi_star_within_cap": true,
+        "diesel_tco_per_discounted_vehicle_km": 2.3711590981421757,
+        "electric_tco_per_discounted_vehicle_km": 2.2994823550070973,
+        "battery_carbon_payback_years": 0.25988434414233635,
+        "initial_embodied_diesel_t": 80570.0,
+        "initial_embodied_electric_t": 145495.52,
+        "ten_year_avoided_t": 1623567.0258249089,
+        "grants": [
+          {
+            "phi": 0.0,
+            "grant": 0.0,
+            "agency_pv": 2246820793.9215093,
+            "NPV": -1928009.5543813705,
+            "payback_year": 10,
+            "cashflow": [
+              {
+                "t": 0,
+                "cash": -1048417112.2686591,
+                "cumulative": -1048417112.2686591
+              },
+              {
+                "t": 1,
+                "year": 2024,
+                "cash": 107694743.28112055,
+                "cumulative": -940722368.9875386
+              },
+              {
+                "t": 2,
+                "year": 2025,
+                "cash": 107694743.28112055,
+                "cumulative": -833027625.706418
+              },
+              {
+                "t": 3,
+                "year": 2026,
+                "cash": 107694743.28112055,
+                "cumulative": -725332882.4252975
+              },
+              {
+                "t": 4,
+                "year": 2027,
+                "cash": 107694743.28112055,
+                "cumulative": -617638139.144177
+              },
+              {
+                "t": 5,
+                "year": 2028,
+                "cash": 107694743.28112055,
+                "cumulative": -509943395.8630564
+              },
+              {
+                "t": 6,
+                "year": 2029,
+                "cash": 107694743.28112055,
+                "cumulative": -402248652.5819359
+              },
+              {
+                "t": 7,
+                "year": 2030,
+                "cash": 107694743.28112055,
+                "cumulative": -294553909.30081534
+              },
+              {
+                "t": 8,
+                "year": 2031,
+                "cash": -1699527.8345054984,
+                "cumulative": -296253437.13532084
+              },
+              {
+                "t": 9,
+                "year": 2032,
+                "cash": 107694743.28112055,
+                "cumulative": -188558693.8542003
+              },
+              {
+                "t": 10,
+                "year": 2033,
+                "cash": 395545431.9959495,
+                "cumulative": 206986738.1417492
+              }
+            ]
+          },
+          {
+            "phi": 0.25,
+            "grant": 262104278.06716478,
+            "agency_pv": 1984716515.8543444,
+            "NPV": 260176268.5127834,
+            "payback_year": 9,
+            "cashflow": [
+              {
+                "t": 0,
+                "cash": -786312834.2014943,
+                "cumulative": -786312834.2014943
+              },
+              {
+                "t": 1,
+                "year": 2024,
+                "cash": 107694743.28112055,
+                "cumulative": -678618090.9203738
+              },
+              {
+                "t": 2,
+                "year": 2025,
+                "cash": 107694743.28112055,
+                "cumulative": -570923347.6392533
+              },
+              {
+                "t": 3,
+                "year": 2026,
+                "cash": 107694743.28112055,
+                "cumulative": -463228604.3581327
+              },
+              {
+                "t": 4,
+                "year": 2027,
+                "cash": 107694743.28112055,
+                "cumulative": -355533861.0770122
+              },
+              {
+                "t": 5,
+                "year": 2028,
+                "cash": 107694743.28112055,
+                "cumulative": -247839117.79589164
+              },
+              {
+                "t": 6,
+                "year": 2029,
+                "cash": 107694743.28112055,
+                "cumulative": -140144374.5147711
+              },
+              {
+                "t": 7,
+                "year": 2030,
+                "cash": 107694743.28112055,
+                "cumulative": -32449631.23365055
+              },
+              {
+                "t": 8,
+                "year": 2031,
+                "cash": -1699527.8345054984,
+                "cumulative": -34149159.06815605
+              },
+              {
+                "t": 9,
+                "year": 2032,
+                "cash": 107694743.28112055,
+                "cumulative": 73545584.2129645
+              },
+              {
+                "t": 10,
+                "year": 2033,
+                "cash": 395545431.9959495,
+                "cumulative": 469091016.20891404
+              }
+            ]
+          },
+          {
+            "phi": 0.5,
+            "grant": 524208556.13432956,
+            "agency_pv": 1722612237.7871797,
+            "NPV": 522280546.5799482,
+            "payback_year": 5,
+            "cashflow": [
+              {
+                "t": 0,
+                "cash": -524208556.13432956,
+                "cumulative": -524208556.13432956
+              },
+              {
+                "t": 1,
+                "year": 2024,
+                "cash": 107694743.28112055,
+                "cumulative": -416513812.853209
+              },
+              {
+                "t": 2,
+                "year": 2025,
+                "cash": 107694743.28112055,
+                "cumulative": -308819069.5720885
+              },
+              {
+                "t": 3,
+                "year": 2026,
+                "cash": 107694743.28112055,
+                "cumulative": -201124326.29096794
+              },
+              {
+                "t": 4,
+                "year": 2027,
+                "cash": 107694743.28112055,
+                "cumulative": -93429583.00984739
+              },
+              {
+                "t": 5,
+                "year": 2028,
+                "cash": 107694743.28112055,
+                "cumulative": 14265160.271273166
+              },
+              {
+                "t": 6,
+                "year": 2029,
+                "cash": 107694743.28112055,
+                "cumulative": 121959903.55239372
+              },
+              {
+                "t": 7,
+                "year": 2030,
+                "cash": 107694743.28112055,
+                "cumulative": 229654646.83351427
+              },
+              {
+                "t": 8,
+                "year": 2031,
+                "cash": -1699527.8345054984,
+                "cumulative": 227955118.99900877
+              },
+              {
+                "t": 9,
+                "year": 2032,
+                "cash": 107694743.28112055,
+                "cumulative": 335649862.2801293
+              },
+              {
+                "t": 10,
+                "year": 2033,
+                "cash": 395545431.9959495,
+                "cumulative": 731195294.2760788
+              }
+            ]
+          }
+        ],
+        "annual": [
+          {
+            "year": 2024,
+            "t": 1,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 255930.84836107297,
+            "cumulative_electric_t": 147796.61692268966,
+            "cumulative_avoided_t": 108134.23143838331,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2025,
+            "t": 2,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2232.064015008993,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 431291.69672214595,
+            "cumulative_electric_t": 150028.68093769866,
+            "cumulative_avoided_t": 281263.0157844473,
+            "grid_factor": 0.010960999999999999
+          },
+          {
+            "year": 2026,
+            "t": 3,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2165.102094558723,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 606652.545083219,
+            "cumulative_electric_t": 152193.7830322574,
+            "cumulative_avoided_t": 454458.76205096155,
+            "grid_factor": 0.010632169999999998
+          },
+          {
+            "year": 2027,
+            "t": 4,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2100.149031721962,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 782013.3934442919,
+            "cumulative_electric_t": 154293.93206397936,
+            "cumulative_avoided_t": 627719.4613803126,
+            "grid_factor": 0.0103132049
+          },
+          {
+            "year": 2028,
+            "t": 5,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2037.1445607703026,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 957374.2418053648,
+            "cumulative_electric_t": 156331.07662474966,
+            "cumulative_avoided_t": 801043.1651806151,
+            "grid_factor": 0.010003808752999999
+          },
+          {
+            "year": 2029,
+            "t": 6,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1976.0302239471932,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1132735.090166438,
+            "cumulative_electric_t": 158307.10684869686,
+            "cumulative_avoided_t": 974427.9833177411,
+            "grid_factor": 0.009703694490409998
+          },
+          {
+            "year": 2030,
+            "t": 7,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1916.7493172287775,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1308095.938527511,
+            "cumulative_electric_t": 160223.85616592562,
+            "cumulative_avoided_t": 1147872.0823615855,
+            "grid_factor": 0.009412583655697698
+          },
+          {
+            "year": 2031,
+            "t": 8,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 178836182.2549311,
+            "battery_replacement": 109394271.11562605,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1859.2468377119137,
+            "battery_replacement_t": 44975.52,
+            "cumulative_diesel_t": 1483456.786888584,
+            "cumulative_electric_t": 207058.62300363753,
+            "cumulative_avoided_t": 1276398.1638849466,
+            "grid_factor": 0.009130206146026765
+          },
+          {
+            "year": 2032,
+            "t": 9,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1803.4694325805567,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1658817.635249657,
+            "cumulative_electric_t": 208862.09243621808,
+            "cumulative_avoided_t": 1449955.542813439,
+            "grid_factor": 0.008856299961645964
+          },
+          {
+            "year": 2033,
+            "t": 10,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1749.3653496031397,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1834178.4836107302,
+            "cumulative_electric_t": 210611.45778582123,
+            "cumulative_avoided_t": 1623567.0258249089,
+            "grid_factor": 0.008590610962796584
+          }
+        ],
+        "exclusions": [
+          "local construction embodied carbon",
+          "vehicle disposal",
+          "non-exhaust particles",
+          "new labour/driver arrangements"
+        ],
+        "boundary": "Full replacement at start of 2024; no initial old-bus sale. Terminal assets symmetric. Grid average, not certified zero-carbon electricity."
+      }
+    },
+    {
+      "rate": 0.05,
+      "result": {
+        "Nd": 1151,
+        "Ne": 1436,
+        "annual_diesel_km": 110987878.70953986,
+        "annual_electric_km": 114545753.89495106,
+        "annual_grid_kwh": 203636895.81324634,
+        "B_kwh": 540.0,
+        "charger_grid_kw": 480.0,
+        "stations": 2,
+        "daytime_plugs": 71,
+        "infrastructure": 162995999.99999887,
+        "capex_electric": 1886195999.9999988,
+        "capex_diesel": 837778887.7313397,
+        "grant_eligible_increment": 1048417112.2686591,
+        "pv_diesel": 2244892784.367128,
+        "pv_electric_gross": 2246820793.9215093,
+        "residual_diesel": 139629814.62188992,
+        "residual_electric": 427480503.3367189,
+        "phi_star": 0.0018389718479597974,
+        "phi_star_within_cap": true,
+        "diesel_tco_per_discounted_vehicle_km": 2.3711590981421757,
+        "electric_tco_per_discounted_vehicle_km": 2.2994823550070973,
+        "battery_carbon_payback_years": 0.25988434414233635,
+        "initial_embodied_diesel_t": 80570.0,
+        "initial_embodied_electric_t": 145495.52,
+        "ten_year_avoided_t": 1625240.539724578,
+        "grants": [
+          {
+            "phi": 0.0,
+            "grant": 0.0,
+            "agency_pv": 2246820793.9215093,
+            "NPV": -1928009.5543813705,
+            "payback_year": 10,
+            "cashflow": [
+              {
+                "t": 0,
+                "cash": -1048417112.2686591,
+                "cumulative": -1048417112.2686591
+              },
+              {
+                "t": 1,
+                "year": 2024,
+                "cash": 107694743.28112055,
+                "cumulative": -940722368.9875386
+              },
+              {
+                "t": 2,
+                "year": 2025,
+                "cash": 107694743.28112055,
+                "cumulative": -833027625.706418
+              },
+              {
+                "t": 3,
+                "year": 2026,
+                "cash": 107694743.28112055,
+                "cumulative": -725332882.4252975
+              },
+              {
+                "t": 4,
+                "year": 2027,
+                "cash": 107694743.28112055,
+                "cumulative": -617638139.144177
+              },
+              {
+                "t": 5,
+                "year": 2028,
+                "cash": 107694743.28112055,
+                "cumulative": -509943395.8630564
+              },
+              {
+                "t": 6,
+                "year": 2029,
+                "cash": 107694743.28112055,
+                "cumulative": -402248652.5819359
+              },
+              {
+                "t": 7,
+                "year": 2030,
+                "cash": 107694743.28112055,
+                "cumulative": -294553909.30081534
+              },
+              {
+                "t": 8,
+                "year": 2031,
+                "cash": -1699527.8345054984,
+                "cumulative": -296253437.13532084
+              },
+              {
+                "t": 9,
+                "year": 2032,
+                "cash": 107694743.28112055,
+                "cumulative": -188558693.8542003
+              },
+              {
+                "t": 10,
+                "year": 2033,
+                "cash": 395545431.9959495,
+                "cumulative": 206986738.1417492
+              }
+            ]
+          },
+          {
+            "phi": 0.25,
+            "grant": 262104278.06716478,
+            "agency_pv": 1984716515.8543444,
+            "NPV": 260176268.5127834,
+            "payback_year": 9,
+            "cashflow": [
+              {
+                "t": 0,
+                "cash": -786312834.2014943,
+                "cumulative": -786312834.2014943
+              },
+              {
+                "t": 1,
+                "year": 2024,
+                "cash": 107694743.28112055,
+                "cumulative": -678618090.9203738
+              },
+              {
+                "t": 2,
+                "year": 2025,
+                "cash": 107694743.28112055,
+                "cumulative": -570923347.6392533
+              },
+              {
+                "t": 3,
+                "year": 2026,
+                "cash": 107694743.28112055,
+                "cumulative": -463228604.3581327
+              },
+              {
+                "t": 4,
+                "year": 2027,
+                "cash": 107694743.28112055,
+                "cumulative": -355533861.0770122
+              },
+              {
+                "t": 5,
+                "year": 2028,
+                "cash": 107694743.28112055,
+                "cumulative": -247839117.79589164
+              },
+              {
+                "t": 6,
+                "year": 2029,
+                "cash": 107694743.28112055,
+                "cumulative": -140144374.5147711
+              },
+              {
+                "t": 7,
+                "year": 2030,
+                "cash": 107694743.28112055,
+                "cumulative": -32449631.23365055
+              },
+              {
+                "t": 8,
+                "year": 2031,
+                "cash": -1699527.8345054984,
+                "cumulative": -34149159.06815605
+              },
+              {
+                "t": 9,
+                "year": 2032,
+                "cash": 107694743.28112055,
+                "cumulative": 73545584.2129645
+              },
+              {
+                "t": 10,
+                "year": 2033,
+                "cash": 395545431.9959495,
+                "cumulative": 469091016.20891404
+              }
+            ]
+          },
+          {
+            "phi": 0.5,
+            "grant": 524208556.13432956,
+            "agency_pv": 1722612237.7871797,
+            "NPV": 522280546.5799482,
+            "payback_year": 5,
+            "cashflow": [
+              {
+                "t": 0,
+                "cash": -524208556.13432956,
+                "cumulative": -524208556.13432956
+              },
+              {
+                "t": 1,
+                "year": 2024,
+                "cash": 107694743.28112055,
+                "cumulative": -416513812.853209
+              },
+              {
+                "t": 2,
+                "year": 2025,
+                "cash": 107694743.28112055,
+                "cumulative": -308819069.5720885
+              },
+              {
+                "t": 3,
+                "year": 2026,
+                "cash": 107694743.28112055,
+                "cumulative": -201124326.29096794
+              },
+              {
+                "t": 4,
+                "year": 2027,
+                "cash": 107694743.28112055,
+                "cumulative": -93429583.00984739
+              },
+              {
+                "t": 5,
+                "year": 2028,
+                "cash": 107694743.28112055,
+                "cumulative": 14265160.271273166
+              },
+              {
+                "t": 6,
+                "year": 2029,
+                "cash": 107694743.28112055,
+                "cumulative": 121959903.55239372
+              },
+              {
+                "t": 7,
+                "year": 2030,
+                "cash": 107694743.28112055,
+                "cumulative": 229654646.83351427
+              },
+              {
+                "t": 8,
+                "year": 2031,
+                "cash": -1699527.8345054984,
+                "cumulative": 227955118.99900877
+              },
+              {
+                "t": 9,
+                "year": 2032,
+                "cash": 107694743.28112055,
+                "cumulative": 335649862.2801293
+              },
+              {
+                "t": 10,
+                "year": 2033,
+                "cash": 395545431.9959495,
+                "cumulative": 731195294.2760788
+              }
+            ]
+          }
+        ],
+        "annual": [
+          {
+            "year": 2024,
+            "t": 1,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2301.096922689683,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 255930.84836107297,
+            "cumulative_electric_t": 147796.61692268966,
+            "cumulative_avoided_t": 108134.23143838331,
+            "grid_factor": 0.0113
+          },
+          {
+            "year": 2025,
+            "t": 2,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2186.042076555199,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 431291.69672214595,
+            "cumulative_electric_t": 149982.65899924486,
+            "cumulative_avoided_t": 281309.0377229011,
+            "grid_factor": 0.010734999999999998
+          },
+          {
+            "year": 2026,
+            "t": 3,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 2076.739972727439,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 606652.545083219,
+            "cumulative_electric_t": 152059.3989719723,
+            "cumulative_avoided_t": 454593.14611124666,
+            "grid_factor": 0.010198249999999999
+          },
+          {
+            "year": 2027,
+            "t": 4,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1972.902974091067,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 782013.3934442919,
+            "cumulative_electric_t": 154032.30194606335,
+            "cumulative_avoided_t": 627981.0914982285,
+            "grid_factor": 0.009688337499999998
+          },
+          {
+            "year": 2028,
+            "t": 5,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1874.257825386514,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 957374.2418053648,
+            "cumulative_electric_t": 155906.55977144986,
+            "cumulative_avoided_t": 801467.682033915,
+            "grid_factor": 0.009203920624999999
+          },
+          {
+            "year": 2029,
+            "t": 6,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1780.5449341171877,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1132735.090166438,
+            "cumulative_electric_t": 157687.10470556704,
+            "cumulative_avoided_t": 975047.9854608709,
+            "grid_factor": 0.008743724593749997
+          },
+          {
+            "year": 2030,
+            "t": 7,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1691.5176874113286,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1308095.938527511,
+            "cumulative_electric_t": 159378.62239297837,
+            "cumulative_avoided_t": 1148717.3161345327,
+            "grid_factor": 0.008306538364062498
+          },
+          {
+            "year": 2031,
+            "t": 8,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 178836182.2549311,
+            "battery_replacement": 109394271.11562605,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1606.9418030407617,
+            "battery_replacement_t": 44975.52,
+            "cumulative_diesel_t": 1483456.786888584,
+            "cumulative_electric_t": 205961.08419601913,
+            "cumulative_avoided_t": 1277495.7026925648,
+            "grid_factor": 0.00789121144585937
+          },
+          {
+            "year": 2032,
+            "t": 9,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1526.5947128887237,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1658817.635249657,
+            "cumulative_electric_t": 207487.67890890787,
+            "cumulative_avoided_t": 1451329.9563407493,
+            "grid_factor": 0.007496650873566403
+          },
+          {
+            "year": 2033,
+            "t": 10,
+            "baseline_cost": 177136654.4204256,
+            "electric_cost": 69441911.13930504,
+            "battery_replacement": 0.0,
+            "diesel_operating_t": 175360.84836107297,
+            "electric_operating_t": 1450.2649772442876,
+            "battery_replacement_t": 0.0,
+            "cumulative_diesel_t": 1834178.4836107302,
+            "cumulative_electric_t": 208937.94388615215,
+            "cumulative_avoided_t": 1625240.539724578,
+            "grid_factor": 0.007121818329888082
+          }
+        ],
+        "exclusions": [
+          "local construction embodied carbon",
+          "vehicle disposal",
+          "non-exhaust particles",
+          "new labour/driver arrangements"
+        ],
+        "boundary": "Full replacement at start of 2024; no initial old-bus sale. Terminal assets symmetric. Grid average, not certified zero-carbon electricity."
+      }
+    }
+  ],
+  "pollution": [
+    {
+      "pollutant": "NOx",
+      "annual_avoided_t_low": 147.5203594468159,
+      "annual_avoided_t_high": 753.6076964377756,
+      "ten_year_avoided_t_low": 1475.2035944681588,
+      "ten_year_avoided_t_high": 7536.076964377756,
+      "note": "Transferred tailpipe factors; no non-exhaust benefit claimed."
+    },
+    {
+      "pollutant": "PM2.5",
+      "annual_avoided_t_low": 1.0367401154228706,
+      "annual_avoided_t_high": 16.64818180643098,
+      "ten_year_avoided_t_low": 10.367401154228705,
+      "ten_year_avoided_t_high": 166.48181806430978,
+      "note": "Transferred tailpipe factors; no non-exhaust benefit claimed."
+    }
+  ]
+}

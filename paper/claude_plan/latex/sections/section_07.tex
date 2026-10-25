@@ -1,0 +1,59 @@
+\NeedRoom{10}
+
+\subsection{Charging Sites and Recharge Requirements}
+
+\begin{longtable}{@{}L{\dimexpr 0.22000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.57000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.21000\textwidth-2\tabcolsep\relax}@{}}
+\caption{Selected mathematical charging nodes and peak simultaneous charge counts}\label{tab:source5}\\
+\toprule
+\textbf{Node / stop ID} & \textbf{Stop name} & \textbf{Peak daytime charges} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{Table \thetable\ (continued)}\\
+\toprule
+\textbf{Node / stop ID} & \textbf{Stop name} & \textbf{Peak daytime charges} \\
+\midrule
+\endhead
+\midrule\multicolumn{3}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+1 / 10114 & Eastbound W Georgia St @ Hamilton St & 69 \\
+70 / 11534 & Westbound Dunsmuir St @ Cambie St & 197 \\
+111 / 12036 & Westbound W Pender St @ Howe St & 20 \\
+207 / 1857 & Burrard Station @ Bay 3 & 43 \\
+\end{longtable}
+
+Internal nodes are zero-based; the P1/P2 text interface prints one-based IDs. Output files retain original stop IDs, coordinates and names. These nodes are mathematical candidates, not surveyed construction sites.
+
+
+Physical interpretation: one selected roadside node requires as many as 197 simultaneous chargers. This is not a plausible claim of available curb space. The unlimited-capacity result is a scheduling benchmark; it requires a different site design or capacity-constrained re-optimization before deployment.
+
+
+\begin{longtable}{@{}L{\dimexpr 0.34000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.27000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.39000\textwidth-2\tabcolsep\relax}@{}}
+\caption{Vancouver travel, electricity and charger requirements}\label{tab:source6}\\
+\toprule
+\textbf{Quantity} & \textbf{Executed value} & \textbf{Boundary} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{Table \thetable\ (continued)}\\
+\toprule
+\textbf{Quantity} & \textbf{Executed value} & \textbf{Boundary} \\
+\midrule
+\endhead
+\midrule\multicolumn{3}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+Reference service distance & 262,307.7 km & Upper trip-distance bounds \\
+Electric / diesel deadhead & 84,908.7 / 38,085.9 km & Different matching solutions \\
+Reference daytime charges & 903 & Fixed-duration full resets \\
+Annual service mileage & 85.24 million km & Fall frequency extrapolation \\
+Annual grid energy & 194.07 GWh & Energy ledger closes \\
+Daytime / overnight energy & 75.27 / 118.80 GWh & Energy actually replenished \\
+Daytime charger positions & 329 & Sum of per-site daily maxima \\
+\end{longtable}
+
+With 480 kW per occupied daytime charger, summing site-specific maxima gives 157.9 MW. This is an installed-power screen, not a coincident system peak. An assumed eight-hour nightly window implies an aggregate overnight lower bound of 40.7 MW; individual bus availability remains unverified.
+
+
+The solver assumes unlimited plugs, but the validator counts how many the output would require. The financial model pays for those positions and an overnight allowance. Actual land, curb space, firm power, connection lead times and daily vehicle turnaround can still make the deployment infeasible.
+
+
+Diesel matching minimizes fleet size only. Its deadhead is not a minimum-deadhead or least-cost baseline. The financial comparison therefore inherits this secondary-objective limitation.
+

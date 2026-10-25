@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "pattern_schedules": 25,
+  "unique_pattern_trip_occurrences_checked": 434669,
+  "annual_stage_schedules": 10,
+  "expanded_calendar_trip_instances": 2119742,
+  "exact_benchmark": {
+    "p1_cases": 300,
+    "p1_optimal_baseline": 221,
+    "p1_optimal_improved": 252,
+    "p1_max_gap": 2,
+    "p2_optimal": 50,
+    "reference_invalid": 0,
+    "diesel_limit_passed": 200
+  },
+  "energy_closure": true,
+  "grant_and_discounted_cash_closure": true,
+  "comparator_schedules_independently_verified": true,
+  "outstanding": [
+    "cross-day fleet closure",
+    "real budgets and commissioning",
+    "local comparator costs and energy factors",
+    "full AI conversation transcripts"
+  ]
+}

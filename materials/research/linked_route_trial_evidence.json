@@ -1,0 +1,59 @@
+{
+  "purpose": "Inputs and one-step inferences for the linked-route algorithm trial; not manuscript inputs.",
+  "policy": "Accept direct observations and explicitly documented one-step inferences. Keep transfer proxies, relaxations, and missing data distinct.",
+  "records": [
+    {
+      "id": "CONTRACT_2021",
+      "url": "https://www.translink.ca/news/2021/january/translink%20expands%20battery-electric%20bus%20fleet",
+      "publication_date": "2021-01-26",
+      "direct_fact": "TransLink awarded Nova Bus a CAD 16 million contract for 15 battery-electric buses.",
+      "inference": "16000000 / 15 = 1066666.6667 CAD per bus, as a historical batch-contract average.",
+      "classification": "ONE_STEP_INFERENCE",
+      "limitations": "Not a present-day marginal quote; contract inclusions are not fully itemized. Do not re-label as a verified bare-vehicle price or apply it to another model. Values remain nominal 2021 CAD."
+    },
+    {
+      "id": "MODEL_RANGE_2023",
+      "url": "https://www.translink.ca/news/2023/february/translink%20begins%20battery-electric%20bus%20fleet%20expansion",
+      "publication_date": "2023-02-02",
+      "direct_fact": "The first of the 15 new buses is identified as Nova LFSe+. The announcement states 150 km per charge and approximately five minutes for an on-route top-up.",
+      "classification": "DIRECT_MODEL_AND_OPERATIONAL_CLAIMS",
+      "limitations": "The range is not a universal winter/full-load guarantee. A five-minute top-up is not a full recharge. Exact battery configuration is not established by the model name."
+    },
+    {
+      "id": "STATIONS_2022",
+      "url": "https://buzzer.translink.ca/2022/11/our-new-battery-electric-bus-arrives-in-metro-vancouver/",
+      "publication_date": "2022-11-18",
+      "direct_fact": "Two charging stations at 22nd Street Station and Marpole Loop, one ABB and one Siemens; top-up for the next trip in under six minutes. Older Nova buses about 40 km range; LFSe+ prototype over 150 km including winter tests.",
+      "classification": "DIRECT",
+      "inference": "Use one charging service position at each named station in the 2023 prototype.",
+      "limitations": "Position count inferred from two singular stations, not a detailed resource inventory. Availability, charging curves, station access time and other users remain unverified."
+    },
+    {
+      "id": "NORTH_NO_ONROUTE_2023",
+      "url": "https://buzzer.translink.ca/2023/02/translink-begins-new-era-of-bus-electrification/",
+      "publication_date": "2023-02-02",
+      "direct_fact": "Route 100 was then the only route with overhead charging infrastructure at its ends and on-route charging capability.",
+      "classification": "DIRECT",
+      "consequence": "Do not invent en-route chargers for routes 229, 231 or 236."
+    },
+    {
+      "id": "TOPUP_TRANSFER_PROXY",
+      "parents": ["MODEL_RANGE_2023", "STATIONS_2022", "GTFS_2023"],
+      "inference": "For an explicitly conditional algorithm test, a five-minute charging service can restore at most one conservative route-100 trip-distance credit, computed as the minimum lower distance estimate among that day's route-100 trips.",
+      "classification": "ONE_STEP_OPERATIONAL_TRANSFER_PROXY_NOT_BATTERY_MEASUREMENT",
+      "limitations": "This credit abstraction transfers an approximate operational claim to scheduling. It is neither a calibrated SOC charging curve nor a guaranteed energy yield at arbitrary SOC; results with charging are conditional on this rule. Credits are capped by the 150 km range envelope."
+    },
+    {
+      "id": "TERMINAL_AGGREGATION",
+      "classification": "EXPLICIT_RELAXATION",
+      "definition": "Group bays with the same named interchange. Transfers within an interchange consume zero time and zero range in the optimization, then report every available transfer window and the minimum. No inter-terminal reposition is invented.",
+      "limitations": "This gives a terminal-level scheduling relaxation. Zero is not an inferred physical transfer duration or energy consumption. Bay movement, preparation and layover capacity must fit the reported windows and residual range before operational feasibility can be claimed."
+    },
+    {
+      "id": "WINDOW_BOUNDARY",
+      "classification": "EXPLICIT_SUBPROBLEM_BOUNDARY",
+      "definition": "Cover all selected departures in the specified window, through each trip's actual arrival. Vehicles may start/end at those terminals; source-vehicle blocks are not frozen. Initial range credits are full.",
+      "limitations": "No pull-out, pull-in, overnight replenishment, full-day vehicle reuse, or passenger timetabling changes are inferred. Counts refer to this service-window subproblem, not the total depot fleet or a continuous ten-year operation certificate."
+    }
+  ]
+}

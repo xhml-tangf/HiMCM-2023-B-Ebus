@@ -753,7 +753,7 @@ def main() -> None:
             "fleet_mapping": "data/processed/deck_shuttle_fleet_mapping.csv",
             "duty_screen": "data/processed/deck_shuttle_duty_screen_2023.csv",
             "scenarios": "data/processed/deck_shuttle_scenarios.csv",
-            "research_note": "research/deck_shuttle_electrification_note.md",
+            "research_note": "materials/research/deck_shuttle_electrification_note.md",
         },
     }
     RESULTS.mkdir(exist_ok=True)

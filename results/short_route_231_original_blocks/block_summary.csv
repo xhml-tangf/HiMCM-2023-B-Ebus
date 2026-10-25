@@ -1,0 +1,9 @@
+﻿block_id,published_trips,route231_trips,routes,first_departure,last_arrival,published_km_lower,published_km_upper,scope
+2064868,22,1,"212,229,231,232,246,249",06:06,18:37,168.3745,182.54,PUBLISHED_PASSENGER_TRIPS_ONLY; original nonrevenue movements unobserved
+2065310,23,2,"229,230,231,240,246,247,249",05:39,18:51,154.9977,165.7009,PUBLISHED_PASSENGER_TRIPS_ONLY; original nonrevenue movements unobserved
+2065343,6,1,"229,231,236",15:46,19:05,40.4255,43.240199999999994,PUBLISHED_PASSENGER_TRIPS_ONLY; original nonrevenue movements unobserved
+2065345,3,1,"229,231,241",06:47,08:31,22.0196,23.2785,PUBLISHED_PASSENGER_TRIPS_ONLY; original nonrevenue movements unobserved
+2065347,2,1,"229,231",07:44,08:28,8.010200000000001,8.9631,PUBLISHED_PASSENGER_TRIPS_ONLY; original nonrevenue movements unobserved
+2065363,3,2,"231,241",16:07,17:56,17.6306,18.961299999999998,PUBLISHED_PASSENGER_TRIPS_ONLY; original nonrevenue movements unobserved
+2065364,4,1,"231,241,246,249",16:15,18:37,34.2499,35.5762,PUBLISHED_PASSENGER_TRIPS_ONLY; original nonrevenue movements unobserved
+2065365,5,1,"231,236,246,249",07:00,09:05,29.8694,31.429899999999996,PUBLISHED_PASSENGER_TRIPS_ONLY; original nonrevenue movements unobserved

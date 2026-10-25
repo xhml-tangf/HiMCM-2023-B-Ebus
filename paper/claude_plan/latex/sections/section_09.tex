@@ -1,0 +1,48 @@
+\NeedRoom{10}
+
+\section{Ecological Model and Results}
+
+\begin{align}
+E_{\mathrm{grid}}&=(D_{\mathrm{service}}+D_{\mathrm{deadhead}})\varepsilon/\eta,\\
+G_{d,\mathrm{op}}&=D_{\mathrm{diesel}}\,\mathrm{EF}_{\mathrm{diesel}},\\
+G_{e,\mathrm{op},t}&=E_{\mathrm{grid},t}\gamma_t,\\
+G_{\mathrm{battery},0}&=N_e B e_{\mathrm{battery}}.
+\end{align}
+
+The accounting uses the same annualized service on both sides and retains separate deadhead. Initial production is counted for every replacement vehicle, including any electric fleet expansion. Battery production recurs at replacement years. A common assumed body-production proxy of 70 t per vehicle does not cancel when fleet sizes differ.
+
+
+The grid-average case avoids 1,416.2 kt CO$_2$e in ten years. The conditional zero-source case avoids 1,438.1 kt. Initial electric production is 127.3 kt, versus 73.0 kt for the modeled diesel replacement fleet.
+
+
+If the grid factor falls by 3\% or 5\% annually, the ten-year avoided total changes from 1,416.2 kt to 1,418.9 or 1,420.5 kt. This is a scenario path, not a local grid forecast.
+
+
+The operating baseline is homogeneous fossil diesel, using a retrospective 2024 planning factor of 1.58 kgCO$_2$e/km \cite{ref18}. It is not the actual 2023 TransLink fuel mix. Sensitivities include lower-carbon fuel factors and more carbon-intensive electricity; negative results are not clipped.
+
+
+\begin{longtable}{@{}L{\dimexpr 0.24000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.28000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.48000\textwidth-2\tabcolsep\relax}@{}}
+\caption{Avoided diesel exhaust pollutants under transferred factor ranges}\label{tab:source8}\\
+\toprule
+\textbf{Tailpipe pollutant} & \textbf{Annual avoided tonnes} & \textbf{Scope} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{Table \thetable\ (continued)}\\
+\toprule
+\textbf{Tailpipe pollutant} & \textbf{Annual avoided tonnes} & \textbf{Scope} \\
+\midrule
+\endhead
+\midrule\multicolumn{3}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+NO$_x$ & 128.85 to 658.23 & Transferred factors \cite{ref19}, diesel travel only \\
+PM$_{2.5}$ & 0.91 to 14.54 & Transferred factors \cite{ref19}, diesel travel only \\
+\end{longtable}
+
+Annual pollutant ranges repeat under the same activity assumption; the ten-year totals are ten times these values and are retained in JSON. They are screening ranges, not a forecast of local air-quality monitoring.
+
+
+These pollutant ranges are scenario bounds, not statistical confidence intervals. Electric buses eliminate modeled exhaust emissions but not tyre, brake or road particles. Construction emissions, vehicle disposal and noise are excluded. The result is a vehicle-production and operating comparison, not a complete locally measured lifecycle assessment.
+
+
+Battery carbon payback divides initial fleet battery emissions by annual operating savings when those savings are positive. It is a diagnostic, not a substitute for the full time ledger: extra bodies and future batteries can change the cumulative break-even point.
+

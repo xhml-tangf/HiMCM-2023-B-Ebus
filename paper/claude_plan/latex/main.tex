@@ -1,0 +1,63 @@
+% Reconstructed from the executed manuscript; no model results changed.
+% Compile with XeLaTeX, LuaLaTeX or Tectonic. See README.md.
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=19mm,headheight=15pt,headsep=7mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx}
+\usepackage{lmodern,fancyhdr,placeins}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\input{team.tex}
+\hypersetup{pdftitle={Charging Ahead: A Two-Constant, Timetable-Preserving Transition},
+  pdfauthor={},pdfsubject={2023 HiMCM Problem B; retrospective modeling study}}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{3pt}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\setlength{\LTpre}{7pt}
+\setlength{\LTpost}{7pt}
+\setlength{\emergencystretch}{1.8em}
+\setcounter{tocdepth}{2}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
+\makeatletter
+\renewcommand*{\l@section}{\@dottedtocline{1}{0em}{3em}}
+\renewcommand*{\l@subsection}{\@dottedtocline{2}{1.5em}{4.1em}}
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Team \#\TeamNumber}
+\fancyhead[R]{Page \thepage\ of \pageref{LastSolutionPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[L]{Team \#\TeamNumber}
+  \fancyhead[R]{Page \thepage\ of \pageref{LastSolutionPage}}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\NeedRoom}[1]{\par\begingroup
+  \dimen0=#1\baselineskip\relax
+  \ifdim\pagegoal<\maxdimen
+    \ifdim\dimexpr\pagegoal-\pagetotal\relax<\dimen0\newpage\fi
+  \fi\endgroup}
+\begin{document}
+
+\input{sections/summary.tex}
+\clearpage\tableofcontents\clearpage
+\input{sections/section_01.tex}
+\input{sections/section_02.tex}
+\input{sections/section_03.tex}
+\input{sections/section_04.tex}
+\input{sections/section_05.tex}
+\input{sections/section_06.tex}
+\input{sections/section_07.tex}
+\input{sections/section_08.tex}
+\input{sections/section_09.tex}
+\input{sections/section_10.tex}
+\input{sections/section_11.tex}
+\input{sections/section_12.tex}
+\input{sections/section_13.tex}
+\input{sections/section_14.tex}
+\input{sections/section_15.tex}
+\input{sections/section_16.tex}
+\input{sections/section_17.tex}
+\input{sections/section_18.tex}
+\input{sections/section_19.tex}
+\FloatBarrier\input{sections/references.tex}
+\input{sections/ai_report.tex}
+\end{document}

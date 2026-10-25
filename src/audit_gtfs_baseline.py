@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data/raw/vancouver_gtfs_2023"
+RAW = ROOT / "materials/sources/raw/vancouver_gtfs_2023"
 OUT = ROOT / "data/processed"
 REPO = "JaydenCWong/JAAM-project"
 COMMIT = "eb584b1108b0d582ae31c7db8e0d7e7b5ba1702b"

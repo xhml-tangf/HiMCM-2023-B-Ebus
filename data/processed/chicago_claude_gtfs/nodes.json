@@ -1,0 +1,3482 @@
+[
+  {
+    "stop_id": "1",
+    "name": "Jackson & Austin Terminal",
+    "lat": 41.87632184,
+    "lon": -87.77410482
+  },
+  {
+    "stop_id": "10022",
+    "name": "Kedzie & 79th Street",
+    "lat": 41.74992646,
+    "lon": -87.7024798
+  },
+  {
+    "stop_id": "10066",
+    "name": "115th Street & Springfield Terminal",
+    "lat": 41.684123,
+    "lon": -87.717333
+  },
+  {
+    "stop_id": "10068",
+    "name": "67th Street & Oglesby Terminal",
+    "lat": 41.77369221,
+    "lon": -87.56774838
+  },
+  {
+    "stop_id": "10091",
+    "name": "69th Street & Stewart",
+    "lat": 41.769049,
+    "lon": -87.634884
+  },
+  {
+    "stop_id": "10106",
+    "name": "69th Street & Ashland",
+    "lat": 41.76861972,
+    "lon": -87.66369288
+  },
+  {
+    "stop_id": "10111",
+    "name": "69th Street & Wolcott",
+    "lat": 41.76853097,
+    "lon": -87.67109811
+  },
+  {
+    "stop_id": "10116",
+    "name": "69th Street & Oakley",
+    "lat": 41.76843698,
+    "lon": -87.68062143
+  },
+  {
+    "stop_id": "10148",
+    "name": "69th Street & Oakley",
+    "lat": 41.768322,
+    "lon": -87.680888
+  },
+  {
+    "stop_id": "10178",
+    "name": "69th Red Line Station",
+    "lat": 41.7690992,
+    "lon": -87.62601277
+  },
+  {
+    "stop_id": "10199",
+    "name": "Cicero & Pensacola Terminal",
+    "lat": 41.959939,
+    "lon": -87.747739
+  },
+  {
+    "stop_id": "10269",
+    "name": "Cicero & 24th Place Terminal",
+    "lat": 41.84642115,
+    "lon": -87.74469467
+  },
+  {
+    "stop_id": "1029",
+    "name": "Sheridan & Broadway/Devon",
+    "lat": 41.99813048,
+    "lon": -87.6602255
+  },
+  {
+    "stop_id": "10301",
+    "name": "Cicero & Chicago",
+    "lat": 41.8948783,
+    "lon": -87.74571603
+  },
+  {
+    "stop_id": "1038",
+    "name": "Sheridan & Bryn Mawr",
+    "lat": 41.983481,
+    "lon": -87.655246
+  },
+  {
+    "stop_id": "1042",
+    "name": "Sheridan & Foster",
+    "lat": 41.976213,
+    "lon": -87.655069
+  },
+  {
+    "stop_id": "10450",
+    "name": "Old Orchard Rd & Skokie Court House",
+    "lat": 42.06329261,
+    "lon": -87.76750151
+  },
+  {
+    "stop_id": "10507",
+    "name": "55th Street & St. Louis",
+    "lat": 41.7933328,
+    "lon": -87.71063596
+  },
+  {
+    "stop_id": "10511",
+    "name": "55th Street & Kedzie",
+    "lat": 41.79345202,
+    "lon": -87.70329082
+  },
+  {
+    "stop_id": "10520",
+    "name": "Garfield & Western Boulevard",
+    "lat": 41.79338459,
+    "lon": -87.68300919
+  },
+  {
+    "stop_id": "10528",
+    "name": "Garfield & Ashland",
+    "lat": 41.79361634,
+    "lon": -87.66429424
+  },
+  {
+    "stop_id": "10538",
+    "name": "Garfield & Lowe",
+    "lat": 41.7939632,
+    "lon": -87.64105011
+  },
+  {
+    "stop_id": "10565",
+    "name": "Museum of Science & Industry",
+    "lat": 41.79166641,
+    "lon": -87.58353244
+  },
+  {
+    "stop_id": "10603",
+    "name": "Garfield & Ashland",
+    "lat": 41.79407388,
+    "lon": -87.6648838
+  },
+  {
+    "stop_id": "10611",
+    "name": "55th Street & Western Avenue",
+    "lat": 41.79392593,
+    "lon": -87.68450787
+  },
+  {
+    "stop_id": "10622",
+    "name": "55th Street & St. Louis",
+    "lat": 41.7934715,
+    "lon": -87.7113799
+  },
+  {
+    "stop_id": "1072",
+    "name": "Sheridan & Briar",
+    "lat": 41.93857023,
+    "lon": -87.63956872
+  },
+  {
+    "stop_id": "1081",
+    "name": "Stockton & Fullerton",
+    "lat": 41.925476,
+    "lon": -87.636161
+  },
+  {
+    "stop_id": "10814",
+    "name": "Exchange & 73rd Street",
+    "lat": 41.76280358,
+    "lon": -87.56377549
+  },
+  {
+    "stop_id": "10851",
+    "name": "75th Street & Lake Front Terminal",
+    "lat": 41.761487,
+    "lon": -87.55571
+  },
+  {
+    "stop_id": "10906",
+    "name": "74th Street & Damen",
+    "lat": 41.759391,
+    "lon": -87.67323914
+  },
+  {
+    "stop_id": "10907",
+    "name": "74th Street & Damen Terminal",
+    "lat": 41.75952377,
+    "lon": -87.67375364
+  },
+  {
+    "stop_id": "10908",
+    "name": "74th Street & Damen",
+    "lat": 41.759198,
+    "lon": -87.67307037
+  },
+  {
+    "stop_id": "10964",
+    "name": "Diversey & Neva Terminal",
+    "lat": 41.93106031,
+    "lon": -87.80531576
+  },
+  {
+    "stop_id": "10973",
+    "name": "Diversey & Narragansett",
+    "lat": 41.9309348,
+    "lon": -87.78582083
+  },
+  {
+    "stop_id": "10981",
+    "name": "Diversey & Central",
+    "lat": 41.93120866,
+    "lon": -87.76637739
+  },
+  {
+    "stop_id": "11005",
+    "name": "Logan Square Blue Line Station",
+    "lat": 41.92989023,
+    "lon": -87.70779771
+  },
+  {
+    "stop_id": "1108",
+    "name": "Adams & S. Wacker",
+    "lat": 41.8794,
+    "lon": -87.636542
+  },
+  {
+    "stop_id": "11093",
+    "name": "Diversey & Central",
+    "lat": 41.93134845,
+    "lon": -87.76610363
+  },
+  {
+    "stop_id": "11101",
+    "name": "Diversey & Narragansett",
+    "lat": 41.93107318,
+    "lon": -87.78556126
+  },
+  {
+    "stop_id": "11125",
+    "name": "Kimball & Carmen",
+    "lat": 41.97279904,
+    "lon": -87.71355482
+  },
+  {
+    "stop_id": "11139",
+    "name": "Kimball & Belmont (Blue Line)",
+    "lat": 41.9390928,
+    "lon": -87.71256509
+  },
+  {
+    "stop_id": "11177",
+    "name": "Homan & Jackson",
+    "lat": 41.87742861,
+    "lon": -87.71099052
+  },
+  {
+    "stop_id": "11179",
+    "name": "Homan & Congress",
+    "lat": 41.874632,
+    "lon": -87.710859
+  },
+  {
+    "stop_id": "1120",
+    "name": "Michigan & South Water",
+    "lat": 41.88669974,
+    "lon": -87.624384
+  },
+  {
+    "stop_id": "11206",
+    "name": "Central Park & 31st Street",
+    "lat": 41.836968,
+    "lon": -87.714507
+  },
+  {
+    "stop_id": "11215",
+    "name": "Central Park & Cermak",
+    "lat": 41.85154806,
+    "lon": -87.71490228
+  },
+  {
+    "stop_id": "11225",
+    "name": "Homan & Roosevelt",
+    "lat": 41.866519,
+    "lon": -87.710459
+  },
+  {
+    "stop_id": "11233",
+    "name": "Homan & Jackson",
+    "lat": 41.87718223,
+    "lon": -87.71078926
+  },
+  {
+    "stop_id": "11271",
+    "name": "Kimball & Belmont (Blue Line)",
+    "lat": 41.9391704,
+    "lon": -87.71238336
+  },
+  {
+    "stop_id": "1128",
+    "name": "Michigan & Delaware/Walton",
+    "lat": 41.899435,
+    "lon": -87.624004
+  },
+  {
+    "stop_id": "11295",
+    "name": "Kimball & Peterson",
+    "lat": 41.99016326,
+    "lon": -87.7138895
+  },
+  {
+    "stop_id": "11298",
+    "name": "Forest Preserve Avenue & Harlem/Irving Park",
+    "lat": 41.95325194,
+    "lon": -87.80885738
+  },
+  {
+    "stop_id": "11363",
+    "name": "Montrose & Marine Drive",
+    "lat": 41.96196303,
+    "lon": -87.64720146
+  },
+  {
+    "stop_id": "11427",
+    "name": "Caldwell & Central Terminal",
+    "lat": 41.996089,
+    "lon": -87.764533
+  },
+  {
+    "stop_id": "1144",
+    "name": "Stockton & Fullerton",
+    "lat": 41.9255619,
+    "lon": -87.63586982
+  },
+  {
+    "stop_id": "11473",
+    "name": "Bryn Mawr Red Line Station",
+    "lat": 41.98371671,
+    "lon": -87.65811368
+  },
+  {
+    "stop_id": "11515",
+    "name": "Central & Seminole",
+    "lat": 41.984582,
+    "lon": -87.768381
+  },
+  {
+    "stop_id": "1154",
+    "name": "Sheridan & Belmont",
+    "lat": 41.94002509,
+    "lon": -87.63950114
+  },
+  {
+    "stop_id": "1155",
+    "name": "Inner Lake Shore Drive & Belmont",
+    "lat": 41.94037175,
+    "lon": -87.63947904
+  },
+  {
+    "stop_id": "11575",
+    "name": "Central & Harrison Terminal",
+    "lat": 41.87256595,
+    "lon": -87.76480172
+  },
+  {
+    "stop_id": "1163",
+    "name": "Lake Shore & Waveland",
+    "lat": 41.95042884,
+    "lon": -87.64449132
+  },
+  {
+    "stop_id": "11635",
+    "name": "Bryn Mawr & Linder",
+    "lat": 41.982883,
+    "lon": -87.766004
+  },
+  {
+    "stop_id": "11667",
+    "name": "Touhy & Lehigh",
+    "lat": 42.01184628,
+    "lon": -87.77344844
+  },
+  {
+    "stop_id": "11723",
+    "name": "Lake Street & Cuyler (Green Line)",
+    "lat": 41.88811093,
+    "lon": -87.78297986
+  },
+  {
+    "stop_id": "11738",
+    "name": "Narragansett & North Ave",
+    "lat": 41.90956764,
+    "lon": -87.78493247
+  },
+  {
+    "stop_id": "1184",
+    "name": "Sheridan & Foster",
+    "lat": 41.97662,
+    "lon": -87.654896
+  },
+  {
+    "stop_id": "11859",
+    "name": "Howard & McCormick Terminal",
+    "lat": 42.018948,
+    "lon": -87.711018
+  },
+  {
+    "stop_id": "11865",
+    "name": "California & Birchwood",
+    "lat": 42.017586,
+    "lon": -87.699686
+  },
+  {
+    "stop_id": "11877",
+    "name": "California & Devon",
+    "lat": 41.99764619,
+    "lon": -87.69972827
+  },
+  {
+    "stop_id": "11890",
+    "name": "California & Foster",
+    "lat": 41.97595012,
+    "lon": -87.69901516
+  },
+  {
+    "stop_id": "11891",
+    "name": "Lawrence & Christiana",
+    "lat": 41.96835312,
+    "lon": -87.71229625
+  },
+  {
+    "stop_id": "11904",
+    "name": "California & Thorndale",
+    "lat": 41.988482,
+    "lon": -87.69926
+  },
+  {
+    "stop_id": "11999",
+    "name": "Buffalo & 92nd Street",
+    "lat": 41.72843447,
+    "lon": -87.544337
+  },
+  {
+    "stop_id": "12121",
+    "name": "Pulaski & 104th Street Terminal",
+    "lat": 41.704159,
+    "lon": -87.720625
+  },
+  {
+    "stop_id": "12152",
+    "name": "103rd Street & Vincennes Ave",
+    "lat": 41.70669321,
+    "lon": -87.65625638
+  },
+  {
+    "stop_id": "12153",
+    "name": "Julian High School",
+    "lat": 41.7067297,
+    "lon": -87.65529068
+  },
+  {
+    "stop_id": "12230",
+    "name": "Torrence & 104th Street",
+    "lat": 41.70651025,
+    "lon": -87.55973941
+  },
+  {
+    "stop_id": "1224",
+    "name": "Fullerton & Halsted",
+    "lat": 41.92551461,
+    "lon": -87.64942757
+  },
+  {
+    "stop_id": "12252",
+    "name": "Avenue C & 112th Street",
+    "lat": 41.69191557,
+    "lon": -87.52710433
+  },
+  {
+    "stop_id": "12281",
+    "name": "103rd Street & Corliss",
+    "lat": 41.70755393,
+    "lon": -87.60395426
+  },
+  {
+    "stop_id": "12352",
+    "name": "Vincennes & 104th Street",
+    "lat": 41.70504411,
+    "lon": -87.65678798
+  },
+  {
+    "stop_id": "124",
+    "name": "Jackson & Kedzie",
+    "lat": 41.87739519,
+    "lon": -87.70627812
+  },
+  {
+    "stop_id": "12430",
+    "name": "119th Street & Ashland",
+    "lat": 41.67762778,
+    "lon": -87.66119617
+  },
+  {
+    "stop_id": "12443",
+    "name": "119th Street & Justine",
+    "lat": 41.67749204,
+    "lon": -87.66048782
+  },
+  {
+    "stop_id": "12462",
+    "name": "Addison & Cumberland Terminal",
+    "lat": 41.94443813,
+    "lon": -87.83549313
+  },
+  {
+    "stop_id": "12508",
+    "name": "Addison & Milwaukee",
+    "lat": 41.94621021,
+    "lon": -87.73501993
+  },
+  {
+    "stop_id": "12525",
+    "name": "Addison & Campbell (Lane Tech HS)",
+    "lat": 41.94667222,
+    "lon": -87.69050761
+  },
+  {
+    "stop_id": "12548",
+    "name": "Addison & Lake Shore",
+    "lat": 41.94853216,
+    "lon": -87.64355208
+  },
+  {
+    "stop_id": "1257",
+    "name": "Fullerton & Pulaski",
+    "lat": 41.92459714,
+    "lon": -87.72659003
+  },
+  {
+    "stop_id": "12571",
+    "name": "Addison & Campbell",
+    "lat": 41.94678437,
+    "lon": -87.69101309
+  },
+  {
+    "stop_id": "12578",
+    "name": "Addison & Kedzie",
+    "lat": 41.94669988,
+    "lon": -87.70769128
+  },
+  {
+    "stop_id": "12590",
+    "name": "Addison & Milwaukee",
+    "lat": 41.94630338,
+    "lon": -87.73546129
+  },
+  {
+    "stop_id": "12702",
+    "name": "Central Street & Crawford",
+    "lat": 42.06466968,
+    "lon": -87.72712907
+  },
+  {
+    "stop_id": "12713",
+    "name": "Adams & Canal",
+    "lat": 41.879358,
+    "lon": -87.639401
+  },
+  {
+    "stop_id": "1282",
+    "name": "Fullerton & Narragansett",
+    "lat": 41.92378886,
+    "lon": -87.7852845
+  },
+  {
+    "stop_id": "12831",
+    "name": "Komensky & 31st Street",
+    "lat": 41.83675412,
+    "lon": -87.72549827
+  },
+  {
+    "stop_id": "12980",
+    "name": "59th Street & Ashland",
+    "lat": 41.78668289,
+    "lon": -87.66459493
+  },
+  {
+    "stop_id": "13022",
+    "name": "60th Street & Stony Island",
+    "lat": 41.78618935,
+    "lon": -87.58694104
+  },
+  {
+    "stop_id": "13066",
+    "name": "59th Street & Ashland",
+    "lat": 41.78682128,
+    "lon": -87.66415478
+  },
+  {
+    "stop_id": "13135",
+    "name": "Dodge & Church",
+    "lat": 42.04822046,
+    "lon": -87.69882993
+  },
+  {
+    "stop_id": "1315",
+    "name": "Fullerton & Pulaski",
+    "lat": 41.92435352,
+    "lon": -87.72695688
+  },
+  {
+    "stop_id": "13152",
+    "name": "Cannon & Nature Museum/Fullerton",
+    "lat": 41.92708533,
+    "lon": -87.63469524
+  },
+  {
+    "stop_id": "13155",
+    "name": "Desplaines & Harrison Terminal",
+    "lat": 41.87444284,
+    "lon": -87.64434548
+  },
+  {
+    "stop_id": "1354",
+    "name": "Devon & Kedzie Terminal",
+    "lat": 41.99792643,
+    "lon": -87.70953942
+  },
+  {
+    "stop_id": "1375",
+    "name": "Leland & Western (Brown Line)",
+    "lat": 41.96663176,
+    "lon": -87.68836263
+  },
+  {
+    "stop_id": "14001",
+    "name": "95th Red Line Station",
+    "lat": 41.722772,
+    "lon": -87.624065
+  },
+  {
+    "stop_id": "14003",
+    "name": "95th Red Line Station",
+    "lat": 41.72154005,
+    "lon": -87.62463063
+  },
+  {
+    "stop_id": "14004",
+    "name": "95th Red Line Station",
+    "lat": 41.721166,
+    "lon": -87.623964
+  },
+  {
+    "stop_id": "14006",
+    "name": "95th Red Line Station",
+    "lat": 41.720868,
+    "lon": -87.624612
+  },
+  {
+    "stop_id": "14007",
+    "name": "95th Red Line Station",
+    "lat": 41.721364,
+    "lon": -87.623978
+  },
+  {
+    "stop_id": "14008",
+    "name": "95th Red Line Station",
+    "lat": 41.722043,
+    "lon": -87.624018
+  },
+  {
+    "stop_id": "14010",
+    "name": "95th Red Line Station",
+    "lat": 41.722512,
+    "lon": -87.624019
+  },
+  {
+    "stop_id": "14011",
+    "name": "95th Red Line Station",
+    "lat": 41.722663,
+    "lon": -87.624856
+  },
+  {
+    "stop_id": "14020",
+    "name": "60th Street & University",
+    "lat": 41.78592162,
+    "lon": -87.59772191
+  },
+  {
+    "stop_id": "14023",
+    "name": "59th Street & Drexel",
+    "lat": 41.78776144,
+    "lon": -87.60361666
+  },
+  {
+    "stop_id": "14024",
+    "name": "Hegewisch Metra Station",
+    "lat": 41.64582677,
+    "lon": -87.54267437
+  },
+  {
+    "stop_id": "14093",
+    "name": "Paulina & Howard Terminal",
+    "lat": 42.01822603,
+    "lon": -87.67279844
+  },
+  {
+    "stop_id": "14094",
+    "name": "Paulina & Howard Terminal",
+    "lat": 42.01776729,
+    "lon": -87.67279597
+  },
+  {
+    "stop_id": "14095",
+    "name": "Paulina & Howard Terminal",
+    "lat": 42.0180352,
+    "lon": -87.67305981
+  },
+  {
+    "stop_id": "14096",
+    "name": "Paulina & Howard Terminal",
+    "lat": 42.01896555,
+    "lon": -87.67316244
+  },
+  {
+    "stop_id": "14097",
+    "name": "Paulina & Howard Terminal",
+    "lat": 42.01874262,
+    "lon": -87.67290599
+  },
+  {
+    "stop_id": "14101",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.96977755,
+    "lon": -87.7617398
+  },
+  {
+    "stop_id": "14102",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.96984927,
+    "lon": -87.76185025
+  },
+  {
+    "stop_id": "14103",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.96980771,
+    "lon": -87.76177878
+  },
+  {
+    "stop_id": "14104",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.96974662,
+    "lon": -87.76169065
+  },
+  {
+    "stop_id": "14105",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.97032258,
+    "lon": -87.76230848
+  },
+  {
+    "stop_id": "14106",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.97027055,
+    "lon": -87.7623552
+  },
+  {
+    "stop_id": "14107",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.97022955,
+    "lon": -87.76239649
+  },
+  {
+    "stop_id": "14108",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.97044976,
+    "lon": -87.76217613
+  },
+  {
+    "stop_id": "14109",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.96968427,
+    "lon": -87.76157886
+  },
+  {
+    "stop_id": "14110",
+    "name": "Jefferson Park Transit Center",
+    "lat": 41.96971762,
+    "lon": -87.76163771
+  },
+  {
+    "stop_id": "14116",
+    "name": "Midway Orange Line Station",
+    "lat": 41.78646501,
+    "lon": -87.73882191
+  },
+  {
+    "stop_id": "14118",
+    "name": "Midway Orange Line Station",
+    "lat": 41.78655188,
+    "lon": -87.73876312
+  },
+  {
+    "stop_id": "14120",
+    "name": "Midway Orange Line Station",
+    "lat": 41.78626602,
+    "lon": -87.73896561
+  },
+  {
+    "stop_id": "14121",
+    "name": "Midway Orange Line Station",
+    "lat": 41.78654689,
+    "lon": -87.73914148
+  },
+  {
+    "stop_id": "14122",
+    "name": "Midway Orange Line Station",
+    "lat": 41.78636844,
+    "lon": -87.73889567
+  },
+  {
+    "stop_id": "14123",
+    "name": "Midway Orange Line Station",
+    "lat": 41.78630975,
+    "lon": -87.73835934
+  },
+  {
+    "stop_id": "14124",
+    "name": "Pulaski Orange Line Station",
+    "lat": 41.80013757,
+    "lon": -87.72431598
+  },
+  {
+    "stop_id": "14125",
+    "name": "Pulaski Orange Line Station",
+    "lat": 41.80018262,
+    "lon": -87.72434273
+  },
+  {
+    "stop_id": "14126",
+    "name": "Kedzie Orange Line Station",
+    "lat": 41.80486586,
+    "lon": -87.70445607
+  },
+  {
+    "stop_id": "14128",
+    "name": "Kedzie Orange Line Station",
+    "lat": 41.80486755,
+    "lon": -87.70426334
+  },
+  {
+    "stop_id": "14132",
+    "name": "Western Orange Line Station",
+    "lat": 41.80495975,
+    "lon": -87.68400546
+  },
+  {
+    "stop_id": "14135",
+    "name": "35th/Archer Orange Line Station",
+    "lat": 41.82881821,
+    "lon": -87.68112672
+  },
+  {
+    "stop_id": "14139",
+    "name": "69th Red Line Station",
+    "lat": 41.76881973,
+    "lon": -87.62585259
+  },
+  {
+    "stop_id": "14140",
+    "name": "69th Red Line Station",
+    "lat": 41.7688193,
+    "lon": -87.62642075
+  },
+  {
+    "stop_id": "14143",
+    "name": "Cumberland Blue Line Station",
+    "lat": 41.98367954,
+    "lon": -87.8390278
+  },
+  {
+    "stop_id": "14144",
+    "name": "Harlem Blue Line Station",
+    "lat": 41.98190162,
+    "lon": -87.80844642
+  },
+  {
+    "stop_id": "14145",
+    "name": "Harlem Blue Line Station",
+    "lat": 41.98196221,
+    "lon": -87.80840792
+  },
+  {
+    "stop_id": "14150",
+    "name": "Belmont & Halsted Terminal",
+    "lat": 41.94021911,
+    "lon": -87.64876851
+  },
+  {
+    "stop_id": "14153",
+    "name": "Devon & Kedzie Terminal",
+    "lat": 41.99778854,
+    "lon": -87.70952874
+  },
+  {
+    "stop_id": "14155",
+    "name": "103rd Street & Stony Island Garage Terminal",
+    "lat": 41.70853319,
+    "lon": -87.58116932
+  },
+  {
+    "stop_id": "14156",
+    "name": "103rd Street & Stony Island Garage Terminal",
+    "lat": 41.70835284,
+    "lon": -87.58092044
+  },
+  {
+    "stop_id": "14161",
+    "name": "Navy Pier Terminal",
+    "lat": 41.89229813,
+    "lon": -87.60999566
+  },
+  {
+    "stop_id": "14162",
+    "name": "Navy Pier Terminal",
+    "lat": 41.89265572,
+    "lon": -87.61016767
+  },
+  {
+    "stop_id": "14166",
+    "name": "Skokie Yellow Line Station",
+    "lat": 42.039995,
+    "lon": -87.75228667
+  },
+  {
+    "stop_id": "14170",
+    "name": "Milwaukee & Imlay Terminal",
+    "lat": 41.99908768,
+    "lon": -87.78868263
+  },
+  {
+    "stop_id": "14171",
+    "name": "North Ave & Narragansett Terminal",
+    "lat": 41.90961154,
+    "lon": -87.78459447
+  },
+  {
+    "stop_id": "14175",
+    "name": "Harlem & 64th Place",
+    "lat": 41.77498234,
+    "lon": -87.8008978
+  },
+  {
+    "stop_id": "14176",
+    "name": "Clark & Arthur Terminal",
+    "lat": 41.99972301,
+    "lon": -87.67074755
+  },
+  {
+    "stop_id": "14178",
+    "name": "111th Street & Harding Terminal",
+    "lat": 41.6910758,
+    "lon": -87.71925311
+  },
+  {
+    "stop_id": "14179",
+    "name": "Grand & Latrobe Terminal",
+    "lat": 41.9173432,
+    "lon": -87.75754073
+  },
+  {
+    "stop_id": "14180",
+    "name": "Western & 119th Street Terminal",
+    "lat": 41.67754909,
+    "lon": -87.67990266
+  },
+  {
+    "stop_id": "14182",
+    "name": "Western & Berwyn Terminal",
+    "lat": 41.97851729,
+    "lon": -87.68952073
+  },
+  {
+    "stop_id": "14193",
+    "name": "54th/Cermak Pink Line Station",
+    "lat": 41.85169529,
+    "lon": -87.75766652
+  },
+  {
+    "stop_id": "1431",
+    "name": "State & Harrison/Ida B Wells Drive ",
+    "lat": 41.87499673,
+    "lon": -87.62769601
+  },
+  {
+    "stop_id": "1437",
+    "name": "State & Randolph",
+    "lat": 41.884351,
+    "lon": -87.627791
+  },
+  {
+    "stop_id": "14409",
+    "name": "Davis Purple Line Station",
+    "lat": 42.0477745,
+    "lon": -87.6834731
+  },
+  {
+    "stop_id": "14461",
+    "name": "Jackson & Chicago River",
+    "lat": 41.87800461,
+    "lon": -87.63830625
+  },
+  {
+    "stop_id": "14466",
+    "name": "16th Street & 47th Court Terminal",
+    "lat": 41.85826059,
+    "lon": -87.74342248
+  },
+  {
+    "stop_id": "14507",
+    "name": "87th Street & Halsted",
+    "lat": 41.73616925,
+    "lon": -87.64406411
+  },
+  {
+    "stop_id": "1451",
+    "name": "Clark & LaSalle",
+    "lat": 41.913409,
+    "lon": -87.632857
+  },
+  {
+    "stop_id": "14510",
+    "name": "Midway Plaisance & Cottage Grove",
+    "lat": 41.78635927,
+    "lon": -87.6062534
+  },
+  {
+    "stop_id": "14514",
+    "name": "Chicago & Kostner",
+    "lat": 41.89511202,
+    "lon": -87.73579797
+  },
+  {
+    "stop_id": "14527",
+    "name": "Western & Foster",
+    "lat": 41.97610579,
+    "lon": -87.68901484
+  },
+  {
+    "stop_id": "14545",
+    "name": "Halsted & 119th Street",
+    "lat": 41.67799154,
+    "lon": -87.64178573
+  },
+  {
+    "stop_id": "14550",
+    "name": "Irving Park & Central",
+    "lat": 41.95309398,
+    "lon": -87.7666805
+  },
+  {
+    "stop_id": "14569",
+    "name": "Division & Western",
+    "lat": 41.90313458,
+    "lon": -87.68716682
+  },
+  {
+    "stop_id": "14628",
+    "name": "Pulaski & Madison",
+    "lat": 41.88049086,
+    "lon": -87.72575985
+  },
+  {
+    "stop_id": "14642",
+    "name": "73rd Street & Exchange",
+    "lat": 41.7627174,
+    "lon": -87.56385018
+  },
+  {
+    "stop_id": "14668",
+    "name": "Berwyn & Broadway",
+    "lat": 41.97809323,
+    "lon": -87.6593041
+  },
+  {
+    "stop_id": "14729",
+    "name": "Dodge & Evanston Township HS",
+    "lat": 42.04547559,
+    "lon": -87.69915574
+  },
+  {
+    "stop_id": "14732",
+    "name": "California/Dodge & Howard",
+    "lat": 42.0192,
+    "lon": -87.69952
+  },
+  {
+    "stop_id": "14784",
+    "name": "47th Red Line Station",
+    "lat": 41.80921867,
+    "lon": -87.63218185
+  },
+  {
+    "stop_id": "14801",
+    "name": "Lincolnwood Town Center",
+    "lat": 42.00935894,
+    "lon": -87.71446223
+  },
+  {
+    "stop_id": "14815",
+    "name": "63rd Street & Kedzie",
+    "lat": 41.77904541,
+    "lon": -87.70346872
+  },
+  {
+    "stop_id": "1483",
+    "name": "Western Brown Line Station",
+    "lat": 41.96605186,
+    "lon": -87.68855157
+  },
+  {
+    "stop_id": "14835",
+    "name": "16th Street & Kedzie",
+    "lat": 41.85904245,
+    "lon": -87.70524093
+  },
+  {
+    "stop_id": "14838",
+    "name": "Harrison & Kedzie",
+    "lat": 41.87361269,
+    "lon": -87.70579199
+  },
+  {
+    "stop_id": "14845",
+    "name": "Cermak & Pulaski",
+    "lat": 41.85169965,
+    "lon": -87.72527203
+  },
+  {
+    "stop_id": "14863",
+    "name": "Halsted & Pershing",
+    "lat": 41.82313483,
+    "lon": -87.64600361
+  },
+  {
+    "stop_id": "14873",
+    "name": "Sacramento & Polk",
+    "lat": 41.87092568,
+    "lon": -87.7008361
+  },
+  {
+    "stop_id": "14874",
+    "name": "Sacramento & Polk",
+    "lat": 41.87109484,
+    "lon": -87.7010161
+  },
+  {
+    "stop_id": "14876",
+    "name": "Kedzie & Catalpa",
+    "lat": 41.98059331,
+    "lon": -87.70877572
+  },
+  {
+    "stop_id": "14879",
+    "name": "Cermak & Cicero",
+    "lat": 41.85115268,
+    "lon": -87.7439659
+  },
+  {
+    "stop_id": "14888",
+    "name": "Pulaski Pink Line Station",
+    "lat": 41.85402778,
+    "lon": -87.72460164
+  },
+  {
+    "stop_id": "14895",
+    "name": "Clark & Barry/Halsted",
+    "lat": 41.93760248,
+    "lon": -87.64891842
+  },
+  {
+    "stop_id": "14954",
+    "name": "Roosevelt & Pulaski",
+    "lat": 41.8660821,
+    "lon": -87.7249104
+  },
+  {
+    "stop_id": "14955",
+    "name": "Roosevelt & Kedzie",
+    "lat": 41.86632291,
+    "lon": -87.70543026
+  },
+  {
+    "stop_id": "14977",
+    "name": "Halsted & 103rd Street",
+    "lat": 41.70673806,
+    "lon": -87.6429517
+  },
+  {
+    "stop_id": "15001",
+    "name": "Devon & Kedzie Terminal",
+    "lat": 41.99786612,
+    "lon": -87.70952663
+  },
+  {
+    "stop_id": "15037",
+    "name": "Higgins & Nagle",
+    "lat": 41.97612429,
+    "lon": -87.78757861
+  },
+  {
+    "stop_id": "15052",
+    "name": "State & Harrison/Ida B Wells Drive",
+    "lat": 41.87488286,
+    "lon": -87.62745282
+  },
+  {
+    "stop_id": "15111",
+    "name": "87th Street & 200 West",
+    "lat": 41.73620583,
+    "lon": -87.62780224
+  },
+  {
+    "stop_id": "15122",
+    "name": "Foster & Troy",
+    "lat": 41.97586865,
+    "lon": -87.70726173
+  },
+  {
+    "stop_id": "15136",
+    "name": "Madison & Pulaski",
+    "lat": 41.88083294,
+    "lon": -87.72595327
+  },
+  {
+    "stop_id": "15149",
+    "name": "North Ave & Pulaski",
+    "lat": 41.90977952,
+    "lon": -87.725961
+  },
+  {
+    "stop_id": "15164",
+    "name": "Cottage Grove & 57th Street",
+    "lat": 41.79163171,
+    "lon": -87.60606746
+  },
+  {
+    "stop_id": "15191",
+    "name": "Division & Cicero",
+    "lat": 41.90227394,
+    "lon": -87.74553942
+  },
+  {
+    "stop_id": "15209",
+    "name": "79th Street & Wentworth",
+    "lat": 41.75093111,
+    "lon": -87.62983016
+  },
+  {
+    "stop_id": "15210",
+    "name": "63rd Street & Western",
+    "lat": 41.77908454,
+    "lon": -87.68316127
+  },
+  {
+    "stop_id": "15257",
+    "name": "Fullerton & Narragansett",
+    "lat": 41.92356596,
+    "lon": -87.7855933
+  },
+  {
+    "stop_id": "15273",
+    "name": "Halsted & Division",
+    "lat": 41.90336405,
+    "lon": -87.64814536
+  },
+  {
+    "stop_id": "15278",
+    "name": "Indiana & 15th Place",
+    "lat": 41.86125036,
+    "lon": -87.6225413
+  },
+  {
+    "stop_id": "15282",
+    "name": "Chicago & Mies Van Der Rohe",
+    "lat": 41.89667137,
+    "lon": -87.62195835
+  },
+  {
+    "stop_id": "15295",
+    "name": "Chicago & Kostner",
+    "lat": 41.89525723,
+    "lon": -87.73623546
+  },
+  {
+    "stop_id": "15299",
+    "name": "Cicero & Chicago",
+    "lat": 41.8947296,
+    "lon": -87.7458875
+  },
+  {
+    "stop_id": "153",
+    "name": "Harrison & Central Terminal",
+    "lat": 41.872683,
+    "lon": -87.76479999
+  },
+  {
+    "stop_id": "15314",
+    "name": "Indiana & 35th Street",
+    "lat": 41.83131644,
+    "lon": -87.62167682
+  },
+  {
+    "stop_id": "15351",
+    "name": "Halsted & Randolph/Washington",
+    "lat": 41.88379731,
+    "lon": -87.64751024
+  },
+  {
+    "stop_id": "15403",
+    "name": "Racine & Roosevelt",
+    "lat": 41.866789,
+    "lon": -87.65676754
+  },
+  {
+    "stop_id": "15405",
+    "name": "Halsted & North Branch",
+    "lat": 41.89937404,
+    "lon": -87.64779481
+  },
+  {
+    "stop_id": "15416",
+    "name": "Harbor Drive & Randolph",
+    "lat": 41.88470042,
+    "lon": -87.61566957
+  },
+  {
+    "stop_id": "15417",
+    "name": "Clark & North",
+    "lat": 41.91144634,
+    "lon": -87.63166701
+  },
+  {
+    "stop_id": "15449",
+    "name": "Damen & Jackson",
+    "lat": 41.87714163,
+    "lon": -87.67662593
+  },
+  {
+    "stop_id": "15452",
+    "name": "Rogers & Hermitage",
+    "lat": 42.01665359,
+    "lon": -87.67380984
+  },
+  {
+    "stop_id": "15535",
+    "name": "Irving Park & Keystone Terminal",
+    "lat": 41.95387464,
+    "lon": -87.73015676
+  },
+  {
+    "stop_id": "15540",
+    "name": "Kedzie-Homan Blue Line Station",
+    "lat": 41.87404431,
+    "lon": -87.7106912
+  },
+  {
+    "stop_id": "15671",
+    "name": "East Hyde Park & Blackstone",
+    "lat": 41.8024951,
+    "lon": -87.59033668
+  },
+  {
+    "stop_id": "15674",
+    "name": "Homan & Roosevelt",
+    "lat": 41.86601685,
+    "lon": -87.71062571
+  },
+  {
+    "stop_id": "1568",
+    "name": "Michigan & 25th Street",
+    "lat": 41.847313,
+    "lon": -87.6235
+  },
+  {
+    "stop_id": "15684",
+    "name": "Pulaski Orange Line Station",
+    "lat": 41.80022607,
+    "lon": -87.7243733
+  },
+  {
+    "stop_id": "15685",
+    "name": "79th Street & Western Terminal",
+    "lat": 41.75091507,
+    "lon": -87.68209208
+  },
+  {
+    "stop_id": "15739",
+    "name": "25th Street & Mercy Hospital",
+    "lat": 41.8474191,
+    "lon": -87.62198225
+  },
+  {
+    "stop_id": "15761",
+    "name": "Midway Orange Line Station",
+    "lat": 41.78659933,
+    "lon": -87.73871555
+  },
+  {
+    "stop_id": "15770",
+    "name": "119th Street & Halsted",
+    "lat": 41.67787711,
+    "lon": -87.64225537
+  },
+  {
+    "stop_id": "15784",
+    "name": "Harlem/Lake Green Line Station",
+    "lat": 41.88675931,
+    "lon": -87.80319483
+  },
+  {
+    "stop_id": "158",
+    "name": "Harrison & Leamington",
+    "lat": 41.87289309,
+    "lon": -87.75318511
+  },
+  {
+    "stop_id": "15826",
+    "name": "Monterey & Hermosa",
+    "lat": 41.69074909,
+    "lon": -87.66703016
+  },
+  {
+    "stop_id": "15885",
+    "name": "Montrose & Central",
+    "lat": 41.96054985,
+    "lon": -87.76755159
+  },
+  {
+    "stop_id": "15886",
+    "name": "87th Street Red Line Station",
+    "lat": 41.7364112,
+    "lon": -87.62476573
+  },
+  {
+    "stop_id": "15895",
+    "name": "Clark & Harrison",
+    "lat": 41.87429511,
+    "lon": -87.63075386
+  },
+  {
+    "stop_id": "15915",
+    "name": "Lake Park & 47th Street Terminal",
+    "lat": 41.80935511,
+    "lon": -87.5916452
+  },
+  {
+    "stop_id": "15919",
+    "name": "Shoreland Dorm",
+    "lat": 41.79643496,
+    "lon": -87.58100725
+  },
+  {
+    "stop_id": "15926",
+    "name": "63rd Street & Archer Terminal",
+    "lat": 41.77695843,
+    "lon": -87.81455419
+  },
+  {
+    "stop_id": "15930",
+    "name": "Irving Park & Fremont",
+    "lat": 41.95459923,
+    "lon": -87.65200368
+  },
+  {
+    "stop_id": "15959",
+    "name": "Irving Park & Harlem",
+    "lat": 41.95269044,
+    "lon": -87.80686788
+  },
+  {
+    "stop_id": "15974",
+    "name": "69th Street & Ashland",
+    "lat": 41.76849085,
+    "lon": -87.66359167
+  },
+  {
+    "stop_id": "15999",
+    "name": "State & 95th Street",
+    "lat": 41.72143055,
+    "lon": -87.62362907
+  },
+  {
+    "stop_id": "16030",
+    "name": "Carver High School",
+    "lat": 41.65627883,
+    "lon": -87.59097662
+  },
+  {
+    "stop_id": "16039",
+    "name": "31st Street & Kostner",
+    "lat": 41.83640784,
+    "lon": -87.7343458
+  },
+  {
+    "stop_id": "16095",
+    "name": "Division & Cicero",
+    "lat": 41.90243285,
+    "lon": -87.74631309
+  },
+  {
+    "stop_id": "1610",
+    "name": "Michigan & 34th Street",
+    "lat": 41.832755,
+    "lon": -87.623357
+  },
+  {
+    "stop_id": "16109",
+    "name": "Montrose & Central",
+    "lat": 41.96041677,
+    "lon": -87.76687451
+  },
+  {
+    "stop_id": "16116",
+    "name": "E Hyde Park & Lake Shore Drive",
+    "lat": 41.8025832,
+    "lon": -87.58400058
+  },
+  {
+    "stop_id": "16140",
+    "name": "Roosevelt Orange/Red/Green Line Station",
+    "lat": 41.86755162,
+    "lon": -87.62666395
+  },
+  {
+    "stop_id": "16173",
+    "name": "Addison & Kimball",
+    "lat": 41.94663193,
+    "lon": -87.71293579
+  },
+  {
+    "stop_id": "1661",
+    "name": "Stony Island & 62nd Street",
+    "lat": 41.78279019,
+    "lon": -87.58660825
+  },
+  {
+    "stop_id": "1662",
+    "name": "Western Brown Line Station",
+    "lat": 41.96611083,
+    "lon": -87.68856058
+  },
+  {
+    "stop_id": "1691",
+    "name": "Western & Birchwood Terminal",
+    "lat": 42.01823063,
+    "lon": -87.68975956
+  },
+  {
+    "stop_id": "17017",
+    "name": "Belmont & Central",
+    "lat": 41.93851092,
+    "lon": -87.76624353
+  },
+  {
+    "stop_id": "17020",
+    "name": "Central & Belmont",
+    "lat": 41.93843211,
+    "lon": -87.76657783
+  },
+  {
+    "stop_id": "17037",
+    "name": "Jefferson Park Transit Center North Drop Off",
+    "lat": 41.97007625,
+    "lon": -87.76184249
+  },
+  {
+    "stop_id": "17097",
+    "name": "79th Red Line Station",
+    "lat": 41.75089853,
+    "lon": -87.62494095
+  },
+  {
+    "stop_id": "17159",
+    "name": "Grand & Pulaski",
+    "lat": 41.90598998,
+    "lon": -87.72616522
+  },
+  {
+    "stop_id": "17208",
+    "name": "Narragansett & Diversey",
+    "lat": 41.93116013,
+    "lon": -87.7855992
+  },
+  {
+    "stop_id": "17260",
+    "name": "Ashland & 47th Street",
+    "lat": 41.80839146,
+    "lon": -87.6651025
+  },
+  {
+    "stop_id": "17262",
+    "name": "Devon & Canfield",
+    "lat": 41.99680504,
+    "lon": -87.82109935
+  },
+  {
+    "stop_id": "17273",
+    "name": "Damen & Adams",
+    "lat": 41.87856984,
+    "lon": -87.67666754
+  },
+  {
+    "stop_id": "17358",
+    "name": "Addison & Harlem",
+    "lat": 41.94520049,
+    "lon": -87.8068242
+  },
+  {
+    "stop_id": "17363",
+    "name": "King Drive & 79th Street",
+    "lat": 41.75092081,
+    "lon": -87.61503894
+  },
+  {
+    "stop_id": "17405",
+    "name": "Addison & Central",
+    "lat": 41.94581596,
+    "lon": -87.76652536
+  },
+  {
+    "stop_id": "17415",
+    "name": "Kedzie & Cermak",
+    "lat": 41.85192851,
+    "lon": -87.7051727
+  },
+  {
+    "stop_id": "17434",
+    "name": "Kedzie Orange Line Station",
+    "lat": 41.80486704,
+    "lon": -87.70458749
+  },
+  {
+    "stop_id": "17439",
+    "name": "North Ave & Pulaski",
+    "lat": 41.90998862,
+    "lon": -87.72670254
+  },
+  {
+    "stop_id": "17448",
+    "name": "Kedzie & 31st Street",
+    "lat": 41.83692221,
+    "lon": -87.70490015
+  },
+  {
+    "stop_id": "17468",
+    "name": "Belmont & Mason",
+    "lat": 41.93840665,
+    "lon": -87.77471056
+  },
+  {
+    "stop_id": "17472",
+    "name": "Halsted & 79th Street Terminal",
+    "lat": 41.74980413,
+    "lon": -87.64370184
+  },
+  {
+    "stop_id": "17521",
+    "name": "Ashland & 63rd Street",
+    "lat": 41.77924927,
+    "lon": -87.66436375
+  },
+  {
+    "stop_id": "1754",
+    "name": "Morse & Glenwood (Red Line)",
+    "lat": 42.0078605,
+    "lon": -87.66563004
+  },
+  {
+    "stop_id": "17566",
+    "name": "St. Louis & 38th Place",
+    "lat": 41.82345678,
+    "lon": -87.71183724
+  },
+  {
+    "stop_id": "17572",
+    "name": "Cottage Grove & 63rd Street (Green Line)",
+    "lat": 41.78056776,
+    "lon": -87.60581869
+  },
+  {
+    "stop_id": "17578",
+    "name": "Financial Place & Ida B Wells Drive (LaSalle St Station)",
+    "lat": 41.87537457,
+    "lon": -87.63301921
+  },
+  {
+    "stop_id": "1762",
+    "name": "Devon & Clark",
+    "lat": 41.99814792,
+    "lon": -87.67037124
+  },
+  {
+    "stop_id": "17655",
+    "name": "Belmont & Octavia",
+    "lat": 41.9378972,
+    "lon": -87.80893759
+  },
+  {
+    "stop_id": "17673",
+    "name": "Paulina & Howard Terminal",
+    "lat": 42.01850551,
+    "lon": -87.67281382
+  },
+  {
+    "stop_id": "17674",
+    "name": "Logan Square Blue Line Station",
+    "lat": 41.92990442,
+    "lon": -87.70780185
+  },
+  {
+    "stop_id": "17677",
+    "name": "Golf Road & Waukegan (Avon)",
+    "lat": 42.05487834,
+    "lon": -87.79790345
+  },
+  {
+    "stop_id": "17696",
+    "name": "31st Street & Kedzie",
+    "lat": 41.83729365,
+    "lon": -87.70503843
+  },
+  {
+    "stop_id": "17736",
+    "name": "Marshfield & 117th Street",
+    "lat": 41.68039211,
+    "lon": -87.66255742
+  },
+  {
+    "stop_id": "17742",
+    "name": "McClurg & Huron",
+    "lat": 41.8949608,
+    "lon": -87.61767434
+  },
+  {
+    "stop_id": "17746",
+    "name": "McClurg & Huron",
+    "lat": 41.89482759,
+    "lon": -87.61785047
+  },
+  {
+    "stop_id": "17747",
+    "name": "103rd Street & Stony Island Garage Terminal",
+    "lat": 41.70874056,
+    "lon": -87.58092719
+  },
+  {
+    "stop_id": "17786",
+    "name": "Rockwell & Addison",
+    "lat": 41.94598672,
+    "lon": -87.6939588
+  },
+  {
+    "stop_id": "17790",
+    "name": "95th Street Red Line Station",
+    "lat": 41.721834,
+    "lon": -87.624384
+  },
+  {
+    "stop_id": "17831",
+    "name": "Addison & Central",
+    "lat": 41.94593508,
+    "lon": -87.7671953
+  },
+  {
+    "stop_id": "17868",
+    "name": "79th Street & Lake Shore Drive",
+    "lat": 41.751875,
+    "lon": -87.54491
+  },
+  {
+    "stop_id": "17882",
+    "name": "Laramie & Chicago",
+    "lat": 41.8946969,
+    "lon": -87.75567714
+  },
+  {
+    "stop_id": "17883",
+    "name": "Laramie & Chicago",
+    "lat": 41.8951165,
+    "lon": -87.75551818
+  },
+  {
+    "stop_id": "17896",
+    "name": "Kostner & 74th Street (Solo Cup)",
+    "lat": 41.75847263,
+    "lon": -87.73234509
+  },
+  {
+    "stop_id": "1791",
+    "name": "Clark & Arthur",
+    "lat": 41.99994883,
+    "lon": -87.67132331
+  },
+  {
+    "stop_id": "17910",
+    "name": "Central Street & Cowper",
+    "lat": 42.06450993,
+    "lon": -87.72404774
+  },
+  {
+    "stop_id": "18010",
+    "name": "Broadway & Foster",
+    "lat": 41.97611807,
+    "lon": -87.6599698
+  },
+  {
+    "stop_id": "1806",
+    "name": "Clark & Foster",
+    "lat": 41.97627538,
+    "lon": -87.66851485
+  },
+  {
+    "stop_id": "18154",
+    "name": "State & Washington",
+    "lat": 41.88307616,
+    "lon": -87.62774665
+  },
+  {
+    "stop_id": "18166",
+    "name": "Central & Montrose",
+    "lat": 41.96034288,
+    "lon": -87.76732988
+  },
+  {
+    "stop_id": "18219",
+    "name": "Chicago & Troy",
+    "lat": 41.89548933,
+    "lon": -87.70543245
+  },
+  {
+    "stop_id": "18224",
+    "name": "Mies Van Der Rohe & Pearson",
+    "lat": 41.89748074,
+    "lon": -87.62177876
+  },
+  {
+    "stop_id": "18237",
+    "name": "33rd Place & Rhodes",
+    "lat": 41.83367283,
+    "lon": -87.61538804
+  },
+  {
+    "stop_id": "18241",
+    "name": "115th Street Metra Station",
+    "lat": 41.68559704,
+    "lon": -87.61232633
+  },
+  {
+    "stop_id": "18250",
+    "name": "Union Station Transit Center",
+    "lat": 41.87764708,
+    "lon": -87.63985173
+  },
+  {
+    "stop_id": "18251",
+    "name": "Union Station Transit Center",
+    "lat": 41.8777454,
+    "lon": -87.63986942
+  },
+  {
+    "stop_id": "18252",
+    "name": "Union Station Transit Center",
+    "lat": 41.87784583,
+    "lon": -87.63987892
+  },
+  {
+    "stop_id": "18257",
+    "name": "47th Street & Ashland",
+    "lat": 41.8086689,
+    "lon": -87.66522879
+  },
+  {
+    "stop_id": "18258",
+    "name": "47th Street & Ashland",
+    "lat": 41.80853795,
+    "lon": -87.66467141
+  },
+  {
+    "stop_id": "18289",
+    "name": "Central Park & Cermak",
+    "lat": 41.85146035,
+    "lon": -87.71508456
+  },
+  {
+    "stop_id": "18294",
+    "name": "Ford City",
+    "lat": 41.7557972,
+    "lon": -87.73318913
+  },
+  {
+    "stop_id": "18295",
+    "name": "Ford City",
+    "lat": 41.75664504,
+    "lon": -87.73289663
+  },
+  {
+    "stop_id": "18311",
+    "name": "Western & Foster",
+    "lat": 41.97570728,
+    "lon": -87.68928681
+  },
+  {
+    "stop_id": "18323",
+    "name": "Grand & Chicago",
+    "lat": 41.89532549,
+    "lon": -87.69935553
+  },
+  {
+    "stop_id": "18365",
+    "name": "Cicero & 24th Place",
+    "lat": 41.84651288,
+    "lon": -87.74424087
+  },
+  {
+    "stop_id": "18384",
+    "name": "95th Red Line Station",
+    "lat": 41.720925,
+    "lon": -87.62396
+  },
+  {
+    "stop_id": "18390",
+    "name": "95th Red Line Station",
+    "lat": 41.72159,
+    "lon": -87.624125
+  },
+  {
+    "stop_id": "18394",
+    "name": "Kimball & Belmont (Blue Line)",
+    "lat": 41.9390928,
+    "lon": -87.71256509
+  },
+  {
+    "stop_id": "18412",
+    "name": "Walton & Clark",
+    "lat": 41.89986678,
+    "lon": -87.63100262
+  },
+  {
+    "stop_id": "18430",
+    "name": "Cottage Grove & 45th Street",
+    "lat": 41.81297062,
+    "lon": -87.60676346
+  },
+  {
+    "stop_id": "18435",
+    "name": "Midway Orange Line Station",
+    "lat": 41.78621982,
+    "lon": -87.73902352
+  },
+  {
+    "stop_id": "18596",
+    "name": "Damen & 74th Street",
+    "lat": 41.75909893,
+    "lon": -87.67349624
+  },
+  {
+    "stop_id": "18597",
+    "name": "Damen & 74th Street",
+    "lat": 41.75951111,
+    "lon": -87.67331372
+  },
+  {
+    "stop_id": "18620",
+    "name": "Navy Pier Terminal",
+    "lat": 41.89265401,
+    "lon": -87.61109841
+  },
+  {
+    "stop_id": "18634",
+    "name": "7600 S Central",
+    "lat": 41.75457175,
+    "lon": -87.76087633
+  },
+  {
+    "stop_id": "1864",
+    "name": "Clark & Lake",
+    "lat": 41.885501,
+    "lon": -87.631039
+  },
+  {
+    "stop_id": "1887",
+    "name": "Dearborn & Marina City",
+    "lat": 41.888092,
+    "lon": -87.629454
+  },
+  {
+    "stop_id": "1931",
+    "name": "Clark & Belle Plaine",
+    "lat": 41.95642405,
+    "lon": -87.66340584
+  },
+  {
+    "stop_id": "1942",
+    "name": "Clark & Foster",
+    "lat": 41.97609752,
+    "lon": -87.66831969
+  },
+  {
+    "stop_id": "1970",
+    "name": "Division & Austin Terminal",
+    "lat": 41.90179808,
+    "lon": -87.77500914
+  },
+  {
+    "stop_id": "1990",
+    "name": "Division & Pulaski",
+    "lat": 41.90259074,
+    "lon": -87.72644847
+  },
+  {
+    "stop_id": "2083",
+    "name": "Division & Pulaski",
+    "lat": 41.90274481,
+    "lon": -87.72609819
+  },
+  {
+    "stop_id": "2121",
+    "name": "King Drive & 79th Street",
+    "lat": 41.75130653,
+    "lon": -87.61487151
+  },
+  {
+    "stop_id": "2197",
+    "name": "3000 S King Drive",
+    "lat": 41.84023996,
+    "lon": -87.61758092
+  },
+  {
+    "stop_id": "2248",
+    "name": "King Drive & 79th Street",
+    "lat": 41.7512414,
+    "lon": -87.61505265
+  },
+  {
+    "stop_id": "227",
+    "name": "Harrison & Kedzie",
+    "lat": 41.8737524,
+    "lon": -87.70571896
+  },
+  {
+    "stop_id": "228",
+    "name": "Congress & Kedzie",
+    "lat": 41.87496738,
+    "lon": -87.70608349
+  },
+  {
+    "stop_id": "2353",
+    "name": "State & Roosevelt",
+    "lat": 41.86766345,
+    "lon": -87.62733283
+  },
+  {
+    "stop_id": "2370",
+    "name": "State & Marina City",
+    "lat": 41.88835,
+    "lon": -87.628172
+  },
+  {
+    "stop_id": "2435",
+    "name": "69th Red Line Station",
+    "lat": 41.76884376,
+    "lon": -87.62552269
+  },
+  {
+    "stop_id": "247",
+    "name": "Harrison & Leamington",
+    "lat": 41.87305352,
+    "lon": -87.75320123
+  },
+  {
+    "stop_id": "2478",
+    "name": "Cottage Grove & 79th Street",
+    "lat": 41.7511587,
+    "lon": -87.6051087
+  },
+  {
+    "stop_id": "2516",
+    "name": "Cottage Grove & 42nd Street",
+    "lat": 41.818463,
+    "lon": -87.606685
+  },
+  {
+    "stop_id": "2530",
+    "name": "Columbus & Randolph",
+    "lat": 41.88478,
+    "lon": -87.620513
+  },
+  {
+    "stop_id": "2582",
+    "name": "Cottage Grove & 79th Street",
+    "lat": 41.75110449,
+    "lon": -87.6053582
+  },
+  {
+    "stop_id": "2630",
+    "name": "79th Street & Cottage Grove",
+    "lat": 41.7513569,
+    "lon": -87.60505167
+  },
+  {
+    "stop_id": "2661",
+    "name": "79th Street & Ashland",
+    "lat": 41.75042496,
+    "lon": -87.66323611
+  },
+  {
+    "stop_id": "2707",
+    "name": "St. Laurence/Queen of Peace H.S.",
+    "lat": 41.754323,
+    "lon": -87.760007
+  },
+  {
+    "stop_id": "2728",
+    "name": "79th Street & Pulaski",
+    "lat": 41.74939638,
+    "lon": -87.72149967
+  },
+  {
+    "stop_id": "2771",
+    "name": "79th Street & Wentworth",
+    "lat": 41.7508,
+    "lon": -87.630092
+  },
+  {
+    "stop_id": "2841",
+    "name": "Cottage Grove & 115th Street",
+    "lat": 41.685588,
+    "lon": -87.6115
+  },
+  {
+    "stop_id": "2870",
+    "name": "Vincennes & 111th Street",
+    "lat": 41.69196545,
+    "lon": -87.66333712
+  },
+  {
+    "stop_id": "2928",
+    "name": "Vincennes & 111th Street",
+    "lat": 41.69200516,
+    "lon": -87.66351941
+  },
+  {
+    "stop_id": "30",
+    "name": "Jackson & Kedzie",
+    "lat": 41.87725804,
+    "lon": -87.70577393
+  },
+  {
+    "stop_id": "3038",
+    "name": "Kedzie & Adams",
+    "lat": 41.878447,
+    "lon": -87.706128
+  },
+  {
+    "stop_id": "3040",
+    "name": "Kedzie & Van Buren",
+    "lat": 41.875956,
+    "lon": -87.706024
+  },
+  {
+    "stop_id": "3083",
+    "name": "Kedzie Orange Line Station",
+    "lat": 41.80486481,
+    "lon": -87.70453888
+  },
+  {
+    "stop_id": "3099",
+    "name": "Kedzie & 63rd Place Terminal",
+    "lat": 41.77832526,
+    "lon": -87.70334562
+  },
+  {
+    "stop_id": "3158",
+    "name": "Kedzie & Van Buren",
+    "lat": 41.875791,
+    "lon": -87.705879
+  },
+  {
+    "stop_id": "316",
+    "name": "Roosevelt & State",
+    "lat": 41.86728699,
+    "lon": -87.62711056
+  },
+  {
+    "stop_id": "3174",
+    "name": "Kedzie & Chicago",
+    "lat": 41.89543434,
+    "lon": -87.70646001
+  },
+  {
+    "stop_id": "3205",
+    "name": "Stony Island & 63rd/64th",
+    "lat": 41.77978687,
+    "lon": -87.5865507
+  },
+  {
+    "stop_id": "3232",
+    "name": "63rd Street & Stewart",
+    "lat": 41.77996496,
+    "lon": -87.63488716
+  },
+  {
+    "stop_id": "3245",
+    "name": "Ashland/63rd Green Line Station",
+    "lat": 41.778812,
+    "lon": -87.663683
+  },
+  {
+    "stop_id": "3300",
+    "name": "Narragansett & 63rd Place Terminal",
+    "lat": 41.77655992,
+    "lon": -87.78158992
+  },
+  {
+    "stop_id": "3319",
+    "name": "Cicero & 63rd Street",
+    "lat": 41.77867563,
+    "lon": -87.74214678
+  },
+  {
+    "stop_id": "3395",
+    "name": "63rd Street & Kedzie",
+    "lat": 41.77889387,
+    "lon": -87.70327073
+  },
+  {
+    "stop_id": "3413",
+    "name": "63rd Street & Ashland (Green Line)",
+    "lat": 41.77941275,
+    "lon": -87.66384995
+  },
+  {
+    "stop_id": "3453",
+    "name": "63rd Street & Stony Island",
+    "lat": 41.78053288,
+    "lon": -87.58665852
+  },
+  {
+    "stop_id": "3500",
+    "name": "95th Street & Throop",
+    "lat": 41.72120191,
+    "lon": -87.65547979
+  },
+  {
+    "stop_id": "3513",
+    "name": "Howard & Chicago Avenue",
+    "lat": 42.01947604,
+    "lon": -87.67618415
+  },
+  {
+    "stop_id": "356",
+    "name": "Roosevelt & Kedzie",
+    "lat": 41.86650058,
+    "lon": -87.70540269
+  },
+  {
+    "stop_id": "3562",
+    "name": "Skokie Yellow Line Station",
+    "lat": 42.04040005,
+    "lon": -87.75217756
+  },
+  {
+    "stop_id": "3574",
+    "name": "Old Orchard Mall - Macys",
+    "lat": 42.05944639,
+    "lon": -87.75027039
+  },
+  {
+    "stop_id": "365",
+    "name": "Roosevelt & Pulaski",
+    "lat": 41.86625401,
+    "lon": -87.72504075
+  },
+  {
+    "stop_id": "3680",
+    "name": "Perry & 79th Street Terminal",
+    "lat": 41.751073,
+    "lon": -87.627593
+  },
+  {
+    "stop_id": "3681",
+    "name": "Halsted & 79th Street Terminal",
+    "lat": 41.74969478,
+    "lon": -87.64368096
+  },
+  {
+    "stop_id": "3773",
+    "name": "Marine Drive & Wilson",
+    "lat": 41.96566508,
+    "lon": -87.64858021
+  },
+  {
+    "stop_id": "3824",
+    "name": "Grand & Latrobe Terminal",
+    "lat": 41.91736112,
+    "lon": -87.75767956
+  },
+  {
+    "stop_id": "3856",
+    "name": "Harrison & Cicero",
+    "lat": 41.87319778,
+    "lon": -87.74530349
+  },
+  {
+    "stop_id": "386",
+    "name": "Madison & Austin Terminal",
+    "lat": 41.880313,
+    "lon": -87.774043
+  },
+  {
+    "stop_id": "3883",
+    "name": "Grand & Laramie",
+    "lat": 41.91707097,
+    "lon": -87.75626209
+  },
+  {
+    "stop_id": "3955",
+    "name": "Columbus (Upper) & South Water",
+    "lat": 41.887026,
+    "lon": -87.620844
+  },
+  {
+    "stop_id": "4040",
+    "name": "Armitage & Pulaski",
+    "lat": 41.91710599,
+    "lon": -87.72675397
+  },
+  {
+    "stop_id": "409",
+    "name": "Madison & Pulaski",
+    "lat": 41.88061422,
+    "lon": -87.72582347
+  },
+  {
+    "stop_id": "4125",
+    "name": "Armitage & Pulaski",
+    "lat": 41.9172294,
+    "lon": -87.72638071
+  },
+  {
+    "stop_id": "4163",
+    "name": "Ashland Orange Line Station",
+    "lat": 41.83910322,
+    "lon": -87.6652554
+  },
+  {
+    "stop_id": "4271",
+    "name": "California & 42nd Street",
+    "lat": 41.817376,
+    "lon": -87.694557
+  },
+  {
+    "stop_id": "4377",
+    "name": "Archer & Neva Terminal",
+    "lat": 41.79233729,
+    "lon": -87.79994501
+  },
+  {
+    "stop_id": "4402",
+    "name": "Archer & Cicero",
+    "lat": 41.79847859,
+    "lon": -87.74319684
+  },
+  {
+    "stop_id": "4410",
+    "name": "Pulaski Orange Line Station",
+    "lat": 41.80027806,
+    "lon": -87.72440576
+  },
+  {
+    "stop_id": "4411",
+    "name": "Archer & Pulaski",
+    "lat": 41.80248128,
+    "lon": -87.72295378
+  },
+  {
+    "stop_id": "442",
+    "name": "Washington & Jefferson",
+    "lat": 41.88311,
+    "lon": -87.642848
+  },
+  {
+    "stop_id": "4424",
+    "name": "Archer & California",
+    "lat": 41.81981709,
+    "lon": -87.69468479
+  },
+  {
+    "stop_id": "443",
+    "name": "Washington & Canal",
+    "lat": 41.883084,
+    "lon": -87.639976
+  },
+  {
+    "stop_id": "4432",
+    "name": "35th/Archer Orange Line Station",
+    "lat": 41.8287319,
+    "lon": -87.68103544
+  },
+  {
+    "stop_id": "4463",
+    "name": "Archer & Wentworth",
+    "lat": 41.85447276,
+    "lon": -87.63169921
+  },
+  {
+    "stop_id": "4470",
+    "name": "Halsted Orange Line Station",
+    "lat": 41.84662243,
+    "lon": -87.64826229
+  },
+  {
+    "stop_id": "448",
+    "name": "Washington & State",
+    "lat": 41.88316957,
+    "lon": -87.62749695
+  },
+  {
+    "stop_id": "449",
+    "name": "Washington & Wabash",
+    "lat": 41.883159,
+    "lon": -87.625966
+  },
+  {
+    "stop_id": "450",
+    "name": "Madison & Wabash",
+    "lat": 41.88214,
+    "lon": -87.625973
+  },
+  {
+    "stop_id": "455",
+    "name": "Madison & Clinton",
+    "lat": 41.88194735,
+    "lon": -87.64104342
+  },
+  {
+    "stop_id": "456",
+    "name": "Madison & Jefferson",
+    "lat": 41.88191463,
+    "lon": -87.64283539
+  },
+  {
+    "stop_id": "4568",
+    "name": "Austin & 65th Street",
+    "lat": 41.774399,
+    "lon": -87.771271
+  },
+  {
+    "stop_id": "4588",
+    "name": "Cicero & Archer",
+    "lat": 41.79904839,
+    "lon": -87.7427817
+  },
+  {
+    "stop_id": "4606",
+    "name": "Cicero & Archer",
+    "lat": 41.79847147,
+    "lon": -87.74273032
+  },
+  {
+    "stop_id": "4607",
+    "name": "Cicero & Archer",
+    "lat": 41.79829161,
+    "lon": -87.74305748
+  },
+  {
+    "stop_id": "4612",
+    "name": "Cicero & 63rd Street",
+    "lat": 41.77858943,
+    "lon": -87.74245896
+  },
+  {
+    "stop_id": "4665",
+    "name": "Narragansett & 56th Street",
+    "lat": 41.790425,
+    "lon": -87.781659
+  },
+  {
+    "stop_id": "4698",
+    "name": "Pulaski & 95th Street",
+    "lat": 41.72077598,
+    "lon": -87.72110609
+  },
+  {
+    "stop_id": "4702",
+    "name": "Pulaski & 81st Street Terminal",
+    "lat": 41.746048,
+    "lon": -87.721583
+  },
+  {
+    "stop_id": "4703",
+    "name": "Pulaski & 81st Street",
+    "lat": 41.74570772,
+    "lon": -87.72165196
+  },
+  {
+    "stop_id": "4704",
+    "name": "Pulaski & 79th Street",
+    "lat": 41.74933807,
+    "lon": -87.72177424
+  },
+  {
+    "stop_id": "4734",
+    "name": "Pulaski & 79th Street",
+    "lat": 41.749178,
+    "lon": -87.72204999
+  },
+  {
+    "stop_id": "4735",
+    "name": "Pulaski & 81st Street",
+    "lat": 41.745952,
+    "lon": -87.72192
+  },
+  {
+    "stop_id": "4739",
+    "name": "Pulaski & 95th Street",
+    "lat": 41.7202509,
+    "lon": -87.72145138
+  },
+  {
+    "stop_id": "4756",
+    "name": "Foster & Cicero",
+    "lat": 41.9752625,
+    "lon": -87.74821962
+  },
+  {
+    "stop_id": "4774",
+    "name": "Foster & Albany",
+    "lat": 41.97575407,
+    "lon": -87.70593016
+  },
+  {
+    "stop_id": "4785",
+    "name": "Foster & Damen",
+    "lat": 41.97595986,
+    "lon": -87.67956874
+  },
+  {
+    "stop_id": "4794",
+    "name": "Broadway & Foster",
+    "lat": 41.9768565,
+    "lon": -87.65975363
+  },
+  {
+    "stop_id": "4797",
+    "name": "Foster & Broadway",
+    "lat": 41.97639787,
+    "lon": -87.65962002
+  },
+  {
+    "stop_id": "4845",
+    "name": "Foster & Sheridan",
+    "lat": 41.976335,
+    "lon": -87.654755
+  },
+  {
+    "stop_id": "4851",
+    "name": "Marine Drive & Winona/Carmen",
+    "lat": 41.974795,
+    "lon": -87.651628
+  },
+  {
+    "stop_id": "4860",
+    "name": "Marine Drive & Montrose",
+    "lat": 41.96203926,
+    "lon": -87.6469602
+  },
+  {
+    "stop_id": "4865",
+    "name": "Marine Drive & Irving Park",
+    "lat": 41.95420437,
+    "lon": -87.64526199
+  },
+  {
+    "stop_id": "4866",
+    "name": "Lake Shore & W. Sheridan (3900 N)",
+    "lat": 41.9530883,
+    "lon": -87.6450974
+  },
+  {
+    "stop_id": "4870",
+    "name": "Balbo & Michigan",
+    "lat": 41.87310135,
+    "lon": -87.62357953
+  },
+  {
+    "stop_id": "4877",
+    "name": "Solidarity Dr & Planetarium",
+    "lat": 41.866145,
+    "lon": -87.607853
+  },
+  {
+    "stop_id": "4886",
+    "name": "Lake Shore & Grace",
+    "lat": 41.95225758,
+    "lon": -87.64492985
+  },
+  {
+    "stop_id": "4900",
+    "name": "Marine Drive & Winona",
+    "lat": 41.97525835,
+    "lon": -87.6516376
+  },
+  {
+    "stop_id": "4919",
+    "name": "Clarendon & Sunnyside",
+    "lat": 41.96353,
+    "lon": -87.65002852
+  },
+  {
+    "stop_id": "4936",
+    "name": "Clarendon & Sunnyside",
+    "lat": 41.963664,
+    "lon": -87.64989
+  },
+  {
+    "stop_id": "4993",
+    "name": "Belmont & Sheridan",
+    "lat": 41.94017668,
+    "lon": -87.63990956
+  },
+  {
+    "stop_id": "4998",
+    "name": "Belmont & Halsted",
+    "lat": 41.94005028,
+    "lon": -87.64912892
+  },
+  {
+    "stop_id": "4999",
+    "name": "Chestnut & Lake Shore Drive",
+    "lat": 41.89841542,
+    "lon": -87.61838872
+  },
+  {
+    "stop_id": "5006",
+    "name": "Madison & Canal",
+    "lat": 41.88193682,
+    "lon": -87.63902414
+  },
+  {
+    "stop_id": "5019",
+    "name": "Chestnut & Mies Van Der Rohe",
+    "lat": 41.89846025,
+    "lon": -87.62267307
+  },
+  {
+    "stop_id": "5024",
+    "name": "Clinton & Madison",
+    "lat": 41.881976,
+    "lon": -87.641267
+  },
+  {
+    "stop_id": "5027",
+    "name": "Canal & Madison",
+    "lat": 41.882104,
+    "lon": -87.639602
+  },
+  {
+    "stop_id": "5041",
+    "name": "Racine & 87th Street Terminal",
+    "lat": 41.73657855,
+    "lon": -87.65311737
+  },
+  {
+    "stop_id": "5054",
+    "name": "Racine & 74th Street",
+    "lat": 41.759483,
+    "lon": -87.653866
+  },
+  {
+    "stop_id": "5093",
+    "name": "Halsted & Root",
+    "lat": 41.81843293,
+    "lon": -87.64569798
+  },
+  {
+    "stop_id": "510",
+    "name": "Chicago & Austin Terminal",
+    "lat": 41.89492553,
+    "lon": -87.77484321
+  },
+  {
+    "stop_id": "5188",
+    "name": "Racine & 74th Street",
+    "lat": 41.75924992,
+    "lon": -87.65405419
+  },
+  {
+    "stop_id": "5285",
+    "name": "Jeffery & 93rd Street",
+    "lat": 41.72628691,
+    "lon": -87.57537888
+  },
+  {
+    "stop_id": "530",
+    "name": "Chicago & Pulaski",
+    "lat": 41.8952897,
+    "lon": -87.72621079
+  },
+  {
+    "stop_id": "5320",
+    "name": "Stony Island & 63rd Street",
+    "lat": 41.78047225,
+    "lon": -87.58635116
+  },
+  {
+    "stop_id": "540",
+    "name": "Chicago & Sacramento",
+    "lat": 41.89551445,
+    "lon": -87.70255697
+  },
+  {
+    "stop_id": "5425",
+    "name": "Broadway & Bryn Mawr/Ridge",
+    "lat": 41.98348,
+    "lon": -87.65997
+  },
+  {
+    "stop_id": "5452",
+    "name": "Milwaukee & Keeler",
+    "lat": 41.94411635,
+    "lon": -87.73217558
+  },
+  {
+    "stop_id": "5467",
+    "name": "Milwaukee & Kedzie",
+    "lat": 41.92911119,
+    "lon": -87.70767062
+  },
+  {
+    "stop_id": "5516",
+    "name": "Jefferson & Washington",
+    "lat": 41.8830651,
+    "lon": -87.64260973
+  },
+  {
+    "stop_id": "5559",
+    "name": "Milwaukee & Kedzie",
+    "lat": 41.92952933,
+    "lon": -87.70795973
+  },
+  {
+    "stop_id": "5592",
+    "name": "Irving Park & Cumberland Terminal",
+    "lat": 41.95222299,
+    "lon": -87.8375348
+  },
+  {
+    "stop_id": "5726",
+    "name": "Irving Park & Central",
+    "lat": 41.95328759,
+    "lon": -87.7668547
+  },
+  {
+    "stop_id": "5743",
+    "name": "Irving Park & Harlem",
+    "lat": 41.95283838,
+    "lon": -87.80707883
+  },
+  {
+    "stop_id": "5756",
+    "name": "Halsted & Waveland/Broadway Terminal",
+    "lat": 41.94982568,
+    "lon": -87.64914969
+  },
+  {
+    "stop_id": "582",
+    "name": "Chicago & Fairbanks",
+    "lat": 41.896716,
+    "lon": -87.62053
+  },
+  {
+    "stop_id": "584",
+    "name": "Fairbanks & Huron",
+    "lat": 41.895127,
+    "lon": -87.620375
+  },
+  {
+    "stop_id": "5900",
+    "name": "Halsted & 41st Street",
+    "lat": 41.820166,
+    "lon": -87.645728
+  },
+  {
+    "stop_id": "593",
+    "name": "Fairbanks & Erie",
+    "lat": 41.894081,
+    "lon": -87.620224
+  },
+  {
+    "stop_id": "596",
+    "name": "Fairbanks & Chicago",
+    "lat": 41.896645,
+    "lon": -87.620311
+  },
+  {
+    "stop_id": "597",
+    "name": "Chicago & Mies Van Der Rohe",
+    "lat": 41.89683816,
+    "lon": -87.62170867
+  },
+  {
+    "stop_id": "5973",
+    "name": "Lowe & 127th Street",
+    "lat": 41.663145,
+    "lon": -87.637737
+  },
+  {
+    "stop_id": "5992",
+    "name": "Vermont & Union",
+    "lat": 41.662563,
+    "lon": -87.639213
+  },
+  {
+    "stop_id": "6057",
+    "name": "Ashland & Cermak/Blue Island",
+    "lat": 41.85248368,
+    "lon": -87.66617293
+  },
+  {
+    "stop_id": "6109",
+    "name": "Ashland & 74th Street",
+    "lat": 41.75919106,
+    "lon": -87.66376317
+  },
+  {
+    "stop_id": "6131",
+    "name": "Ashland & 95th Street Terminal",
+    "lat": 41.7205904,
+    "lon": -87.66298034
+  },
+  {
+    "stop_id": "6168",
+    "name": "Ashland & 74th Street",
+    "lat": 41.75936363,
+    "lon": -87.66351209
+  },
+  {
+    "stop_id": "6301",
+    "name": "Cicero & 24th Place Terminal",
+    "lat": 41.84655086,
+    "lon": -87.74432324
+  },
+  {
+    "stop_id": "6363",
+    "name": "Clinton Blue Line Station",
+    "lat": 41.875588,
+    "lon": -87.64108
+  },
+  {
+    "stop_id": "6435",
+    "name": "Vincennes & 82nd Street",
+    "lat": 41.745452,
+    "lon": -87.635503
+  },
+  {
+    "stop_id": "6439",
+    "name": "Vincennes & 78th Street",
+    "lat": 41.752513,
+    "lon": -87.63364
+  },
+  {
+    "stop_id": "6458",
+    "name": "Wentworth & 59th Street",
+    "lat": 41.7871,
+    "lon": -87.630263
+  },
+  {
+    "stop_id": "6472",
+    "name": "Wentworth & 47th Street",
+    "lat": 41.808962,
+    "lon": -87.630833
+  },
+  {
+    "stop_id": "648",
+    "name": "Chicago & Pulaski",
+    "lat": 41.89544463,
+    "lon": -87.72590117
+  },
+  {
+    "stop_id": "6480",
+    "name": "LaSalle & 35th Street",
+    "lat": 41.83118746,
+    "lon": -87.62976685
+  },
+  {
+    "stop_id": "6532",
+    "name": "Wells & 59th Street",
+    "lat": 41.787428,
+    "lon": -87.63198
+  },
+  {
+    "stop_id": "6550",
+    "name": "Vincennes & 78th Street",
+    "lat": 41.752868,
+    "lon": -87.63377
+  },
+  {
+    "stop_id": "6554",
+    "name": "Vincennes & 82nd Street",
+    "lat": 41.745442,
+    "lon": -87.635665
+  },
+  {
+    "stop_id": "6579",
+    "name": "Canal & Randolph/Washington",
+    "lat": 41.883542,
+    "lon": -87.639864
+  },
+  {
+    "stop_id": "6597",
+    "name": "Fullerton & Sheffield (Red/Brown/Purple Line)",
+    "lat": 41.92532108,
+    "lon": -87.65262276
+  },
+  {
+    "stop_id": "6665",
+    "name": "Cermak & Pulaski",
+    "lat": 41.85140167,
+    "lon": -87.72490565
+  },
+  {
+    "stop_id": "668",
+    "name": "Grand & Nordica Terminal",
+    "lat": 41.92385192,
+    "lon": -87.80198609
+  },
+  {
+    "stop_id": "6698",
+    "name": "Taylor & Aberdeen",
+    "lat": 41.86939464,
+    "lon": -87.65437498
+  },
+  {
+    "stop_id": "67",
+    "name": "Jackson & Canal",
+    "lat": 41.877997,
+    "lon": -87.639776
+  },
+  {
+    "stop_id": "6701",
+    "name": "Taylor & Halsted",
+    "lat": 41.869507,
+    "lon": -87.647366
+  },
+  {
+    "stop_id": "6711",
+    "name": "Franklin & Jackson",
+    "lat": 41.87791526,
+    "lon": -87.63510947
+  },
+  {
+    "stop_id": "68",
+    "name": "Jackson & Franklin",
+    "lat": 41.878051,
+    "lon": -87.635401
+  },
+  {
+    "stop_id": "680",
+    "name": "Grand & Austin",
+    "lat": 41.920491,
+    "lon": -87.775713
+  },
+  {
+    "stop_id": "6829",
+    "name": "16th Street & Kedzie",
+    "lat": 41.85913506,
+    "lon": -87.70533056
+  },
+  {
+    "stop_id": "6861",
+    "name": "Cermak & Laflin",
+    "lat": 41.85245134,
+    "lon": -87.66350099
+  },
+  {
+    "stop_id": "688",
+    "name": "Grand & Latrobe",
+    "lat": 41.91719472,
+    "lon": -87.75765066
+  },
+  {
+    "stop_id": "6891",
+    "name": "4542 W Cermak",
+    "lat": 41.85142542,
+    "lon": -87.73899385
+  },
+  {
+    "stop_id": "6968",
+    "name": "North Riverside Mall",
+    "lat": 41.84806845,
+    "lon": -87.80931096
+  },
+  {
+    "stop_id": "6982",
+    "name": "Torrence & 112th Street Terminal",
+    "lat": 41.69290117,
+    "lon": -87.55973584
+  },
+  {
+    "stop_id": "6990",
+    "name": "Torrence & 104th Street",
+    "lat": 41.70620934,
+    "lon": -87.55954514
+  },
+  {
+    "stop_id": "7092",
+    "name": "104th Street & Torrence",
+    "lat": 41.7064573,
+    "lon": -87.55945777
+  },
+  {
+    "stop_id": "7100",
+    "name": "Stony Island & 95th Street",
+    "lat": 41.722683,
+    "lon": -87.58501
+  },
+  {
+    "stop_id": "7175",
+    "name": "5000 S Lake Park",
+    "lat": 41.80441,
+    "lon": -87.588685
+  },
+  {
+    "stop_id": "7194",
+    "name": "Stony Island & South Chicago/79th Street",
+    "lat": 41.75213327,
+    "lon": -87.58607977
+  },
+  {
+    "stop_id": "7211",
+    "name": "Stony Island & 95th Street",
+    "lat": 41.722579,
+    "lon": -87.585295
+  },
+  {
+    "stop_id": "7213",
+    "name": "Olive-Harvey College",
+    "lat": 41.70941598,
+    "lon": -87.58920782
+  },
+  {
+    "stop_id": "7237",
+    "name": "South Chicago & 79th Street/Stony Island",
+    "lat": 41.7518023,
+    "lon": -87.58621132
+  },
+  {
+    "stop_id": "7238",
+    "name": "South Chicago & 79th Street/Stony Island",
+    "lat": 41.75099254,
+    "lon": -87.58508004
+  },
+  {
+    "stop_id": "7245",
+    "name": "South Chicago & Oglesby",
+    "lat": 41.7386661,
+    "lon": -87.56786006
+  },
+  {
+    "stop_id": "7252",
+    "name": "92nd Street & Commercial",
+    "lat": 41.72818417,
+    "lon": -87.55133963
+  },
+  {
+    "stop_id": "73",
+    "name": "Michigan & Van Buren/Ida B. Wells",
+    "lat": 41.876271,
+    "lon": -87.624396
+  },
+  {
+    "stop_id": "7310",
+    "name": "Baltimore & 134th Street",
+    "lat": 41.65179457,
+    "lon": -87.54702179
+  },
+  {
+    "stop_id": "7323",
+    "name": "Baltimore & Brainard",
+    "lat": 41.6496802,
+    "lon": -87.54726292
+  },
+  {
+    "stop_id": "7342",
+    "name": "Avenue O & 114th Street",
+    "lat": 41.68813563,
+    "lon": -87.54002708
+  },
+  {
+    "stop_id": "74",
+    "name": "Congress Plaza & Michigan",
+    "lat": 41.87485809,
+    "lon": -87.62355113
+  },
+  {
+    "stop_id": "7536",
+    "name": "Michigan & 103rd Street",
+    "lat": 41.70731275,
+    "lon": -87.62028475
+  },
+  {
+    "stop_id": "7576",
+    "name": "Ellis & 131st Street",
+    "lat": 41.65707324,
+    "lon": -87.59833993
+  },
+  {
+    "stop_id": "758",
+    "name": "Navy Pier Terminal",
+    "lat": 41.89228911,
+    "lon": -87.61016713
+  },
+  {
+    "stop_id": "7629",
+    "name": "35th Street & Cottage Grove",
+    "lat": 41.83132171,
+    "lon": -87.61182451
+  },
+  {
+    "stop_id": "7631",
+    "name": "35th Street & Giles",
+    "lat": 41.83114764,
+    "lon": -87.61924255
+  },
+  {
+    "stop_id": "7680",
+    "name": "Sox-35th Red Line Station",
+    "lat": 41.83084618,
+    "lon": -87.63068122
+  },
+  {
+    "stop_id": "7686",
+    "name": "35th Street & Giles",
+    "lat": 41.83101785,
+    "lon": -87.61951986
+  },
+  {
+    "stop_id": "7732",
+    "name": "Pershing & Giles",
+    "lat": 41.82375464,
+    "lon": -87.61925557
+  },
+  {
+    "stop_id": "7743",
+    "name": "Lake Park & 40th Street",
+    "lat": 41.82261456,
+    "lon": -87.60231471
+  },
+  {
+    "stop_id": "7808",
+    "name": "36th Street & Kedzie Terminal",
+    "lat": 41.82843607,
+    "lon": -87.70501149
+  },
+  {
+    "stop_id": "7858",
+    "name": "Belmont & Kimball (Blue Line)",
+    "lat": 41.9392094,
+    "lon": -87.71218279
+  },
+  {
+    "stop_id": "7947",
+    "name": "Belmont & Kimball (Blue Line)",
+    "lat": 41.93904065,
+    "lon": -87.71219575
+  },
+  {
+    "stop_id": "798",
+    "name": "Grand & Chicago",
+    "lat": 41.89539181,
+    "lon": -87.69907004
+  },
+  {
+    "stop_id": "7989",
+    "name": "Oakenwald & 43rd Street",
+    "lat": 41.816976,
+    "lon": -87.597477
+  },
+  {
+    "stop_id": "800",
+    "name": "Grand & Sacramento",
+    "lat": 41.89686363,
+    "lon": -87.70280055
+  },
+  {
+    "stop_id": "8020",
+    "name": "42nd Street & Halsted",
+    "lat": 41.81761716,
+    "lon": -87.64562765
+  },
+  {
+    "stop_id": "812",
+    "name": "Grand & Pulaski",
+    "lat": 41.90615975,
+    "lon": -87.7262656
+  },
+  {
+    "stop_id": "8175",
+    "name": "47th Red Line Station",
+    "lat": 41.80902445,
+    "lon": -87.63167443
+  },
+  {
+    "stop_id": "821",
+    "name": "Grand & Cicero",
+    "lat": 41.91397719,
+    "lon": -87.745786
+  },
+  {
+    "stop_id": "826",
+    "name": "Grand & Lockwood",
+    "lat": 41.91743849,
+    "lon": -87.75829719
+  },
+  {
+    "stop_id": "8307",
+    "name": "79th & Western Terminal",
+    "lat": 41.75073303,
+    "lon": -87.68263576
+  },
+  {
+    "stop_id": "8391",
+    "name": "Western & Division",
+    "lat": 41.902935,
+    "lon": -87.686968
+  },
+  {
+    "stop_id": "845",
+    "name": "Neva & North Ave",
+    "lat": 41.909026,
+    "lon": -87.80401
+  },
+  {
+    "stop_id": "8613",
+    "name": "Columbus & Randolph",
+    "lat": 41.884688,
+    "lon": -87.620796
+  },
+  {
+    "stop_id": "8619",
+    "name": "Damen & Foster",
+    "lat": 41.97585693,
+    "lon": -87.67949793
+  },
+  {
+    "stop_id": "8628",
+    "name": "Ups Facility Stop 2",
+    "lat": 41.750192,
+    "lon": -87.882337
+  },
+  {
+    "stop_id": "8629",
+    "name": "69th Street & State (Red Line)",
+    "lat": 41.76910793,
+    "lon": -87.62527051
+  },
+  {
+    "stop_id": "870",
+    "name": "North Ave & Cicero",
+    "lat": 41.90951085,
+    "lon": -87.74636965
+  },
+  {
+    "stop_id": "8703",
+    "name": "Damen & 87th Street Terminal",
+    "lat": 41.73623458,
+    "lon": -87.67298324
+  },
+  {
+    "stop_id": "8759",
+    "name": "Midway Orange Line Station",
+    "lat": 41.78642785,
+    "lon": -87.73844437
+  },
+  {
+    "stop_id": "8805",
+    "name": "Edgewater & Clark",
+    "lat": 41.98583964,
+    "lon": -87.66938666
+  },
+  {
+    "stop_id": "8910",
+    "name": "Damen & Madison",
+    "lat": 41.881212,
+    "lon": -87.676558
+  },
+  {
+    "stop_id": "8972",
+    "name": "Pulaski & Peterson Terminal",
+    "lat": 41.98985086,
+    "lon": -87.72821356
+  },
+  {
+    "stop_id": "9019",
+    "name": "Pulaski & Grand",
+    "lat": 41.90635772,
+    "lon": -87.72651165
+  },
+  {
+    "stop_id": "9027",
+    "name": "Pulaski & Erie",
+    "lat": 41.89303139,
+    "lon": -87.72611261
+  },
+  {
+    "stop_id": "9063",
+    "name": "31st Street & Komensky Terminal",
+    "lat": 41.83672961,
+    "lon": -87.72569191
+  },
+  {
+    "stop_id": "9073",
+    "name": "Pulaski & Cermak",
+    "lat": 41.85188676,
+    "lon": -87.7246531
+  },
+  {
+    "stop_id": "9087",
+    "name": "Pulaski & Harrison (Blue Line)",
+    "lat": 41.87337304,
+    "lon": -87.7253129
+  },
+  {
+    "stop_id": "9099",
+    "name": "Pulaski & Erie",
+    "lat": 41.89273541,
+    "lon": -87.72590416
+  },
+  {
+    "stop_id": "9224",
+    "name": "Belmont & Cumberland Terminal",
+    "lat": 41.93726672,
+    "lon": -87.83553814
+  },
+  {
+    "stop_id": "923",
+    "name": "North Ave & Clark Terminal",
+    "lat": 41.91128,
+    "lon": -87.631195
+  },
+  {
+    "stop_id": "9258",
+    "name": "Belmont & Leclaire",
+    "lat": 41.938669,
+    "lon": -87.754345
+  },
+  {
+    "stop_id": "9296",
+    "name": "St. Joseph Hospital",
+    "lat": 41.93399293,
+    "lon": -87.63654679
+  },
+  {
+    "stop_id": "9328",
+    "name": "Belmont & Leclaire",
+    "lat": 41.93879607,
+    "lon": -87.75412687
+  },
+  {
+    "stop_id": "9333",
+    "name": "Belmont & Central",
+    "lat": 41.93864324,
+    "lon": -87.76636288
+  },
+  {
+    "stop_id": "9337",
+    "name": "Belmont & Mason",
+    "lat": 41.93853729,
+    "lon": -87.77500255
+  },
+  {
+    "stop_id": "9351",
+    "name": "Belmont & Octavia",
+    "lat": 41.93800511,
+    "lon": -87.80902215
+  },
+  {
+    "stop_id": "9363",
+    "name": "87th Street & Cicero Terminal",
+    "lat": 41.73278586,
+    "lon": -87.74165412
+  },
+  {
+    "stop_id": "9386",
+    "name": "87th Street & Western Terminal",
+    "lat": 41.73535616,
+    "lon": -87.68149971
+  },
+  {
+    "stop_id": "9399",
+    "name": "87th Street & Vincennes",
+    "lat": 41.73594682,
+    "lon": -87.64544503
+  },
+  {
+    "stop_id": "9408",
+    "name": "87th Red Line Station",
+    "lat": 41.7361613,
+    "lon": -87.62482928
+  },
+  {
+    "stop_id": "9453",
+    "name": "91st Street & Commercial",
+    "lat": 41.73014699,
+    "lon": -87.55111067
+  },
+  {
+    "stop_id": "9464",
+    "name": "87th Street & Clyde",
+    "lat": 41.73716161,
+    "lon": -87.57312597
+  },
+  {
+    "stop_id": "9498",
+    "name": "87th Street & Vincennes",
+    "lat": 41.7361448,
+    "lon": -87.64554586
+  },
+  {
+    "stop_id": "9511",
+    "name": "87th Street & Western",
+    "lat": 41.73564834,
+    "lon": -87.68221507
+  },
+  {
+    "stop_id": "9542",
+    "name": "Nagle & Bryn Mawr",
+    "lat": 41.983011,
+    "lon": -87.787801
+  },
+  {
+    "stop_id": "9617",
+    "name": "Austin & Roosevelt",
+    "lat": 41.865629,
+    "lon": -87.774045
+  },
+  {
+    "stop_id": "9703",
+    "name": "Nagle & Bryn Mawr",
+    "lat": 41.98280027,
+    "lon": -87.78762514
+  },
+  {
+    "stop_id": "975",
+    "name": "North Ave & Cicero",
+    "lat": 41.90974281,
+    "lon": -87.74586122
+  },
+  {
+    "stop_id": "9917",
+    "name": "Summit & Prospect",
+    "lat": 42.01026747,
+    "lon": -87.83137059
+  },
+  {
+    "stop_id": "9943",
+    "name": "Northwest Hwy & Nagle",
+    "lat": 41.98593988,
+    "lon": -87.78782075
+  },
+  {
+    "stop_id": "9998",
+    "name": "Kedzie & 79th Street",
+    "lat": 41.74964316,
+    "lon": -87.70230819
+  }
+]

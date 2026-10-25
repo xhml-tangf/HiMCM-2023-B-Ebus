@@ -1,0 +1,47 @@
+\NeedRoom{10}
+
+\section{Three-City Comparison}
+
+CTA publishes a complete GTFS feed \cite{ref21}. We recovered its 3 May 2023 snapshot \cite{ref22}. For London, we extracted the 10 June 2023 BODS snapshot from the UBDC national archive \cite{ref23} and retained scheduled bus trips touching a Greater London stop (ATCO prefix 490 \cite{ref24}). Both comparator weeks are 12-18 June 2023; Vancouver remains a fall case.
+
+
+\begin{longtable}{@{}L{\dimexpr 0.37000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.21000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.21000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.21000\textwidth-2\tabcolsep\relax}@{}}
+\caption{Representative-day scheduling results across the three cities}\label{tab:source13}\\
+\toprule
+\textbf{Representative-day field} & \textbf{Vancouver} & \textbf{Chicago} & \textbf{London} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{Table \thetable\ (continued)}\\
+\toprule
+\textbf{Representative-day field} & \textbf{Vancouver} & \textbf{Chicago} & \textbf{London} \\
+\midrule
+\endhead
+\midrule\multicolumn{4}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+Date & 2023-10-13 & 2023-06-13 & 2023-06-15 \\
+Trips & 19,967 & 16,314 & 105,882 \\
+Concurrency lower bound & 943 & 1046 & 6332 \\
+Exact diesel $N_d$ & 1043 & 1151 & 6755 \\
+Feasible electric $N_e$ & 1247 & 1434 & 7383 \\
+$N_e$ / $N_d$ & 1.196 & 1.246 & 1.093 \\
+Daytime nodes & 4 & 2 & 4 \\
+Service km & 262,308 & 292,484 & 1,773,159 \\
+Electric deadhead km & 84,909 & 45,033 & 271,504 \\
+Daytime charges & 903 & 16 & 2252 \\
+Largest tested active EV fleet & 1256 & 1436 & 7401 \\
+\end{longtable}
+
+Each comparator retains every included fixed-time trip, including times beyond midnight \cite{ref25}. All seven dates are independently replayed with one selected site set. The search uses eight screened candidates, up to five block partitions and $K\le4$. Above 3,000 blocks, each block-station pair retains at most 256 timed successors. This limits memory and solution quality; feasible counts remain upper bounds. Diesel matching still checks its complete graph.
+
+
+The four London candidate stop IDs lie within 169 m in the Trafalgar Square/Charing Cross interchange; they are one charging district for engineering purposes and four nodes in the optimization and cost ledger. Chicago has two endpoint nodes about 171 m apart. Neither set is a surveyed construction location.
+
+
+Chicago data exclusions: 0 nonpositive-duration records; 0 nonexact frequency templates. Exact-frequency records are expanded at their source headways (0 generated fixed-time trips). No unknown departure times are invented.
+
+
+London data exclusions: 3 nonpositive-duration records; 0 nonexact frequency templates. Exact-frequency records are expanded at their source headways (63 generated fixed-time trips). No unknown departure times are invented.
+
+
+Comparator trip distances use 1.35 times the polyline through scheduled stops. This is a stated proxy, not measured road distance or a guaranteed upper bound. Different service seasons, distance evidence and homogeneous capacity assumptions prevent interpreting the ratios as an intrinsic ranking of cities.
+

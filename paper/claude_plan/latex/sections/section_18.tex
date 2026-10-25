@@ -1,0 +1,38 @@
+\NeedRoom{10}
+
+\section{Strengths, Limitations, and Completion Status}
+
+\begin{longtable}{@{}L{\dimexpr 0.31000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.25000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.44000\textwidth-2\tabcolsep\relax}@{}}
+\caption{Requirement coverage and remaining evidence gaps}\label{tab:source17}\\
+\toprule
+\textbf{Requirement} & \textbf{Status} & \textbf{Boundary} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{Table \thetable\ (continued)}\\
+\toprule
+\textbf{Requirement} & \textbf{Status} & \textbf{Boundary} \\
+\midrule
+\endhead
+\midrule\multicolumn{3}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+P1/P2 and specification sample & Implemented & Resource correction and independent replay \\
+Small exact comparisons & Implemented & MILP, LP and exhaustive tests \\
+Vancouver 25 patterns & Implemented conditionally & Approximate transfers; isolated-day duties \\
+Ecology and 0/25/50\% grants & Implemented as scenarios & Transferred factors and explicit exclusions \\
+Ten-year Vancouver stages & Partial illustration & Representative day; required budgets, no hard cap \\
+Three cities at trip level & Implemented conditionally & Real 2023 timetables; assumed transfer travel \\
+Clean power and sites & Unverified & No hourly source match or utility capacity \\
+Full AI disclosure & Incomplete & Full Claude conversation and prior outputs missing \\
+\end{longtable}
+
+The strengths are exact trip obligations, explicit detour accounting, a valid diesel lower bound, replayable duties and unified service/energy/cost ledgers. The counterexample shows why successful example outputs are insufficient evidence of correctness.
+
+
+The limitations are homogeneous capacity, assumed deadhead paths, unlimited charging capacity, no pullout/pullin, no repeated-day fleet closure and heuristic site selection. A worst isolated day does not guarantee that buses can reset between days. Seasonal annualization is not a full-year observation.
+
+
+Financial inputs are not invoices, and transferring 40-ft energy and cost parameters to heterogeneous service is only a screening approximation. Diesel deadhead is a minimum-fleet assignment, not the cheapest diesel assignment. The current comparison is not an optimal economic baseline.
+
+
+The additional Chicago and London trips close the timetable-input gap. Local investment forecasts, funded annual caps, route-specific retirement ages and complete contest disclosure remain unresolved. These require actual local inputs and original AI records.
+

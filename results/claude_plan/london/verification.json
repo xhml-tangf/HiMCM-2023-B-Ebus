@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "city": "london",
+  "week_trip_instances": 707234,
+  "annual_stage_trip_instances": 719566,
+  "verified_day_schedules": 7,
+  "verified_annual_stages": 10,
+  "verified_sensitivity_schedules": 9,
+  "source_hash_verified": true,
+  "energy_closure": true,
+  "boundary": "Independent token replay; conditional travel/distance/charging assumptions; not repeated-day depot closure."
+}

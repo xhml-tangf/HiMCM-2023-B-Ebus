@@ -16,8 +16,8 @@ import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data" / "raw"
-MANIFEST = ROOT / "data" / "sources.json"
+RAW = ROOT / "materials" / "sources" / "raw"
+MANIFEST = ROOT / "materials" / "sources" / "sources.json"
 
 SOURCES = {
     "bchydro_2023_24_financial_statements.pdf": "https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/government-finances/public-accounts/2023-24/sup-e/bc-hydro-fs-2023-24.pdf",

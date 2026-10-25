@@ -1,0 +1,12 @@
+﻿bus,trips,routes,start,end,initial_stop,final_stop,initial_terminal,final_terminal,service_km,distance_envelope_headroom_km
+1,5,"['229', '231']",06:02:00,08:28:00,Lonsdale Quay @ Bay 1,Eastbound Harbourside Dr @ Harbourside Place,Lonsdale Quay,9110,27.1679,122.8321
+2,11,['229'],06:06:00,11:56:00,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,10882,Lonsdale Quay,68.4118,81.5882
+3,10,"['229', '236']",06:13:00,12:13:00,Eastbound W 22 St @ Philip Ave,Lynn Valley @ Bay 1,4439,10882,66.455,83.545
+4,2,"['229', '231']",06:47:00,07:28:00,Lynn Valley @ Bay 1,Eastbound Harbourside Dr @ Harbourside Place,10882,9110,8.9631,141.0369
+5,8,['236'],07:00:00,12:23:00,Grouse Mountain @ Skyride,Grouse Mountain @ Skyride,4337,4337,76.4952,73.5048
+6,2,"['229', '231']",07:14:00,07:58:00,Lynn Valley @ Bay 1,Eastbound Harbourside Dr @ Harbourside Place,10882,9110,8.9631,141.0369
+7,2,"['229', '231']",07:44:00,08:44:00,Lynn Valley @ Bay 1,Eastbound Harbourside Dr @ Harbourside Place,10882,9110,8.9631,141.0369
+8,6,"['229', '236']",08:00:00,12:25:00,Westbound Marine Dr @ Fell Ave,Lonsdale Quay @ Bay 4,4429,Lonsdale Quay,48.7584,101.2416
+9,7,['236'],08:00:00,12:24:00,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,4337,Lonsdale Quay,67.238,82.762
+10,1,['236'],09:02:00,09:26:00,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,Lonsdale Quay,4337,9.2572,140.7428
+11,1,['229'],10:29:00,10:55:00,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,10882,Lonsdale Quay,6.5428,143.4572

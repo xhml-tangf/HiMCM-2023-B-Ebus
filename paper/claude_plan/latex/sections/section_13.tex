@@ -1,0 +1,48 @@
+\NeedRoom{10}
+
+\section{Ten-Year Nested-Route Roadmap}
+
+Routes are ranked by service productivity per electric bus, penalized by the route electric/diesel fleet ratio. With common unit factors, this is a transparent benefit-per-capital proxy. It is not measured age priority: vehicle-to-route ages are absent.
+
+
+\begin{align}
+\mathrm{score}_r&=\frac{D_{r,\mathrm{service}}}{N_{e,r}}
+                         \frac{N_{d,r}}{N_{e,r}},\\
+\mathcal R_y&=\text{first }\left\lceil |\mathcal R|y/10\right\rceil
+                           \text{ routes in descending score order},\\
+\mathrm{stock}_y&=\max\{\mathrm{stock}_{y-1},N_e(\mathcal R_y)\}.
+\end{align}
+
+Every year reruns electric scheduling on its nested subset and diesel matching on the complement. All selected daytime sites are available in stage one. High-water stock prevents negative purchases when trip regrouping reduces requirements. Final purchases include any additional buses needed by another tested pattern.
+
+
+\begin{longtable}{@{}L{\dimexpr 0.13000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.13000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.17000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.20000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.14000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.23000\textwidth-2\tabcolsep\relax}@{}}
+\caption{Illustrative Vancouver route conversion and gross annual investment}\label{tab:source11}\\
+\toprule
+\textbf{Year} & \textbf{Routes} & \textbf{New BEBs} & \textbf{Electric stock} & \textbf{Diesel} & \textbf{Gross (CAD m)} \\
+\midrule
+\endfirsthead
+\multicolumn{6}{l}{Table \thetable\ (continued)}\\
+\toprule
+\textbf{Year} & \textbf{Routes} & \textbf{New BEBs} & \textbf{Electric stock} & \textbf{Diesel} & \textbf{Gross (CAD m)} \\
+\midrule
+\endhead
+\midrule\multicolumn{6}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+2024 & 22 & 180 & 180 & 922 & 428.3 \\
+2025 & 44 & 177 & 357 & 774 & 211.9 \\
+2026 & 66 & 219 & 576 & 589 & 261.5 \\
+2027 & 88 & 162 & 738 & 466 & 193.0 \\
+2028 & 109 & 145 & 883 & 359 & 172.4 \\
+2029 & 131 & 114 & 997 & 246 & 135.2 \\
+2030 & 153 & 161 & 1158 & 134 & 190.6 \\
+2031 & 175 & 60 & 1218 & 62 & 70.9 \\
+2032 & 197 & 13 & 1231 & 27 & 29.0 \\
+2033 & 218 & 25 & 1256 & 0 & 42.5 \\
+\end{longtable}
+
+This is a required-budget illustration, not an optimum under an externally supplied annual cap. Intermediate stages are checked on the representative day; all 25 patterns are checked at full conversion. Station commissioning, reserve buses, age-based retirements and seasonal intermediate schedules remain gates.
+
+
+Complete annual route lists and trip duties are included in the result package. The endpoint contains no modeled diesel trips by 2033, but this does not certify a funded, buildable citywide program.
+

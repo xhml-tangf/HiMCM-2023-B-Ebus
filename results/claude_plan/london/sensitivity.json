@@ -1,0 +1,256 @@
+{
+  "cases": [
+    {
+      "R": 180.0,
+      "T": 90.0,
+      "raw_search_N": 9744,
+      "valid": true,
+      "trips": 105882,
+      "vehicles": 9744,
+      "service_km": 1773158.5489168174,
+      "deadhead_km": 355902.04068269016,
+      "daytime_charge_count": 4874,
+      "daytime_replenished_range_km": 787040.3680550937,
+      "overnight_replenished_range_km": 1342020.221544409,
+      "charger_peak_by_node": {
+        "1304": 218,
+        "1305": 357,
+        "1308": 312,
+        "1313": 414
+      },
+      "PVR": 6332,
+      "stations": [
+        1304,
+        1305,
+        1308,
+        1313
+      ],
+      "repairs": 0,
+      "method": "bounded 256-successor block graph; resource-correct feasible upper bound"
+    },
+    {
+      "R": 180.0,
+      "T": 60.0,
+      "raw_search_N": 9228,
+      "valid": true,
+      "trips": 105882,
+      "vehicles": 9228,
+      "service_km": 1773158.5489168116,
+      "deadhead_km": 365150.6118794695,
+      "daytime_charge_count": 5390,
+      "daytime_replenished_range_km": 871664.50239459,
+      "overnight_replenished_range_km": 1266644.6584016867,
+      "charger_peak_by_node": {
+        "1304": 168,
+        "1305": 297,
+        "1308": 244,
+        "1313": 318
+      },
+      "PVR": 6332,
+      "stations": [
+        1304,
+        1305,
+        1308,
+        1313
+      ],
+      "repairs": 0,
+      "method": "bounded 256-successor block graph; resource-correct feasible upper bound"
+    },
+    {
+      "R": 180.0,
+      "T": 30.0,
+      "raw_search_N": 8759,
+      "valid": true,
+      "trips": 105882,
+      "vehicles": 8759,
+      "service_km": 1773158.5489168125,
+      "deadhead_km": 375209.80729826057,
+      "daytime_charge_count": 5859,
+      "daytime_replenished_range_km": 950342.0024662109,
+      "overnight_replenished_range_km": 1198026.3537488605,
+      "charger_peak_by_node": {
+        "1304": 98,
+        "1305": 177,
+        "1308": 141,
+        "1313": 180
+      },
+      "PVR": 6332,
+      "stations": [
+        1304,
+        1305,
+        1308,
+        1313
+      ],
+      "repairs": 0,
+      "method": "bounded 256-successor block graph; resource-correct feasible upper bound"
+    },
+    {
+      "R": 270.0,
+      "T": 90.0,
+      "raw_search_N": 7413,
+      "valid": true,
+      "trips": 105882,
+      "vehicles": 7413,
+      "service_km": 1773158.54891681,
+      "deadhead_km": 270445.47488654463,
+      "daytime_charge_count": 2222,
+      "daytime_replenished_range_km": 560684.7125778092,
+      "overnight_replenished_range_km": 1482919.3112255489,
+      "charger_peak_by_node": {
+        "1304": 104,
+        "1305": 198,
+        "1308": 105,
+        "1313": 173
+      },
+      "PVR": 6332,
+      "stations": [
+        1304,
+        1305,
+        1308,
+        1313
+      ],
+      "repairs": 0,
+      "method": "bounded 256-successor block graph; resource-correct feasible upper bound"
+    },
+    {
+      "R": 270.0,
+      "T": 60.0,
+      "raw_search_N": 7383,
+      "valid": true,
+      "trips": 105882,
+      "vehicles": 7383,
+      "service_km": 1773158.548916813,
+      "deadhead_km": 271504.2966472126,
+      "daytime_charge_count": 2252,
+      "daytime_replenished_range_km": 569658.5530108976,
+      "overnight_replenished_range_km": 1475004.2925531294,
+      "charger_peak_by_node": {
+        "1304": 84,
+        "1305": 144,
+        "1308": 77,
+        "1313": 126
+      },
+      "PVR": 6332,
+      "stations": [
+        1304,
+        1305,
+        1308,
+        1313
+      ],
+      "repairs": 0,
+      "method": "bounded 256-successor block graph; resource-correct feasible upper bound"
+    },
+    {
+      "R": 270.0,
+      "T": 30.0,
+      "raw_search_N": 7349,
+      "valid": true,
+      "trips": 105882,
+      "vehicles": 7349,
+      "service_km": 1773158.5489168102,
+      "deadhead_km": 272165.72882761026,
+      "daytime_charge_count": 2286,
+      "daytime_replenished_range_km": 578824.2043152511,
+      "overnight_replenished_range_km": 1466500.0734291717,
+      "charger_peak_by_node": {
+        "1304": 47,
+        "1305": 90,
+        "1308": 44,
+        "1313": 73
+      },
+      "PVR": 6332,
+      "stations": [
+        1304,
+        1305,
+        1308,
+        1313
+      ],
+      "repairs": 0,
+      "method": "bounded 256-successor block graph; resource-correct feasible upper bound"
+    },
+    {
+      "R": 400.0,
+      "T": 90.0,
+      "raw_search_N": 6824,
+      "valid": true,
+      "trips": 105882,
+      "vehicles": 6824,
+      "service_km": 1773158.548916809,
+      "deadhead_km": 278526.6419841383,
+      "daytime_charge_count": 2,
+      "daytime_replenished_range_km": 795.7247651672552,
+      "overnight_replenished_range_km": 2050889.466135779,
+      "charger_peak_by_node": {
+        "1304": 0,
+        "1305": 0,
+        "1308": 1,
+        "1313": 1
+      },
+      "PVR": 6332,
+      "stations": [
+        1304,
+        1305,
+        1308,
+        1313
+      ],
+      "repairs": 0,
+      "method": "bounded 256-successor block graph; resource-correct feasible upper bound"
+    },
+    {
+      "R": 400.0,
+      "T": 60.0,
+      "raw_search_N": 6824,
+      "valid": true,
+      "trips": 105882,
+      "vehicles": 6824,
+      "service_km": 1773158.5489168093,
+      "deadhead_km": 278569.834902575,
+      "daytime_charge_count": 2,
+      "daytime_replenished_range_km": 795.4723865760097,
+      "overnight_replenished_range_km": 2050932.911432807,
+      "charger_peak_by_node": {
+        "1304": 0,
+        "1305": 1,
+        "1308": 1,
+        "1313": 0
+      },
+      "PVR": 6332,
+      "stations": [
+        1304,
+        1305,
+        1308,
+        1313
+      ],
+      "repairs": 0,
+      "method": "bounded 256-successor block graph; resource-correct feasible upper bound"
+    },
+    {
+      "R": 400.0,
+      "T": 30.0,
+      "raw_search_N": 6824,
+      "valid": true,
+      "trips": 105882,
+      "vehicles": 6824,
+      "service_km": 1773158.5489168093,
+      "deadhead_km": 278569.834902575,
+      "daytime_charge_count": 2,
+      "daytime_replenished_range_km": 795.4723865760097,
+      "overnight_replenished_range_km": 2050932.911432807,
+      "charger_peak_by_node": {
+        "1304": 0,
+        "1305": 1,
+        "1308": 1,
+        "1313": 0
+      },
+      "PVR": 6332,
+      "stations": [
+        1304,
+        1305,
+        1308,
+        1313
+      ],
+      "repairs": 0,
+      "method": "bounded 256-successor block graph; resource-correct feasible upper bound"
+    }
+  ]
+}

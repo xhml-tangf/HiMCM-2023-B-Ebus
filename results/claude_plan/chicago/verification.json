@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "city": "chicago",
+  "week_trip_instances": 105374,
+  "annual_stage_trip_instances": 101842,
+  "verified_day_schedules": 7,
+  "verified_annual_stages": 10,
+  "verified_sensitivity_schedules": 9,
+  "source_hash_verified": true,
+  "energy_closure": true,
+  "boundary": "Independent token replay; conditional travel/distance/charging assumptions; not repeated-day depot closure."
+}

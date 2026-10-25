@@ -1,0 +1,80 @@
+{
+  "city": "london",
+  "source": "data\\raw\\comparator_timetables\\london_2023.zip",
+  "sha256": "e542e686a5f6982ad643ba5049fcf191486bcc18c37adf0a4330e44c75f254da",
+  "source_calendar_start": "20230410",
+  "source_calendar_end": "20240223",
+  "feed_info": [
+    {
+      "feed_publisher_name": "ITO World",
+      "feed_publisher_url": "http://www.itoworld.com/",
+      "feed_lang": "EN",
+      "feed_start_date": "20230410",
+      "feed_end_date": "20240223",
+      "feed_version": "20230609_112819"
+    }
+  ],
+  "scope": "scheduled bus trips touching at least one London NaPTAN 490 stop; regional, not exact TfL contract fleet",
+  "week_start": "2023-06-12",
+  "unique_trips": 276157,
+  "endpoints": 1607,
+  "rejected_nonpositive_duration": 3,
+  "frequency_templates_total_before_geographic_filter": 10,
+  "frequency_templates_excluded_in_scope": 0,
+  "exact_frequency_templates_expanded": 9,
+  "exact_frequency_trips_generated": 63,
+  "frequency_policy": "exact_times=1 expanded using source headways and stop offsets; nonexact templates retained separately without invented departures",
+  "distance_method": "1.35 x sum of great-circle distances between consecutive scheduled stops; scenario proxy, not a bound",
+  "daily": [
+    {
+      "date": "2023-06-12",
+      "trips": 105854,
+      "routes": 747,
+      "PVR": 6321,
+      "service_km": 1773664.046233326
+    },
+    {
+      "date": "2023-06-13",
+      "trips": 105887,
+      "routes": 749,
+      "PVR": 6329,
+      "service_km": 1773281.5543586619
+    },
+    {
+      "date": "2023-06-14",
+      "trips": 105877,
+      "routes": 748,
+      "PVR": 6312,
+      "service_km": 1773005.1446645865
+    },
+    {
+      "date": "2023-06-15",
+      "trips": 105882,
+      "routes": 748,
+      "PVR": 6332,
+      "service_km": 1773158.5489168158
+    },
+    {
+      "date": "2023-06-16",
+      "trips": 105967,
+      "routes": 746,
+      "PVR": 6331,
+      "service_km": 1775797.3322882908
+    },
+    {
+      "date": "2023-06-17",
+      "trips": 99826,
+      "routes": 662,
+      "PVR": 5763,
+      "service_km": 1675747.173240488
+    },
+    {
+      "date": "2023-06-18",
+      "trips": 77941,
+      "routes": 629,
+      "PVR": 4021,
+      "service_km": 1313069.8790052193
+    }
+  ],
+  "year_warning": "2023 archive; retrospective acquisition in 2026"
+}

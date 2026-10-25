@@ -1,0 +1,422 @@
+[
+  {
+    "name": "OBDS_archive_Jun2023/",
+    "bytes": 0,
+    "compressed": 0,
+    "offset": 0
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/",
+    "bytes": 0,
+    "compressed": 0,
+    "offset": 51
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20211122/",
+    "bytes": 0,
+    "compressed": 0,
+    "offset": 115
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20211122/itm_all.gtfs.zip",
+    "bytes": 559173883,
+    "compressed": 466467207,
+    "offset": 188
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/",
+    "bytes": 0,
+    "compressed": 0,
+    "offset": 466467484
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_all_gtfs.zip",
+    "bytes": 558438846,
+    "compressed": 465749122,
+    "offset": 466467557
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_east_anglia_gtfs.zip",
+    "bytes": 15811009,
+    "compressed": 14762919,
+    "offset": 932216768
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_east_midlands_gtfs.zip",
+    "bytes": 46404112,
+    "compressed": 41383021,
+    "offset": 946979784
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_london_gtfs.zip",
+    "bytes": 120007970,
+    "compressed": 88147384,
+    "offset": 988362904
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_north_east_gtfs.zip",
+    "bytes": 28121686,
+    "compressed": 22881526,
+    "offset": 1076510380
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_north_west_gtfs.zip",
+    "bytes": 52358731,
+    "compressed": 42210820,
+    "offset": 1099392002
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_scotland_gtfs.zip",
+    "bytes": 28224275,
+    "compressed": 20282876,
+    "offset": 1141602918
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_south_east_gtfs.zip",
+    "bytes": 93463142,
+    "compressed": 83902976,
+    "offset": 1161885888
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_south_west_gtfs.zip",
+    "bytes": 87043508,
+    "compressed": 80505937,
+    "offset": 1245788960
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_wales_gtfs.zip",
+    "bytes": 13639356,
+    "compressed": 11583447,
+    "offset": 1326294993
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_west_midlands_gtfs.zip",
+    "bytes": 44908181,
+    "compressed": 37464445,
+    "offset": 1337878531
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220210/itm_yorkshire_gtfs.zip",
+    "bytes": 56815243,
+    "compressed": 47964803,
+    "offset": 1375343075
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/",
+    "bytes": 0,
+    "compressed": 0,
+    "offset": 1423307973
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_east_anglia_gtfs.zip",
+    "bytes": 15940368,
+    "compressed": 14880986,
+    "offset": 1423308046
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_east_midlands_gtfs.zip",
+    "bytes": 46278312,
+    "compressed": 41321339,
+    "offset": 1438189129
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_london_gtfs.zip",
+    "bytes": 118239150,
+    "compressed": 86847246,
+    "offset": 1479510567
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_north_east_gtfs.zip",
+    "bytes": 25930780,
+    "compressed": 21272924,
+    "offset": 1566357905
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_north_west_gtfs.zip",
+    "bytes": 52130750,
+    "compressed": 42062322,
+    "offset": 1587630925
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_scotland_gtfs.zip",
+    "bytes": 27409372,
+    "compressed": 19764329,
+    "offset": 1629693343
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_south_east_gtfs.zip",
+    "bytes": 93195008,
+    "compressed": 83724707,
+    "offset": 1649457766
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_south_west_gtfs.zip",
+    "bytes": 87836547,
+    "compressed": 81246930,
+    "offset": 1733182569
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_wales_gtfs.zip",
+    "bytes": 13609624,
+    "compressed": 11550467,
+    "offset": 1814429595
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_west_midlands_gtfs.zip",
+    "bytes": 45126641,
+    "compressed": 37675790,
+    "offset": 1825980153
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220215/itm_yorkshire_gtfs.zip",
+    "bytes": 59113072,
+    "compressed": 50095082,
+    "offset": 1863656042
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20220221/",
+    "bytes": 0,
+    "compressed": 0,
+    "offset": 1913751219
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20221105/",
+    "bytes": 0,
+    "compressed": 0,
+    "offset": 1913751292
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20221105/bod_2022-11-05.zip",
+    "bytes": 606991494,
+    "compressed": 512069728,
+    "offset": 1913751365
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20230131/",
+    "bytes": 0,
+    "compressed": 0,
+    "offset": 2425821184
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20230131/itm_all_gtfs.zip",
+    "bytes": 589271481,
+    "compressed": 495595843,
+    "offset": 2425821257
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20230209/",
+    "bytes": 0,
+    "compressed": 0,
+    "offset": 2921417189
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/20230209/itm_all_gtfs.zip",
+    "bytes": 592904116,
+    "compressed": 498469547,
+    "offset": 2921417262
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-02-18_12.00.01_gtfs.zip",
+    "bytes": 600276735,
+    "compressed": 504010512,
+    "offset": 3419886898
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-02-23_09.41.05_gtfs.zip",
+    "bytes": 594410010,
+    "compressed": 500415467,
+    "offset": 3923897506
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-02-25_12.00.01_gtfs.zip",
+    "bytes": 595077483,
+    "compressed": 501019760,
+    "offset": 4424313069
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-02-28_12.00.02_gtfs.zip",
+    "bytes": 587582128,
+    "compressed": 494836765,
+    "offset": 4925332925
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-03-04_12.00.01_gtfs.zip",
+    "bytes": 594856685,
+    "compressed": 500412218,
+    "offset": 5420169786
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-03-07_12.00.01_gtfs.zip",
+    "bytes": 588687970,
+    "compressed": 496165539,
+    "offset": 5920582100
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-03-11_12.00.01_gtfs.zip",
+    "bytes": 592719268,
+    "compressed": 499664341,
+    "offset": 6416747735
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-03-14_12.00.01_gtfs.zip",
+    "bytes": 591569132,
+    "compressed": 498487655,
+    "offset": 6916412172
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-03-18_12.00.02_gtfs.zip",
+    "bytes": 598103714,
+    "compressed": 503827784,
+    "offset": 7414899923
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-03-21_12.00.00_gtfs.zip",
+    "bytes": 596787262,
+    "compressed": 503272973,
+    "offset": 7918727803
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-03-25_12.00.00_gtfs.zip",
+    "bytes": 602554556,
+    "compressed": 507013951,
+    "offset": 8422000872
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-04-03_09.38.10_gtfs.zip",
+    "bytes": 617630736,
+    "compressed": 516864107,
+    "offset": 8929014919
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-04-04_21.00.01_gtfs.zip",
+    "bytes": 322110464,
+    "compressed": 302182471,
+    "offset": 9445879122
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-04-08_21.00.01_gtfs.zip",
+    "bytes": 623398028,
+    "compressed": 520816388,
+    "offset": 9748061689
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-04-11_21.00.01_gtfs.zip",
+    "bytes": 597325412,
+    "compressed": 498644689,
+    "offset": 10268878173
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-04-15_21.00.01_gtfs.zip",
+    "bytes": 600548361,
+    "compressed": 500774091,
+    "offset": 10767522958
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-04-18_21.00.00_gtfs.zip",
+    "bytes": 588752199,
+    "compressed": 492083178,
+    "offset": 11268297145
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-04-22_21.00.00_gtfs.zip",
+    "bytes": 592201328,
+    "compressed": 495938408,
+    "offset": 11760380419
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-04-25_21.00.01_gtfs.zip",
+    "bytes": 583192179,
+    "compressed": 489692715,
+    "offset": 12256318923
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-04-29_21.00.00_gtfs.zip",
+    "bytes": 590210751,
+    "compressed": 494976078,
+    "offset": 12746011734
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-02_21.00.00_gtfs.zip",
+    "bytes": 580369979,
+    "compressed": 488039683,
+    "offset": 13240987908
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-06_21.00.00_gtfs.zip",
+    "bytes": 583956671,
+    "compressed": 490661900,
+    "offset": 13729027687
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-09_21.00.00_gtfs.zip",
+    "bytes": 580784175,
+    "compressed": 487469434,
+    "offset": 14219689683
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-10_11.43.51_gtfs.zip",
+    "bytes": 513144298,
+    "compressed": 429496491,
+    "offset": 14707159213
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-13_21.00.01_gtfs.zip",
+    "bytes": 583811853,
+    "compressed": 489448665,
+    "offset": 15136655800
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-16_21.00.01_gtfs.zip",
+    "bytes": 581747792,
+    "compressed": 487698927,
+    "offset": 15626104561
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-20_21.00.01_gtfs.zip",
+    "bytes": 588621889,
+    "compressed": 493741468,
+    "offset": 16113803584
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-23_21.00.01_gtfs.zip",
+    "bytes": 586640307,
+    "compressed": 492534065,
+    "offset": 16607545148
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-27_21.00.01_gtfs.zip",
+    "bytes": 595071805,
+    "compressed": 498519222,
+    "offset": 17100079309
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-05-30_21.00.01_gtfs.zip",
+    "bytes": 584897442,
+    "compressed": 490342119,
+    "offset": 17598598627
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-06-03_21.00.01_gtfs.zip",
+    "bytes": 581400862,
+    "compressed": 488336679,
+    "offset": 18088940842
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-06-06_21.00.01_gtfs.zip",
+    "bytes": 575220313,
+    "compressed": 483389121,
+    "offset": 18577277617
+  },
+  {
+    "name": "OBDS_archive_Jun2023/OBDS_archive/bod_2023-06-10_21.00.02_gtfs.zip",
+    "bytes": 581146876,
+    "compressed": 489050279,
+    "offset": 19060666834
+  },
+  {
+    "name": "OBDS_archive_Jun2023/UBDC-dataset-OBDS.docx",
+    "bytes": 96836,
+    "compressed": 81343,
+    "offset": 19549717209
+  }
+]

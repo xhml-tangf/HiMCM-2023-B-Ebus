@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "city": "Vancouver",
+      "date": "2023-10-13",
+      "trips": 19967,
+      "PVR": 943,
+      "Nd": 1043,
+      "Ne": 1256,
+      "gap_pct": 20.421860019175455,
+      "stations": 4,
+      "service_km": 262307.74580000003,
+      "daytime_charges": 903,
+      "npv0": -80287632.50847769,
+      "npv25": 159786147.70355678,
+      "npv50": 399859927.91559124
+    },
+    {
+      "city": "Chicago",
+      "date": "2023-06-13",
+      "trips": 16314,
+      "PVR": 1046,
+      "Nd": 1151,
+      "Ne": 1434,
+      "gap_pct": 24.58731537793223,
+      "stations": 2,
+      "service_km": 292484.40763223055,
+      "daytime_charges": 16,
+      "npv0": -1928009.5543813705,
+      "npv25": 260176268.5127834,
+      "npv50": 522280546.5799482
+    },
+    {
+      "city": "London",
+      "date": "2023-06-15",
+      "trips": 105882,
+      "PVR": 6332,
+      "Nd": 6755,
+      "Ne": 7383,
+      "gap_pct": 9.296817172464841,
+      "stations": 4,
+      "service_km": 1773158.548916813,
+      "daytime_charges": 2252,
+      "npv0": 1702853363.7191677,
+      "npv25": 2912173141.6024847,
+      "npv50": 4121492919.4858017
+    }
+  ],
+  "boundary": "Representative days; comparator financial and energy values use the common Vancouver screening parameters, not local forecasts."
+}

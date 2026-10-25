@@ -1,0 +1,56 @@
+﻿bus,id,route,start,end,origin,destination,km,first_stop,last_stop,first_name,last_name,proxy,departure,arrival,cumulative_service_km
+1,13556300,229,21720,22800,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,06:02:00,06:20:00,5.831
+1,13556346,229,23460,24780,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,06:31:00,06:53:00,12.3738
+1,13556280,229,25320,26520,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,07:02:00,07:22:00,18.2048
+1,13556344,229,27660,29160,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,07:41:00,08:06:00,24.7476
+1,13556763,231,29940,30480,Lonsdale Quay,9110,2.4203,12693,9110,Lonsdale Quay @ Bay 9,Eastbound Harbourside Dr @ Harbourside Place,cap50,08:19:00,08:28:00,27.1679
+2,13556321,229,21960,23220,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,06:06:00,06:27:00,6.5428
+2,13556272,229,23520,24660,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,06:32:00,06:51:00,12.3738
+2,13556328,229,25140,26460,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,06:59:00,07:21:00,18.9166
+2,13556287,229,27120,28380,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,07:32:00,07:53:00,24.7476
+2,13556343,229,28740,30240,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,07:59:00,08:24:00,31.290399999999998
+2,13556283,229,30720,32160,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,08:32:00,08:56:00,37.1214
+2,13556342,229,32460,34020,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,09:01:00,09:27:00,43.6642
+2,13556306,229,34320,35760,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,09:32:00,09:56:00,49.495200000000004
+2,13556340,229,36060,37560,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,10:01:00,10:26:00,56.038000000000004
+2,13556274,229,38820,40320,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,10:47:00,11:12:00,61.86900000000001
+2,13556337,229,41340,42960,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,11:29:00,11:56:00,68.4118
+3,13557031,236,22380,23160,4439,Lonsdale Quay,4.3788,4439,10866,Eastbound W 22 St @ Philip Ave,Lonsdale Quay @ Bay 4,cap50,06:13:00,06:26:00,4.3788
+3,13556974,236,23700,24960,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,06:35:00,06:56:00,13.636
+3,13557025,236,27000,28500,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,07:30:00,07:55:00,23.5026
+3,13556298,229,28920,30300,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,08:02:00,08:25:00,29.3336
+3,13556345,229,30660,32220,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,08:31:00,08:57:00,35.876400000000004
+3,13556267,229,32520,33960,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,09:02:00,09:26:00,41.70740000000001
+3,13556341,229,34320,35820,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,09:32:00,09:57:00,48.25020000000001
+3,13556266,229,37020,38460,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,10:17:00,10:41:00,54.08120000000001
+3,13556338,229,39540,41100,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,10:59:00,11:25:00,60.62400000000001
+3,13556279,229,42420,43980,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,11:47:00,12:13:00,66.45500000000001
+4,13556350,229,24420,25740,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,06:47:00,07:09:00,6.5428
+4,13556765,231,26400,26880,Lonsdale Quay,9110,2.4203,12693,9110,Lonsdale Quay @ Bay 9,Eastbound Harbourside Dr @ Harbourside Place,cap50,07:20:00,07:28:00,8.9631
+5,13557045,236,25200,26700,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,07:00:00,07:25:00,9.8666
+5,13556962,236,27120,28620,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,07:32:00,07:57:00,19.1238
+5,13557024,236,31200,32700,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,08:40:00,09:05:00,28.9904
+5,13556975,236,33780,35220,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,09:23:00,09:47:00,38.2476
+5,13557015,236,35700,37320,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,09:55:00,10:22:00,48.1142
+5,13556978,236,39300,40740,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,10:55:00,11:19:00,57.371399999999994
+5,13557012,236,41040,42660,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,11:24:00,11:51:00,67.238
+5,13556980,236,42960,44580,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,11:56:00,12:23:00,76.4952
+6,13556348,229,26040,27540,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,07:14:00,07:39:00,6.5428
+6,13556764,231,28080,28680,Lonsdale Quay,9110,2.4203,12693,9110,Lonsdale Quay @ Bay 9,Eastbound Harbourside Dr @ Harbourside Place,cap50,07:48:00,07:58:00,8.9631
+7,13556322,229,27840,29340,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,07:44:00,08:09:00,6.5428
+7,13556762,231,30900,31440,Lonsdale Quay,9110,2.4203,12693,9110,Lonsdale Quay @ Bay 9,Eastbound Harbourside Dr @ Harbourside Place,cap50,08:35:00,08:44:00,8.9631
+8,13556996,236,28800,29940,4429,4337,7.3942,4429,4337,Westbound Marine Dr @ Fell Ave,Grouse Mountain @ Skyride,cap50,08:00:00,08:19:00,7.3942
+8,13557013,236,33000,34620,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,09:10:00,09:37:00,17.2608
+8,13556976,236,35700,37140,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,09:55:00,10:19:00,26.518
+8,13557010,236,37500,39000,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,10:25:00,10:50:00,36.3846
+8,13556281,229,40620,42120,Lonsdale Quay,10882,5.831,4471,10882,Lonsdale Quay @ Bay 1,Lynn Valley @ Bay 1,cap50,11:17:00,11:42:00,42.2156
+8,13556336,229,43080,44700,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,11:58:00,12:25:00,48.7584
+9,13557046,236,28800,30300,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,08:00:00,08:25:00,9.8666
+9,13556973,236,31080,32580,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,08:38:00,09:03:00,19.1238
+9,13557014,236,33900,35520,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,09:25:00,09:52:00,28.9904
+9,13556977,236,37500,38940,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,10:25:00,10:49:00,38.2476
+9,13557011,236,39300,40800,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,10:55:00,11:20:00,48.1142
+9,13556979,236,41100,42600,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,11:25:00,11:50:00,57.371399999999994
+9,13557016,236,43020,44640,4337,Lonsdale Quay,9.8666,4337,10866,Grouse Mountain @ Skyride,Lonsdale Quay @ Bay 4,cap50,11:57:00,12:24:00,67.238
+10,13556990,236,32520,33960,Lonsdale Quay,4337,9.2572,10867,4337,Lonsdale Quay @ Bay 6,Grouse Mountain @ Skyride,cap50,09:02:00,09:26:00,9.2572
+11,13556339,229,37740,39300,10882,Lonsdale Quay,6.5428,10882,10866,Lynn Valley @ Bay 1,Lonsdale Quay @ Bay 4,cap50,10:29:00,10:55:00,6.5428

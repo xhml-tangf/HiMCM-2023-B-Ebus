@@ -159,7 +159,7 @@ def number(value: Any) -> float | None:
 def locate_archive(explicit: str | None) -> Path | None:
     candidates = [
         explicit,
-        ROOT / "data/raw/apta_2023_vehicle_database.zip",
+        ROOT / "materials/sources/raw/apta_2023_vehicle_database.zip",
         ROOT / "tmp/APTA-2023-Vehicle-Database.zip",
         ROOT / "tmp/apta_2023_vehicle_database.zip",
     ]

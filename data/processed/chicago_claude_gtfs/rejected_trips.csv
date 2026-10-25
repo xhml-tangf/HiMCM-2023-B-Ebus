@@ -1,0 +1,1 @@
+trip_id,route_id,service_id,direction_id,block_id,shape_id,direction,wheelchair_accessible,schd_trip_id,first_stop_id,departure_time,last_stop_id,arrival_time,start_seconds,end_seconds,distance_km_lower,distance_km_upper,distance_method

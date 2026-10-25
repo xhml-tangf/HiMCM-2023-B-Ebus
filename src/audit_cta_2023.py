@@ -22,7 +22,7 @@ def age_due_bounds(rows: list[dict], life: int) -> dict[str, int]:
 
 
 def calculate() -> dict:
-    raw = json.loads((ROOT / "data/raw/cta_2023_age_distribution.json").read_text(
+    raw = json.loads((ROOT / "materials/sources/raw/cta_2023_age_distribution.json").read_text(
         encoding="utf-8"))
     vehicle_rows = [r for r in raw if r["vehicle_type"] in ("Bus", "Articulated Bus")]
     assert len(vehicle_rows) == 2
@@ -47,7 +47,7 @@ def calculate() -> dict:
     age = sum(float(row["average_age_of_fleet_in_years"]) * int(row["total_vehicles"])
               for row in vehicle_rows) / fleet
     assert fleet == 1875 and round(age, 1) == 11.2
-    energy = json.loads((ROOT / "data/raw/cta_2023_fuel_energy.json").read_text(
+    energy = json.loads((ROOT / "materials/sources/raw/cta_2023_fuel_energy.json").read_text(
         encoding="utf-8"))
     bus = next(row for row in energy if row["modecd"] == "MB" and row["typeofservicecd"] == "DO")
     diesel_gallons = float(bus["diesel_gal"])

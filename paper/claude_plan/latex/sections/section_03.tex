@@ -1,0 +1,37 @@
+\NeedRoom{10}
+
+\section{Timetable-Preserving Scheduling Model}
+
+Trip i has origin $o_i$, destination $d_i$, departure $s_i$, arrival $e_i$ and service length $\ell_i$. A bus duty is a sequence of trip IDs and $\mathrm{C}(v)$ charge tokens. Each trip appears exactly once. Station set S has at most K nodes.
+
+
+\noindent\textbf{Direct connection $i\to j$.}
+\begin{align}
+e_i+\tau(d_i,o_j)&\le s_j,\\
+u_i+w(d_i,o_j)+\ell_j&\le R,\\
+u_j&=u_i+w(d_i,o_j)+\ell_j.
+\end{align}
+
+\noindent\textbf{Connection through a charger $c\in S$.}
+\begin{align}
+u_i+w(d_i,c)&\le R,\\
+e_i+\tau(d_i,c)+T+\tau(c,o_j)&\le s_j,\\
+w(c,o_j)+\ell_j&\le R,\\
+u_j&=w(c,o_j)+\ell_j.
+\end{align}
+
+The first trip begins fully charged at its origin and must itself fit within R. Both charging detour legs consume range. P1 minimizes duties for fixed S; P2 also chooses S. The heuristic solves these objectives approximately and returns feasible upper bounds.
+
+
+The diesel compatibility graph includes i-to-j whenever its direct time condition holds. Positive trip durations make it acyclic. A matching of M arcs joins n trips into n-M paths; every path cover supplies such a matching. Thus maximum matching gives the exact minimum diesel fleet \cite{ref17}.
+
+
+\begin{align}
+N_d&=n-|M^*|,\\
+\mathrm{PVR}&=\max_t\bigl|\{i:s_i\le t<e_i\}\bigr|,\\
+N_e&\ge N_d\ge\mathrm{PVR}.
+\end{align}
+Here $M^*$ is a maximum matching; the last inequality chain uses metric travel times.
+
+We seed a matching using short connections, then search the complete compatibility graph until no augmenting path exists. Small cases use Hopcroft-Karp seeds; large cases use a greedy seed and disjoint-tree batched augmentations. Time indexing excludes only chronologically impossible edges. No final lower bound uses a truncated waiting horizon. Infinite range invokes this exact routine.
+

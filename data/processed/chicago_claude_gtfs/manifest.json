@@ -1,0 +1,68 @@
+{
+  "city": "chicago",
+  "source": "data\\raw\\comparator_timetables\\chicago_2023.zip",
+  "sha256": "a930f769f005468b72db71b2eb3a4ae4d749f19e5169539cdb498b98f03bf85a",
+  "source_calendar_start": "20230503",
+  "source_calendar_end": "20230731",
+  "feed_info": [],
+  "scope": "CTA bus routes",
+  "week_start": "2023-06-12",
+  "unique_trips": 40515,
+  "endpoints": 580,
+  "rejected_nonpositive_duration": 0,
+  "frequency_templates_excluded_before_geographic_filter": 0,
+  "frequency_policy": "retained separately, no synthesized fixed departures",
+  "distance_method": "1.35 x sum of great-circle distances between consecutive scheduled stops; scenario proxy, not a bound",
+  "daily": [
+    {
+      "date": "2023-06-12",
+      "trips": 16297,
+      "routes": 123,
+      "PVR": 1046,
+      "service_km": 292206.64478904585
+    },
+    {
+      "date": "2023-06-13",
+      "trips": 16314,
+      "routes": 124,
+      "PVR": 1046,
+      "service_km": 292484.4076322308
+    },
+    {
+      "date": "2023-06-14",
+      "trips": 16313,
+      "routes": 124,
+      "PVR": 1043,
+      "service_km": 292484.19524680014
+    },
+    {
+      "date": "2023-06-15",
+      "trips": 16314,
+      "routes": 124,
+      "PVR": 1046,
+      "service_km": 292484.4076322308
+    },
+    {
+      "date": "2023-06-16",
+      "trips": 16318,
+      "routes": 124,
+      "PVR": 1045,
+      "service_km": 292528.0078164237
+    },
+    {
+      "date": "2023-06-17",
+      "trips": 13215,
+      "routes": 94,
+      "PVR": 759,
+      "service_km": 250566.21952905523
+    },
+    {
+      "date": "2023-06-18",
+      "trips": 10603,
+      "routes": 85,
+      "PVR": 571,
+      "service_km": 202653.00522277056
+    }
+  ],
+  "year_warning": "2023 archive; retrospective acquisition in 2026"
+}

@@ -1,0 +1,36 @@
+\NeedRoom{10}
+
+\subsection{Validation and Optimality Gaps}
+
+\begin{longtable}{@{}L{\dimexpr 0.33000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.35000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.32000\textwidth-2\tabcolsep\relax}@{}}
+\caption{Independent validation and small-instance optimality comparisons}\label{tab:source3}\\
+\toprule
+\textbf{Experiment} & \textbf{Executed result} & \textbf{Meaning} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{Table \thetable\ (continued)}\\
+\toprule
+\textbf{Experiment} & \textbf{Executed result} & \textbf{Meaning} \\
+\midrule
+\endhead
+\midrule\multicolumn{3}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+Six-trip specification sample & P1=1; K=1 picks node2; K=0 gives2 & MILP cross-check passed \\
+Incoming-detour counterexample & Invalid reference chain rejected; optimum2 & Regression test \\
+300 small P1 cases & 221 base / 252 improved optimal & MILP and exhaustive agreement \\
+Largest improved excess & 2 buses & Not a worst-case guarantee \\
+60 P2 cases, four nodes, K=2 & 50 match the exact optimum & Heuristic site selection remains imperfect \\
+200 diesel-limit cases & 200 match exhaustive search & Exact fallback verified \\
+\end{longtable}
+
+The independent random population uses eight trips, three nodes, symmetric integer travel times from 5 to 20 minutes and shortest-path closure. Distances are 0.7 times those metric times. Departures span 0-160 minutes. P2 uses four nodes. Seed streams and generators are recorded; these results do not claim to reproduce the unspecified original Claude random stream.
+
+
+The small arc MILP has start/end arcs, direct arcs, charge arcs and per-trip used-range variables. Every trip has one incoming and one outgoing arc. Direct arcs propagate distance with arc-specific big-M constants. Charging arcs enforce reachability and reset distance. P2 adds binary station variables and a cardinality bound. A separate continuous relaxation gives an LP lower bound.
+
+
+Only solver status optimal is reported as an exact optimum. Every extracted MILP duty is independently replayed. Regression tests also cover midnight, equal arrival/departure times, both charger detours, energy replenishment, grant limits, terminal values and negative environmental outcomes.
+
+
+On the network, we report the difference from $N_d$ and never infer optimality from successful validation. In sensitivity analysis, an incumbent from smaller R or larger T is reused only after revalidation. Raw search counts remain available, making heuristic instability visible.
+

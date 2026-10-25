@@ -1,0 +1,63 @@
+\NeedRoom{10}
+
+\section{Data, Assumptions, and Notation}
+
+The recovered TransLink feed is 23SEP\_20231020, declared for 4 September-31 December 2023 \cite{ref8}. The adapter uses the existing cleaned trip manifest, calendar and exceptions. Times beyond 24:00 remain on the service-day clock. Stop IDs are not merged by name.
+
+
+\begin{longtable}{@{}L{\dimexpr 0.23000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.37000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.40000\textwidth-2\tabcolsep\relax}@{}}
+\caption{Scheduling inputs, assumptions and evidence status}\label{tab:source2}\\
+\toprule
+\textbf{Input} & \textbf{Central treatment} & \textbf{Evidence status} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{Table \thetable\ (continued)}\\
+\toprule
+\textbf{Input} & \textbf{Central treatment} & \textbf{Evidence status} \\
+\midrule
+\endhead
+\midrule\multicolumn{3}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+Times / endpoints & Preserved trip obligations & Published schedule, not actual operations \\
+Trip distance & Audited upper interval endpoint & Derived bound; lower endpoint tested \\
+Travel matrix & 1.35 x great-circle km; 30 km/h & Assumed road detour and speed \\
+Candidate sites & 534 endpoint IDs & Coordinates observed; buildability unknown \\
+Trolley service & Retain cap47/cap70 proxy separately & Existing proxy, not propulsion roster \\
+Capacity / vehicle types & Homogeneous, equal capacity & No individual load or axle verification \\
+R / T & 270 km / 60 min & Chosen usable range and charge duration \\
+Energy / efficiency & 1.60 kWh/km / 90\% & Historical all-electric transfer \cite{ref9} / assumption \\
+Night / depot & Full at first trip; no pullout or pullin & Single-day boundary; cross-day closure absent \\
+Charging capacity & Unlimited in solver; count slots afterward & No utility or site certificate \\
+\end{longtable}
+
+The travel-time matrix is metric. This ensures a route via a charger is not faster than the direct transfer, which is necessary for the diesel lower-bound proof. A regression test shows that arbitrary nonmetric inputs can violate that bound.
+
+
+All 25 distinct service patterns are evaluated separately. We use their maximum fleet requirement and retain their frequencies over 119 days. Annual activity is multiplied by 365/119. It is a seasonal extrapolation, not observed annual mileage.
+
+
+\begin{align}
+B_{\mathrm{use}}&=\varepsilon R, & B&=B_{\mathrm{use}}/u,\\
+P_{\mathrm{battery}}&=60B_{\mathrm{use}}/T, &
+P_{\mathrm{grid}}&=P_{\mathrm{battery}}/\eta .
+\end{align}
+
+With u = 0.8, the central battery is 540 kWh and grid-side charging power is 480 kW. The factor 60 corrects the minute/hour mismatch. A partial battery still occupies the charger for T, but receives only the energy consumed since its last full charge.
+
+
+\subsection*{Principal notation}
+\begin{longtable}{@{}L{0.22\textwidth}L{0.70\textwidth}@{}}
+\caption{Principal notation and units}\label{tab:notation}\\
+\toprule Symbol & Meaning and units\\\midrule
+$i,j;\ n$ & Trip indices; total scheduled trips.\\
+$o_i,d_i;\ s_i,e_i$ & Origin and destination; departure and arrival (minutes).\\
+$\ell_i;\ u_i$ & Service distance; distance since the last full charge (km).\\
+$w(a,b);\ \tau(a,b)$ & Deadhead distance (km) and travel time (minutes).\\
+$R;\ T$ & Usable range (km); fixed charge duration (minutes).\\
+$S;\ K$ & Selected charging nodes; node-count limit.\\
+$N_d,N_e;\ \mathrm{PVR}$ & Diesel minimum, feasible electric fleet, concurrent-trip lower bound.\\
+$\varepsilon;\ \eta;\ u$ & Battery kWh/km; charging efficiency; usable battery fraction.\\
+$\gamma_t;\ \phi$ & Grid kgCO$_2$e/kWh; eligible-capital grant share.\\
+\bottomrule
+\end{longtable}
+The state $u_i$ and the battery fraction $u$ are distinct quantities.

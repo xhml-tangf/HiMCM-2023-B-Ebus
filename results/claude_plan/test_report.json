@@ -1,0 +1,7 @@
+{
+  "command": "python -m pytest -q",
+  "status": "PASS",
+  "passed": 129,
+  "checked_on": "2026-10-22",
+  "note": "The Windows pyreadline teardown emitted a benign exception after pytest reported success; it did not affect test outcomes."
+}

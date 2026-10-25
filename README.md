@@ -1,5 +1,23 @@
 # HiMCM 2023 Problem B: electric bus fleet transition
 
+## Repository layout
+
+- `src/`: model implementation and plotting code.
+- `scripts/`: run, verification, PDF/LaTeX build, and GitHub-asset utilities.
+- `paper/`: LaTeX sources and PDFs. The current Claude-plan paper is in
+  `paper/claude_plan/latex/`.
+- `data/processed/` and `results/`: model-ready inputs, numerical results and
+  paper figures.
+- `materials/`: source evidence, reference material, research notes and
+  organizational records. Large raw files are in a GitHub Release.
+- `release/`: near-final files ready to send, including the current PDF and
+  standalone LaTeX archive.
+
+The canonical current manuscript is
+`paper/claude_plan/latex/main.pdf`; its source entry point is
+`paper/claude_plan/latex/main.tex`. The earlier ReportLab version remains in
+`paper/claude_plan/` for provenance.
+
 ## 21 October canonical full-timetable model
 
 The user authorized explicit research assumptions, including normal execution
@@ -29,7 +47,8 @@ route-level dispatch validation.
 
 This is a reproducible research workspace and evidence-locked paper draft for
 2023 HiMCM Problem B. The original problem PDF is supplied by the user and
-remains at its original path. No original HiMCM solution paper was used.
+remains at its original path. Public Outstanding papers were inspected for
+layout conventions only; their models, text and results were not used.
 
 Private project repository: <https://github.com/xhml-tangf/HiMCM-2023-B-Ebus>.
 
@@ -49,13 +68,13 @@ outputs. Prices are rebased to constant 2023 CAD with Bank of Canada CPI.
 The environmental partial boundary now includes negative cases: generic
 $-17.6$ to $15.1\%$ and class $-14.3$ to $16.2\%$. Fleet counts remain
 conditional inventory scenarios, not dispatch certificates. See
-`research/adversarial_review_resolution.md` and
-`research/priority_revision_2026_10_19.md`.
+`materials/research/adversarial_review_resolution.md` and
+`materials/research/priority_revision_2026_10_19.md`.
 
 ## Layout
 
-- `data/raw/`: downloaded public primary-source files, with SHA-256 hashes in
-  `data/sources.json`.
+- `materials/sources/raw/`: downloaded public primary-source files, with SHA-256 hashes in
+  `materials/sources/sources.json`.
 - `data/processed/`: cleaned 2023 route/time-bin observations and data audit.
 - `data/processed/translink_2023_actual_service.csv`,
   `src/audit_service_actual.py`, and `results/actual_service_audit.json`:
@@ -110,7 +129,7 @@ conditional inventory scenarios, not dispatch certificates. See
   trips; not a depot certificate.
 - `src/audit_cpi.py` and `data/processed/canada_cpi_annual_2021_2025.csv`:
   Bank of Canada CPI rebasing to constant 2023 CAD.
-- `research/adversarial_review_resolution.md`: F01--F13 and equation-level
+- `materials/research/adversarial_review_resolution.md`: F01--F13 and equation-level
   resolution evidence.
 - `src/propagate_transition_uncertainty.py` and
   `results/vancouver_transition_uncertainty.json`: 432,768-cell CPU
@@ -163,7 +182,7 @@ conditional inventory scenarios, not dispatch certificates. See
 - `src/compute_reference_scores.py` and `results/cpu_reference_scores.json`:
   executable CPU-only, sourced 40-ft diesel/hybrid/CNG renewal reference
   scores, 2024 O&M cross-checks, and sensitivity cases;
-  see `research/cpu_reference_score_note.md` for scope and limits.
+  see `materials/research/cpu_reference_score_note.md` for scope and limits.
 - `data/processed/translink_2025_plan_cohorts.csv`,
   `data/processed/translink_2020_depot_ratios.csv`,
   `src/audit_capital_cohorts.py`, and `results/capital_cohort_audit.json`:
@@ -180,19 +199,20 @@ conditional inventory scenarios, not dispatch certificates. See
   count, summary/letter length, headers, references and text boundaries, then
   renders every page for inspection. Build/source hashes are retained in
   `results/editor_pdf_build.json` and `results/pdf_layout_checks.json`.
-- `paper/archive/legacy_reportlab_preview.pdf`: old, non-compliant 9-point
+- `materials/archive/legacy_reportlab_preview.pdf`: old, non-compliant 9-point
   preview retained only for provenance; **do not submit or use for format QA**.
-- `research/format_basis.md`: official format rules, exemplar availability,
+- `materials/research/format_basis.md`: official format rules, exemplar availability,
   fixed style choices and compiler status.
-- `research/outstanding_format_findings.md`: verified links to COMAP's
+- `materials/research/outstanding_format_findings.md`: verified links to COMAP's
   official 2024 page-level examples and the 2025 results pages. No public
   complete 2025 Outstanding manuscript was found; the file records that
   evidence boundary and the applicable structural recommendations.
-- `research/final_completion_audit.md`: current requirement matrix, numerical
+- `materials/research/final_completion_audit.md`: current requirement matrix, numerical
   checks, verified commands and remaining external-data boundaries.
-- `research/ai_query_log.md`: original-language AI request log and artifact
+- `materials/research/ai_query_log.md`: original-language AI request log and artifact
   mapping for the competition disclosure.
-- `research/`: parameter/source ledger and independent literature notes.
+- `materials/research/`: parameter/source ledger, evidence audit and independent
+  literature notes.
 
 On Python 3.12, install the pinned numerical packages with
 `python -m pip install -r requirements.txt`.
@@ -220,7 +240,7 @@ with network access to obtain the official raw sources, then
 `python src/compute_reference_scores.py`, `python src/audit_capital_cohorts.py`,
 `python scripts/check_manuscript_numbers.py`, and `python -m pytest tests -q`.
 Source URLs and SHA-256 hashes are in
-`data/sources.json`. Raw source PDFs/CSVs are kept out of the Git repository;
+`materials/sources/sources.json`. Raw source PDFs/CSVs are kept under `materials/sources/raw/`;
 the retrieval script reconstructs them, subject to source availability. Run
 `python scripts/check_tex_format.py` for static manuscript checks. The
 built-in LaTeX compiler successfully compiled the canonical manuscript on

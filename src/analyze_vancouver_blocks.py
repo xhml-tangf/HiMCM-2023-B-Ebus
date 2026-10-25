@@ -28,7 +28,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 PROC = ROOT / "data/processed"
-RAW = ROOT / "data/raw/vancouver_gtfs_2023"
+RAW = ROOT / "materials/sources/raw/vancouver_gtfs_2023"
 
 
 def transfer_fails(gap_minutes, distance_km, turn_minutes=5, speed_kmh=50):

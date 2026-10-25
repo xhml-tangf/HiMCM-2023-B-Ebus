@@ -1,0 +1,131 @@
+{
+  "date": "2023-10-13",
+  "valid": true,
+  "trips": 19967,
+  "vehicles": 1247,
+  "service_km": 262307.74580000003,
+  "deadhead_km": 84908.71682584226,
+  "daytime_charge_count": 903,
+  "daytime_replenished_range_km": 154522.1112444791,
+  "overnight_replenished_range_km": 192694.35138136355,
+  "charger_peak_by_node": {
+    "1": 69,
+    "207": 39,
+    "70": 193,
+    "111": 17
+  },
+  "PVR": 943,
+  "stations": [
+    1,
+    70,
+    111,
+    207
+  ],
+  "repairs": 0,
+  "method": "block heuristic",
+  "N_d": 1043,
+  "diesel_deadhead_km": 38085.88971728107,
+  "lower_bound_gap_pct": 19.55896452540748,
+  "trace": [
+    {
+      "K": 0,
+      "N": 1329,
+      "stations": [],
+      "edges": 0
+    },
+    {
+      "K": 1,
+      "N": 1249,
+      "stations": [
+        70
+      ],
+      "edges": 491240
+    },
+    {
+      "K": 2,
+      "N": 1247,
+      "stations": [
+        70,
+        207
+      ],
+      "edges": 491551
+    },
+    {
+      "K": 3,
+      "N": 1247,
+      "stations": [
+        1,
+        70,
+        207
+      ],
+      "edges": 491721
+    },
+    {
+      "K": 4,
+      "N": 1247,
+      "stations": [
+        1,
+        70,
+        111,
+        207
+      ],
+      "edges": 491780
+    }
+  ],
+  "candidates": [
+    165,
+    311,
+    148,
+    1,
+    10,
+    156,
+    287,
+    111,
+    528,
+    3,
+    70,
+    207
+  ],
+  "selected_stops": [
+    {
+      "node": 1,
+      "stop_id": "10114",
+      "name": "Eastbound W Georgia St @ Hamilton St",
+      "lat": 49.280019,
+      "lon": -123.114489
+    },
+    {
+      "node": 70,
+      "stop_id": "11534",
+      "name": "Westbound Dunsmuir St @ Cambie St",
+      "lat": 49.280837,
+      "lon": -123.112004
+    },
+    {
+      "node": 111,
+      "stop_id": "12036",
+      "name": "Westbound W Pender St @ Howe St",
+      "lat": 49.285131,
+      "lon": -123.115432
+    },
+    {
+      "node": 207,
+      "stop_id": "1857",
+      "name": "Burrard Station @ Bay 3",
+      "lat": 49.286391,
+      "lon": -123.121757
+    }
+  ],
+  "R": 270.0,
+  "T": 60.0,
+  "source_sha256": {
+    "data/processed/vancouver_gtfs_trip_manifest_classified_2023.csv": "a1d8503ebb7c999400adccb793861cb0761a86efa1716e8f61f2d7047154b8ac",
+    "data/processed/vancouver_gtfs_daily_service_2023.csv": "2a909ff23920e32790327b56ff79e10ac63fdc24315234a961c4f1a3879b8e42",
+    "materials/sources/raw/vancouver_gtfs_2023/calendar.txt": "f9b3c07ee8bc7f923bf2b550d9a628e7dadc7ee7f069d92c348f129d61e5d9da",
+    "materials/sources/raw/vancouver_gtfs_2023/calendar_dates.txt": "7ec38e47e8c94c3e345b0fea7c2e98ce562a56edc649780a39d7ed2635925858",
+    "materials/sources/raw/vancouver_gtfs_2023/stops.txt": "6aad688d4c9111a537d57ee38e54f944dea1984e2b770828702ca745cd68617b",
+    "materials/research/claude_plan/spec_original.md": "9afcb7f0681bbb73d1ada915f0a7b04961c82275aea4139bb07464f7eb3f001f",
+    "materials/research/claude_plan/solver_reference_original.py": "4c7ff9e7a469f6174147edaae0d75ecb429e4c60d00223653c671e296c2cb337"
+  },
+  "elapsed_seconds": 280.62951130000874
+}

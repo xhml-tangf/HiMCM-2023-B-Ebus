@@ -1,0 +1,89 @@
+[
+  {
+    "file": "translink_2020_fleet_plan.pdf",
+    "page": 59,
+    "matches": [
+      "__________________________________ \n  \n \n \n \n        \nA- 11\n \n \nThis compares to the approximately $630,000 (CDN $) estimated purchase price for TransLink \n40-ft diesel buses, and approximately $890,000 purchase price for TransLink 40-ft diesel hybrid-\nelectric buses.  Estimated prices for 60-ft diesel and hybrid electric buses "
+    ]
+  },
+  {
+    "file": "translink_2020_fleet_plan.pdf",
+    "page": 73,
+    "matches": [
+      "sion and heating/cooling.   Average energy use for \nall 40-ft buses in the fleet is projected to be 1.60 kWh/km across the year, and 1.79 kWh/km on \nthe coldest winter days.   60-ft electric buses are projected to use proportionally more energy, \nbased on their greater weight; a fleet average of 2.15 kWh/km across the year, and ",
+      "ge energy use for \nall 40-ft buses in the fleet is projected to be 1.60 kWh/km across the year, and 1.79 kWh/km on \nthe coldest winter days.   60-ft electric buses are projected to use proportionally more energy, \nbased on their greater weight; a fleet average of 2.15 kWh/km across the year, and a fleet \naverage of 2.42 kWh/km o"
+    ]
+  },
+  {
+    "file": "translink_2020_fleet_plan.pdf",
+    "page": 77,
+    "matches": [
+      "7 \nRTC \n24.2 \n1.57 \n1.75 \n175 \n194 \n257 \n285 \nSTC \n26.7 \n1.52 \n1.68 \n183 \n201 \n268 \n295 \nVTC \n17.2 \n1.79 \n2.03 \n150 \n171 \n221 \n251 \nBTC \n17.1 \n1.79 \n2.04 \n150 \n171 \n220 \n250 \nMTC \n16.9 \n1.80 \n2.05 \n149 \n170 \n219 \n249 \n \nThe average daily driving distance for 40-ft and 60-ft transit buses operated by CMBC ranges from \n202 \u2013 303 k"
+    ]
+  },
+  {
+    "file": "translink_2020_fleet_plan.pdf",
+    "page": 100,
+    "matches": [
+      " \nMETRIC \nDIESEL \nHYBRID \nElectric \u2013 Depot \nCharge \nElectric  - In Route \nCharge \nBus Cost \nMY2020 $630,000 \nMY2040 $630,000 \nMY2020 $890,000 \nMY2040 $890,000 \nMY2020 $1,110,000 \nMY2040 $960,000 \nMY2020 $945,000 \nMY2040 $840,000 \nBattery Size \nNA \nMY2020 30 kWh \nMY2040 30 kWh \nMY2020 450 kWh \nMY2040 550 kWh \nMY2020 150 kWh \nMY20"
+    ]
+  },
+  {
+    "file": "translink_2023_june_technology_update.pdf",
+    "page": 29,
+    "matches": [
+      "ban routes \n\u2022\nSignificant capital $ and land \nfor charging infrastructure\n\u2022\n$1.2 million/bus\n\u2022\n$460-610k for one on-route \ncharger\n\u2022\n$1.2-$1.8B to fully fund a \nnew depot (500-600 FFE) \nincluding land and \ndevelopment costs \n\u2022\nBC Hydro regional grid\nBenefits\nPage 29 of 71\n",
+      "t suited for \nshort, urban routes \n\u2022\nSignificant capital $ and land \nfor charging infrastructure\n\u2022\n$1.2 million/bus\n\u2022\n$460-610k for one on-route \ncharger\n\u2022\n$1.2-$1.8B to fully fund a \nnew depot (500-600 FFE) \nincluding land and \ndevelopment costs \n\u2022\nBC Hydro regional grid\nBenefits\nPage 29 of 71\n"
+    ]
+  },
+  {
+    "file": "icct_2024_ebus_lca_method.pdf",
+    "page": 5,
+    "matches": [
+      "are equipped with LFP-Graphite (Lithium-ion iron \nphosphate) batteries with emissions equivalent to 58 kg CO2e/kWh (Bieker, 2021) and \nbattery density of 0.14 kWh/kg (Basma, et al., 2021). The methodology assumes a \nfixed project length of 15 years for BEBs with a battery replacement after year 7 or 8 of \noperation. Thus, the ca"
+    ]
+  },
+  {
+    "file": "icct_2024_ebus_lca_method.pdf",
+    "page": 7,
+    "matches": [
+      "in 2021\nCountry\nCarbon intensity of \nelectricity (gCO2e/kWh)\nArgentina\n357.8\nBarbados\n644.9\nBrazil\n158.6\nChile\n416.9\nColombia\n181.7\nEcuador\n136.1\nGuatemala\n313.0\nMexico\n399.9\nParaguay\n25.5\nPeru\n228.6\nUruguay\n147.3\nVenezuela\n189.4\nSource: Ember Climate (2021)\n5\t\nCarbon intensity of electricity from Our World in Data platform avai"
+    ]
+  },
+  {
+    "file": "icct_2024_ebus_lca_method.pdf",
+    "page": 10,
+    "matches": [
+      "ry pack are the product of the battery capacity (Batt, in kWh) and \nthe battery carbon intensity of 58 kg CO2e/kWh (\u03b7) (Bieker, 2021). \n"
+    ]
+  },
+  {
+    "file": "icct_2024_ebus_lca_method.pdf",
+    "page": 13,
+    "matches": [
+      "tal life-cycle emissions over a 15-year period \nfrom BEBs are estimated to be 305 tCO2e in Brazil, 558 tCO2e in Chile, 323 tCO2e in \nColombia. Emissions of similar sized ICE buses in the same countries are estimated to \nbe 1,970, 1,964, and 1,587 tCO2e, respectively. The analysis also shows that life-cycle \nemissions of articula"
+    ]
+  },
+  {
+    "file": "icct_2024_ebus_lca_method.pdf",
+    "page": 17,
+    "matches": [
+      "consumption \n- Diesel \nequivalent\nm\nkWh\nkg\nkg\nkg\nkm/y\nkWh/km\nL/km\nMJ/km\nBRA\nBEB\n8\u201311\n270 \n8,987 \n7,058 \n6,016 \n72,768 \n0.92 \n0.4\n12.4 \nBRA\nBEB\n12\u201315\n364 \n15,145\n12,544 \n10,318 \n72,768 \n1.39 \n0.6\n19.4 \nBRA\nBEB\n18+\n531 \n28,465 \n24,676 \n18,800 \n72,768 \n2.01 \n0.7\n25.1 \nBRA\nTrolleybus\n12\u201315\n30 \n10,318 \n10,104 \n10,318 \n72,768 \n3.28 \n0"
+    ]
+  },
+  {
+    "file": "tfl_2023_bus_fleet_audit.pdf",
+    "page": 1,
+    "matches": [
+      "the results and makes comparisons with previous audits.  \n \n1. Summary \n \nThis year\u2019s fleet size of 8,643 buses represents a reduction of 152 buses in comparison to last fleet \naudit total on 31 March 2022 of 8,795. The number of vehicles in the fleet will change from time to \ntime, as new vehicles enter service and the vehicles",
+      "335 \n2022 \n157 \n44 \n- \n201 \n- \n- \n- \n201 \n2023 \n9 \n5 \n- \n14 \n- \n- \n- \n14 \nTOTAL  \n6198 \n2447 \n3838 \n950* \n20 \n997 \n2838 \n8643 \n \n \n*Euro V NRM retrofitted to Zero Emission Electric \n \n \n \n \n \n \n \n \n \n"
+    ]
+  },
+  {
+    "file": "tfl_2023_bus_fleet_audit.pdf",
+    "page": 2,
+    "matches": [
+      " \n388 \n834 \n1254 \n1735 \n2535 \n3240 \n3669 \n3773 \n3884 \n3854 \n3835 \nAs at 31st March 2023, a total of 8,643 buses in the fleet are to the equivalent of Euro VI emissions standard or \nbetter. This represents a total of 100% of the fleet. The fleet included 970 Zero Emission buses which is 11.22% \nof the total fleet.  \n \n \n \n"
+    ]
+  }
+]

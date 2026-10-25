@@ -1,0 +1,197 @@
+{
+  "days": [
+    {
+      "date": "2023-06-12",
+      "valid": true,
+      "trips": 16297,
+      "vehicles": 1433,
+      "service_km": 292206.6447890456,
+      "deadhead_km": 43680.971881286605,
+      "daytime_charge_count": 17,
+      "daytime_replenished_range_km": 4553.071162472925,
+      "overnight_replenished_range_km": 331334.54550785926,
+      "charger_peak_by_node": {
+        "248": 4,
+        "113": 4
+      },
+      "PVR": 1046,
+      "stations": [
+        113,
+        248
+      ],
+      "repairs": 0,
+      "N_d": 1151,
+      "diesel_deadhead_km": 35353.93180797685,
+      "method": "bounded successor graph; resource-correct feasible upper bound",
+      "gap_vs_diesel_pct": 24.500434404865334,
+      "daytime_grid_kwh": 8094.348733285199,
+      "overnight_grid_kwh": 589039.1920139721
+    },
+    {
+      "date": "2023-06-13",
+      "valid": true,
+      "trips": 16314,
+      "vehicles": 1434,
+      "service_km": 292484.40763223055,
+      "deadhead_km": 45032.70140987344,
+      "daytime_charge_count": 16,
+      "daytime_replenished_range_km": 4286.846872312702,
+      "overnight_replenished_range_km": 333230.2621697913,
+      "charger_peak_by_node": {
+        "248": 5,
+        "113": 3
+      },
+      "PVR": 1046,
+      "stations": [
+        113,
+        248
+      ],
+      "repairs": 0,
+      "N_d": 1151,
+      "diesel_deadhead_km": 35061.03245397702,
+      "R": 270.0,
+      "T": 60.0,
+      "elapsed_seconds": 262.9582625000039,
+      "search": "same solver; top 8 candidates from 20-successor screening; K<=4; no station swaps",
+      "method": "bounded successor graph; resource-correct feasible upper bound",
+      "gap_vs_diesel_pct": 24.58731537793223,
+      "daytime_grid_kwh": 7621.061106333692,
+      "overnight_grid_kwh": 592409.3549685179
+    },
+    {
+      "date": "2023-06-14",
+      "valid": true,
+      "trips": 16313,
+      "vehicles": 1434,
+      "service_km": 292484.19524680026,
+      "deadhead_km": 44334.986379186885,
+      "daytime_charge_count": 14,
+      "daytime_replenished_range_km": 3740.151442278865,
+      "overnight_replenished_range_km": 333079.03018370795,
+      "charger_peak_by_node": {
+        "248": 4,
+        "113": 2
+      },
+      "PVR": 1043,
+      "stations": [
+        113,
+        248
+      ],
+      "repairs": 0,
+      "N_d": 1147,
+      "diesel_deadhead_km": 34959.50107687109,
+      "method": "bounded successor graph; resource-correct feasible upper bound",
+      "gap_vs_diesel_pct": 25.021795989537924,
+      "daytime_grid_kwh": 6649.158119606872,
+      "overnight_grid_kwh": 592140.4981043696
+    },
+    {
+      "date": "2023-06-15",
+      "valid": true,
+      "trips": 16314,
+      "vehicles": 1431,
+      "service_km": 292484.40763223066,
+      "deadhead_km": 44164.80563582299,
+      "daytime_charge_count": 16,
+      "daytime_replenished_range_km": 4282.096254715496,
+      "overnight_replenished_range_km": 332367.11701333773,
+      "charger_peak_by_node": {
+        "248": 3,
+        "113": 5
+      },
+      "PVR": 1046,
+      "stations": [
+        113,
+        248
+      ],
+      "repairs": 0,
+      "N_d": 1150,
+      "diesel_deadhead_km": 34965.49114449831,
+      "method": "bounded successor graph; resource-correct feasible upper bound",
+      "gap_vs_diesel_pct": 24.434782608695652,
+      "daytime_grid_kwh": 7612.61556393866,
+      "overnight_grid_kwh": 590874.8746903782
+    },
+    {
+      "date": "2023-06-16",
+      "valid": true,
+      "trips": 16318,
+      "vehicles": 1436,
+      "service_km": 292528.00781642343,
+      "deadhead_km": 43724.77426282126,
+      "daytime_charge_count": 16,
+      "daytime_replenished_range_km": 4281.662072503821,
+      "overnight_replenished_range_km": 331971.1200067412,
+      "charger_peak_by_node": {
+        "248": 4,
+        "113": 4
+      },
+      "PVR": 1045,
+      "stations": [
+        113,
+        248
+      ],
+      "repairs": 0,
+      "N_d": 1148,
+      "diesel_deadhead_km": 34744.62404708301,
+      "method": "bounded successor graph; resource-correct feasible upper bound",
+      "gap_vs_diesel_pct": 25.087108013937282,
+      "daytime_grid_kwh": 7611.843684451237,
+      "overnight_grid_kwh": 590170.8800119843
+    },
+    {
+      "date": "2023-06-17",
+      "valid": true,
+      "trips": 13215,
+      "vehicles": 953,
+      "service_km": 250566.2195290553,
+      "deadhead_km": 31440.537408607168,
+      "daytime_charge_count": 332,
+      "daytime_replenished_range_km": 81242.42550242858,
+      "overnight_replenished_range_km": 200764.3314352339,
+      "charger_peak_by_node": {
+        "248": 26,
+        "113": 45
+      },
+      "PVR": 759,
+      "stations": [
+        113,
+        248
+      ],
+      "repairs": 0,
+      "N_d": 821,
+      "diesel_deadhead_km": 18640.8068112798,
+      "method": "bounded successor graph; resource-correct feasible upper bound",
+      "gap_vs_diesel_pct": 16.077953714981728,
+      "daytime_grid_kwh": 144430.97867098416,
+      "overnight_grid_kwh": 356914.36699597136
+    },
+    {
+      "date": "2023-06-18",
+      "valid": true,
+      "trips": 10603,
+      "vehicles": 731,
+      "service_km": 202653.0052227703,
+      "deadhead_km": 28982.218070715106,
+      "daytime_charge_count": 337,
+      "daytime_replenished_range_km": 82352.93469977264,
+      "overnight_replenished_range_km": 149282.2885937131,
+      "charger_peak_by_node": {
+        "248": 20,
+        "113": 43
+      },
+      "PVR": 571,
+      "stations": [
+        113,
+        248
+      ],
+      "repairs": 0,
+      "N_d": 625,
+      "diesel_deadhead_km": 19402.38497271385,
+      "method": "bounded successor graph; resource-correct feasible upper bound",
+      "gap_vs_diesel_pct": 16.96,
+      "daytime_grid_kwh": 146405.21724404025,
+      "overnight_grid_kwh": 265390.73527771217
+    }
+  ]
+}

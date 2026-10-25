@@ -16,3 +16,16 @@ results/research_model/*_calendar.csv.gz
 results/research_model/run*.log
 results/research_model/*_console.json
 
+# Large evidence bundles and replay artifacts are published as GitHub Release
+# assets by scripts/package_github_assets.py. The small evidence records remain
+# tracked in materials/ and results/.
+materials/sources/raw/comparator_timetables/*.zip
+materials/sources/raw/vancouver_gtfs_2023/stop_times.txt
+materials/sources/raw/vancouver_gtfs_2023/shapes.txt
+data/processed/london_claude_gtfs/stop_times.csv.gz
+data/processed/chicago_claude_gtfs/stop_times.csv.gz
+results/claude_plan/duties_*.json
+results/claude_plan/roadmap_duties_*.json
+results/claude_plan/*/duties_*.json
+results/claude_plan/*/roadmap_duties_*.json
+

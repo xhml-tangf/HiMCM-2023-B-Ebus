@@ -1,0 +1,16 @@
+{
+  "source": "paper\\claude_plan\\charging_ahead_claude_plan.md",
+  "source_sha256": "9b572f60f3e77d7e2422655577a352c17d492e0de313945aa3dc17b66b0d7df1",
+  "source_sections": 25,
+  "tables_converted": 17,
+  "equation_groups_converted": 9,
+  "figures_copied": 6,
+  "references_converted": 25,
+  "content_changes": [
+    "Automatic contents instead of old page numbers",
+    "Added notation table; native mathematical typesetting",
+    "Corrected AI appendix statement about format-only exemplars",
+    "Documented October 24 formatting assistance",
+    "Defined zero-eligible-cost case for the existing subsidy formula"
+  ]
+}

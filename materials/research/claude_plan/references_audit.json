@@ -1,0 +1,311 @@
+{
+  "checked_on": "2026-10-22",
+  "entries": [
+    {
+      "id": 1,
+      "title": "Problem B: Charging Ahead with E-buses, 2023 HiMCM problem statement and AI-use policy",
+      "url": "https://www.contest.comap.org/highschool/contests/himcm/2023_Problems/2023_HiMCM_Problem_B.pdf",
+      "status": "metadata_checked",
+      "note": "Full title checked against problem source; access date recorded in paper",
+      "evidence": []
+    },
+    {
+      "id": 2,
+      "title": "Statistics Canada, Population and growth rate of census metropolitan areas, Table 2",
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/220209/t002a-eng.htm",
+      "status": "partial",
+      "note": "Cached HTML available; live URL unavailable during 2026 check",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/statistics_canada_2021_cma_population.html",
+          "exists": true,
+          "sha256": "38ebb50616c33d1fa9965cb0c1986fa28abf5792889037e725dba3f812b5ae45"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "TransLink, Metro Vancouver diesel buses transitioning to cleaner renewable fuel",
+      "url": "https://www.translink.ca/news/2023/december/metro%20vancouver%20diesel%20buses%20transitioning%20to%20cleaner%20renewable%20fuel",
+      "status": "metadata_checked",
+      "note": "Public release title checked; no local copy",
+      "evidence": []
+    },
+    {
+      "id": 4,
+      "title": "U.S. Census Bureau, Chicago city 2020 census profile",
+      "url": "https://data.census.gov/profile/Chicago_city%3B_Illinois?g=160XX00US1714000",
+      "status": "metadata_checked",
+      "note": "Public source checked; no local copy",
+      "evidence": []
+    },
+    {
+      "id": 5,
+      "title": "U.S. DOT NTD, 2022-2025 NTD Annual Data - Vehicles (Age Distribution), CTA ID50066",
+      "url": "https://data.transportation.gov/d/6abt-uhgq",
+      "status": "supported_local",
+      "note": "2023 report-year extract retained; dataset title changes over time",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/cta_2023_age_distribution.json",
+          "exists": true,
+          "sha256": "17e4f2c5899e86f7d02180abc3d48bac992137f957f3271c874d52d40ddcb1de"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Greater London Authority, 2021 Census resources",
+      "url": "https://data.london.gov.uk/census",
+      "status": "metadata_checked",
+      "note": "Public portal; no local copy",
+      "evidence": []
+    },
+    {
+      "id": 7,
+      "title": "TfL, Bus Fleet Audit, 31 March 2023",
+      "url": "https://content.tfl.gov.uk/fleet-annual-audit-report-31-march-2023.pdf",
+      "status": "supported_local",
+      "note": "Fleet total and 950 electric positions checked in cached PDF",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/tfl_2023_bus_fleet_audit.pdf",
+          "exists": true,
+          "sha256": "b1afc9a15d769a7d6fba5baa1f9198ccb1218b247bee85a7f3aa5ed1a72f00d6"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "TransLink GTFS feed 23SEP_20231020, mirror commit eb584b1",
+      "url": "https://github.com/JaydenCWong/JAAM-project/tree/eb584b1108b0d582ae31c7db8e0d7e7b5ba1702b/backend/engine/translink_data",
+      "status": "supported_local",
+      "note": "Publisher metadata and local feed retained; third-party mirror is not the operator download endpoint",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/vancouver_gtfs_2023/feed_info.txt",
+          "exists": true,
+          "sha256": "b9c316d4ed4e131404e119e328bb713c6430ce8c7597fa5f4e40e99726947dec"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "TransLink, Low Carbon Fleet Transition Plan",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/policies/translink_low_carbon_fleet_transition_plan_2020_02_24.pdf",
+      "status": "supported_local",
+      "note": "Retained PDF and extracted pages",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/translink_2020_fleet_plan.pdf",
+          "exists": true,
+          "sha256": "1042fbcf5bc4ba830d6b057514401af7d7956b8e0a1028474f908442d3b5ec15"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "ICCT, Quantifying avoided GHG emissions by e-buses in Latin America",
+      "url": "https://theicct.org/wp-content/uploads/2024/08/ID-118-%E2%80%93-E-bus-radar_final2.pdf",
+      "status": "supported_local",
+      "note": "Retained PDF; direct fetch may be unavailable",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/icct_2024_ebus_lca_method.pdf",
+          "exists": true,
+          "sha256": "cd5b4d0260cb0e4b29bc31392c0a80a9b31f4d5dbff31a87d789f32f2d875163"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Government of British Columbia, Electricity emission intensity factors for grid-connected entities",
+      "url": "https://www2.gov.bc.ca/gov/content/environment/climate-change/data/electricity",
+      "status": "partial",
+      "note": "Current official page updated after 2023; the 2023 11.3 tCO2e/GWh value is retained from the project factor ledger",
+      "evidence": [
+        {
+          "path": "data/processed/transit_air_quality_factors_2023.json",
+          "exists": true,
+          "sha256": "4568eac9f8f1ff4139583cecf810edf692ddaa5e22bc0278cb83988c548272ee"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "TransLink, Zero Emissions Bus Fleet Technology Update, 29 June 2023 Mayors Council agenda",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2023/june/agenda_mayors_council_public_mtg_june_2023.pdf",
+      "status": "supported_local",
+      "note": "PDF page 29 checked; parent agenda package dated June 29 2023",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/translink_2023_june_technology_update.pdf",
+          "exists": true,
+          "sha256": "9e188c6db36d9383a2a2bb5ddf3b0d78159e66e3cc091cca36df48427d01085a"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Bank of Canada, All-items Consumer Price Index V41690973, 2002=100",
+      "url": "https://www.bankofcanada.ca/valet/observations/V41690973/json?start_date=2019-01-01&end_date=2025-12-31",
+      "status": "supported_local",
+      "note": "Monthly series cached and annual rebasing table retained",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/canada_cpi_monthly_2019_2025.json",
+          "exists": true,
+          "sha256": "48b4c619e5fa8c8dc836509525d723a57ce1bf5c11123e6bd66142b1ff9cbf55"
+        },
+        {
+          "path": "data/processed/canada_cpi_annual_2019_2025.csv",
+          "exists": true,
+          "sha256": "97c1ecf1234725e820a7aca696292f8cdd9daac2f6aac8bfee96542d4bccf843"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "TransLink, 2023 Business Plan, Operating and Capital Budget, Attachment 1",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/corporate-reports/business_plan/2023_business_plan_operating_and_capital_budget.pdf",
+      "status": "supported_local",
+      "note": "Cached PDF and p.17 budget context retained",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/translink_2023_business_plan.pdf",
+          "exists": true,
+          "sha256": "01a660348ba32aad5074265dc401af61a30aefb404a49d5ee7f065bfa2e46745"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Anthropic Claude, user-supplied specification and reference Python program",
+      "url": null,
+      "status": "user_supplied",
+      "note": "Archived byte-for-byte; full original conversation and exact model version not supplied",
+      "evidence": [
+        {
+          "path": "materials/research/claude_plan/spec_original.md",
+          "exists": true,
+          "sha256": "9afcb7f0681bbb73d1ada915f0a7b04961c82275aea4139bb07464f7eb3f001f"
+        },
+        {
+          "path": "materials/research/claude_plan/solver_reference_original.py",
+          "exists": true,
+          "sha256": "4c7ff9e7a469f6174147edaae0d75ecb429e4c60d00223653c671e296c2cb337"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Codex assistant sessions used for implementation, validation and drafting",
+      "url": null,
+      "status": "self_disclosure",
+      "note": "Earlier turns labeled GPT-6; final continuation identified deepseek-flash; full transcripts are not available in the project",
+      "evidence": []
+    },
+    {
+      "id": 17,
+      "title": "Bunte and Kliewer, An overview on vehicle scheduling models, Public Transport 1, 299-317 (2009)",
+      "url": "https://www.wiwiss.fu-berlin.de/fachbereich/bwl/pwo/kliewer/forschung/testpub/article_-an-overview-on-vehicle-scheduling-models-in-public-transport/index.html",
+      "status": "metadata_checked",
+      "note": "Bibliographic metadata checked; no local full text",
+      "evidence": []
+    },
+    {
+      "id": 18,
+      "title": "TransLink, Zero-Emission Fleet Transition Playbook, 28 November 2024 Mayors Council package",
+      "url": "https://www.translink.ca/-/media/translink/documents/about-translink/governance-and-board/council-minutes-and-reports/2024/november/agenda--mayors-council--public-mtg--nov-28-2024.pdf",
+      "status": "supported_local",
+      "note": "Cached summary and agenda metadata retained",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/translink_2024_playbook_summary.pdf",
+          "exists": true,
+          "sha256": "00c6d6621b7c3b8804a6d7d9886a64989409379d64a446a266a5e0634bf96098"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "EEA, EMEP/EEA air pollutant emission inventory guidebook 2023, road transport",
+      "url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2023",
+      "status": "partial",
+      "note": "Derived air-quality factor table is local; original guidebook is not retained in full",
+      "evidence": [
+        {
+          "path": "data/processed/transit_air_quality_factors_2023.csv",
+          "exists": true,
+          "sha256": "5404a6cdc6f357a06d7db3cb96170477b7c4f49d3e4662ba158d47fbe0d9fb78"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Wen, Linde, Ropke, Mirchandani and Larsen, Adaptive large neighborhood search for EVSP",
+      "url": "https://doi.org/10.1016/j.cor.2016.06.013",
+      "status": "metadata_checked",
+      "note": "DOI and bibliographic record checked; no local full text",
+      "evidence": []
+    },
+    {
+      "id": 21,
+      "title": "CTA, GTFS/Scheduled Service Data documentation",
+      "url": "https://www.transitchicago.com/developers/gtfs/",
+      "status": "metadata_checked",
+      "note": "Official current-feed documentation checked; historical archive is separate",
+      "evidence": []
+    },
+    {
+      "id": 22,
+      "title": "OpenMobilityData, CTA GTFS archive snapshot 3 May 2023",
+      "url": "https://openmobilitydata-data.s3.us-west-1.amazonaws.com/public/feeds/chicago-transit-authority/165/20230503/gtfs.zip",
+      "status": "supported_local",
+      "note": "65,120,098-byte ZIP retained; all member CRCs passed",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/comparator_timetables/chicago_2023.zip",
+          "exists": true,
+          "sha256": "a930f769f005468b72db71b2eb3a4ae4d749f19e5169539cdb498b98f03bf85a"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Urban Big Data Centre, Bus Open Data Service GTFS archive, version 2023.1",
+      "url": "https://zenodo.org/records/14779119",
+      "status": "supported_local",
+      "note": "19,549,809,163-byte archive catalogued; 10 June 2023 member extracted and inner ZIP CRCs passed",
+      "evidence": [
+        {
+          "path": "materials/sources/raw/comparator_timetables/london_2023.zip",
+          "exists": true,
+          "sha256": "e542e686a5f6982ad643ba5049fcf191486bcc18c37adf0a4330e44c75f254da"
+        },
+        {
+          "path": "materials/sources/raw/comparator_timetables/zenodo_record.json",
+          "exists": true,
+          "sha256": "211dc4b9f2c58b7ccc4d64907f19415127dd278013326e8dcd2cf8fd6faf9e8b"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "UK Department for Transport, NaPTAN ATCO area codes in use",
+      "url": "https://beta-naptan.dft.gov.uk/article/atco-codes-in-use",
+      "status": "metadata_checked",
+      "note": "Area code 490 = Greater London checked; geographic filter is not a fleet roster",
+      "evidence": []
+    },
+    {
+      "id": 25,
+      "title": "GTFS Schedule Reference, times beyond 24:00 and exact_times",
+      "url": "https://gtfs.org/documentation/schedule/reference/",
+      "status": "metadata_checked",
+      "note": "Specification text checked; no local copy",
+      "evidence": []
+    }
+  ],
+  "boundary": "A metadata check is not a claim that every web resource was available on every later date. Full Claude transcripts remain missing."
+}

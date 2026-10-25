@@ -1,0 +1,49 @@
+{
+  "total_pages": 22,
+  "solution_pages": 21,
+  "ai_report_pages": 1,
+  "letter_pages": [
+    19
+  ],
+  "summary_pages": [
+    1
+  ],
+  "within_25_solution_pages": true,
+  "automatic_layout_pass": true,
+  "errors": [],
+  "compiler": "Tectonic 0.17.0; editor compile separately confirmed",
+  "source_files_sha256": {
+    "images/comparator_sensitivity.png": "cbf8f9a8ae12179e383b17fbdc9372984492e8f196dfc849dabc9b447cb9ac59",
+    "images/environment_finance.png": "708376908deaad0867212229ce930e7a95ac09db8a4959d6dad09429904bb991",
+    "images/fleet_sensitivity.png": "28458b065e14885f34d8e7cbd5173353f2dd80e56a394b99c0e3edbc42d2b312",
+    "images/roadmap.png": "76260c07574f3e18f74049b7007dbaf408eb3aec495cc71b712f1dd3a8712cb4",
+    "images/threecity_comparison.png": "c70a7a1b2bd0c5e6dbc2d14d19a68b9cc277deb1bdd62345c410ecfbe5ff2564",
+    "images/tornado.png": "e470333daf53d68bdfa186f5aeeb1169bd8cd869f03e4eebd615db8172f4f5ef",
+    "main.tex": "8a8fa4b78011fe43aeef158fb1947bee170e62a84cfe3b2bdff815463722fb32",
+    "sections/ai_report.tex": "bdb07a2d022beaa2054231a69f7a3b2c6cb36801879974d15cf1747282a99d88",
+    "sections/references.tex": "6f5ff483feae34fb73f5ec4831ec1142fa181cfff73813a257d84928ec4c748b",
+    "sections/section_01.tex": "22de4cb30dcfca9957a5e052102938313449e0e02e1e9f36713840b02b97134e",
+    "sections/section_02.tex": "ea03627b4687c5de11f4d1920be38fb8f82bef5a897ef3d520a5aa4bd26ff9bc",
+    "sections/section_03.tex": "3e422a30830d0fc76e7daad220fc0bcf1f1cdcf9a151483e61b817016b517295",
+    "sections/section_04.tex": "9cc3d4e01793e2dc4d5a941c9f7d35a5202a7c520011b6c50b004756703450a8",
+    "sections/section_05.tex": "9e0ea91cc7ca2a0701f6e788de42cffe9edbd55647df675bf619f3f3523e6c00",
+    "sections/section_06.tex": "d00a8433d41e531f706f83868074008ba2fb1f5b63d41413c5ef620e9d3b398d",
+    "sections/section_07.tex": "ece4fbaf99e1ec9562d26a67d34579c47621caf1f78bdfc57dbc76d9c992ba8b",
+    "sections/section_08.tex": "536cbb9c53d37179a0ed8a453b1dfe2d0b6332fa9170af10d81999ed0237d7f3",
+    "sections/section_09.tex": "ff351f12b2bd8bacc80ce78a4b51b666e6b149ad6403ceff08db7545276ad8bc",
+    "sections/section_10.tex": "7d93a9eeeb30c2934bfc7aa82a51445ff9b99783d56ccad21d265f9b391becd3",
+    "sections/section_11.tex": "f8d47bae4959ab70012a77779d7e849e426beadc6f6787bca896dc9aa1f3bf5e",
+    "sections/section_12.tex": "af660fbea7d34534a061227dd60f7b3f7f27c2fe0f0d00573928fc052de09122",
+    "sections/section_13.tex": "67d59bd36bb66068cc8eea2800ae8ce9c3ee0d4b398fdabcee8a28397377a484",
+    "sections/section_14.tex": "7025fd01c15a94ee3963d916b542b5544d1fef8608ccf30259aadd882d9e6feb",
+    "sections/section_15.tex": "f655234c351e64acf37103dd6c89bb6f983a7f662c1beaa0becd8ddc0335f555",
+    "sections/section_16.tex": "13bdc1ad76e091906c3697e5198f37ddcbdf4d7b8723d3082d33104e5f77b47b",
+    "sections/section_17.tex": "ba873ac7afb23f516dc4bc6ddec5b7503bf5bf0964693391ee9a310f77b61b97",
+    "sections/section_18.tex": "feb5ed0786a34cfa27daf443e4427d5c907729d809f7d7243885dc8bc95376eb",
+    "sections/section_19.tex": "f8fe6ecd62437bd6f359cac3cda3652f5112c06f67116bdbd81701b2383c4686",
+    "sections/summary.tex": "d51efbad62804a65f95caf96756dc79179a34ced41431ad3b5e4d63780919b66",
+    "team.tex": "c9c6df6c332fd55d66dbb048b0039250f4832e3bc6e3f06996f57127d8592b5c"
+  },
+  "pdf_sha256": "babb62a8127ce8d7624a88bcf63bb9aded628751801a683bae0f17c42e35d2f0",
+  "visual_review": "pending image inspection"
+}

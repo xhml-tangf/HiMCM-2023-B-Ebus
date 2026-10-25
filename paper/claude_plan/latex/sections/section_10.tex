@@ -1,0 +1,55 @@
+\NeedRoom{10}
+
+\section{Financial Model}
+
+The immediate-replacement experiment purchases the compared fleets at the start of 2024 and holds service for ten years. Money is constant 2023 CAD with a 3\% real discount rate. Historical diesel prices are rebased using the project CPI table \cite{ref13}. There is no initial old-bus resale credit because no disposition ledger exists.
+
+
+\begin{align}
+C_e^{\mathrm{cap}}&=N_e(c_{\mathrm{body}}+B c_{\mathrm{battery}})+C_{\mathrm{infra}},\\
+C_{\mathrm{eligible}}&=\max\{0,C_e^{\mathrm{cap}}-C_d^{\mathrm{cap}}\},\\
+G_{\mathrm{grant}}&=\phi C_{\mathrm{eligible}},\qquad 0\le\phi\le0.50,\\
+\mathrm{NPV}(\phi)&=\mathrm{PV}_d-\mathrm{PV}_{e,\mathrm{gross}}
+                       +\phi C_{\mathrm{eligible}}.
+\end{align}
+
+External support is a transfer. It improves agency affordability without changing gross resource cost. Eligible conversion cost is explicitly the positive initial capital increment over new diesel replacement, not a claim about a real grant program. No additional grant is assigned to replacement batteries in this comparison.
+
+
+\begin{longtable}{@{}L{\dimexpr 0.30000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.34000\textwidth-2\tabcolsep\relax}L{\dimexpr 0.36000\textwidth-2\tabcolsep\relax}@{}}
+\caption{Financial inputs and their evidence status}\label{tab:source9}\\
+\toprule
+\textbf{Financial parameter} & \textbf{Central value} & \textbf{Status} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{Table \thetable\ (continued)}\\
+\toprule
+\textbf{Financial parameter} & \textbf{Central value} & \textbf{Status} \\
+\midrule
+\endhead
+\midrule\multicolumn{3}{r}{Continued on next page}\\\endfoot
+\bottomrule\endlastfoot
+Electric bus installed & CAD1.20 million & 2023 screen \cite{ref12}; initial battery included \\
+Battery price / decline & CAD180/kWh / 3\% yearly & Assumed split and learning \\
+Diesel price & CAD1.66/L & 2023 budget \cite{ref14}, not invoices \\
+Fuel use / electricity & 0.60 L/km / CAD0.10/kWh & Historical transfer \cite{ref9} / all-in assumption \\
+Diesel / electric maintenance & CAD0.60 / 0.40 per km & Assumption, excludes energy \\
+Battery / body life & 8 / 12 years & Scenario with sensitivity \\
+Infrastructure life / upkeep & 20 years / 2\% yearly & Scenario \\
+Infrastructure costing & Site allowance + power-scaled plugs + overnight allowance & All components require local quotes \\
+\end{longtable}
+
+Both sides receive terminal asset values. Electric body, current battery and infrastructure use separate remaining lives. Diesel receives its remaining vehicle value. Replacement batteries are priced in their actual replacement year. This prevents asymmetric treatment of long-lived assets.
+
+
+\begin{align}
+\phi^*&=\max\left\{0,\frac{\mathrm{PV}_{e,\mathrm{gross}}-\mathrm{PV}_d}
+                             {C_{\mathrm{eligible}}}\right\},
+\quad C_{\mathrm{eligible}}>0,\\
+\mathrm{TCO}_v&=\frac{\text{discounted net cost of fleet }v}
+                        {\text{discounted vehicle-km of fleet }v}.
+\end{align}
+If eligible cost is zero, the grant cannot close a positive present-cost gap.
+
+A required $\phi^*$ above 0.50 is infeasible under the cap, not silently clipped. Payback is the first nonnegative cumulative balance that stays nonnegative after later replacement costs. Final asset recovery is identified separately from operating savings.
+

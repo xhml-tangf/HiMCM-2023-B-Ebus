@@ -1,0 +1,129 @@
+{
+  "cases": {
+    "vancouver": {
+      "points": [
+        {
+          "K": 0,
+          "trace_buses": 1329,
+          "bus_cost": 1594800000.0,
+          "fixed_site_cost": 0.0,
+          "total": 1594800000.0
+        },
+        {
+          "K": 1,
+          "trace_buses": 1249,
+          "bus_cost": 1498800000.0,
+          "fixed_site_cost": 610000.0,
+          "total": 1499410000.0
+        },
+        {
+          "K": 2,
+          "trace_buses": 1247,
+          "bus_cost": 1496400000.0,
+          "fixed_site_cost": 1220000.0,
+          "total": 1497620000.0
+        },
+        {
+          "K": 3,
+          "trace_buses": 1247,
+          "bus_cost": 1496400000.0,
+          "fixed_site_cost": 1830000.0,
+          "total": 1498230000.0
+        },
+        {
+          "K": 4,
+          "trace_buses": 1247,
+          "bus_cost": 1496400000.0,
+          "fixed_site_cost": 2440000.0,
+          "total": 1498840000.0
+        }
+      ],
+      "recommended": {
+        "K": 2,
+        "trace_buses": 1247,
+        "bus_cost": 1496400000.0,
+        "fixed_site_cost": 1220000.0,
+        "total": 1497620000.0
+      }
+    },
+    "chicago": {
+      "points": [
+        {
+          "K": 0,
+          "trace_buses": 1450,
+          "bus_cost": 1740000000.0,
+          "fixed_site_cost": 0.0,
+          "total": 1740000000.0
+        },
+        {
+          "K": 1,
+          "trace_buses": 1434,
+          "bus_cost": 1720800000.0,
+          "fixed_site_cost": 610000.0,
+          "total": 1721410000.0
+        },
+        {
+          "K": 2,
+          "trace_buses": 1434,
+          "bus_cost": 1720800000.0,
+          "fixed_site_cost": 1220000.0,
+          "total": 1722020000.0
+        }
+      ],
+      "recommended": {
+        "K": 1,
+        "trace_buses": 1434,
+        "bus_cost": 1720800000.0,
+        "fixed_site_cost": 610000.0,
+        "total": 1721410000.0
+      }
+    },
+    "london": {
+      "points": [
+        {
+          "K": 0,
+          "trace_buses": 9306,
+          "bus_cost": 11167200000.0,
+          "fixed_site_cost": 0.0,
+          "total": 11167200000.0
+        },
+        {
+          "K": 1,
+          "trace_buses": 8812,
+          "bus_cost": 10574400000.0,
+          "fixed_site_cost": 610000.0,
+          "total": 10575010000.0
+        },
+        {
+          "K": 2,
+          "trace_buses": 8809,
+          "bus_cost": 10570800000.0,
+          "fixed_site_cost": 1220000.0,
+          "total": 10572020000.0
+        },
+        {
+          "K": 3,
+          "trace_buses": 8807,
+          "bus_cost": 10568400000.0,
+          "fixed_site_cost": 1830000.0,
+          "total": 10570230000.0
+        },
+        {
+          "K": 4,
+          "trace_buses": 8807,
+          "bus_cost": 10568400000.0,
+          "fixed_site_cost": 2440000.0,
+          "total": 10570840000.0
+        }
+      ],
+      "recommended": {
+        "K": 3,
+        "trace_buses": 8807,
+        "bus_cost": 10568400000.0,
+        "fixed_site_cost": 1830000.0,
+        "total": 10570230000.0
+      }
+    }
+  },
+  "boundary": "Bus list price plus fixed site allowance only; charger power, grid connection, land, maintenance and overnight depot are excluded. Uses the heuristic trace, so this is not a globally optimal cost solution."
+}
